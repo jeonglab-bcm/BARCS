@@ -1,0 +1,123 @@
+name: release
+
+# Publishes a release whenever the Version field in DESCRIPTION names a
+# version that has not been tagged yet.
+#
+# The trigger is any push to main that touches DESCRIPTION, because that is
+# the only file a version bump can live in. A push that edits DESCRIPTION
+# without changing the version is harmless: the "already tagged" guard below
+# stops the job before it builds anything, so the workflow is safe to re-run
+# and cannot publish the same version twice.
+
+on:
+  push:
+    branches: [main]
+    paths: ['DESCRIPTION']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read the declared version
+        id: version
+        run: |
+          version="$(sed -n 's/^Version:[[:space:]]*//p' DESCRIPTION | head -n 1)"
+          if [ -z "$version" ]; then
+            echo "DESCRIPTION has no Version field." >&2
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${version}" >> "$GITHUB_OUTPUT"
+          echo "Declared version: ${version}"
+
+      - name: Skip if this version is already tagged
+        id: tagged
+        run: |
+          if git ls-remote --exit-code --tags origin \
+               "refs/tags/${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "already=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::${{ steps.version.outputs.tag }} already exists; nothing to release."
+          else
+            echo "already=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: r-lib/actions/setup-pandoc@v2
+        if: steps.tagged.outputs.already == 'false'
+
+      - uses: r-lib/actions/setup-r@v2
+        if: steps.tagged.outputs.already == 'false'
+        with:
+          r-version: release
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        if: steps.tagged.outputs.already == 'false'
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      # A release must never ship something that does not pass its own check.
+      - name: Check the package
+        if: steps.tagged.outputs.already == 'false'
+        run: |
+          rcmdcheck::rcmdcheck(
+            args = c("--no-manual", "--as-cran"),
+            build_args = "--no-manual",
+            error_on = "warning",
+            check_dir = "check"
+          )
+        shell: Rscript {0}
+
+      - name: Build the source tarball
+        if: steps.tagged.outputs.already == 'false'
+        id: build
+        run: |
+          R CMD build .
+          tarball="BARCS_${{ steps.version.outputs.version }}.tar.gz"
+          if [ ! -f "$tarball" ]; then
+            echo "Expected $tarball, found: $(ls -1 ./*.tar.gz)" >&2
+            exit 1
+          fi
+          echo "tarball=${tarball}" >> "$GITHUB_OUTPUT"
+
+      - name: Extract this version's NEWS section
+        if: steps.tagged.outputs.already == 'false'
+        run: |
+          # Everything between this version's heading and the next one.
+          awk -v want="# BARCS ${{ steps.version.outputs.version }}" '
+            $0 == want { found = 1; next }
+            found && /^# BARCS / { exit }
+            found { print }
+          ' NEWS.md > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "No NEWS.md section for ${{ steps.version.outputs.version }}." > release-notes.md
+          fi
+          cat release-notes.md
+
+      - name: Tag and publish
+        if: steps.tagged.outputs.already == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            "${{ steps.build.outputs.tarball }}" \
+            --target "${{ github.sha }}" \
+            --title "BARCS ${{ steps.version.outputs.version }}" \
+            --notes-file release-notes.md

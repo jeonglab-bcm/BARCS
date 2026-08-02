@@ -5,6 +5,9 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/jeonglab-bcm/BARCS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jeonglab-bcm/BARCS/actions/workflows/R-CMD-check.yaml)
+[![License:
+MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
 **B**eta-binomial **A**nalysis and **R**egression for **C**RISPR pooled
