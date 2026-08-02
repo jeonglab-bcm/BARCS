@@ -1,0 +1,47 @@
+Package: BARCS
+Title: Beta-Binomial Analysis and Regression for CRISPR Pooled Screens
+Version: 0.1.0
+Authors@R:
+    person("Hyun-Hwan", "Jeong", , "hyun-hwan.jeong@bcm.edu",
+           role = c("aut", "cre", "cph"))
+Description: Fits guide-level beta-binomial regression to pooled CRISPR
+    screen counts on an arbitrary full-rank design matrix, and tests a
+    prespecified coefficient or linear contrast against a Student t
+    reference whose degrees of freedom come from independent sequenced
+    libraries rather than read depth. Guide counts are modelled against
+    unfiltered full-library totals, so a beta-binomial variance separates
+    sequencing precision from between-library heterogeneity. Optional
+    negative-control calibration and guide-dispersion moderation are
+    provided, together with several explicitly labelled guide-to-gene
+    summaries. A guide-barcode quantification step maps raw FASTQ reads
+    against a library annotation to produce the count matrix. The
+    two-group special case and its method are described in Jeong and
+    others (2019) <doi:10.1101/gr.245571.118>; the overdispersed
+    regression construction follows Baggerly and others (2004)
+    <doi:10.1186/1471-2105-5-144>.
+License: MIT + file LICENSE
+URL: https://github.com/jeonglab-bcm/BARCS
+BugReports: https://github.com/jeonglab-bcm/BARCS/issues
+Depends:
+    R (>= 4.1.0)
+Imports:
+    parallel,
+    Rcpp,
+    stats,
+    tools,
+    utils
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
+VignetteBuilder:
+    knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+SystemRequirements: C++17

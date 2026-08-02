@@ -1,0 +1,233 @@
+---
+title: "Summarising guides to genes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Summarising guides to genes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+options(digits = 4)
+```
+
+```{r}
+library(BARCS)
+```
+
+BARCS fits guides, but screens are usually read as gene lists. Getting from
+one to the other requires an assumption, and the assumption is where most of
+the statistical trouble in this field lives.
+
+## The thing that is not true
+
+The tempting move is to treat a gene's guides as replicates: five guides, five
+observations, four degrees of freedom, done. They are not replicates. Guides
+targeting the same gene share every library, every cell passage, and every
+sequencing run. What varies between them is guide efficiency and off-target
+activity — real biology, but not the biological variation that a p-value about
+the gene is supposed to be about.
+
+Treating them as replicates produces confident, reproducible, wrong answers,
+and it gets worse as you add guides. BARCS therefore does not offer a single
+`gene_test()`. It offers five summaries, each named for what it actually
+assumes, and each stamping its assumption onto the object it returns.
+
+| Function | Combines | Assumes |
+|---|---|---|
+| `bb_gene_original()` | Signed $z$ from guide p-values | The historical BARCS statistic; kept for continuity |
+| `bb_gene_normal()` | Guide coefficients, equally weighted | Guide effects are exchangeable draws from $N(\mu_g,\sigma_g^2)$ |
+| `bb_gene_consistency()` | Inverse-variance weighted effect | One shared gene effect; calibrated against an empirical null |
+| `bb_gene_partial_pool()` | Random-effects weights | Guide heterogeneity $\tau_g^2$ estimated per gene (DerSimonian–Laird) |
+| `bb_gene_eb_moderate()` | Random-effects, shrunken $\tau_g^2$ | As above, with $\tau_g^2$ shrunk toward a screen-wide prior |
+
+None of them combines guide p-values by Fisher's or Stouffer's method across
+guides treated as independent experiments.
+
+## A quick tour
+
+`barcs_example_guides()` returns a fixed table in the shape `bb_screen()`
+produces: two all-control genes, one gene whose guides agree, and one whose
+guides disagree.
+
+```{r}
+guides <- barcs_example_guides()
+control <- startsWith(guides$gene, "control")
+
+guides[guides$gene %in% c("consistent", "discordant"), c("gene", "estimate", "std_error")]
+```
+
+Both genes have the same mean effect if you only look at the concordant ones,
+but `discordant` has guides pointing in opposite directions. A method that
+ignores heterogeneity will rank them similarly; one that models it will not.
+
+```{r}
+pooled <- bb_gene_partial_pool(guides, control = control, min_control_genes = 2)
+pooled[, c("gene", "estimate", "tau2", "i_squared", "guide_direction_agreement", "p_value")]
+```
+
+`tau2` is the estimated between-guide variance and `i_squared` the fraction of
+total variance it accounts for. The discordant gene absorbs a large `tau2`,
+its guides get down-weighted, and its p-value reflects the disagreement.
+
+Each result also carries diagnostics for whether one guide is driving the
+answer:
+
+```{r}
+pooled[, c("gene", "max_weight_fraction", "leave_one_out_max_change", "leave_one_out_sign_stable")]
+```
+
+A gene whose `max_weight_fraction` is near one is a gene with a single
+informative guide, whatever its p-value says.
+
+## On a real screen
+
+```{r}
+data(evers_rt112)
+
+screen <- bb_screen(
+  counts  = evers_rt112$counts,
+  totals  = colSums(evers_rt112$counts),
+  data    = evers_rt112$design,
+  formula = ~ group,
+  term    = "groupafter",
+  guide   = evers_rt112$guides$guide,
+  gene    = evers_rt112$guides$gene
+)
+
+is_control <- screen$gene %in% evers_rt112$nonessential
+```
+
+This screen has reference answers: 46 genes that should deplete and 47 that
+should not. That lets us separate two questions that are usually confused —
+whether a method *ranks* well, and whether its *FDR* means anything.
+
+```{r}
+essential <- evers_rt112$essential
+
+auc <- function(result) {
+  score <- -result$statistic
+  label <- result$gene %in% essential
+  ranks <- rank(score)
+  n1 <- sum(label); n0 <- sum(!label)
+  (sum(ranks[label]) - n1 * (n1 + 1) / 2) / (n1 * n0)
+}
+
+summarise <- function(result, name) {
+  hits <- result$gene[result$fdr < 0.05]
+  data.frame(
+    method       = name,
+    genes        = nrow(result),
+    auc          = auc(result),
+    hits         = length(hits),
+    hits_true    = sum(hits %in% essential),
+    hits_false   = sum(hits %in% evers_rt112$nonessential)
+  )
+}
+
+comparison <- rbind(
+  summarise(bb_gene_original(screen), "original"),
+  summarise(bb_gene_normal(screen), "normal"),
+  summarise(bb_gene_consistency(screen, control = is_control), "consistency"),
+  summarise(bb_gene_partial_pool(screen, control = is_control), "partial_pool"),
+  summarise(bb_gene_eb_moderate(screen, control = is_control), "eb_moderate")
+)
+comparison
+```
+
+**Every method ranks perfectly.** An AUC of 1 means every essential gene
+ranks above every non-essential gene, whichever summary you use. For the usual
+purpose of a screen — deciding what to follow up — the choice barely matters
+here. (`normal` and `consistency` report 92 genes rather than 93 because they
+default to requiring three usable guides per gene.)
+
+**No method's FDR is trustworthy on this dataset,** and the two families fail
+in opposite directions. `original` and `normal` call nearly everything,
+including all 47 genes that should not move. The three empirical-null methods
+call nothing.
+
+Both failures have the same root cause, and it is worth understanding rather
+than tuning away.
+
+```{r}
+summary(screen$t_value[is_control])
+```
+
+The non-essential control guides are centred around $t \approx 9$, not zero.
+As `vignette("BARCS")` explains, that is compositional: the libraries shrink
+during selection, so guides that merely survive gain share. `original` and
+`normal` take those inflated guide statistics at face value and duly declare
+the controls significant.
+
+The empirical-null methods notice the problem and correct for it, but
+overcorrect:
+
+```{r}
+pool <- bb_gene_partial_pool(screen, control = is_control)
+c(
+  null_center   = attr(pool, "null_center"),
+  global_scale  = attr(pool, "global_scale"),
+  control_scale = attr(pool, "control_scale"),
+  null_scale    = attr(pool, "null_scale")
+)
+```
+
+The scale actually used is the largest of the candidates, and here that is
+`global_scale`, the median absolute deviation across all genes. That estimator
+assumes fewer than half the genes are active. This is a *benchmark* library,
+deliberately built as roughly half essential and half not, so the assumption
+fails and the all-gene MAD absorbs the real signal into the null.
+
+The lesson is not that one method wins. It is that a benchmark library and a
+genome-wide library are different objects, and the robust-null machinery is
+built for the second. On a real library, where the overwhelming majority of
+genes do nothing, `global_scale` is a reasonable null estimate and this
+conservatism does not appear.
+
+## Practical guidance
+
+* **Start with the ranking.** It is the most robust output BARCS produces and
+  the least sensitive to which summary you pick.
+* **Check the controls before the hits.** If the non-essential guides are not
+  centred near zero, no gene-level FDR downstream will mean anything until you
+  understand why.
+* **Prefer `bb_gene_eb_moderate()` for screens with few guides per gene.** Per
+  gene, $\tau_g^2$ is estimated from four or five numbers; shrinking it toward
+  a screen-wide prior is strictly better conditioned.
+* **Use `bb_gene_partial_pool()` when guides per gene are plentiful** and you
+  would rather each gene's heterogeneity speak for itself.
+* **Read the diagnostics.** `guide_direction_agreement`,
+  `max_weight_fraction`, and `leave_one_out_sign_stable` catch the
+  single-guide artefacts that a p-value hides.
+* **Reach for `bb_gene_original()` only for continuity** with earlier BARCS
+  and CB2 analyses.
+
+## A note on double correction
+
+The pooling functions deliberately prefer the `raw_std_error` column when
+`bb_calibrate_controls()` has already run:
+
+```{r}
+calibrated <- bb_calibrate_controls(screen, control = is_control, method = "qq_slope")
+
+identical(
+  bb_gene_partial_pool(calibrated, control = is_control)$raw_statistic,
+  bb_gene_partial_pool(screen, control = is_control)$raw_statistic
+)
+```
+
+This is intentional. These methods fit their own gene-level empirical null, so
+consuming already-widened standard errors would penalise the same inflation
+twice. `bb_gene_original()` is the exception — it reads the p-value column
+directly, so it does respond to guide-level calibration, which is what you
+want from a method that has no null model of its own.
+
+## References
+
+DerSimonian R, Laird N (1986). Meta-analysis in clinical trials. *Controlled
+Clinical Trials*, 7(3), 177–188.
+
+Smyth GK (2004). Linear models and empirical Bayes methods for assessing
+differential expression in microarray experiments. *Statistical Applications
+in Genetics and Molecular Biology*, 3(1), 3.

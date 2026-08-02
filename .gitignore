@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+*.o
+*.so
+*.dll
+src/*.o
+src/*.so
+src/*.dll
+inst/doc
+BARCS.Rcheck/
+BARCS_*.tar.gz
+BARCS_*.tgz

@@ -1,0 +1,271 @@
+---
+title: "Getting started with BARCS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with BARCS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+options(digits = 4)
+```
+
+```{r}
+library(BARCS)
+```
+
+BARCS models a pooled CRISPR screen one guide at a time. For guide $i$ in
+library $j$ it takes the guide's read count $K_{ij}$ against that library's
+total mapped reads $n_j$, and fits
+
+$$\operatorname{logit}(\mu_{ij}) = x_j'\beta_i, \qquad
+\operatorname{Var}(K_{ij}) = n_j\mu_{ij}(1-\mu_{ij})\{1 + (n_j-1)\rho_i\}.$$
+
+Two things follow from that variance, and they are the whole reason the
+package exists.
+
+First, the design is an arbitrary full-rank model matrix, not a pair of group
+labels. Dose, time, an ordered phenotype, a batch or donor adjustment, and
+interactions are all just columns of $x_j$.
+
+Second, the beta-binomial term $\rho_i$ separates two kinds of noise that a
+binomial model conflates: the sampling precision of sequencing, which grows
+with depth, and the real variation between independently prepared libraries,
+which does not. The reference distribution for a coefficient is a Student $t$
+whose degrees of freedom come from the number of libraries minus the rank of
+the design. **Sequencing more deeply never buys degrees of freedom.**
+
+## The three objects
+
+Every analysis carries the same three objects, and keeping them aligned is
+essentially the whole discipline of using this package.
+
+| Object | Shape | Rule |
+|---|---|---|
+| `counts` | guides × libraries | Raw integer read counts. |
+| `totals` | one per library | Unfiltered mapped-guide totals. **Never recompute after filtering guides.** |
+| `data` | one row per library | Same order as the columns of `counts`. |
+
+The `totals` rule is the one that bites. It is the denominator of the model,
+so it has to describe the library that was actually sequenced. If you drop
+low-abundance guides from `counts` and then let `totals` default to the new
+column sums, you have quietly changed the question every remaining guide is
+answering.
+
+## A worked screen
+
+`evers_rt112` is a CRISPRn dropout screen: 961 guides across 93 genes,
+sequenced before and after selection, with three libraries per group.
+
+```{r}
+data(evers_rt112)
+
+str(evers_rt112$counts)
+evers_rt112$design
+```
+
+Three libraries per group and two coefficients leaves four residual degrees of
+freedom. That is a realistic amount of replication for a published screen, and
+a useful reminder of the scale we are working at: the counts run to tens of
+thousands of reads per guide, and none of that depth enters the $t$ reference.
+
+```{r}
+totals <- colSums(evers_rt112$counts)
+totals
+```
+
+`bb_screen()` fits every guide against the shared design and reports one named
+model-matrix coefficient. Because `group` has `"before"` as its reference
+level, the coefficient `groupafter` reads as the log-odds change from before
+to after selection.
+
+```{r}
+screen <- bb_screen(
+  counts  = evers_rt112$counts,
+  totals  = totals,
+  data    = evers_rt112$design,
+  formula = ~ group,
+  term    = "groupafter",
+  guide   = evers_rt112$guides$guide,
+  gene    = evers_rt112$guides$gene
+)
+
+nrow(screen)
+unique(screen$df)
+head(screen[order(screen$p_value), c("gene", "estimate", "std_error", "p_value", "fdr")])
+```
+
+The most strongly depleted guides target proteasome and ribosome subunits,
+which is what a dropout screen in a proliferating cell line should find.
+
+## Read the controls before you read the hits
+
+This screen ships with the reference gene sets the original study used: 46
+genes expected to deplete, and 47 expected not to move. The second set is the
+more useful one, because guides that should not move tell you what "not
+moving" looks like in your data.
+
+```{r}
+control <- screen$gene %in% evers_rt112$nonessential
+
+summary(screen$t_value[control])
+mean(screen$p_value[control] < 0.05)
+```
+
+Almost every non-essential guide is "significant", and they lean positive.
+That is not a bug in the model, and calibration is not the first thing to
+reach for. It is a real feature of the experiment:
+
+```{r}
+round(totals / 1e6, 2)
+```
+
+The libraries shrink as selection kills cells, and the essential guides drop
+out of them. A guide's abundance is measured *relative to its own library
+total*, so every guide that merely survives gains share. Compositional shift
+is intrinsic to the design, not noise.
+
+What the negative controls give you is the size of that shift, expressed on
+the same scale as the test statistics. `bb_calibrate_controls()` estimates one
+scale factor from them and applies it to the whole screen.
+
+```{r}
+calibrated <- bb_calibrate_controls(screen, control = control, method = "qq_slope")
+
+attr(calibrated, "control_scale")
+mean(calibrated$p_value[control] < 0.05)
+```
+
+The control rejection rate drops from 95% to about 3% — the right order of
+magnitude, and on the conservative side of the nominal 5%, which is the side
+the `min_scale = 1` floor is designed to err on. The original columns are kept
+with a `raw_` prefix, so nothing is lost:
+
+```{r}
+head(calibrated[, c("gene", "t_value", "raw_t_value", "p_value", "raw_p_value")], 3)
+```
+
+Two honest caveats. The `"qq_slope"` estimator used above fits the slope of
+the control quantile-quantile plot over the 0.50–0.95 band; the default
+`"tail_quantile"` matches a single far-tail order statistic and is noticeably
+more variable with only a few hundred controls. And calibration only
+*rescales* — it does not recentre. It works here because the shift is
+absorbed into the scale, but a screen with a large offset and a small spread
+would need the shift modelled instead, for instance with a normalisation term
+in the design.
+
+## Moderating the guide dispersion
+
+With four residual degrees of freedom, each guide's own $\rho_i$ is a very
+noisy estimate. `bb_moderate_dispersion()` shrinks each guide's variance
+inflation toward a trend fitted across the whole library, using the scaled-F
+moment estimator of Smyth (2004), and returns a moderated $t$ on
+`df_residual + prior_df` degrees of freedom.
+
+```{r}
+moderated <- bb_moderate_dispersion(screen)
+
+attr(moderated, "prior_df")
+attr(moderated, "df_total")
+```
+
+The prior is worth many times the four degrees of freedom the design alone
+supports, which is exactly why moderation is worth doing at this replication
+level. It is independent of control calibration; the two address different
+problems and can be combined.
+
+## Beyond two groups
+
+Nothing above needed the design to be two groups. Here is a dose–response
+screen with a batch covariate, which the original two-group beta-binomial test
+could not express at all.
+
+```{r}
+set.seed(20260801)
+
+design <- data.frame(
+  sample_name = sprintf("sample_%02d", 1:18),
+  dose  = rep(seq(-1.5, 1.5, length.out = 6), 3),
+  batch = factor(rep(letters[1:3], each = 6))
+)
+lib_totals <- round(runif(nrow(design), 40000, 90000))
+
+simulate_guide <- function(intercept, slope, rho = 0.0015) {
+  mu <- plogis(intercept + slope * design$dose)
+  precision <- 1 / rho - 1
+  p <- rbeta(length(mu), mu * precision, (1 - mu) * precision)
+  rbinom(length(mu), lib_totals, p)
+}
+
+counts <- rbind(
+  geneA_sg1 = simulate_guide(-7.0, 0.9),
+  geneA_sg2 = simulate_guide(-6.8, 0.8),
+  geneB_sg1 = simulate_guide(-7.1, 0.0),
+  geneB_sg2 = simulate_guide(-6.9, 0.0)
+)
+```
+
+One guide at a time, with `summary()` and a contrast:
+
+```{r}
+fit <- bbreg(
+  count   = counts[1, ],
+  total   = lib_totals,
+  formula = ~ dose + batch,
+  data    = design
+)
+
+summary(fit)
+```
+
+`bb_contrast()` tests any linear combination of the fitted coefficients. Here
+is the difference between batches `b` and `c`, which no single coefficient
+reports directly:
+
+```{r}
+bb_contrast(fit, c(batchb = -1, batchc = 1))
+```
+
+And the whole screen at once:
+
+```{r}
+bb_screen(
+  counts  = counts,
+  totals  = lib_totals,
+  data    = design,
+  formula = ~ dose + batch,
+  term    = "dose",
+  gene    = sub("_sg[0-9]+$", "", rownames(counts))
+)
+```
+
+The `dose` coefficient is a log-odds change per unit of dose. Its $t$
+reference has 18 − 4 = 14 residual degrees of freedom, from the eighteen
+libraries, not from the tens of thousands of reads in each.
+
+## Where to go next
+
+* `vignette("barcs-quantification")` — turning FASTQ files into the `counts`
+  and `totals` this vignette started from, and the library QC worth doing
+  before any modelling.
+* `vignette("barcs-gene-summaries")` — the `bb_gene_*()` functions, what null
+  each one assumes, and why guide count is not biological replication.
+
+## References
+
+Baggerly KA, Deng L, Morris JS, Aldaz CM (2004). Overdispersed logistic
+regression for SAGE. *BMC Bioinformatics*, 5, 144.
+
+Evers B, Jastrzebski K, Heijmans JPM, Grernrum W, Beijersbergen RL, Bernards R
+(2016). CRISPR knockout screening outperforms shRNA and CRISPRi in identifying
+essential genes. *Nature Biotechnology*, 34(6), 631–633.
+
+Jeong H-H, Kim SY, Rousseaux MWC, Zoghbi HY, Liu Z (2019). Beta-binomial
+modeling of CRISPR pooled screen data identifies target genes with greater
+sensitivity and fewer false negatives. *Genome Research*, 29(6), 999–1008.
+
+Smyth GK (2004). Linear models and empirical Bayes methods for assessing
+differential expression in microarray experiments. *Statistical Applications
+in Genetics and Molecular Biology*, 3(1), 3.

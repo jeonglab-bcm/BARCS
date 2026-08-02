@@ -1,0 +1,10 @@
+^BARCS\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^README\.Rmd$
+^data-raw$
+^\.github$
+^cran-comments\.md$
+^\.Rhistory$
+^\.RData$
+^\.DS_Store$

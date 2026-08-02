@@ -1,0 +1,226 @@
+---
+title: "From FASTQ files to a count matrix"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{From FASTQ files to a count matrix}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+options(digits = 4)
+```
+
+```{r}
+library(BARCS)
+```
+
+`barcs_quant()` turns raw sequencing reads into the guide-by-library count
+matrix that `bb_screen()` consumes. It needs two things: a FASTA file
+describing the guide library, and a data frame saying which FASTQ file belongs
+to which sample.
+
+## How matching works
+
+Each guide sequence is packed into a 2-bit-per-base integer and stored in a
+hash table. Every read is then scanned with a rolling window the width of a
+guide, and the first window that hits the table wins.
+
+The practical consequence is that **you do not have to tell BARCS where the
+guide sits inside the read**. There is no adapter argument, no constant-region
+offset, and no trimming step. A read with a variable-length stagger, or with
+the vector sequence still attached, matches just as well as a trimmed one.
+
+Matching is exact — no mismatches are allowed. For 20-mers at typical
+sequencing quality this loses few reads, and it means a count can never be
+credited to the wrong guide because of a single base error.
+
+## A worked example
+
+The package ships a small synthetic screen: six FASTQ files and a 25-guide
+library.
+
+```{r}
+fasta   <- system.file("extdata", "toydata", "small_sample.fasta", package = "BARCS")
+toydata <- system.file("extdata", "toydata", package = "BARCS")
+
+samples <- c("Base1", "Base2", "High1", "High2", "Low1", "Low2")
+design <- data.frame(
+  sample_name = samples,
+  group       = rep(c("Base", "High", "Low"), each = 2),
+  fastq_path  = file.path(toydata, paste0(samples, ".fastq.gz"))
+)
+design
+```
+
+Only `sample_name` and `fastq_path` are required; any other columns are
+carried through and are available later as model covariates. Files ending in
+`.gz` are decompressed to a temporary file automatically.
+
+```{r}
+quantified <- barcs_quant(fasta, design)
+quantified
+```
+
+```{r}
+head(quantified$counts)
+```
+
+## `totals` is not `reads`
+
+This distinction matters enough to be worth its own section, because getting
+it wrong silently changes every p-value in the screen.
+
+```{r}
+rbind(
+  totals = quantified$totals,
+  reads  = quantified$reads
+)
+```
+
+* `reads` is the number of FASTQ records in the file. It includes everything
+  that failed to match: adapter dimers, contamination, reads off the end of
+  the library.
+* `totals` is the number of reads that carried a recognisable guide barcode.
+  It equals the column sums of the unfiltered count matrix.
+
+`totals` is the beta-binomial denominator, and it is what you pass to
+`bb_screen()`. `reads` exists so you can compute mappability. Feeding `reads`
+to the model instead would treat unmappable sequencing as though it were
+library that a guide could have occupied.
+
+```{r}
+barcs_mappability(quantified)
+```
+
+These are synthetic reads, so they all map. On real data the number to watch
+is consistency: one sample far below its peers usually means the wrong library
+FASTA, a trimming problem upstream, or contamination, and is worth resolving
+before any modelling.
+
+## Library QC
+
+`barcs_quant()` reports what it had to discard from the library, rather than
+quietly working around it.
+
+```{r}
+str(quantified$library)
+```
+
+Three classes of entry are dropped:
+
+* **Repeated sequences.** If two guides share a sequence, a read matching it
+  cannot be attributed to either, so both entries go. The package includes a
+  FASTA with a deliberate duplicate to show this:
+
+```{r}
+duplicated_library <- barcs_quant(
+  system.file("extdata", "toydata", "small_sample_dup.fasta", package = "BARCS"),
+  design[1, ]
+)
+duplicated_library$library$n_duplicate
+```
+
+* **Off-length guides.** The scanner uses one window width, taken as the
+  library's modal guide length, so entries of any other length are reported
+  and skipped.
+* **Non-ACGT sequences.** Degenerate IUPAC codes are refused rather than
+  coerced to a base.
+
+A library where these counts are not what you expect is a library worth
+looking at before trusting the counts.
+
+## Strand orientation
+
+Libraries are sequenced in either orientation depending on the primer design.
+Reads that fail to match are automatically rescanned as their reverse
+complement, and whichever orientation matched more reads decides the reported
+counts.
+
+```{r}
+quantified$reverse_complement
+```
+
+You do not need to know the orientation in advance, and you do not need to
+pre-process the FASTQ. If this flag comes back `TRUE` for some samples and
+`FALSE` for others in the same experiment, that is worth investigating — it
+usually means the samples were prepared with different primers.
+
+## Attaching gene annotation
+
+Guide-to-gene mapping can come from either of two places. If your guide names
+already encode the gene, derive it directly:
+
+```{r}
+gene <- sub("_[^_]+$", "", quantified$guides$guide)
+head(data.frame(guide = quantified$guides$guide, gene = gene))
+```
+
+Otherwise pass a CSV or TSV to `map_path`. It needs a `gene` column and a
+guide identifier column named `id`, `sgRNA`, or `guide`:
+
+```{r}
+annotated <- barcs_quant(
+  fasta, design,
+  map_path = file.path(toydata, "sg2gene.csv")
+)
+head(annotated$guides)
+```
+
+Guides with no entry in the mapping file get `NA` and a warning, rather than
+being dropped.
+
+## Handing off to the model
+
+The quantification object holds everything `bb_screen()` needs, and the design
+comes back exactly as supplied so the column order is guaranteed to line up.
+
+```{r}
+screen <- bb_screen(
+  counts  = annotated$counts,
+  totals  = annotated$totals,
+  data    = annotated$design,
+  formula = ~ group,
+  term    = "groupHigh",
+  gene    = annotated$guides$gene,
+  min_total_count = 0
+)
+head(screen[, c("gene", "guide", "estimate", "std_error", "p_value")])
+```
+
+With two libraries per group and three groups this toy screen has three
+residual degrees of freedom, so the p-values are illustrative only.
+
+If you do filter guides before modelling — which is often sensible for guides
+with almost no reads — keep the totals from the unfiltered matrix:
+
+```{r}
+keep <- rowSums(annotated$counts) >= 10
+sum(keep)
+
+# Correct: the denominator still describes the library that was sequenced.
+filtered <- bb_screen(
+  counts  = annotated$counts[keep, ],
+  totals  = annotated$totals,
+  data    = annotated$design,
+  formula = ~ group,
+  term    = "groupHigh",
+  min_total_count = 0
+)
+nrow(filtered)
+```
+
+## Performance
+
+Scanning is linear in the number of reads and effectively constant per read.
+On Unix-like systems `ncores` forks workers across samples:
+
+```{r, eval = FALSE}
+quantified <- barcs_quant(fasta, design, ncores = 4)
+```
+
+Each worker builds its own copy of the guide index, so this trades a little
+memory for close to linear speedup across samples. Windows always uses one
+worker. Long scans check for user interrupts, so a run against a full-size
+FASTQ can be stopped from the console.
