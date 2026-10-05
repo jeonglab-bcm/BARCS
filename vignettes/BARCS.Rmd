@@ -156,6 +156,49 @@ absorbed into the scale, but a screen with a large offset and a small spread
 would need the shift modelled instead, for instance with a normalisation term
 in the design.
 
+### Removing the shift with control totals
+
+The alternative to rescaling is to change the reference. `barcs_control_totals()`
+builds denominators that hold a chosen control class at a constant share of
+every library, so coefficients describe abundance *relative to the controls*
+rather than change in library share. Guides used to build the totals should not
+also be used to judge the result, so split the non-essential genes in half: one
+half normalises and calibrates, the other half is held out.
+
+```{r}
+nonessential <- evers_rt112$nonessential
+reference    <- nonessential[c(TRUE, FALSE)]
+held_out     <- setdiff(nonessential, reference)
+is_reference <- evers_rt112$guides$gene %in% reference
+
+control_totals <- barcs_control_totals(evers_rt112$counts, control = is_reference)
+
+score <- function(totals) {
+  fit <- bb_screen(
+    counts = evers_rt112$counts, data = evers_rt112$design,
+    formula = ~ group, term = "groupafter", totals = totals,
+    guide = evers_rt112$guides$guide, gene = evers_rt112$guides$gene
+  )
+  fit <- bb_calibrate_controls(fit, control = is_reference, method = "qq_slope")
+  genes <- bb_gene_stouffer(fit)
+  hits <- genes$gene[genes$fdr < 0.05]
+  c(
+    held_out_median_t = median(fit$raw_t_value[fit$gene %in% held_out]),
+    essential_called  = sum(hits %in% evers_rt112$essential),
+    held_out_called   = sum(hits %in% held_out)
+  )
+}
+
+rbind(library = score(totals), control = score(control_totals))
+```
+
+With full-library totals the held-out non-essential guides sit well above
+zero before calibration, and most of those genes are still called after it. With control totals they are
+centred near zero, every essential gene is still recovered, and far fewer
+held-out genes are called, though not none. The controls must genuinely not
+change for this to be valid, and the coefficients now answer a different
+question, so pick the reference before looking at the result.
+
 ## Moderating the guide dispersion
 
 With four residual degrees of freedom, each guide's own $\rho_i$ is a very

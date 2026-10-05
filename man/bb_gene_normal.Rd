@@ -20,6 +20,10 @@ standard deviation, standard error of the mean, t/z statistics, both
 reference p-values, the selected \code{p_value}, and FDR.
 }
 \description{
+\strong{Experimental.} \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} is the recommended gene summary;
+this function is retained as a sensitivity analysis.
+}
+\details{
 Treats the fitted guide coefficients within each gene as exchangeable
 observations \eqn{\widehat\beta_{gj} \sim N(\mu_g, \sigma_g^2)}. The gene
 effect is the arithmetic mean, the guide-effect standard deviation is
@@ -29,8 +33,7 @@ rather than known, the default p-value uses a Student t reference with
 \eqn{m_g-1} degrees of freedom. A plug-in standard-normal p-value is
 returned separately and can be selected explicitly for sensitivity
 analysis.
-}
-\details{
+
 This is guide-consistency inference, not biological-replicate inference.
 It deliberately gives every valid guide equal weight and does not use the
 guide-specific regression standard errors.
@@ -42,7 +45,7 @@ bb_gene_normal(barcs_example_guides(), min_guides = 3L)
 Other gene-level summaries: 
 \code{\link{bb_gene_consistency}()},
 \code{\link{bb_gene_eb_moderate}()},
-\code{\link{bb_gene_original}()},
-\code{\link{bb_gene_partial_pool}()}
+\code{\link{bb_gene_partial_pool}()},
+\code{\link{bb_gene_stouffer}()}
 }
 \concept{gene-level summaries}

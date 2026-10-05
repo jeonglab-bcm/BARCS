@@ -1,3 +1,33 @@
+# BARCS 0.2.0
+
+## Gene-level summaries
+
+* `bb_gene_stouffer()` is the recommended guide-to-gene summary: a directional
+  Stouffer combination of guide tests with the median guide coefficient as the
+  gene effect. It is the summary benchmarked in the BARCS manuscript and ranked
+  genes best in simulated FACS screens with known truth. `bb_gene_original()`
+  remains as an alias; its `method` column now reads `"stouffer"`.
+* `bb_gene_normal()`, `bb_gene_consistency()`, `bb_gene_partial_pool()`, and
+  `bb_gene_eb_moderate()` are marked experimental and documented as
+  sensitivity analyses.
+* `bb_gene_consistency()` now drops guides whose fit did not converge, like
+  the other summaries, and reports `converged_fraction` over all of a gene's
+  guides.
+
+## Denominators
+
+* New `barcs_control_totals()` builds beta-binomial denominators that hold a
+  chosen control class (non-targeting or safe-harbour guides) at a constant
+  share of each library, removing composition shifts. Pass the result to
+  `bb_screen(totals = )`. The main vignette shows it on `evers_rt112` with
+  held-out controls.
+
+## Package
+
+* Kyu-Won Lee added as an author.
+* Copyright holder named in `LICENSE`.
+* Added `inst/CITATION` and `CITATION.cff`.
+
 # BARCS 0.1.0
 
 First release. BARCS began as the regression layer inside CB2 and is now a

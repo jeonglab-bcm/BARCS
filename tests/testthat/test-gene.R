@@ -77,9 +77,9 @@ test_that("a gene may not mix control and non-control guides", {
   )
 })
 
-test_that("the original signed-z aggregation is unchanged", {
+test_that("the directional Stouffer aggregation is unchanged", {
   input <- barcs_example_guides()
-  original <- bb_gene_original(input)
+  original <- bb_gene_stouffer(input)
   consistent <- input$gene == "consistent"
 
   # The historical statistic converts each two-sided guide p-value back to a
@@ -92,7 +92,7 @@ test_that("the original signed-z aggregation is unchanged", {
     original$statistic[original$gene == "consistent"], expected,
     tolerance = 1e-6
   )
-  expect_true(all(original$method == "original"))
+  expect_true(all(original$method == "stouffer"))
   expect_true(all(original$fdr >= original$p_value))
 })
 
@@ -107,7 +107,7 @@ test_that("signed-z reduces to summed Wald statistics under a normal null", {
     input$estimate[consistent] / input$std_error[consistent]
   ) / sqrt(sum(consistent))
 
-  original <- bb_gene_original(input)
+  original <- bb_gene_stouffer(input)
   expect_equal(
     original$statistic[original$gene == "consistent"], expected,
     tolerance = 1e-6
@@ -199,7 +199,7 @@ test_that("gene summaries reject malformed input", {
     "`gene`, `estimate`, and `std_error`"
   )
   expect_error(
-    bb_gene_original(data.frame(gene = "a", estimate = 1)),
+    bb_gene_stouffer(data.frame(gene = "a", estimate = 1)),
     "`gene`, `estimate`, and `p_value`"
   )
   expect_error(
@@ -211,4 +211,31 @@ test_that("gene summaries reject malformed input", {
     bb_gene_consistency(barcs_example_guides(), min_guides = 50L),
     "At least two genes"
   )
+})
+
+test_that("bb_gene_original() is an alias of bb_gene_stouffer()", {
+  input <- barcs_example_guides()
+  expect_identical(bb_gene_original(input), bb_gene_stouffer(input))
+  expect_identical(
+    bb_gene_original(input, min_guides = 3L),
+    bb_gene_stouffer(input, min_guides = 3L)
+  )
+})
+
+test_that("bb_gene_consistency() drops guides whose fit did not converge", {
+  input <- barcs_example_guides()
+  flagged <- input
+  # Make one consistent guide wildly discordant, then mark it unconverged.
+  target <- which(flagged$gene == "consistent")[1L]
+  flagged$estimate[target] <- 5
+  flagged$converged[target] <- FALSE
+  dropped <- input[-target, ]
+
+  with_flag <- bb_gene_consistency(flagged, min_guides = 3L)
+  without <- bb_gene_consistency(dropped, min_guides = 3L)
+  row <- function(x) x[x$gene == "consistent", , drop = FALSE]
+
+  expect_equal(row(with_flag)$n_guides, 4L)
+  expect_equal(row(with_flag)$estimate, row(without)$estimate)
+  expect_equal(row(with_flag)$converged_fraction, 0.8)
 })

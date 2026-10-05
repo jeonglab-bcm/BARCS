@@ -33,6 +33,10 @@ uncertainty, heterogeneity (\code{tau2}, \code{i_squared}), influence diagnostic
 (\code{max_weight_fraction}, \code{leave_one_out_max_change}), p-value, and FDR.
 }
 \description{
+\strong{Experimental.} \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} is the recommended gene summary;
+this function is retained as a sensitivity analysis.
+}
+\details{
 Preserves every guide-level BARCS coefficient and standard error. For each
 gene, a DerSimonian-Laird guide-heterogeneity variance is estimated and
 guide effects are combined with weights
@@ -53,6 +57,6 @@ Other gene-level summaries:
 \code{\link{bb_gene_consistency}()},
 \code{\link{bb_gene_eb_moderate}()},
 \code{\link{bb_gene_normal}()},
-\code{\link{bb_gene_original}()}
+\code{\link{bb_gene_stouffer}()}
 }
 \concept{gene-level summaries}

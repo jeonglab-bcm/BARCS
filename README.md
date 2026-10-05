@@ -142,4 +142,4 @@ regression for SAGE. *BMC Bioinformatics*, 5, 144.
 
 ## License
 
-MIT © BARCS authors
+MIT © Hyun-Hwan Jeong

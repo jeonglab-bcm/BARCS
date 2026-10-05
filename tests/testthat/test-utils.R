@@ -54,3 +54,37 @@ test_that("the bundled screen has the documented shape", {
       evers_rt112$guides$gene
   ))
 })
+
+test_that("barcs_control_totals() holds the controls at a fixed share", {
+  counts <- cbind(
+    s1 = c(400, 600, 1000, 2000),
+    s2 = c(200, 300, 100, 400)
+  )
+  control <- c(TRUE, TRUE, FALSE, FALSE)
+  totals <- barcs_control_totals(counts, control)
+
+  expect_named(totals, c("s1", "s2"))
+  expect_true(all(totals == round(totals)))
+  # Control share is equal across samples ...
+  share <- colSums(counts[control, ]) / totals
+  expect_equal(share[[1]], share[[2]], tolerance = 1e-3)
+  # ... and the totals keep the mean library size.
+  expect_equal(mean(totals), mean(colSums(counts)), tolerance = 1e-3)
+})
+
+test_that("barcs_control_totals() never falls below a guide count", {
+  counts <- cbind(s1 = c(1, 1, 10000), s2 = c(1, 1, 10000))
+  totals <- barcs_control_totals(counts, c(TRUE, TRUE, FALSE))
+  expect_true(all(totals >= apply(counts, 2L, max)))
+})
+
+test_that("barcs_control_totals() validates its input", {
+  counts <- cbind(s1 = c(1, 2, 3), s2 = c(0, 2, 3))
+  expect_error(barcs_control_totals(counts, c(TRUE, FALSE)), "one per guide")
+  expect_error(barcs_control_totals(counts, c(FALSE, FALSE, FALSE)), "at least one")
+  expect_error(
+    barcs_control_totals(cbind(s1 = c(1, 2), s2 = c(0, 2)), c(TRUE, FALSE)),
+    "no reads on the normalising control"
+  )
+  expect_error(barcs_control_totals(list(1)), "numeric matrix")
+})

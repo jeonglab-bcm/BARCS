@@ -8,3 +8,6 @@
 ^\.Rhistory$
 ^\.RData$
 ^\.DS_Store$
+^CITATION\.cff$
+^doc$
+^Meta$

@@ -37,6 +37,10 @@ estimated \code{prior_tau2} and the supplied \code{prior_df} are stored as
 attributes.
 }
 \description{
+\strong{Experimental.} \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} is the recommended gene summary;
+this function is retained as a sensitivity analysis.
+}
+\details{
 Starts from the same random-effects guide model as
 \code{\link[=bb_gene_partial_pool]{bb_gene_partial_pool()}}. A screen-wide heterogeneity variance is estimated
 by pooling excess Cochran Q across genes. Each noisy gene-specific
@@ -60,7 +64,7 @@ bb_gene_eb_moderate(
 Other gene-level summaries: 
 \code{\link{bb_gene_consistency}()},
 \code{\link{bb_gene_normal}()},
-\code{\link{bb_gene_original}()},
-\code{\link{bb_gene_partial_pool}()}
+\code{\link{bb_gene_partial_pool}()},
+\code{\link{bb_gene_stouffer}()}
 }
 \concept{gene-level summaries}
