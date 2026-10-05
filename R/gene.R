@@ -268,11 +268,16 @@ bb_gene_consistency <- function(result, control = NULL, min_guides = 3L,
 #' reported gene `estimate` is the median guide coefficient, which limits the
 #' influence of a single extreme guide.
 #'
-#' The \eqn{\sqrt{m_g}}{sqrt(m_g)} denominator assumes independent null guide
-#' scores. Guides targeting one gene share every library, so shared artefacts
-#' induce positive within-gene correlation and make `p_value` and `fdr`
-#' anti-conservative, increasingly so with more guides per gene. Rank genes by
-#' `statistic` with confidence, but check the gene-level false-discovery rate
+#' Guides targeting one gene share every library, so noise they share makes
+#' their null scores positively correlated, and the plain
+#' \eqn{\sqrt{m_g}}{sqrt(m_g)} denominator then makes `p_value` and `fdr`
+#' anti-conservative, increasingly so with more guides per gene. With an
+#' average within-gene correlation \eqn{r}, the null variance of
+#' \eqn{\sum_j z_{gj}}{sum_j z_gj} is \eqn{m_g + m_g(m_g - 1)r}{m_g + m_g(m_g - 1) r},
+#' and the statistic is divided by its square root instead. By default
+#' \eqn{r} is the `"guide_correlation"` attribute that [bb_screen()] estimates
+#' from guide residuals, which a real gene effect does not inflate; it is zero
+#' when the attribute is absent. Check the gene-level false-discovery rate
 #' against negative controls aggregated the same way before reporting it.
 #' Because the input is the guide `p_value` column, guide-level calibration by
 #' [bb_calibrate_controls()] or [bb_moderate_dispersion()] carries through.
@@ -290,16 +295,21 @@ bb_gene_consistency <- function(result, control = NULL, min_guides = 3L,
 #'   calibrated by [bb_calibrate_controls()] or moderated by
 #'   [bb_moderate_dispersion()].
 #' @param min_guides Minimum number of finite guide results required per gene.
+#' @param correlation Average within-gene correlation of null guide scores,
+#'   between 0 and 1. Defaults to the `"guide_correlation"` attribute of
+#'   `result`, or 0 when it is absent.
 #'
 #' @return One row per testable gene with the median guide `estimate`, the
 #'   directional Stouffer `statistic`, its two-sided `p_value`, the
-#'   Benjamini-Hochberg `fdr`, and guide-agreement diagnostics.
+#'   Benjamini-Hochberg `fdr`, and guide-agreement diagnostics. The
+#'   correlation used is stored as the attribute `"guide_correlation"`.
 #'
 #' @family gene-level summaries
 #' @export
 #' @examples
 #' bb_gene_stouffer(barcs_example_guides())
-bb_gene_stouffer <- function(result, min_guides = 1L) {
+bb_gene_stouffer <- function(result, min_guides = 1L,
+                             correlation = attr(result, "guide_correlation")) {
   required <- c("gene", "estimate", "p_value")
   if (!is.data.frame(result) || !all(required %in% names(result))) {
     .bb_stop(
@@ -314,6 +324,13 @@ bb_gene_stouffer <- function(result, min_guides = 1L) {
     .bb_stop("`min_guides` must be one positive integer.")
   }
   min_guides <- as.integer(min_guides)
+  if (is.null(correlation)) {
+    correlation <- 0
+  }
+  if (!is.numeric(correlation) || length(correlation) != 1L ||
+      !is.finite(correlation) || correlation < 0 || correlation >= 1) {
+    .bb_stop("`correlation` must be one number in [0, 1).")
+  }
   valid <- is.finite(result$estimate) &
     is.finite(result$p_value) &
     result$p_value >= 0 &
@@ -332,7 +349,8 @@ bb_gene_stouffer <- function(result, min_guides = 1L) {
       pmax(result$p_value[index] / 2, .Machine$double.xmin),
       lower.tail = FALSE
     )
-    combined_z <- sum(signed_z) / sqrt(length(signed_z))
+    m <- length(signed_z)
+    combined_z <- sum(signed_z) / sqrt(m + m * (m - 1) * correlation)
     gene_estimate <- stats::median(result$estimate[index])
     data.frame(
       gene = gene_name,
@@ -363,13 +381,15 @@ bb_gene_stouffer <- function(result, min_guides = 1L) {
   gene_result <- do.call(rbind, pieces)
   rownames(gene_result) <- NULL
   gene_result$fdr <- stats::p.adjust(gene_result$p_value, method = "BH")
+  attr(gene_result, "guide_correlation") <- correlation
   gene_result
 }
 
 #' @rdname bb_gene_stouffer
 #' @export
-bb_gene_original <- function(result, min_guides = 1L) {
-  bb_gene_stouffer(result, min_guides = min_guides)
+bb_gene_original <- function(result, min_guides = 1L,
+                             correlation = attr(result, "guide_correlation")) {
+  bb_gene_stouffer(result, min_guides = min_guides, correlation = correlation)
 }
 
 #' Test whether normally distributed guide coefficients have nonzero mean

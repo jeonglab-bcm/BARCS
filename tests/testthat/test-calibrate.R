@@ -162,3 +162,12 @@ test_that("bb_moderate_dispersion validates its arguments", {
     "share one residual degrees-of-freedom value"
   )
 })
+
+test_that("bb_moderate_dispersion() refuses an already moderated result", {
+  input <- fixture_moderation()
+  moderated <- bb_moderate_dispersion(input, trend = FALSE)
+  expect_error(bb_moderate_dispersion(moderated), "already moderated")
+  flagged <- input
+  attr(flagged, "moderated") <- TRUE
+  expect_error(bb_moderate_dispersion(flagged), "already moderated")
+})

@@ -239,3 +239,21 @@ test_that("bb_gene_consistency() drops guides whose fit did not converge", {
   expect_equal(row(with_flag)$estimate, row(without)$estimate)
   expect_equal(row(with_flag)$converged_fraction, 0.8)
 })
+
+test_that("bb_gene_stouffer() widens the null by the guide correlation", {
+  input <- barcs_example_guides()
+  plain <- bb_gene_stouffer(input)
+  widened <- bb_gene_stouffer(input, correlation = 0.3)
+  m <- plain$n_guides
+  expect_equal(
+    widened$statistic,
+    plain$statistic * sqrt(m) / sqrt(m + m * (m - 1) * 0.3)
+  )
+  expect_equal(attr(widened, "guide_correlation"), 0.3)
+  expect_equal(attr(plain, "guide_correlation"), 0)
+
+  # The attribute set by bb_screen() is picked up by default.
+  attr(input, "guide_correlation") <- 0.3
+  expect_equal(bb_gene_stouffer(input)$statistic, widened$statistic)
+  expect_error(bb_gene_stouffer(input, correlation = 1), "\\[0, 1\\)")
+})

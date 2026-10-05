@@ -97,6 +97,11 @@ unique(screen$df)
 head(screen[order(screen$p_value), c("gene", "estimate", "std_error", "p_value", "fdr")])
 ```
 
+The reference distribution has more than the four degrees of freedom the
+design supports because `bb_screen()` moderates the guide dispersions by
+default, which adds the prior degrees of freedom it estimates from the whole
+library. The section on moderation below explains what that buys.
+
 The most strongly depleted guides target proteasome and ribosome subunits,
 which is what a dropout screen in a proliferating cell line should find.
 
@@ -138,7 +143,9 @@ attr(calibrated, "control_scale")
 mean(calibrated$p_value[control] < 0.05)
 ```
 
-The control rejection rate drops from 95% to about 3% — the right order of
+The control rejection rate drops from
+`r round(100 * mean(screen$p_value[control] < 0.05))`% to about
+`r round(100 * mean(calibrated$p_value[control] < 0.05))`% — the right order of
 magnitude, and on the conservative side of the nominal 5%, which is the side
 the `min_scale = 1` floor is designed to err on. The original columns are kept
 with a `raw_` prefix, so nothing is lost:
@@ -202,22 +209,58 @@ question, so pick the reference before looking at the result.
 ## Moderating the guide dispersion
 
 With four residual degrees of freedom, each guide's own $\rho_i$ is a very
-noisy estimate. `bb_moderate_dispersion()` shrinks each guide's variance
-inflation toward a trend fitted across the whole library, using the scaled-F
-moment estimator of Smyth (2004), and returns a moderated $t$ on
+noisy estimate. That is why `bb_screen()` passes its fits through
+`bb_moderate_dispersion()` by default: each guide's variance inflation is shrunk
+toward a trend fitted across the whole library, using the scaled-F moment
+estimator of Smyth (2004), and the moderated $t$ is referred to
 `df_residual + prior_df` degrees of freedom.
 
 ```{r}
-moderated <- bb_moderate_dispersion(screen)
-
-attr(moderated, "prior_df")
-attr(moderated, "df_total")
+attr(screen, "moderated")
+attr(screen, "prior_df")
+attr(screen, "df_total")
 ```
 
 The prior is worth many times the four degrees of freedom the design alone
-supports, which is exactly why moderation is worth doing at this replication
-level. It is independent of control calibration; the two address different
-problems and can be combined.
+supports, which is exactly why moderation matters at this replication level.
+On the transcriptome-scale Cas13 screens benchmarked for the BARCS manuscript,
+moderation is what brought BARCS's essential-gene ranking level with
+limma-voom and edgeR-QL. The unmoderated columns are kept with an
+`unmoderated_` prefix, and `moderate = FALSE` turns it off:
+
+```{r}
+unmoderated <- bb_screen(
+  counts  = evers_rt112$counts,
+  totals  = totals,
+  data    = evers_rt112$design,
+  formula = ~ group,
+  term    = "groupafter",
+  moderate = FALSE
+)
+unique(unmoderated$df)
+```
+
+Moderation is independent of control calibration; the two address different
+problems and combine as above.
+
+## Are a gene's guides independent?
+
+`bb_gene_stouffer()` adds guide evidence as if a gene's guides were
+independent. When `gene` is supplied, `bb_screen()` checks that assumption by
+correlating guide residuals within genes, after subtracting the correlation
+between guides of different genes. The fitted mean has already absorbed every
+design effect, including a real gene effect, so only noise that a gene's
+guides share shows up here.
+
+```{r}
+attr(screen, "guide_correlation_detail")
+```
+
+The estimate is close to zero, as it has been on every real screen we have
+checked. Where it is not, `bb_gene_stouffer()` reads the `"guide_correlation"`
+attribute and widens the gene statistic's null variance from $m_g$ to
+$m_g + m_g(m_g - 1)r$, so correlated guides cannot masquerade as independent
+evidence.
 
 ## Beyond two groups
 

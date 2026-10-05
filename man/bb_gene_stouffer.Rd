@@ -5,9 +5,17 @@
 \alias{bb_gene_original}
 \title{Combine guide tests into a gene statistic by directional Stouffer}
 \usage{
-bb_gene_stouffer(result, min_guides = 1L)
+bb_gene_stouffer(
+  result,
+  min_guides = 1L,
+  correlation = attr(result, "guide_correlation")
+)
 
-bb_gene_original(result, min_guides = 1L)
+bb_gene_original(
+  result,
+  min_guides = 1L,
+  correlation = attr(result, "guide_correlation")
+)
 }
 \arguments{
 \item{result}{Guide-level result returned by \code{\link[=bb_screen]{bb_screen()}}, optionally
@@ -15,11 +23,16 @@ calibrated by \code{\link[=bb_calibrate_controls]{bb_calibrate_controls()}} or m
 \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}}.}
 
 \item{min_guides}{Minimum number of finite guide results required per gene.}
+
+\item{correlation}{Average within-gene correlation of null guide scores,
+between 0 and 1. Defaults to the \code{"guide_correlation"} attribute of
+\code{result}, or 0 when it is absent.}
 }
 \value{
 One row per testable gene with the median guide \code{estimate}, the
 directional Stouffer \code{statistic}, its two-sided \code{p_value}, the
-Benjamini-Hochberg \code{fdr}, and guide-agreement diagnostics.
+Benjamini-Hochberg \code{fdr}, and guide-agreement diagnostics. The
+correlation used is stored as the attribute \code{"guide_correlation"}.
 }
 \description{
 The recommended guide-to-gene summary, and the one used throughout the
@@ -34,11 +47,16 @@ reported gene \code{estimate} is the median guide coefficient, which limits the
 influence of a single extreme guide.
 }
 \details{
-The \eqn{\sqrt{m_g}}{sqrt(m_g)} denominator assumes independent null guide
-scores. Guides targeting one gene share every library, so shared artefacts
-induce positive within-gene correlation and make \code{p_value} and \code{fdr}
-anti-conservative, increasingly so with more guides per gene. Rank genes by
-\code{statistic} with confidence, but check the gene-level false-discovery rate
+Guides targeting one gene share every library, so noise they share makes
+their null scores positively correlated, and the plain
+\eqn{\sqrt{m_g}}{sqrt(m_g)} denominator then makes \code{p_value} and \code{fdr}
+anti-conservative, increasingly so with more guides per gene. With an
+average within-gene correlation \eqn{r}, the null variance of
+\eqn{\sum_j z_{gj}}{sum_j z_gj} is \eqn{m_g + m_g(m_g - 1)r}{m_g + m_g(m_g - 1) r},
+and the statistic is divided by its square root instead. By default
+\eqn{r} is the \code{"guide_correlation"} attribute that \code{\link[=bb_screen]{bb_screen()}} estimates
+from guide residuals, which a real gene effect does not inflate; it is zero
+when the attribute is absent. Check the gene-level false-discovery rate
 against negative controls aggregated the same way before reporting it.
 Because the input is the guide \code{p_value} column, guide-level calibration by
 \code{\link[=bb_calibrate_controls]{bb_calibrate_controls()}} or \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}} carries through.

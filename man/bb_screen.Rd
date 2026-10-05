@@ -13,6 +13,7 @@ bb_screen(
   guide = rownames(counts),
   gene = NULL,
   min_total_count = 10,
+  moderate = NULL,
   ncores = 1L,
   ...
 )
@@ -42,6 +43,11 @@ summaries.}
 \item{min_total_count}{Guides whose summed count falls below this receive
 missing results.}
 
+\item{moderate}{Moderate guide dispersions with \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}}.
+\code{NULL} (default) moderates when at least 50 guides are usable and skips
+moderation otherwise; \code{TRUE} always moderates and errors if that is not
+possible; \code{FALSE} never moderates.}
+
 \item{ncores}{Number of forked workers on Unix-like systems. Windows always
 uses one worker.}
 
@@ -52,7 +58,12 @@ A data frame with one row per guide and columns \code{guide}, the
 reported coefficient's \code{estimate}, \code{std_error}, \code{t_value}, \code{df} and
 \code{p_value}, the fitted dispersion \code{rho}, the untruncated binomial Pearson
 statistic \code{pearson_null}, the guide's \code{mean_cpm}, a \code{converged} flag, and
-the Benjamini-Hochberg \code{fdr}.
+the Benjamini-Hochberg \code{fdr}. When moderation ran, the columns documented
+in \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}} are added and the inferential columns are
+the moderated ones. The attribute \code{"moderated"} records whether
+moderation ran, and \code{"guide_correlation"} holds the within-gene residual
+correlation when \code{gene} was supplied, with its components in
+\code{"guide_correlation_detail"}.
 }
 \description{
 Runs \code{\link[=bbreg]{bbreg()}} on every row of a count matrix against a shared sample
@@ -63,6 +74,21 @@ adds a Benjamini-Hochberg false discovery rate across guides.
 Guides whose total count falls below \code{min_total_count}, and guides whose
 fit errors, yield an all-missing row with \code{converged = FALSE} rather than
 aborting the screen.
+
+By default the guide dispersions are then moderated toward a library-wide
+abundance trend with \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}} whenever at least 50 guides
+are usable. A pooled screen leaves each guide only a few residual degrees of
+freedom, and borrowing strength across guides is what lets the guide tests
+match the ranking of limma-voom and edgeR-QL on real screens. Set
+\code{moderate = FALSE} for the unmoderated fit.
+
+When \code{gene} is supplied, \code{bb_screen()} also estimates the average
+correlation of guide residuals within genes, after subtracting the average
+correlation between genes. Residuals exclude every fitted design effect, so
+a real gene effect does not register as correlation, but noise shared by a
+gene's guides does. The estimate is stored as the attribute
+\code{"guide_correlation"} and used by \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} to widen the gene
+statistic's null distribution accordingly.
 }
 \examples{
 set.seed(4)
