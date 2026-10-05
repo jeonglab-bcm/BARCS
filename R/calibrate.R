@@ -186,6 +186,10 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
 #' square root of the moderated-to-fitted inflation ratio is exact when the
 #' sample library totals are equal and is a close approximation otherwise.
 #'
+#' [bb_screen()] calls this function by default, so it is needed directly
+#' only to moderate an unmoderated fit (`bb_screen(moderate = FALSE)`) with
+#' non-default settings. Moderating an already moderated result is an error.
+#'
 #' This is guide-level variance moderation. It is independent of, and can be
 #' combined with, the gene-level moderation in [bb_gene_eb_moderate()].
 #'
@@ -250,6 +254,13 @@ bb_moderate_dispersion <- function(result, trend = TRUE, one_way = FALSE,
   if (length(min_guides) != 1L || !is.finite(min_guides) || min_guides < 2) {
     .bb_stop("`min_guides` must be at least two.")
   }
+  if (isTRUE(attr(result, "moderated")) ||
+      "unmoderated_std_error" %in% names(result)) {
+    .bb_stop(paste0(
+      "`result` is already moderated; `bb_screen()` moderates by default. ",
+      "Refit with `bb_screen(moderate = FALSE)` to moderate it differently."
+    ))
+  }
 
   usable <- is.finite(result$pearson_null) & result$pearson_null >= 0 &
     is.finite(result$std_error) & result$std_error > 0 &
@@ -277,8 +288,10 @@ bb_moderate_dispersion <- function(result, trend = TRUE, one_way = FALSE,
     smooth <- stats::lowess(
       abundance[ordering], log_inflation[ordering], f = span
     )
+    # Guides with identical abundance give tied smoother abscissae; average
+    # them explicitly rather than letting approx() warn on every screen.
     trend_log <- stats::approx(
-      smooth$x, smooth$y, xout = abundance, rule = 2
+      smooth$x, smooth$y, xout = abundance, rule = 2, ties = mean
     )$y
   } else {
     trend_log <- rep(mean(log_inflation), length(log_inflation))

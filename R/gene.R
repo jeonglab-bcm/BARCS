@@ -6,6 +6,9 @@
 
 #' Test a shared guide effect against an empirical gene-level null
 #'
+#' **Experimental.** [bb_gene_stouffer()] is the recommended gene summary;
+#' this function is retained as a sensitivity analysis.
+#'
 #' This function is intended for exploratory screens in which several
 #' independently designed guides target each gene but biological replication
 #' is too limited for reliable guide-level reference distributions. It does
@@ -108,10 +111,13 @@ bb_gene_consistency <- function(result, control = NULL, min_guides = 3L,
   valid <- is.finite(result$estimate) &
     is.finite(standard_error) &
     standard_error > 0
+  if ("converged" %in% names(result)) {
+    valid <- valid & !is.na(result$converged) & result$converged
+  }
   groups <- split(seq_len(nrow(result)), result$gene)
   pieces <- lapply(names(groups), function(gene_name) {
-    index <- groups[[gene_name]]
-    index <- index[valid[index]]
+    all_index <- groups[[gene_name]]
+    index <- all_index[valid[all_index]]
     if (length(index) < min_guides) {
       return(NULL)
     }
@@ -136,7 +142,7 @@ bb_gene_consistency <- function(result, control = NULL, min_guides = 3L,
       raw_statistic = gene_estimate / gene_standard_error,
       guide_direction_agreement = agreement,
       converged_fraction = if ("converged" %in% names(result)) {
-        mean(result$converged[index], na.rm = TRUE)
+        mean(result$converged[all_index], na.rm = TRUE)
       } else {
         NA_real_
       },
@@ -249,25 +255,61 @@ bb_gene_consistency <- function(result, control = NULL, min_guides = 3L,
   )
 }
 
-#' Reproduce the original BARCS guide-to-gene statistic
+#' Combine guide tests into a gene statistic by directional Stouffer
 #'
-#' Converts each two-sided guide p-value to a signed standard-normal score and
-#' sums those scores within genes. This function exists to keep the historical
-#' BARCS benchmark calculation explicit while newer effect-pooling methods are
-#' evaluated beside it.
+#' The recommended guide-to-gene summary, and the one used throughout the
+#' BARCS manuscript. Each two-sided guide p-value is converted back to a
+#' standard-normal deviate carrying the sign of its coefficient,
+#' \deqn{z_{gj} = \mathrm{sign}(\widehat\beta_{gj})\,
+#' \Phi^{-1}(1 - p_{gj}/2),}{z_gj = sign(beta_gj) * qnorm(1 - p_gj / 2),}
+#' and the deviates of the \eqn{m_g} valid guides are combined as
+#' \eqn{Z_g = \sum_j z_{gj} / \sqrt{m_g}}{Z_g = sum_j z_gj / sqrt(m_g)}.
+#' Concordant guides reinforce one another and discordant guides cancel. The
+#' reported gene `estimate` is the median guide coefficient, which limits the
+#' influence of a single extreme guide.
+#'
+#' Guides targeting one gene share every library, so noise they share makes
+#' their null scores positively correlated, and the plain
+#' \eqn{\sqrt{m_g}}{sqrt(m_g)} denominator then makes `p_value` and `fdr`
+#' anti-conservative, increasingly so with more guides per gene. With an
+#' average within-gene correlation \eqn{r}, the null variance of
+#' \eqn{\sum_j z_{gj}}{sum_j z_gj} is \eqn{m_g + m_g(m_g - 1)r}{m_g + m_g(m_g - 1) r},
+#' and the statistic is divided by its square root instead. By default
+#' \eqn{r} is the `"guide_correlation"` attribute that [bb_screen()] estimates
+#' from guide residuals, which a real gene effect does not inflate; it is zero
+#' when the attribute is absent. Check the gene-level false-discovery rate
+#' against negative controls aggregated the same way before reporting it.
+#' Because the input is the guide `p_value` column, guide-level calibration by
+#' [bb_calibrate_controls()] or [bb_moderate_dispersion()] carries through.
+#'
+#' In most simulated FACS scenarios with five guides per gene, this summary
+#' gave higher average precision and F1 than the effect-pooling alternatives
+#' [bb_gene_normal()], [bb_gene_consistency()], [bb_gene_partial_pool()], and
+#' [bb_gene_eb_moderate()], which are retained as experimental sensitivity
+#' analyses.
+#'
+#' `bb_gene_original()` is the earlier name of this function and is kept as an
+#' alias.
 #'
 #' @param result Guide-level result returned by [bb_screen()], optionally
-#'   calibrated by [bb_calibrate_controls()].
+#'   calibrated by [bb_calibrate_controls()] or moderated by
+#'   [bb_moderate_dispersion()].
 #' @param min_guides Minimum number of finite guide results required per gene.
+#' @param correlation Average within-gene correlation of null guide scores,
+#'   between 0 and 1. Defaults to the `"guide_correlation"` attribute of
+#'   `result`, or 0 when it is absent.
 #'
-#' @return One row per testable gene with the historical signed-z `statistic`,
-#'   its `p_value`, and the Benjamini-Hochberg `fdr`.
+#' @return One row per testable gene with the median guide `estimate`, the
+#'   directional Stouffer `statistic`, its two-sided `p_value`, the
+#'   Benjamini-Hochberg `fdr`, and guide-agreement diagnostics. The
+#'   correlation used is stored as the attribute `"guide_correlation"`.
 #'
 #' @family gene-level summaries
 #' @export
 #' @examples
-#' bb_gene_original(barcs_example_guides())
-bb_gene_original <- function(result, min_guides = 1L) {
+#' bb_gene_stouffer(barcs_example_guides())
+bb_gene_stouffer <- function(result, min_guides = 1L,
+                             correlation = attr(result, "guide_correlation")) {
   required <- c("gene", "estimate", "p_value")
   if (!is.data.frame(result) || !all(required %in% names(result))) {
     .bb_stop(
@@ -282,6 +324,13 @@ bb_gene_original <- function(result, min_guides = 1L) {
     .bb_stop("`min_guides` must be one positive integer.")
   }
   min_guides <- as.integer(min_guides)
+  if (is.null(correlation)) {
+    correlation <- 0
+  }
+  if (!is.numeric(correlation) || length(correlation) != 1L ||
+      !is.finite(correlation) || correlation < 0 || correlation >= 1) {
+    .bb_stop("`correlation` must be one number in [0, 1).")
+  }
   valid <- is.finite(result$estimate) &
     is.finite(result$p_value) &
     result$p_value >= 0 &
@@ -300,7 +349,8 @@ bb_gene_original <- function(result, min_guides = 1L) {
       pmax(result$p_value[index] / 2, .Machine$double.xmin),
       lower.tail = FALSE
     )
-    combined_z <- sum(signed_z) / sqrt(length(signed_z))
+    m <- length(signed_z)
+    combined_z <- sum(signed_z) / sqrt(m + m * (m - 1) * correlation)
     gene_estimate <- stats::median(result$estimate[index])
     data.frame(
       gene = gene_name,
@@ -320,7 +370,7 @@ bb_gene_original <- function(result, min_guides = 1L) {
       } else {
         NA_real_
       },
-      method = "original",
+      method = "stouffer",
       row.names = NULL
     )
   })
@@ -331,10 +381,21 @@ bb_gene_original <- function(result, min_guides = 1L) {
   gene_result <- do.call(rbind, pieces)
   rownames(gene_result) <- NULL
   gene_result$fdr <- stats::p.adjust(gene_result$p_value, method = "BH")
+  attr(gene_result, "guide_correlation") <- correlation
   gene_result
 }
 
+#' @rdname bb_gene_stouffer
+#' @export
+bb_gene_original <- function(result, min_guides = 1L,
+                             correlation = attr(result, "guide_correlation")) {
+  bb_gene_stouffer(result, min_guides = min_guides, correlation = correlation)
+}
+
 #' Test whether normally distributed guide coefficients have nonzero mean
+#'
+#' **Experimental.** [bb_gene_stouffer()] is the recommended gene summary;
+#' this function is retained as a sensitivity analysis.
 #'
 #' Treats the fitted guide coefficients within each gene as exchangeable
 #' observations \eqn{\widehat\beta_{gj} \sim N(\mu_g, \sigma_g^2)}. The gene
@@ -634,6 +695,9 @@ bb_gene_normal <- function(result, min_guides = 3L,
 
 #' Combine guide effects by random-effects partial pooling
 #'
+#' **Experimental.** [bb_gene_stouffer()] is the recommended gene summary;
+#' this function is retained as a sensitivity analysis.
+#'
 #' Preserves every guide-level BARCS coefficient and standard error. For each
 #' gene, a DerSimonian-Laird guide-heterogeneity variance is estimated and
 #' guide effects are combined with weights
@@ -684,6 +748,9 @@ bb_gene_partial_pool <- function(result, control = NULL, min_guides = 2L,
 }
 
 #' Combine guide effects with empirical-Bayes heterogeneity moderation
+#'
+#' **Experimental.** [bb_gene_stouffer()] is the recommended gene summary;
+#' this function is retained as a sensitivity analysis.
 #'
 #' Starts from the same random-effects guide model as
 #' [bb_gene_partial_pool()]. A screen-wide heterogeneity variance is estimated

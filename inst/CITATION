@@ -1,0 +1,41 @@
+bibentry(
+  bibtype = "Manual",
+  title = "{BARCS}: Beta-Binomial Analysis and Regression for {CRISPR} Pooled Screens",
+  author = c(
+    person("Hyun-Hwan", "Jeong"),
+    person("Kyu-Won", "Lee")
+  ),
+  year = "2026",
+  note = paste("R package version", utils::packageVersion("BARCS")),
+  url = "https://github.com/jeonglab-bcm/BARCS",
+  textVersion = paste0(
+    "Jeong H-H, Lee K-W (2026). BARCS: Beta-Binomial Analysis and ",
+    "Regression for CRISPR Pooled Screens. R package version ",
+    utils::packageVersion("BARCS"), ". https://github.com/jeonglab-bcm/BARCS"
+  )
+)
+
+bibentry(
+  bibtype = "Article",
+  title = paste(
+    "Beta-binomial modeling of {CRISPR} pooled screen data identifies",
+    "target genes with greater sensitivity and fewer false negatives"
+  ),
+  author = c(
+    person("Hyun-Hwan", "Jeong"), person("Seon Young", "Kim"),
+    person("Maxime W. C.", "Rousseaux"), person("Huda Y.", "Zoghbi"),
+    person("Zhandong", "Liu")
+  ),
+  journal = "Genome Research",
+  year = "2019",
+  volume = "29",
+  number = "6",
+  pages = "999--1008",
+  doi = "10.1101/gr.245571.118",
+  textVersion = paste(
+    "Jeong H-H, Kim SY, Rousseaux MWC, Zoghbi HY, Liu Z (2019).",
+    "Beta-binomial modeling of CRISPR pooled screen data identifies target",
+    "genes with greater sensitivity and fewer false negatives.",
+    "Genome Research, 29(6), 999-1008. doi:10.1101/gr.245571.118"
+  )
+)

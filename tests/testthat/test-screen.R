@@ -150,3 +150,81 @@ test_that("forked and serial screens agree", {
   forked <- bb_screen(counts, data, ~arm, term = "arm", ncores = 2L)
   expect_equal(serial, forked)
 })
+
+# Guides x samples counts with optional within-gene shared noise and a gene
+# effect on `group`. Shared noise enters per gene and sample, which is exactly
+# what makes a gene's guides correlated beyond the design.
+fixture_correlated_screen <- function(correlation = 0, effect = 0,
+                                      n_genes = 60L, guides = 4L,
+                                      seed = 77) {
+  set.seed(seed)
+  n_samples <- 8L
+  group <- rep(0:1, each = n_samples / 2L)
+  gene <- rep(sprintf("G%03d", seq_len(n_genes)), each = guides)
+  total <- rep(200000, n_samples)
+  shared <- matrix(rnorm(n_genes * n_samples), n_genes)[
+    rep(seq_len(n_genes), each = guides), ]
+  noise <- sqrt(correlation) * shared +
+    sqrt(1 - correlation) * matrix(rnorm(length(gene) * n_samples),
+                                   length(gene))
+  eta <- -7 + 0.25 * noise +
+    outer(rep(effect, length(gene)), group)
+  counts <- matrix(rbinom(length(eta), total[1], plogis(eta)),
+                   nrow = length(gene))
+  list(counts = counts, gene = gene, data = data.frame(group = group),
+       total = total)
+}
+
+test_that("bb_screen() moderates by default once enough guides are usable", {
+  x <- fixture_correlated_screen()
+  moderated <- bb_screen(x$counts, x$data, ~ group, "group",
+                         totals = x$total, gene = x$gene,
+                         guide = sprintf("g%03d", seq_along(x$gene)))
+  plain <- bb_screen(x$counts, x$data, ~ group, "group",
+                     totals = x$total, gene = x$gene,
+                     guide = sprintf("g%03d", seq_along(x$gene)),
+                     moderate = FALSE)
+  expect_true(attr(moderated, "moderated"))
+  expect_false(attr(plain, "moderated"))
+  expect_true("unmoderated_p_value" %in% names(moderated))
+  expect_equal(moderated$estimate, plain$estimate)
+  expect_equal(moderated$unmoderated_p_value, plain$p_value)
+  expect_error(
+    bb_screen(x$counts[1:8, ], x$data, ~ group, "group",
+              totals = x$total, guide = sprintf("g%d", 1:8),
+              moderate = TRUE),
+    "usable guide fits"
+  )
+  expect_error(
+    bb_screen(x$counts, x$data, ~ group, "group", totals = x$total,
+              guide = sprintf("g%03d", seq_along(x$gene)), moderate = NA),
+    "`moderate` must be"
+  )
+})
+
+test_that("guide correlation detects shared noise but not real effects", {
+  screen_correlation <- function(...) {
+    x <- fixture_correlated_screen(...)
+    attr(bb_screen(x$counts, x$data, ~ group, "group", totals = x$total,
+                   gene = x$gene,
+                   guide = sprintf("g%03d", seq_along(x$gene)),
+                   moderate = FALSE), "guide_correlation")
+  }
+  independent <- screen_correlation(correlation = 0)
+  correlated <- screen_correlation(correlation = 0.5)
+  # Every guide of every gene shares a large effect, but the noise is
+  # independent: the fitted mean absorbs the effect, so residuals stay
+  # uncorrelated.
+  effect_only <- screen_correlation(correlation = 0, effect = 1)
+
+  expect_lt(independent, 0.08)
+  expect_lt(effect_only, 0.08)
+  expect_gt(correlated, 0.25)
+})
+
+test_that("bb_screen() records no correlation without genes", {
+  x <- fixture_correlated_screen(n_genes = 15L)
+  result <- bb_screen(x$counts, x$data, ~ group, "group", totals = x$total,
+                      guide = sprintf("g%03d", seq_along(x$gene)))
+  expect_null(attr(result, "guide_correlation"))
+})

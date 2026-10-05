@@ -34,8 +34,8 @@ The exported functions follow the order in which an analysis meets them:
 \item \code{\link[=bb_calibrate_controls]{bb_calibrate_controls()}} and \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}} recalibrate the
 guide-level tests using negative controls and a library-wide dispersion
 trend.
-\item The \verb{bb_gene_*()} functions provide optional, explicitly labelled
-guide-to-gene summaries.
+\item \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} summarises guides to genes. The other
+\verb{bb_gene_*()} functions are experimental sensitivity analyses.
 }
 }
 
@@ -64,6 +64,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Hyun-Hwan Jeong \email{hyun-hwan.jeong@bcm.edu} [copyright holder]
+
+Authors:
+\itemize{
+  \item Kyu-Won Lee \email{kyuwon.lee@bcm.edu}
+}
 
 }
 \keyword{internal}

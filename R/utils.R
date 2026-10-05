@@ -85,3 +85,71 @@ barcs_example_guides <- function() {
   result$fdr <- stats::p.adjust(result$p_value, method = "BH")
   result
 }
+
+#' Control-based library totals
+#'
+#' Builds beta-binomial denominators that hold a chosen control class at a
+#' constant share of every library, for use as the `totals` argument of
+#' [bb_screen()]. Coefficients fitted against these totals describe guide
+#' abundance relative to the controls rather than change in library share.
+#'
+#' The default full-library totals let widespread depletion raise the share of
+#' every surviving guide, which shifts the coefficients of unchanged guides
+#' away from zero. Normalising on controls that are expected not to change,
+#' such as non-targeting or safe-harbour guides, removes that composition
+#' shift. The choice of control class defines the reference: non-targeting
+#' guides exclude the shared cutting response, whereas safe-harbour guides
+#' absorb it.
+#'
+#' Control totals are rescaled so their mean equals the mean full-library
+#' total, rounded to integers because a beta-binomial denominator counts
+#' reads, and raised where necessary so that no guide count exceeds its
+#' sample's total. The result comes from normalisation rather than from
+#' sequencing, so check control-guide calibration before relying on it. Guides
+#' used to build the totals should be excluded from evaluation.
+#'
+#' @param counts Guide-by-sample matrix or data frame of raw counts, before any
+#'   guide filtering.
+#' @param control Logical vector, one element per row of `counts`, marking the
+#'   normalising control guides.
+#'
+#' @return An integer-valued numeric vector of per-sample totals, named by the
+#'   columns of `counts`.
+#'
+#' @seealso [bb_screen()], which takes the result as `totals`.
+#' @export
+#' @examples
+#' counts <- cbind(
+#'   s1 = c(ctrl1 = 500, ctrl2 = 500, hit = 1000),
+#'   s2 = c(ctrl1 = 500, ctrl2 = 500, hit = 100)
+#' )
+#' # Full-library totals fall in s2 because the hit is depleted ...
+#' colSums(counts)
+#' # ... while control totals keep the controls at a fixed share.
+#' barcs_control_totals(counts, control = c(TRUE, TRUE, FALSE))
+barcs_control_totals <- function(counts, control) {
+  if (!is.matrix(counts) && !is.data.frame(counts)) {
+    .bb_stop("`counts` must be a numeric matrix or data frame.")
+  }
+  counts <- as.matrix(counts)
+  storage.mode(counts) <- "double"
+  if (anyNA(counts) || any(!is.finite(counts)) || any(counts < 0)) {
+    .bb_stop("`counts` must contain finite, non-negative values.")
+  }
+  if (!is.logical(control) || length(control) != nrow(counts) ||
+      anyNA(control)) {
+    .bb_stop("`control` must be a non-missing logical vector, one per guide.")
+  }
+  if (!any(control)) {
+    .bb_stop("`control` must mark at least one guide.")
+  }
+  library_total <- colSums(counts)
+  control_total <- colSums(counts[control, , drop = FALSE])
+  if (any(control_total <= 0)) {
+    .bb_stop("A sample has no reads on the normalising control guides.")
+  }
+  totals <- control_total / (mean(control_total) / mean(library_total))
+  # The denominator must still dominate every count it is a denominator for.
+  totals <- pmax(round(totals), apply(counts, 2L, max))
+  stats::setNames(as.numeric(totals), colnames(counts))
+}

@@ -57,13 +57,13 @@ screen <- bb_screen(
 )
 
 head(screen[order(screen$p_value), c("gene", "estimate", "std_error", "p_value", "fdr")])
-#>       gene estimate std_error   p_value      fdr
-#> 15   PSMC1   -1.484   0.01752 1.165e-07 4.97e-05
-#> 36   PSMB2   -1.961   0.02559 1.737e-07 4.97e-05
-#> 92   COPS4   -1.268   0.01959 3.414e-07 4.97e-05
-#> 53  RPL35A   -1.461   0.02280 3.550e-07 4.97e-05
-#> 113  PSMC2   -1.451   0.02332 3.998e-07 4.97e-05
-#> 70   RPL34   -1.933   0.03204 4.521e-07 4.97e-05
+#>      gene estimate std_error   p_value       fdr
+#> 1   RPS19   -1.967   0.05498 9.385e-26 4.600e-23
+#> 4   RPS3A   -1.681   0.04703 9.573e-26 4.600e-23
+#> 2   NUP93   -2.418   0.07232 6.475e-25 1.695e-22
+#> 13   RPS9   -1.785   0.05355 7.054e-25 1.695e-22
+#> 6  POLR2A   -2.079   0.06302 9.604e-25 1.846e-22
+#> 3  PSMD11   -1.967   0.06009 1.186e-24 1.899e-22
 ```
 
 Designs are ordinary R formulas, so dose, time, batch, donor, and
@@ -142,4 +142,4 @@ regression for SAGE. *BMC Bioinformatics*, 5, 144.
 
 ## License
 
-MIT © BARCS authors
+MIT © Hyun-Hwan Jeong

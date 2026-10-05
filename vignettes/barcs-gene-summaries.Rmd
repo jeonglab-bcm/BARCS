@@ -30,20 +30,27 @@ activity — real biology, but not the biological variation that a p-value about
 the gene is supposed to be about.
 
 Treating them as replicates produces confident, reproducible, wrong answers,
-and it gets worse as you add guides. BARCS therefore does not offer a single
-`gene_test()`. It offers five summaries, each named for what it actually
-assumes, and each stamping its assumption onto the object it returns.
+and it gets worse as you add guides. BARCS therefore does not offer a
+`gene_test()` that pretends otherwise. Its recommended summary,
+`bb_gene_stouffer()`, combines guide *tests*, not guide replicates, and says
+plainly what its gene-level p-value assumes. Four effect-pooling alternatives
+are kept as experimental sensitivity analyses.
 
-| Function | Combines | Assumes |
-|---|---|---|
-| `bb_gene_original()` | Signed $z$ from guide p-values | The historical BARCS statistic; kept for continuity |
-| `bb_gene_normal()` | Guide coefficients, equally weighted | Guide effects are exchangeable draws from $N(\mu_g,\sigma_g^2)$ |
-| `bb_gene_consistency()` | Inverse-variance weighted effect | One shared gene effect; calibrated against an empirical null |
-| `bb_gene_partial_pool()` | Random-effects weights | Guide heterogeneity $\tau_g^2$ estimated per gene (DerSimonian–Laird) |
-| `bb_gene_eb_moderate()` | Random-effects, shrunken $\tau_g^2$ | As above, with $\tau_g^2$ shrunk toward a screen-wide prior |
+| Function | Status | Combines | Assumes |
+|---|---|---|---|
+| `bb_gene_stouffer()` | **Recommended** | Signed $z$ from guide p-values; median guide effect | Null guide scores are independent |
+| `bb_gene_normal()` | Experimental | Guide coefficients, equally weighted | Guide effects are exchangeable draws from $N(\mu_g,\sigma_g^2)$ |
+| `bb_gene_consistency()` | Experimental | Inverse-variance weighted effect | One shared gene effect; calibrated against an empirical null |
+| `bb_gene_partial_pool()` | Experimental | Random-effects weights | Guide heterogeneity $\tau_g^2$ estimated per gene (DerSimonian–Laird) |
+| `bb_gene_eb_moderate()` | Experimental | Random-effects, shrunken $\tau_g^2$ | As above, with $\tau_g^2$ shrunk toward a screen-wide prior |
 
-None of them combines guide p-values by Fisher's or Stouffer's method across
-guides treated as independent experiments.
+`bb_gene_stouffer()` is the default because it ranked genes best in simulated
+FACS screens with known truth, ahead of all four alternatives on average
+precision and F1 in most scenarios. Its weakness is calibration rather than
+ranking: guides targeting one gene share every library, so correlated guide
+scores make its $\sqrt{m_g}$ denominator too small and its gene-level p-values
+anti-conservative. Rank with it freely; check its FDR against negative-control
+genes aggregated the same way before reporting one.
 
 ## A quick tour
 
@@ -127,7 +134,7 @@ summarise <- function(result, name) {
 }
 
 comparison <- rbind(
-  summarise(bb_gene_original(screen), "original"),
+  summarise(bb_gene_stouffer(screen), "stouffer"),
   summarise(bb_gene_normal(screen), "normal"),
   summarise(bb_gene_consistency(screen, control = is_control), "consistency"),
   summarise(bb_gene_partial_pool(screen, control = is_control), "partial_pool"),
@@ -143,7 +150,7 @@ here. (`normal` and `consistency` report 92 genes rather than 93 because they
 default to requiring three usable guides per gene.)
 
 **No method's FDR is trustworthy on this dataset,** and the two families fail
-in opposite directions. `original` and `normal` call nearly everything,
+in opposite directions. `stouffer` and `normal` call nearly everything,
 including all 47 genes that should not move. The three empirical-null methods
 call nothing.
 
@@ -156,7 +163,7 @@ summary(screen$t_value[is_control])
 
 The non-essential control guides are centred around $t \approx 9$, not zero.
 As `vignette("BARCS")` explains, that is compositional: the libraries shrink
-during selection, so guides that merely survive gain share. `original` and
+during selection, so guides that merely survive gain share. `stouffer` and
 `normal` take those inflated guide statistics at face value and duly declare
 the controls significant.
 
@@ -185,23 +192,27 @@ built for the second. On a real library, where the overwhelming majority of
 genes do nothing, `global_scale` is a reasonable null estimate and this
 conservatism does not appear.
 
+The better fix is upstream of any gene summary: remove the composition shift
+with control totals, as shown in `vignette("BARCS")`, and then calibrate the
+guide statistics on controls before passing them to `bb_gene_stouffer()`.
+
 ## Practical guidance
 
+* **Use `bb_gene_stouffer()`.** It is the recommended summary and the one
+  benchmarked in the BARCS manuscript.
 * **Start with the ranking.** It is the most robust output BARCS produces and
   the least sensitive to which summary you pick.
 * **Check the controls before the hits.** If the non-essential guides are not
   centred near zero, no gene-level FDR downstream will mean anything until you
-  understand why.
-* **Prefer `bb_gene_eb_moderate()` for screens with few guides per gene.** Per
-  gene, $\tau_g^2$ is estimated from four or five numbers; shrinking it toward
-  a screen-wide prior is strictly better conditioned.
-* **Use `bb_gene_partial_pool()` when guides per gene are plentiful** and you
-  would rather each gene's heterogeneity speak for itself.
-* **Read the diagnostics.** `guide_direction_agreement`,
-  `max_weight_fraction`, and `leave_one_out_sign_stable` catch the
-  single-guide artefacts that a p-value hides.
-* **Reach for `bb_gene_original()` only for continuity** with earlier BARCS
-  and CB2 analyses.
+  understand why; consider `barcs_control_totals()`.
+* **Check the gene-level FDR on control genes aggregated the same way.** Group
+  negative-control guides into pseudo-genes with the same number of guides as
+  real genes and confirm that few of them are called. Correlated guides inflate
+  Stouffer gene p-values even when the guide-level tests are well calibrated.
+* **Treat the four experimental summaries as sensitivity analyses.** Their
+  diagnostics — `guide_direction_agreement`, `max_weight_fraction`, and
+  `leave_one_out_sign_stable` — are still useful for spotting a gene driven by
+  a single guide.
 
 ## A note on double correction
 
@@ -219,7 +230,7 @@ identical(
 
 This is intentional. These methods fit their own gene-level empirical null, so
 consuming already-widened standard errors would penalise the same inflation
-twice. `bb_gene_original()` is the exception — it reads the p-value column
+twice. `bb_gene_stouffer()` is the exception — it reads the p-value column
 directly, so it does respond to guide-level calibration, which is what you
 want from a method that has no null model of its own.
 

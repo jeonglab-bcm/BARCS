@@ -142,4 +142,4 @@ doi:10.1186/1471-2105-5-144
 
 ## License
 
-MIT © BARCS authors
+MIT © Hyun-Hwan Jeong

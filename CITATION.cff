@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use BARCS, please cite it as below."
+title: "BARCS: Beta-Binomial Analysis and Regression for CRISPR Pooled Screens"
+type: software
+version: 0.2.0
+license: MIT
+repository-code: "https://github.com/jeonglab-bcm/BARCS"
+authors:
+  - family-names: Jeong
+    given-names: Hyun-Hwan
+    email: hyun-hwan.jeong@bcm.edu
+    affiliation: Baylor College of Medicine
+  - family-names: Lee
+    given-names: Kyu-Won
+    email: kyuwon.lee@bcm.edu
+    affiliation: Baylor College of Medicine
+keywords:
+  - CRISPR screen
+  - beta-binomial regression
+  - R
+references:
+  - type: article
+    title: "Beta-binomial modeling of CRISPR pooled screen data identifies target genes with greater sensitivity and fewer false negatives"
+    authors:
+      - family-names: Jeong
+        given-names: Hyun-Hwan
+      - family-names: Kim
+        given-names: Seon Young
+      - family-names: Rousseaux
+        given-names: Maxime W. C.
+      - family-names: Zoghbi
+        given-names: Huda Y.
+      - family-names: Liu
+        given-names: Zhandong
+    journal: Genome Research
+    year: 2019
+    volume: 29
+    issue: 6
+    start: 999
+    end: 1008
+    doi: 10.1101/gr.245571.118

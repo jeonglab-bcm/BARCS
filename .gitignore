@@ -13,3 +13,5 @@ inst/doc
 BARCS.Rcheck/
 BARCS_*.tar.gz
 BARCS_*.tgz
+/doc/
+/Meta/

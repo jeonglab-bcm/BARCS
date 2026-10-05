@@ -78,6 +78,10 @@ the right quantity to shrink. Rescaling the stored standard error by the
 square root of the moderated-to-fitted inflation ratio is exact when the
 sample library totals are equal and is a close approximation otherwise.
 
+\code{\link[=bb_screen]{bb_screen()}} calls this function by default, so it is needed directly
+only to moderate an unmoderated fit (\code{bb_screen(moderate = FALSE)}) with
+non-default settings. Moderating an already moderated result is an error.
+
 This is guide-level variance moderation. It is independent of, and can be
 combined with, the gene-level moderation in \code{\link[=bb_gene_eb_moderate]{bb_gene_eb_moderate()}}.
 }

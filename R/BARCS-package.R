@@ -22,8 +22,8 @@
 #' 4. [bb_calibrate_controls()] and [bb_moderate_dispersion()] recalibrate the
 #'    guide-level tests using negative controls and a library-wide dispersion
 #'    trend.
-#' 5. The `bb_gene_*()` functions provide optional, explicitly labelled
-#'    guide-to-gene summaries.
+#' 5. [bb_gene_stouffer()] summarises guides to genes. The other
+#'    `bb_gene_*()` functions are experimental sensitivity analyses.
 #'
 #' @references
 #' Jeong H-H, Kim SY, Rousseaux MWC, Zoghbi HY, Liu Z (2019).

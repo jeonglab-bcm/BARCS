@@ -38,6 +38,10 @@ normal reference. The null parameters are also stored as the attributes
 \code{"control_genes"}.
 }
 \description{
+\strong{Experimental.} \code{\link[=bb_gene_stouffer]{bb_gene_stouffer()}} is the recommended gene summary;
+this function is retained as a sensitivity analysis.
+}
+\details{
 This function is intended for exploratory screens in which several
 independently designed guides target each gene but biological replication
 is too limited for reliable guide-level reference distributions. It does
@@ -46,8 +50,7 @@ gene effect by inverse-variance weighting of guide coefficients, forms its
 model-based Wald statistic, then calibrates the gene-statistic distribution
 with a robust empirical null. It does not combine guide p-values by
 Fisher's or Stouffer's method.
-}
-\details{
+
 For gene \eqn{g}, let \eqn{w_{gj} = \mathrm{SE}(\widehat\beta_{gj})^{-2}}.
 The shared effect and raw statistic are
 \deqn{\widehat\beta_g =
@@ -72,7 +75,7 @@ bb_gene_consistency(
 Other gene-level summaries: 
 \code{\link{bb_gene_eb_moderate}()},
 \code{\link{bb_gene_normal}()},
-\code{\link{bb_gene_original}()},
-\code{\link{bb_gene_partial_pool}()}
+\code{\link{bb_gene_partial_pool}()},
+\code{\link{bb_gene_stouffer}()}
 }
 \concept{gene-level summaries}

@@ -1,3 +1,54 @@
+# BARCS 0.2.0
+
+## Guide-level inference
+
+* `bb_screen()` now moderates guide dispersions with
+  `bb_moderate_dispersion()` by default whenever at least 50 guides are usable
+  (`moderate = NULL`). On the four replicate-complete Cas13 screens of
+  Liang et al. (2026), moderation raised the macro-average precision for
+  essential genes from 0.838 to 0.876 and directional recall at gene FDR 0.10
+  from 0.61 to 0.77, level with limma-voom and edgeR-QL on the same input.
+  Use `moderate = FALSE` for the previous behaviour. The `"moderated"`
+  attribute records which was used.
+* `bb_moderate_dispersion()` refuses to moderate a result twice, and no longer
+  warns when guides share the same abundance.
+* `bb_screen()` estimates the within-gene correlation of guide residuals when
+  `gene` is supplied, net of the between-gene baseline, and stores it as the
+  `"guide_correlation"` attribute. A real gene effect is absorbed by the fitted
+  mean and does not inflate the estimate.
+
+## Gene-level summaries
+
+* `bb_gene_stouffer()` is the recommended guide-to-gene summary: a directional
+  Stouffer combination of guide tests with the median guide coefficient as the
+  gene effect. It widens the null variance of the combined score from `m` to
+  `m + m(m - 1)r` using the `"guide_correlation"` estimated by `bb_screen()`,
+  which keeps the gene-level type I error near nominal when guides share
+  noise; in simulated null screens with within-gene correlation 0.4 and five
+  guides per gene the uncorrected rate was about 0.2. It is the summary benchmarked in the BARCS manuscript and ranked
+  genes best in simulated FACS screens with known truth. `bb_gene_original()`
+  remains as an alias; its `method` column now reads `"stouffer"`.
+* `bb_gene_normal()`, `bb_gene_consistency()`, `bb_gene_partial_pool()`, and
+  `bb_gene_eb_moderate()` are marked experimental and documented as
+  sensitivity analyses.
+* `bb_gene_consistency()` now drops guides whose fit did not converge, like
+  the other summaries, and reports `converged_fraction` over all of a gene's
+  guides.
+
+## Denominators
+
+* New `barcs_control_totals()` builds beta-binomial denominators that hold a
+  chosen control class (non-targeting or safe-harbour guides) at a constant
+  share of each library, removing composition shifts. Pass the result to
+  `bb_screen(totals = )`. The main vignette shows it on `evers_rt112` with
+  held-out controls.
+
+## Package
+
+* Kyu-Won Lee added as an author.
+* Copyright holder named in `LICENSE`.
+* Added `inst/CITATION` and `CITATION.cff`.
+
 # BARCS 0.1.0
 
 First release. BARCS began as the regression layer inside CB2 and is now a
