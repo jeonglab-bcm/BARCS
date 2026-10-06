@@ -65,6 +65,27 @@ control <- if (!is.null(design$control_gene_pattern) && nzchar(design$control_ge
 message(sprintf("%d guides, %d genes, %d control guides, %d samples.",
                 length(guide), length(unique(gene)), sum(control), ncol(counts_all)))
 
+# Share of reads held by the top 1% of guides in each library: a bottleneck or
+# a few resistant clones push it far above the ~2-5% of an unselected library.
+top_share <- function(counts) {
+  apply(counts, 2L, function(v) sum(sort(v, decreasing = TRUE)[seq_len(ceiling(0.01 * length(v)))]) / sum(v))
+}
+
+# Median-of-ratios size factors (guides counted in every library), rescaled to
+# read totals. Each total must still be at least that library's largest count;
+# libraries where that floor binds are reported as capped.
+median_ratio_totals <- function(counts, library_total) {
+  positive <- rowSums(counts > 0) == ncol(counts)
+  if (sum(positive) < 100L) stop("Too few guides with reads in every library for median-ratio totals.", call. = FALSE)
+  log_mean <- rowMeans(log(counts[positive, , drop = FALSE]))
+  size <- exp(apply(log(counts[positive, , drop = FALSE]) - log_mean, 2L, stats::median))
+  totals <- size / mean(size) * mean(library_total)
+  floor_hit <- totals < apply(counts, 2L, max)
+  if (any(floor_hit)) message("   median-ratio totals capped at the largest count in: ",
+                              paste(colnames(counts)[floor_hit], collapse = ", "))
+  stats::setNames(round(pmax(totals, apply(counts, 2L, max))), colnames(counts))
+}
+
 # Totals are recorded once, over every guide, before any filtering.
 library_totals <- colSums(counts_all)
 
@@ -84,9 +105,19 @@ for (analysis in analyses) {
   }
   counts <- counts_all[, keep, drop = FALSE]
   totals <- library_totals[keep]
-  if (identical(analysis$totals %||% design$totals %||% "library", "control")) {
+  totals_method <- analysis$totals %||% design$totals %||% "library"
+  if (identical(totals_method, "control")) {
     if (!any(control)) stop("Control totals requested but no control guides matched.", call. = FALSE)
     totals <- barcs_control_totals(counts, control)
+  } else if (identical(totals_method, "median_ratio")) {
+    totals <- median_ratio_totals(counts, library_totals[keep])
+  }
+  composition <- top_share(counts)
+  if (max(composition) > 0.25) {
+    message(sprintf("   WARNING: the top 1%% of guides hold up to %.0f%% of reads in one library; ",
+                    100 * max(composition)),
+            "a composition shift makes library-total depletion calls unreliable. ",
+            "Consider \"totals\": \"median_ratio\" and interpret enrichment first.")
   }
   formula <- stats::as.formula(analysis$formula)
   message(sprintf("\n== %s: %s, coefficient %s, %d libraries", name,
@@ -115,6 +146,10 @@ for (analysis in analyses) {
     moderated = attr(screen, "moderated"), prior_df = attr(screen, "prior_df"),
     guide_correlation = attr(screen, "guide_correlation"),
     control_scale = attr(screen, "control_scale"),
+    totals_method = totals_method,
+    top1pct_read_share = as.list(round(composition, 3)),
+    genes_fdr_0_10_up = sum(genes$fdr < 0.10 & genes$estimate > 0, na.rm = TRUE),
+    genes_fdr_0_10_down = sum(genes$fdr < 0.10 & genes$estimate < 0, na.rm = TRUE),
     genes_fdr_0_05 = sum(genes$fdr < 0.05, na.rm = TRUE),
     genes_fdr_0_10 = sum(genes$fdr < 0.10, na.rm = TRUE),
     barcs_version = as.character(utils::packageVersion("BARCS"))
