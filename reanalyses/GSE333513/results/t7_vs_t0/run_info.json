@@ -1,0 +1,16 @@
+{
+  "analysis": "t7_vs_t0",
+  "formula": "~condition",
+  "term": "conditiont7",
+  "libraries": 6,
+  "residual_df": 4,
+  "guides": 55478,
+  "genes": 18805,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "barcs_version": "0.2.0"
+}

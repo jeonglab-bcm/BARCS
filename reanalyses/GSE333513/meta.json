@@ -1,0 +1,18 @@
+{
+  "gse": "GSE333513",
+  "pmid": "42548798",
+  "doi": "10.1016/j.isci.2026.116959",
+  "pmcid": "PMC13429904",
+  "title": "Genome-wide CRISPR screen identifies AMBRA1 as a potential biomarker of response to platinum-based therapies in oral squamous cell carcinomas",
+  "journal": "iScience",
+  "published": "2026",
+  "model": "OSC20 oral squamous cell carcinoma, genome-wide knockout (3 guides/gene)",
+  "contrast": "Cisplatin 50 µM vs untreated, day 7 (3 vs 3)",
+  "paper_method": "MAGeCK-RRA (MAGeCKFlute)",
+  "paper_calls": "1,812 candidates at nominal p < 0.05; 10 selected",
+  "barcs_calls": "0 genes at FDR 0.10",
+  "named_hits": "10/10 same direction; AMBRA1 rank 611",
+  "verdict": "Direction agrees for all ten named genes, but no gene passes FDR 0.10; the paper's candidate count is close to what chance gives, and large fold changes do not replicate.",
+  "agreement": "differ",
+  "analyzed": "2026-10-06"
+}

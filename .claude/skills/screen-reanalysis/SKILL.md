@@ -5,7 +5,7 @@ description: Find a recently published pooled CRISPR screen in PubMed with count
 
 # Reanalyze a published CRISPR screen with BARCS
 
-You drive five scripts in `tools/screen-reanalysis/`. The scripts do the
+You drive the scripts in `tools/screen-reanalysis/`. The scripts do the
 mechanical work; you make the judgment calls the scripts cannot: which series
 is a real screen with raw counts, how count columns map to samples, which
 coefficient answers the paper's question, and what the paper reported.
@@ -150,3 +150,31 @@ Write `work/<GSE>/REPORT.md` and give the user a short summary:
 
 State plainly when the reanalysis could not reproduce the paper's setup, and
 never present a guessed column mapping as certain.
+
+## 6. Publish to the website
+
+Write `work/<GSE>/meta.json` with the headline facts the site shows:
+
+```json
+{
+  "gse": "GSE123456", "pmid": "12345678", "doi": "10.xxxx/yyyy",
+  "title": "Paper title", "journal": "Journal", "published": "2026",
+  "model": "Cell line, library", "contrast": "Drug vs vehicle, day 14 (3 vs 3)",
+  "paper_method": "MAGeCK-RRA", "paper_calls": "42 genes at FDR 0.05",
+  "barcs_calls": "35 genes at FDR 0.10", "named_hits": "4/5 recovered",
+  "verdict": "One sentence: where BARCS and the paper agree and differ.",
+  "agreement": "agree", "analyzed": "2026-10-06"
+}
+```
+
+`agreement` is `agree` (the paper's main hits pass FDR 0.10 in BARCS),
+`partial` (some do), or `differ` (none do, or BARCS contradicts them). Then:
+
+```sh
+Rscript tools/screen-reanalysis/archive_run.R work/GSE123456
+Rscript tools/screen-reanalysis/build_site.R      # preview in _site/index.html
+```
+
+Commit `reanalyses/<GSE>/` on a branch and open a pull request only if the
+user asks. Merging to `main` rebuilds and deploys the site
+(`.github/workflows/reanalysis-site.yaml`).

@@ -13,6 +13,8 @@ agent (or you) writes `design.json` and `compare.json`.
 | `inspect_counts.R` | Header, integer check, totals, replicate correlations, control labels |
 | `run_barcs.R` | BARCS per analysis in `design.json` -> `results/<analysis>/` |
 | `compare_results.R` | Named-hit ranks, rank correlation and top-N overlap with a published table |
+| `archive_run.R` | Copy a finished run (with `meta.json`) into `reanalyses/<GSE>/` |
+| `build_site.R` | Static website from `reanalyses/` into `_site/` |
 
 Use it from Claude Code with `/screen-reanalysis` (optionally with a PMID or a
 GSE number), or by hand:
@@ -23,9 +25,14 @@ Rscript tools/screen-reanalysis/fetch_geo.R GSE333513 --dir work
 Rscript tools/screen-reanalysis/inspect_counts.R work/GSE333513/suppl/GSE333513_merged_counts.txt.gz
 Rscript tools/screen-reanalysis/run_barcs.R work/GSE333513/design.json
 Rscript tools/screen-reanalysis/compare_results.R work/GSE333513/compare.json
+Rscript tools/screen-reanalysis/archive_run.R work/GSE333513
+Rscript tools/screen-reanalysis/build_site.R
 ```
 
-`examples/GSE333513/` holds the design, comparison spec, and report from a
-worked run. Needs R packages BARCS, jsonlite and readxl; `NCBI_API_KEY` is
+`reanalyses/<GSE>/` is the tracked record of each published run (design,
+comparison spec, report, run info, trimmed gene tables). Pushing changes there
+to `main` rebuilds the website with GitHub Pages
+(`.github/workflows/reanalysis-site.yaml`; enable Pages with source "GitHub
+Actions" once in the repository settings). Needs R packages BARCS, jsonlite and readxl; `NCBI_API_KEY` is
 optional. Output goes to `work/`, which is git-ignored and excluded from the
 package build.

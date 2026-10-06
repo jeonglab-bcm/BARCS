@@ -1,0 +1,16 @@
+{
+  "analysis": "cisplatin_vs_untreated_t7",
+  "formula": "~condition",
+  "term": "conditioncisplatin",
+  "libraries": 6,
+  "residual_df": 4,
+  "guides": 55478,
+  "genes": 18783,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0.0014,
+  "control_scale": null,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "barcs_version": "0.2.0"
+}
