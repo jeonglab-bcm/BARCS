@@ -1,0 +1,32 @@
+{
+  "gse": "GSE333513",
+  "pmid": "42548798",
+  "counts_file": "suppl/GSE333513_merged_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "S1_CRISPR_screen", "gsm": "GSM9766663", "condition": "t0", "replicate": "1"},
+    {"column": "S2_CRISPR_screen", "gsm": "GSM9766664", "condition": "t0", "replicate": "2"},
+    {"column": "S3_CRISPR_screen", "gsm": "GSM9766665", "condition": "t0", "replicate": "3"},
+    {"column": "S4_CRISPR_screen", "gsm": "GSM9766666", "condition": "t7", "replicate": "1"},
+    {"column": "S5_CRISPR_screen", "gsm": "GSM9766667", "condition": "t7", "replicate": "2"},
+    {"column": "S6_CRISPR_screen", "gsm": "GSM9766668", "condition": "t7", "replicate": "3"},
+    {"column": "S7_CRISPR_screen", "gsm": "GSM9766669", "condition": "cisplatin", "replicate": "1"},
+    {"column": "S8_CRISPR_screen", "gsm": "GSM9766670", "condition": "cisplatin", "replicate": "2"},
+    {"column": "S9_CRISPR_screen", "gsm": "GSM9766671", "condition": "cisplatin", "replicate": "3"}
+  ],
+  "factor_levels": {"condition": ["t0", "t7", "cisplatin"]},
+  "analyses": [
+    {"name": "cisplatin_vs_untreated_t7",
+     "columns": ["S4_CRISPR_screen", "S5_CRISPR_screen", "S6_CRISPR_screen",
+                 "S7_CRISPR_screen", "S8_CRISPR_screen", "S9_CRISPR_screen"],
+     "formula": "~ condition", "term": "conditioncisplatin"},
+    {"name": "t7_vs_t0",
+     "columns": ["S1_CRISPR_screen", "S2_CRISPR_screen", "S3_CRISPR_screen",
+                 "S4_CRISPR_screen", "S5_CRISPR_screen", "S6_CRISPR_screen"],
+     "formula": "~ condition", "term": "conditiont7"}
+  ],
+  "rationale": "GEO titles give t0 rep1-3, untreated t7 rep1-3, cisplatin t7 rep1-3 (GSM9766663-71); count columns S1-S9 follow GSM order, and the log-count correlations cluster S1-3, S4-6, S7-9, consistent with that mapping. The paper's question is synthetic lethality with cisplatin, so the primary contrast is cisplatin vs untreated at day 7 (depleted genes = sensitizers). t7 vs t0 is a sanity check that essential genes deplete. No replicate term: all samples share batch 1 and pairing across conditions is not documented."
+}

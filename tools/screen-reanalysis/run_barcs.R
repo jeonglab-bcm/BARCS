@@ -1,0 +1,127 @@
+#!/usr/bin/env Rscript
+# Run BARCS on a screen described by a design file.
+#
+#   Rscript tools/screen-reanalysis/run_barcs.R <design.json> [--out results]
+#
+# The design file (written by the agent, see SKILL.md) names the count file,
+# the guide and gene columns, every sample column with its covariates, and
+# one or more analyses (formula + coefficient). For each analysis this writes
+# <out>/<analysis>/guides.csv.gz, genes.csv, and run_info.json.
+
+suppressPackageStartupMessages({
+  library(jsonlite)
+  library(BARCS)
+})
+
+args <- commandArgs(trailingOnly = TRUE)
+if (!length(args)) stop("Usage: run_barcs.R <design.json> [--out results]", call. = FALSE)
+design_path <- args[[1]]
+out_hit <- match("--out", args)
+out_root <- if (is.na(out_hit)) file.path(dirname(design_path), "results") else args[[out_hit + 1L]]
+ncores <- as.integer(Sys.getenv("BARCS_NCORES", "2"))
+
+design <- fromJSON(design_path, simplifyVector = TRUE)
+required <- c("counts_file", "guide_column", "gene_column", "samples", "analyses")
+missing <- setdiff(required, names(design))
+if (length(missing)) stop("design.json is missing: ", paste(missing, collapse = ", "), call. = FALSE)
+
+counts_path <- design$counts_file
+if (!file.exists(counts_path)) counts_path <- file.path(dirname(design_path), counts_path)
+read_counts <- function(path) {
+  if (grepl("\\.xlsx?$", path, ignore.case = TRUE)) {
+    return(as.data.frame(readxl::read_excel(path, sheet = design$sheet %||% 1L)))
+  }
+  first <- readLines(if (grepl("\\.gz$", path)) gzfile(path) else path, n = 1L)
+  utils::read.delim(if (grepl("\\.gz$", path)) gzfile(path) else path,
+                    sep = if (grepl("\t", first)) "\t" else ",",
+                    check.names = FALSE, stringsAsFactors = FALSE)
+}
+`%||%` <- function(a, b) if (is.null(a)) b else a
+table <- read_counts(counts_path)
+
+samples <- as.data.frame(design$samples, stringsAsFactors = FALSE)
+if (!"column" %in% names(samples)) stop("Each sample needs a 'column'.", call. = FALSE)
+absent <- setdiff(samples$column, names(table))
+if (length(absent)) stop("Sample columns not in the count file: ", paste(absent, collapse = ", "),
+                         call. = FALSE)
+
+counts_all <- as.matrix(table[, samples$column, drop = FALSE])
+storage.mode(counts_all) <- "double"
+if (any(abs(counts_all - round(counts_all)) > 1e-8, na.rm = TRUE)) {
+  stop("Sample columns are not integer counts; BARCS needs raw read counts.", call. = FALSE)
+}
+counts_all[is.na(counts_all)] <- 0
+guide <- as.character(table[[design$guide_column]])
+gene <- as.character(table[[design$gene_column]])
+if (anyDuplicated(guide)) {
+  guide <- make.unique(guide)
+  message("Duplicate guide identifiers were made unique.")
+}
+control <- if (!is.null(design$control_gene_pattern) && nzchar(design$control_gene_pattern)) {
+  grepl(design$control_gene_pattern, gene, ignore.case = TRUE)
+} else {
+  rep(FALSE, length(gene))
+}
+message(sprintf("%d guides, %d genes, %d control guides, %d samples.",
+                length(guide), length(unique(gene)), sum(control), ncol(counts_all)))
+
+# Totals are recorded once, over every guide, before any filtering.
+library_totals <- colSums(counts_all)
+
+analyses <- design$analyses
+if (is.data.frame(analyses)) analyses <- split(analyses, seq_len(nrow(analyses)))
+for (analysis in analyses) {
+  analysis <- lapply(analysis, function(v) if (is.list(v) && length(v) == 1L) v[[1]] else v)
+  name <- analysis$name
+  keep <- if (!is.null(analysis$columns)) samples$column %in% unlist(analysis$columns) else
+    rep(TRUE, nrow(samples))
+  data <- samples[keep, , drop = FALSE]
+  for (variable in names(design$factor_levels %||% list())) {
+    if (variable %in% names(data)) {
+      levels <- intersect(design$factor_levels[[variable]], unique(data[[variable]]))
+      data[[variable]] <- factor(data[[variable]], levels = levels)
+    }
+  }
+  counts <- counts_all[, keep, drop = FALSE]
+  totals <- library_totals[keep]
+  if (identical(analysis$totals %||% design$totals %||% "library", "control")) {
+    if (!any(control)) stop("Control totals requested but no control guides matched.", call. = FALSE)
+    totals <- barcs_control_totals(counts, control)
+  }
+  formula <- stats::as.formula(analysis$formula)
+  message(sprintf("\n== %s: %s, coefficient %s, %d libraries", name,
+                  deparse(formula), analysis$term, ncol(counts)))
+
+  screen <- bb_screen(
+    counts = counts, data = data, formula = formula, term = analysis$term,
+    totals = totals, guide = guide, gene = gene,
+    min_total_count = design$min_total_count %||% 30, ncores = ncores
+  )
+  if (isTRUE(analysis$calibrate %||% design$calibrate) && sum(control) >= 20L) {
+    screen <- bb_calibrate_controls(screen, control = control, method = "qq_slope")
+  }
+  genes <- bb_gene_stouffer(screen[!control, , drop = FALSE],
+                            correlation = attr(screen, "guide_correlation"))
+  genes <- genes[order(genes$p_value), , drop = FALSE]
+
+  out <- file.path(out_root, name)
+  dir.create(out, recursive = TRUE, showWarnings = FALSE)
+  utils::write.csv(screen, gzfile(file.path(out, "guides.csv.gz")), row.names = FALSE)
+  utils::write.csv(genes, file.path(out, "genes.csv"), row.names = FALSE)
+  info <- list(
+    analysis = name, formula = deparse(formula), term = analysis$term,
+    libraries = ncol(counts), residual_df = ncol(counts) - ncol(stats::model.matrix(formula, data)),
+    guides = nrow(screen), genes = nrow(genes),
+    moderated = attr(screen, "moderated"), prior_df = attr(screen, "prior_df"),
+    guide_correlation = attr(screen, "guide_correlation"),
+    control_scale = attr(screen, "control_scale"),
+    genes_fdr_0_05 = sum(genes$fdr < 0.05, na.rm = TRUE),
+    genes_fdr_0_10 = sum(genes$fdr < 0.10, na.rm = TRUE),
+    barcs_version = as.character(utils::packageVersion("BARCS"))
+  )
+  writeLines(toJSON(info, auto_unbox = TRUE, pretty = TRUE, null = "null"),
+             file.path(out, "run_info.json"))
+  message(sprintf("   %d genes at FDR 0.10; guide correlation %.3f; top: %s",
+                  info$genes_fdr_0_10, info$guide_correlation %||% NA,
+                  paste(utils::head(genes$gene, 8L), collapse = ", ")))
+}

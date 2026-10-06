@@ -11,3 +11,6 @@
 ^CITATION\.cff$
 ^doc$
 ^Meta$
+^\.claude$
+^tools$
+^work$
