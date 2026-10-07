@@ -7,6 +7,8 @@
     t_value = NA_real_,
     df = NA_real_,
     p_value = NA_real_,
+    wald_std_error = NA_real_,
+    lr_used = NA_real_,
     rho = NA_real_,
     pearson_null = NA_real_,
     mean_cpm = mean_cpm,
@@ -112,6 +114,21 @@
 #'   `NULL` (default) moderates when at least 50 guides are usable and skips
 #'   moderation otherwise; `TRUE` always moderates and errors if that is not
 #'   possible; `FALSE` never moderates.
+#' @param test Guide-level test of `term`. `"wald"` (default) uses the
+#'   coefficient's Wald standard error. `"lr"` uses the likelihood ratio of the
+#'   fits with and without `term`, both at the guide's fitted dispersion, and
+#'   reports the standard error that ratio implies, `|estimate| / sqrt(LR)`, so
+#'   moderation and the gene summaries apply unchanged. `"auto"` uses the
+#'   likelihood ratio only for guides whose fitted proportions span more than
+#'   `lr_fold` across samples, and the Wald test otherwise. With one dispersion
+#'   per guide, a change of several orders of magnitude implies a very large
+#'   logit-scale variance at the low-abundance end, and the Wald standard error
+#'   then grows faster than the estimate (the Hauck-Donner effect): a guide that
+#'   rises 400-fold in every replicate can test as null. The likelihood ratio
+#'   does not have this failure. On ordinary screens the two tests rank guides
+#'   alike, and the Wald test is the faster and slightly more conservative one.
+#' @param lr_fold Fold range of fitted proportions above which `test = "auto"`
+#'   switches a guide to the likelihood-ratio test.
 #' @param ncores Number of forked workers on Unix-like systems. Windows always
 #'   uses one worker.
 #' @param ... Additional arguments passed to [bbreg()].
@@ -125,7 +142,9 @@
 #'   the moderated ones. The attribute `"moderated"` records whether
 #'   moderation ran, and `"guide_correlation"` holds the within-gene residual
 #'   correlation when `gene` was supplied, with its components in
-#'   `"guide_correlation_detail"`.
+#'   `"guide_correlation_detail"`. With `test = "lr"` or `"auto"` the Wald
+#'   standard error is kept as `wald_std_error` and `lr_used` flags the guides
+#'   tested by likelihood ratio; the attribute `"test"` records the choice.
 #'
 #' @seealso [bb_calibrate_controls()] and [bb_moderate_dispersion()] to
 #'   recalibrate these tests, and the `bb_gene_*()` functions to summarise
@@ -159,8 +178,10 @@
 #' )
 bb_screen <- function(counts, data, formula, term, totals = NULL,
                       guide = rownames(counts), gene = NULL,
-                      min_total_count = 10, moderate = NULL, ncores = 1L,
-                      ...) {
+                      min_total_count = 10, moderate = NULL,
+                      test = c("wald", "lr", "auto"), lr_fold = 100,
+                      ncores = 1L, ...) {
+  test <- match.arg(test)
   if (!is.matrix(counts) && !is.data.frame(counts)) {
     .bb_stop("`counts` must be a numeric matrix or data frame.")
   }
@@ -205,6 +226,9 @@ bb_screen <- function(counts, data, formula, term, totals = NULL,
     .bb_stop("`ncores` must be one positive integer.")
   }
   ncores <- as.integer(ncores)
+  if (length(lr_fold) != 1L || !is.finite(lr_fold) || lr_fold <= 1) {
+    .bb_stop("`lr_fold` must be one number greater than one.")
+  }
   if (!is.null(moderate) &&
       (!is.logical(moderate) || length(moderate) != 1L || is.na(moderate))) {
     .bb_stop("`moderate` must be NULL, TRUE, or FALSE.")
@@ -232,12 +256,31 @@ bb_screen <- function(counts, data, formula, term, totals = NULL,
       return(.bb_empty_screen_row(mean_cpm, n_samples))
     }
     tab <- fit$coefficient_table[term, ]
+    wald_std_error <- tab[["std_error"]]
+    std_error <- wald_std_error
+    fitted_range <- max(fit$fitted.values) / min(fit$fitted.values)
+    use_lr <- test == "lr" || (test == "auto" && fitted_range > lr_fold)
+    if (use_lr) {
+      signed_root <- tryCatch(.bb_lr_statistic(fit, term),
+                              error = function(e) NA_real_)
+      if (!is.finite(signed_root)) {
+        return(.bb_empty_screen_row(mean_cpm, n_samples))
+      }
+      # The standard error the likelihood ratio implies, so that
+      # estimate / std_error equals the signed root of the ratio.
+      if (abs(signed_root) > 1e-8 && tab[["estimate"]] != 0) {
+        std_error <- abs(tab[["estimate"]]) / abs(signed_root)
+      }
+    }
+    t_value <- tab[["estimate"]] / std_error
     c(
       estimate = tab[["estimate"]],
-      std_error = tab[["std_error"]],
-      t_value = tab[["t_value"]],
+      std_error = std_error,
+      t_value = t_value,
       df = tab[["df"]],
-      p_value = tab[["p_value"]],
+      p_value = 2 * stats::pt(-abs(t_value), df = tab[["df"]]),
+      wald_std_error = wald_std_error,
+      lr_used = as.numeric(use_lr),
       rho = fit$rho,
       pearson_null = fit$pearson_null,
       mean_cpm = mean_cpm,
@@ -252,11 +295,11 @@ bb_screen <- function(counts, data, formula, term, totals = NULL,
     statistics <- do.call(rbind, pieces)
   } else {
     statistics <- t(vapply(
-      seq_len(nrow(counts)), one_guide, numeric(9L + n_samples)
+      seq_len(nrow(counts)), one_guide, numeric(11L + n_samples)
     ))
   }
-  residual_matrix <- statistics[, -seq_len(9L), drop = FALSE]
-  statistics <- statistics[, seq_len(9L), drop = FALSE]
+  residual_matrix <- statistics[, -seq_len(11L), drop = FALSE]
+  statistics <- statistics[, seq_len(11L), drop = FALSE]
   result <- data.frame(
     guide = guide,
     statistics,
@@ -264,6 +307,12 @@ bb_screen <- function(counts, data, formula, term, totals = NULL,
     check.names = FALSE
   )
   result$converged <- as.logical(result$converged)
+  if (test == "wald") {
+    result$wald_std_error <- NULL
+    result$lr_used <- NULL
+  } else {
+    result$lr_used <- as.logical(result$lr_used)
+  }
   if (!is.null(gene)) {
     result <- cbind(gene = gene, result)
   }
@@ -278,6 +327,7 @@ bb_screen <- function(counts, data, formula, term, totals = NULL,
     result <- bb_moderate_dispersion(result)
   }
   attr(result, "moderated") <- run_moderation
+  attr(result, "test") <- test
   if (!is.null(gene)) {
     fitted <- result$converged %in% TRUE
     correlation <- .bb_guide_correlation(

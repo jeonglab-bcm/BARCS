@@ -292,6 +292,56 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
 }
 
 
+# ---- Likelihood-ratio test at fixed dispersion ------------------------------
+
+.bb_loglik <- function(beta, x, count, total, rho, mu_bound = 1e-12) {
+  mu <- pmin(pmax(plogis(drop(x %*% beta)), mu_bound), 1 - mu_bound)
+  if (rho <= 0) {
+    return(sum(stats::dbinom(count, total, mu, log = TRUE)))
+  }
+  shape1 <- mu * (1 - rho) / rho
+  shape2 <- (1 - mu) * (1 - rho) / rho
+  sum(lchoose(total, count) + lbeta(count + shape1, total - count + shape2) -
+        lbeta(shape1, shape2))
+}
+
+.bb_fixed_rho_ml <- function(x, count, total, rho, start) {
+  objective <- function(beta) -.bb_loglik(beta, x, count, total, rho)
+  if (!ncol(x)) {
+    return(-objective(numeric()))
+  }
+  fit <- stats::optim(start, objective, method = "BFGS",
+                      control = list(maxit = 500L, reltol = 1e-12))
+  -fit$value
+}
+
+# Signed likelihood-ratio statistic for one coefficient of a fitted `bbreg`,
+# holding `rho` at the fitted value under both models. Unlike the Wald
+# statistic it does not collapse when a guide's proportion moves by orders of
+# magnitude between conditions: there a single `rho` implies an enormous
+# logit-scale variance at the low-abundance end, and the Wald standard error
+# grows faster than the estimate (the Hauck-Donner effect).
+.bb_lr_statistic <- function(fit, term) {
+  x <- fit$design
+  j <- match(term, colnames(x))
+  reduced <- x[, -j, drop = FALSE]
+  start_full <- fit$coefficients
+  start_reduced <- if (ncol(reduced)) {
+    start <- suppressWarnings(stats::glm.fit(
+      reduced, fit$count / fit$total, weights = fit$total,
+      family = stats::binomial()
+    )$coefficients)
+    if (any(!is.finite(start))) start_full[-j] else start
+  } else {
+    numeric()
+  }
+  full <- .bb_fixed_rho_ml(x, fit$count, fit$total, fit$rho, start_full)
+  null <- .bb_fixed_rho_ml(reduced, fit$count, fit$total, fit$rho, start_reduced)
+  statistic <- max(0, 2 * (full - null))
+  sign(fit$coefficients[[j]]) * sqrt(statistic)
+}
+
+
 # ---- S3 methods ------------------------------------------------------------
 
 #' Methods for fitted beta-binomial regressions

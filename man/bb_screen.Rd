@@ -14,6 +14,8 @@ bb_screen(
   gene = NULL,
   min_total_count = 10,
   moderate = NULL,
+  test = c("wald", "lr", "auto"),
+  lr_fold = 100,
   ncores = 1L,
   ...
 )
@@ -48,6 +50,23 @@ missing results.}
 moderation otherwise; \code{TRUE} always moderates and errors if that is not
 possible; \code{FALSE} never moderates.}
 
+\item{test}{Guide-level test of \code{term}. \code{"wald"} (default) uses the
+coefficient's Wald standard error. \code{"lr"} uses the likelihood ratio of the
+fits with and without \code{term}, both at the guide's fitted dispersion, and
+reports the standard error that ratio implies, \verb{|estimate| / sqrt(LR)}, so
+moderation and the gene summaries apply unchanged. \code{"auto"} uses the
+likelihood ratio only for guides whose fitted proportions span more than
+\code{lr_fold} across samples, and the Wald test otherwise. With one dispersion
+per guide, a change of several orders of magnitude implies a very large
+logit-scale variance at the low-abundance end, and the Wald standard error
+then grows faster than the estimate (the Hauck-Donner effect): a guide that
+rises 400-fold in every replicate can test as null. The likelihood ratio
+does not have this failure. On ordinary screens the two tests rank guides
+alike, and the Wald test is the faster and slightly more conservative one.}
+
+\item{lr_fold}{Fold range of fitted proportions above which \code{test = "auto"}
+switches a guide to the likelihood-ratio test.}
+
 \item{ncores}{Number of forked workers on Unix-like systems. Windows always
 uses one worker.}
 
@@ -63,7 +82,9 @@ in \code{\link[=bb_moderate_dispersion]{bb_moderate_dispersion()}} are added and
 the moderated ones. The attribute \code{"moderated"} records whether
 moderation ran, and \code{"guide_correlation"} holds the within-gene residual
 correlation when \code{gene} was supplied, with its components in
-\code{"guide_correlation_detail"}.
+\code{"guide_correlation_detail"}. With \code{test = "lr"} or \code{"auto"} the Wald
+standard error is kept as \code{wald_std_error} and \code{lr_used} flags the guides
+tested by likelihood ratio; the attribute \code{"test"} records the choice.
 }
 \description{
 Runs \code{\link[=bbreg]{bbreg()}} on every row of a count matrix against a shared sample
