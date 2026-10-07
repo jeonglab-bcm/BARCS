@@ -171,3 +171,133 @@ test_that("bb_moderate_dispersion() refuses an already moderated result", {
   attr(flagged, "moderated") <- TRUE
   expect_error(bb_moderate_dispersion(flagged), "already moderated")
 })
+
+test_that("the control pseudo-gene null holds the null rate under a heavy tail", {
+  # Null guide statistics with a t3 tail that a scaled model reference
+  # misses; controls and targeting guides come from the same distribution.
+  set.seed(8080)
+  n_control <- 1000L
+  n_gene <- 1500L
+  m <- 3L
+  simulate <- function(n) {
+    estimate <- rt(n, df = 3) / 4
+    data.frame(estimate = estimate, std_error = 0.25,
+               p_value = 2 * pnorm(-abs(estimate / 0.25)))
+  }
+  guides <- rbind(
+    cbind(gene = "NTC", simulate(n_control)),
+    cbind(gene = rep(sprintf("g%04d", seq_len(n_gene)), each = m),
+          simulate(n_gene * m))
+  )
+  control <- guides$gene == "NTC"
+
+  genes <- bb_gene_stouffer(guides[!control, ], correlation = 0)
+  empirical <- bb_gene_empirical_null(genes, guides, control, n_null = 2e4)
+
+  # The model reference is anti-conservative; the empirical null is not.
+  expect_gt(mean(genes$p_value < 0.05), 0.08)
+  expect_lte(abs(mean(empirical$p_value < 0.05) - 0.05), 0.02)
+  expect_identical(empirical$raw_p_value, genes$p_value)
+  expect_identical(attr(empirical, "empirical_null")$n_controls, n_control)
+  expect_identical(
+    unname(attr(empirical, "empirical_null")$n_null), 20000L
+  )
+  expect_true(all(empirical$p_value >= 2 / (20000 + 1)))
+})
+
+test_that("one-guide genes are ranked against every control guide", {
+  set.seed(8081)
+  control_z <- rnorm(200)
+  target_z <- c(10, 0)
+  guides <- data.frame(
+    gene = c(rep("NTC", 200), "hit", "null"),
+    estimate = c(control_z, target_z),
+    p_value = 2 * pnorm(-abs(c(control_z, target_z)))
+  )
+  control <- guides$gene == "NTC"
+  genes <- bb_gene_stouffer(guides[!control, ])
+  empirical <- bb_gene_empirical_null(genes, guides, control,
+                                      min_controls = 100L)
+
+  expect_equal(empirical$p_value[empirical$gene == "hit"], 2 / 201)
+  expect_equal(
+    empirical$p_value[empirical$gene == "null"],
+    min(1, 2 * (1 + min(sum(control_z >= 0), sum(control_z <= 0))) / 201)
+  )
+})
+
+test_that("a shifted control null is used as it is, not folded", {
+  # Every guide gains share (a compositional shift of +1.5 in z); depleted
+  # genes sit on the other side of a null that never reaches them.
+  set.seed(8082)
+  m <- 4L
+  shifted <- function(n) {
+    z <- rnorm(n, 1.5)
+    data.frame(estimate = z, p_value = 2 * pnorm(-abs(z)))
+  }
+  depleted <- data.frame(estimate = rnorm(10 * m, -1.5))
+  depleted$p_value <- 2 * pnorm(-abs(depleted$estimate))
+  guides <- rbind(
+    cbind(gene = "NTC", shifted(500)),
+    cbind(gene = rep(sprintf("n%03d", 1:300), each = m), shifted(300 * m)),
+    cbind(gene = rep(sprintf("d%02d", 1:10), each = m), depleted)
+  )
+  control <- guides$gene == "NTC"
+  genes <- bb_gene_stouffer(guides[!control, ], correlation = 0)
+  empirical <- bb_gene_empirical_null(genes, guides, control, n_null = 2e4)
+
+  is_depleted <- startsWith(empirical$gene, "d")
+  expect_true(all(empirical$fdr[is_depleted] < 0.05))
+  expect_lte(mean(empirical$p_value[!is_depleted] < 0.05), 0.08)
+  # The model, centred at zero, calls the shifted null genes instead.
+  expect_gt(mean(genes$p_value[!startsWith(genes$gene, "d")] < 0.05), 0.5)
+})
+
+test_that("pseudo-genes are widened to the within-gene guide correlation", {
+  set.seed(8083)
+  m <- 5L
+  r <- 0.4
+  n_gene <- 1500L
+  shared <- rep(rnorm(n_gene, 0, sqrt(r)), each = m)
+  target_z <- shared + rnorm(n_gene * m, 0, sqrt(1 - r))
+  control_z <- rnorm(800)
+  guides <- data.frame(
+    gene = c(rep("NTC", 800), rep(sprintf("g%04d", seq_len(n_gene)), each = m)),
+    estimate = c(control_z, target_z)
+  )
+  guides$p_value <- 2 * pnorm(-abs(guides$estimate))
+  control <- guides$gene == "NTC"
+  genes <- bb_gene_stouffer(guides[!control, ], correlation = r)
+  empirical <- bb_gene_empirical_null(genes, guides, control, n_null = 2e4)
+
+  expect_lte(abs(mean(empirical$p_value < 0.05) - 0.05), 0.02)
+  # Ignoring the correlation leaves pseudo-genes too narrow.
+  unwidened <- bb_gene_empirical_null(
+    bb_gene_stouffer(guides[!control, ], correlation = 0),
+    guides, control, n_null = 2e4
+  )
+  expect_gt(mean(unwidened$p_value < 0.05), 0.15)
+})
+
+test_that("bb_gene_empirical_null validates its arguments", {
+  guides <- data.frame(
+    gene = c(rep("NTC", 150), "a", "b"),
+    estimate = rnorm(152),
+    p_value = runif(152)
+  )
+  control <- guides$gene == "NTC"
+  genes <- bb_gene_stouffer(guides[!control, ])
+
+  expect_error(bb_gene_empirical_null(data.frame(a = 1), guides, control),
+               "bb_gene_stouffer")
+  expect_error(bb_gene_empirical_null(genes, guides, control[-1]),
+               "one per guide")
+  expect_error(bb_gene_empirical_null(genes, guides, control,
+                                      min_controls = 200L),
+               "200 usable")
+  expect_error(bb_gene_empirical_null(genes, guides, control, n_null = 10),
+               "at least 100")
+  once <- bb_gene_empirical_null(genes, guides, control, n_null = 100)
+  expect_error(bb_gene_empirical_null(once, guides, control),
+               "already carries")
+})

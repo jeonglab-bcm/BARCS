@@ -206,6 +206,41 @@ held-out genes are called, though not none. The controls must genuinely not
 change for this to be valid, and the coefficients now answer a different
 question, so pick the reference before looking at the result.
 
+### A gene-level empirical null from the controls
+
+Both remedies above still trust the model's reference distribution after one
+adjustment. When the control tail is heavier than any rescaled $t$ (most often
+when replicate libraries were split from one infected population and share
+clone sizes), `bb_gene_empirical_null()` drops that trust. It builds
+pseudo-genes from the control guides, each the size of a real gene, and reads
+every gene's p-value off their signed distribution. Keep the controls out of
+the gene summary, and give it the full guide result:
+
+```{r}
+fit <- bb_screen(
+  counts = evers_rt112$counts, data = evers_rt112$design,
+  formula = ~ group, term = "groupafter", totals = totals,
+  guide = evers_rt112$guides$guide, gene = evers_rt112$guides$gene
+)
+model_genes <- bb_gene_stouffer(fit[!is_reference, ])
+set.seed(1)
+empirical_genes <- bb_gene_empirical_null(model_genes, fit, is_reference)
+
+called <- function(genes) {
+  hits <- genes$gene[genes$fdr < 0.05]
+  c(essential_called = sum(hits %in% evers_rt112$essential),
+    held_out_called  = sum(hits %in% held_out))
+}
+rbind(model = called(model_genes), empirical = called(empirical_genes))
+```
+
+The null is signed, so the positive compositional shift the controls carry
+is part of it rather than folded onto the depleted side: every essential gene
+is still found, while most held-out genes are no longer called. Its
+resolution is set by the number of controls, so expect fewer calls than the
+model when the model is already well calibrated; treat it as a check on, or a
+replacement for, an FDR the controls show to be too generous.
+
 ## Moderating the guide dispersion
 
 With four residual degrees of freedom, each guide's own $\rho_i$ is a very

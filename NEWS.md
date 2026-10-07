@@ -1,3 +1,17 @@
+# BARCS 0.2.2 (development)
+
+## Gene-level summaries
+
+* New `bb_gene_empirical_null()` reads gene p-values off an empirical null
+  built from negative-control pseudo-genes (control guides drawn to each
+  gene's guide count and summarized like a real gene), with signed
+  two-sided conformal ranks and Benjamini-Hochberg FDR. It is for screens
+  whose control tail stays heavier than the model after
+  `bb_calibrate_controls()`, typically when replicates are split from one
+  infected population and share clone sizes. Pseudo-genes are widened to the
+  within-gene guide correlation so they match a real gene's null variance.
+  Defaults are unchanged; the function is opt-in.
+
 # BARCS 0.2.1
 
 ## Guide-level inference

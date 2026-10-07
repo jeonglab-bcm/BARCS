@@ -127,6 +127,183 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
   result
 }
 
+#' Gene-level empirical null from negative-control pseudo-genes
+#'
+#' Replaces the model p-values of a [bb_gene_stouffer()] result with p-values
+#' read off an empirical null built from the negative-control guides. Each
+#' null draw is a pseudo-gene: as many control guides as the gene has, drawn
+#' without replacement and summarized like a real gene. A gene's p-value is
+#' its two-sided conformal rank among the null draws of its own guide count,
+#' `2 * min(1 + #{null >= observed}, 1 + #{null <= observed}) / (1 + n_null)`,
+#' capped at one, and FDR is Benjamini-Hochberg on those p-values. Ranks are
+#' signed, so a null that is shifted or skewed (for example by a
+#' compositional shift that moves every control the same way) is used as it
+#' is rather than folded onto its absolute value.
+#'
+#' Use this when the guide model and [bb_calibrate_controls()] still leave
+#' the gene-level FDR too generous: most often when replicate libraries are
+#' split from one infected population, so replicates share clone sizes and
+#' guide-level variance is underestimated in a way a residual cannot see. A
+#' one-parameter rescaling of the guide statistics matches the body of the
+#' control distribution but not a heavy, clone-driven tail. The empirical
+#' null uses the control tail itself, so its validity rests only on the
+#' controls being exchangeable with the guides of null genes (same library,
+#' same fitting design and filters), not on the beta-binomial model.
+#'
+#' Genes and pseudo-genes are compared on the mean of their signed guide z
+#' scores. Pseudo-genes are drawn from controls that do not share a gene, so
+#' they lack the within-gene guide correlation `r` that [bb_gene_stouffer()]
+#' corrects for. Their deviation from the control centre is therefore widened
+#' by `sqrt(1 + (m - 1) r)`, which gives a pseudo-gene of `m` guides the null
+#' mean and variance of a real gene of `m` correlated guides.
+#'
+#' The null has limited resolution. With `n` controls and genes of one
+#' guide, there are only `n` distinct null values, so the smallest p-value is
+#' `2 / (n + 1)`; across many genes this caps how many can pass a strict FDR.
+#' Expect fewer calls than the model when the model is well calibrated: this
+#' is a robustness check and a remedy for an inflated control tail, not a way
+#' to gain power. Results depend on the random draws; call [set.seed()] first
+#' for reproducibility.
+#'
+#' @param gene_result Gene-level result from [bb_gene_stouffer()] on the
+#'   targeting guides.
+#' @param guide_result Guide-level result from [bb_screen()] (optionally
+#'   moderated or calibrated) that includes the control guides.
+#' @param control Logical vector identifying negative-control guides, one
+#'   element per row of `guide_result`.
+#' @param n_null Number of pseudo-genes drawn for each guide count of two or
+#'   more. Genes with one guide are compared with every control guide
+#'   directly.
+#' @param min_controls Minimum number of usable control guides.
+#'
+#' @return `gene_result` with empirical `p_value` and `fdr`. The model values
+#'   are kept as `raw_p_value` and `raw_fdr`. The attribute
+#'   `"empirical_null"` records the number of usable controls and the null
+#'   draws used for each guide count. Genes with more guides than there are
+#'   usable controls get `NA`.
+#'
+#' @family recalibration
+#' @family gene-level summaries
+#' @export
+#' @examples
+#' # 400 control and 400 targeting guides, two guides per gene, whose null
+#' # statistics have a heavier tail than the model assumes.
+#' set.seed(7)
+#' n <- 800
+#' control <- rep(c(TRUE, FALSE), each = n / 2)
+#' guides <- data.frame(
+#'   gene = c(rep("NTC", n / 2), rep(sprintf("g%03d", 1:200), each = 2)),
+#'   estimate = rt(n, df = 3) / 4,
+#'   std_error = 0.25
+#' )
+#' guides$estimate[n - 1:2] <- 3
+#' guides$p_value <- 2 * pnorm(-abs(guides$estimate / guides$std_error))
+#'
+#' genes <- bb_gene_stouffer(guides[!control, ])
+#' empirical <- bb_gene_empirical_null(genes, guides, control)
+#' c(model = sum(genes$fdr < 0.1), empirical = sum(empirical$fdr < 0.1))
+bb_gene_empirical_null <- function(gene_result, guide_result, control,
+                                   n_null = 1e5, min_controls = 100L) {
+  if (!is.data.frame(gene_result) ||
+      !all(c("n_guides", "statistic", "p_value", "fdr") %in%
+             names(gene_result))) {
+    .bb_stop("`gene_result` must be a gene-level result from `bb_gene_stouffer()`.")
+  }
+  if ("method" %in% names(gene_result) &&
+      any(gene_result$method != "stouffer")) {
+    .bb_stop("`gene_result` must come from `bb_gene_stouffer()`.")
+  }
+  if ("raw_p_value" %in% names(gene_result)) {
+    .bb_stop("`gene_result` already carries an empirical null.")
+  }
+  required <- c("estimate", "p_value")
+  if (!is.data.frame(guide_result) ||
+      !all(required %in% names(guide_result))) {
+    .bb_stop(
+      "`guide_result` must contain guide-level `estimate` and `p_value` columns."
+    )
+  }
+  if (!is.logical(control) || length(control) != nrow(guide_result) ||
+      anyNA(control)) {
+    .bb_stop("`control` must be a non-missing logical vector, one per guide.")
+  }
+  if (length(n_null) != 1L || !is.finite(n_null) || n_null < 100) {
+    .bb_stop("`n_null` must be at least 100.")
+  }
+  if (length(min_controls) != 1L || !is.finite(min_controls) ||
+      min_controls < 2) {
+    .bb_stop("`min_controls` must be at least two.")
+  }
+  n_null <- as.integer(n_null)
+
+  # The same guide validity and z transform as `bb_gene_stouffer()`.
+  valid <- control & is.finite(guide_result$estimate) &
+    is.finite(guide_result$p_value) &
+    guide_result$p_value >= 0 & guide_result$p_value <= 1
+  if ("converged" %in% names(guide_result)) {
+    valid <- valid & !is.na(guide_result$converged) & guide_result$converged
+  }
+  n_controls <- sum(valid)
+  if (n_controls < as.integer(min_controls)) {
+    .bb_stop(sprintf(
+      "At least %d usable negative-control guides are required.",
+      as.integer(min_controls)
+    ))
+  }
+  control_z <- sign(guide_result$estimate[valid]) * stats::qnorm(
+    pmax(guide_result$p_value[valid] / 2, .Machine$double.xmin),
+    lower.tail = FALSE
+  )
+  centre <- mean(control_z)
+  correlation <- attr(gene_result, "guide_correlation")
+  if (is.null(correlation)) {
+    correlation <- 0
+  }
+
+  # Mean signed guide z of each gene, recovered from the Stouffer statistic.
+  m_gene <- gene_result$n_guides
+  observed <- gene_result$statistic *
+    sqrt(m_gene + m_gene * (m_gene - 1) * correlation) / m_gene
+
+  p_value <- rep(NA_real_, nrow(gene_result))
+  sizes <- sort(unique(m_gene))
+  draws <- stats::setNames(integer(length(sizes)), sizes)
+  for (m in sizes) {
+    if (m > n_controls) {
+      next
+    }
+    rows <- which(m_gene == m)
+    if (m == 1L) {
+      null <- control_z
+    } else {
+      null <- vapply(seq_len(n_null), function(i) {
+        mean(control_z[sample.int(n_controls, m)])
+      }, numeric(1))
+      # Controls share no gene: widen to the within-gene correlation.
+      null <- centre + (null - centre) * sqrt(1 + (m - 1) * correlation)
+    }
+    null <- sort(null)
+    upper <- length(null) -
+      findInterval(observed[rows], null, left.open = TRUE)
+    lower <- findInterval(observed[rows], null)
+    p_value[rows] <- pmin(
+      1, 2 * (1 + pmin(upper, lower)) / (1 + length(null))
+    )
+    p_value[rows][!is.finite(observed[rows])] <- NA_real_
+    draws[as.character(m)] <- length(null)
+  }
+
+  gene_result$raw_p_value <- gene_result$p_value
+  gene_result$raw_fdr <- gene_result$fdr
+  gene_result$p_value <- p_value
+  gene_result$fdr <- stats::p.adjust(p_value, method = "BH")
+  attr(gene_result, "empirical_null") <- list(
+    n_controls = n_controls,
+    n_null = draws
+  )
+  gene_result
+}
+
 # Newton iteration solving trigamma(y) = x, used by the scaled-F moment
 # estimator in `bb_moderate_dispersion()`.
 .bb_trigamma_inverse <- function(x) {

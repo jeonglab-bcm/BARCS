@@ -68,6 +68,7 @@ attr(calibrated, "control_scale")
 }
 \seealso{
 Other recalibration: 
+\code{\link{bb_gene_empirical_null}()},
 \code{\link{bb_moderate_dispersion}()}
 }
 \concept{recalibration}

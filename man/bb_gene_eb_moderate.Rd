@@ -63,6 +63,7 @@ bb_gene_eb_moderate(
 \seealso{
 Other gene-level summaries: 
 \code{\link{bb_gene_consistency}()},
+\code{\link{bb_gene_empirical_null}()},
 \code{\link{bb_gene_normal}()},
 \code{\link{bb_gene_partial_pool}()},
 \code{\link{bb_gene_stouffer}()}

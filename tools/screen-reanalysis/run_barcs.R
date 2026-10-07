@@ -154,6 +154,18 @@ for (analysis in analyses) {
   }
   genes <- bb_gene_stouffer(screen[!control, , drop = FALSE],
                             correlation = attr(screen, "guide_correlation"))
+  # Empirical null from control pseudo-genes (BARCS >= 0.2.2): a check on the
+  # model FDR that does not rely on the guide model, for screens whose control
+  # tail stays heavy after calibration (replicates sharing clones). Reported
+  # alongside the model FDR, which remains the headline call.
+  empirical_null <- exists("bb_gene_empirical_null", mode = "function") &&
+    sum(control) >= 100L
+  if (empirical_null) {
+    set.seed(20261007)
+    empirical <- bb_gene_empirical_null(genes, screen, control)
+    genes$empirical_p_value <- empirical$p_value
+    genes$empirical_fdr <- empirical$fdr
+  }
   genes <- genes[order(genes$p_value), , drop = FALSE]
 
   out <- file.path(out_root, name)
@@ -178,11 +190,15 @@ for (analysis in analyses) {
     genes_fdr_0_10_down = sum(genes$fdr < 0.10 & genes$estimate < 0, na.rm = TRUE),
     genes_fdr_0_05 = sum(genes$fdr < 0.05, na.rm = TRUE),
     genes_fdr_0_10 = sum(genes$fdr < 0.10, na.rm = TRUE),
+    genes_empirical_fdr_0_10 = if (empirical_null) {
+      sum(genes$empirical_fdr < 0.10, na.rm = TRUE)
+    } else NULL,
     barcs_version = as.character(utils::packageVersion("BARCS"))
   )
   writeLines(toJSON(info, auto_unbox = TRUE, pretty = TRUE, null = "null"),
              file.path(out, "run_info.json"))
-  message(sprintf("   %d genes at FDR 0.10; guide correlation %.3f; top: %s",
-                  info$genes_fdr_0_10, info$guide_correlation %||% NA,
+  message(sprintf("   %d genes at FDR 0.10 (%s against the control null); guide correlation %.3f; top: %s",
+                  info$genes_fdr_0_10, info$genes_empirical_fdr_0_10 %||% "n/a",
+                  info$guide_correlation %||% NA,
                   paste(utils::head(genes$gene, 8L), collapse = ", ")))
 }
