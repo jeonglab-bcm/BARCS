@@ -1,0 +1,29 @@
+{
+  "analysis": "cd80_high_vs_low",
+  "formula": "~donor + bin",
+  "term": "binhigh",
+  "libraries": 8,
+  "residual_df": 3,
+  "guides": 6000,
+  "genes": 1350,
+  "moderated": true,
+  "prior_df": 5.8952,
+  "guide_correlation": 0.0101,
+  "control_scale": null,
+  "totals_method": "library",
+  "top1pct_read_share": {
+    "D1_high": 0.021,
+    "D1_low": 0.021,
+    "D2_high": 0.021,
+    "D2_low": 0.021,
+    "D3_high": 0.029,
+    "D3_low": 0.028,
+    "D4_high": 0.028,
+    "D4_low": 0.028
+  },
+  "genes_fdr_0_10_up": 4,
+  "genes_fdr_0_10_down": 5,
+  "genes_fdr_0_05": 6,
+  "genes_fdr_0_10": 9,
+  "barcs_version": "0.2.0"
+}

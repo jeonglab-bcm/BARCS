@@ -1,0 +1,27 @@
+{
+  "analysis": "wt_vs_nude",
+  "formula": "~host",
+  "term": "hostWT",
+  "libraries": 6,
+  "residual_df": 4,
+  "guides": 2952,
+  "genes": 713,
+  "moderated": true,
+  "prior_df": 8.0784,
+  "guide_correlation": 0.0068,
+  "control_scale": null,
+  "totals_method": "library",
+  "top1pct_read_share": {
+    "WT_1": 0.096,
+    "WT_2": 0.041,
+    "WT_3": 0.051,
+    "Nude_1": 0.043,
+    "Nude_2": 0.037,
+    "Nude_3": 0.036
+  },
+  "genes_fdr_0_10_up": 6,
+  "genes_fdr_0_10_down": 36,
+  "genes_fdr_0_05": 9,
+  "genes_fdr_0_10": 42,
+  "barcs_version": "0.2.0"
+}

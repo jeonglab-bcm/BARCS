@@ -1,0 +1,62 @@
+{
+  "gse": "GSE318501",
+  "pmid": "42189126",
+  "counts_file": "suppl/GSE318501_Drug_count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "miRNA",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Control_Day23_rep1",
+      "gsm": "GSM9496798",
+      "treatment": "control",
+      "replicate": "1"
+    },
+    {
+      "column": "Control_Day23_rep2",
+      "gsm": "GSM9496799",
+      "treatment": "control",
+      "replicate": "2"
+    },
+    {
+      "column": "Control_Day23_rep3",
+      "gsm": "GSM9496800",
+      "treatment": "control",
+      "replicate": "3"
+    },
+    {
+      "column": "VEM_Day23_rep1",
+      "gsm": "GSM9496801",
+      "treatment": "vemurafenib",
+      "replicate": "1"
+    },
+    {
+      "column": "VEM_Day23_rep2",
+      "gsm": "GSM9496802",
+      "treatment": "vemurafenib",
+      "replicate": "2"
+    },
+    {
+      "column": "VEM_Day23_rep3",
+      "gsm": "GSM9496803",
+      "treatment": "vemurafenib",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "control",
+      "vemurafenib"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "vem_vs_control_day23",
+      "formula": "~ treatment",
+      "term": "treatmentvemurafenib",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Column names state arm and replicate and match the day-23 GSM titles; the day-0 samples are not in this count file. Resistance (miR-18a knockout) should be enriched under vemurafenib. The library has no non-targeting controls. Pairing between control and VEM replicates is not documented, so no replicate term. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene."
+}

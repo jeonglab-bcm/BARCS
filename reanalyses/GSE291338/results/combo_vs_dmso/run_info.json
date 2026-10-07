@@ -1,0 +1,25 @@
+{
+  "analysis": "combo_vs_dmso",
+  "formula": "~treatment",
+  "term": "treatmentcombo",
+  "libraries": 4,
+  "residual_df": 2,
+  "guides": 90709,
+  "genes": 17950,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "totals_method": "median_ratio",
+  "top1pct_read_share": {
+    "LIB240222JT_DMSO1_A2": 0.051,
+    "LIB240222JT_DMSO2_A3": 0.051,
+    "LIB240222JT_Combo1_A8": 0.723,
+    "LIB240222JT_Combo2_A9": 0.841
+  },
+  "genes_fdr_0_10_up": 52,
+  "genes_fdr_0_10_down": 2920,
+  "genes_fdr_0_05": 1808,
+  "genes_fdr_0_10": 2972,
+  "barcs_version": "0.2.0"
+}

@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/palbo_vs_dmso/genes.csv",
+  "direction": "both",
+  "named_hits": ["RB1", "HNRNPU", "CEBPE", "BAX", "IKZF1"],
+  "published": {"file": "paper/mmc2.xls", "sheet": "PalboVsDMSO_gene", "gene_column": "Gene",
+                "score_column": "min_fdr", "score_better": "lower", "effect_column": "lfc_mean"},
+  "top_n": [25, 50, 100]
+}

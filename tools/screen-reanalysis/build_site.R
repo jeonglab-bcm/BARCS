@@ -72,8 +72,8 @@ volcano <- function(genes, named) {
   genes$y <- -log10(pmax(genes$p_value, 1e-300))
   is_named <- toupper(genes$gene) %in% toupper(named)
   lim <- max(abs(stats::quantile(genes$estimate, c(0.005, 0.995))),
-             abs(genes$estimate[is_named]), 1)
-  lim <- ceiling(lim)
+             abs(genes$estimate[is_named]), 0.05)
+  lim <- max(pretty(c(0, lim * 1.05)))
   ymax <- max(ceiling(max(genes$y)), 2)
   sx <- function(x) left + (pmin(pmax(x, -lim), lim) + lim) / (2 * lim) * (w - left - right)
   sy <- function(y) top + (1 - y / ymax) * (h - top - bottom)

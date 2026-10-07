@@ -1,0 +1,25 @@
+{
+  "analysis": "ven_vs_dmso",
+  "formula": "~treatment",
+  "term": "treatmentven",
+  "libraries": 4,
+  "residual_df": 2,
+  "guides": 90709,
+  "genes": 17949,
+  "moderated": true,
+  "prior_df": 6.2019,
+  "guide_correlation": 0,
+  "control_scale": null,
+  "totals_method": "median_ratio",
+  "top1pct_read_share": {
+    "LIB240222JT_DMSO1_A2": 0.051,
+    "LIB240222JT_DMSO2_A3": 0.051,
+    "LIB240222JT_Ven1_A6": 0.942,
+    "LIB240222JT_Ven2_A7": 0.937
+  },
+  "genes_fdr_0_10_up": 98,
+  "genes_fdr_0_10_down": 13006,
+  "genes_fdr_0_05": 11831,
+  "genes_fdr_0_10": 13104,
+  "barcs_version": "0.2.0"
+}

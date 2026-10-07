@@ -1,0 +1,17 @@
+{
+  "gse": "GSE327124",
+  "pmid": "42608566",
+  "doi": "10.1038/s41587-026-03258-2",
+  "title": "Virus-like particles enable targeted gene engineering and pooled CRISPR screening in primary human myeloid cells",
+  "journal": "Nature Biotechnology",
+  "published": "2026",
+  "model": "Primary human macrophages, transcription-factor knockout library, FACS",
+  "contrast": "CD80-high vs CD80-low bin, paired by donor (4 donors)",
+  "paper_method": "Not stated in GEO; paper not open access",
+  "paper_calls": "TNFAIP3 as central regulator of inflammatory polarization",
+  "barcs_calls": "9 genes at FDR 0.10",
+  "named_hits": "TNFAIP3 rank 1 of 1,350, FDR 2e-6",
+  "verdict": "TNFAIP3 is BARCS's top gene, enriched in CD80-high cells, with CD274, JUN, IRF8 and IRF9 behind it; the donor-paired model fits cleanly (guide correlation 0.01).",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

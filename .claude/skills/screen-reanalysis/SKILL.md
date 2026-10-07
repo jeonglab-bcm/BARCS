@@ -95,6 +95,15 @@ Rules:
 Rscript tools/screen-reanalysis/run_barcs.R work/GSE123456/design.json
 ```
 
+Check the composition warning `run_barcs.R` prints (`top1pct_read_share` in
+`run_info.json`). An unselected library puts 2-5% of reads on its top 1% of
+guides. Above about 25%, strong selection or a few resistant clones dominate:
+library totals then call most genes depleted. Rerun with
+`"totals": "median_ratio"` and read enrichment first. If median-ratio totals
+are reported as capped (single guides hold most of a library), say so: depletion
+is uninterpretable, and the Wald test can miss the strongest enrichment
+(huge effect, huge standard error).
+
 Check `results/<analysis>/run_info.json`: residual degrees of freedom of at
 least 2, moderation applied, and a plausible guide correlation (real screens
 are usually below 0.05; a large value suggests shared artifacts or a wrong

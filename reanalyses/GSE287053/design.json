@@ -1,0 +1,88 @@
+{
+  "gse": "GSE287053",
+  "pmid": "41507536",
+  "counts_file": "suppl/GSE287053_all.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non_Targeting_Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_1",
+      "gsm": "GSM8737659",
+      "host": "WT",
+      "replicate": "1"
+    },
+    {
+      "column": "WT_2",
+      "gsm": "GSM8737660",
+      "host": "WT",
+      "replicate": "2"
+    },
+    {
+      "column": "WT_3",
+      "gsm": "GSM8737661",
+      "host": "WT",
+      "replicate": "3"
+    },
+    {
+      "column": "Nude_1",
+      "gsm": "GSM8737662",
+      "host": "nude",
+      "replicate": "1"
+    },
+    {
+      "column": "Nude_2",
+      "gsm": "GSM8737663",
+      "host": "nude",
+      "replicate": "2"
+    },
+    {
+      "column": "Nude_3",
+      "gsm": "GSM8737664",
+      "host": "nude",
+      "replicate": "3"
+    },
+    {
+      "column": "Cell_1",
+      "gsm": "GSM8737665",
+      "host": "in_vitro",
+      "replicate": "1"
+    },
+    {
+      "column": "Cell_2",
+      "gsm": "GSM8737666",
+      "host": "in_vitro",
+      "replicate": "2"
+    },
+    {
+      "column": "Cell_3",
+      "gsm": "GSM8737667",
+      "host": "in_vitro",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "host": [
+      "nude",
+      "WT",
+      "in_vitro"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "wt_vs_nude",
+      "columns": [
+        "WT_1",
+        "WT_2",
+        "WT_3",
+        "Nude_1",
+        "Nude_2",
+        "Nude_3"
+      ],
+      "formula": "~ host",
+      "term": "hostWT"
+    }
+  ],
+  "rationale": "Column names match GSM titles. Immune-dependent selection is tumors in immunocompetent BALB/c versus nude mice; knockouts that boost antitumor immunity (CDK10) should be depleted in WT relative to nude. Tumors are independent animals, so no pairing term. 100 non-targeting guides available."
+}

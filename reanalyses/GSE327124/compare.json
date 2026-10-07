@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/cd80_high_vs_low/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "TNFAIP3"
+  ],
+  "top_n": [
+    10,
+    25,
+    50
+  ]
+}

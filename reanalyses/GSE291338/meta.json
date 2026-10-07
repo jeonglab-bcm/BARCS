@@ -1,0 +1,18 @@
+{
+  "gse": "GSE291338",
+  "pmid": "41468895",
+  "doi": "10.1016/j.xcrm.2025.102526",
+  "pmcid": "PMC12866115",
+  "title": "CDK4/6 inhibition overcomes venetoclax resistance mechanisms with enhanced combination activity in acute myeloid leukemia",
+  "journal": "Cell Reports Medicine",
+  "published": "2026",
+  "model": "OCI-AML2 AML cells, genome-wide knockout (5 guides/gene)",
+  "contrast": "Palbociclib vs DMSO (2 vs 2); venetoclax and combination arms also run",
+  "paper_method": "Guide-level edgeR-style tests, gene tiers by guide FDR",
+  "paper_calls": "Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1",
+  "barcs_calls": "Palbo: 1,350 genes at FDR 0.10; ven/combo: depletion uninterpretable (collapsed libraries)",
+  "named_hits": "Palbo arm: CEBPE #3, HNRNPU #16, IKZF1 #109, RB1 FDR 0.09; BAX and IKZF1 missed in ven/combo",
+  "verdict": "The palbociclib arm reproduces the paper's top resistance genes. In the venetoclax and combination arms the library collapsed onto a few resistant clones, and BARCS's Wald test fails at that extreme: BAX rises ~400-fold in both replicates yet gets p = 0.76.",
+  "agreement": "partial",
+  "analyzed": "2026-10-07"
+}
