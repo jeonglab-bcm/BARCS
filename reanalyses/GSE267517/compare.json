@@ -1,0 +1,2 @@
+{"barcs_genes": "results/tcell_et1_vs_ctrl/genes.csv", "direction": "both", "named_hits": ["Mettl5", "B2m", "Jak1", "Rnf31"],
+ "published": {"file": "paper/mageck_et1_ctrl.tsv", "gene_column": "gene", "score_column": "p_min", "score_better": "lower", "effect_column": "lfc"}, "top_n": [25, 50, 100]}

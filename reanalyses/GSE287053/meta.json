@@ -1,0 +1,17 @@
+{
+  "gse": "GSE287053",
+  "pmid": "41507536",
+  "doi": "10.1038/s43018-025-01100-3",
+  "title": "CDK10 suppresses nucleic acid sensors-mediated antitumor immunity",
+  "journal": "Nature Cancer",
+  "published": "2026",
+  "model": "CT26 mouse colon cancer, kinome knockout library in vivo",
+  "contrast": "Tumors in immunocompetent vs nude mice (3 vs 3)",
+  "paper_method": "Not stated in GEO; paper not open access",
+  "paper_calls": "CDK10 as key immune-evasion kinase",
+  "barcs_calls": "9 genes at FDR 0.10 after control calibration",
+  "named_hits": "Cdk10 depleted, rank 19 of 713, FDR 0.14",
+  "verdict": "Cdk10 knockouts are depleted in immunocompetent mice, as the paper reports (rank 20 of 713), but after calibrating to the non-targeting guides (14% reached p < 0.05 before) Cdk10 sits at FDR 0.15; Sgk1, Stk11 and Jak2 rank higher.",
+  "agreement": "partial",
+  "analyzed": "2026-10-07"
+}

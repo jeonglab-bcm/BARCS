@@ -1,0 +1,30 @@
+{
+  "analysis": "tfe3_on_vs_off",
+  "formula": "~run + dox",
+  "term": "doxon",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 77441,
+  "genes": 19044,
+  "moderated": true,
+  "prior_df": 0.4248,
+  "guide_correlation": 0.0027,
+  "control_scale": 1.5198,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0909,
+  "control_p05": 0.0495,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 13199,
+  "top1pct_read_share": {
+    "Doxy-_1": 0.048,
+    "Doxy+_1": 0.053,
+    "Doxy-_2": 0.062,
+    "Doxy+_2": 0.049
+  },
+  "genes_fdr_0_10_up": 725,
+  "genes_fdr_0_10_down": 426,
+  "genes_fdr_0_05": 612,
+  "genes_fdr_0_10": 1151,
+  "barcs_version": "0.2.1"
+}

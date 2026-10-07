@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/vem_vs_control_day23/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "mir-18a"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

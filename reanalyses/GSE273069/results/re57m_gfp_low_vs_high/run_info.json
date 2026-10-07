@@ -1,0 +1,32 @@
+{
+  "analysis": "re57m_gfp_low_vs_high",
+  "formula": "~replicate + bin",
+  "term": "binlow",
+  "libraries": 6,
+  "residual_df": 2,
+  "guides": 1263,
+  "genes": 142,
+  "moderated": true,
+  "prior_df": 162.3214,
+  "guide_correlation": 0.0153,
+  "control_scale": 1.3568,
+  "control_guides": 100,
+  "control_p05_raw": 0.15,
+  "control_p05": 0.05,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 7,
+  "top1pct_read_share": {
+    "High_R1_RE57M": 0.031,
+    "High_R2_RE57M": 0.031,
+    "High_R3_RE57M": 0.031,
+    "Low_R1_RE57M": 0.097,
+    "Low_R2_RE57M": 0.086,
+    "Low_R3_RE57M": 0.097
+  },
+  "genes_fdr_0_10_up": 19,
+  "genes_fdr_0_10_down": 76,
+  "genes_fdr_0_05": 79,
+  "genes_fdr_0_10": 95,
+  "barcs_version": "0.2.1"
+}

@@ -1,0 +1,30 @@
+{
+  "analysis": "gm0847_htert_vs_parental",
+  "formula": "~line",
+  "term": "linehTERT",
+  "libraries": 4,
+  "residual_df": 2,
+  "guides": 56125,
+  "genes": 18685,
+  "moderated": true,
+  "prior_df": 129.5382,
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0474,
+  "control_p05": 0.0474,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 34,
+  "top1pct_read_share": {
+    "GM_P_T15_R1": 0.048,
+    "GM_P_T15_R2": 0.048,
+    "GM_hTERT_T15_R1": 0.047,
+    "GM_hTERT_T15_R2": 0.047
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "barcs_version": "0.2.1"
+}

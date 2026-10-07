@@ -1,0 +1,32 @@
+{
+  "analysis": "cd133_top_vs_bottom",
+  "formula": "~replicate + bin",
+  "term": "bintop",
+  "libraries": 6,
+  "residual_df": 2,
+  "guides": 71090,
+  "genes": 18047,
+  "moderated": true,
+  "prior_df": 3364.8823,
+  "guide_correlation": 0.0027,
+  "control_scale": 1.471,
+  "control_guides": 142,
+  "control_p05_raw": 0.1493,
+  "control_p05": 0.0522,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 446,
+  "top1pct_read_share": {
+    "GBM_84": 0.069,
+    "GBM_85": 0.079,
+    "GBM_86": 0.067,
+    "GBM_87": 0.075,
+    "GBM_88": 0.079,
+    "GBM_89": 0.069
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "barcs_version": "0.2.1"
+}

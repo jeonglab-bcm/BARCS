@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/wt_vs_nude/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "Cdk10"
+  ],
+  "top_n": [
+    10,
+    25,
+    50
+  ]
+}

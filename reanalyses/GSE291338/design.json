@@ -1,0 +1,112 @@
+{
+  "gse": "GSE291338",
+  "pmid": "41468895",
+  "counts_file": "suppl/GSE291338_ven_palbo_crispr_count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^CTRL$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "LIB240222JT_Day0_A1",
+      "gsm": "GSM8833668",
+      "treatment": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "LIB240222JT_DMSO1_A2",
+      "gsm": "GSM8833666",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "LIB240222JT_DMSO2_A3",
+      "gsm": "GSM8833667",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "LIB240222JT_Palbo1_A4",
+      "gsm": "GSM8833669",
+      "treatment": "palbo",
+      "replicate": "1"
+    },
+    {
+      "column": "LIB240222JT_Palbo2_A5",
+      "gsm": "GSM8833670",
+      "treatment": "palbo",
+      "replicate": "2"
+    },
+    {
+      "column": "LIB240222JT_Ven1_A6",
+      "gsm": "GSM8833671",
+      "treatment": "ven",
+      "replicate": "1"
+    },
+    {
+      "column": "LIB240222JT_Ven2_A7",
+      "gsm": "GSM8833672",
+      "treatment": "ven",
+      "replicate": "2"
+    },
+    {
+      "column": "LIB240222JT_Combo1_A8",
+      "gsm": "GSM8833664",
+      "treatment": "combo",
+      "replicate": "1"
+    },
+    {
+      "column": "LIB240222JT_Combo2_A9",
+      "gsm": "GSM8833665",
+      "treatment": "combo",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "day0",
+      "palbo",
+      "ven",
+      "combo"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "ven_vs_dmso",
+      "columns": [
+        "LIB240222JT_DMSO1_A2",
+        "LIB240222JT_DMSO2_A3",
+        "LIB240222JT_Ven1_A6",
+        "LIB240222JT_Ven2_A7"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentven",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "palbo_vs_dmso",
+      "columns": [
+        "LIB240222JT_DMSO1_A2",
+        "LIB240222JT_DMSO2_A3",
+        "LIB240222JT_Palbo1_A4",
+        "LIB240222JT_Palbo2_A5"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentpalbo"
+    },
+    {
+      "name": "combo_vs_dmso",
+      "columns": [
+        "LIB240222JT_DMSO1_A2",
+        "LIB240222JT_DMSO2_A3",
+        "LIB240222JT_Combo1_A8",
+        "LIB240222JT_Combo2_A9"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentcombo",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Column names state treatment and replicate (A1-A9 match GSM titles). The paper compares each drug arm with DMSO at day 21 (depleted = sensitizer, enriched = resistance); ven vs DMSO is primary because BAX loss and translation-gene sensitization are its claims. Palbo (RB1) and combo (IKZF1) are run as the paper's other named comparisons. Two replicates per arm gives 2 residual df; no pairing term since pairing is not documented. Only 5 'CTRL' guides, so no control calibration. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene."
+}

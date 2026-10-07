@@ -15,3 +15,5 @@ BARCS_*.tar.gz
 BARCS_*.tgz
 /doc/
 /Meta/
+work/
+_site/

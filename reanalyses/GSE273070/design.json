@@ -1,0 +1,53 @@
+{
+  "gse": "GSE273070",
+  "pmid": "41053217",
+  "counts_file": "suppl/GSE273070_TFi.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NT",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "R1_Negative",
+      "gsm": "",
+      "bin": "negative",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_Negative",
+      "gsm": "",
+      "bin": "negative",
+      "replicate": "R2"
+    },
+    {
+      "column": "R1_High",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_High",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "negative",
+      "high"
+    ],
+    "replicate": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "xist_high_vs_negative",
+      "formula": "~ replicate + bin",
+      "term": "binhigh"
+    }
+  ],
+  "rationale": "CRISPRi FlowFISH screen of transcription-factor promoters in female mouse ES cells at day 2 of differentiation, sorted by Xist RNA level; column names give replicate and bin. Each replicate is one transduction sorted into all bins, so replicate is a blocking term (1 residual df). Genes are promoter-level (_p1/_p2). Activators of Xist (Zic3) should be depleted in the Xist-high bin; this matches the authors' own High vs Negative analysis."
+}

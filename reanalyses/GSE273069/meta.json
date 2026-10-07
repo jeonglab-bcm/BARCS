@@ -1,0 +1,18 @@
+{
+  "gse": "GSE273069",
+  "pmid": "41053217",
+  "doi": "10.1038/s41594-025-01686-3",
+  "pmcid": "PMC12700789",
+  "title": "Reporter CRISPR screens decipher cis-regulatory and trans-regulatory principles at the Xist locus",
+  "journal": "Nature Structural & Molecular Biology",
+  "published": "2025",
+  "model": "Female mouse ES cells with a GFP reporter driven by the Xist promoter-proximal element RE57M; CRISPRi of transcription-factor promoters",
+  "contrast": "GFP-low vs GFP-high sort, paired by replicate (3 vs 3)",
+  "paper_method": "MAGeCK",
+  "paper_calls": "ZIC3 and OCT4 (Pou5f1) activate promoter-proximal Xist elements",
+  "barcs_calls": "95 promoters at FDR 0.10 after control calibration",
+  "named_hits": "Pou5f1 #3, Zic3 #5 (both FDR < 1e-37)",
+  "verdict": "BARCS recovers both activators the paper names for this reporter, Pou5f1 (#3) and Zic3 (#5), behind the reporter's own positive controls. Non-targeting guides were inflated (15% at p < 0.05), so the hit list was calibrated to them.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

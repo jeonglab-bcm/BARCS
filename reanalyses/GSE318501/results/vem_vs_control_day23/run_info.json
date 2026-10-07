@@ -1,0 +1,32 @@
+{
+  "analysis": "vem_vs_control_day23",
+  "formula": "~treatment",
+  "term": "treatmentvemurafenib",
+  "libraries": 6,
+  "residual_df": 4,
+  "guides": 8093,
+  "genes": 2119,
+  "moderated": true,
+  "prior_df": 12.7996,
+  "guide_correlation": 0.0055,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 4,
+  "top1pct_read_share": {
+    "Control_Day23_rep1": 0.049,
+    "Control_Day23_rep2": 0.048,
+    "Control_Day23_rep3": 0.048,
+    "VEM_Day23_rep1": 0.285,
+    "VEM_Day23_rep2": 0.248,
+    "VEM_Day23_rep3": 0.31
+  },
+  "genes_fdr_0_10_up": 291,
+  "genes_fdr_0_10_down": 155,
+  "genes_fdr_0_05": 316,
+  "genes_fdr_0_10": 446,
+  "barcs_version": "0.2.1"
+}

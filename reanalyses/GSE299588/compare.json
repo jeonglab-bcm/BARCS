@@ -1,0 +1,1 @@
+{"barcs_genes": "results/cd133_top_vs_bottom/genes.csv", "direction": "depleted", "named_hits": ["PROM1", "SOX2"], "top_n": [25, 50, 100]}

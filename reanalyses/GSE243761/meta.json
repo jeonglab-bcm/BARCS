@@ -1,0 +1,18 @@
+{
+  "gse": "GSE243761",
+  "pmid": "40997217",
+  "doi": "10.1126/science.adl1988",
+  "pmcid": "PMC13005951",
+  "title": "Mechanosensitive genomic enhancers potentiate the cellular response to matrix stiffness",
+  "journal": "Science",
+  "published": "2025",
+  "model": "CRISPRi tiling of DNase-hypersensitive sites around MYH9, FACS for MYH9 protein",
+  "contrast": "MYH9-low vs MYH9-high sort, paired by replicate (2 vs 2)",
+  "paper_method": "Not stated in GEO",
+  "paper_calls": "Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9",
+  "barcs_calls": "99 elements at FDR 0.10 after control calibration",
+  "named_hits": "DHS 45, 47, 46 ranks 1-3; DHS 72 #5; DHS 71 #34",
+  "verdict": "BARCS ranks the paper's intron-3 mechanoenhancers (DHS 45, 47, 46) as the top three elements and the promoter element DHS 72 fifth. Non-targeting guides were strongly inflated (56% at p < 0.05), so calls were calibrated; the top elements are unaffected.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

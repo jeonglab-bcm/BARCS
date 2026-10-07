@@ -1,0 +1,53 @@
+{
+  "gse": "GSE243761",
+  "pmid": "40997217",
+  "counts_file": "GSE243761_MYH9_counts_with_element.tsv",
+  "guide_column": "grna",
+  "gene_column": "element",
+  "control_gene_pattern": "non-targeting",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "rep1_MYH9high",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "rep1"
+    },
+    {
+      "column": "rep2_MYH9high",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "rep2"
+    },
+    {
+      "column": "rep1_MYH9low",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "rep1"
+    },
+    {
+      "column": "rep2_MYH9low",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "rep2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "high",
+      "low"
+    ],
+    "replicate": [
+      "rep1",
+      "rep2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "myh9_low_vs_high",
+      "formula": "~ replicate + bin",
+      "term": "binlow"
+    }
+  ],
+  "rationale": "CRISPRi tiling of DNase-hypersensitive sites around MYH9, cells sorted on MYH9 protein into low and high bins, two replicates sorted from one population each, so replicate is a blocking term (1 residual df). Elements are DHS regions (the element column was taken from the guide labels). Enhancers and promoter elements of MYH9 (DHS_45-47, DHS_71-72) should be enriched in MYH9-low."
+}

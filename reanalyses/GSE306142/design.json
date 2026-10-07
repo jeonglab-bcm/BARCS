@@ -1,0 +1,66 @@
+{
+  "gse": "GSE306142",
+  "pmid": "41091115",
+  "counts_file": "suppl/GSE306142_pace018_readCounts.txt.gz",
+  "guide_column": "Guide.ID",
+  "gene_column": "GENE",
+  "control_gene_pattern": "^(EGFP|LacZ|luciferase)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "PACE_119",
+      "gsm": "GSM9193984",
+      "treatment": "DMSO",
+      "replicate": "A"
+    },
+    {
+      "column": "PACE_120",
+      "gsm": "GSM9193985",
+      "treatment": "DMSO",
+      "replicate": "B"
+    },
+    {
+      "column": "PACE_121",
+      "gsm": "GSM9193986",
+      "treatment": "DMSO",
+      "replicate": "C"
+    },
+    {
+      "column": "PACE_162",
+      "gsm": "GSM9193987",
+      "treatment": "PTC596",
+      "replicate": "A"
+    },
+    {
+      "column": "PACE_163",
+      "gsm": "GSM9193988",
+      "treatment": "PTC596",
+      "replicate": "B"
+    },
+    {
+      "column": "PACE_164",
+      "gsm": "GSM9193989",
+      "treatment": "PTC596",
+      "replicate": "C"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "PTC596"
+    ],
+    "replicate": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "ptc596_vs_dmso",
+      "formula": "~ replicate + treatment",
+      "term": "treatmentPTC596"
+    }
+  ],
+  "rationale": "TKOv3 genome-wide knockout in a medulloblastoma model treated with PTC596 or DMSO; GEO library names map PACE_119-121 to DMSO and PACE_162-164 to PTC596, and the titles T42A/B/C pair them by replicate, so replicate is a blocking term (2 residual df). PACE_115 is a reference reused from another series and is excluded. Sensitizers (mTOR, AKT, PLK1, PI3K pathway genes) should be depleted under PTC596."
+}

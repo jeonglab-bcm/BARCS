@@ -1,0 +1,18 @@
+{
+  "gse": "GSE211312",
+  "pmid": "42236690",
+  "doi": "10.1038/s41392-026-02750-0",
+  "pmcid": "PMC13233980",
+  "title": "Epigenetic control of telomeric RNA maintains heterochromatin in telomerase-driven cancers",
+  "journal": "Signal Transduction and Targeted Therapy",
+  "published": "2026",
+  "model": "GM0847 cells with or without hTERT overexpression, GeCKO genome-wide knockout, T0 and T15",
+  "contrast": "Dropout over time in hTERT vs parental cells (line × time interaction, 2 per cell)",
+  "paper_method": "Not stated in GEO; candidates combined across CRISPR and shRNA screens",
+  "paper_calls": "FTSJ3 as the top synthetic dosage lethal target of hTERT",
+  "barcs_calls": "0 genes at FDR 0.10 after control calibration",
+  "named_hits": "FTSJ3 rank 18,567 of 18,685 (no extra dropout)",
+  "verdict": "In this GM0847 knockout screen BARCS finds no gene whose dropout depends on hTERT, and FTSJ3 shows no extra dropout at all. The paper prioritized FTSJ3 from several CRISPR and shRNA screens plus arrayed and in vivo validation, so this single screen is weak evidence either way.",
+  "agreement": "differ",
+  "analyzed": "2026-10-07"
+}

@@ -1,0 +1,18 @@
+{
+  "gse": "GSE318501",
+  "pmid": "42189126",
+  "doi": "10.1002/advs.202515158",
+  "pmcid": "PMC13335869",
+  "title": "Genome-Wide CRISPR Screen Identifies a microRNA Orchestrating Pleiotropic Resistance to Targeted Therapy and T Cell Immunity in Melanoma",
+  "journal": "Advanced Science",
+  "published": "2026",
+  "model": "A375 melanoma, miRNA knockout library",
+  "contrast": "Vemurafenib vs control, day 23 (3 vs 3)",
+  "paper_method": "Not given in supplements",
+  "paper_calls": "miR-18a loss drives vemurafenib resistance",
+  "barcs_calls": "443 miRNAs at FDR 0.10 with median-ratio totals",
+  "named_hits": "mir-18a enriched, rank 3 of 2,119, FDR 2e-8",
+  "verdict": "BARCS recovers miR-18a among the three strongest enriched miRNAs, but only after median-ratio normalization; with library totals the composition shift buries it at rank 1,415.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

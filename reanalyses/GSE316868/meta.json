@@ -1,0 +1,18 @@
+{
+  "gse": "GSE316868",
+  "pmid": "41843980",
+  "doi": "10.1016/j.neo.2026.101296",
+  "pmcid": "PMC13069303",
+  "title": "The Cyclin C-CDK8/19 Mediator kinase module controls PRCC-TFE3 driven senescence in renal epithelium and tumorigenesis in TFE3-RCC",
+  "journal": "Neoplasia",
+  "published": "2026",
+  "model": "HK-2 renal epithelial cells with inducible PRCC-TFE3, Brunello knockout library",
+  "contrast": "PRCC-TFE3 induced vs not induced, paired by run (2 vs 2)",
+  "paper_method": "MAGeCK RRA (deposited)",
+  "paper_calls": "CCNC (Cyclin C) required for PRCC-TFE3 senescence",
+  "barcs_calls": "1,151 genes at FDR 0.10 after control calibration",
+  "named_hits": "CCNC #137 (FDR 0.005); CDKN1A #340; MED12 #420",
+  "verdict": "With the Firth correction in BARCS 0.2.1, the CCNC guides that have no reads in either control library are kept, and CCNC is enriched at FDR 0.005, as the paper reports. Before the correction BARCS dropped those guides and missed CCNC (rank 1,521). Agreement with the authors' MAGeCK rose to a rank correlation of 0.51.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

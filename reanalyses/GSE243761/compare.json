@@ -1,0 +1,16 @@
+{
+  "barcs_genes": "results/myh9_low_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "DHS_45",
+    "DHS_46",
+    "DHS_47",
+    "DHS_71",
+    "DHS_72"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

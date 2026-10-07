@@ -1,0 +1,79 @@
+{
+  "gse": "GSE327124",
+  "pmid": "42608566",
+  "counts_file": "suppl/GSE327124_CD80_TF_all_donors.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "D1_high",
+      "gsm": "GSM9648645",
+      "donor": "D1",
+      "bin": "high"
+    },
+    {
+      "column": "D1_low",
+      "gsm": "GSM9648646",
+      "donor": "D1",
+      "bin": "low"
+    },
+    {
+      "column": "D2_high",
+      "gsm": "GSM9648647",
+      "donor": "D2",
+      "bin": "high"
+    },
+    {
+      "column": "D2_low",
+      "gsm": "GSM9648648",
+      "donor": "D2",
+      "bin": "low"
+    },
+    {
+      "column": "D3_high",
+      "gsm": "GSM9648649",
+      "donor": "D3",
+      "bin": "high"
+    },
+    {
+      "column": "D3_low",
+      "gsm": "GSM9648650",
+      "donor": "D3",
+      "bin": "low"
+    },
+    {
+      "column": "D4_high",
+      "gsm": "GSM9648651",
+      "donor": "D4",
+      "bin": "high"
+    },
+    {
+      "column": "D4_low",
+      "gsm": "GSM9648652",
+      "donor": "D4",
+      "bin": "low"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "low",
+      "high"
+    ],
+    "donor": [
+      "D1",
+      "D2",
+      "D3",
+      "D4"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "cd80_high_vs_low",
+      "formula": "~ donor + bin",
+      "term": "binhigh"
+    }
+  ],
+  "rationale": "FACS sort of LPS-stimulated macrophages into CD80-high and CD80-low bins from four donors (column names give donor and bin; GSM9648645-52). High and low bins of one donor come from the same infected population, so donor is a blocking term (~ donor + bin, 3 residual df). Donors 1-2 and 3-4 cluster apart in log counts, consistent with separate experiments, which the donor term absorbs. A negative regulator of inflammation (TNFAIP3) should be enriched in the CD80-high bin."
+}
