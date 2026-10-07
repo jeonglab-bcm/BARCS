@@ -157,6 +157,13 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
 #' by `sqrt(1 + (m - 1) r)`, which gives a pseudo-gene of `m` guides the null
 #' mean and variance of a real gene of `m` correlated guides.
 #'
+#' For genes of one guide the p-values are conformal and the FDR guarantee
+#' is exact under exchangeability. Pseudo-genes of several guides reuse one
+#' finite set of controls, so for them control is approximate: in simulated
+#' screens with heavy-tailed clonal noise it held the realized FDP near
+#' nominal where [bb_calibrate_controls()] did not, but no method held it
+#' when a third of the controls reached p < 0.05.
+#'
 #' The null has limited resolution. With `n` controls and genes of one
 #' guide, there are only `n` distinct null values, so the smallest p-value is
 #' `2 / (n + 1)`; across many genes this caps how many can pass a strict FDR.
