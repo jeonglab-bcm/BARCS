@@ -123,10 +123,15 @@ for (analysis in analyses) {
   message(sprintf("\n== %s: %s, coefficient %s, %d libraries", name,
                   deparse(formula), analysis$term, ncol(counts)))
 
+  # "auto" (BARCS >= 0.2.1) switches guides whose abundance moves by orders of
+  # magnitude to the likelihood-ratio test, where the Wald test breaks down.
+  test <- analysis$test %||% design$test %||%
+    if ("test" %in% names(formals(bb_screen))) "auto" else "wald"
   screen <- bb_screen(
     counts = counts, data = data, formula = formula, term = analysis$term,
     totals = totals, guide = guide, gene = gene,
-    min_total_count = design$min_total_count %||% 30, ncores = ncores
+    min_total_count = design$min_total_count %||% 30, ncores = ncores,
+    test = test
   )
   if (isTRUE(analysis$calibrate %||% design$calibrate) && sum(control) >= 20L) {
     screen <- bb_calibrate_controls(screen, control = control, method = "qq_slope")
@@ -147,6 +152,8 @@ for (analysis in analyses) {
     guide_correlation = attr(screen, "guide_correlation"),
     control_scale = attr(screen, "control_scale"),
     totals_method = totals_method,
+    test = test,
+    guides_lr = if (is.null(screen$lr_used)) 0L else sum(screen$lr_used %in% TRUE),
     top1pct_read_share = as.list(round(composition, 3)),
     genes_fdr_0_10_up = sum(genes$fdr < 0.10 & genes$estimate > 0, na.rm = TRUE),
     genes_fdr_0_10_down = sum(genes$fdr < 0.10 & genes$estimate < 0, na.rm = TRUE),

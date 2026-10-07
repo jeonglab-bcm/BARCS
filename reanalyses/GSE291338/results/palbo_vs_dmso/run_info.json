@@ -11,15 +11,17 @@
   "guide_correlation": 0.0025,
   "control_scale": null,
   "totals_method": null,
+  "test": "auto",
+  "guides_lr": 760,
   "top1pct_read_share": {
     "LIB240222JT_DMSO1_A2": 0.051,
     "LIB240222JT_DMSO2_A3": 0.051,
     "LIB240222JT_Palbo1_A4": 0.116,
     "LIB240222JT_Palbo2_A5": 0.118
   },
-  "genes_fdr_0_10_up": 248,
-  "genes_fdr_0_10_down": 1102,
-  "genes_fdr_0_05": 608,
-  "genes_fdr_0_10": 1350,
+  "genes_fdr_0_10_up": 264,
+  "genes_fdr_0_10_down": 1173,
+  "genes_fdr_0_05": 675,
+  "genes_fdr_0_10": 1437,
   "barcs_version": "0.2.0"
 }

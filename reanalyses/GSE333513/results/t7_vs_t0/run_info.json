@@ -10,7 +10,20 @@
   "prior_df": "Inf",
   "guide_correlation": 0,
   "control_scale": null,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 5050,
+  "top1pct_read_share": {
+    "S1_CRISPR_screen": 0.072,
+    "S2_CRISPR_screen": 0.062,
+    "S3_CRISPR_screen": 0.066,
+    "S4_CRISPR_screen": 0.079,
+    "S5_CRISPR_screen": 0.079,
+    "S6_CRISPR_screen": 0.133
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
   "genes_fdr_0_05": 0,
   "genes_fdr_0_10": 0,
-  "barcs_version": "0.2.0"
+  "barcs_version": "0.2.1"
 }

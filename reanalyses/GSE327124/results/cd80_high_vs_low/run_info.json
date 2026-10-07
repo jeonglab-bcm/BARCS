@@ -11,6 +11,8 @@
   "guide_correlation": 0.0101,
   "control_scale": null,
   "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 3,
   "top1pct_read_share": {
     "D1_high": 0.021,
     "D1_low": 0.021,
@@ -25,5 +27,5 @@
   "genes_fdr_0_10_down": 5,
   "genes_fdr_0_05": 6,
   "genes_fdr_0_10": 9,
-  "barcs_version": "0.2.0"
+  "barcs_version": "0.2.1"
 }

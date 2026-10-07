@@ -101,8 +101,10 @@ guides. Above about 25%, strong selection or a few resistant clones dominate:
 library totals then call most genes depleted. Rerun with
 `"totals": "median_ratio"` and read enrichment first. If median-ratio totals
 are reported as capped (single guides hold most of a library), say so: depletion
-is uninterpretable, and the Wald test can miss the strongest enrichment
-(huge effect, huge standard error).
+is uninterpretable. `run_barcs.R` uses `test = "auto"` (BARCS >= 0.2.1), which
+tests guides whose abundance moves more than 100-fold by likelihood ratio; on
+BARCS 0.2.0 the Wald test can miss the strongest enrichment (huge effect, huge
+standard error). `guides_lr` in `run_info.json` counts the switched guides.
 
 Check `results/<analysis>/run_info.json`: residual degrees of freedom of at
 least 2, moderation applied, and a plausible guide correlation (real screens

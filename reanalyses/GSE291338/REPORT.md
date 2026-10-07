@@ -1,10 +1,10 @@
-# GSE291338 reanalysis with BARCS 0.2.0
+# GSE291338 reanalysis with BARCS 0.2.1
 
 **Paper.** "CDK4/6 inhibition overcomes venetoclax resistance mechanisms with enhanced combination activity in acute myeloid leukemia", *Cell Reports Medicine* (2026), PMID 41468895, doi:10.1016/j.xcrm.2025.102526 (PMC12866115).
 
-**Screen.** OCI-AML2 cells, genome-wide library (90,709 guides, about 5 per gene). Arms: day 0, DMSO, palbociclib, venetoclax, and ven+palbo, with 2 replicates per treated arm. The paper's supplementary Table (mmc2) gives guide- and gene-level results for each arm versus DMSO.
+**Screen.** OCI-AML2 cells, genome-wide library (90,709 guides, about 5 per gene). Arms: day 0, DMSO, palbociclib, venetoclax, and ven+palbo, with 2 replicates per treated arm. The paper's supplementary table (mmc2) gives gene-level results per arm versus DMSO.
 
-**Design.** Column names state arm and replicate. Each drug arm vs DMSO, `~ treatment`, 4 libraries, 2 residual df. Library totals for palbo; median-ratio totals for ven and combo.
+**Design.** Each drug arm vs DMSO, `~ treatment`, 4 libraries, 2 residual df, `test = "auto"`. Library totals for palbo; median-ratio totals for ven and combo.
 
 ## Library composition
 
@@ -15,28 +15,31 @@
 | Venetoclax | 90–94% |
 | Ven+palbo | 60–84% |
 
-Venetoclax killed nearly every clone. The survivors are mostly BAX and PMAIP1 knockouts: the five BAX guides alone hold about half of each ven library.
+Venetoclax killed nearly every clone. The five BAX guides alone hold about half of each ven library.
 
 ## Results
 
-| Arm | Genes at FDR 0.10 (up / down) | Named genes |
+| Arm | Genes at FDR 0.10 | Named genes (rank among enriched or all, FDR) |
 |---|---|---|
-| Palbo vs DMSO | 248 / 1,102 | CEBPE #3, HNRNPU #16, IKZF1 #109, RB1 #1,187 (FDR 0.09) |
-| Ven vs DMSO | 98 / 13,006 | BAX p = 0.76, PMAIP1 p = 0.77 |
-| Combo vs DMSO | 52 / 2,920 | IKZF1 p = 0.49 |
+| Palbo vs DMSO | 1,437 | HNRNPU #4 (1e-5), CEBPE #6 (2e-5), IKZF1 #115 (0.009), RB1 #380 (0.03) |
+| Ven vs DMSO | 103 enriched | **BAX #3 (3e-4)**, IKZF1 #6 (0.001), PMAIP1 #57 (0.051) |
+| Combo vs DMSO | 78 enriched | IKZF1 #37 (0.057) |
 
-**Palbociclib.** The arm without a bottleneck agrees with the paper.
-- 8 of the paper's top 25 genes are in BARCS's top 25; the paper's table lists 2,346 tiered genes.
-- RB1, the paper's palbo resistance gene, is enriched at FDR 0.09.
+- **Palbociclib** (no bottleneck): 8 of the paper's top 25 genes are in BARCS's top 25. RB1, the paper's palbo resistance gene, passes FDR 0.05.
+- **Venetoclax:** BAX, the paper's headline ven resistance gene, ranks third among enriched genes.
+- **Combination:** IKZF1, the paper's ven+palbo resistance gene, is borderline (FDR 0.057).
 
-**Venetoclax and combination.** These arms are where BARCS fails.
-- Every BAX guide rises from about 20,000 to 2–10 million reads in both ven replicates.
-- BARCS still estimates a huge effect (about 9.5 log odds), but the standard errors are about 75, so p is about 0.8.
-- This is the Hauck–Donner effect: when a guide approaches a large share of a library, the Wald standard error grows faster than the estimate. A likelihood-ratio test would not have this failure.
-- The depletion calls in these arms (thousands of genes) reflect the population collapse, not gene-specific dropout, even after median-ratio normalization. That normalization was capped because single guides exceed the median-based totals.
+## What changed in BARCS to get here
+
+1. **Wald test failure.** Every BAX guide rises from about 20,000 to 2–10 million reads in both ven replicates. Under BARCS 0.2.0's Wald test, BAX still scored gene p = 0.79.
+   - With one dispersion per guide, a change of this size implies a huge logit-scale variance at the low-abundance (DMSO) end.
+   - The Wald standard error then grows faster than the estimate (the Hauck–Donner effect).
+2. **The fix.** BARCS 0.2.1 adds `test = "lr"` / `"auto"`. `"auto"` uses the fixed-dispersion likelihood ratio only for guides whose fitted proportions span more than 100-fold: here 3,243 guides in the ven arm and 995 in the combo arm.
+   - On the CRISPulator benchmark, `"auto"` switches 0.1% of guides and gives the same ranking and calls as Wald.
+   - In null simulations it is no more liberal than Wald.
+3. **Normalization.** Median-ratio totals are needed in the collapsed arms. With library totals, almost every gene is called depleted.
 
 ## Limits
 
 - Two replicates per arm give 2 residual degrees of freedom.
-- For ven and combo, only enrichment is interpretable, and BARCS's current test cannot rank the strongest enrichment.
-- **Proposed package fix:** a likelihood-ratio test, used when the Wald standard error is inflated.
+- In the ven and combo arms only enrichment is interpretable. Depletion calls there (thousands of genes) reflect the population collapse, not gene-specific dropout.

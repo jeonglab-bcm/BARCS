@@ -1,4 +1,4 @@
-# GSE327124 reanalysis with BARCS 0.2.0
+# GSE327124 reanalysis with BARCS 0.2.1
 
 **Paper.** "Virus-like particles enable targeted gene engineering and pooled CRISPR screening in primary human myeloid cells", *Nature Biotechnology* (2026), PMID 42608566, doi:10.1038/s41587-026-03258-2. The paper is not open access, so the comparison uses the abstract.
 

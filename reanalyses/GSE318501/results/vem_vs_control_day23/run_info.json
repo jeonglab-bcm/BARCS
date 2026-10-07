@@ -11,6 +11,8 @@
   "guide_correlation": 0.0051,
   "control_scale": null,
   "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 4,
   "top1pct_read_share": {
     "Control_Day23_rep1": 0.049,
     "Control_Day23_rep2": 0.048,
@@ -19,9 +21,9 @@
     "VEM_Day23_rep2": 0.248,
     "VEM_Day23_rep3": 0.31
   },
-  "genes_fdr_0_10_up": 288,
-  "genes_fdr_0_10_down": 153,
+  "genes_fdr_0_10_up": 289,
+  "genes_fdr_0_10_down": 154,
   "genes_fdr_0_05": 315,
-  "genes_fdr_0_10": 441,
-  "barcs_version": "0.2.0"
+  "genes_fdr_0_10": 443,
+  "barcs_version": "0.2.1"
 }
