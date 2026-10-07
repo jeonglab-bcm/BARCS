@@ -10,9 +10,9 @@
   "contrast": "Xist-high vs Xist-negative sort, paired by replicate (2 vs 2)",
   "paper_method": "MAGeCK MLE (deposited)",
   "paper_calls": "ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10",
-  "barcs_calls": "104 promoters at FDR 0.10",
+  "barcs_calls": "101 promoters at FDR 0.10",
   "named_hits": "Xist #1, Tsix #2, Zic3 #4, Rlim #5",
-  "verdict": "BARCS and the authors' MAGeCK-MLE agree closely (rank correlation 0.95; 8 of the top 10 shared): Xist's own promoter, Zic3 and Rlim deplete from Xist-high cells and Tsix knockdown enriches them. BARCS calls far more promoters at FDR 0.10 (104 vs 13) from one residual degree of freedom, so its longer list leans on dispersion moderation.",
+  "verdict": "BARCS and the authors' MAGeCK-MLE agree closely (rank correlation 0.95; 8 of the top 10 shared): Xist's own promoter, Zic3 and Rlim deplete from Xist-high cells and Tsix knockdown enriches them. BARCS calls far more promoters at FDR 0.10 (101 vs 13) from one residual degree of freedom, so its longer list leans on dispersion moderation.",
   "agreement": "agree",
   "analyzed": "2026-10-07"
 }

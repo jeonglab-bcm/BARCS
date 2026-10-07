@@ -26,5 +26,6 @@
   "genes_fdr_0_10_down": 7,
   "genes_fdr_0_05": 2,
   "genes_fdr_0_10": 7,
-  "barcs_version": "0.2.1"
+  "genes_empirical_fdr_0_10": 7,
+  "barcs_version": "0.2.2"
 }

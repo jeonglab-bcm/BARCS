@@ -10,7 +10,7 @@
 
 | | BARCS | Authors' MAGeCK MLE |
 |---|---|---|
-| Promoters at FDR 0.10 | 104 (54 depleted, 50 enriched) | 13 |
+| Promoters at FDR 0.10 | 101 (53 depleted, 48 enriched) | 13 |
 | Xist_p1 (positive control) | #1, depleted | top |
 | Tsix_p2 (Xist antisense repressor) | #2, enriched | #29 |
 | Zic3_p1 | #4, depleted, FDR 3 × 10⁻²³ | top 10 |

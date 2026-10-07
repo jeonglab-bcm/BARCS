@@ -36,10 +36,12 @@ for (run in list.dirs(file.path(src, "results"), recursive = FALSE)) {
   dir.create(out, recursive = TRUE, showWarnings = FALSE)
   file.copy(file.path(run, "run_info.json"), out, overwrite = TRUE)
   genes <- utils::read.csv(file.path(run, "genes.csv"), stringsAsFactors = FALSE)
-  genes <- genes[, intersect(c("gene", "n_guides", "estimate", "p_value", "fdr"), names(genes))]
+  genes <- genes[, intersect(c("gene", "n_guides", "estimate", "p_value", "fdr",
+                               "empirical_p_value", "empirical_fdr"), names(genes))]
   genes$estimate <- signif(genes$estimate, 4)
-  genes$p_value <- signif(genes$p_value, 3)
-  genes$fdr <- signif(genes$fdr, 3)
+  for (column in intersect(c("p_value", "fdr", "empirical_p_value", "empirical_fdr"), names(genes))) {
+    genes[[column]] <- signif(genes[[column]], 3)
+  }
   utils::write.csv(genes, gzfile(file.path(out, "genes.csv.gz")), row.names = FALSE)
 }
 message("Archived ", meta$gse, " to ", dest, ". Rebuild the site with build_site.R.")

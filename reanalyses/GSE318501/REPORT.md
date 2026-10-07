@@ -13,7 +13,7 @@ The top 1% of guides hold 25–31% of reads in vemurafenib libraries, against 5%
 | Totals | miRNAs at FDR 0.10 | mir-18a |
 |---|---|---|
 | Library | 1,765 (1,743 depleted) | rank 1,415, effect +0.10 |
-| Median-ratio | 443 | **rank 3**, effect +0.51, FDR 2 × 10⁻⁸ |
+| Median-ratio | 446 | **rank 3**, effect +0.51, FDR 2 × 10⁻⁸ |
 
 With library totals, the expansion of resistant clones makes the typical guide look depleted. miR-18a's real enrichment then looks almost neutral. Median-ratio totals re-center on the typical guide.
 
