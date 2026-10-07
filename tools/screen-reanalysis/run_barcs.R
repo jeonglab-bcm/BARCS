@@ -133,8 +133,24 @@ for (analysis in analyses) {
     min_total_count = design$min_total_count %||% 30, ncores = ncores,
     test = test
   )
-  if (isTRUE(analysis$calibrate %||% design$calibrate) && sum(control) >= 20L) {
-    screen <- bb_calibrate_controls(screen, control = control, method = "qq_slope")
+  # Non-targeting guides are a direct null: about 5% should reach p < 0.05.
+  # Shared clonal structure between replicates, sort noise, or a dispersion
+  # prior that 1-2 residual df cannot estimate all inflate that rate, and the
+  # model FDR is then too optimistic. "auto" (default) calibrates against the
+  # controls when there are at least 50 of them and more than 7.5% reach 0.05.
+  control_rate <- function(x) {
+    p <- x$p_value[control]
+    if (sum(is.finite(p)) < 20L) NA_real_ else mean(p[is.finite(p)] < 0.05)
+  }
+  control_p05_raw <- control_rate(screen)
+  calibrate <- analysis$calibrate %||% design$calibrate %||% "auto"
+  do_calibrate <- isTRUE(calibrate) ||
+    (identical(calibrate, "auto") && sum(control) >= 50L &&
+       is.finite(control_p05_raw) && control_p05_raw > 0.075)
+  if (do_calibrate && sum(control) >= 20L) {
+    screen <- bb_calibrate_controls(screen, control = control, method = "tail_quantile")
+    message(sprintf("   calibrated to %d control guides (%.1f%% reached p < 0.05 before)",
+                    sum(control), 100 * control_p05_raw))
   }
   genes <- bb_gene_stouffer(screen[!control, , drop = FALSE],
                             correlation = attr(screen, "guide_correlation"))
@@ -151,6 +167,9 @@ for (analysis in analyses) {
     moderated = attr(screen, "moderated"), prior_df = attr(screen, "prior_df"),
     guide_correlation = attr(screen, "guide_correlation"),
     control_scale = attr(screen, "control_scale"),
+    control_guides = sum(control),
+    control_p05_raw = control_p05_raw,
+    control_p05 = control_rate(screen),
     totals_method = totals_method,
     test = test,
     guides_lr = if (is.null(screen$lr_used)) 0L else sum(screen$lr_used %in% TRUE),

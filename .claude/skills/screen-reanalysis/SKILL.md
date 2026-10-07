@@ -106,6 +106,12 @@ tests guides whose abundance moves more than 100-fold by likelihood ratio; on
 BARCS 0.2.0 the Wald test can miss the strongest enrichment (huge effect, huge
 standard error). `guides_lr` in `run_info.json` counts the switched guides.
 
+Check control calibration: `control_p05` in `run_info.json` is the share of
+non-targeting guides at p < 0.05 and should be near 5%. `run_barcs.R`
+calibrates to the controls automatically when the raw rate exceeds 7.5%
+(`control_p05_raw`); say so in the report, because it shortens the hit list.
+Without controls, say that calibration could not be checked.
+
 Check `results/<analysis>/run_info.json`: residual degrees of freedom of at
 least 2, moderation applied, and a plausible guide correlation (real screens
 are usually below 0.05; a large value suggests shared artifacts or a wrong
