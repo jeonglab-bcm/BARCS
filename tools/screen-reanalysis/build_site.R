@@ -241,13 +241,36 @@ rows <- vapply(records, function(rec) {
 tiles <- c(sprintf('<div class="tile"><span class="tile-value">%d</span><span class="tile-label">screens reanalyzed</span></div>', length(records)),
            sprintf('<div class="tile"><span class="tile-value">%d</span><span class="tile-label">%s</span></div>',
                    as.integer(counts), vapply(status, `[[`, character(1), "label")))
+# Series that were checked and could not be reanalyzed, with the reason.
+excluded_path <- file.path(src, "excluded.tsv")
+excluded <- if (file.exists(excluded_path)) {
+  utils::read.delim(excluded_path, stringsAsFactors = FALSE, quote = "", encoding = "UTF-8")
+} else {
+  data.frame(gse = character(), pmid = character(), title = character(), reason = character())
+}
+excluded <- excluded[!excluded$gse %in% names(records), , drop = FALSE]
+excluded_rows <- if (nrow(excluded)) sprintf(
+  '<tr><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a></td><td>%s</td><td>%s</td></tr>',
+  excluded$gse, excluded$gse, esc(excluded$title), esc(excluded$reason)) else character()
+search_note <- if (file.exists(file.path(src, "search.json"))) {
+  search <- fromJSON(file.path(src, "search.json"))
+  sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',
+          esc(search$date), esc(search$papers), esc(search$days), esc(search$candidates), length(records), nrow(excluded))
+} else ""
+
 index <- paste(c(
   '<h1>Published CRISPR screens, reanalyzed with BARCS</h1>',
   '<p class="lede">Recent pooled screens with raw counts in GEO, rerun with replicate-aware beta-binomial models and compared with what each paper reported. Each page states the design, the assumptions it rests on, and where BARCS and the paper differ.</p>',
   '<div class="tiles">', tiles, '</div>',
   '<div class="table-wrap"><table class="index"><thead><tr><th>Analyzed</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th>Verdict</th></tr></thead><tbody>',
   rows, '</tbody></table></div>',
-  '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology.</p>'
+  '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology.</p>',
+  search_note,
+  if (length(excluded_rows)) c(
+    sprintf('<h2>Screened out (%d)</h2>', length(excluded_rows)),
+    '<p class="muted">Series the search returned that cannot be reanalyzed faithfully from what was deposited.</p>',
+    '<div class="table-wrap"><table><thead><tr><th>Series</th><th>Title</th><th>Reason</th></tr></thead><tbody>',
+    excluded_rows, '</tbody></table></div>')
 ), collapse = "\n")
 write_utf8(page("BARCS reanalyses", index, "Published CRISPR screens reanalyzed with BARCS"), file.path(out, "index.html"))
 
