@@ -228,3 +228,75 @@ test_that("bb_screen() records no correlation without genes", {
                       guide = sprintf("g%03d", seq_along(x$gene)))
   expect_null(attr(result, "guide_correlation"))
 })
+
+test_that("the likelihood ratio matches the binomial deviance when rho is zero", {
+  fixture <- fixture_equal_libraries()
+  fit <- bbreg(fixture$count, fixture$total, ~ dose + batch, fixture$data)
+  fit$rho <- 0
+  signed_root <- BARCS:::.bb_lr_statistic(fit, "dose")
+  full <- glm(cbind(fixture$count, fixture$total - fixture$count) ~ dose + batch,
+              family = binomial(), data = fixture$data)
+  reduced <- update(full, . ~ . - dose)
+  expect_equal(signed_root^2, deviance(reduced) - deviance(full), tolerance = 1e-5)
+  expect_identical(sign(signed_root), sign(coef(full)[["dose"]]))
+})
+
+test_that("test = 'lr' reports the standard error the likelihood ratio implies", {
+  fixture <- fixture_equal_libraries()
+  counts <- rbind(
+    guide_a = fixture$count,
+    guide_b = fixture_overdispersed(fixture$mu, fixture$total)
+  )
+  screen <- bb_screen(counts, fixture$data, ~ dose + batch, term = "dose",
+                      totals = fixture$total, test = "lr", moderate = FALSE)
+  expect_true(all(c("wald_std_error", "lr_used") %in% names(screen)))
+  expect_true(all(screen$lr_used))
+  expect_identical(attr(screen, "test"), "lr")
+  expect_equal(screen$t_value, screen$estimate / screen$std_error)
+
+  wald <- bb_screen(counts, fixture$data, ~ dose + batch, term = "dose",
+                    totals = fixture$total, moderate = FALSE)
+  expect_false(any(c("wald_std_error", "lr_used") %in% names(wald)))
+  expect_equal(screen$wald_std_error, wald$std_error)
+})
+
+test_that("the likelihood ratio rescues a guide the Wald test loses to Hauck-Donner", {
+  # Rises about 400-fold in both treated libraries; one dispersion per guide
+  # makes the Wald standard error explode at the low-abundance end.
+  data <- data.frame(treated = rep(0:1, each = 2))
+  totals <- c(61396142, 65624685, 73321962, 62453506)
+  counts <- rbind(
+    jackpot = c(23098, 22836, 10402692, 6203267),
+    steady = c(500, 520, 600, 480)
+  )
+  wald <- bb_screen(counts, data, ~ treated, "treated", totals = totals,
+                    moderate = FALSE)
+  auto <- bb_screen(counts, data, ~ treated, "treated", totals = totals,
+                    moderate = FALSE, test = "auto")
+  expect_identical(auto$lr_used, c(TRUE, FALSE))
+  expect_lt(auto$p_value[1], wald$p_value[1])
+  expect_equal(auto$p_value[2], wald$p_value[2])
+})
+
+test_that("lr_fold is validated", {
+  fixture <- fixture_equal_libraries()
+  expect_error(
+    bb_screen(rbind(g = fixture$count), fixture$data, ~ dose, "dose",
+              totals = fixture$total, test = "auto", lr_fold = 1),
+    "lr_fold"
+  )
+})
+
+test_that("bb_screen keeps separated guides under every test", {
+  data <- data.frame(dox = factor(c("off", "on", "off", "on")),
+                     run = factor(c(1, 1, 2, 2)))
+  totals <- c(9614976, 9902425, 11381147, 9953674)
+  counts <- rbind(separated = c(0, 140, 0, 188), steady = c(500, 520, 600, 480))
+  for (test in c("wald", "lr", "auto")) {
+    screen <- bb_screen(counts, data, ~ run + dox, "doxon", totals = totals,
+                        test = test, moderate = FALSE)
+    expect_true(screen$converged[1], info = test)
+    expect_true(is.finite(screen$p_value[1]), info = test)
+    expect_gt(screen$estimate[1], 0)
+  }
+})

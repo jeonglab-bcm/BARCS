@@ -11,7 +11,8 @@ bbreg(
   data,
   maxit = 100L,
   tolerance = 1e-08,
-  mu_bound = 1e-08
+  mu_bound = 1e-08,
+  firth = TRUE
 )
 }
 \arguments{
@@ -31,12 +32,22 @@ same order.}
 \item{tolerance}{Relative convergence tolerance.}
 
 \item{mu_bound}{Numerical bound applied to fitted proportions.}
+
+\item{firth}{Apply Firth's bias correction when the fit separates. A guide
+with zero reads in every library of one condition has no finite maximum
+likelihood estimate; IRLS then fails to converge or pins fitted
+proportions at \code{mu_bound}. With \code{firth = TRUE} (default) such fits are
+refitted after adding half a leverage-weighted pseudo-count per sample,
+which gives finite estimates and standard errors. Fits that do not
+separate are unchanged.}
 }
 \value{
 An object of class \code{bbreg}: a list whose most useful elements are
 \code{coefficients}, \code{coefficient_table} (estimate, standard error, t value,
-degrees of freedom, p-value), \code{covariance}, \code{rho}, \code{df.residual}, and
-\code{converged}. Methods are provided for \code{\link[=coef]{coef()}}, \code{\link[=vcov]{vcov()}}, \code{\link[=fitted]{fitted()}},
+degrees of freedom, p-value), \code{covariance}, \code{rho}, \code{df.residual},
+\code{converged}, \code{separated} (whether the uncorrected fit separated) and
+\code{firth} (whether the correction was applied). Methods are provided for
+\code{\link[=coef]{coef()}}, \code{\link[=vcov]{vcov()}}, \code{\link[=fitted]{fitted()}},
 \code{\link[=residuals]{residuals()}}, and \code{\link[=summary]{summary()}}.
 }
 \description{

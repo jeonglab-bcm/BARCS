@@ -1,3 +1,32 @@
+# BARCS 0.2.1
+
+## Guide-level inference
+
+* `bbreg()` gains `firth = TRUE`. A guide with zero reads in every library of
+  one condition is completely separated: it has no finite maximum likelihood
+  estimate, IRLS stopped converging, and `bb_screen()` dropped it from the
+  gene summary. Such fits are now refitted with Firth's correction (half a
+  leverage-weighted pseudo-count per sample), giving finite estimates and
+  standard errors; fits that do not separate are unchanged. New elements
+  `separated`, `firth`, `response_count` and `response_total` record what was
+  done. In a PRCC-TFE3 senescence screen (GSE316868), two of the three
+  consistent CCNC guides had been dropped this way.
+
+* `bb_screen()` gains `test = c("wald", "lr", "auto")`. `"lr"` tests the
+  coefficient by the likelihood ratio of the fits with and without it, both at
+  the guide's fitted dispersion, and reports the standard error that ratio
+  implies, so moderation and the gene summaries apply unchanged. `"auto"` uses
+  the likelihood ratio only for guides whose fitted proportions span more than
+  `lr_fold` (default 100-fold). With one dispersion per guide, the Wald
+  standard error grows faster than the estimate when abundance changes by
+  orders of magnitude (the Hauck-Donner effect); in a venetoclax screen with
+  two replicates (GSE291338), BAX rose about 400-fold in every guide and both
+  replicates yet tested at gene p = 0.79 under Wald and 0.27 under `"auto"`.
+  On the CRISPulator FACS benchmark `"auto"` switched 0.1% of guides and gave
+  the same ranking and calls as Wald; `"lr"` for every guide matched the
+  ranking but was slightly more liberal (null guide p < 0.05 of 6-7% against
+  1-4% for Wald in simulation), so `"wald"` stays the default.
+
 # BARCS 0.2.0
 
 ## Guide-level inference
