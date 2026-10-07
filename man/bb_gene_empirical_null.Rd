@@ -74,11 +74,15 @@ when a third of the controls reached p < 0.05.
 
 The null has limited resolution. With \code{n} controls and genes of one
 guide, there are only \code{n} distinct null values, so the smallest p-value is
-\code{2 / (n + 1)}; across many genes this caps how many can pass a strict FDR.
-Expect fewer calls than the model when the model is well calibrated: this
-is a robustness check and a remedy for an inflated control tail, not a way
-to gain power. Results depend on the random draws; call \code{\link[=set.seed]{set.seed()}} first
-for reproducibility.
+\code{2 / (n + 1)}, and Benjamini-Hochberg across \code{G} genes can call nothing
+unless about \verb{0.2 G / (n + 1)} genes all reach that floor. A screen of
+20,000 one-guide elements and 1,000 controls therefore returns no calls
+at FDR 0.10 however strong its hits are; read such a result as "the
+controls cannot confirm the model's calls", not as "no hits". Genes of
+several guides do not hit this limit as early. The empirical null is not
+uniformly more conservative than the model: where the model is
+conservative relative to the controls it calls more genes. Results depend
+on the random draws; call \code{\link[=set.seed]{set.seed()}} first for reproducibility.
 }
 \examples{
 # 400 control and 400 targeting guides, two guides per gene, whose null

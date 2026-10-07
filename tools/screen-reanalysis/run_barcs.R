@@ -161,8 +161,18 @@ for (analysis in analyses) {
   empirical_null <- exists("bb_gene_empirical_null", mode = "function") &&
     sum(control) >= 100L
   if (empirical_null) {
+    # Filters can leave fewer than 100 usable controls; report no null then.
     set.seed(20261007)
-    empirical <- bb_gene_empirical_null(genes, screen, control)
+    empirical <- tryCatch(
+      bb_gene_empirical_null(genes, screen, control),
+      error = function(e) {
+        message("   no empirical null: ", conditionMessage(e))
+        NULL
+      }
+    )
+    empirical_null <- !is.null(empirical)
+  }
+  if (empirical_null) {
     genes$empirical_p_value <- empirical$p_value
     genes$empirical_fdr <- empirical$fdr
   }

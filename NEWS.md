@@ -11,6 +11,16 @@
   infected population and share clone sizes. Pseudo-genes are widened to the
   within-gene guide correlation so they match a real gene's null variance.
   Defaults are unchanged; the function is opt-in.
+  - In simulated sort screens whose replicates share heavy-tailed clonal
+    noise, it held the realized FDP at 0.09 where control calibration gave
+    0.22 and the model 0.52 (`tools/empirical-null-sim/`).
+  - On the 11 recorded reanalyses with at least 100 usable controls, every
+    named hit the model called stayed called except in GSE302335 (one guide
+    per element, 1,026 controls), where the null's resolution floor of
+    2 / (n + 1) leaves nothing passing FDR. Where the model was conservative
+    relative to the controls it called more genes (GSE316868 1,151 -> 1,629).
+* `tools/screen-reanalysis/run_barcs.R` reports the empirical-null FDR next
+  to the model FDR and skips it when fewer than 100 controls are usable.
 
 # BARCS 0.2.1
 

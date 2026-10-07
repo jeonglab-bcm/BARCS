@@ -237,9 +237,11 @@ rbind(model = called(model_genes), empirical = called(empirical_genes))
 The null is signed, so the positive compositional shift the controls carry
 is part of it rather than folded onto the depleted side: every essential gene
 is still found, while most held-out genes are no longer called. Its
-resolution is set by the number of controls, so expect fewer calls than the
-model when the model is already well calibrated; treat it as a check on, or a
-replacement for, an FDR the controls show to be too generous.
+resolution is set by the number of controls: with one guide per gene, the
+smallest p-value is `2 / (n_controls + 1)`, which across a genome-wide
+library can leave nothing passing FDR however strong the hits are. Treat it
+as a check on, or a replacement for, an FDR the controls show to be too
+generous, not as a source of extra power.
 
 ## Moderating the guide dispersion
 
