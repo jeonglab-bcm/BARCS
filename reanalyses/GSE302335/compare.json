@@ -1,0 +1,13 @@
+{
+  "barcs_genes": "results/cd54_low_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "ICAM1_P1P2",
+    "TRAF6_P1P2"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

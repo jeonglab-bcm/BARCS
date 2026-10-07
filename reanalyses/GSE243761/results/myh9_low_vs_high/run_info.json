@@ -1,0 +1,30 @@
+{
+  "analysis": "myh9_low_vs_high",
+  "formula": "~replicate + bin",
+  "term": "binlow",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 5191,
+  "genes": 114,
+  "moderated": true,
+  "prior_df": 9.1702,
+  "guide_correlation": 0.0187,
+  "control_scale": 1.9923,
+  "control_guides": 500,
+  "control_p05_raw": 0.564,
+  "control_p05": 0.05,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "rep1_MYH9high": 0.026,
+    "rep2_MYH9high": 0.027,
+    "rep1_MYH9low": 0.052,
+    "rep2_MYH9low": 0.047
+  },
+  "genes_fdr_0_10_up": 22,
+  "genes_fdr_0_10_down": 77,
+  "genes_fdr_0_05": 95,
+  "genes_fdr_0_10": 99,
+  "barcs_version": "0.2.1"
+}

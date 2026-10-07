@@ -4,14 +4,16 @@
 
 **Screen.** CT26 cells with a mouse kinome library (2,952 guides, 714 genes, 100 non-targeting). The cells were grown in vitro, in nude mice, and in immunocompetent BALB/c mice, with 3 tumors or replicates each.
 
+**Calibration.** 14% of the 100 non-targeting guides reached p < 0.05, so the test was calibrated to them (5.1% after).
+
 **Design.** Immune-dependent selection is WT vs nude, `~ host`, 6 libraries, 4 residual df. Knockouts that make tumors more visible to the immune system should be depleted in WT mice.
 
 ## Results
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 43 |
-| Cdk10 | depleted, effect −1.0, p = 0.0016, FDR 0.054, rank 18 of 713 |
+| Genes at FDR 0.10 | 9 after control calibration (43 before) |
+| Cdk10 | depleted, effect −1.0, p = 0.004, FDR 0.15 after calibration, rank 20 of 713 |
 | Top depleted | Sgk1, Stk11, Jak2, Ephb6, Ern1, Cdk13 |
 
 ## Where BARCS agrees and differs

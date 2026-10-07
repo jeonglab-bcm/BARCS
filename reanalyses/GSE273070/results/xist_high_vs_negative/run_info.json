@@ -1,0 +1,30 @@
+{
+  "analysis": "xist_high_vs_negative",
+  "formula": "~replicate + bin",
+  "term": "binhigh",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 11058,
+  "genes": 911,
+  "moderated": true,
+  "prior_df": 22.6179,
+  "guide_correlation": 0.0191,
+  "control_scale": null,
+  "control_guides": 300,
+  "control_p05_raw": 0.0333,
+  "control_p05": 0.0333,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 1,
+  "top1pct_read_share": {
+    "R1_Negative": 0.046,
+    "R2_Negative": 0.044,
+    "R1_High": 0.045,
+    "R2_High": 0.044
+  },
+  "genes_fdr_0_10_up": 50,
+  "genes_fdr_0_10_down": 54,
+  "genes_fdr_0_05": 88,
+  "genes_fdr_0_10": 104,
+  "barcs_version": "0.2.1"
+}

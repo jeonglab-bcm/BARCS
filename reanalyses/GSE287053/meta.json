@@ -9,9 +9,9 @@
   "contrast": "Tumors in immunocompetent vs nude mice (3 vs 3)",
   "paper_method": "Not stated in GEO; paper not open access",
   "paper_calls": "CDK10 as key immune-evasion kinase",
-  "barcs_calls": "43 genes at FDR 0.10",
-  "named_hits": "Cdk10 depleted, rank 18 of 713, FDR 0.054",
-  "verdict": "BARCS supports immune-dependent depletion of Cdk10 knockouts (rank 18 of 713) but it falls just short of FDR 0.05; Stk11, Jak2 and Sgk1 rank higher.",
+  "barcs_calls": "9 genes at FDR 0.10 after control calibration",
+  "named_hits": "Cdk10 depleted, rank 20 of 713, FDR 0.15",
+  "verdict": "Cdk10 knockouts are depleted in immunocompetent mice, as the paper reports (rank 20 of 713), but after calibrating to the non-targeting guides (14% reached p < 0.05 before) Cdk10 sits at FDR 0.15; Sgk1, Stk11 and Jak2 rank higher.",
   "agreement": "partial",
   "analyzed": "2026-10-07"
 }

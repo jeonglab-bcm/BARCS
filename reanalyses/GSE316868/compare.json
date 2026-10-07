@@ -1,0 +1,2 @@
+{"barcs_genes": "results/tfe3_on_vs_off/genes.csv", "direction": "both", "named_hits": ["CCNC", "CDK8", "MED12", "MED13", "CDKN1A", "TP53"],
+ "published": {"file": "paper/mageck.tsv", "gene_column": "gene", "score_column": "p_min", "score_better": "lower", "effect_column": "lfc"}, "top_n": [25, 50, 100]}

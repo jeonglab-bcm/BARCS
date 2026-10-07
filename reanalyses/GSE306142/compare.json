@@ -1,0 +1,16 @@
+{
+  "barcs_genes": "results/ptc596_vs_dmso/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "MTOR",
+    "AKT1",
+    "PIK3CA",
+    "PLK1",
+    "EED"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "gse": "GSE316868",
+  "pmid": "41843980",
+  "counts_file": "suppl/GSE316868_Count_Matrix.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(Non-Targeting|NonTargeting|NTC)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Doxy-_1",
+      "gsm": "",
+      "dox": "off",
+      "run": "1"
+    },
+    {
+      "column": "Doxy+_1",
+      "gsm": "",
+      "dox": "on",
+      "run": "1"
+    },
+    {
+      "column": "Doxy-_2",
+      "gsm": "",
+      "dox": "off",
+      "run": "2"
+    },
+    {
+      "column": "Doxy+_2",
+      "gsm": "",
+      "dox": "on",
+      "run": "2"
+    }
+  ],
+  "factor_levels": {
+    "dox": [
+      "off",
+      "on"
+    ],
+    "run": [
+      "1",
+      "2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "tfe3_on_vs_off",
+      "formula": "~ run + dox",
+      "term": "doxon"
+    }
+  ],
+  "rationale": "Two independent runs, each a paired Dox- (control) vs Dox+ (PRCC-TFE3 induced, oncogene-induced senescence) comparison of HK-2 cells with the Brunello library; run is a blocking term (1 residual df). Knockouts that let cells escape senescence (CCNC) should be enriched in Dox+."
+}

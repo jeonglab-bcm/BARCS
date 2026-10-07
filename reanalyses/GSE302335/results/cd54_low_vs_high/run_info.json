@@ -1,0 +1,30 @@
+{
+  "analysis": "cd54_low_vs_high",
+  "formula": "~replicate + bin",
+  "term": "binlow",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 21554,
+  "genes": 20528,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0.0047,
+  "control_scale": 1.4459,
+  "control_guides": 1026,
+  "control_p05_raw": 0.1131,
+  "control_p05": 0.0497,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "MOI03low50_R1": 0.034,
+    "MOI03low50_R2": 0.034,
+    "MOI03high50_R1": 0.033,
+    "MOI03high50_R2": 0.03
+  },
+  "genes_fdr_0_10_up": 616,
+  "genes_fdr_0_10_down": 917,
+  "genes_fdr_0_05": 1237,
+  "genes_fdr_0_10": 1533,
+  "barcs_version": "0.2.1"
+}

@@ -1,0 +1,33 @@
+{
+  "analysis": "tcell_et1_vs_ctrl",
+  "formula": "~treatment",
+  "term": "treatmentET1",
+  "libraries": 7,
+  "residual_df": 5,
+  "guides": 90023,
+  "genes": 18399,
+  "moderated": true,
+  "prior_df": 141.0552,
+  "guide_correlation": 0.003,
+  "control_scale": null,
+  "control_guides": 5,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Ctrl1-1": 0.035,
+    "Ctrl1-2": 0.035,
+    "Ctrl2-1": 0.035,
+    "Ctrl2-2": 0.035,
+    "ET1-2": 0.036,
+    "ET1-3": 0.035,
+    "ET1-4": 0.035
+  },
+  "genes_fdr_0_10_up": 180,
+  "genes_fdr_0_10_down": 168,
+  "genes_fdr_0_05": 169,
+  "genes_fdr_0_10": 348,
+  "barcs_version": "0.2.1"
+}

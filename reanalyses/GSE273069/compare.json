@@ -1,0 +1,13 @@
+{
+  "barcs_genes": "results/re57m_gfp_low_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "Pou5f1_p1",
+    "Zic3_p1"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

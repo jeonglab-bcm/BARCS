@@ -1,0 +1,53 @@
+{
+  "gse": "GSE243760",
+  "pmid": "40997217",
+  "counts_file": "GSE243760_merged_counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "element",
+  "control_gene_pattern": "non-targeting",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "nonmigrated_rep1",
+      "gsm": "",
+      "fraction": "nonmigrated",
+      "replicate": "rep1"
+    },
+    {
+      "column": "nonmigrated_rep2",
+      "gsm": "",
+      "fraction": "nonmigrated",
+      "replicate": "rep2"
+    },
+    {
+      "column": "migrated_rep1",
+      "gsm": "",
+      "fraction": "migrated",
+      "replicate": "rep1"
+    },
+    {
+      "column": "migrated_rep2",
+      "gsm": "",
+      "fraction": "migrated",
+      "replicate": "rep2"
+    }
+  ],
+  "factor_levels": {
+    "fraction": [
+      "nonmigrated",
+      "migrated"
+    ],
+    "replicate": [
+      "rep1",
+      "rep2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "migrated_vs_nonmigrated",
+      "formula": "~ replicate + fraction",
+      "term": "fractionmigrated"
+    }
+  ],
+  "rationale": "CRISPRi migration (transwell) screen targeting promoters and putative mechanoresponsive enhancers; per-sample files were merged on one shared library. Migrated and non-migrated cells come from the same replicate population, so replicate is a blocking term (1 residual df). Knockdown of migration genes (ITGAV, ACTG1, CDC42, TPM3) should be depleted in migrated cells."
+}

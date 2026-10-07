@@ -1,0 +1,18 @@
+{
+  "gse": "GSE299588",
+  "pmid": "41102523",
+  "doi": "10.1038/s41598-025-20183-7",
+  "pmcid": "PMC12533111",
+  "title": "CRISPR screen reveals SOX2 as a critical regulator of CD133 and cellular stress response in glioblastoma",
+  "journal": "Scientific Reports",
+  "published": "2025",
+  "model": "BT935 patient-derived glioblastoma cells, TKOv3 genome-wide knockout, FACS for CD133",
+  "contrast": "CD133 top 5% vs bottom 5% sort, paired by replicate (3 vs 3)",
+  "paper_method": "Not stated in GEO",
+  "paper_calls": "SOX2 as the key regulator of PROM1 (CD133)",
+  "barcs_calls": "0 genes at FDR 0.10 after control calibration (131 before)",
+  "named_hits": "PROM1 rank 1, SOX2 rank 10; neither significant after calibration",
+  "verdict": "BARCS ranks PROM1, the gene encoding CD133, first and SOX2 tenth, in line with the paper, but after calibrating to the non-targeting guides (15% reached p < 0.05 before) no gene passes FDR 0.10. The ranking supports SOX2; the screen alone does not establish it at genome-wide significance.",
+  "agreement": "partial",
+  "analyzed": "2026-10-07"
+}

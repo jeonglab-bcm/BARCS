@@ -1,0 +1,99 @@
+{
+  "gse": "GSE267517",
+  "pmid": "41042068",
+  "counts_file": "suppl/GSE267517_Mouse_v2_CRISPR_191205.count.version2.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(NonTargeting|Non-Targeting|CTRL)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Ctrl1-1",
+      "gsm": "",
+      "treatment": "none"
+    },
+    {
+      "column": "Ctrl1-2",
+      "gsm": "",
+      "treatment": "none"
+    },
+    {
+      "column": "Ctrl2-1",
+      "gsm": "",
+      "treatment": "none"
+    },
+    {
+      "column": "Ctrl2-2",
+      "gsm": "",
+      "treatment": "none"
+    },
+    {
+      "column": "ET02-2",
+      "gsm": "",
+      "treatment": "ET0.2"
+    },
+    {
+      "column": "ET02-3",
+      "gsm": "",
+      "treatment": "ET0.2"
+    },
+    {
+      "column": "ET02-4",
+      "gsm": "",
+      "treatment": "ET0.2"
+    },
+    {
+      "column": "ET1-2",
+      "gsm": "",
+      "treatment": "ET1"
+    },
+    {
+      "column": "ET1-3",
+      "gsm": "",
+      "treatment": "ET1"
+    },
+    {
+      "column": "ET1-4",
+      "gsm": "",
+      "treatment": "ET1"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "none",
+      "ET0.2",
+      "ET1"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "tcell_et1_vs_ctrl",
+      "columns": [
+        "Ctrl1-1",
+        "Ctrl1-2",
+        "Ctrl2-1",
+        "Ctrl2-2",
+        "ET1-2",
+        "ET1-3",
+        "ET1-4"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentET1"
+    },
+    {
+      "name": "tcell_et02_vs_ctrl",
+      "columns": [
+        "Ctrl1-1",
+        "Ctrl1-2",
+        "Ctrl2-1",
+        "Ctrl2-2",
+        "ET02-2",
+        "ET02-3",
+        "ET02-4"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentET0.2"
+    }
+  ],
+  "rationale": "In vitro genome-wide screen of ID8/GC ovarian cancer cells cultured with gp100-specific pmel T cells at effector:target 1 or 0.2, versus no T cells; column names match the overall design (lanes already summed in this file). The paper's MAGeCK comparisons are ET1 vs Ctrl and ET02 vs Ctrl with all four controls, reproduced here. Knockouts that sensitize to T-cell killing (Mettl5) are depleted. No pairing between control and treated cultures is documented. The in vivo anti-PD-1 sub-library screen is a separate count file and is not reanalyzed here."
+}

@@ -1,0 +1,15 @@
+{
+  "barcs_genes": "results/migrated_vs_nonmigrated/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "ITGAV",
+    "ACTG1",
+    "CDC42",
+    "TPM3"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

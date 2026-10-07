@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/gm0847_htert_dropout_interaction/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "FTSJ3"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

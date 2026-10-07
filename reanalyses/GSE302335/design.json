@@ -1,0 +1,53 @@
+{
+  "gse": "GSE302335",
+  "pmid": "42185540",
+  "counts_file": "ICAM1_screen_guide_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "negative_control",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "MOI03low50_R1",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "R1"
+    },
+    {
+      "column": "MOI03low50_R2",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "R2"
+    },
+    {
+      "column": "MOI03high50_R1",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R1"
+    },
+    {
+      "column": "MOI03high50_R2",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "high",
+      "low"
+    ],
+    "replicate": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "cd54_low_vs_high",
+      "formula": "~ replicate + bin",
+      "term": "binlow"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRi screen sorted on CD54 (ICAM-1); the deposited table splits each guide over 41 cell barcodes, which were summed to one row per guide. The highest-coverage arm at MOI 0.3 is used; replicates R1 and R2 each sorted into low and high bins, so replicate is a blocking term (1 residual df). Knockdown of ICAM1 itself, and of its activators, should be enriched in the CD54-low bin. With one residual df the dispersion prior is estimated as infinite, which assigns every guide the library-wide variance; the 1,026 non-targeting guides are therefore used to calibrate the test statistics (qq_slope)."
+}

@@ -1,0 +1,3 @@
+{"barcs_genes": "results/xist_high_vs_negative/genes.csv", "direction": "both", "named_hits": ["Xist_p1", "Zic3_p1", "Rlim_p1", "Tsix_p2"],
+ "published": {"file": "paper/GSE273070_TFi_mle_HighvsNeg.txt.gz", "gene_column": "Gene", "score_column": "High|wald-p-value", "score_better": "lower", "effect_column": "High|beta"},
+ "top_n": [10, 25, 50]}

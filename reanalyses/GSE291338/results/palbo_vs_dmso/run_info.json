@@ -10,6 +10,9 @@
   "prior_df": 5.897,
   "guide_correlation": 0.0025,
   "control_scale": null,
+  "control_guides": 5,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
   "totals_method": null,
   "test": "auto",
   "guides_lr": 760,
@@ -23,5 +26,5 @@
   "genes_fdr_0_10_down": 1173,
   "genes_fdr_0_05": 675,
   "genes_fdr_0_10": 1437,
-  "barcs_version": "0.2.0"
+  "barcs_version": "0.2.1"
 }

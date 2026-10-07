@@ -1,0 +1,66 @@
+{
+  "gse": "GSE273069",
+  "pmid": "41053217",
+  "counts_file": "suppl/GSE273069_REPi.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NT",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "High_R1_RE57M",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R1"
+    },
+    {
+      "column": "High_R2_RE57M",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R2"
+    },
+    {
+      "column": "High_R3_RE57M",
+      "gsm": "",
+      "bin": "high",
+      "replicate": "R3"
+    },
+    {
+      "column": "Low_R1_RE57M",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "R1"
+    },
+    {
+      "column": "Low_R2_RE57M",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "R2"
+    },
+    {
+      "column": "Low_R3_RE57M",
+      "gsm": "",
+      "bin": "low",
+      "replicate": "R3"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "high",
+      "low"
+    ],
+    "replicate": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "re57m_gfp_low_vs_high",
+      "formula": "~ replicate + bin",
+      "term": "binlow"
+    }
+  ],
+  "rationale": "CRISPRi of transcription-factor promoters in mouse ES cells carrying a GFP reporter driven by the promoter-proximal Xist regulatory element RE57M; cells sorted into GFP-high and GFP-low, three replicates each sorted from one culture, so replicate is a blocking term (2 residual df). Activators of RE57M (Zic3, Pou5f1) should be enriched in GFP-low."
+}

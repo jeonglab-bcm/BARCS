@@ -1,0 +1,66 @@
+{
+  "gse": "GSE299588",
+  "pmid": "41102523",
+  "counts_file": "suppl/GSE299588_GBM005_BT935i_-_20200629_-_readcounts.txt.gz",
+  "guide_column": "Guide.ID",
+  "gene_column": "GENE",
+  "control_gene_pattern": "^(EGFP|LacZ|luciferase)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "GBM_84",
+      "gsm": "GSM9041510",
+      "bin": "top",
+      "replicate": "A"
+    },
+    {
+      "column": "GBM_85",
+      "gsm": "GSM9041511",
+      "bin": "top",
+      "replicate": "B"
+    },
+    {
+      "column": "GBM_86",
+      "gsm": "GSM9041512",
+      "bin": "top",
+      "replicate": "C"
+    },
+    {
+      "column": "GBM_87",
+      "gsm": "GSM9041513",
+      "bin": "bottom",
+      "replicate": "A"
+    },
+    {
+      "column": "GBM_88",
+      "gsm": "GSM9041514",
+      "bin": "bottom",
+      "replicate": "B"
+    },
+    {
+      "column": "GBM_89",
+      "gsm": "GSM9041515",
+      "bin": "bottom",
+      "replicate": "C"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "bottom",
+      "top"
+    ],
+    "replicate": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "cd133_top_vs_bottom",
+      "formula": "~ replicate + bin",
+      "term": "bintop"
+    }
+  ],
+  "rationale": "Columns GBM_80-89 are not named by condition. PROM1 (the gene encoding CD133) knockouts are depleted about 4-fold in GBM_84-86 and not in GBM_87-89, so 84-86 are the CD133-top 5% sorts and 87-89 the bottom 5%; GBM_81-83 are unsorted and GBM_80 is T0. Log-count correlations pair 81/84/87, 82/85/88 and 83/86/89 (0.84-0.86 within, about 0.5 across), matching replicates A-C, so replicate is a blocking term. Missing counts are read as zero."
+}

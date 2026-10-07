@@ -1,0 +1,18 @@
+{
+  "gse": "GSE243760",
+  "pmid": "40997217",
+  "doi": "10.1126/science.adl1988",
+  "pmcid": "PMC13005951",
+  "title": "Mechanosensitive genomic enhancers potentiate the cellular response to matrix stiffness",
+  "journal": "Science",
+  "published": "2025",
+  "model": "CRISPRi of promoters and putative mechanoenhancers, transwell migration",
+  "contrast": "Migrated vs non-migrated cells, paired by replicate (2 vs 2)",
+  "paper_method": "Not stated in GEO",
+  "paper_calls": "ITGAV, ACTG1, CDC42 and TPM3 knockdown reduces migration",
+  "barcs_calls": "6 elements at FDR 0.10",
+  "named_hits": "ACTG1 #2, CDC42 #3, ITGAV #6 (FDR 0.05-0.08); TPM3 not supported",
+  "verdict": "Three of the four migration genes the paper names (ACTG1, CDC42, ITGAV) are among BARCS's top six, depleted from migrated cells at FDR below 0.10; TPM3 shows no effect. Control guides were well calibrated without adjustment.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}

@@ -1,0 +1,32 @@
+{
+  "analysis": "ptc596_vs_dmso",
+  "formula": "~replicate + treatment",
+  "term": "treatmentPTC596",
+  "libraries": 6,
+  "residual_df": 2,
+  "guides": 71090,
+  "genes": 18024,
+  "moderated": true,
+  "prior_df": 32.4127,
+  "guide_correlation": 0,
+  "control_scale": 1.0758,
+  "control_guides": 142,
+  "control_p05_raw": 0.0763,
+  "control_p05": 0.0508,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 425,
+  "top1pct_read_share": {
+    "PACE_119": 0.26,
+    "PACE_120": 0.25,
+    "PACE_121": 0.246,
+    "PACE_162": 0.259,
+    "PACE_163": 0.26,
+    "PACE_164": 0.262
+  },
+  "genes_fdr_0_10_up": 17,
+  "genes_fdr_0_10_down": 9,
+  "genes_fdr_0_05": 8,
+  "genes_fdr_0_10": 26,
+  "barcs_version": "0.2.1"
+}

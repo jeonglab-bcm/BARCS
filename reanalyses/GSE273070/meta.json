@@ -1,0 +1,18 @@
+{
+  "gse": "GSE273070",
+  "pmid": "41053217",
+  "doi": "10.1038/s41594-025-01686-3",
+  "pmcid": "PMC12700789",
+  "title": "Reporter CRISPR screens decipher cis-regulatory and trans-regulatory principles at the Xist locus",
+  "journal": "Nature Structural & Molecular Biology",
+  "published": "2025",
+  "model": "Female mouse ES cells, day 2 of differentiation, CRISPRi of transcription-factor promoters, sorted by Xist RNA FlowFISH",
+  "contrast": "Xist-high vs Xist-negative sort, paired by replicate (2 vs 2)",
+  "paper_method": "MAGeCK MLE (deposited)",
+  "paper_calls": "ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10",
+  "barcs_calls": "104 promoters at FDR 0.10",
+  "named_hits": "Xist #1, Tsix #2, Zic3 #4, Rlim #5",
+  "verdict": "BARCS and the authors' MAGeCK-MLE agree closely (rank correlation 0.95; 8 of the top 10 shared): Xist's own promoter, Zic3 and Rlim deplete from Xist-high cells and Tsix knockdown enriches them. BARCS calls far more promoters at FDR 0.10 (104 vs 13) from one residual degree of freedom, so its longer list leans on dispersion moderation.",
+  "agreement": "agree",
+  "analyzed": "2026-10-07"
+}
