@@ -10,8 +10,8 @@
   "contrast": "Palbociclib, venetoclax and combination vs DMSO (2 vs 2 each)",
   "paper_method": "Guide-level edgeR-style tests, gene tiers by guide FDR",
   "paper_calls": "Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1",
-  "barcs_calls": "Palbo 1,437, ven 103 enriched, combo 78 enriched genes at FDR 0.10",
-  "named_hits": "BAX ven #3 (FDR 3e-4); RB1 palbo FDR 0.03; HNRNPU #4, CEBPE #6; IKZF1 combo FDR 0.057",
+  "barcs_calls": "Palbo 1,525, ven 92 enriched, combo 87 enriched genes at FDR 0.10",
+  "named_hits": "BAX ven #3 (FDR 3e-4); RB1 palbo FDR 0.03; HNRNPU #4, CEBPE #6; IKZF1 combo FDR 0.051",
   "verdict": "BARCS 0.2.1 recovers every resistance gene the paper names. The venetoclax and combination libraries collapsed onto a few clones, so only enrichment is interpretable there, and the Wald test missed BAX (p = 0.79) until the likelihood-ratio test was added.",
   "agreement": "agree",
   "analyzed": "2026-10-07"

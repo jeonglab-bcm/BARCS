@@ -6,7 +6,7 @@ BARCS genes: `results/cd80_high_vs_low/genes.csv` (1350 genes, direction: both)
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| TNFAIP3 | 1 | 1350 | 0.225 | 1.6e-09 | 2.2e-06 |
+| TNFAIP3 | 1 | 1350 | 0.225 | 2.2e-09 | 3e-06 |
 
 ## BARCS calls
 

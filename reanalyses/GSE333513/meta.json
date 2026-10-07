@@ -11,8 +11,8 @@
   "paper_method": "MAGeCK-RRA (MAGeCKFlute)",
   "paper_calls": "1,812 candidates at nominal p < 0.05; 10 selected",
   "barcs_calls": "0 genes at FDR 0.10",
-  "named_hits": "10/10 same direction; AMBRA1 rank 27",
-  "verdict": "Direction agrees for all ten named genes and AMBRA1 ranks 27th, but no gene passes FDR 0.10; the paper's candidate count is close to what chance gives, and large fold changes do not replicate.",
+  "named_hits": "10/10 same direction; AMBRA1 rank 25",
+  "verdict": "Direction agrees for all ten named genes and AMBRA1 ranks 25th, but no gene passes FDR 0.10; the paper's candidate count is close to what chance gives, and large fold changes do not replicate.",
   "agreement": "differ",
   "analyzed": "2026-10-07"
 }

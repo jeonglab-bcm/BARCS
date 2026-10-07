@@ -9,9 +9,9 @@
   "contrast": "PTC596 vs DMSO, paired by replicate (3 vs 3)",
   "paper_method": "Not stated in GEO",
   "paper_calls": "Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways",
-  "barcs_calls": "26 genes at FDR 0.10 after control calibration",
-  "named_hits": "Core mTOR, AKT, PI3K and PLK1 genes not depleted; EED #1 (enriched)",
-  "verdict": "BARCS does not find the core mTOR, AKT, PI3K or PLK1 genes depleted under PTC596; its strongest gene is EED (PRC2), whose loss is enriched. The paper chose pathways by intersecting its sensitizer list with phosphoproteomics, and that list is not deposited, so the comparison is indirect.",
+  "barcs_calls": "2 genes at FDR 0.10",
+  "named_hits": "Core mTOR, AKT, PI3K and PLK1 genes not depleted; EED #1 (FDR 0.08, enriched)",
+  "verdict": "BARCS does not find the core mTOR, AKT, PI3K or PLK1 genes depleted under PTC596; only two genes pass FDR 0.10, led by EED (PRC2), whose loss is enriched. The paper chose pathways by intersecting its sensitizer list with phosphoproteomics, and that list is not deposited, so the comparison is indirect.",
   "agreement": "differ",
   "analyzed": "2026-10-07"
 }

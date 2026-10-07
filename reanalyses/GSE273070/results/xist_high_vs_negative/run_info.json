@@ -7,8 +7,8 @@
   "guides": 11058,
   "genes": 911,
   "moderated": true,
-  "prior_df": 22.6179,
-  "guide_correlation": 0.0191,
+  "prior_df": 21.2391,
+  "guide_correlation": 0.0224,
   "control_scale": null,
   "control_guides": 300,
   "control_p05_raw": 0.0333,
@@ -22,9 +22,9 @@
     "R1_High": 0.045,
     "R2_High": 0.044
   },
-  "genes_fdr_0_10_up": 50,
-  "genes_fdr_0_10_down": 54,
-  "genes_fdr_0_05": 88,
-  "genes_fdr_0_10": 104,
+  "genes_fdr_0_10_up": 48,
+  "genes_fdr_0_10_down": 53,
+  "genes_fdr_0_05": 84,
+  "genes_fdr_0_10": 101,
   "barcs_version": "0.2.1"
 }

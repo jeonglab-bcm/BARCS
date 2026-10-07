@@ -5,7 +5,7 @@
   "libraries": 4,
   "residual_df": 2,
   "guides": 90709,
-  "genes": 17950,
+  "genes": 17968,
   "moderated": true,
   "prior_df": "Inf",
   "guide_correlation": 0,
@@ -15,16 +15,16 @@
   "control_p05": "NA",
   "totals_method": "median_ratio",
   "test": "auto",
-  "guides_lr": 3243,
+  "guides_lr": 2715,
   "top1pct_read_share": {
     "LIB240222JT_DMSO1_A2": 0.051,
     "LIB240222JT_DMSO2_A3": 0.051,
     "LIB240222JT_Combo1_A8": 0.723,
     "LIB240222JT_Combo2_A9": 0.841
   },
-  "genes_fdr_0_10_up": 78,
-  "genes_fdr_0_10_down": 2928,
-  "genes_fdr_0_05": 1874,
-  "genes_fdr_0_10": 3006,
+  "genes_fdr_0_10_up": 87,
+  "genes_fdr_0_10_down": 3408,
+  "genes_fdr_0_05": 2293,
+  "genes_fdr_0_10": 3495,
   "barcs_version": "0.2.1"
 }

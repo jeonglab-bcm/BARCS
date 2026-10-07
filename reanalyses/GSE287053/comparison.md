@@ -6,7 +6,7 @@ BARCS genes: `results/wt_vs_nude/genes.csv` (713 genes, direction: depleted)
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Cdk10 | 19 | 713 | -0.999 | 0.0042 | 0.15 |
+| Cdk10 | 18 | 713 | -0.999 | 0.004 | 0.14 |
 
 ## BARCS calls
 

@@ -7,8 +7,8 @@
   "guides": 90023,
   "genes": 18398,
   "moderated": true,
-  "prior_df": 295.6565,
-  "guide_correlation": 0.0033,
+  "prior_df": 295.7525,
+  "guide_correlation": 0.0016,
   "control_scale": null,
   "control_guides": 5,
   "control_p05_raw": "NA",
@@ -25,9 +25,9 @@
     "ET02-3": 0.035,
     "ET02-4": 0.035
   },
-  "genes_fdr_0_10_up": 12,
+  "genes_fdr_0_10_up": 13,
   "genes_fdr_0_10_down": 18,
   "genes_fdr_0_05": 27,
-  "genes_fdr_0_10": 30,
+  "genes_fdr_0_10": 31,
   "barcs_version": "0.2.1"
 }

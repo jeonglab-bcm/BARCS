@@ -21,13 +21,13 @@ Venetoclax killed nearly every clone. The five BAX guides alone hold about half 
 
 | Arm | Genes at FDR 0.10 | Named genes (rank among enriched or all, FDR) |
 |---|---|---|
-| Palbo vs DMSO | 1,437 | HNRNPU #4 (1e-5), CEBPE #6 (2e-5), IKZF1 #115 (0.009), RB1 #380 (0.03) |
-| Ven vs DMSO | 103 enriched | **BAX #3 (3e-4)**, IKZF1 #6 (0.001), PMAIP1 #57 (0.051) |
-| Combo vs DMSO | 78 enriched | IKZF1 #37 (0.057) |
+| Palbo vs DMSO | 1,525 | HNRNPU #4 (9e-6), CEBPE #6 (1e-5), IKZF1 #115 (0.009), RB1 #387 (0.03) |
+| Ven vs DMSO | 92 enriched | **BAX #3 (3e-4)**, IKZF1 #5 (0.001), PMAIP1 #51 (0.047) |
+| Combo vs DMSO | 87 enriched | IKZF1 #36 (0.051) |
 
 - **Palbociclib** (no bottleneck): 8 of the paper's top 25 genes are in BARCS's top 25. RB1, the paper's palbo resistance gene, passes FDR 0.05.
 - **Venetoclax:** BAX, the paper's headline ven resistance gene, ranks third among enriched genes.
-- **Combination:** IKZF1, the paper's ven+palbo resistance gene, is borderline (FDR 0.057).
+- **Combination:** IKZF1, the paper's ven+palbo resistance gene, is borderline (FDR 0.051).
 
 ## What changed in BARCS to get here
 

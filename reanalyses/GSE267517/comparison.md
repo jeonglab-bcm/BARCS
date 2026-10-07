@@ -6,10 +6,10 @@ BARCS genes: `results/tcell_et1_vs_ctrl/genes.csv` (18399 genes, direction: both
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Mettl5 | 927 | 18399 | -0.171 | 0.012 | 0.23 |
-| B2m | 1 | 18399 | 0.816 | 1.1e-48 | 2e-44 |
-| Jak1 | 4 | 18399 | 0.521 | 1.2e-26 | 5.5e-23 |
-| Rnf31 | 6 | 18399 | -0.704 | 2.4e-22 | 7.4e-19 |
+| Mettl5 | 926 | 18399 | -0.171 | 0.012 | 0.23 |
+| B2m | 1 | 18399 | 0.816 | 1.1e-48 | 2.1e-44 |
+| Jak1 | 4 | 18399 | 0.521 | 1.2e-26 | 5.6e-23 |
+| Rnf31 | 6 | 18399 | -0.704 | 2.5e-22 | 7.5e-19 |
 
 ## Agreement with the published table
 
@@ -37,4 +37,4 @@ Gene (published rank / BARCS rank): Phf10 (19 / 33), Ube2m (21 / 99), Llgl2 (22 
 
 ## BARCS calls
 
-Genes at FDR 0.05: 169; at FDR 0.10: 348. Top 15: B2m, H2-D1, Jak2, Jak1, Cflar, Rnf31, Tap1, Tap2, Ifngr2, Irgm1, Ifngr1, Tnfrsf1a, Traf2, Tradd, Tapbp
+Genes at FDR 0.05: 169; at FDR 0.10: 343. Top 15: B2m, H2-D1, Jak2, Jak1, Cflar, Rnf31, Tap1, Tap2, Ifngr2, Irgm1, Ifngr1, Tnfrsf1a, Traf2, Tradd, Tapbp

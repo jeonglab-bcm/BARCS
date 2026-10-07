@@ -6,10 +6,10 @@ BARCS genes: `results/xist_high_vs_negative/genes.csv` (911 genes, direction: bo
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Xist_p1 | 1 | 911 | -1.644 | 4.7e-59 | 4.2e-56 |
-| Zic3_p1 | 4 | 911 | -0.691 | 1.3e-25 | 3e-23 |
-| Rlim_p1 | 5 | 911 | -0.557 | 3.6e-25 | 6.5e-23 |
-| Tsix_p2 | 2 | 911 | 1.170 | 1.4e-49 | 6.3e-47 |
+| Xist_p1 | 1 | 911 | -1.644 | 3.1e-55 | 2.9e-52 |
+| Zic3_p1 | 4 | 911 | -0.691 | 3.3e-24 | 7.4e-22 |
+| Rlim_p1 | 5 | 911 | -0.557 | 4e-24 | 7.4e-22 |
+| Tsix_p2 | 2 | 911 | 1.170 | 5.6e-47 | 2.5e-44 |
 
 ## Agreement with the published table
 
@@ -37,4 +37,4 @@ Gene (published rank / BARCS rank): Nfe2l2_p1 (6 / 11), Rbpj_p2 (9 / 14)
 
 ## BARCS calls
 
-Genes at FDR 0.05: 88; at FDR 0.10: 104. Top 15: Xist_p1, Tsix_p2, Pou5f1_p1, Zic3_p1, Rlim_p1, Nfrkb_p1, Otx2_p2, Rif1_p1, Grhl2_p1, Zfp518b_p1, Nfe2l2_p1, Tox4_p2, Adnp_p1, Rbpj_p2, Zfp280c_p1
+Genes at FDR 0.05: 84; at FDR 0.10: 101. Top 15: Xist_p1, Tsix_p2, Pou5f1_p1, Zic3_p1, Rlim_p1, Nfrkb_p1, Otx2_p2, Rif1_p1, Grhl2_p1, Zfp518b_p1, Nfe2l2_p1, Tox4_p2, Adnp_p1, Rbpj_p2, Zfp280c_p1

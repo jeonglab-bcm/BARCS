@@ -11,8 +11,8 @@
   "guide_correlation": 0,
   "control_scale": null,
   "control_guides": 1001,
-  "control_p05_raw": 0.0351,
-  "control_p05": 0.0351,
+  "control_p05_raw": 0.036,
+  "control_p05": 0.036,
   "totals_method": "library",
   "test": "auto",
   "guides_lr": 6,
@@ -23,8 +23,8 @@
     "migrated_rep2": 0.035
   },
   "genes_fdr_0_10_up": 0,
-  "genes_fdr_0_10_down": 6,
+  "genes_fdr_0_10_down": 7,
   "genes_fdr_0_05": 2,
-  "genes_fdr_0_10": 6,
+  "genes_fdr_0_10": 7,
   "barcs_version": "0.2.1"
 }
