@@ -2,6 +2,16 @@
 
 ## Guide-level inference
 
+* `bbreg()` gains `firth = TRUE`. A guide with zero reads in every library of
+  one condition is completely separated: it has no finite maximum likelihood
+  estimate, IRLS stopped converging, and `bb_screen()` dropped it from the
+  gene summary. Such fits are now refitted with Firth's correction (half a
+  leverage-weighted pseudo-count per sample), giving finite estimates and
+  standard errors; fits that do not separate are unchanged. New elements
+  `separated`, `firth`, `response_count` and `response_total` record what was
+  done. In a PRCC-TFE3 senescence screen (GSE316868), two of the three
+  consistent CCNC guides had been dropped this way.
+
 * `bb_screen()` gains `test = c("wald", "lr", "auto")`. `"lr"` tests the
   coefficient by the likelihood ratio of the fits with and without it, both at
   the guide's fitted dispersion, and reports the standard error that ratio

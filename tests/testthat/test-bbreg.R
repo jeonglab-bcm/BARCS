@@ -158,3 +158,30 @@ test_that("the compiled and R weighted-least-squares paths agree", {
   expect_equal(system$information, information)
   expect_equal(drop(system$score_target), drop(crossprod(x, weight * response)))
 })
+
+test_that("separated fits get a finite Firth-corrected estimate", {
+  data <- data.frame(dox = factor(c("off", "on", "off", "on")),
+                     run = factor(c(1, 1, 2, 2)))
+  total <- c(9614976, 9902425, 11381147, 9953674)
+  fit <- bbreg(c(0, 140, 0, 188), total, ~ run + dox, data)
+  expect_true(fit$separated)
+  expect_true(fit$firth)
+  expect_true(fit$converged)
+  expect_true(all(is.finite(fit$coefficient_table[, "std_error"])))
+  expect_gt(coef(fit)[["doxon"]], 3)
+  expect_lt(coef(fit)[["doxon"]], 15)
+
+  raw <- bbreg(c(0, 140, 0, 188), total, ~ run + dox, data, firth = FALSE)
+  expect_true(raw$separated)
+  expect_false(raw$firth)
+})
+
+test_that("fits that do not separate are untouched by the Firth option", {
+  fixture <- fixture_equal_libraries()
+  with_firth <- bbreg(fixture$count, fixture$total, ~ dose + batch, fixture$data)
+  without <- bbreg(fixture$count, fixture$total, ~ dose + batch, fixture$data,
+                   firth = FALSE)
+  expect_false(with_firth$separated)
+  expect_identical(coef(with_firth), coef(without))
+  expect_identical(with_firth$response_count, with_firth$count)
+})

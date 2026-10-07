@@ -138,6 +138,74 @@
 }
 
 
+
+# Feasible IRLS for the beta-binomial logit model; `count` and `total` may be
+# non-integer after the Firth adjustment.
+.bb_irls <- function(count, total, x, df_residual, maxit, tolerance, mu_bound,
+                     start = NULL) {
+  rank <- ncol(x)
+  beta <- start
+  if (is.null(beta) || any(!is.finite(beta))) {
+    beta <- suppressWarnings(glm.fit(
+      x = x, y = count / total, weights = total,
+      family = binomial(link = "logit"),
+      control = glm.control(maxit = 50L, epsilon = tolerance)
+    ))$coefficients
+  }
+  if (any(!is.finite(beta))) {
+    pooled <- (sum(count) + 0.5) / (sum(total) + 1)
+    beta <- numeric(rank)
+    beta[1L] <- qlogis(pooled)
+  }
+  converged <- FALSE
+  working_weight <- rep(1, length(count))
+  for (iteration in seq_len(maxit)) {
+    eta <- drop(x %*% beta)
+    mu <- pmin(pmax(plogis(eta), mu_bound), 1 - mu_bound)
+    rho <- .bb_estimate_rho(count, total, mu, df_residual)$rho
+    working_response <- eta + (count / total - mu) / (mu * (1 - mu))
+    working_weight <- total * mu * (1 - mu) / (1 + (total - 1) * rho)
+    beta_new <- tryCatch(
+      .bb_wls_solve(x, working_weight, working_response,
+                    covariance = FALSE)$coefficient,
+      error = function(e) rep(NA_real_, rank)
+    )
+    if (any(!is.finite(beta_new))) {
+      .bb_stop("The IRLS update was singular; inspect sparse counts and the design.")
+    }
+    change <- max(abs(beta_new - beta) / pmax(1, abs(beta)))
+    beta <- beta_new
+    if (change < tolerance) {
+      converged <- TRUE
+      break
+    }
+  }
+  eta <- drop(x %*% beta)
+  mu <- pmin(pmax(plogis(eta), mu_bound), 1 - mu_bound)
+  rho <- .bb_estimate_rho(count, total, mu, df_residual)$rho
+  list(beta = beta, converged = converged, iterations = iteration, mu = mu,
+       working_weight = total * mu * (1 - mu) / (1 + (total - 1) * rho))
+}
+
+.bb_separated <- function(fit, mu_bound) {
+  at_bound <- fit$mu <= mu_bound * (1 + 1e-6) | fit$mu >= 1 - mu_bound * (1 + 1e-6)
+  !fit$converged || any(at_bound) || any(abs(fit$beta[-1L]) > 20)
+}
+
+# Diagonal of the weighted hat matrix W^(1/2) X (X'WX)^-1 X' W^(1/2).
+.bb_leverage <- function(x, weight) {
+  information <- crossprod(x, weight * x)
+  inverse <- tryCatch(.bb_inverse(information), error = function(e) .bb_ginv(information))
+  pmin(1, pmax(0, weight * rowSums((x %*% inverse) * x)))
+}
+
+.bb_ginv <- function(a) {
+  decomposition <- svd(a)
+  positive <- decomposition$d > max(dim(a)) * max(decomposition$d) * .Machine$double.eps
+  decomposition$v[, positive, drop = FALSE] %*%
+    (t(decomposition$u[, positive, drop = FALSE]) / decomposition$d[positive])
+}
+
 # ---- Single-guide regression -----------------------------------------------
 
 #' Fit beta-binomial regression for one guide
@@ -164,11 +232,20 @@
 #' @param maxit Maximum feasible-IRLS iterations.
 #' @param tolerance Relative convergence tolerance.
 #' @param mu_bound Numerical bound applied to fitted proportions.
+#' @param firth Apply Firth's bias correction when the fit separates. A guide
+#'   with zero reads in every library of one condition has no finite maximum
+#'   likelihood estimate; IRLS then fails to converge or pins fitted
+#'   proportions at `mu_bound`. With `firth = TRUE` (default) such fits are
+#'   refitted after adding half a leverage-weighted pseudo-count per sample,
+#'   which gives finite estimates and standard errors. Fits that do not
+#'   separate are unchanged.
 #'
 #' @return An object of class `bbreg`: a list whose most useful elements are
 #'   `coefficients`, `coefficient_table` (estimate, standard error, t value,
-#'   degrees of freedom, p-value), `covariance`, `rho`, `df.residual`, and
-#'   `converged`. Methods are provided for [coef()], [vcov()], [fitted()],
+#'   degrees of freedom, p-value), `covariance`, `rho`, `df.residual`,
+#'   `converged`, `separated` (whether the uncorrected fit separated) and
+#'   `firth` (whether the correction was applied). Methods are provided for
+#'   [coef()], [vcov()], [fitted()],
 #'   [residuals()], and [summary()].
 #'
 #' @seealso [bb_contrast()] to test a linear combination of coefficients, and
@@ -189,7 +266,7 @@
 #' summary(fit)
 #' coef(fit)
 bbreg <- function(count, total, formula, data, maxit = 100L,
-                  tolerance = 1e-8, mu_bound = 1e-8) {
+                  tolerance = 1e-8, mu_bound = 1e-8, firth = TRUE) {
   .bb_validate_response(count, total)
   count <- as.numeric(count)
   total <- as.numeric(total)
@@ -198,56 +275,43 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
   rank <- ncol(x)
   df_residual <- nrow(x) - rank
 
-  initial <- suppressWarnings(glm.fit(
-    x = x,
-    y = count / total,
-    weights = total,
-    family = binomial(link = "logit"),
-    control = glm.control(maxit = 50L, epsilon = tolerance)
-  ))
-  beta <- initial$coefficients
-  if (any(!is.finite(beta))) {
-    pooled <- (sum(count) + 0.5) / (sum(total) + 1)
-    beta <- numeric(rank)
-    beta[1L] <- qlogis(pooled)
-  }
-
-  converged <- FALSE
-  rho_fit <- list(rho = 0, scale = 1, pearson = NA_real_,
-                  boundary = FALSE)
-  for (iteration in seq_len(maxit)) {
-    eta <- drop(x %*% beta)
-    mu <- pmin(pmax(plogis(eta), mu_bound), 1 - mu_bound)
-    rho_fit <- .bb_estimate_rho(count, total, mu, df_residual)
-    rho <- rho_fit$rho
-
-    working_response <- eta + (count / total - mu) / (mu * (1 - mu))
-    working_weight <- total * mu * (1 - mu) /
-      (1 + (total - 1) * rho)
-    beta_new <- tryCatch(
-      .bb_wls_solve(
-        x, working_weight, working_response, covariance = FALSE
-      )$coefficient,
-      error = function(e) rep(NA_real_, rank)
-    )
-    if (any(!is.finite(beta_new))) {
-      .bb_stop("The IRLS update was singular; inspect sparse counts and the design.")
+  fit <- .bb_irls(count, total, x, df_residual, maxit, tolerance, mu_bound)
+  # Complete or quasi-complete separation (for example a guide with zero
+  # reads in every library of one condition) sends the logistic estimate to
+  # infinity: IRLS stops converging or pins fitted proportions at the bound.
+  # Firth's correction (adding h/2 successes and h trials per sample, h the
+  # leverage) keeps the estimate finite and leaves well-determined fits almost
+  # unchanged, because leverage is negligible beside library-sized totals.
+  separated <- .bb_separated(fit, mu_bound)
+  firth_applied <- FALSE
+  response_count <- count
+  response_total <- total
+  if (separated && isTRUE(firth)) {
+    # Start from a Haldane-adjusted fit: at the separated solution the
+    # leverage of the all-zero samples is itself near zero.
+    fit <- .bb_irls(count + 0.5, total + 1, x, df_residual, maxit, tolerance,
+                    mu_bound)
+    leverage <- rep(0, length(count))
+    for (round in seq_len(25L)) {
+      new_leverage <- .bb_leverage(x, fit$working_weight)
+      response_count <- count + new_leverage / 2
+      response_total <- total + new_leverage
+      fit <- .bb_irls(response_count, response_total, x, df_residual, maxit,
+                      tolerance, mu_bound, start = fit$beta)
+      if (max(abs(new_leverage - leverage)) < 1e-6) break
+      leverage <- new_leverage
     }
-
-    change <- max(abs(beta_new - beta) / pmax(1, abs(beta)))
-    beta <- beta_new
-    if (change < tolerance) {
-      converged <- TRUE
-      break
-    }
+    firth_applied <- TRUE
   }
-
+  beta <- fit$beta
+  converged <- fit$converged
+  iteration <- fit$iterations
   eta <- drop(x %*% beta)
   mu <- pmin(pmax(plogis(eta), mu_bound), 1 - mu_bound)
-  rho_fit <- .bb_estimate_rho(count, total, mu, df_residual)
+  rho_fit <- .bb_estimate_rho(response_count, response_total, mu, df_residual)
   rho <- rho_fit$rho
-  working_weight <- total * mu * (1 - mu) /
-    (1 + (total - 1) * rho)
+  working_weight <- response_total * mu * (1 - mu) /
+    (1 + (response_total - 1) * rho)
   final_wls <- .bb_wls_solve(
     x, working_weight, eta, covariance = TRUE
   )
@@ -271,7 +335,7 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
     covariance = covariance,
     fitted.values = mu,
     linear.predictors = eta,
-    residuals = count / total - mu,
+    residuals = response_count / response_total - mu,
     pearson = rho_fit$pearson,
     pearson_null = rho_fit$pearson_null,
     rho = rho,
@@ -281,6 +345,10 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
     rank = rank,
     count = count,
     total = total,
+    response_count = response_count,
+    response_total = response_total,
+    separated = separated,
+    firth = firth_applied,
     formula = formula,
     data = data,
     design = x,
@@ -328,15 +396,15 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
   start_full <- fit$coefficients
   start_reduced <- if (ncol(reduced)) {
     start <- suppressWarnings(stats::glm.fit(
-      reduced, fit$count / fit$total, weights = fit$total,
+      reduced, fit$response_count / fit$response_total, weights = fit$response_total,
       family = stats::binomial()
     )$coefficients)
     if (any(!is.finite(start))) start_full[-j] else start
   } else {
     numeric()
   }
-  full <- .bb_fixed_rho_ml(x, fit$count, fit$total, fit$rho, start_full)
-  null <- .bb_fixed_rho_ml(reduced, fit$count, fit$total, fit$rho, start_reduced)
+  full <- .bb_fixed_rho_ml(x, fit$response_count, fit$response_total, fit$rho, start_full)
+  null <- .bb_fixed_rho_ml(reduced, fit$response_count, fit$response_total, fit$rho, start_reduced)
   statistic <- max(0, 2 * (full - null))
   sign(fit$coefficients[[j]]) * sqrt(statistic)
 }
