@@ -365,12 +365,14 @@ bbreg <- function(count, total, formula, data, maxit = 100L,
 .bb_loglik <- function(beta, x, count, total, rho, mu_bound = 1e-12) {
   mu <- pmin(pmax(plogis(drop(x %*% beta)), mu_bound), 1 - mu_bound)
   if (rho <= 0) {
-    return(sum(stats::dbinom(count, total, mu, log = TRUE)))
+    # Written out rather than dbinom(): Firth-adjusted counts are non-integer.
+    return(sum(count * log(mu) + (total - count) * log1p(-mu)))
   }
   shape1 <- mu * (1 - rho) / rho
   shape2 <- (1 - mu) * (1 - rho) / rho
-  sum(lchoose(total, count) + lbeta(count + shape1, total - count + shape2) -
-        lbeta(shape1, shape2))
+  # The binomial coefficient is omitted: it is the same under every mean model
+  # and cancels in the likelihood ratio.
+  sum(lbeta(count + shape1, total - count + shape2) - lbeta(shape1, shape2))
 }
 
 .bb_fixed_rho_ml <- function(x, count, total, rho, start) {

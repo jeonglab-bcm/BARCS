@@ -286,3 +286,17 @@ test_that("lr_fold is validated", {
     "lr_fold"
   )
 })
+
+test_that("bb_screen keeps separated guides under every test", {
+  data <- data.frame(dox = factor(c("off", "on", "off", "on")),
+                     run = factor(c(1, 1, 2, 2)))
+  totals <- c(9614976, 9902425, 11381147, 9953674)
+  counts <- rbind(separated = c(0, 140, 0, 188), steady = c(500, 520, 600, 480))
+  for (test in c("wald", "lr", "auto")) {
+    screen <- bb_screen(counts, data, ~ run + dox, "doxon", totals = totals,
+                        test = test, moderate = FALSE)
+    expect_true(screen$converged[1], info = test)
+    expect_true(is.finite(screen$p_value[1]), info = test)
+    expect_gt(screen$estimate[1], 0)
+  }
+})
