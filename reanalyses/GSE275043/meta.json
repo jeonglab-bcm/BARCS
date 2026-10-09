@@ -1,0 +1,18 @@
+{
+  "gse": "GSE275043",
+  "pmid": "40106574",
+  "doi": "10.1126/sciadv.ads8351",
+  "pmcid": "PMC11922064",
+  "title": "Genome-wide CRISPR screen identifies IRF1 and TFAP4 as transcriptional regulators of Galectin-9 in T cell acute lymphoblastic leukemia",
+  "journal": "Science Advances",
+  "published": "2025",
+  "model": "Jurkat T-ALL cells, Brunello knockout library, sorted on Galectin-9",
+  "contrast": "Galectin-9 top 20% vs bottom 20% sort, paired by replicate (2 vs 2)",
+  "paper_method": "MAGeCK (per replicate) plus a validation screen",
+  "paper_calls": "41 low-bin genes at FDR < 0.15 in both replicates; IRF1, TFAP4 and ADD1 validated",
+  "barcs_calls": "489 genes at FDR 0.10 (358 depleted in Galectin-9-high); 681 against the control-guide null",
+  "named_hits": "4/4: LGALS9 #2, TFAP4 #3, ADD1 #4, IRF1 #13 (all FDR < 1e-7)",
+  "verdict": "BARCS ranks the target LGALS9 and all three validated regulators (TFAP4, ADD1, IRF1) in its top 13 of 19,114 genes. It also calls many fitness genes (ribosomal, MYB, HSPA5) that the paper filtered out with an unsorted control.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

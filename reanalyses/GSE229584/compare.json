@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/iRFP_vs_negative/genes.csv",
+  "direction": "both",
+  "named_hits": ["ZNF800", "NEUROG3", "SOX4", "INSM1", "NFIC", "TEF", "ZHX2"],
+  "top_n": [25, 50, 100]
+}

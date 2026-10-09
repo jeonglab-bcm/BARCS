@@ -1,0 +1,29 @@
+{
+  "gse": "GSE288230",
+  "pmid": "40221460",
+  "counts_file": "GSE288230_Genome_Scale_Library_Raw_Counts_noBOM.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "GS_HUDEP2_Rep1_D0", "gsm": "GSM8761568", "condition": "D0", "replicate": "1"},
+    {"column": "GS_HUDEP2_Rep2_D0", "gsm": "GSM8761569", "condition": "D0", "replicate": "2"},
+    {"column": "GS_HUDEP2_Rep3_D0", "gsm": "GSM8761570", "condition": "D0", "replicate": "3"},
+    {"column": "GS_HUDEP2_Rep1_D12", "gsm": "GSM8761571", "condition": "D12", "replicate": "1"},
+    {"column": "GS_HUDEP2_Rep2_D12", "gsm": "GSM8761572", "condition": "D12", "replicate": "2"},
+    {"column": "GS_HUDEP2_Rep3_D12", "gsm": "GSM8761573", "condition": "D12", "replicate": "3"}
+  ],
+  "factor_levels": {
+    "condition": ["D0", "D12"],
+    "replicate": ["1", "2", "3"]
+  },
+  "analyses": [
+    {
+      "name": "genome_scale_D12_vs_D0",
+      "formula": "~ replicate + condition",
+      "term": "conditionD12"
+    }
+  ],
+  "rationale": "Genome-scale GeCKOv2 KO screen in HUDEP-2 cells comparing proerythroblasts (D0) with orthochromatic erythroblasts (D12), three replicates paired by infection, so replicate is a blocking term (4 residual df). Genes required for terminal erythroid differentiation drop out (depleted) at D12. This is the paper's primary screen (NHLRC2, VAC14 named)."
+}

@@ -1,0 +1,18 @@
+{
+  "gse": "GSE237953",
+  "pmid": "37070193",
+  "doi": "10.1093/nar/gkad267",
+  "pmcid": "PMC10570044",
+  "title": "PAXIP1 and STAG2 converge to maintain 3D genome architecture and facilitate promoter/enhancer contacts to enable stress hormone-dependent transcription",
+  "journal": "Nucleic Acids Research",
+  "published": "2023",
+  "model": "A549 lung cancer cells treated with hydrocortisone, Brunello library, FACS sort on FKBP5 protein",
+  "contrast": "FKBP5-low vs FKBP5-high sort, paired by replicate (3 vs 3)",
+  "paper_method": "MAGeCK RRA on replicate-pooled counts (deposited)",
+  "paper_calls": "10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3",
+  "barcs_calls": "1,861 genes at FDR 0.10 after control calibration (1,944 against the control null); 8 when restricted to guides as abundant as the controls",
+  "named_hits": "NR3C1 #2, PAXIP1 #12, STAG2 #13 (all FDR <= 1e-4); 10/10 paper hits at FDR 0.10",
+  "verdict": "BARCS recovers all ten of the paper's hits, with NR3C1, PAXIP1 and STAG2 in its top 13. Its 1,861-gene list is inflated by sparse, jackpotted guides that the far more abundant non-targeting controls cannot calibrate. Restricted to well-counted guides, 8 genes pass, the top six all hits from the paper.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

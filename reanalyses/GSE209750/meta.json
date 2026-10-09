@@ -1,0 +1,18 @@
+{
+  "gse": "GSE209750",
+  "pmid": "38168026",
+  "doi": "10.1038/s41467-023-44175-1",
+  "pmcid": "PMC10761986",
+  "title": "Integrated multi-omics analyses identify anti-viral host factors and pathways controlling SARS-CoV-2 infection",
+  "journal": "Nature Communications",
+  "published": "2024",
+  "model": "A549-ACE2 cells, genome-wide CRISPR-KO library (92,817 guides)",
+  "contrast": "SARS-CoV-2 infected vs mock, survival screen (3 vs 3)",
+  "paper_method": "MAGeCK (deposited gene/sgRNA summary)",
+  "paper_calls": "Anti-viral factors depleted: V-ATPase, ESCRT, N-glycosylation, cohesin, KLF5; DAZAP2, VTA1, KLF5 validated",
+  "barcs_calls": "257 genes at FDR 0.10 (93 depleted/anti-viral, 164 enriched/pro-viral; control-null 312) after control calibration",
+  "named_hits": "DAZAP2 #1 depleted (FDR 2.6e-17), KLF5 #6 (FDR 1.2e-09), VTA1 #42 (FDR 0.013, tiny effect); ESCRT and cohesin depleted; ACE2/CTSL top enriched controls",
+  "verdict": "BARCS recovers the paper's two strongest validated anti-viral factors, DAZAP2 (most depleted gene) and KLF5 (#6), plus the ESCRT and cohesin modules; VTA1 passes FDR 0.10 only weakly. Non-targeting guides were inflated (18.8% at p<0.05) and the hit list was calibrated to them. Rank correlation with the deposited MAGeCK is 0.68.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

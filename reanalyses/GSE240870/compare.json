@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/ISX9_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ELMSAN1"],
+  "top_n": [25, 50, 100]
+}

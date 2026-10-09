@@ -1,0 +1,38 @@
+{
+  "gse": "GSE212152",
+  "pmid": "40972525",
+  "counts_file": "GSE212152_combined_counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^non-targeting",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "GFP.establishment.repA", "gsm": "GSM6510268", "condition": "GFPpos", "replicate": "A"},
+    {"column": "GFP.establishment.repB", "gsm": "GSM6510269", "condition": "GFPpos", "replicate": "B"},
+    {"column": "Unsorted.establishment.repA", "gsm": "GSM6510270", "condition": "unsorted", "replicate": "A"},
+    {"column": "Unsorted.establishment.repB", "gsm": "GSM6510271", "condition": "unsorted", "replicate": "B"},
+    {"column": "GFP.maintenance.repA", "gsm": "GSM6510272", "condition": "GFPpos", "replicate": "A"},
+    {"column": "GFP.maintenance.repB", "gsm": "GSM6510273", "condition": "GFPpos", "replicate": "B"},
+    {"column": "Unsorted.maintenance.repA", "gsm": "GSM6510274", "condition": "unsorted", "replicate": "A"},
+    {"column": "Unsorted.maintenance.repB", "gsm": "GSM6510275", "condition": "unsorted", "replicate": "B"}
+  ],
+  "factor_levels": {
+    "condition": ["unsorted", "GFPpos"],
+    "replicate": ["A", "B"]
+  },
+  "analyses": [
+    {
+      "name": "establishment_GFP_vs_unsorted",
+      "columns": ["GFP.establishment.repA", "GFP.establishment.repB", "Unsorted.establishment.repA", "Unsorted.establishment.repB"],
+      "formula": "~ replicate + condition",
+      "term": "conditionGFPpos"
+    },
+    {
+      "name": "maintenance_GFP_vs_unsorted",
+      "columns": ["GFP.maintenance.repA", "GFP.maintenance.repB", "Unsorted.maintenance.repA", "Unsorted.maintenance.repB"],
+      "formula": "~ replicate + condition",
+      "term": "conditionGFPpos"
+    }
+  ],
+  "rationale": "Inducible H3K9me3 reporter-silencing KO screen (custom 1,310-gene chromatin library, 150 non-targeting guides) in mESCs. Two screens, establishment and maintenance, each with paired repA/repB eGFP+ (silencing lost) vs unsorted fractions from one infection, so replicate is a blocking term (1 residual df). KO of a required silencing factor leaves cells GFP+, so hits are enriched in GFPpos. Establishment is the paper's primary claim (which factors set up silencing); maintenance is the second screen (DHX9/R-loops)."
+}

@@ -1,0 +1,18 @@
+{
+  "gse": "GSE240870",
+  "pmid": "40505660",
+  "doi": "10.1016/j.cmet.2025.05.009",
+  "pmcid": "",
+  "title": "Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming",
+  "journal": "Cell Metabolism",
+  "published": "2025",
+  "model": "143B osteosarcoma cells, genome-wide CRISPR activation library",
+  "contrast": "ISX9 vs DMSO (2 vs 2)",
+  "paper_method": "MAGeCK 0.5 RRA",
+  "paper_calls": "ELMSAN1 (MIDEAS) activation blunts ISX9; no gene table accessible",
+  "barcs_calls": "86 genes at FDR 0.10 after control calibration (38 enriched in ISX9); 46 against the control-guide null",
+  "named_hits": "1/1: ELMSAN1 #1 (FDR 7e-26)",
+  "verdict": "ELMSAN1, the paper's hit, is the strongest gene in BARCS: all ten of its guides with reads rise under ISX9 (four by about 3- to 4.6-fold). The rest of the screen is weak, and non-targeting guides were over-dispersed (20% at p < 0.05), so the hit list was calibrated to them.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

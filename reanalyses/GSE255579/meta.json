@@ -1,0 +1,18 @@
+{
+  "gse": "GSE255579",
+  "pmid": "41006228",
+  "doi": "10.1038/s41467-025-63349-7",
+  "pmcid": "PMC12475092",
+  "title": "EXO1 as a therapeutic target for Fanconi Anaemia, ZRSR2 and BRCA1-A complex deficient cancers",
+  "journal": "Nature Communications",
+  "published": "2025",
+  "model": "eHAP iCas9 EXO1-knockout cells, Brunello library, rescue screen with a second sgRNA against FANCG or ZRSR2",
+  "contrast": "EXO1-KO + sgFANCG vs EXO1-KO + sgNT, paired by replicate (3 vs 3); ZRSR2 vs NT as second analysis",
+  "paper_method": "MAGeCK test (deposited, Supplementary Data 4-5)",
+  "paper_calls": "18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both",
+  "barcs_calls": "27 genes at FDR 0.10 for FANCG (after control calibration; 467 against the control null centred on targeting guides), 18 for ZRSR2 (16)",
+  "named_hits": "FANCG: TYMS #23 (FDR 0.098), GINS2 #82 (0.21); CDC6, SMC5, RRM1 FDR > 0.4; 1/5 recovered",
+  "verdict": "BARCS agrees with the authors' MAGeCK on the overall ranking (Spearman 0.68) and finds TYMS, the rescue gene the paper validated, at FDR 0.10. The other replication genes point the right way but do not pass: their guides are sparse and erratic, and the paper's own table does not call them significant either.",
+  "agreement": "partial",
+  "analyzed": "2026-10-09"
+}

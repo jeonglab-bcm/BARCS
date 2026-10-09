@@ -1,0 +1,5 @@
+{"barcs_genes": "results/infected_vs_mock/genes.csv", "direction": "depleted",
+ "named_hits": ["DAZAP2", "VTA1", "KLF5"],
+ "published": {"file": "suppl/GSE209750_COVID-19_CRISPR_210212_C_control.gene_summary.txt.gz",
+   "gene_column": "id", "score_column": "neg|score", "score_better": "lower", "effect_column": "neg|lfc"},
+ "top_n": [50, 100, 200]}

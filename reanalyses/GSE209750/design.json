@@ -1,0 +1,28 @@
+{
+  "gse": "GSE209750",
+  "pmid": "38168026",
+  "counts_file": "suppl/GSE209750_COVID-19_CRISPR_210212.C_control.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^AAVS1$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "control1", "gsm": "GSM6394751", "condition": "mock", "replicate": "1"},
+    {"column": "control2", "gsm": "GSM6394752", "condition": "mock", "replicate": "2"},
+    {"column": "control3", "gsm": "GSM6394753", "condition": "mock", "replicate": "3"},
+    {"column": "C-1", "gsm": "GSM6394748", "condition": "infected", "replicate": "1"},
+    {"column": "C-2", "gsm": "GSM6394749", "condition": "infected", "replicate": "2"},
+    {"column": "C-3", "gsm": "GSM6394750", "condition": "infected", "replicate": "3"}
+  ],
+  "factor_levels": {
+    "condition": ["mock", "infected"]
+  },
+  "analyses": [
+    {
+      "name": "infected_vs_mock",
+      "formula": "~ condition",
+      "term": "conditioninfected"
+    }
+  ],
+  "rationale": "Genome-wide KO survival screen in A549-ACE2 cells, SARS-CoV-2-infected (C) vs mock (control), three libraries each. Replicate correlations show no pairing (0.97-0.99 throughout), so no replicate term (4 residual df). Guides depleted in infected cells mark anti-viral host factors; enriched = pro-viral. AAVS1 safe-harbor guides are the controls."
+}

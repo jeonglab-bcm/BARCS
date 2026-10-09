@@ -1,0 +1,33 @@
+{
+  "analysis": "gal9_high_vs_low",
+  "formula": "~replicate + bin",
+  "term": "binhigh20",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 77441,
+  "genes": 19114,
+  "moderated": true,
+  "prior_df": 19.5644,
+  "guide_correlation": 0.0172,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0413,
+  "control_p05": 0.0413,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 11,
+  "top1pct_read_share": {
+    "high20_rep1": 0.031,
+    "low20_rep1": 0.03,
+    "high20_rep2": 0.031,
+    "low20_rep2": 0.031
+  },
+  "genes_fdr_0_10_up": 131,
+  "genes_fdr_0_10_down": 358,
+  "genes_fdr_0_05": 392,
+  "genes_fdr_0_10": 489,
+  "genes_empirical_fdr_0_10": 681,
+  "empirical_centre": "controls",
+  "control_shift": 0.062,
+  "barcs_version": "0.2.2"
+}

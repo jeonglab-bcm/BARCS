@@ -1,0 +1,18 @@
+{
+  "gse": "GSE220831",
+  "pmid": "38165806",
+  "doi": "10.1016/j.celrep.2023.113629",
+  "pmcid": "PMC10853943",
+  "title": "Metabolic reprogramming by histone deacetylase inhibition preferentially targets NRF2-activated tumors",
+  "journal": "Cell Reports",
+  "published": "2024",
+  "model": "Two KP and two KPK (Keap1-null, NRF2-active) mouse LUAD lines, chromatin-focused knockout library (611 genes)",
+  "contrast": "Extra dropout in KPK vs KP lines, T1 (14 doublings) vs T0 paired by line and replicate (24 libraries)",
+  "paper_method": "MAGeCK-MLE, ranked by beta difference (KPK - KP)",
+  "paper_calls": "Class I HDACs (Hdac1, Hdac2, Hdac3) preferentially required in KPK cells",
+  "barcs_calls": "84 genes at FDR 0.10 (44 more depleted in KPK); too few controls (36) for a control null",
+  "named_hits": "3/3: Hdac1 #7 (FDR 1.5e-4), Hdac3 #13 (FDR 8e-4), Hdac2 #27 (FDR 0.018)",
+  "verdict": "BARCS calls all three class I HDACs as KPK-specific dependencies at FDR < 0.02, and its interaction ranking tracks the authors' MAGeCK-MLE beta difference closely (Spearman 0.94). It ranks Hdac1 above Hdac3, because Hdac3's KPK-specific difference is noisier across guides.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

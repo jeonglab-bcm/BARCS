@@ -1,0 +1,33 @@
+{
+  "analysis": "iRFP_vs_negative_median_ratio",
+  "formula": "~replicate + condition",
+  "term": "conditioniRFP",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 7294,
+  "genes": 1800,
+  "moderated": true,
+  "prior_df": 5.408,
+  "guide_correlation": 0.0069,
+  "control_scale": null,
+  "control_guides": 96,
+  "control_p05_raw": 0.0729,
+  "control_p05": 0.0729,
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 30,
+  "top1pct_read_share": {
+    "Sorted_iRFP_BR1": 0.294,
+    "Sorted_iRFP_BR2": 0.325,
+    "Sorted_Negative_BR1": 0.585,
+    "Sorted_Negative_BR2": 0.559
+  },
+  "genes_fdr_0_10_up": 9,
+  "genes_fdr_0_10_down": 56,
+  "genes_fdr_0_05": 36,
+  "genes_fdr_0_10": 65,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.2"
+}

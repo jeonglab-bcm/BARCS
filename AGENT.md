@@ -1,6 +1,6 @@
 # Handover notes for BARCS
 
-These notes are for Kelly, who is taking over as maintainer of this repository, and for any coding agent (Claude Code or similar) working with her. They cover what the repository holds, how to work in it, what was done most recently, and what is still open. Last updated 2026-10-08.
+These notes are for Kelly, who is taking over as maintainer of this repository, and for any coding agent (Claude Code or similar) working with her. They cover what the repository holds, how to work in it, what was done most recently, and what is still open. Last updated 2026-10-09.
 
 ## What BARCS is
 
@@ -91,9 +91,11 @@ Keep these safeguards:
 
 ### Current state of the reanalyses
 
-The last search covered 365 days and found 57 screen-like candidates.
-- **Reanalyzed: 15.** 10 agree, 2 partly agree, 3 differ.
-- **Screened out: 42**, with reasons in `reanalyses/excluded.tsv`. The most common reasons are a paper's companion assays (Hi-C, CUT&Tag…), one library per condition, and normalized counts only.
+The last search (2026-10-09) covered 3 years: 241 papers and 118 screen-like candidate series.
+- **Reanalyzed: 25.** 17 agree, 5 partly agree, 3 differ.
+- **Screened out: 86**, with reasons in `reanalyses/excluded.tsv`. The most common reasons are a paper's companion assays (Hi-C, CUT&Tag…), one library per condition, and normalized counts only.
+- **Usable but not reanalyzed yet: 7**, listed as `pending` in `reanalyses/search.json` and on the site.
+- About one screen-like series in four is usable, and about 80 matching papers appear per year, so 100 screens needs either a 6-7 year window or counting from raw reads (see open items).
 
 Each report states its assumptions. Inferred column mappings are marked as inferred.
 
@@ -111,7 +113,7 @@ Check these four in every new report before publishing it. Agents have made mist
 
 - **Build.** `build_site.R` turns `reanalyses/` into `_site/`: an index, one page per screen, and the screened-out table.
 - **Deploy.** The workflow deploys on pushes to `main` that touch `reanalyses/` or the builder.
-- **One-time setup (needs a repository admin):** Settings → Pages → Source: **GitHub Actions**. If the repository is private, Pages may need a paid GitHub plan.
+- **Live at https://jeonglab-bcm.github.io/BARCS/** (Pages enabled 2026-10-09, source: GitHub Actions).
 - **Private preview.** A copy is published as a claude.ai artifact for Hyun-Hwan: https://claude.ai/artifact/S3Rr2ysKDuMfQzz2J78TgM. It is private to his account; ask him to share it if needed.
 
 ## Related repositories
@@ -128,7 +130,7 @@ Check these four in every new report before publishing it. Agents have made mist
    - BARCS numbers held to the fourth decimal everywhere; the null grid now converges for every guide.
    - Comparators drifted with newer tools, and four quoted numbers in `barcs-0.2.0-revision` no longer match: edgeR-QL AP 0.874 -> 0.875, Figure 1 disagreements 62 -> 61, CRISPulator MAGeCK-MLE F1 0.711 -> 0.704, simCRISPR BARCS F1 0.917 -> 0.911 (the simulator itself changed).
 2. Decide whether `test = "auto"` should become the default. It matched Wald on the benchmark and fixed two real screens. Changing the default would change published numbers, so it needs a manuscript decision.
-3. **Done in 0.2.2 (branch `claude/sleepy-planck-2h1yvx`, not yet merged).** `bb_gene_empirical_null()` reads gene p-values off pseudo-genes of control guides (signed, widened to the guide correlation). `run_barcs.R` records it and the site shows a control-null column.
+3. **Done in 0.2.2 (released).** `bb_gene_empirical_null()` reads gene p-values off pseudo-genes of control guides (signed, widened to the guide correlation). `centre = "targets"` takes the null's location from the targeting guides when the controls are offset; non-cutting controls in knockout screens sit 0.3-0.75 z away, and `run_barcs.R` centres automatically above 0.25 z. `run_barcs.R` records it and the site shows a control-null column.
    - Simulation (`tools/empirical-null-sim/`): with heavy-tailed clonal noise it held FDP at 0.09 where control calibration gave 0.22.
    - Limit: with one guide per element its smallest p-value is 2 / (controls + 1). GSE302335 (ICAM1) therefore gets no calls at FDR 0.10, although 65 elements lie beyond every control. The earlier "45" came from an uncorrected estimate and was replaced.
 
@@ -141,11 +143,13 @@ Check these four in every new report before publishing it. Agents have made mist
    - add author contributions, a competing-interests statement and grant numbers.
 
 **Reanalysis website**
-7. Enable GitHub Pages (above).
+7. **Done.** GitHub Pages is enabled and deploys on pushes to `main`.
 8. Rerun `search_pubmed.R` periodically, perhaps monthly.
    - Triage new candidates and add the usable ones.
    - Add every rejection to `reanalyses/excluded.tsv` so the site shows full coverage.
 9. GSE328830 was skipped only because its main count file is 657 MB, larger than the pipeline downloads. It can be reanalyzed with `--max-mb 800`.
+10. Reanalyze the 7 pending series (GSE203240, GSE222531, GSE226977, GSE236257, GSE241933, GSE276161, GSE280676). Triage notes are in `work/triage3y/` of the session that found them; re-triage if that is gone. GSE280676 and GSE280666 (same bovine paper, same design) were triaged inconsistently: one usable, one rejected for clonal takeover; settle them together.
+11. To reach 100 screens, count guides from raw reads with `barcs_quant()` for series that deposited only normalized values but have FASTQ in SRA (8 of the first 42 rejections were of that kind).
 
 ## People
 

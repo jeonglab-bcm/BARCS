@@ -1,0 +1,33 @@
+{
+  "analysis": "establishment_GFP_vs_unsorted",
+  "formula": "~replicate + condition",
+  "term": "conditionGFPpos",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 5950,
+  "genes": 1160,
+  "moderated": true,
+  "prior_df": 1.539,
+  "guide_correlation": 0.0054,
+  "control_scale": null,
+  "control_guides": 150,
+  "control_p05_raw": 0.02,
+  "control_p05": 0.02,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 115,
+  "top1pct_read_share": {
+    "GFP.establishment.repA": 0.052,
+    "GFP.establishment.repB": 0.195,
+    "Unsorted.establishment.repA": 0.051,
+    "Unsorted.establishment.repB": 0.066
+  },
+  "genes_fdr_0_10_up": 47,
+  "genes_fdr_0_10_down": 59,
+  "genes_fdr_0_05": 47,
+  "genes_fdr_0_10": 106,
+  "genes_empirical_fdr_0_10": 217,
+  "empirical_centre": "targets",
+  "control_shift": 0.551,
+  "barcs_version": "0.2.2"
+}

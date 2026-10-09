@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/EXO1KO_vs_WT_D16/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ZRSR2", "FAM175A", "BRCC3", "BABAM1", "FANCG", "FANCM", "C19orf40", "APITD1", "STRA13", "FANCB", "FANCC", "FANCE", "FANCF", "FANCL", "FANCD2", "CDK11B"],
+  "published": {
+    "file": "paper/SD2_day16_ko_depleted.tsv",
+    "gene_column": "gene", "score_column": "ko_depleted_score", "score_better": "lower",
+    "effect_column": "lfc_ko_vs_wt"
+  },
+  "top_n": [25, 50, 100, 200]
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/FANCG_vs_NT/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["GINS2", "CDC6", "SMC5", "RRM1", "TYMS"],
+  "published": {
+    "file": "paper/SD_M7.xlsx", "sheet": "SD4 - rescue screen EXO1-FANCG",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [25, 50, 100, 200]
+}

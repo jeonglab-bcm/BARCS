@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/FKBP5low_vs_high/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NR3C1", "STAG2", "PAXIP1", "FKBP5", "MAU2"],
+  "published": {
+    "file": "paper/mageck_data.tsv",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [10, 25, 50, 100]
+}
