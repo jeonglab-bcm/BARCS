@@ -174,7 +174,12 @@ for (analysis in analyses) {
     # Controls that sit away from the targeting guides (non-cutting controls
     # in a knockout screen, sort or time-course drift) are not exchangeable in
     # location; centre the null on the targeting guides instead.
-    control_shift <- if (empirical_null) attr(empirical, "empirical_null")$control_shift else NA_real_
+    # BARCS releases before the centre argument do not report control_shift.
+    control_shift <- if (empirical_null) {
+      attr(empirical, "empirical_null")$control_shift %||% NA_real_
+    } else {
+      NA_real_
+    }
     empirical_centre <- "controls"
     if (isTRUE(abs(control_shift) > 0.25) &&
         "centre" %in% names(formals(bb_gene_empirical_null))) {
