@@ -1,4 +1,4 @@
-# BARCS 0.2.2 (development)
+# BARCS 0.2.2
 
 ## Gene-level summaries
 
