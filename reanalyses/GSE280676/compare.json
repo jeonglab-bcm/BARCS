@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/day16_vs_day1/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TP53", "PTEN", "VGLL4", "MPC1", "MPC2", "SMAD3", "SMAD4", "SMAD5", "RUNX1"],
+  "published": {
+    "file": "paper/mageck_day16.csv",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "log2(FC)"
+  },
+  "top_n": [10, 25, 50]
+}

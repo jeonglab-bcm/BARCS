@@ -12,7 +12,7 @@
 #     score_better   "lower" (p-value, FDR, RRA score) or "higher" (|LFC|, rank score)
 #     effect_column  optional signed effect, used for direction agreement
 #   top_n            list of list sizes to compare (default [50, 100, 200])
-#   out              output prefix (default <dir of compare.json>/comparison)
+#   out              output prefix, relative to compare.json (default "comparison")
 #
 # Writes <out>.md (human-readable) and <out>_genes.csv (merged ranks).
 
@@ -25,7 +25,9 @@ spec_path <- args[[1]]
 spec <- fromJSON(spec_path, simplifyVector = TRUE)
 here <- dirname(spec_path)
 resolve <- function(p) if (file.exists(p)) p else file.path(here, p)
-out <- spec$out %||% file.path(here, "comparison")
+out <- spec$out %||% "comparison"
+# Like the other paths in compare.json, a relative prefix is relative to it.
+if (!grepl("^(/|[A-Za-z]:)", out)) out <- file.path(here, out)
 top_n <- spec$top_n %||% c(50, 100, 200)
 direction <- spec$direction %||% "both"
 

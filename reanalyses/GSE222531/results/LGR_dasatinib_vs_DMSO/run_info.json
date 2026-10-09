@@ -1,0 +1,33 @@
+{
+  "analysis": "LGR_dasatinib_vs_DMSO",
+  "formula": "~condition",
+  "term": "conditiondasatinib",
+  "libraries": 4,
+  "residual_df": 2,
+  "guides": 103074,
+  "genes": 18759,
+  "moderated": true,
+  "prior_df": 10.3671,
+  "guide_correlation": 0.0015,
+  "control_scale": 1.2353,
+  "control_guides": 1895,
+  "control_p05_raw": 0.1229,
+  "control_p05": 0.0498,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 18,
+  "top1pct_read_share": {
+    "LGR_DMSO_1": 0.024,
+    "LGR_DMSO_2": 0.025,
+    "LGR_DASA_1": 0.05,
+    "LGR_DASA_2": 0.051
+  },
+  "genes_fdr_0_10_up": 149,
+  "genes_fdr_0_10_down": 177,
+  "genes_fdr_0_05": 240,
+  "genes_fdr_0_10": 326,
+  "genes_empirical_fdr_0_10": 329,
+  "empirical_centre": "controls",
+  "control_shift": -0.013,
+  "barcs_version": "0.2.2"
+}

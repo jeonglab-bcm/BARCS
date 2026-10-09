@@ -1,9 +1,27 @@
 {
   "barcs_genes": "results/establishment_GFP_vs_unsorted/genes.csv",
   "direction": "enriched",
-  "named_hits": ["Setdb1", "Suv39h1", "Ehmt2", "Dnmt1", "Dnmt3a", "Dnmt3b", "Hdac1", "Hdac2", "Dhx9"],
-  "published": {"file": "suppl/GSE212152_EpiChromo_Screen_establishment_Gene_Summary.txt.gz",
-    "gene_column": "id", "score_column": "pos|score", "score_better": "lower", "effect_column": "pos|lfc"},
-  "top_n": [25, 50, 100],
-  "out": "comparison_establishment"
+  "named_hits": [
+    "Setdb1",
+    "Suv39h1",
+    "Ehmt2",
+    "Dnmt1",
+    "Dnmt3a",
+    "Dnmt3b",
+    "Hdac1",
+    "Hdac2",
+    "Dhx9"
+  ],
+  "published": {
+    "file": "suppl/GSE212152_EpiChromo_Screen_establishment_Gene_Summary.txt.gz",
+    "gene_column": "id",
+    "score_column": "pos|score",
+    "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [
+    25,
+    50,
+    100
+  ]
 }

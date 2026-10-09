@@ -1,0 +1,18 @@
+{
+  "gse": "GSE222531",
+  "pmid": "38243310",
+  "doi": "10.1186/s13059-023-03132-3",
+  "pmcid": "PMC10797759",
+  "title": "Compact CRISPR genetic screens enabled by improved guide RNA library cloning",
+  "journal": "Genome Biology",
+  "published": "2024",
+  "model": "K562 dCas9-KRAB, hCRISPRi-v2 library re-cloned with the low-skew (LGR) protocol, 100-fold coverage",
+  "contrast": "End point vs T0, LGR 100X growth screen (4 vs 2); second: dasatinib vs DMSO (2 vs 2)",
+  "paper_method": "ScreenProcessing (growth) with BAGEL2 precision-recall; MAGeCK-VISPR (dasatinib)",
+  "paper_calls": "1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001",
+  "barcs_calls": "2,333 genes at FDR 0.10 (2,025 depleted); 2,290 against the control null. Dasatinib: 326 at FDR 0.10 after control calibration (329 against the control null)",
+  "named_hits": "No named genes. Benchmark: 533/658 Hart CEGv2 core essentials depleted at FDR 0.10 (81% recall), 5/846 NEGv1 non-essentials (precision 0.99), average precision 0.962. Dasatinib, rank among enriched genes: NF1 #9, GFI1B #27, LZTR1 #30; 17 Mediator subunits enriched at FDR 0.10",
+  "verdict": "BARCS confirms the paper's quality claim: the 100X growth screen separates core-essential from non-essential genes with 99% precision and 81% recall at FDR 0.10. In the dasatinib arm, Mediator knockdowns are enriched and oxidative-phosphorylation knockdowns depleted, as the paper reports, with NF1, LZTR1 and GFI1B among the top 30 resistance genes.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/CRISPRi_doxo_vs_vehicle/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["CA12", "HPGDS", "SCMH1", "ERBB2", "DGKH"],
+  "top_n": [10, 25, 50]
+}

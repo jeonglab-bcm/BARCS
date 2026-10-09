@@ -1,0 +1,18 @@
+{
+  "gse": "GSE203240",
+  "pmid": "40347943",
+  "doi": "10.1016/j.xgen.2025.100876",
+  "pmcid": "PMC12230241",
+  "title": "Identification of targetable vulnerabilities of PLK1-overexpressing cancers by synthetic dosage lethality",
+  "journal": "Cell Genomics",
+  "published": "2025",
+  "model": "In vivo secondary knockout pool (211 guides, 105 candidate genes) in xenograft tumours with and without Cas9 (GEO: HCT116; paper text: HCI-010 PDX cells)",
+  "contrast": "Cas9 vs no-Cas9 tumours, 3 weeks (7 vs 7)",
+  "paper_method": "Cas9 vs no-Cas9 score and p-value per gene (Table S7)",
+  "paper_calls": "15 genes at p < 0.05; IGF2BP2 #6",
+  "barcs_calls": "38 genes at FDR 0.10 (21 depleted); no control null (one non-targeting guide)",
+  "named_hits": "Rank among depleted genes: IGF2BP2 #9 (FDR 1.6e-6); 13/15 paper hits at FDR 0.10, PEAK3/C19orf35 #1 and ATP4A #2",
+  "verdict": "BARCS calls IGF2BP2 and 13 of the paper's 15 in vivo hits at FDR 0.10, with the same top two genes. Only LPL and KIF5B, the paper's weakest hits, do not move. With a single non-targeting guide, calibration rests on within-arm null contrasts, which call nothing.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

@@ -1,3 +1,16 @@
-{"barcs_genes": "results/genome_scale_D12_vs_D0/genes.csv", "direction": "depleted",
- "named_hits": ["NHLRC2", "VAC14", "KLF1", "GATA1", "ALAS2"], "top_n": [50, 100, 200],
- "out": "comparison_genome_scale"}
+{
+  "barcs_genes": "results/genome_scale_D12_vs_D0/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "NHLRC2",
+    "VAC14",
+    "KLF1",
+    "GATA1",
+    "ALAS2"
+  ],
+  "top_n": [
+    50,
+    100,
+    200
+  ]
+}
