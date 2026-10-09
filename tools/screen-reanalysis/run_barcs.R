@@ -171,6 +171,18 @@ for (analysis in analyses) {
       }
     )
     empirical_null <- !is.null(empirical)
+    # Controls that sit away from the targeting guides (non-cutting controls
+    # in a knockout screen, sort or time-course drift) are not exchangeable in
+    # location; centre the null on the targeting guides instead.
+    control_shift <- if (empirical_null) attr(empirical, "empirical_null")$control_shift else NA_real_
+    empirical_centre <- "controls"
+    if (isTRUE(abs(control_shift) > 0.25) &&
+        "centre" %in% names(formals(bb_gene_empirical_null))) {
+      set.seed(20261007)
+      empirical <- bb_gene_empirical_null(genes, screen, control, centre = "targets")
+      empirical_centre <- "targets"
+      message(sprintf("   control null centred on targeting guides (controls offset %+.2f z)", control_shift))
+    }
   }
   if (empirical_null) {
     genes$empirical_p_value <- empirical$p_value
@@ -203,6 +215,8 @@ for (analysis in analyses) {
     genes_empirical_fdr_0_10 = if (empirical_null) {
       sum(genes$empirical_fdr < 0.10, na.rm = TRUE)
     } else NULL,
+    empirical_centre = if (empirical_null) empirical_centre else NULL,
+    control_shift = if (empirical_null) round(control_shift, 3) else NULL,
     barcs_version = as.character(utils::packageVersion("BARCS"))
   )
   writeLines(toJSON(info, auto_unbox = TRUE, pretty = TRUE, null = "null"),

@@ -301,3 +301,35 @@ test_that("bb_gene_empirical_null validates its arguments", {
   expect_error(bb_gene_empirical_null(once, guides, control),
                "already carries")
 })
+
+test_that("centre = 'targets' moves a shifted control null onto the targets", {
+  # Non-cutting controls sit 0.6 z below every targeting guide; 20 of 600
+  # genes are real hits.
+  set.seed(8084)
+  m <- 4L
+  n_gene <- 600L
+  target_z <- rnorm(n_gene * m)
+  hit <- rep(seq_len(n_gene) <= 20L, each = m)
+  target_z[hit] <- target_z[hit] - 3
+  control_z <- rnorm(800, -0.6)
+  guides <- data.frame(
+    gene = c(rep("NTC", 800), rep(sprintf("g%03d", seq_len(n_gene)), each = m)),
+    estimate = c(control_z, target_z)
+  )
+  guides$p_value <- 2 * pnorm(-abs(guides$estimate))
+  control <- guides$gene == "NTC"
+  genes <- bb_gene_stouffer(guides[!control, ], correlation = 0)
+  is_hit <- genes$gene %in% sprintf("g%03d", 1:20)
+
+  by_controls <- bb_gene_empirical_null(genes, guides, control, n_null = 2e4)
+  by_targets <- bb_gene_empirical_null(genes, guides, control, n_null = 2e4,
+                                       centre = "targets")
+
+  info <- attr(by_targets, "empirical_null")
+  expect_identical(info$centre, "targets")
+  expect_equal(info$control_shift, 0.6, tolerance = 0.15)
+  # Centred on the controls, null genes are called in the shifted direction.
+  expect_gt(mean(by_controls$p_value[!is_hit] < 0.05), 0.15)
+  expect_lte(mean(by_targets$p_value[!is_hit] < 0.05), 0.08)
+  expect_gte(mean(by_targets$fdr[is_hit] < 0.1), 0.9)
+})

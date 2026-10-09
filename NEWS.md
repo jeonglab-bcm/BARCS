@@ -19,8 +19,17 @@
     per element, 1,026 controls), where the null's resolution floor of
     2 / (n + 1) leaves nothing passing FDR. Where the model was conservative
     relative to the controls it called more genes (GSE316868 1,151 -> 1,629).
+* `bb_gene_empirical_null(centre = "targets")` takes the null's location from
+  the targeting guides and its shape from the controls, and the
+  `"empirical_null"` attribute reports `control_shift`. Non-cutting controls
+  in knockout screens can sit 0.3-0.6 z away from every targeting guide; centred
+  on them, the null called 3,733 genes in an erythroid time course (GSE288230)
+  where the calibrated model called none, and 170 against 10 in an EXO1
+  dropout screen (GSE255664). Centred on the targets it called 0 and 13.
 * `tools/screen-reanalysis/run_barcs.R` reports the empirical-null FDR next
-  to the model FDR and skips it when fewer than 100 controls are usable.
+  to the model FDR, skips it when fewer than 100 controls are usable, and
+  centres it on the targeting guides when the controls are offset by more
+  than 0.25 z.
 
 # BARCS 0.2.1
 

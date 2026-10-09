@@ -9,7 +9,8 @@ bb_gene_empirical_null(
   guide_result,
   control,
   n_null = 1e+05,
-  min_controls = 100L
+  min_controls = 100L,
+  centre = c("controls", "targets")
 )
 }
 \arguments{
@@ -27,12 +28,15 @@ more. Genes with one guide are compared with every control guide
 directly.}
 
 \item{min_controls}{Minimum number of usable control guides.}
+
+\item{centre}{Where the null is located: on the controls (default) or,
+with \code{"targets"}, on the median of the targeting guides.}
 }
 \value{
 \code{gene_result} with empirical \code{p_value} and \code{fdr}. The model values
 are kept as \code{raw_p_value} and \code{raw_fdr}. The attribute
-\code{"empirical_null"} records the number of usable controls and the null
-draws used for each guide count. Genes with more guides than there are
+\code{"empirical_null"} records the number of usable controls, the null
+draws used for each guide count, \code{centre} and \code{control_shift}. Genes with more guides than there are
 usable controls get \code{NA}.
 }
 \description{
@@ -57,6 +61,20 @@ control distribution but not a heavy, clone-driven tail. The empirical
 null uses the control tail itself, so its validity rests only on the
 controls being exchangeable with the guides of null genes (same library,
 same fitting design and filters), not on the beta-binomial model.
+
+Exchangeability can fail in location. In knockout screens the
+non-targeting controls make no cut, so the DNA-damage cost every
+targeting guide pays moves all targeting guides away from the controls;
+sort and time-course screens can shift them too. A signed null centred on
+such controls then calls a large share of the library. The attribute
+\code{"empirical_null"} reports \code{control_shift}, the median signed guide z of
+the targeting guides minus that of the controls. With
+\code{centre = "targets"}, the controls are moved by that shift before
+pseudo-genes are drawn: the null takes its location from the targeting
+guides, assuming most of them are null, and its shape from the controls
+(the empirical-null idea of Efron, 2004). Keep the default \code{"controls"}
+when a large share of the library is expected to move, as in a small
+essential-gene panel.
 
 Genes and pseudo-genes are compared on the mean of their signed guide z
 scores. Pseudo-genes are drawn from controls that do not share a gene, so

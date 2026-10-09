@@ -150,6 +150,20 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
 #' controls being exchangeable with the guides of null genes (same library,
 #' same fitting design and filters), not on the beta-binomial model.
 #'
+#' Exchangeability can fail in location. In knockout screens the
+#' non-targeting controls make no cut, so the DNA-damage cost every
+#' targeting guide pays moves all targeting guides away from the controls;
+#' sort and time-course screens can shift them too. A signed null centred on
+#' such controls then calls a large share of the library. The attribute
+#' `"empirical_null"` reports `control_shift`, the median signed guide z of
+#' the targeting guides minus that of the controls. With
+#' `centre = "targets"`, the controls are moved by that shift before
+#' pseudo-genes are drawn: the null takes its location from the targeting
+#' guides, assuming most of them are null, and its shape from the controls
+#' (the empirical-null idea of Efron, 2004). Keep the default `"controls"`
+#' when a large share of the library is expected to move, as in a small
+#' essential-gene panel.
+#'
 #' Genes and pseudo-genes are compared on the mean of their signed guide z
 #' scores. Pseudo-genes are drawn from controls that do not share a gene, so
 #' they lack the within-gene guide correlation `r` that [bb_gene_stouffer()]
@@ -186,11 +200,13 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
 #'   more. Genes with one guide are compared with every control guide
 #'   directly.
 #' @param min_controls Minimum number of usable control guides.
+#' @param centre Where the null is located: on the controls (default) or,
+#'   with `"targets"`, on the median of the targeting guides.
 #'
 #' @return `gene_result` with empirical `p_value` and `fdr`. The model values
 #'   are kept as `raw_p_value` and `raw_fdr`. The attribute
-#'   `"empirical_null"` records the number of usable controls and the null
-#'   draws used for each guide count. Genes with more guides than there are
+#'   `"empirical_null"` records the number of usable controls, the null
+#'   draws used for each guide count, `centre` and `control_shift`. Genes with more guides than there are
 #'   usable controls get `NA`.
 #'
 #' @family recalibration
@@ -214,7 +230,9 @@ bb_calibrate_controls <- function(result, control, alpha = 0.05,
 #' empirical <- bb_gene_empirical_null(genes, guides, control)
 #' c(model = sum(genes$fdr < 0.1), empirical = sum(empirical$fdr < 0.1))
 bb_gene_empirical_null <- function(gene_result, guide_result, control,
-                                   n_null = 1e5, min_controls = 100L) {
+                                   n_null = 1e5, min_controls = 100L,
+                                   centre = c("controls", "targets")) {
+  centre <- match.arg(centre)
   if (!is.data.frame(gene_result) ||
       !all(c("n_guides", "statistic", "p_value", "fdr") %in%
              names(gene_result))) {
@@ -248,12 +266,13 @@ bb_gene_empirical_null <- function(gene_result, guide_result, control,
   n_null <- as.integer(n_null)
 
   # The same guide validity and z transform as `bb_gene_stouffer()`.
-  valid <- control & is.finite(guide_result$estimate) &
+  usable <- is.finite(guide_result$estimate) &
     is.finite(guide_result$p_value) &
     guide_result$p_value >= 0 & guide_result$p_value <= 1
   if ("converged" %in% names(guide_result)) {
-    valid <- valid & !is.na(guide_result$converged) & guide_result$converged
+    usable <- usable & !is.na(guide_result$converged) & guide_result$converged
   }
+  valid <- control & usable
   n_controls <- sum(valid)
   if (n_controls < as.integer(min_controls)) {
     .bb_stop(sprintf(
@@ -265,7 +284,25 @@ bb_gene_empirical_null <- function(gene_result, guide_result, control,
     pmax(guide_result$p_value[valid] / 2, .Machine$double.xmin),
     lower.tail = FALSE
   )
-  centre <- mean(control_z)
+  signed_z <- function(rows) {
+    sign(guide_result$estimate[rows]) * stats::qnorm(
+      pmax(guide_result$p_value[rows] / 2, .Machine$double.xmin),
+      lower.tail = FALSE
+    )
+  }
+  targets <- !control & usable
+  control_shift <- if (any(targets)) {
+    stats::median(signed_z(targets)) - stats::median(control_z)
+  } else {
+    NA_real_
+  }
+  if (centre == "targets") {
+    if (!is.finite(control_shift)) {
+      .bb_stop("`centre = \"targets\"` needs usable targeting guides in `guide_result`.")
+    }
+    control_z <- control_z + control_shift
+  }
+  null_centre <- mean(control_z)
   correlation <- attr(gene_result, "guide_correlation")
   if (is.null(correlation)) {
     correlation <- 0
@@ -291,7 +328,8 @@ bb_gene_empirical_null <- function(gene_result, guide_result, control,
         mean(control_z[sample.int(n_controls, m)])
       }, numeric(1))
       # Controls share no gene: widen to the within-gene correlation.
-      null <- centre + (null - centre) * sqrt(1 + (m - 1) * correlation)
+      null <- null_centre + (null - null_centre) *
+        sqrt(1 + (m - 1) * correlation)
     }
     null <- sort(null)
     upper <- length(null) -
@@ -310,7 +348,9 @@ bb_gene_empirical_null <- function(gene_result, guide_result, control,
   gene_result$fdr <- stats::p.adjust(p_value, method = "BH")
   attr(gene_result, "empirical_null") <- list(
     n_controls = n_controls,
-    n_null = draws
+    n_null = draws,
+    centre = centre,
+    control_shift = control_shift
   )
   gene_result
 }
