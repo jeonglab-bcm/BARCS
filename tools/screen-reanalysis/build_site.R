@@ -222,7 +222,7 @@ for (rec in records) {
     '<h2>Primary contrast</h2>',
     sprintf('<figure class="chart">%s<figcaption>Each point is a gene (all genes with p &lt; 0.05 and a fixed sample of the rest). Highlighted: genes the paper names. Hover or focus a highlighted gene for values; full values are in the tables below.</figcaption></figure>',
             paste(volcano(genes, named), collapse = "\n")),
-    if (length(hit_rows)) c('<h3>Genes the paper names</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">Control-null FDR</th><th class="num">BARCS rank</th></tr></thead><tbody>',
+    if (length(hit_rows)) c('<h3>Genes the paper names</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">Control-null FDR</th><th class="num">BARCS rank (all genes, by p)</th></tr></thead><tbody>',
                             hit_rows, '</tbody></table></div>'),
     '<h3>BARCS top 15</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Guides</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">Control-null FDR</th></tr></thead><tbody>',
     top_rows, '</tbody></table></div>',
@@ -263,8 +263,12 @@ excluded_rows <- if (nrow(excluded)) sprintf(
   excluded$gse, excluded$gse, esc(excluded$title), esc(excluded$reason)) else character()
 search_note <- if (file.exists(file.path(src, "search.json"))) {
   search <- fromJSON(file.path(src, "search.json"))
-  sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',
+  note <- sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',
           esc(search$date), esc(search$papers), esc(search$days), esc(search$candidates), length(records), nrow(excluded))
+  if (!is.null(search$pending) && nzchar(search$pending)) {
+    note <- sub("</p>$", sprintf(" Usable but not reanalyzed yet: %s.</p>", esc(search$pending)), note)
+  }
+  note
 } else ""
 
 index <- paste(c(

@@ -1,0 +1,18 @@
+{
+  "gse": "GSE229584",
+  "pmid": "37883554",
+  "doi": "10.1126/science.adi2246",
+  "pmcid": "",
+  "title": "Unbiased transcription factor CRISPR screen identifies ZNF800 as master repressor of enteroendocrine differentiation",
+  "journal": "Science",
+  "published": "2023",
+  "model": "Human small-intestinal organoids with CHGA-iRFP and MUC2-mNeonGreen reporters, transcription-factor knockout library (1,800 genes)",
+  "contrast": "iRFP+ (enteroendocrine) vs double-negative sort, paired by replicate (2 vs 2); normalized to non-targeting guides",
+  "paper_method": "Not stated in accessible sources (paper not open access)",
+  "paper_calls": "ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators",
+  "barcs_calls": "58 genes at FDR 0.10 (8 enriched, 50 depleted); control null not computed (96 controls)",
+  "named_hits": "ZNF800 #1 enriched (FDR 0.0004); SOX4 FDR 6e-6, NEUROG3 FDR 0.014 depleted; 4/7 named genes at FDR 0.10",
+  "verdict": "BARCS ranks ZNF800 as the most enriched knockout in enteroendocrine cells (FDR 0.0004), and SOX4 and NEUROG3 as depleted, as the paper reports. INSM1, TEF and NFIC (FDR 0.11) do not pass. A strong composition skew in the sorted libraries meant the counts had to be normalized to the non-targeting guides.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

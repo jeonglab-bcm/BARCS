@@ -1,0 +1,126 @@
+{
+  "gse": "GSE255664",
+  "pmid": "41006228",
+  "counts_file": "merged_counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_D6_R1",
+      "gsm": "GSM8077156",
+      "genotype": "WT",
+      "time": "D6",
+      "replicate": "R1"
+    },
+    {
+      "column": "WT_D6_R2",
+      "gsm": "GSM8077157",
+      "genotype": "WT",
+      "time": "D6",
+      "replicate": "R2"
+    },
+    {
+      "column": "WT_D6_R3",
+      "gsm": "GSM8077158",
+      "genotype": "WT",
+      "time": "D6",
+      "replicate": "R3"
+    },
+    {
+      "column": "EXO1_KO_D6_R1",
+      "gsm": "GSM8077159",
+      "genotype": "EXO1_KO",
+      "time": "D6",
+      "replicate": "R1"
+    },
+    {
+      "column": "EXO1_KO_D6_R2",
+      "gsm": "GSM8077160",
+      "genotype": "EXO1_KO",
+      "time": "D6",
+      "replicate": "R2"
+    },
+    {
+      "column": "EXO1_KO_D6_R3",
+      "gsm": "GSM8077161",
+      "genotype": "EXO1_KO",
+      "time": "D6",
+      "replicate": "R3"
+    },
+    {
+      "column": "WT_D16_R1",
+      "gsm": "GSM8077162",
+      "genotype": "WT",
+      "time": "D16",
+      "replicate": "R1"
+    },
+    {
+      "column": "WT_D16_R2",
+      "gsm": "GSM8077163",
+      "genotype": "WT",
+      "time": "D16",
+      "replicate": "R2"
+    },
+    {
+      "column": "WT_D16_R3",
+      "gsm": "GSM8077164",
+      "genotype": "WT",
+      "time": "D16",
+      "replicate": "R3"
+    },
+    {
+      "column": "EXO1_KO_D16_R1",
+      "gsm": "GSM8077165",
+      "genotype": "EXO1_KO",
+      "time": "D16",
+      "replicate": "R1"
+    },
+    {
+      "column": "EXO1_KO_D16_R2",
+      "gsm": "GSM8077166",
+      "genotype": "EXO1_KO",
+      "time": "D16",
+      "replicate": "R2"
+    },
+    {
+      "column": "EXO1_KO_D16_R3",
+      "gsm": "GSM8077167",
+      "genotype": "EXO1_KO",
+      "time": "D16",
+      "replicate": "R3"
+    }
+  ],
+  "factor_levels": {
+    "genotype": [
+      "WT",
+      "EXO1_KO"
+    ],
+    "time": [
+      "D6",
+      "D16"
+    ],
+    "replicate": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "EXO1KO_vs_WT_D16",
+      "columns": [
+        "WT_D16_R1",
+        "WT_D16_R2",
+        "WT_D16_R3",
+        "EXO1_KO_D16_R1",
+        "EXO1_KO_D16_R2",
+        "EXO1_KO_D16_R3"
+      ],
+      "formula": "~ genotype",
+      "term": "genotypeEXO1_KO"
+    }
+  ],
+  "rationale": "Genome-wide Brunello dropout screen in eHAP iCas9 WT and EXO1 KO cells (SubSeries GSE255664 of SuperSeries GSE255665). Counts merged from the per-sample '+' and '-' strand files (summed; '-' adds <200 reads per library); sample names from GEO titles. The paper compares EXO1 KO with WT at the end point (day 16), so the primary analysis is EXO1_KO D16 vs WT D16. Genotypes are separate infections and replicates are not shared across genotypes, so no replicate term (4 residual df). Synthetic-lethal partners of EXO1 should be depleted in EXO1 KO."
+}

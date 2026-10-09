@@ -1,0 +1,55 @@
+{
+  "gse": "GSE240870",
+  "pmid": "40505660",
+  "counts_file": "GSE240870_CRISPRa_counts_clean.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^negative_control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "DMSO-1",
+      "gsm": "GSM7711047",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO-2",
+      "gsm": "GSM7711048",
+      "condition": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "ISX9-1",
+      "gsm": "GSM7711049",
+      "condition": "ISX9",
+      "replicate": "1"
+    },
+    {
+      "column": "ISX9-2",
+      "gsm": "GSM7711050",
+      "condition": "ISX9",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "ISX9"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "ISX9_vs_DMSO",
+      "columns": [
+        "DMSO-1",
+        "DMSO-2",
+        "ISX9-1",
+        "ISX9-2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionISX9"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRa screen in 143B osteosarcoma cells, two DMSO and two ISX9-treated libraries; genes whose activation blunts ISX9 should be enriched in ISX9. Counts from GSE240870_CRISPRa_raw_count_screen.csv.gz with its second header row (DMSO-1, DMSO-2, ISX9-1, ISX9-2) used as column names; values unchanged. About half the library (one sub-library) has no reads in any sample and is removed by min_total_count; library totals still include all guides. The libraries all correlate 0.97-0.98, so replicate pairing cannot be read from the data and no replicate term is used (2 residual df). The two 'M+I' columns have no GEO sample and are not used."
+}

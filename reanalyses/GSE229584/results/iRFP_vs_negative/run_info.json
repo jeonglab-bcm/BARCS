@@ -1,0 +1,33 @@
+{
+  "analysis": "iRFP_vs_negative",
+  "formula": "~replicate + condition",
+  "term": "conditioniRFP",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 7294,
+  "genes": 1800,
+  "moderated": true,
+  "prior_df": 4.3687,
+  "guide_correlation": 0.0046,
+  "control_scale": null,
+  "control_guides": 96,
+  "control_p05_raw": 0.0729,
+  "control_p05": 0.0729,
+  "totals_method": "control",
+  "test": "auto",
+  "guides_lr": 30,
+  "top1pct_read_share": {
+    "Sorted_iRFP_BR1": 0.294,
+    "Sorted_iRFP_BR2": 0.325,
+    "Sorted_Negative_BR1": 0.585,
+    "Sorted_Negative_BR2": 0.559
+  },
+  "genes_fdr_0_10_up": 8,
+  "genes_fdr_0_10_down": 50,
+  "genes_fdr_0_05": 39,
+  "genes_fdr_0_10": 58,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.2"
+}

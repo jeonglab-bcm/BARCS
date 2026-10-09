@@ -1,0 +1,118 @@
+{
+  "gse": "GSE229584",
+  "pmid": "37883554",
+  "counts_file": "GSE229584_merged_counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non_Targeting_Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Organoid_Differentiation_Bulk_BR1",
+      "gsm": "GSM7165826",
+      "condition": "diff_bulk",
+      "replicate": "BR1"
+    },
+    {
+      "column": "Organoid_Differentiation_Bulk_BR2",
+      "gsm": "GSM7165827",
+      "condition": "diff_bulk",
+      "replicate": "BR2"
+    },
+    {
+      "column": "Organoid_Expansion_Bulk_BR1",
+      "gsm": "GSM7165828",
+      "condition": "exp_bulk",
+      "replicate": "BR1"
+    },
+    {
+      "column": "Organoid_Expansion_Bulk_BR2",
+      "gsm": "GSM7165829",
+      "condition": "exp_bulk",
+      "replicate": "BR2"
+    },
+    {
+      "column": "Sorted_iRFP_BR1",
+      "gsm": "GSM7165830",
+      "condition": "iRFP",
+      "replicate": "BR1"
+    },
+    {
+      "column": "Sorted_iRFP_BR2",
+      "gsm": "GSM7165831",
+      "condition": "iRFP",
+      "replicate": "BR2"
+    },
+    {
+      "column": "Sorted_mNeongreen_BR1",
+      "gsm": "GSM7165832",
+      "condition": "mNeonGreen",
+      "replicate": "BR1"
+    },
+    {
+      "column": "Sorted_mNeongreen_BR2",
+      "gsm": "GSM7165833",
+      "condition": "mNeonGreen",
+      "replicate": "BR2"
+    },
+    {
+      "column": "Sorted_Negative_BR1",
+      "gsm": "GSM7165834",
+      "condition": "negative",
+      "replicate": "BR1"
+    },
+    {
+      "column": "Sorted_Negative_BR2",
+      "gsm": "GSM7165835",
+      "condition": "negative",
+      "replicate": "BR2"
+    },
+    {
+      "column": "Plasmid",
+      "gsm": "GSM7762145",
+      "condition": "plasmid",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "negative",
+      "iRFP",
+      "mNeonGreen",
+      "diff_bulk",
+      "exp_bulk",
+      "plasmid"
+    ],
+    "replicate": [
+      "BR1",
+      "BR2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "iRFP_vs_negative",
+      "columns": [
+        "Sorted_Negative_BR1",
+        "Sorted_Negative_BR2",
+        "Sorted_iRFP_BR1",
+        "Sorted_iRFP_BR2"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditioniRFP",
+      "totals": "control"
+    },
+    {
+      "name": "iRFP_vs_negative_median_ratio",
+      "columns": [
+        "Sorted_Negative_BR1",
+        "Sorted_Negative_BR2",
+        "Sorted_iRFP_BR1",
+        "Sorted_iRFP_BR2"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditioniRFP",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "TF-wide knockout library (7,294 guides, 96 non-targeting) in human small-intestinal organoids with a CHGA-iRFP enteroendocrine (EEC) reporter and a MUC2-mNeonGreen goblet reporter; differentiated organoids were sorted into iRFP+ (EEC), mNeonGreen+ and double-negative fractions in two biological replicates. The fractions of one replicate come from one transduced culture (they correlate more with each other than with the other replicate), so replicate is a blocking term (1 residual df). Repressors of EEC fate such as ZNF800 should be enriched in iRFP+ versus double-negative cells; genes required for EEC fate (NEUROG3) depleted. Counts are the 11 per-sample GEO files merged by guide; depth is low (~300 reads per guide). Composition: in the double-negative fraction the top 1% of guides hold 56-59% of reads (IRF2 and NFKB1 guides alone take ~30%; 29-33% in iRFP+), so non-targeting guides make up 0.7% of negative-fraction reads versus 1.3% of iRFP+ reads. With library totals 65% of control guides reached p < 0.05 and 640 of 642 calls were enriched, an artifact of the shift. The primary analysis therefore normalizes to the 96 non-targeting guides (totals = control); a median-ratio run is kept as a sensitivity check."
+}

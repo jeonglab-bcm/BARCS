@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/gal9_high_vs_low/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["LGALS9", "IRF1", "TFAP4", "ADD1"],
+  "top_n": [25, 50, 100]
+}

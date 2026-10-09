@@ -1,0 +1,273 @@
+{
+  "gse": "GSE220831",
+  "pmid": "38165806",
+  "counts_file": "suppl/GSE220831_sgRNA_all_raw_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "P1_1_T0",
+      "gsm": "GSM6820849",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "1",
+      "pair": "KP1_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P1_1_Ve",
+      "gsm": "GSM6820850",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "1",
+      "pair": "KP1_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P1_2_T0",
+      "gsm": "GSM6820851",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "2",
+      "pair": "KP1_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P1_2_Ve",
+      "gsm": "GSM6820852",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "2",
+      "pair": "KP1_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P1_3_T0",
+      "gsm": "GSM6820853",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "3",
+      "pair": "KP1_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P1_3_Ve",
+      "gsm": "GSM6820854",
+      "line": "KP1",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "3",
+      "pair": "KP1_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_1_T0",
+      "gsm": "GSM6820855",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "1",
+      "pair": "KP2_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_1_Ve",
+      "gsm": "GSM6820856",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "1",
+      "pair": "KP2_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_2_T0",
+      "gsm": "GSM6820857",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "2",
+      "pair": "KP2_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_2_Ve",
+      "gsm": "GSM6820858",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "2",
+      "pair": "KP2_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_3_T0",
+      "gsm": "GSM6820859",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T0",
+      "replicate": "3",
+      "pair": "KP2_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P2_3_Ve",
+      "gsm": "GSM6820860",
+      "line": "KP2",
+      "genotype": "KP",
+      "time": "T1",
+      "replicate": "3",
+      "pair": "KP2_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P3_1_T0",
+      "gsm": "GSM6820861",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "1",
+      "pair": "KPK1_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P3_1_Ve",
+      "gsm": "GSM6820862",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "1",
+      "pair": "KPK1_1",
+      "kpk_t1": "yes"
+    },
+    {
+      "column": "P3_2_T0",
+      "gsm": "GSM6820863",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "2",
+      "pair": "KPK1_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P3_2_Ve",
+      "gsm": "GSM6820864",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "2",
+      "pair": "KPK1_2",
+      "kpk_t1": "yes"
+    },
+    {
+      "column": "P3_3_T0",
+      "gsm": "GSM6820865",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "3",
+      "pair": "KPK1_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P3_3_Ve",
+      "gsm": "GSM6820866",
+      "line": "KPK1",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "3",
+      "pair": "KPK1_3",
+      "kpk_t1": "yes"
+    },
+    {
+      "column": "P4_1_T0",
+      "gsm": "GSM6820867",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "1",
+      "pair": "KPK2_1",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P4_1_Ve",
+      "gsm": "GSM6820868",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "1",
+      "pair": "KPK2_1",
+      "kpk_t1": "yes"
+    },
+    {
+      "column": "P4_2_T0",
+      "gsm": "GSM6820869",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "2",
+      "pair": "KPK2_2",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P4_2_Ve",
+      "gsm": "GSM6820870",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "2",
+      "pair": "KPK2_2",
+      "kpk_t1": "yes"
+    },
+    {
+      "column": "P4_3_T0",
+      "gsm": "GSM6820871",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T0",
+      "replicate": "3",
+      "pair": "KPK2_3",
+      "kpk_t1": "no"
+    },
+    {
+      "column": "P4_3_Ve",
+      "gsm": "GSM6820872",
+      "line": "KPK2",
+      "genotype": "KPK",
+      "time": "T1",
+      "replicate": "3",
+      "pair": "KPK2_3",
+      "kpk_t1": "yes"
+    }
+  ],
+  "factor_levels": {
+    "time": [
+      "T0",
+      "T1"
+    ],
+    "kpk_t1": [
+      "no",
+      "yes"
+    ],
+    "genotype": [
+      "KP",
+      "KPK"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KPK_specific_dropout",
+      "formula": "~ pair + time + kpk_t1",
+      "term": "kpk_t1yes"
+    }
+  ],
+  "rationale": "Chromatin-focused knockout dropout screen in two KP and two KPK (Keap1-mutant, NRF2-active) mouse LUAD lines, T0 and 14 population doublings (vehicle, 'Ve'), three replicates per line. Columns P1-P4 follow the GSM order KP1, KP2, KPK1, KPK2 (inferred from GSM order and confirmed by correlation of per-line dropout with the deposited MAGeCK-MLE KP and KPK betas). T0 and T1 are paired within line and replicate (pair, 12 levels); time is the common dropout and kpk_t1 (yes only for KPK lines at T1) is the genotype-by-time interaction, i.e. the extra dropout in KPK lines. 24 libraries, 14 coefficients, 10 residual df. Only 36 non-targeting guides, so no control calibration or control null. Genes selectively required in NRF2-active cells (class I HDACs) should be depleted."
+}

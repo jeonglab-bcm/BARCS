@@ -1,0 +1,106 @@
+{
+  "gse": "GSE255579",
+  "pmid": "41006228",
+  "counts_file": "suppl/GSE255579_all_samples.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NTC$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "NT_1",
+      "gsm": "GSM8075516",
+      "condition": "NT",
+      "replicate": "1"
+    },
+    {
+      "column": "NT_2",
+      "gsm": "GSM8075517",
+      "condition": "NT",
+      "replicate": "2"
+    },
+    {
+      "column": "NT_3",
+      "gsm": "GSM8075518",
+      "condition": "NT",
+      "replicate": "3"
+    },
+    {
+      "column": "FG_1",
+      "gsm": "GSM8075519",
+      "condition": "FG",
+      "replicate": "1"
+    },
+    {
+      "column": "FG_2",
+      "gsm": "GSM8075520",
+      "condition": "FG",
+      "replicate": "2"
+    },
+    {
+      "column": "FG_3",
+      "gsm": "GSM8075521",
+      "condition": "FG",
+      "replicate": "3"
+    },
+    {
+      "column": "ZR_1",
+      "gsm": "GSM8075522",
+      "condition": "ZR",
+      "replicate": "1"
+    },
+    {
+      "column": "ZR_2",
+      "gsm": "GSM8075523",
+      "condition": "ZR",
+      "replicate": "2"
+    },
+    {
+      "column": "ZR_3",
+      "gsm": "GSM8075524",
+      "condition": "ZR",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "NT",
+      "FG",
+      "ZR"
+    ],
+    "replicate": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "FANCG_vs_NT",
+      "columns": [
+        "NT_1",
+        "NT_2",
+        "NT_3",
+        "FG_1",
+        "FG_2",
+        "FG_3"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionFG"
+    },
+    {
+      "name": "ZRSR2_vs_NT",
+      "columns": [
+        "NT_1",
+        "NT_2",
+        "NT_3",
+        "ZR_1",
+        "ZR_2",
+        "ZR_3"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionZR"
+    }
+  ],
+  "rationale": "Brunello rescue screen in EXO1-knockout eHAP cells: the library was transduced in triplicate and each replicate split into sgNT, sgFANCG and sgZRSR2 arms (synthetic-lethal partners of EXO1). Arms of one replicate correlate most strongly with each other, so replicate is a blocking term (2 residual df). Knockouts that relieve replication stress (GINS2, CDC6, SMC5, RRM1, TYMS) should be better tolerated, i.e. enriched, in the double-knockout arms relative to sgNT. FANCG vs NT is the primary comparison; ZRSR2 vs NT is a second analysis the paper also shows."
+}

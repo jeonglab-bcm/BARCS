@@ -1,0 +1,18 @@
+{
+  "gse": "GSE255664",
+  "pmid": "41006228",
+  "doi": "10.1038/s41467-025-63349-7",
+  "pmcid": "PMC12475092",
+  "title": "EXO1 as a therapeutic target for Fanconi Anaemia, ZRSR2 and BRCA1-A complex deficient cancers",
+  "journal": "Nature Communications",
+  "published": "2025",
+  "model": "eHAP iCas9 wild-type and EXO1-knockout cells, Brunello knockout library",
+  "contrast": "EXO1 KO vs wild type, day 16 (3 vs 3)",
+  "paper_method": "MAGeCK test (gene summary deposited as Supplementary Data 2)",
+  "paper_calls": "2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation",
+  "barcs_calls": "10 genes at FDR 0.10 (6 depleted in KO); 13 against the control null centred on the targeting guides",
+  "named_hits": "Ranks among KO-depleted genes: FAM175A #3 and STRA13 #2 at FDR 5e-4; APITD1 #11, ZRSR2 #16, BRCC3 #25 (FDR 0.13-0.24); FANCG #2,349",
+  "verdict": "BARCS reproduces the authors' own MAGeCK ranking at the top: RMI2, STRA13, FAM175A and ACAD10 are its four strongest KO-specific dropouts. ZRSR2, BRCC3 and APITD1 rank high but miss FDR 0.10, as they do in MAGeCK. FANCG and most FA core genes are not supported by this screen in either analysis.",
+  "agreement": "partial",
+  "analyzed": "2026-10-09"
+}

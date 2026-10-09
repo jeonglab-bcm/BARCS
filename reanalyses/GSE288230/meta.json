@@ -1,0 +1,18 @@
+{
+  "gse": "GSE288230",
+  "pmid": "40221460",
+  "doi": "10.1038/s41467-025-58739-w",
+  "pmcid": "PMC11993733",
+  "title": "A genome-wide screen identifies genes required for erythroid differentiation",
+  "journal": "Nature Communications",
+  "published": "2025",
+  "model": "HUDEP-2 cells, GeCKOv2 genome-scale and focused secondary CRISPR-KO libraries",
+  "contrast": "Orthochromatic (D12) vs proerythroblast (D0), genome-scale screen, paired by replicate (3 vs 3); secondary library run separately",
+  "paper_method": "MAGeCK (LFC < -1, FDR < 0.01)",
+  "paper_calls": "277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo",
+  "barcs_calls": "Genome-scale: 0 genes at FDR 0.10 after control calibration (0 against the centred control null). Secondary: 729 at FDR 0.10 (485 depleted; 940 against the control null).",
+  "named_hits": "Genome-scale: NHLRC2 #78 depleted (effect -1.30, raw p 0.055, FDR 1), VAC14 not depleted; ALAS2/UROD depleted in effect but FDR 1. Secondary: VAC14 #67 depleted (FDR 2.6e-10), GATA1 #273, ALAS2 #3; NHLRC2 not in library.",
+  "verdict": "In the genome-scale screen 46.6% of non-targeting guides reach p<0.05, so calibrating to the controls collapses the whole list to 0 genes at FDR 0.10 (even ALAS2/UROD) and neither named gene passes, though NHLRC2 is depleted in effect (not a contradiction). The validated gene VAC14 is recovered cleanly in the focused secondary library at FDR 2.6e-10.",
+  "agreement": "partial",
+  "analyzed": "2026-10-09"
+}

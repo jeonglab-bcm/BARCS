@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/KPK_specific_dropout/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Hdac1", "Hdac2", "Hdac3"],
+  "published": {
+    "file": "paper/mle_kpk_minus_kp.tsv",
+    "gene_column": "gene", "score_column": "KPK_minus_KP_beta", "score_better": "lower",
+    "effect_column": "KPK_minus_KP_beta"
+  },
+  "top_n": [10, 25, 50]
+}

@@ -1,0 +1,72 @@
+{
+  "gse": "GSE275043",
+  "pmid": "40106574",
+  "counts_file": "GSE275043_merged_counts.txt.gz",
+  "guide_column": "gRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "high20_rep1",
+      "gsm": "GSM8464655",
+      "bin": "high20",
+      "replicate": "1"
+    },
+    {
+      "column": "low20_rep1",
+      "gsm": "GSM8464656",
+      "bin": "low20",
+      "replicate": "1"
+    },
+    {
+      "column": "unsorted_rep1",
+      "gsm": "GSM8464657",
+      "bin": "unsorted",
+      "replicate": "1"
+    },
+    {
+      "column": "high20_rep2",
+      "gsm": "GSM8464658",
+      "bin": "high20",
+      "replicate": "2"
+    },
+    {
+      "column": "low20_rep2",
+      "gsm": "GSM8464659",
+      "bin": "low20",
+      "replicate": "2"
+    },
+    {
+      "column": "unsorted_rep2",
+      "gsm": "GSM8464660",
+      "bin": "unsorted",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "low20",
+      "high20",
+      "unsorted"
+    ],
+    "replicate": [
+      "1",
+      "2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "gal9_high_vs_low",
+      "columns": [
+        "high20_rep1",
+        "low20_rep1",
+        "high20_rep2",
+        "low20_rep2"
+      ],
+      "formula": "~ replicate + bin",
+      "term": "binhigh20"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in Jurkat T-ALL cells stained for Galectin-9 and sorted into the top and bottom 20%, two replicate infections. Counts were merged from the six per-sample GEO files (one file per GSM; bin and replicate in the file names). Both bins of a replicate were sorted from one infected population, so replicate is a blocking term (1 residual df). Activators of LGALS9 (IRF1, TFAP4) should be depleted in the Galectin-9-high bin; LGALS9 guides themselves are the positive control. Unsorted libraries are not used."
+}

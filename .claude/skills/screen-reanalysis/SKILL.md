@@ -21,6 +21,13 @@ If the user named a PMID or GSE, skip the search.
 Rscript tools/screen-reanalysis/search_pubmed.R --days 180 --out work/screens.tsv
 ```
 
+To extend the website rather than analyze one screen, search a longer window
+(`--days 1095 --max 2000`), drop series already in `reanalyses/` or
+`reanalyses/excluded.tsv`, and triage every remaining series with
+`screen_score` of 2 or more. Every series you check ends up either reanalyzed
+or in `excluded.tsv` with a one-sentence reason, so the site shows full
+coverage; usable series not analyzed yet go in `search.json` as `pending`.
+
 Pick the newest series with `screen_score` 3 (GEO type "Other" plus screen
 keywords) and enough libraries for inference: at least two replicates per
 condition you will compare. Prefer series whose supplementary files look like
@@ -111,6 +118,26 @@ non-targeting guides at p < 0.05 and should be near 5%. `run_barcs.R`
 calibrates to the controls automatically when the raw rate exceeds 7.5%
 (`control_p05_raw`); say so in the report, because it shortens the hit list.
 Without controls, say that calibration could not be checked.
+
+Check the control null (BARCS >= 0.2.2, 100 or more usable controls):
+`genes_empirical_fdr_0_10` counts genes against pseudo-genes built from the
+controls, and the site shows it next to the model FDR. `control_shift` is how
+far the targeting guides sit from the controls in z. Non-targeting controls
+make no cut, so in knockout screens they often sit 0.3-0.75 z away; then
+`run_barcs.R` centres the null on the targeting guides (`empirical_centre`
+"targets"). Report the centred count. If a control-null count is far larger
+than the model's and the null is still centred on the controls, the controls
+are offset: do not quote that number. With one guide per gene the null cannot
+go below p = 2 / (controls + 1); read zero calls there as "the controls cannot
+confirm the model", not "no hits".
+
+Look at the guides behind the top calls. A gene called from one guide with a
+jackpot count (one library holding thousands of reads where the others hold
+tens) is an artifact of a single clone; name such genes in the report and
+discount them. Where controls are far more abundant than targeting guides,
+they cannot show the noise of sparse guides, so a long hit list can still be
+inflated after calibration; rerun with a higher `min_total_count` as a
+sensitivity check and report both.
 
 Check `results/<analysis>/run_info.json`: residual degrees of freedom of at
 least 2, moderation applied, and a plausible guide correlation (real screens

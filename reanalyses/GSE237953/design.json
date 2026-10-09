@@ -1,0 +1,74 @@
+{
+  "gse": "GSE237953",
+  "pmid": "37070193",
+  "counts_file": "counts_raw_minus1.tsv",
+  "guide_column": "Tag",
+  "gene_column": "GeneSymbol",
+  "control_gene_pattern": "^Non-Targeting_Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "fkpb5_lo_r1",
+      "gsm": "GSM7656842",
+      "condition": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "fkpb5_lo_r2",
+      "gsm": "GSM7656843",
+      "condition": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "fkpb5_lo_r3",
+      "gsm": "GSM7656844",
+      "condition": "low",
+      "replicate": "3"
+    },
+    {
+      "column": "fkpb5_hi_r1",
+      "gsm": "GSM7656845",
+      "condition": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "fkpb5_hi_r2",
+      "gsm": "GSM7656846",
+      "condition": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "fkpb5_hi_r3",
+      "gsm": "GSM7656847",
+      "condition": "high",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "high",
+      "low"
+    ],
+    "replicate": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "FKBP5low_vs_high",
+      "columns": [
+        "fkpb5_hi_r1",
+        "fkpb5_hi_r2",
+        "fkpb5_hi_r3",
+        "fkpb5_lo_r1",
+        "fkpb5_lo_r2",
+        "fkpb5_lo_r3"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionlow"
+    }
+  ],
+  "rationale": "Brunello FACS screen in A549 cells treated with hydrocortisone, sorted for low versus high glucocorticoid-induced FKBP5 in three replicates. lo_rN and hi_rN correlate far more with each other than with other replicates (same infection sorted into two bins), so replicate is a blocking term (2 residual df). Knockouts that impair GR-dependent transcription (NR3C1, PAXIP1, STAG2) should be enriched in FKBP5-low. The deposited 'raw' counts had a pseudocount of 1 added to every value (no zeros, 30% exactly 1), so 1 was subtracted before analysis."
+}

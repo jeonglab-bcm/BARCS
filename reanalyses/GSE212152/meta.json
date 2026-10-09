@@ -1,0 +1,18 @@
+{
+  "gse": "GSE212152",
+  "pmid": "40972525",
+  "doi": "10.1016/j.molcel.2025.08.025",
+  "pmcid": "PMC12478525",
+  "title": "Requirements for establishment and epigenetic stability of mammalian heterochromatin",
+  "journal": "Molecular Cell",
+  "published": "2025",
+  "model": "Mouse ES cells, inducible H3K9me3 reporter, custom 1,310-gene chromatin CRISPR-KO library",
+  "contrast": "eGFP+ vs unsorted, establishment screen, paired by replicate (2 vs 2); maintenance screen run separately",
+  "paper_method": "MAGeCK-RRA (deposited, per screen)",
+  "paper_calls": "H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops",
+  "barcs_calls": "Establishment: 106 genes at FDR 0.10 (47 enriched; 217 against the control null). Maintenance: 164 (309 against the control null; calibrated).",
+  "named_hits": "Establishment enriched: Dnmt1 #2, Setdb1 #7, Ehmt2 #13, Dnmt3b #35, Dnmt3a #39 (all FDR<=0.064), Suv39h1 #48 (FDR 0.12); Hdac1/Hdac2 not enriched; Dhx9 depleted. Maintenance enriched: Dnmt3l #1, Uhrf1 #3, Dnmt3a #4, Dnmt1 #5, Setdb1 #35; Dhx9 #143 (ns).",
+  "verdict": "BARCS reproduces the establishment screen closely: every methyltransferase the paper names is enriched at FDR 0.10 and the gene ranking correlates 0.88 with the authors' MAGeCK (46/50 top genes shared). HDACs are a named class, not individual hits, and Hdac1 is depleted at the guide level. DHX9 is recovered in neither screen at FDR.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

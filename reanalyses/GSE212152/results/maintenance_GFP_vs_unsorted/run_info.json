@@ -1,0 +1,33 @@
+{
+  "analysis": "maintenance_GFP_vs_unsorted",
+  "formula": "~replicate + condition",
+  "term": "conditionGFPpos",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 5950,
+  "genes": 1160,
+  "moderated": true,
+  "prior_df": 4.5917,
+  "guide_correlation": 0.0369,
+  "control_scale": 1.1514,
+  "control_guides": 150,
+  "control_p05_raw": 0.1067,
+  "control_p05": 0.0467,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 47,
+  "top1pct_read_share": {
+    "GFP.maintenance.repA": 0.166,
+    "GFP.maintenance.repB": 0.063,
+    "Unsorted.maintenance.repA": 0.051,
+    "Unsorted.maintenance.repB": 0.052
+  },
+  "genes_fdr_0_10_up": 49,
+  "genes_fdr_0_10_down": 115,
+  "genes_fdr_0_05": 109,
+  "genes_fdr_0_10": 164,
+  "genes_empirical_fdr_0_10": 309,
+  "empirical_centre": "targets",
+  "control_shift": 0.478,
+  "barcs_version": "0.2.2"
+}
