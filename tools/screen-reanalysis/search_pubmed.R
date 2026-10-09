@@ -63,7 +63,12 @@ if (!length(pmids)) {
 }
 message(length(pmids), " PubMed records with linked GEO data.")
 
-papers <- call_eutils("esummary", list(db = "pubmed", id = paste(pmids, collapse = ",")))$result
+# esummary takes ids in the URL; batch them so long searches stay under the
+# URL length limit.
+papers <- list()
+for (batch in split(pmids, ceiling(seq_along(pmids) / 100))) {
+  papers <- c(papers, call_eutils("esummary", list(db = "pubmed", id = paste(batch, collapse = ",")))$result)
+}
 
 rows <- list()
 for (pmid in pmids) {
