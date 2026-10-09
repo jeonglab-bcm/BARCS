@@ -222,7 +222,13 @@ for (analysis in analyses) {
     } else NULL,
     empirical_centre = if (empirical_null) empirical_centre else NULL,
     control_shift = if (empirical_null) round(control_shift, 3) else NULL,
-    barcs_version = as.character(utils::packageVersion("BARCS"))
+    barcs_version = as.character(utils::packageVersion("BARCS")),
+    environment = list(
+      r_version = paste(R.version$major, R.version$minor, sep = "."),
+      platform = R.version$platform,
+      packages = lapply(stats::setNames(nm = c("BARCS", "Rcpp", "RcppArmadillo", "jsonlite")),
+                        function(p) as.character(utils::packageVersion(p)))
+    )
   )
   writeLines(toJSON(info, auto_unbox = TRUE, pretty = TRUE, null = "null"),
              file.path(out, "run_info.json"))

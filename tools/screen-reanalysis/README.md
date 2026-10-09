@@ -15,6 +15,7 @@ agent (or you) writes `design.json` and `compare.json`.
 | `compare_results.R` | Named-hit ranks, rank correlation and top-N overlap with a published table |
 | `archive_run.R` | Copy a finished run (with `meta.json`) into `reanalyses/<GSE>/` |
 | `build_site.R` | Static website from `reanalyses/` into `_site/` |
+| `reproduce.R` | Rebuild recorded reanalyses from GEO and check them against `reanalyses/` |
 
 Use it from Claude Code with `/screen-reanalysis` (optionally with a PMID or a
 GSE number), or by hand:
@@ -36,3 +37,38 @@ to `main` rebuilds the website with GitHub Pages
 Actions" once in the repository settings). Needs R packages BARCS, jsonlite and readxl; `NCBI_API_KEY` is
 optional. Output goes to `work/`, which is git-ignored and excluded from the
 package build.
+
+## Reproducing a recorded reanalysis
+
+Every record can be rebuilt from public data with one command:
+
+```sh
+R CMD INSTALL .                                               # the BARCS version in run_info.json
+Rscript tools/screen-reanalysis/reproduce.R GSE243761         # one record
+Rscript tools/screen-reanalysis/reproduce.R --all             # every record
+```
+
+It downloads the GEO inputs, runs the record's `prepare.R`, checks the count
+file against `counts_md5`, reruns BARCS on every `design*.json`, and compares
+each archived gene table and its call counts with the new run (OK, DIFFERS or
+FAIL per series, non-zero exit if any is not OK). Work goes to
+`work/reproduce/`.
+
+What a record holds so that this works:
+
+- `design.json`, plus a `design_*.json` for every other analysis in `results/`.
+  `"fetch": {"sample_files": true, "max_mb": 800}` records `fetch_geo.R`
+  options when the default download is not enough, and `counts_md5` the
+  checksum of the count file BARCS reads.
+- `prepare.R`, when the count file or the paper's published table is not a
+  file GEO serves as is. Run as `Rscript reanalyses/<GSE>/prepare.R <workdir>`
+  after `fetch_geo.R`, it builds both inside `<workdir>`: merging per-sample
+  files, summing barcodes, fixing encodings, downloading and converting the
+  paper's supplementary table. Base R, jsonlite and readxl only, with every
+  URL in the code.
+- `run_info.json` records the BARCS, R and package versions of the run.
+
+`.github/workflows/reproduce-reanalyses.yaml` runs three small records on pull
+requests that touch the package or the records and weekly; dispatch it with
+`all` to check every record.
+

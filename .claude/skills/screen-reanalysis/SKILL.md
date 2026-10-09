@@ -219,6 +219,17 @@ Rscript tools/screen-reanalysis/archive_run.R work/GSE123456
 Rscript tools/screen-reanalysis/build_site.R      # preview in _site/index.html
 ```
 
+Every record must be reproducible from public data. If you built the count
+file or the paper's table by hand (merged per-sample files, summed barcodes,
+fixed an encoding, converted a supplement), put that code in
+`work/<GSE>/prepare.R` (R only, URLs in the code; it takes the work directory
+as its argument) and archive it with the record. Add `"fetch"` options and
+`counts_md5` (`tools::md5sum` of the count file) to `design.json`, then check:
+
+```sh
+Rscript tools/screen-reanalysis/reproduce.R GSE123456          # must print OK
+```
+
 Commit `reanalyses/<GSE>/` on a branch and open a pull request only if the
 user asks. Merging to `main` rebuilds and deploys the site
 (`.github/workflows/reanalysis-site.yaml`).
