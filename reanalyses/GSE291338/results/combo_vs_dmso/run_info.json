@@ -27,5 +27,7 @@
   "genes_fdr_0_05": 2293,
   "genes_fdr_0_10": 3495,
   "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
   "barcs_version": "0.2.2"
 }

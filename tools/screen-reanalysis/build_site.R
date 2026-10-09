@@ -202,7 +202,7 @@ for (rec in records) {
   report <- sub("<h1>[^<]*</h1>\n?", "", report)  # the page already has a title
   report <- gsub("<table>", "<div class=\"table-wrap\"><table>", report, fixed = TRUE)
   report <- gsub("</table>", "</table></div>", report, fixed = TRUE)
-  control_note <- '<p class="muted"><strong>Control-null FDR</strong> comes from <code>bb_gene_empirical_null()</code>: each gene is ranked against pseudo-genes built from the non-targeting guides, so it does not rely on the model&rsquo;s reference distribution. It needs at least 100 usable controls (&mdash; otherwise). It can be stricter or looser than the model FDR, and with one guide per gene its smallest possible p-value is 2&thinsp;/&thinsp;(controls&nbsp;+&nbsp;1), which can leave nothing passing.</p>'
+  control_note <- '<p class="muted"><strong>Control-null FDR</strong> comes from <code>bb_gene_empirical_null()</code>: each gene is ranked against pseudo-genes built from the non-targeting guides, so it does not rely on the model&rsquo;s reference distribution. It needs at least 100 usable controls (&mdash; otherwise). When the controls sit more than 0.25 z away from the targeting guides (non-cutting controls in a knockout screen, for example), the null is centred on the targeting guides and keeps only its shape from the controls. It can be stricter or looser than the model FDR, and with one guide per gene its smallest possible p-value is 2&thinsp;/&thinsp;(controls&nbsp;+&nbsp;1), which can leave nothing passing.</p>'
   paper_link <- if (!is.null(meta$doi)) sprintf("https://doi.org/%s", meta$doi) else
     sprintf("https://pubmed.ncbi.nlm.nih.gov/%s/", meta$pmid)
 
