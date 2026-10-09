@@ -1,4 +1,4 @@
-# GSE302335 reanalysis with BARCS 0.2.1
+# GSE302335 reanalysis with BARCS 0.2.2
 
 **Paper.** "Multiplexed perturbation enables scalable pooled screens", *Nature Methods* (2026), PMID 42185540, doi:10.1038/s41592-026-03095-w. It is a methods paper whose application is a genome-wide CRISPRi screen for regulators of ICAM-1 (CD54).
 
@@ -14,9 +14,9 @@ Non-targeting guides show a low-vs-high difference that reproduces between repli
 |---|---|---|
 | Model | 2,176 | 11% |
 | Calibrated to controls (`tail_quantile`) | 1,533 | 5% |
-| Empirical null from the 1,026 control guides | **45** | by construction |
+| Control null (`bb_gene_empirical_null`) | 0 | by construction |
 
-Calibration fixes the 5% point but not the extreme tail of the controls (2.3% reach p < 0.001). The empirical null is the trustworthy count.
+Calibration fixes the 5% point but not the extreme tail of the controls (2.3% reach p < 0.001), so the 1,533 is too generous. The control null cannot replace it here: with one guide per element and 1,026 controls, its smallest p-value is 2/1,027, and across 20,528 elements no FDR below 0.21 is reachable. What it does show is that **65 elements, ICAM1 and TRAF6 among them, lie beyond every control guide** in their direction. Treat the ranking as the result and the model FDR as unreliable. (An earlier version of this report gave 45 from an uncorrected ratio estimate of the same null.)
 
 ## Results
 

@@ -154,6 +154,45 @@ for (analysis in analyses) {
   }
   genes <- bb_gene_stouffer(screen[!control, , drop = FALSE],
                             correlation = attr(screen, "guide_correlation"))
+  # Empirical null from control pseudo-genes (BARCS >= 0.2.2): a check on the
+  # model FDR that does not rely on the guide model, for screens whose control
+  # tail stays heavy after calibration (replicates sharing clones). Reported
+  # alongside the model FDR, which remains the headline call.
+  empirical_null <- exists("bb_gene_empirical_null", mode = "function") &&
+    sum(control) >= 100L
+  if (empirical_null) {
+    # Filters can leave fewer than 100 usable controls; report no null then.
+    set.seed(20261007)
+    empirical <- tryCatch(
+      bb_gene_empirical_null(genes, screen, control),
+      error = function(e) {
+        message("   no empirical null: ", conditionMessage(e))
+        NULL
+      }
+    )
+    empirical_null <- !is.null(empirical)
+    # Controls that sit away from the targeting guides (non-cutting controls
+    # in a knockout screen, sort or time-course drift) are not exchangeable in
+    # location; centre the null on the targeting guides instead.
+    # BARCS releases before the centre argument do not report control_shift.
+    control_shift <- if (empirical_null) {
+      attr(empirical, "empirical_null")$control_shift %||% NA_real_
+    } else {
+      NA_real_
+    }
+    empirical_centre <- "controls"
+    if (isTRUE(abs(control_shift) > 0.25) &&
+        "centre" %in% names(formals(bb_gene_empirical_null))) {
+      set.seed(20261007)
+      empirical <- bb_gene_empirical_null(genes, screen, control, centre = "targets")
+      empirical_centre <- "targets"
+      message(sprintf("   control null centred on targeting guides (controls offset %+.2f z)", control_shift))
+    }
+  }
+  if (empirical_null) {
+    genes$empirical_p_value <- empirical$p_value
+    genes$empirical_fdr <- empirical$fdr
+  }
   genes <- genes[order(genes$p_value), , drop = FALSE]
 
   out <- file.path(out_root, name)
@@ -178,11 +217,17 @@ for (analysis in analyses) {
     genes_fdr_0_10_down = sum(genes$fdr < 0.10 & genes$estimate < 0, na.rm = TRUE),
     genes_fdr_0_05 = sum(genes$fdr < 0.05, na.rm = TRUE),
     genes_fdr_0_10 = sum(genes$fdr < 0.10, na.rm = TRUE),
+    genes_empirical_fdr_0_10 = if (empirical_null) {
+      sum(genes$empirical_fdr < 0.10, na.rm = TRUE)
+    } else NULL,
+    empirical_centre = if (empirical_null) empirical_centre else NULL,
+    control_shift = if (empirical_null) round(control_shift, 3) else NULL,
     barcs_version = as.character(utils::packageVersion("BARCS"))
   )
   writeLines(toJSON(info, auto_unbox = TRUE, pretty = TRUE, null = "null"),
              file.path(out, "run_info.json"))
-  message(sprintf("   %d genes at FDR 0.10; guide correlation %.3f; top: %s",
-                  info$genes_fdr_0_10, info$guide_correlation %||% NA,
+  message(sprintf("   %d genes at FDR 0.10 (%s against the control null); guide correlation %.3f; top: %s",
+                  info$genes_fdr_0_10, info$genes_empirical_fdr_0_10 %||% "n/a",
+                  info$guide_correlation %||% NA,
                   paste(utils::head(genes$gene, 8L), collapse = ", ")))
 }

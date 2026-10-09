@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use BARCS, please cite it as below."
 title: "BARCS: Beta-Binomial Analysis and Regression for CRISPR Pooled Screens"
 type: software
-version: 0.2.1
+version: 0.2.2
 license: MIT
 repository-code: "https://github.com/jeonglab-bcm/BARCS"
 authors:

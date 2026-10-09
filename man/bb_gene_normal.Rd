@@ -45,6 +45,7 @@ bb_gene_normal(barcs_example_guides(), min_guides = 3L)
 Other gene-level summaries: 
 \code{\link{bb_gene_consistency}()},
 \code{\link{bb_gene_eb_moderate}()},
+\code{\link{bb_gene_empirical_null}()},
 \code{\link{bb_gene_partial_pool}()},
 \code{\link{bb_gene_stouffer}()}
 }

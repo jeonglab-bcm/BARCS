@@ -1,6 +1,6 @@
 # Handover notes for BARCS
 
-These notes are for Kelly, who is taking over as maintainer of this repository, and for any coding agent (Claude Code or similar) working with her. They cover what the repository holds, how to work in it, what was done most recently, and what is still open. Last updated 2026-10-07.
+These notes are for Kelly, who is taking over as maintainer of this repository, and for any coding agent (Claude Code or similar) working with her. They cover what the repository holds, how to work in it, what was done most recently, and what is still open. Last updated 2026-10-08.
 
 ## What BARCS is
 
@@ -124,11 +124,13 @@ Check these four in every new report before publishing it. Agents have made mist
 ## Open items
 
 **Package**
-1. Update the `BARCS/` submodule pin in `BARCS-manuscript` to the 0.2.1 merge commit. Rerun any manuscript benchmark that depends on guide-level inference. The defaults are unchanged, so the numbers should hold, but confirm.
+1. **Done (2026-10-08).** `BARCS-manuscript` branch `claude/sleepy-planck-2h1yvx` pins v0.2.1 (it builds on the unmerged `barcs-0.2.0-rerun`) and requires BARCS >= 0.2.1. Every benchmark was rerun under R 4.6.1.
+   - BARCS numbers held to the fourth decimal everywhere; the null grid now converges for every guide.
+   - Comparators drifted with newer tools, and four quoted numbers in `barcs-0.2.0-revision` no longer match: edgeR-QL AP 0.874 -> 0.875, Figure 1 disagreements 62 -> 61, CRISPulator MAGeCK-MLE F1 0.711 -> 0.704, simCRISPR BARCS F1 0.917 -> 0.911 (the simulator itself changed).
 2. Decide whether `test = "auto"` should become the default. It matched Wald on the benchmark and fixed two real screens. Changing the default would change published numbers, so it needs a manuscript decision.
-3. Known limitation: when replicates share clonal structure (split from one infected population), even calibrated model FDRs are too generous.
-   - Example: the ICAM1 screen GSE302335 gives 1,533 genes at model FDR, but only 45 against an empirical null from its 1,026 non-targeting guides.
-   - Consider adding an empirical-null option built on control guides.
+3. **Done in 0.2.2 (branch `claude/sleepy-planck-2h1yvx`, not yet merged).** `bb_gene_empirical_null()` reads gene p-values off pseudo-genes of control guides (signed, widened to the guide correlation). `run_barcs.R` records it and the site shows a control-null column.
+   - Simulation (`tools/empirical-null-sim/`): with heavy-tailed clonal noise it held FDP at 0.09 where control calibration gave 0.22.
+   - Limit: with one guide per element its smallest p-value is 2 / (controls + 1). GSE302335 (ICAM1) therefore gets no calls at FDR 0.10, although 65 elements lie beyond every control. The earlier "45" came from an uncorrected estimate and was replaced.
 
 **Manuscript** (carried over; check status before acting)
 4. Unmerged branches: `barcs-0.2.0-rerun` in `BARCS-manuscript` (patched scripts and reruns, plus `teaching/`) and `barcs-0.2.0-revision` in `BARCS-tex` (rewritten text for 0.2.0). Review and merge or close them.

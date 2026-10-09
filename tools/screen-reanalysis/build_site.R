@@ -30,7 +30,7 @@ esc <- function(x) {
   x <- gsub(">", "&gt;", x, fixed = TRUE)
   gsub('"', "&quot;", x, fixed = TRUE)
 }
-fmt_p <- function(p) ifelse(is.na(p), "", ifelse(p < 1e-3, formatC(p, format = "e", digits = 1),
+fmt_p <- function(p) ifelse(is.na(p), "&mdash;", ifelse(p < 1e-3, formatC(p, format = "e", digits = 1),
                                                    formatC(p, format = "fg", digits = 2)))
 status <- list(
   agree = c(label = "Agrees", icon = "&#10003;"),
@@ -152,7 +152,10 @@ for (dir in sort(list.dirs(src, recursive = FALSE))) {
   compare <- fromJSON(file.path(dir, "compare.json"))
   primary <- basename(dirname(compare$barcs_genes))
   runs <- list.dirs(file.path(dir, "results"), recursive = FALSE)
-  records[[meta$gse]] <- list(dir = dir, meta = meta, compare = compare, primary = primary, runs = runs)
+  primary_info <- file.path(dir, "results", primary, "run_info.json")
+  control_calls <- if (file.exists(primary_info)) fromJSON(primary_info)$genes_empirical_fdr_0_10 else NULL
+  records[[meta$gse]] <- list(dir = dir, meta = meta, compare = compare, primary = primary, runs = runs,
+                              control_calls = control_calls)
 }
 order_key <- vapply(records, function(r) r$meta$analyzed %||% "", character(1))
 records <- records[order(order_key, decreasing = TRUE)]
@@ -171,32 +174,35 @@ for (rec in records) {
     downloads <- c(downloads, sprintf('<li><a href="data/%s/%s_genes.csv.gz">%s gene table</a> (CSV)</li>',
                                       meta$gse, basename(run), esc(basename(run))))
     run_rows <- c(run_rows, sprintf(
-      "<tr><td>%s%s</td><td><code>%s</code></td><td>%s</td><td class=\"num\">%d</td><td class=\"num\">%d</td><td class=\"num\">%s</td><td class=\"num\">%d</td><td class=\"num\">%d</td></tr>",
+      "<tr><td>%s%s</td><td><code>%s</code></td><td>%s</td><td class=\"num\">%d</td><td class=\"num\">%d</td><td class=\"num\">%s</td><td class=\"num\">%d</td><td class=\"num\">%d</td><td class=\"num\">%s</td></tr>",
       esc(info$analysis), if (basename(run) == rec$primary) " <span class=\"tag\">primary</span>" else "",
       esc(info$formula), esc(info$term), info$libraries, info$residual_df,
       formatC(info$guide_correlation %||% NA, format = "f", digits = 3),
-      info$genes_fdr_0_05, info$genes_fdr_0_10))
+      info$genes_fdr_0_05, info$genes_fdr_0_10,
+      if (is.null(info$genes_empirical_fdr_0_10)) "&mdash;" else format(info$genes_empirical_fdr_0_10, big.mark = ",")))
   }
   genes <- utils::read.csv(file.path(rec$dir, "results", rec$primary, "genes.csv.gz"), stringsAsFactors = FALSE)
   genes <- genes[order(genes$p_value), ]
   genes$rank <- seq_len(nrow(genes))
+  if (is.null(genes$empirical_fdr)) genes$empirical_fdr <- NA_real_
   named <- unlist(rec$compare$named_hits %||% character())
   hit_rows <- character()
   for (g in named) {
     r <- genes[match(toupper(g), toupper(genes$gene)), ]
-    hit_rows <- c(hit_rows, if (is.na(r$gene)) sprintf("<tr><td>%s</td><td colspan=\"4\">not tested</td></tr>", esc(g)) else
-      sprintf("<tr><td>%s</td><td class=\"num\">%.2f</td><td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s of %s</td></tr>",
-              esc(r$gene), r$estimate, fmt_p(r$p_value), fmt_p(r$fdr),
+    hit_rows <- c(hit_rows, if (is.na(r$gene)) sprintf("<tr><td>%s</td><td colspan=\"5\">not tested</td></tr>", esc(g)) else
+      sprintf("<tr><td>%s</td><td class=\"num\">%.2f</td><td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s of %s</td></tr>",
+              esc(r$gene), r$estimate, fmt_p(r$p_value), fmt_p(r$fdr), fmt_p(r$empirical_fdr),
               format(r$rank, big.mark = ","), format(nrow(genes), big.mark = ",")))
   }
   top <- utils::head(genes, 15L)
-  top_rows <- sprintf("<tr><td>%s</td><td class=\"num\">%d</td><td class=\"num\">%.2f</td><td class=\"num\">%s</td><td class=\"num\">%s</td></tr>",
-                      esc(top$gene), top$n_guides, top$estimate, fmt_p(top$p_value), fmt_p(top$fdr))
+  top_rows <- sprintf("<tr><td>%s</td><td class=\"num\">%d</td><td class=\"num\">%.2f</td><td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s</td></tr>",
+                      esc(top$gene), top$n_guides, top$estimate, fmt_p(top$p_value), fmt_p(top$fdr), fmt_p(top$empirical_fdr))
   report <- markdown_html(paste(readLines(file.path(rec$dir, "REPORT.md"), warn = FALSE, encoding = "UTF-8"), collapse = "\n"),
                           extensions = TRUE)
   report <- sub("<h1>[^<]*</h1>\n?", "", report)  # the page already has a title
   report <- gsub("<table>", "<div class=\"table-wrap\"><table>", report, fixed = TRUE)
   report <- gsub("</table>", "</table></div>", report, fixed = TRUE)
+  control_note <- '<p class="muted"><strong>Control-null FDR</strong> comes from <code>bb_gene_empirical_null()</code>: each gene is ranked against pseudo-genes built from the non-targeting guides, so it does not rely on the model&rsquo;s reference distribution. It needs at least 100 usable controls (&mdash; otherwise). When the controls sit more than 0.25 z away from the targeting guides (non-cutting controls in a knockout screen, for example), the null is centred on the targeting guides and keeps only its shape from the controls. It can be stricter or looser than the model FDR, and with one guide per gene its smallest possible p-value is 2&thinsp;/&thinsp;(controls&nbsp;+&nbsp;1), which can leave nothing passing.</p>'
   paper_link <- if (!is.null(meta$doi)) sprintf("https://doi.org/%s", meta$doi) else
     sprintf("https://pubmed.ncbi.nlm.nih.gov/%s/", meta$pmid)
 
@@ -216,12 +222,13 @@ for (rec in records) {
     '<h2>Primary contrast</h2>',
     sprintf('<figure class="chart">%s<figcaption>Each point is a gene (all genes with p &lt; 0.05 and a fixed sample of the rest). Highlighted: genes the paper names. Hover or focus a highlighted gene for values; full values are in the tables below.</figcaption></figure>',
             paste(volcano(genes, named), collapse = "\n")),
-    if (length(hit_rows)) c('<h3>Genes the paper names</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">BARCS rank</th></tr></thead><tbody>',
+    if (length(hit_rows)) c('<h3>Genes the paper names</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">Control-null FDR</th><th class="num">BARCS rank</th></tr></thead><tbody>',
                             hit_rows, '</tbody></table></div>'),
-    '<h3>BARCS top 15</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Guides</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th></tr></thead><tbody>',
+    '<h3>BARCS top 15</h3><div class="table-wrap"><table><thead><tr><th>Gene</th><th class="num">Guides</th><th class="num">Effect</th><th class="num">p</th><th class="num">FDR</th><th class="num">Control-null FDR</th></tr></thead><tbody>',
     top_rows, '</tbody></table></div>',
-    '<h2>Runs</h2><div class="table-wrap"><table><thead><tr><th>Analysis</th><th>Model</th><th>Coefficient</th><th class="num">Libraries</th><th class="num">Residual df</th><th class="num">Guide correlation</th><th class="num">FDR 0.05</th><th class="num">FDR 0.10</th></tr></thead><tbody>',
+    '<h2>Runs</h2><div class="table-wrap"><table><thead><tr><th>Analysis</th><th>Model</th><th>Coefficient</th><th class="num">Libraries</th><th class="num">Residual df</th><th class="num">Guide correlation</th><th class="num">FDR 0.05</th><th class="num">FDR 0.10</th><th class="num">Control null, FDR 0.10</th></tr></thead><tbody>',
     run_rows, '</tbody></table></div>',
+    control_note,
     '<h2>Report</h2><article class="report">', report, '</article>',
     '<h2>Data</h2><ul class="downloads">', downloads,
     sprintf('<li><a href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s">Design, comparison spec and report on GitHub</a></li>', meta$gse),
@@ -234,9 +241,11 @@ for (rec in records) {
 counts <- table(factor(vapply(records, function(r) r$meta$agreement, character(1)), levels = names(status)))
 rows <- vapply(records, function(rec) {
   m <- rec$meta
-  sprintf('<tr><td>%s</td><td><a href="%s.html">%s</a></td><td><span class="paper">%s</span><span class="muted">%s %s</span></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
+  sprintf('<tr><td>%s</td><td><a href="%s.html">%s</a></td><td><span class="paper">%s</span><span class="muted">%s %s</span></td><td>%s</td><td>%s</td><td>%s</td><td class="num">%s</td><td>%s</td></tr>',
           esc(m$analyzed %||% ""), m$gse, m$gse, esc(m$title), esc(m$journal), esc(m$published),
-          esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""), badge(m$agreement))
+          esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
+          if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
+          badge(m$agreement))
 }, character(1))
 tiles <- c(sprintf('<div class="tile"><span class="tile-value">%d</span><span class="tile-label">screens reanalyzed</span></div>', length(records)),
            sprintf('<div class="tile"><span class="tile-value">%d</span><span class="tile-label">%s</span></div>',
@@ -262,9 +271,9 @@ index <- paste(c(
   '<h1>Published CRISPR screens, reanalyzed with BARCS</h1>',
   '<p class="lede">Recent pooled screens with raw counts in GEO, rerun with replicate-aware beta-binomial models and compared with what each paper reported. Each page states the design, the assumptions it rests on, and where BARCS and the paper differ.</p>',
   '<div class="tiles">', tiles, '</div>',
-  '<div class="table-wrap"><table class="index"><thead><tr><th>Analyzed</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th>Verdict</th></tr></thead><tbody>',
+  '<div class="table-wrap"><table class="index"><thead><tr><th>Analyzed</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th class="num">Control null</th><th>Verdict</th></tr></thead><tbody>',
   rows, '</tbody></table></div>',
-  '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology.</p>',
+  '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology. <strong>Control null</strong>: genes in the primary contrast at FDR 0.10 against pseudo-genes built from the non-targeting guides (&mdash; when there are fewer than 100 usable controls).</p>',
   search_note,
   if (length(excluded_rows)) c(
     sprintf('<h2>Screened out (%d)</h2>', length(excluded_rows)),

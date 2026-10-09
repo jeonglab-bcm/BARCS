@@ -28,5 +28,8 @@
   "genes_fdr_0_10_down": 76,
   "genes_fdr_0_05": 79,
   "genes_fdr_0_10": 95,
-  "barcs_version": "0.2.1"
+  "genes_empirical_fdr_0_10": 58,
+  "empirical_centre": "controls",
+  "control_shift": 0.049,
+  "barcs_version": "0.2.2"
 }

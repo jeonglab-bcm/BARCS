@@ -1,3 +1,36 @@
+# BARCS 0.2.2
+
+## Gene-level summaries
+
+* New `bb_gene_empirical_null()` reads gene p-values off an empirical null
+  built from negative-control pseudo-genes (control guides drawn to each
+  gene's guide count and summarized like a real gene), with signed
+  two-sided conformal ranks and Benjamini-Hochberg FDR. It is for screens
+  whose control tail stays heavier than the model after
+  `bb_calibrate_controls()`, typically when replicates are split from one
+  infected population and share clone sizes. Pseudo-genes are widened to the
+  within-gene guide correlation so they match a real gene's null variance.
+  Defaults are unchanged; the function is opt-in.
+  - In simulated sort screens whose replicates share heavy-tailed clonal
+    noise, it held the realized FDP at 0.09 where control calibration gave
+    0.22 and the model 0.52 (`tools/empirical-null-sim/`).
+  - On the 11 recorded reanalyses with at least 100 usable controls, every
+    named hit the model called stayed called except in GSE302335 (one guide
+    per element, 1,026 controls), where the null's resolution floor of
+    2 / (n + 1) leaves nothing passing FDR. Where the model was conservative
+    relative to the controls it called more genes (GSE316868 1,151 -> 1,629).
+* `bb_gene_empirical_null(centre = "targets")` takes the null's location from
+  the targeting guides and its shape from the controls, and the
+  `"empirical_null"` attribute reports `control_shift`. Non-cutting controls
+  in knockout screens can sit 0.3-0.6 z away from every targeting guide; centred
+  on them, the null called 3,733 genes in an erythroid time course (GSE288230)
+  where the calibrated model called none, and 170 against 10 in an EXO1
+  dropout screen (GSE255664). Centred on the targets it called 0 and 13.
+* `tools/screen-reanalysis/run_barcs.R` reports the empirical-null FDR next
+  to the model FDR, skips it when fewer than 100 controls are usable, and
+  centres it on the targeting guides when the controls are offset by more
+  than 0.25 z.
+
 # BARCS 0.2.1
 
 ## Guide-level inference

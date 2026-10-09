@@ -9,9 +9,9 @@
   "contrast": "CD54-low vs CD54-high sort, MOI 0.3, paired by replicate (2 vs 2)",
   "paper_method": "Not stated in GEO",
   "paper_calls": "ICAM1 (positive control) and new ICAM-1 regulators",
-  "barcs_calls": "1,533 genes at model FDR 0.10; 45 against an empirical null from 1,026 non-targeting guides",
+  "barcs_calls": "1,533 genes at model FDR 0.10 (unreliable); 65 elements, including ICAM1 and TRAF6, lie beyond all 1,026 non-targeting guides, but the control null cannot reach FDR 0.10 with one guide per element",
   "named_hits": "ICAM1 #7; TRAF6 #4",
-  "verdict": "BARCS recovers the ICAM1 positive control (#7) with TRAF6, an NF-kB activator of ICAM1, at #4. Even non-targeting guides reproduce between replicates here, so the model FDR (1,533 genes) is unreliable; an empirical null from the controls gives 45.",
+  "verdict": "BARCS recovers the ICAM1 positive control (#7) with TRAF6, an NF-kB activator of ICAM1, at #4; both lie beyond every non-targeting guide. Non-targeting guides reproduce between replicates here, so the model FDR (1,533 genes) is unreliable, and one guide per element leaves the control null too coarse to set an FDR; the ranking is the usable result.",
   "agreement": "agree",
   "analyzed": "2026-10-07"
 }

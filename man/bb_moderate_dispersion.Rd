@@ -111,6 +111,7 @@ c(raw = sd(result$pearson_null / df_residual),
 }
 \seealso{
 Other recalibration: 
-\code{\link{bb_calibrate_controls}()}
+\code{\link{bb_calibrate_controls}()},
+\code{\link{bb_gene_empirical_null}()}
 }
 \concept{recalibration}

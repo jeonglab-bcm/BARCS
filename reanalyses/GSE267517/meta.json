@@ -10,7 +10,7 @@
   "contrast": "T cells at effector:target 1 vs no T cells (3 vs 4)",
   "paper_method": "MAGeCK RRA (deposited)",
   "paper_calls": "Mettl5 chosen by integrating screens with clinical data",
-  "barcs_calls": "348 genes at FDR 0.10",
+  "barcs_calls": "343 genes at FDR 0.10",
   "named_hits": "B2m #1, Jak1 #4, Rnf31 #6; Mettl5 rank 927 (p = 0.012)",
   "verdict": "BARCS and the authors' MAGeCK agree closely on this T-cell killing screen (20 of the top 25 genes shared): antigen presentation and interferon genes protect, Rnf31 and Cflar knockouts sensitize. Mettl5 is a modest hit in both, consistent with the paper selecting it through clinical data rather than screen rank.",
   "agreement": "agree",
