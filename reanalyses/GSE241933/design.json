@@ -1,0 +1,74 @@
+{
+  "gse": "GSE241933",
+  "pmid": "37945901",
+  "counts_file": "CRISPRa.TF.CCR7.counts_with_gene.tsv.gz",
+  "guide_column": "gRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NT$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low_D1",
+      "gsm": "GSM7745795",
+      "sort": "Low",
+      "donor": "D1"
+    },
+    {
+      "column": "Low_D2",
+      "gsm": "GSM7745796",
+      "sort": "Low",
+      "donor": "D2"
+    },
+    {
+      "column": "Low_D3",
+      "gsm": "GSM7745797",
+      "sort": "Low",
+      "donor": "D3"
+    },
+    {
+      "column": "High_D1",
+      "gsm": "GSM7745798",
+      "sort": "High",
+      "donor": "D1"
+    },
+    {
+      "column": "High_D2",
+      "gsm": "GSM7745799",
+      "sort": "High",
+      "donor": "D2"
+    },
+    {
+      "column": "High_D3",
+      "gsm": "GSM7745800",
+      "sort": "High",
+      "donor": "D3"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "Low",
+      "High"
+    ],
+    "donor": [
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CRISPRa_CCR7_high_vs_low",
+      "columns": [
+        "Low_D1",
+        "Low_D2",
+        "Low_D3",
+        "High_D1",
+        "High_D2",
+        "High_D3"
+      ],
+      "formula": "~ donor + sort",
+      "term": "sortHigh"
+    }
+  ],
+  "rationale": "CRISPRa (dCas9-VP64) library of 1,979 guides against 120 transcription factors plus 120 non-targeting guides in primary human CD8 T cells from three donors, sorted into CCR7-low and CCR7-high bins. Column names (Low_D1..High_D3) match the GSM titles CRISPRa-TF-CCR7-Low/High-D1..D3. Counts are the deposited GSE241933_CRISPRa.TF.CCR7.counts.table.csv.gz with the guide sequence column replaced by the gene name (guide name without its _N suffix). Each donor gives one low and one high sort, so donor is a pairing term (2 residual df). A positive coefficient means activation raises CCR7 (memory-like); the paper's BATF3 is expected on the CCR7-high side if it promotes memory features. Library totals; the CRISPRa library is small and focused, so composition is checked in run_info.json."
+}

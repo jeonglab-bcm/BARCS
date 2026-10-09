@@ -92,9 +92,8 @@ Keep these safeguards:
 ### Current state of the reanalyses
 
 The last search (2026-10-09) covered 3 years: 241 papers and 118 screen-like candidate series.
-- **Reanalyzed: 25.** 17 agree, 5 partly agree, 3 differ.
-- **Screened out: 86**, with reasons in `reanalyses/excluded.tsv`. The most common reasons are a paper's companion assays (Hi-C, CUT&Tag…), one library per condition, and normalized counts only.
-- **Usable but not reanalyzed yet: 7**, listed as `pending` in `reanalyses/search.json` and on the site.
+- **Reanalyzed: 30.** 20 agree, 6 partly agree, 4 differ.
+- **Screened out: 88**, with reasons in `reanalyses/excluded.tsv`, so every candidate of the search is accounted for. The most common reasons are a paper's companion assays (Hi-C, CUT&Tag…), one library per condition, and normalized counts only. Two of the last seven triaged as usable failed on closer reading: GSE226977 (bottlenecked end point; calls swing with normalization) and GSE236257 (1 residual df and too few controls to check calibration).
 - About one screen-like series in four is usable, and about 80 matching papers appear per year, so 100 screens needs either a 6-7 year window or counting from raw reads (see open items).
 
 Each report states its assumptions. Inferred column mappings are marked as inferred.
@@ -148,7 +147,8 @@ Check these four in every new report before publishing it. Agents have made mist
    - Triage new candidates and add the usable ones.
    - Add every rejection to `reanalyses/excluded.tsv` so the site shows full coverage.
 9. GSE328830 was skipped only because its main count file is 657 MB, larger than the pipeline downloads. It can be reanalyzed with `--max-mb 800`.
-10. Reanalyze the 7 pending series (GSE203240, GSE222531, GSE226977, GSE236257, GSE241933, GSE276161, GSE280676). Triage notes are in `work/triage3y/` of the session that found them; re-triage if that is gone. GSE280676 and GSE280666 (same bovine paper, same design) were triaged inconsistently: one usable, one rejected for clonal takeover; settle them together.
+10. **Done.** The 7 pending series were resolved: 5 reanalyzed, 2 screened out. GSE280676 (short-term bovine screen, day 16) is reanalyzed and GSE280666 (long-term, high-MOI) is screened out under one rule.
+    - Known limit found on the way: in CRISPRa promoter-tiling libraries (GSE241933), the gene-level Stouffer sum dilutes the 2-3 active guides among 13-18, so guide-level agreement with the paper is high (0.96) while gene calls are few. A summary that weights active guides would suit tiling screens.
 11. To reach 100 screens, count guides from raw reads with `barcs_quant()` for series that deposited only normalized values but have FASTQ in SRA (8 of the first 42 rejections were of that kind).
 
 ## People

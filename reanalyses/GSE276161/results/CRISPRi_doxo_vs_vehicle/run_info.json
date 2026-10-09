@@ -1,0 +1,33 @@
+{
+  "analysis": "CRISPRi_doxo_vs_vehicle",
+  "formula": "~condition",
+  "term": "conditiondoxo",
+  "libraries": 4,
+  "residual_df": 2,
+  "guides": 209069,
+  "genes": 2484,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0.0012,
+  "control_scale": null,
+  "control_guides": 3789,
+  "control_p05_raw": 0.0403,
+  "control_p05": 0.0403,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 225,
+  "top1pct_read_share": {
+    "CRISPRi_Vehicle_Rep1": 0.205,
+    "CRISPRi_Vehicle_Rep2": 0.216,
+    "CRISPRi_Doxo_Rep1": 0.204,
+    "CRISPRi_Doxo_Rep2": 0.205
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 1,
+  "genes_fdr_0_05": 1,
+  "genes_fdr_0_10": 1,
+  "genes_empirical_fdr_0_10": 0,
+  "empirical_centre": "controls",
+  "control_shift": 0.01,
+  "barcs_version": "0.2.2"
+}

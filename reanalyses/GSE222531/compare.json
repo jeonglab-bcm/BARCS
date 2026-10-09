@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/LGR100X_Tf_vs_T0/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["BCR", "GATA1", "MYB", "LMO2", "TAL1", "POLR2A", "RPL3", "PCNA", "MCM2"],
+  "top_n": [100, 500, 1000]
+}

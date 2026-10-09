@@ -1,0 +1,33 @@
+{
+  "analysis": "KO_withBATF3_IL7R_high_vs_low",
+  "formula": "~donor + sort",
+  "term": "sortHigh",
+  "libraries": 4,
+  "residual_df": 1,
+  "guides": 7000,
+  "genes": 1613,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0,
+  "control_scale": 1.4657,
+  "control_guides": 550,
+  "control_p05_raw": 0.2036,
+  "control_p05": 0.0491,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Low_D1": 0.023,
+    "Low_D2": 0.019,
+    "High_D1": 0.032,
+    "High_D2": 0.031
+  },
+  "genes_fdr_0_10_up": 8,
+  "genes_fdr_0_10_down": 30,
+  "genes_fdr_0_05": 26,
+  "genes_fdr_0_10": 38,
+  "genes_empirical_fdr_0_10": 39,
+  "empirical_centre": "targets",
+  "control_shift": -0.521,
+  "barcs_version": "0.2.2"
+}

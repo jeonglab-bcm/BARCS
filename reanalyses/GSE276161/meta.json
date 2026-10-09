@@ -1,0 +1,18 @@
+{
+  "gse": "GSE276161",
+  "pmid": "39515331",
+  "doi": "10.1016/j.stem.2024.10.007",
+  "pmcid": "PMC11646563",
+  "title": "CRISPRi/a screens in human iPSC-cardiomyocytes identify glycolytic activation as a druggable target for doxorubicin-induced cardiotoxicity",
+  "journal": "Cell Stem Cell",
+  "published": "2024",
+  "model": "iPSC-derived cardiomyocytes, hCRISPRi-v2 / hCRISPRa-v2 druggable-genome sublibraries",
+  "contrast": "CRISPRi: doxorubicin vs vehicle, 72 h (2 vs 2); CRISPRa (secondary) the same",
+  "paper_method": "Horlbeck et al. 2016 guide scoring (phenotype score and Mann-Whitney p); hits at score > 2 (CRISPRi) or > 1 (CRISPRa), p < 0.01",
+  "paper_calls": "21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated",
+  "barcs_calls": "CRISPRi: 1 gene at FDR 0.10 (IL2, a one-guide jackpot), 0 against the control null; CRISPRa: 1,020 depleted calls from guide blocks missing in the doxorubicin libraries, not interpretable, none enriched",
+  "named_hits": "Rank among doxorubicin-enriched CRISPRi genes: CA12 #1 of 2,484 (FDR 0.35), ERBB2 #5, HPGDS #8, DGKH #178, SCMH1 #1,359; none at FDR 0.10",
+  "verdict": "CA12 is BARCS's strongest credible CRISPRi gene, with HPGDS and ERBB2 in its top 8, but with two weakly selected replicates per arm nothing passes FDR 0.10. The CRISPRa doxorubicin libraries are missing blocks of guides, which makes its depletion calls technical.",
+  "agreement": "differ",
+  "analyzed": "2026-10-09"
+}

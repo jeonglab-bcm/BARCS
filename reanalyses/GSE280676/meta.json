@@ -1,0 +1,18 @@
+{
+  "gse": "GSE280676",
+  "pmid": "40885801",
+  "doi": "10.1038/s42003-025-08760-y",
+  "pmcid": "PMC12398484",
+  "title": "Pooled CRISPR screens identifies key regulators of bovine stem cell expansion for cultured meat",
+  "journal": "Communications Biology",
+  "published": "2025",
+  "model": "Adipose-derived bovine mesenchymal stem cells (Cas9), focused knockout library (2,564 guides on 603 genes, 436 non-cutting controls), low MOI, 30-day proliferation time course",
+  "contrast": "Day 16 vs day 1 of the 30-day proliferation screen (3 vs 3), library totals; the paper's day-30 headline is dominated by clones (top 1% of guides hold 48-72% of reads)",
+  "paper_method": "MAGeCK RRA per time point vs baseline (DESeq2-normalized counts)",
+  "paper_calls": "Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors",
+  "barcs_calls": "135 genes at FDR 0.10 (4 enriched, 131 depleted); 47 against the control null (centred on targeting guides)",
+  "named_hits": "TP53 #2, PTEN #1, VGLL4 #3 enriched (FDR < 0.002), SMAD4 FDR 0.06; MPC1/2, SMAD3/5, RUNX1 not called (4/9 at FDR 0.10)",
+  "verdict": "At day 16, before clones take over, BARCS ranks PTEN, TP53 and VGLL4 as the top three enriched knockouts, with every guide concordant, as the paper reports. At the paper's headline day 30, clonal takeover leaves no enriched gene after control calibration, and the paper's day-30 list includes fitness genes that BARCS finds depleted.",
+  "agreement": "agree",
+  "analyzed": "2026-10-09"
+}

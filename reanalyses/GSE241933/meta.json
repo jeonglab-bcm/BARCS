@@ -1,0 +1,18 @@
+{
+  "gse": "GSE241933",
+  "pmid": "37945901",
+  "doi": "10.1038/s41588-023-01554-0",
+  "pmcid": "PMC10703699",
+  "title": "Transcriptional and epigenetic regulators of human CD8+ T cell function identified through orthogonal CRISPR screens",
+  "journal": "Nature Genetics",
+  "published": "2023",
+  "model": "Primary human CD8+ T cells; dSaCas9-VP64 CRISPRa promoter-tiling library of 120 TFs and epigenetic regulators; TFome knockout library with BATF3 overexpression",
+  "contrast": "CRISPRa: CCR7-high vs CCR7-low sort, paired by donor (3 vs 3). Second: TFome KO with BATF3 overexpression, IL7R-high vs IL7R-low (2 vs 2)",
+  "paper_method": "DESeq2 per guide with NT-calibrated, p-weighted gene scores (CRISPRa); MAGeCK test, paired with NT controls (KO)",
+  "paper_calls": "CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors",
+  "barcs_calls": "CRISPRa: 2 genes at FDR 0.10 (BHLHE41, HIC1), 6 against the control null; KO + BATF3: 38 genes at FDR 0.10, 39 against the control null centred on the targeting guides",
+  "named_hits": "Rank among all 120 genes by p (CRISPRa): BATF3 #57 (FDR 0.67), BATF #90, EOMES #34. KO + BATF3, rank among IL7R-high-depleted genes: BATF3 #12 (FDR 0.008), IRF4 #40 (FDR 0.15), JUNB #111 (FDR 0.35); IL7R #1",
+  "verdict": "In the knockout screen BARCS tracks MAGeCK (Spearman 0.74) and calls BATF3, IL7R and the IL7R-high hits, but not the cofactors IRF4 and JUNB. In the CRISPRa screen its guide-level results match the paper's, yet its gene-level Stouffer sum dilutes the 2-3 active tiling guides of BATF3, BATF and EOMES, so none is called. BATF3 activation lowering CCR7 is the paper's own direction.",
+  "agreement": "partial",
+  "analyzed": "2026-10-09"
+}

@@ -1,0 +1,193 @@
+{
+  "gse": "GSE203240",
+  "pmid": "40347943",
+  "counts_file": "suppl/GSE203240_Raw_read_counts_matrix.txt.gz",
+  "guide_column": "sgRNA CloneID",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NT$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Rep1_T0_noCas9",
+      "gsm": "GSM6165155",
+      "cas9": "noCas9",
+      "time": "T0",
+      "infection": "Rep1",
+      "mouse": "none"
+    },
+    {
+      "column": "Rep2_T0_noCas9",
+      "gsm": "GSM6165156",
+      "cas9": "noCas9",
+      "time": "T0",
+      "infection": "Rep2",
+      "mouse": "none"
+    },
+    {
+      "column": "Rep1_Mouse1_T1_noCas9",
+      "gsm": "GSM6165157",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse1"
+    },
+    {
+      "column": "Rep1_Mouse2_T1_noCas9",
+      "gsm": "GSM6165158",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse2"
+    },
+    {
+      "column": "Rep1_Mouse3_T1_noCas9",
+      "gsm": "GSM6165159",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse3"
+    },
+    {
+      "column": "Rep1_Mouse4_T1_noCas9",
+      "gsm": "GSM6165160",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse4"
+    },
+    {
+      "column": "Rep2_Mouse1_T1_noCas9",
+      "gsm": "GSM6165161",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse1"
+    },
+    {
+      "column": "Rep2_Mouse2_T1_noCas9",
+      "gsm": "GSM6165162",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse2"
+    },
+    {
+      "column": "Rep2_Mouse3_T1_noCas9",
+      "gsm": "GSM6165163",
+      "cas9": "noCas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse3"
+    },
+    {
+      "column": "Rep1_T0_Cas9",
+      "gsm": "GSM6165164",
+      "cas9": "Cas9",
+      "time": "T0",
+      "infection": "Rep1",
+      "mouse": "none"
+    },
+    {
+      "column": "Rep2_T0_Cas9",
+      "gsm": "GSM6165165",
+      "cas9": "Cas9",
+      "time": "T0",
+      "infection": "Rep2",
+      "mouse": "none"
+    },
+    {
+      "column": "Rep1_Mouse1_T1_Cas9",
+      "gsm": "GSM6165166",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse1"
+    },
+    {
+      "column": "Rep1_Mouse2_T1_Cas9",
+      "gsm": "GSM6165167",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse2"
+    },
+    {
+      "column": "Rep1_Mouse3_T1_Cas9",
+      "gsm": "GSM6165168",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse3"
+    },
+    {
+      "column": "Rep1_Mouse4_T1_Cas9",
+      "gsm": "GSM6165169",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep1",
+      "mouse": "Mouse4"
+    },
+    {
+      "column": "Rep2_Mouse1_T1_Cas9",
+      "gsm": "GSM6165170",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse1"
+    },
+    {
+      "column": "Rep2_Mouse2_T1_Cas9",
+      "gsm": "GSM6165171",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse2"
+    },
+    {
+      "column": "Rep2_Mouse3_T1_Cas9",
+      "gsm": "GSM6165172",
+      "cas9": "Cas9",
+      "time": "T1",
+      "infection": "Rep2",
+      "mouse": "Mouse3"
+    }
+  ],
+  "factor_levels": {
+    "cas9": [
+      "noCas9",
+      "Cas9"
+    ],
+    "time": [
+      "T0",
+      "T1"
+    ],
+    "infection": [
+      "Rep1",
+      "Rep2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "Cas9_vs_noCas9_T1",
+      "columns": [
+        "Rep1_Mouse1_T1_noCas9",
+        "Rep1_Mouse2_T1_noCas9",
+        "Rep1_Mouse3_T1_noCas9",
+        "Rep1_Mouse4_T1_noCas9",
+        "Rep2_Mouse1_T1_noCas9",
+        "Rep2_Mouse2_T1_noCas9",
+        "Rep2_Mouse3_T1_noCas9",
+        "Rep1_Mouse1_T1_Cas9",
+        "Rep1_Mouse2_T1_Cas9",
+        "Rep1_Mouse3_T1_Cas9",
+        "Rep1_Mouse4_T1_Cas9",
+        "Rep2_Mouse1_T1_Cas9",
+        "Rep2_Mouse2_T1_Cas9",
+        "Rep2_Mouse3_T1_Cas9"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9Cas9"
+    }
+  ],
+  "rationale": "In vivo secondary knockout screen (211 guides, 106 candidate synthetic-dosage-lethal genes plus one non-targeting guide) in HCT116 cells grown as xenografts, with and without Cas9. Column names equal the GSM titles. The paper's question is which knockouts deplete in Cas9 tumours relative to no-Cas9 tumours (the no-Cas9 arm controls for library drift and bottlenecking in vivo), so the primary analysis compares the 7 Cas9 with the 7 no-Cas9 T1 tumours. Mice are biological replicates from two infections; infections are not shared between arms (separate Cas9 and no-Cas9 cell pools), so no pairing term (12 residual df). Only one non-targeting guide, so control calibration and the control null cannot be used. IGF2BP2 should be depleted."
+}

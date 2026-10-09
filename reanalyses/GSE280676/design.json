@@ -1,0 +1,212 @@
+{
+  "gse": "GSE280676",
+  "pmid": "40885801",
+  "counts_file": "counts_utf8.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^nc_guide",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "PlasmidLibrary_day0_rep1",
+      "gsm": "GSM8603599",
+      "condition": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "PlasmidLibrary_day0_rep2",
+      "gsm": "GSM8603600",
+      "condition": "plasmid",
+      "replicate": "2"
+    },
+    {
+      "column": "PlasmidLibrary_day0_rep3",
+      "gsm": "GSM8603601",
+      "condition": "plasmid",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day1_rep1",
+      "gsm": "GSM8603602",
+      "condition": "day1",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day1_rep2",
+      "gsm": "GSM8603603",
+      "condition": "day1",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day1_rep3",
+      "gsm": "GSM8603604",
+      "condition": "day1",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day3_rep1",
+      "gsm": "GSM8603605",
+      "condition": "day3",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day3_rep2",
+      "gsm": "GSM8603606",
+      "condition": "day3",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day3_rep3",
+      "gsm": "GSM8603607",
+      "condition": "day3",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day7_rep1",
+      "gsm": "GSM8603608",
+      "condition": "day7",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day7_rep2",
+      "gsm": "GSM8603609",
+      "condition": "day7",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day7_rep3",
+      "gsm": "GSM8603610",
+      "condition": "day7",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day10_rep1",
+      "gsm": "GSM8603611",
+      "condition": "day10",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day10_rep2",
+      "gsm": "GSM8603612",
+      "condition": "day10",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day10_rep3",
+      "gsm": "GSM8603613",
+      "condition": "day10",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day16_rep1",
+      "gsm": "GSM8603614",
+      "condition": "day16",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day16_rep2",
+      "gsm": "GSM8603615",
+      "condition": "day16",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day16_rep3",
+      "gsm": "GSM8603616",
+      "condition": "day16",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day24_rep1",
+      "gsm": "GSM8603617",
+      "condition": "day24",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day24_rep2",
+      "gsm": "GSM8603618",
+      "condition": "day24",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day24_rep3",
+      "gsm": "GSM8603619",
+      "condition": "day24",
+      "replicate": "3"
+    },
+    {
+      "column": "ST_MSC_day30_rep1",
+      "gsm": "GSM8603620",
+      "condition": "day30",
+      "replicate": "1"
+    },
+    {
+      "column": "ST_MSC_day30_rep2",
+      "gsm": "GSM8603621",
+      "condition": "day30",
+      "replicate": "2"
+    },
+    {
+      "column": "ST_MSC_day30_rep3",
+      "gsm": "GSM8603622",
+      "condition": "day30",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day1",
+      "plasmid",
+      "day3",
+      "day7",
+      "day10",
+      "day16",
+      "day24",
+      "day30"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "day16_vs_day1",
+      "columns": [
+        "ST_MSC_day1_rep1",
+        "ST_MSC_day1_rep2",
+        "ST_MSC_day1_rep3",
+        "ST_MSC_day16_rep1",
+        "ST_MSC_day16_rep2",
+        "ST_MSC_day16_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday16",
+      "totals": "library"
+    },
+    {
+      "name": "day16_vs_day1_median_ratio",
+      "columns": [
+        "ST_MSC_day1_rep1",
+        "ST_MSC_day1_rep2",
+        "ST_MSC_day1_rep3",
+        "ST_MSC_day16_rep1",
+        "ST_MSC_day16_rep2",
+        "ST_MSC_day16_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday16",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "day30_vs_day1",
+      "columns": [
+        "ST_MSC_day1_rep1",
+        "ST_MSC_day1_rep2",
+        "ST_MSC_day1_rep3",
+        "ST_MSC_day30_rep1",
+        "ST_MSC_day30_rep2",
+        "ST_MSC_day30_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday30",
+      "totals": "library"
+    }
+  ],
+  "rationale": "Short-term (30-day) proliferation screen: AD-bMSC-Cas9 transduced at low MOI (~0.3) with a 3,000-guide library (2,564 guides on 603 genes, 436 nc_guide non-cutting controls, each with its own nc_guideNNNNN label), 3 replicate cultures sampled at days 1-30. Counts file is the GEO UTF-16 table converted unchanged to UTF-8; column names match GSM titles one to one. The paper ran MAGeCK per day against an early reference and headlines day 30. By day 24-30 each replicate is dominated by a few clones (top 1% of guides hold 28-72% of reads; non-targeting guides reach p<0.05 at 34-61% with library totals and median-ratio totals are capped in day30 rep3), so the primary contrast is day 16 vs day 1, the last time point before clonal takeover (top-1% share 7.4-8.3%, raw control p<0.05 rate 10.4%, calibrated to 4.9%; all five TP53 guides and all four PTEN guides rise in all three replicates). Library totals are the default at this composition; median-ratio totals are a sensitivity run, and day 30 vs day 1 is kept to document the paper's headline contrast. Replicates are separate lineages after day 1 (each replicate's day-16 changes persist to day 30, r~0.7, versus ~0.2 across replicates) but the day-1 replicates are indistinguishable (r=0.995), so no replicate term."
+}

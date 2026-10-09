@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/Cas9_vs_noCas9_T1/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["IGF2BP2", "C19orf35", "ATP4A", "FDPS", "TLE2", "SASS6", "TAF5L", "DCTN3", "CALM2", "DENR", "ACVR1B", "CLK2", "TNFAIP8L1", "LPL", "KIF5B"],
+  "published": {
+    "file": "paper/TableS7_in_vivo.tsv",
+    "gene_column": "gene", "score_column": "p_value", "score_better": "lower",
+    "effect_column": "score"
+  },
+  "top_n": [5, 10, 15]
+}
