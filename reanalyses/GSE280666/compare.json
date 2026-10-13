@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/day15_vs_day1_median_ratio/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TP53", "PTEN", "OSR2"],
+  "top_n": [10, 25, 50]
+}

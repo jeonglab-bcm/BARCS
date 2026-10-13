@@ -1,0 +1,356 @@
+{
+  "gse": "GSE223716",
+  "pmid": "42236690",
+  "counts_file": "suppl/GSE223716_Raw_read_count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "HT1080_WT_R1",
+      "gsm": "GSM6975393",
+      "line": "HTelo_minus",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "HTelo_minus_WT"
+    },
+    {
+      "column": "HT1080_WT_R2",
+      "gsm": "GSM6975394",
+      "line": "HTelo_minus",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "HTelo_minus_WT"
+    },
+    {
+      "column": "HT1080_cas9_R1",
+      "gsm": "GSM6975395",
+      "line": "HTelo_minus",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "HTelo_minus_cas9"
+    },
+    {
+      "column": "HT1080_cas9_R2",
+      "gsm": "GSM6975396",
+      "line": "HTelo_minus",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "HTelo_minus_cas9"
+    },
+    {
+      "column": "HT_TERT_WT_R1",
+      "gsm": "GSM6975397",
+      "line": "HTelo_plus",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "HTelo_plus_WT"
+    },
+    {
+      "column": "HT_TERT_WT_R2",
+      "gsm": "GSM6975398",
+      "line": "HTelo_plus",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "HTelo_plus_WT"
+    },
+    {
+      "column": "HT_TERT_cas9_R1",
+      "gsm": "GSM6975399",
+      "line": "HTelo_plus",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "HTelo_plus_cas9"
+    },
+    {
+      "column": "HT_TERT_cas9_R2",
+      "gsm": "GSM6975400",
+      "line": "HTelo_plus",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "HTelo_plus_cas9"
+    },
+    {
+      "column": "22RV1_WT_R1",
+      "gsm": "GSM6975401",
+      "line": "22RV1",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "22RV1_WT"
+    },
+    {
+      "column": "22RV1_WT_R2",
+      "gsm": "GSM6975402",
+      "line": "22RV1",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "22RV1_WT"
+    },
+    {
+      "column": "22RV1_cas9_R1",
+      "gsm": "GSM6975403",
+      "line": "22RV1",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "22RV1_cas9"
+    },
+    {
+      "column": "22RV1_cas9_R2",
+      "gsm": "GSM6975404",
+      "line": "22RV1",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "22RV1_cas9"
+    },
+    {
+      "column": "ES2_WT_R1",
+      "gsm": "GSM6975405",
+      "line": "ES2",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "ES2_WT"
+    },
+    {
+      "column": "ES2_WT_R2",
+      "gsm": "GSM6975406",
+      "line": "ES2",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "ES2_WT"
+    },
+    {
+      "column": "ES2_cas9_R1",
+      "gsm": "GSM6975407",
+      "line": "ES2",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "ES2_cas9"
+    },
+    {
+      "column": "ES2_cas9_R2",
+      "gsm": "GSM6975408",
+      "line": "ES2",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "ES2_cas9"
+    },
+    {
+      "column": "HCT15_WT_R1",
+      "gsm": "GSM6975409",
+      "line": "HCT15",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "HCT15_WT"
+    },
+    {
+      "column": "HCT15_WT_R2",
+      "gsm": "GSM6975410",
+      "line": "HCT15",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "HCT15_WT"
+    },
+    {
+      "column": "HCT15_cas9_R1",
+      "gsm": "GSM6975411",
+      "line": "HCT15",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "HCT15_cas9"
+    },
+    {
+      "column": "HCT15_cas9_R2",
+      "gsm": "GSM6975412",
+      "line": "HCT15",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "HCT15_cas9"
+    },
+    {
+      "column": "MDAMB231_WT_R1",
+      "gsm": "GSM6975413",
+      "line": "MDAMB231",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "MDAMB231_WT"
+    },
+    {
+      "column": "MDAMB231_WT_R2",
+      "gsm": "GSM6975414",
+      "line": "MDAMB231",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "MDAMB231_WT"
+    },
+    {
+      "column": "MDAMB231_cas9_R1",
+      "gsm": "GSM6975415",
+      "line": "MDAMB231",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "MDAMB231_cas9"
+    },
+    {
+      "column": "MDAMB231_cas9_R2",
+      "gsm": "GSM6975416",
+      "line": "MDAMB231",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "MDAMB231_cas9"
+    },
+    {
+      "column": "MiaPaCa_WT_R1",
+      "gsm": "GSM6975417",
+      "line": "MiaPaCa",
+      "cas9": "no",
+      "replicate": "1",
+      "group": "MiaPaCa_WT"
+    },
+    {
+      "column": "MiaPaCa_WT_R2",
+      "gsm": "GSM6975418",
+      "line": "MiaPaCa",
+      "cas9": "no",
+      "replicate": "2",
+      "group": "MiaPaCa_WT"
+    },
+    {
+      "column": "MiaPaCa_cas9_R1",
+      "gsm": "GSM6975419",
+      "line": "MiaPaCa",
+      "cas9": "yes",
+      "replicate": "1",
+      "group": "MiaPaCa_cas9"
+    },
+    {
+      "column": "MiaPaCa_cas9_R2",
+      "gsm": "GSM6975420",
+      "line": "MiaPaCa",
+      "cas9": "yes",
+      "replicate": "2",
+      "group": "MiaPaCa_cas9"
+    }
+  ],
+  "factor_levels": {
+    "cas9": [
+      "no",
+      "yes"
+    ],
+    "line": [
+      "HTelo_minus",
+      "HTelo_plus",
+      "22RV1",
+      "ES2",
+      "HCT15",
+      "MDAMB231",
+      "MiaPaCa"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "htelo_plus_vs_minus_cas9",
+      "columns": [
+        "HT1080_cas9_R1",
+        "HT1080_cas9_R2",
+        "HT_TERT_cas9_R1",
+        "HT_TERT_cas9_R2"
+      ],
+      "formula": "~ line",
+      "term": "lineHTelo_plus"
+    },
+    {
+      "name": "htelo_plus_vs_minus_wt",
+      "columns": [
+        "HT1080_WT_R1",
+        "HT1080_WT_R2",
+        "HT_TERT_WT_R1",
+        "HT_TERT_WT_R2"
+      ],
+      "formula": "~ line",
+      "term": "lineHTelo_plus"
+    },
+    {
+      "name": "htelo_interaction",
+      "columns": [
+        "HT1080_WT_R1",
+        "HT1080_WT_R2",
+        "HT1080_cas9_R1",
+        "HT1080_cas9_R2",
+        "HT_TERT_WT_R1",
+        "HT_TERT_WT_R2",
+        "HT_TERT_cas9_R1",
+        "HT_TERT_cas9_R2"
+      ],
+      "formula": "~ line + cas9 + line:cas9",
+      "term": "lineHTelo_plus:cas9yes"
+    },
+    {
+      "name": "htelo_plus_cas9_vs_wt",
+      "columns": [
+        "HT_TERT_WT_R1",
+        "HT_TERT_WT_R2",
+        "HT_TERT_cas9_R1",
+        "HT_TERT_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    },
+    {
+      "name": "22rv1_cas9_vs_wt",
+      "columns": [
+        "22RV1_WT_R1",
+        "22RV1_WT_R2",
+        "22RV1_cas9_R1",
+        "22RV1_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    },
+    {
+      "name": "es2_cas9_vs_wt",
+      "columns": [
+        "ES2_WT_R1",
+        "ES2_WT_R2",
+        "ES2_cas9_R1",
+        "ES2_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    },
+    {
+      "name": "hct15_cas9_vs_wt",
+      "columns": [
+        "HCT15_WT_R1",
+        "HCT15_WT_R2",
+        "HCT15_cas9_R1",
+        "HCT15_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    },
+    {
+      "name": "mdamb231_cas9_vs_wt",
+      "columns": [
+        "MDAMB231_WT_R1",
+        "MDAMB231_WT_R2",
+        "MDAMB231_cas9_R1",
+        "MDAMB231_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    },
+    {
+      "name": "miapaca_cas9_vs_wt",
+      "columns": [
+        "MiaPaCa_WT_R1",
+        "MiaPaCa_WT_R2",
+        "MiaPaCa_cas9_R1",
+        "MiaPaCa_cas9_R2"
+      ],
+      "formula": "~ cas9",
+      "term": "cas9yes"
+    }
+  ],
+  "rationale": "In vivo validation pool: 196 guides on 98 SDL candidate genes (2 per gene), no non-targeting guides in the deposited table, tumors grown in 7 models with 'Wild Type' and 'cas9' arms in duplicate. Column names match GSM titles. HT1080 = HTelo- (hTERT-low), HT_TERT = HTelo+ (GFP-hTERT). The paper's Fig. 2d compares HTelo+ with HTelo- tumors; the primary analysis is HTelo+ cas9 vs HTelo- cas9 (2 vs 2). If 'Wild Type' means no Cas9, the cleaner SDL contrast is the line x Cas9 interaction (8 tumors), kept as the second analysis; Cas9 vs Wild Type within HTelo+ and within each of the five other models mirrors the paper's per-model MAGeCK plots (Fig. 2e). GEO does not say that Wild Type tumors lack Cas9, so the Cas9 vs WT contrasts are interpretable only under that assumption. Library totals; no controls, so calibration cannot be checked. HTelo+ vs HTelo- within the Wild Type arm is run as a check: if Wild Type tumors lack Cas9, no gene should differ there."
+}
