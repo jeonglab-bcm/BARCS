@@ -18,5 +18,6 @@
     {"name": "d21_vs_d0", "columns": ["a_D0", "b_D0", "a_D21", "b_D21"],
      "formula": "~ clone + condition", "term": "conditionD21"}
   ],
-  "rationale": "Raw reads recovered exactly from the deposited normalized table, which is reads scaled to 20 million per library plus a pseudocount of 1 ((x - 1) / s is an integer for every guide). The paper ran MAGeCK on day 21 of HRAS(G12V) induction versus day 0 in two independent BJ-dCas9-KRAB clones (a, b); each clone has its own D0 and D21, so the clone term pairs them. 4 libraries, 1 residual df."
+  "rationale": "Raw reads recovered exactly from the deposited normalized table, which is reads scaled to 20 million per library plus a pseudocount of 1 ((x - 1) / s is an integer for every guide). The paper ran MAGeCK on day 21 of HRAS(G12V) induction versus day 0 in two independent BJ-dCas9-KRAB clones (a, b); each clone has its own D0 and D21, so the clone term pairs them. 4 libraries, 1 residual df.",
+  "counts_md5": "670f70e13c2282d1c04fda5581c57f44"
 }

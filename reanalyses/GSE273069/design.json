@@ -62,5 +62,6 @@
       "term": "binlow"
     }
   ],
-  "rationale": "CRISPRi of transcription-factor promoters in mouse ES cells carrying a GFP reporter driven by the promoter-proximal Xist regulatory element RE57M; cells sorted into GFP-high and GFP-low, three replicates each sorted from one culture, so replicate is a blocking term (2 residual df). Activators of RE57M (Zic3, Pou5f1) should be enriched in GFP-low."
+  "rationale": "CRISPRi of transcription-factor promoters in mouse ES cells carrying a GFP reporter driven by the promoter-proximal Xist regulatory element RE57M; cells sorted into GFP-high and GFP-low, three replicates each sorted from one culture, so replicate is a blocking term (2 residual df). Activators of RE57M (Zic3, Pou5f1) should be enriched in GFP-low.",
+  "counts_md5": "f5ed16a08472fcb29e6da8b834e83289"
 }

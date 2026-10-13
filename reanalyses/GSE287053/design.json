@@ -84,5 +84,6 @@
       "term": "hostWT"
     }
   ],
-  "rationale": "Column names match GSM titles. Immune-dependent selection is tumors in immunocompetent BALB/c versus nude mice; knockouts that boost antitumor immunity (CDK10) should be depleted in WT relative to nude. Tumors are independent animals, so no pairing term. 100 non-targeting guides available."
+  "rationale": "Column names match GSM titles. Immune-dependent selection is tumors in immunocompetent BALB/c versus nude mice; knockouts that boost antitumor immunity (CDK10) should be depleted in WT relative to nude. Tumors are independent animals, so no pairing term. 100 non-targeting guides available.",
+  "counts_md5": "e0f4a3d2055b5e4a0bc455f7d87a45cd"
 }

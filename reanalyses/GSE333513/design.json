@@ -28,5 +28,6 @@
                  "S4_CRISPR_screen", "S5_CRISPR_screen", "S6_CRISPR_screen"],
      "formula": "~ condition", "term": "conditiont7"}
   ],
-  "rationale": "GEO titles give t0 rep1-3, untreated t7 rep1-3, cisplatin t7 rep1-3 (GSM9766663-71); count columns S1-S9 follow GSM order, and the log-count correlations cluster S1-3, S4-6, S7-9, consistent with that mapping. The paper's question is synthetic lethality with cisplatin, so the primary contrast is cisplatin vs untreated at day 7 (depleted genes = sensitizers). t7 vs t0 is a sanity check that essential genes deplete. No replicate term: all samples share batch 1 and pairing across conditions is not documented."
+  "rationale": "GEO titles give t0 rep1-3, untreated t7 rep1-3, cisplatin t7 rep1-3 (GSM9766663-71); count columns S1-S9 follow GSM order, and the log-count correlations cluster S1-3, S4-6, S7-9, consistent with that mapping. The paper's question is synthetic lethality with cisplatin, so the primary contrast is cisplatin vs untreated at day 7 (depleted genes = sensitizers). t7 vs t0 is a sanity check that essential genes deplete. No replicate term: all samples share batch 1 and pairing across conditions is not documented.",
+  "counts_md5": "203e42d4669314e9f8e3f14af17b3474"
 }

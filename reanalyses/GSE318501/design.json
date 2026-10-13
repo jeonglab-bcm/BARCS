@@ -58,5 +58,6 @@
       "totals": "median_ratio"
     }
   ],
-  "rationale": "Column names state arm and replicate and match the day-23 GSM titles; the day-0 samples are not in this count file. Resistance (miR-18a knockout) should be enriched under vemurafenib. The library has no non-targeting controls. Pairing between control and VEM replicates is not documented, so no replicate term. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene."
+  "rationale": "Column names state arm and replicate and match the day-23 GSM titles; the day-0 samples are not in this count file. Resistance (miR-18a knockout) should be enriched under vemurafenib. The library has no non-targeting controls. Pairing between control and VEM replicates is not documented, so no replicate term. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene.",
+  "counts_md5": "ee52aa576aabf2704247cecb6fffd296"
 }

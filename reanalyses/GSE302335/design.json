@@ -49,5 +49,6 @@
       "term": "binlow"
     }
   ],
-  "rationale": "Genome-wide CRISPRi screen sorted on CD54 (ICAM-1); the deposited table splits each guide over 41 cell barcodes, which were summed to one row per guide. The highest-coverage arm at MOI 0.3 is used; replicates R1 and R2 each sorted into low and high bins, so replicate is a blocking term (1 residual df). Knockdown of ICAM1 itself, and of its activators, should be enriched in the CD54-low bin. With one residual df the dispersion prior is estimated as infinite, which assigns every guide the library-wide variance; the 1,026 non-targeting guides are therefore used to calibrate the test statistics (qq_slope)."
+  "rationale": "Genome-wide CRISPRi screen sorted on CD54 (ICAM-1); the deposited table splits each guide over 41 cell barcodes, which were summed to one row per guide. The highest-coverage arm at MOI 0.3 is used; replicates R1 and R2 each sorted into low and high bins, so replicate is a blocking term (1 residual df). Knockdown of ICAM1 itself, and of its activators, should be enriched in the CD54-low bin. With one residual df the dispersion prior is estimated as infinite, which assigns every guide the library-wide variance; the 1,026 non-targeting guides are therefore used to calibrate the test statistics (qq_slope).",
+  "counts_md5": "c2d0f2d9a469c1cc1cc0701c1e6dd535"
 }

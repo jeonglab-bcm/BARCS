@@ -52,5 +52,6 @@
       "term": "fractionmigrated"
     }
   ],
-  "rationale": "CRISPRi migration (transwell) screen targeting promoters and putative mechanoresponsive enhancers; per-sample files were merged on one shared library. Migrated and non-migrated cells come from the same replicate population, so replicate is a blocking term (1 residual df). Knockdown of migration genes (ITGAV, ACTG1, CDC42, TPM3) should be depleted in migrated cells."
+  "rationale": "CRISPRi migration (transwell) screen targeting promoters and putative mechanoresponsive enhancers; per-sample files were merged on one shared library. Migrated and non-migrated cells come from the same replicate population, so replicate is a blocking term (1 residual df). Knockdown of migration genes (ITGAV, ACTG1, CDC42, TPM3) should be depleted in migrated cells.",
+  "counts_md5": "3cc42b21c67b39c6d48568ad5ac7289b"
 }

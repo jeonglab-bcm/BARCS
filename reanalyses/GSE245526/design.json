@@ -20,5 +20,6 @@
     {"name": "d15_untreated_vs_input", "columns": ["Input n=1...3", "Input n=2", "Input n=3", "15dpi n=1", "15 dpi n=2", "15 n=3"],
      "formula": "~ replicate + condition", "term": "conditiond15"}
   ],
-  "rationale": "Raw reads recovered exactly from the deposited count table (one scale factor per column, integrality 100%). The paper's replication-competent HIV library passages for 15 days in CEM-M7 cells across three independent infections (n=1,2,3, untreated arm), and antiviral-factor guides enrich over the virus-stock input; this reproduces the deposited '15dpi untreated vs input N 1-3' MAGeCK comparison. Each infection has its own input, so the replicate term pairs them. Direction is enriched. NT is the non-targeting control gene."
+  "rationale": "Raw reads recovered exactly from the deposited count table (one scale factor per column, integrality 100%). The paper's replication-competent HIV library passages for 15 days in CEM-M7 cells across three independent infections (n=1,2,3, untreated arm), and antiviral-factor guides enrich over the virus-stock input; this reproduces the deposited '15dpi untreated vs input N 1-3' MAGeCK comparison. Each infection has its own input, so the replicate term pairs them. Direction is enriched. NT is the non-targeting control gene.",
+  "counts_md5": "de9753148a9d08ee80091ec2e04221c8"
 }

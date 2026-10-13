@@ -84,5 +84,6 @@
       "term": "linehTERT"
     }
   ],
-  "rationale": "Genome-wide knockout in GM0847 (ALT) cells with and without hTERT overexpression, sampled at T0 and T15 in duplicate. A synthetic-dosage-lethal gene drops out more over time in hTERT cells than in parental cells, which is the line-by-time interaction (~ line * time, 4 residual df). The endpoint-only hTERT vs parental comparison is also reported. The lines are separate infections, so there is no pairing."
+  "rationale": "Genome-wide knockout in GM0847 (ALT) cells with and without hTERT overexpression, sampled at T0 and T15 in duplicate. A synthetic-dosage-lethal gene drops out more over time in hTERT cells than in parental cells, which is the line-by-time interaction (~ line * time, 4 residual df). The endpoint-only hTERT vs parental comparison is also reported. The lines are separate infections, so there is no pairing.",
+  "counts_md5": "6baf881c4e49503dda7ba7f58956293a"
 }

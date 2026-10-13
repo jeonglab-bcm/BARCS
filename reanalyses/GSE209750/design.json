@@ -24,5 +24,6 @@
       "term": "conditioninfected"
     }
   ],
-  "rationale": "Genome-wide KO survival screen in A549-ACE2 cells, SARS-CoV-2-infected (C) vs mock (control), three libraries each. Replicate correlations show no pairing (0.97-0.99 throughout), so no replicate term (4 residual df). Guides depleted in infected cells mark anti-viral host factors; enriched = pro-viral. AAVS1 safe-harbor guides are the controls."
+  "rationale": "Genome-wide KO survival screen in A549-ACE2 cells, SARS-CoV-2-infected (C) vs mock (control), three libraries each. Replicate correlations show no pairing (0.97-0.99 throughout), so no replicate term (4 residual df). Guides depleted in infected cells mark anti-viral host factors; enriched = pro-viral. AAVS1 safe-harbor guides are the controls.",
+  "counts_md5": "cc2a5fdcd4bb809ba696a5195380cd07"
 }

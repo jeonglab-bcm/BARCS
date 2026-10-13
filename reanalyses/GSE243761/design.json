@@ -49,5 +49,6 @@
       "term": "binlow"
     }
   ],
-  "rationale": "CRISPRi tiling of DNase-hypersensitive sites around MYH9, cells sorted on MYH9 protein into low and high bins, two replicates sorted from one population each, so replicate is a blocking term (1 residual df). Elements are DHS regions (the element column was taken from the guide labels). Enhancers and promoter elements of MYH9 (DHS_45-47, DHS_71-72) should be enriched in MYH9-low."
+  "rationale": "CRISPRi tiling of DNase-hypersensitive sites around MYH9, cells sorted on MYH9 protein into low and high bins, two replicates sorted from one population each, so replicate is a blocking term (1 residual df). Elements are DHS regions (the element column was taken from the guide labels). Enhancers and promoter elements of MYH9 (DHS_45-47, DHS_71-72) should be enriched in MYH9-low.",
+  "counts_md5": "cbd09b90ebe5feac566651514f64eb51"
 }
