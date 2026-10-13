@@ -1,0 +1,20 @@
+{
+  "gse": "GSE328830",
+  "pmid": "42225068",
+  "doi": "10.1016/j.crmeth.2026.101470",
+  "pmcid": "PMC13390110",
+  "title": "Temporal control of sgRNA library activation unlocks large-scale in vivo CRISPR screens",
+  "journal": "Cell Reports Methods",
+  "published": "2026",
+  "model": "A549 lung xenografts, CRISPR-StAR ~30,000-sgRNA inducible library; 118 + 49 tumors",
+  "contrast": "Active vs inactive sgRNA (knockout effect), cohort-paired (118-mouse screen + 49-mouse validation)",
+  "paper_method": "Per-clone Bayesian pipeline CSTAR-UMIBB (matched active/inactive within clone, clone-size weighted)",
+  "paper_calls": "Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits",
+  "barcs_calls": "298 genes at FDR 0.10; essential vs non-essential AUC 0.90; 90/197 essentials depleted",
+  "named_hits": "PLK1/MYC/KIF11 depleted (essential); KMT2D depleted and KMT2C enriched (opposite, as the paper reports); PTEN enriched (tumor suppressor)",
+  "verdict": "Even using only bulk active/inactive aggregation (the proxy the paper shows is weaker than its per-clone method), BARCS separates essentials from controls at AUC 0.90, recovers PLK1, and reproduces the paper's headline that KMT2C and KMT2D have opposite in vivo phenotypes; it cannot reproduce the per-clone wtheta/Delta scores or the 173-gene in-vivo-specific list.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-06-01",
+  "published_issue": "2026 Jul 20"
+}
