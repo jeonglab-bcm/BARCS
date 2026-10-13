@@ -65,19 +65,36 @@ trim_genes <- function(genes) {
   genes
 }
 
+# Archived values are rounded (estimate to 4, p-values and FDR to 3 significant
+# digits), so a value computed on another platform can land one unit away in
+# the last stored digit. Allow that much and no more.
+stored_digits <- c(n_guides = 15, estimate = 4, p_value = 3, fdr = 3,
+                   empirical_p_value = 3, empirical_fdr = 3)
+
 same_table <- function(old, new) {
   if (!identical(sort(names(old)), sort(names(new)))) return("columns differ")
   new <- new[, names(old), drop = FALSE]
   old <- old[order(old$gene), , drop = FALSE]
   new <- new[order(new$gene), , drop = FALSE]
   if (nrow(old) != nrow(new) || !identical(old$gene, new$gene)) return("genes differ")
+  problems <- character()
   for (column in setdiff(names(old), "gene")) {
     a <- old[[column]]; b <- new[[column]]
-    if (!identical(is.na(a), is.na(b))) return(paste0(column, ": missing values differ"))
-    ok <- is.na(a) | abs(a - b) <= 1e-12 + 1e-6 * abs(a)
-    if (!all(ok)) return(sprintf("%s: %d values differ", column, sum(!ok)))
+    if (!identical(is.na(a), is.na(b))) {
+      problems <- c(problems, paste0(column, ": missing values differ"))
+      next
+    }
+    digits <- stored_digits[[column]] %||% 15
+    scale <- pmax(abs(a), abs(b))
+    unit <- ifelse(scale > 0, 10^(floor(log10(scale)) - (digits - 1)), 0)
+    ok <- is.na(a) | abs(a - b) <= 1.01 * unit + 1e-300
+    if (!all(ok)) {
+      rel <- max(abs(a - b)[!ok] / scale[!ok])
+      problems <- c(problems, sprintf("%s: %d values differ (max relative %.2g)",
+                                      column, sum(!ok), rel))
+    }
   }
-  ""
+  paste(problems, collapse = "; ")
 }
 
 call_fields <- c("libraries", "residual_df", "guides", "genes", "genes_fdr_0_05",
