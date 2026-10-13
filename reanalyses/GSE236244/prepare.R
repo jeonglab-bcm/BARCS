@@ -32,10 +32,16 @@ paper <- file.path(workdir, "paper")
 dir.create(paper, showWarnings = FALSE)
 bundle <- file.path(paper, "PMC11305397_supplementary.zip")
 options(timeout = max(3600, getOption("timeout")))
-utils::download.file("https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11305397/supplementaryFiles",
-                     bundle, mode = "wb", quiet = TRUE)
+url <- "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11305397/supplementaryFiles"
+for (attempt in 1:3) {  # the Europe PMC service sometimes drops the connection
+  ok <- tryCatch(utils::download.file(url, bundle, mode = "wb", quiet = TRUE) == 0,
+                 error = function(e) FALSE)
+  if (ok) break
+  Sys.sleep(30 * attempt)
+}
+stopifnot(ok)
 utils::unzip(bundle, files = "sciadv.adj8862_tables_s1_to_s6.zip", exdir = paper)
 utils::unzip(file.path(paper, "sciadv.adj8862_tables_s1_to_s6.zip"),
              files = "sciadv.adj8862_table_s1.xlsx", exdir = paper)
-file.rename(file.path(paper, "sciadv.adj8862_table_s1.xlsx"), file.path(paper, "tableS1.xlsx"))
+stopifnot(file.rename(file.path(paper, "sciadv.adj8862_table_s1.xlsx"), file.path(paper, "tableS1.xlsx")))
 unlink(c(bundle, file.path(paper, "sciadv.adj8862_tables_s1_to_s6.zip")))
