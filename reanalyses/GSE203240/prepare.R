@@ -12,8 +12,9 @@ workdir <- commandArgs(trailingOnly = TRUE)[[1]]
 paper <- file.path(workdir, "paper")
 dir.create(paper, showWarnings = FALSE)
 xlsx <- file.path(paper, "TableS7_in_vivo.xlsx")
-utils::download.file("https://ars.els-cdn.com/content/image/1-s2.0-S2666979X25001326-mmc8.xlsx",
-                     xlsx, mode = "wb", quiet = TRUE)
+url <- "https://ars.els-cdn.com/content/image/1-s2.0-S2666979X25001326-mmc8.xlsx"
+tryCatch(utils::download.file(url, xlsx, mode = "wb", quiet = TRUE), error = function(e)
+  stop("could not download Table S7 (", url, "): ", conditionMessage(e), call. = FALSE))
 
 x <- as.data.frame(readxl::read_excel(xlsx, skip = 2))
 out <- data.frame(gene = sub("^PEAK3$", "C19orf35", x[["Gene Symbol"]]), gene_id = x[["Gene ID"]],

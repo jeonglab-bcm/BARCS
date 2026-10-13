@@ -11,4 +11,6 @@ url <- paste0("https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-02
               "MediaObjects/41467_2025_63349_MOESM7_ESM.xlsx")
 dir.create(file.path(workdir, "paper"), showWarnings = FALSE)
 options(timeout = max(600, getOption("timeout")))
-utils::download.file(url, file.path(workdir, "paper", "SD_M7.xlsx"), mode = "wb", quiet = TRUE)
+tryCatch(utils::download.file(url, file.path(workdir, "paper", "SD_M7.xlsx"), mode = "wb", quiet = TRUE),
+         error = function(e) stop("could not download Supplementary Data 4 (", url, "): ",
+                                  conditionMessage(e), call. = FALSE))

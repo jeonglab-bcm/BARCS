@@ -11,5 +11,6 @@
 workdir <- commandArgs(trailingOnly = TRUE)[[1]]
 dir.create(file.path(workdir, "paper"), showWarnings = FALSE)
 options(timeout = max(1800, getOption("timeout")))
-utils::download.file("https://ars.els-cdn.com/content/image/1-s2.0-S2666379125005993-mmc2.xls",
-                     file.path(workdir, "paper", "mmc2.xls"), mode = "wb", quiet = TRUE)
+url <- "https://ars.els-cdn.com/content/image/1-s2.0-S2666379125005993-mmc2.xls"
+tryCatch(utils::download.file(url, file.path(workdir, "paper", "mmc2.xls"), mode = "wb", quiet = TRUE),
+         error = function(e) stop("could not download mmc2.xls (", url, "): ", conditionMessage(e), call. = FALSE))
