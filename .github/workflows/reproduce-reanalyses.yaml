@@ -48,3 +48,15 @@ jobs:
         run: |
           if [ "$SERIES" = "all" ]; then set -- --all; else set -- $SERIES; fi
           Rscript tools/screen-reanalysis/reproduce.R "$@"
+      - name: Keep the rebuilt results for diagnosis
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproduce-results
+          path: |
+            work/reproduce/*/results/*/run_info.json
+            work/reproduce/*/results/*/genes.csv
+          if-no-files-found: ignore
+      - name: Session info
+        if: always()
+        run: Rscript -e 'sessionInfo(); print(extSoftVersion()); print(La_library()); print(La_version())'

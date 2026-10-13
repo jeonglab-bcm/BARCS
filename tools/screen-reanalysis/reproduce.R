@@ -151,6 +151,17 @@ reproduce_one <- function(gse) {
     if (nzchar(diff)) problems <- c(problems, paste0(name, ": ", diff))
     old_info <- fromJSON(file.path(run_dir, "run_info.json"))
     new_info <- fromJSON(file.path(new_dir, "run_info.json"))
+    # When a table differs, name the run-level quantities that move every
+    # p-value at once, so a platform difference can be traced.
+    if (nzchar(diff)) {
+      for (field in c("prior_df", "guide_correlation", "control_scale", "control_p05_raw")) {
+        a <- old_info[[field]]; b <- new_info[[field]]
+        if (is.numeric(a) && is.numeric(b) && length(a) == 1 && length(b) == 1 &&
+            abs(a - b) > 1e-9 * max(1, abs(a))) {
+          problems <- c(problems, sprintf("%s: %s %.6g -> %.6g", name, field, a, b))
+        }
+      }
+    }
     for (field in call_fields) {
       if (!identical(old_info[[field]], new_info[[field]])) {
         problems <- c(problems, sprintf("%s: %s %s -> %s", name, field,
