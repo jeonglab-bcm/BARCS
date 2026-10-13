@@ -1,0 +1,20 @@
+{
+  "gse": "GSE328107",
+  "pmid": "42095550",
+  "doi": "10.1158/0008-5472.can-25-3625",
+  "title": "PI3K Regulates Wild-type RAS Signaling to Confer Resistance to KRAS Inhibition",
+  "journal": "Cancer Research",
+  "published": "2026",
+  "model": "PaTu-8988T PDAC, KRAS-intact vs KRAS-KO clone pools, Brunello KO",
+  "contrast": "Final time point (14 doublings) vs D4, per genotype (1 vs 1)",
+  "paper_method": "MAGeCK (control-normalized)",
+  "paper_calls": "NF1/RASA2 enriched in KRAS-KO; KRAS and RAS/MAPK effectors depleted in KRAS-intact",
+  "barcs_calls": "KO: 106 genes at FDR 0.10 (NF1 #1, RASA2 #2); intact: KRAS depleted (FDR 2e-7)",
+  "named_hits": "NF1 and RASA2 recovered as top 2 enriched in KO; KRAS depleted in intact",
+  "verdict": "Raw reads recovered exactly from the MAGeCK-normalized table. BARCS reproduces the paper's key calls: NF1 and RASA2 top the KRAS-KO enrichment and KRAS plus RAS/MAPK effectors deplete in KRAS-intact cells. Screening-level (one library per condition).",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0% at k=1.",
+  "published_date": "2026-08-04",
+  "published_issue": "2026 Aug 4"
+}

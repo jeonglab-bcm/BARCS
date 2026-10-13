@@ -14,5 +14,7 @@
   "named_hits": "10/10 same direction; AMBRA1 rank 25",
   "verdict": "Direction agrees for all ten named genes and AMBRA1 ranks 25th, but no gene passes FDR 0.10; the paper's candidate count is close to what chance gives, and large fold changes do not replicate.",
   "agreement": "differ",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-07-27",
+  "published_issue": "2026 Aug 21"
 }

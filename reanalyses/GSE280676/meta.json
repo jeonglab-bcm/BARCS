@@ -14,5 +14,7 @@
   "named_hits": "TP53 #2, PTEN #1, VGLL4 #3 enriched (FDR < 0.002), SMAD4 FDR 0.06; MPC1/2, SMAD3/5, RUNX1 not called (4/9 at FDR 0.10)",
   "verdict": "At day 16, before clones take over, BARCS ranks PTEN, TP53 and VGLL4 as the top three enriched knockouts, with every guide concordant, as the paper reports. At the paper's headline day 30, clonal takeover leaves no enriched gene after control calibration, and the paper's day-30 list includes fitness genes that BARCS finds depleted.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-08-30",
+  "published_issue": "2025 Aug 30"
 }

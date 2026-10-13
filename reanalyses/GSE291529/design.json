@@ -1,0 +1,23 @@
+{
+  "gse": "GSE291529",
+  "pmid": "41446233",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(Non-Targeting|SafeHarbor)",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "10db-cont1", "gsm": "GSM8837124", "condition": "control", "replicate": "1"},
+    {"column": "10db-cont2", "gsm": "GSM8837125", "condition": "control", "replicate": "2"},
+    {"column": "10db-cont3", "gsm": "GSM8837126", "condition": "control", "replicate": "3"},
+    {"column": "10db-PFOS1", "gsm": "GSM8837127", "condition": "PFOS", "replicate": "1"},
+    {"column": "10db-PFOS2", "gsm": "GSM8837128", "condition": "PFOS", "replicate": "2"},
+    {"column": "10db-PFOS3", "gsm": "GSM8837129", "condition": "PFOS", "replicate": "3"}
+  ],
+  "factor_levels": {"condition": ["control", "PFOS"]},
+  "analyses": [
+    {"name": "pfos_vs_control", "columns": ["10db-cont1", "10db-cont2", "10db-cont3", "10db-PFOS1", "10db-PFOS2", "10db-PFOS3"],
+     "formula": "~ condition", "term": "conditionPFOS"}
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK-normalized table (one scale factor per column, integrality 100%). The paper compares PFOS (192 uM, 10 doublings) with untreated control, 3 vs 3; column names map one-to-one to the GSM titles (Control_1-3, PFOS_1-3). Replicate numbers are not described as paired infections and the correlations do not show pairing, so no replicate term. Non-targeting and safe-harbor guides are the controls. The plasmid/T0 column named in the sheet title was not deposited."
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE226977",
+  "pmid": "39300912",
+  "doi": "10.1080/10985549.2024.2401465",
+  "pmcid": "PMC11583586",
+  "title": "A Genome Wide CRISPR Screen Reveals That HOXA9 Promotes Enzalutamide Resistance in Prostate Cancer",
+  "journal": "Molecular and Cellular Biology",
+  "published": "2024",
+  "model": "LNCaP prostate cancer, genome-wide KO (71,090 guides, 142 non-cutting controls)",
+  "contrast": "Enzalutamide vs DMSO at final time point (3 vs 3), median-ratio totals",
+  "paper_method": "MAGeCK plus functional validation",
+  "paper_calls": "HOXA9 validated as an enzalutamide-sensitizer (loss sensitizes)",
+  "barcs_calls": "88 genes at FDR 0.10 with median-ratio totals (370 with library totals); all depleted",
+  "named_hits": "HOXA9 depleted in the paper's direction (p 0.009-0.044) but rank ~1000, not at FDR 0.10; RB1 enriched (resistance), consistent with the paper",
+  "verdict": "The final enzalutamide libraries are severely bottlenecked, so depletion calls swing 88 vs 370 with normalization and the 142 non-cutting controls (0% at p<0.05) cannot calibrate the test; HOXA9 depletes in the paper's sensitizer direction and RB1 enriches as expected, but the deposited counts do not single out HOXA9 at FDR.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2024",
+  "published_issue": "2024"
+}

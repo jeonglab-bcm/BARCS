@@ -1,0 +1,28 @@
+[
+  {
+    "column": "sgControl",
+    "offset": 0,
+    "v_min": 0.97350447,
+    "k": 1,
+    "scale": 0.973504470238442,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 4.36419941252097e-06,
+    "recovered_total": 20002143,
+    "nonzero": 33981,
+    "n": 77441
+  },
+  {
+    "column": "sgCD274",
+    "offset": 0,
+    "v_min": 0.659907632,
+    "k": 1,
+    "scale": 0.659907632236281,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 7.60860075388337e-07,
+    "recovered_total": 29507426,
+    "nonzero": 43590,
+    "n": 77441
+  }
+]

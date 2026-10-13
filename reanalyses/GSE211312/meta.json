@@ -14,5 +14,7 @@
   "named_hits": "FTSJ3 rank 18,567 of 18,685 (no extra dropout)",
   "verdict": "In this GM0847 knockout screen BARCS finds no gene whose dropout depends on hTERT, and FTSJ3 shows no extra dropout at all. The paper prioritized FTSJ3 from several CRISPR and shRNA screens plus arrayed and in vivo validation, so this single screen is weak evidence either way.",
   "agreement": "differ",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-06-04",
+  "published_issue": "2026 Jun 4"
 }

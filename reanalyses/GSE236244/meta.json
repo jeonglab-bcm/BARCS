@@ -1,0 +1,20 @@
+{
+  "gse": "GSE236244",
+  "pmid": "39110794",
+  "doi": "10.1126/sciadv.adj8862",
+  "pmcid": "PMC11305397",
+  "title": "The interferon γ pathway enhances pluripotency and X-chromosome reactivation in iPSC reprogramming",
+  "journal": "Science Advances",
+  "published": "2024",
+  "model": "Mouse PaX-iCas9 NPC-to-iPSC reprogramming, genome-wide KO (~90,000 guides); FACS-sorted populations",
+  "contrast": "Early vs non-pluripotent and late vs early pluripotent (1 pooled library per condition)",
+  "paper_method": "MAGeCK-RRA (negative LFC), pathway over-representation of top 250 genes",
+  "paper_calls": "Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)",
+  "barcs_calls": "73 genes (early) and 22 genes (late) at FDR 0.10; no named hit passes FDR",
+  "named_hits": "All in the paper's direction; Nanog #178, Il6st #185, Hes6 #290 (late); none at FDR 0.10",
+  "verdict": "BARCS recovers the direction and rough ranking of the paper's pluripotency and X-reactivation genes (Spearman 0.51-0.69 with MAGeCK) but, with the deposited one-library-per-condition counts and no controls, cannot confirm any at FDR 0.10; the IFNg pathway conclusion is a top-250 enrichment that a one-library analysis cannot reach.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2024-08-07",
+  "published_issue": "2024 Aug 9"
+}

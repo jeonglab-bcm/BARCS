@@ -1,0 +1,20 @@
+{
+  "gse": "GSE263581",
+  "pmid": "41218116",
+  "doi": "10.1073/pnas.2510910122",
+  "pmcid": "PMC12646219",
+  "title": "Forward genetic screening in engineered colorectal cancer organoids identifies novel regulators of metastasis [crispr gRNA knockout screening 2]",
+  "journal": "Proceedings of the National Academy of Sciences",
+  "published": "2025",
+  "model": "Engineered APC/TRP53-KO KRAS-mutant colorectal organoids, orthotopic in vivo metastasis screen; 930-guide focused pool (157 genes, safe/none controls)",
+  "contrast": "Metastasis vs primary tumor (7 primary vs 23 metastatic lesions)",
+  "paper_method": "Recurrence of guides across independent lesions (MAGeCK); functional validation",
+  "paper_calls": "Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)",
+  "barcs_calls": "0-1 genes at FDR 0.10; clonal lesions, results descriptive",
+  "named_hits": "Ctnna1 ranks 6th in the unsigned top list but does not pass FDR; neither Ctnna1 nor Bcl2l13 is called",
+  "verdict": "Each metastatic lesion is a clonal outgrowth (top 1% of guides hold 99-100% of reads), so lesion-level clonal dominance violates BARCS's replicate-variance model; BARCS does not recover the paper's recurrence-based suppressors Ctnna1/Bcl2l13 at FDR, and the reanalysis is reported as descriptive confirmation that these counts are not analyzable as a conventional variance-based screen.",
+  "agreement": "differ",
+  "analyzed": "2026-10-13",
+  "published_date": "2025-11-11",
+  "published_issue": "2025 Nov 18"
+}

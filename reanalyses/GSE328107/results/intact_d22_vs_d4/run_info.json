@@ -1,0 +1,39 @@
+{
+  "analysis": "intact_d22_vs_d4",
+  "formula": "~condition",
+  "term": "conditionfinal",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 4.3715e-07,
+    "rho_source": "control guides",
+    "rho_guides": 992,
+    "inflation_at_rho0": 11.3978,
+    "haldane_guides": 308
+  },
+  "guides": 77441,
+  "genes": 19112,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0413,
+  "control_p05": 0.0413,
+  "totals_method": "control",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "IntactD4": 0.028,
+    "IntactD22": 0.036
+  },
+  "genes_fdr_0_10_up": 12,
+  "genes_fdr_0_10_down": 8876,
+  "genes_fdr_0_05": 7026,
+  "genes_fdr_0_10": 8888,
+  "genes_empirical_fdr_0_10": 2826,
+  "empirical_centre": "targets",
+  "control_shift": -0.975,
+  "barcs_version": "0.2.2"
+}

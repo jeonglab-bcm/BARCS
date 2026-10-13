@@ -1,0 +1,23 @@
+{
+  "gse": "GSE238225",
+  "pmid": "40499551",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Control[0-9]+$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "sgRNA pool replicate 1", "gsm": "GSM7660733", "condition": "pool", "replicate": "1"},
+    {"column": "sgRNA pool replicate 2", "gsm": "GSM7660734", "condition": "pool", "replicate": "2"},
+    {"column": "sgRNA pool replicate 3", "gsm": "GSM7660735", "condition": "pool", "replicate": "3"},
+    {"column": "Biological replicate 1", "gsm": "GSM7660730", "condition": "day14", "replicate": "1"},
+    {"column": "Biological replicate 2", "gsm": "GSM7660731", "condition": "day14", "replicate": "2"},
+    {"column": "Biological replicate 3", "gsm": "GSM7660732", "condition": "day14", "replicate": "3"}
+  ],
+  "factor_levels": {"condition": ["pool", "day14"]},
+  "analyses": [
+    {"name": "day14_vs_pool", "columns": ["sgRNA pool replicate 1", "sgRNA pool replicate 2", "sgRNA pool replicate 3", "Biological replicate 1", "Biological replicate 2", "Biological replicate 3"],
+     "formula": "~ condition", "term": "conditionday14"}
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited normalized CRISPRgate/CRISPRgenee table (one scale factor per column, integrality 100%). The paper's dropout screen compares three independent ZIM3-Cas9 TF-1 clones after 14 days with the plasmid (E. coli) sgRNA pool in triplicate, analyzed with CB2 (CPM). The clones and the plasmid preps are not paired, so no replicate term. Note: the deposited column order of the pool replicates differs from the paper's Table S7 (P1 = 'pool replicate 2', P2 = 'replicate 3', P3 = 'replicate 1' by exact correlation), which does not matter for an unpaired design. The 10 'Control' guides are the library's neutral controls."
+}

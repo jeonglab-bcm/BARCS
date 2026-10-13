@@ -1,0 +1,93 @@
+[
+  {
+    "column": "IntactD4",
+    "offset": 0,
+    "v_min": 1.02878491995716,
+    "k": 1,
+    "scale": 1.02878491995716,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 1.13686837721616e-13,
+    "recovered_total": 24506190,
+    "nonzero": 77229,
+    "n": 77441
+  },
+  {
+    "column": "IntactD8",
+    "offset": 0,
+    "v_min": 1.02598126791835,
+    "k": 1,
+    "scale": 1.02598126791835,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 1.13686837721616e-13,
+    "recovered_total": 24180639,
+    "nonzero": 77110,
+    "n": 77441
+  },
+  {
+    "column": "IntactD22",
+    "offset": 0,
+    "v_min": 0.966054547183916,
+    "k": 1,
+    "scale": 0.966054547183916,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 2.27373675443232e-13,
+    "recovered_total": 26071816,
+    "nonzero": 76787,
+    "n": 77441
+  },
+  {
+    "column": "KOD4",
+    "offset": 0,
+    "v_min": 0.813198841702446,
+    "k": 1,
+    "scale": 0.813198841702446,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 4.54747350886464e-13,
+    "recovered_total": 31017395,
+    "nonzero": 77321,
+    "n": 77441
+  },
+  {
+    "column": "KOD8",
+    "offset": 0,
+    "v_min": 0.813851434265721,
+    "k": 1,
+    "scale": 0.813851434265721,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 2.27373675443232e-13,
+    "recovered_total": 30674860,
+    "nonzero": 77224,
+    "n": 77441
+  },
+  {
+    "column": "KOD22",
+    "offset": 0,
+    "v_min": 1.15259580648017,
+    "k": 1,
+    "scale": 1.15259580648017,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 4.54747350886464e-13,
+    "recovered_total": 23081326,
+    "nonzero": 76201,
+    "n": 77441
+  },
+  {
+    "column": "KOD32",
+    "offset": 0,
+    "v_min": 1.30366739426585,
+    "k": 1,
+    "scale": 1.30366739426585,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 1.81898940354586e-12,
+    "recovered_total": 26471244,
+    "nonzero": 75740,
+    "n": 77441
+  }
+]

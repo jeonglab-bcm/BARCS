@@ -1,0 +1,13 @@
+{
+  "barcs_genes": "results/met_vs_primary/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "Ctnna1",
+    "Bcl2l13"
+  ],
+  "top_n": [
+    10,
+    25,
+    50
+  ]
+}

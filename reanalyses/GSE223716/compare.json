@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/htelo_plus_vs_minus_cas9/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["FTSJ3", "MED14", "RRM2", "GNB1L", "PRMT1"],
+  "top_n": [5, 10, 20]
+}

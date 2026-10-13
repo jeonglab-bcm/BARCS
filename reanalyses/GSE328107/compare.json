@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/ko_d32_vs_d4/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NF1", "RASA2"],
+  "top_n": [25, 50, 100]
+}

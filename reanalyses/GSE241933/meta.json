@@ -14,5 +14,7 @@
   "named_hits": "Rank among all 120 genes by p (CRISPRa): BATF3 #57 (FDR 0.67), BATF #90, EOMES #34. KO + BATF3, rank among IL7R-high-depleted genes: BATF3 #12 (FDR 0.008), IRF4 #40 (FDR 0.15), JUNB #111 (FDR 0.35); IL7R #1",
   "verdict": "In the knockout screen BARCS tracks MAGeCK (Spearman 0.74) and calls BATF3, IL7R and the IL7R-high hits, but not the cofactors IRF4 and JUNB. In the CRISPRa screen its guide-level results match the paper's, yet its gene-level Stouffer sum dilutes the 2-3 active tiling guides of BATF3, BATF and EOMES, so none is called. BATF3 activation lowering CCR7 is the paper's own direction.",
   "agreement": "partial",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2023-11-09",
+  "published_issue": "2023 Dec"
 }

@@ -14,5 +14,7 @@
   "named_hits": "Rank among doxorubicin-enriched CRISPRi genes: CA12 #1 of 2,484 (FDR 0.35), ERBB2 #5, HPGDS #8, DGKH #178, SCMH1 #1,359; none at FDR 0.10",
   "verdict": "CA12 is BARCS's strongest credible CRISPRi gene, with HPGDS and ERBB2 in its top 8, but with two weakly selected replicates per arm nothing passes FDR 0.10. The CRISPRa doxorubicin libraries are missing blocks of guides, which makes its depletion calls technical.",
   "agreement": "differ",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2024-11-07",
+  "published_issue": "2024 Dec 5"
 }

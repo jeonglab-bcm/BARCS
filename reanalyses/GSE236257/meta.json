@@ -1,0 +1,20 @@
+{
+  "gse": "GSE236257",
+  "pmid": "38472198",
+  "doi": "10.1038/s41467-024-46285-w",
+  "pmcid": "PMC10933491",
+  "title": "Identifying regulators of aberrant stem cell and differentiation activity in colorectal cancer using a dual endogenous reporter system",
+  "journal": "Nature Communications",
+  "published": "2024",
+  "model": "HT29 SOX9-mKate2 / KRT20-GFP dual reporter CRC cells; focused epigenetic KO screen (542 guides, 78 genes, 30 safe-harbor controls)",
+  "contrast": "GFP-high vs mKate2-high (differentiated vs stem), 2 vs 2; plus quartile and DN/DP contrasts",
+  "paper_method": "MAGeCK-MLE beta score (3 technical replicates) and rank-sum",
+  "paper_calls": "SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors",
+  "barcs_calls": "9 calibrated calls in the clean dual contrast; 82-92 uncalibratable calls in the extreme-fraction contrasts",
+  "named_hits": "Positive controls (SOX9, mKate2, EGFP, KRT20) textbook-correct; SMARCB1/HDAC3/SET/RBBP4/DNMT3B recovered only in the uncalibratable quartile contrast; SMARCB1 not significant in the clean contrast",
+  "verdict": "BARCS strongly validates the reporter positive controls, and the paper's SMARCB1 and differentiation inducers appear in the extreme-quartile contrast, but with only 2 deposited replicates and 30 controls that contrast cannot be calibrated (all controls hit p<0.05) and in the one clean contrast SMARCB1 is not significant, so the deposited data cannot confirm the paper's gene-level FDRs.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2024-03-12",
+  "published_issue": "2024 Mar 12"
+}

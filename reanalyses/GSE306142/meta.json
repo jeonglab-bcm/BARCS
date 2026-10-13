@@ -13,5 +13,7 @@
   "named_hits": "Core mTOR, AKT, PI3K and PLK1 genes not depleted; EED #1 (FDR 0.08, enriched)",
   "verdict": "BARCS does not find the core mTOR, AKT, PI3K or PLK1 genes depleted under PTC596; only two genes pass FDR 0.10, led by EED (PRC2), whose loss is enriched. The paper chose pathways by intersecting its sensitizer list with phosphoproteomics, and that list is not deposited, so the comparison is indirect.",
   "agreement": "differ",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-01-06",
+  "published_issue": "2026 Jan 6"
 }

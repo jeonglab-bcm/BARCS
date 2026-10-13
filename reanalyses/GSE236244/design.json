@@ -1,0 +1,73 @@
+{
+  "gse": "GSE236244",
+  "pmid": "39110794",
+  "counts_file": "merged_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "NPC",
+      "gsm": "GSM7520273+4",
+      "condition": "NPC",
+      "replicate": "1"
+    },
+    {
+      "column": "nonplur",
+      "gsm": "GSM7520275+6",
+      "condition": "nonplur",
+      "replicate": "1"
+    },
+    {
+      "column": "earlyplur",
+      "gsm": "GSM7520277+8",
+      "condition": "earlyplur",
+      "replicate": "1"
+    },
+    {
+      "column": "lateplur",
+      "gsm": "GSM7520279+80",
+      "condition": "lateplur",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "NPC",
+      "nonplur",
+      "earlyplur",
+      "lateplur"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "early_vs_nonplur",
+      "columns": [
+        "nonplur",
+        "earlyplur"
+      ],
+      "formula": "~ condition",
+      "term": "conditionearlyplur"
+    },
+    {
+      "name": "late_vs_early",
+      "columns": [
+        "earlyplur",
+        "lateplur"
+      ],
+      "formula": "~ condition",
+      "term": "conditionlateplur"
+    },
+    {
+      "name": "late_vs_npc",
+      "columns": [
+        "NPC",
+        "lateplur"
+      ],
+      "formula": "~ condition",
+      "term": "conditionlateplur"
+    }
+  ],
+  "rationale": "Mouse genome-wide KO screen (~90,000 guides, up to 5 per gene, no non-targeting controls in the library) during female NPC-to-iPSC reprogramming. The deposited MAGeCK count workbook has one count column per sorted population (NPC, non-pluripotent, early pluripotent, late/X-reactivated pluripotent); the two biological reprogramming rounds were pooled, so there is one library per condition and the no-replicate path applies (pooled overdispersion over all guides, zero residual df). Counts are raw integers. The paper (MAGeCK RRA) compares early vs non-pluripotent (activators of early pluripotency deplete, negative LFC) and late vs early pluripotent (drivers of late pluripotency / X-reactivation deplete); both are reproduced, plus late vs NPC. There are no non-targeting controls, so calibration and a control null cannot be built; with one library per condition these are screening-level calls."
+}

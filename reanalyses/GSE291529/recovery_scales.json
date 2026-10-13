@@ -1,0 +1,80 @@
+[
+  {
+    "column": "10db-cont1",
+    "offset": 0,
+    "v_min": 0.876446324700087,
+    "k": 1,
+    "scale": 0.876446324700086,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 9.32232069317251e-12,
+    "recovered_total": 24456189,
+    "nonzero": 37832,
+    "n": 37837
+  },
+  {
+    "column": "10db-cont2",
+    "offset": 0,
+    "v_min": 0.614158553336874,
+    "k": 1,
+    "scale": 0.614158553336874,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 2.00088834390044e-11,
+    "recovered_total": 35209481,
+    "nonzero": 37831,
+    "n": 37837
+  },
+  {
+    "column": "10db-cont3",
+    "offset": 0,
+    "v_min": 0.527061028520983,
+    "k": 1,
+    "scale": 0.527061028520982,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 1.47792889038101e-11,
+    "recovered_total": 41602626,
+    "nonzero": 37823,
+    "n": 37837
+  },
+  {
+    "column": "10db-PFOS1",
+    "offset": 0,
+    "v_min": 2.7085178773729,
+    "k": 1,
+    "scale": 2.7085178773729,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 2.78532752417959e-12,
+    "recovered_total": 8177206,
+    "nonzero": 37812,
+    "n": 37837
+  },
+  {
+    "column": "10db-PFOS2",
+    "offset": 0,
+    "v_min": 0.563227646277023,
+    "k": 1,
+    "scale": 0.563227646277022,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 1.38697942020372e-11,
+    "recovered_total": 38374147,
+    "nonzero": 37829,
+    "n": 37837
+  },
+  {
+    "column": "10db-PFOS3",
+    "offset": 0,
+    "v_min": 1.69352074363762,
+    "k": 1,
+    "scale": 1.69352074363762,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 4.43378667114303e-12,
+    "recovered_total": 13033381,
+    "nonzero": 37811,
+    "n": 37837
+  }
+]
