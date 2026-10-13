@@ -164,9 +164,13 @@ records <- records[order(order_key, decreasing = TRUE)]
 # "2025-12-29" -> "29 Dec 2025"; "2025-12" -> "Dec 2025"; "2025" stays.
 format_date <- function(iso) {
   if (is.null(iso) || is.na(iso) || !nzchar(iso)) return("")
-  parts <- strsplit(iso, "-", fixed = TRUE)[[1]]
+  parts <- strsplit(iso, "[- ]+")[[1]]
   if (length(parts) == 1L) return(parts[1])
-  month <- month.abb[as.integer(parts[2])]
+  month_number <- match(substr(parts[2], 1L, 3L), month.abb)
+  if (is.na(month_number)) month_number <- suppressWarnings(as.integer(parts[2]))
+  if (is.na(month_number)) return(parts[1])
+  month <- month.abb[month_number]
+  if (length(parts) >= 3L && !grepl("^[0-9]{1,2}$", parts[3])) return(paste(month, parts[1]))
   if (length(parts) == 2L) return(paste(month, parts[1]))
   sprintf("%d %s %s", as.integer(parts[3]), month, parts[1])
 }
@@ -174,7 +178,7 @@ published_text <- function(meta) {
   date <- format_date(meta$published_date)
   if (!nzchar(date)) return(esc(meta$published %||% ""))
   issue <- meta$published_issue %||% ""
-  issue_iso <- if (nzchar(issue)) format_date(gsub(" ", "-", issue)) else ""
+  issue_iso <- if (nzchar(issue)) format_date(issue) else ""
   if (nzchar(issue) && !identical(format_date(meta$published_date), issue_iso))
     sprintf("published %s (issue %s)", esc(date), esc(issue)) else sprintf("published %s", esc(date))
 }
