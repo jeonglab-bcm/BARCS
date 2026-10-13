@@ -1,0 +1,148 @@
+{
+  "gse": "GSE226977",
+  "pmid": "39300912",
+  "counts_file": "merged_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0-DMSO-Rep1",
+      "gsm": "",
+      "time": "T0",
+      "drug": "DMSO",
+      "replicate": "1",
+      "condition": "T0_DMSO"
+    },
+    {
+      "column": "T0-DMSO-Rep2",
+      "gsm": "",
+      "time": "T0",
+      "drug": "DMSO",
+      "replicate": "2",
+      "condition": "T0_DMSO"
+    },
+    {
+      "column": "T0-DMSO-Rep3",
+      "gsm": "",
+      "time": "T0",
+      "drug": "DMSO",
+      "replicate": "3",
+      "condition": "T0_DMSO"
+    },
+    {
+      "column": "T0-EZ-Rep1",
+      "gsm": "",
+      "time": "T0",
+      "drug": "EZ",
+      "replicate": "1",
+      "condition": "T0_EZ"
+    },
+    {
+      "column": "T0-EZ-Rep2",
+      "gsm": "",
+      "time": "T0",
+      "drug": "EZ",
+      "replicate": "2",
+      "condition": "T0_EZ"
+    },
+    {
+      "column": "T0-EZ-Rep3",
+      "gsm": "",
+      "time": "T0",
+      "drug": "EZ",
+      "replicate": "3",
+      "condition": "T0_EZ"
+    },
+    {
+      "column": "TF-DMSO-Rep1",
+      "gsm": "",
+      "time": "TF",
+      "drug": "DMSO",
+      "replicate": "1",
+      "condition": "TF_DMSO"
+    },
+    {
+      "column": "TF-DMSO-Rep2",
+      "gsm": "",
+      "time": "TF",
+      "drug": "DMSO",
+      "replicate": "2",
+      "condition": "TF_DMSO"
+    },
+    {
+      "column": "TF-DMSO-Rep3",
+      "gsm": "",
+      "time": "TF",
+      "drug": "DMSO",
+      "replicate": "3",
+      "condition": "TF_DMSO"
+    },
+    {
+      "column": "TF-EZ-Rep1",
+      "gsm": "",
+      "time": "TF",
+      "drug": "EZ",
+      "replicate": "1",
+      "condition": "TF_EZ"
+    },
+    {
+      "column": "TF-EZ-Rep2",
+      "gsm": "",
+      "time": "TF",
+      "drug": "EZ",
+      "replicate": "2",
+      "condition": "TF_EZ"
+    },
+    {
+      "column": "TF-EZ-Rep3",
+      "gsm": "",
+      "time": "TF",
+      "drug": "EZ",
+      "replicate": "3",
+      "condition": "TF_EZ"
+    }
+  ],
+  "factor_levels": {
+    "drug": [
+      "DMSO",
+      "EZ"
+    ],
+    "time": [
+      "T0",
+      "TF"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "ezvsdmso_final_median_ratio",
+      "columns": [
+        "TF-DMSO-Rep1",
+        "TF-DMSO-Rep2",
+        "TF-DMSO-Rep3",
+        "TF-EZ-Rep1",
+        "TF-EZ-Rep2",
+        "TF-EZ-Rep3"
+      ],
+      "formula": "~ drug",
+      "term": "drugEZ",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "ezvsdmso_final_library",
+      "columns": [
+        "TF-DMSO-Rep1",
+        "TF-DMSO-Rep2",
+        "TF-DMSO-Rep3",
+        "TF-EZ-Rep1",
+        "TF-EZ-Rep2",
+        "TF-EZ-Rep3"
+      ],
+      "formula": "~ drug",
+      "term": "drugEZ",
+      "totals": "library"
+    }
+  ],
+  "rationale": "Genome-wide KO screen in LNCaP prostate cancer cells (Brunello-like, 4 guides/gene, 142 non-cutting controls: LacZ 96, luciferase 24, EGFP 22). Per-sample count files (GSE226977_RAW.tar) were merged on sgRNA. 12 libraries: T0 and final time point (TF), each with DMSO and enzalutamide (EZ), 3 replicates. The paper's screen contrasts enzalutamide vs DMSO at the final time point: sensitizers (e.g. HOXA9) deplete in EZ. Primary analysis TF-EZ vs TF-DMSO with median-ratio totals, because the final EZ libraries are severely bottlenecked (17-21% of guides at zero, top 1% of guides hold 23-33% of reads), so library totals call most genes depleted. A library-totals run is kept to show the swing. No T0-anchored design: the deposited T0-DMSO and T0-EZ labels appear swapped (T0-EZ-Rep1 alone shows a bottleneck the other T0 libraries do not), and T0 is a single pre-treatment pool split by label, so anchoring to it is not reliable."
+}

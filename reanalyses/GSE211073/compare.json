@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/OA_high_vs_low/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["OPTN", "PHB2", "SQSTM1", "CALCOCO2", "FKBP8"],
+  "top_n": [5, 10, 14]
+}

@@ -1,0 +1,39 @@
+{
+  "analysis": "late_vs_early",
+  "formula": "~condition",
+  "term": "conditionlateplur",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 4.1388e-06,
+    "rho_source": "all guides (no or too few controls; conservative)",
+    "rho_guides": 82346,
+    "inflation_at_rho0": 373.8079,
+    "haldane_guides": 1687
+  },
+  "guides": 90023,
+  "genes": 18360,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "earlyplur": 0.207,
+    "lateplur": 0.102
+  },
+  "genes_fdr_0_10_up": 6,
+  "genes_fdr_0_10_down": 16,
+  "genes_fdr_0_05": 17,
+  "genes_fdr_0_10": 22,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.2"
+}

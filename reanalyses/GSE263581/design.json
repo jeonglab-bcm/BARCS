@@ -1,0 +1,216 @@
+{
+  "gse": "GSE263581",
+  "pmid": "41218116",
+  "counts_file": "suppl/GSE263581_pool930.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(safe|none)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "primary_s6",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s7",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s8",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s14",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s15",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s16",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s17",
+      "condition": "primary"
+    },
+    {
+      "column": "liver_s39",
+      "condition": "met"
+    },
+    {
+      "column": "liver_s40",
+      "condition": "met"
+    },
+    {
+      "column": "liver1.1_s41",
+      "condition": "met"
+    },
+    {
+      "column": "liver1.2_s42",
+      "condition": "met"
+    },
+    {
+      "column": "liver1.4_s43",
+      "condition": "met"
+    },
+    {
+      "column": "liver2.1_s44",
+      "condition": "met"
+    },
+    {
+      "column": "liver3.1_s45",
+      "condition": "met"
+    },
+    {
+      "column": "liver1.1_s46",
+      "condition": "met"
+    },
+    {
+      "column": "lung_s47",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s54",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s55",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s56",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s57",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s64",
+      "condition": "met"
+    },
+    {
+      "column": "abd_lymph_s65",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s66",
+      "condition": "met"
+    },
+    {
+      "column": "lymph2_s67",
+      "condition": "met"
+    },
+    {
+      "column": "intestine_wall_s72",
+      "condition": "met"
+    },
+    {
+      "column": "galbladder_s73",
+      "condition": "met"
+    },
+    {
+      "column": "peritoneal3_s74",
+      "condition": "met"
+    },
+    {
+      "column": "peritoneal_s75",
+      "condition": "met"
+    },
+    {
+      "column": "kidney_membrane1_s76",
+      "condition": "met"
+    },
+    {
+      "column": "kidney_membrane2_s77",
+      "condition": "met"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "primary",
+      "met",
+      "baseline"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "met_vs_primary",
+      "columns": [
+        "primary_s6",
+        "primary_s7",
+        "primary_s8",
+        "primary_s14",
+        "primary_s15",
+        "primary_s16",
+        "primary_s17",
+        "liver_s39",
+        "liver_s40",
+        "liver1.1_s41",
+        "liver1.2_s42",
+        "liver1.4_s43",
+        "liver2.1_s44",
+        "liver3.1_s45",
+        "liver1.1_s46",
+        "lung_s47",
+        "lymph_s54",
+        "lymph_s55",
+        "lymph_s56",
+        "lymph_s57",
+        "lymph_s64",
+        "abd_lymph_s65",
+        "lymph_s66",
+        "lymph2_s67",
+        "intestine_wall_s72",
+        "galbladder_s73",
+        "peritoneal3_s74",
+        "peritoneal_s75",
+        "kidney_membrane1_s76",
+        "kidney_membrane2_s77"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet"
+    },
+    {
+      "name": "met_vs_primary_median_ratio",
+      "columns": [
+        "primary_s6",
+        "primary_s7",
+        "primary_s8",
+        "primary_s14",
+        "primary_s15",
+        "primary_s16",
+        "primary_s17",
+        "liver_s39",
+        "liver_s40",
+        "liver1.1_s41",
+        "liver1.2_s42",
+        "liver1.4_s43",
+        "liver2.1_s44",
+        "liver3.1_s45",
+        "liver1.1_s46",
+        "lung_s47",
+        "lymph_s54",
+        "lymph_s55",
+        "lymph_s56",
+        "lymph_s57",
+        "lymph_s64",
+        "abd_lymph_s65",
+        "lymph_s66",
+        "lymph2_s67",
+        "intestine_wall_s72",
+        "galbladder_s73",
+        "peritoneal3_s74",
+        "peritoneal_s75",
+        "kidney_membrane1_s76",
+        "kidney_membrane2_s77"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "In vivo CRISPR metastasis screen (Wang et al., PNAS 2025): engineered APC/TRP53-KO KRAS-mutant colorectal organoids transduced with an sgRNA library, implanted into mice, and primary tumors and metastatic lesions harvested after 5-6 weeks. Counts are raw integers; 'safe' and 'none' guides are non-targeting controls. Each column is one lesion from one mouse. The paper looks for metastasis suppressors whose loss promotes dissemination (Ctnna1, Bcl2l13), i.e. guides ENRICHED in metastases vs primary tumors. Primary analysis: metastasis vs primary (7 primary vs 23 metastatic lesions). IMPORTANT CAVEAT: each metastatic lesion is a clonal outgrowth seeded by one or a few cells, so within a lesion a handful of guides dominate and the biological signal is recurrence of the same gene across independent lesions, not a smooth abundance shift with measurable replicate variance. This lesion-level clonal dominance violates BARCS's replicate-variance model, so the results here are DESCRIPTIVE (which genes recur across lesions), not calibrated hit calls."
+}

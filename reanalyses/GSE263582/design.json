@@ -1,0 +1,126 @@
+{
+  "gse": "GSE263582",
+  "pmid": "41218116",
+  "counts_file": "suppl/GSE263582_pool2.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(safe|none)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "primary_s4",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s5",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s11",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s12",
+      "condition": "primary"
+    },
+    {
+      "column": "primary_s13",
+      "condition": "primary"
+    },
+    {
+      "column": "liver3.1_s38",
+      "condition": "met"
+    },
+    {
+      "column": "lymph1_s49",
+      "condition": "met"
+    },
+    {
+      "column": "lymph2_s50",
+      "condition": "met"
+    },
+    {
+      "column": "lymph3_s51",
+      "condition": "met"
+    },
+    {
+      "column": "lymph4_s52",
+      "condition": "met"
+    },
+    {
+      "column": "bignet?_s53",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s61",
+      "condition": "met"
+    },
+    {
+      "column": "small_lymph_s62",
+      "condition": "met"
+    },
+    {
+      "column": "lymph_s63",
+      "condition": "met"
+    },
+    {
+      "column": "peritoneal_s71",
+      "condition": "met"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "primary",
+      "met",
+      "baseline"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "met_vs_primary",
+      "columns": [
+        "primary_s4",
+        "primary_s5",
+        "primary_s11",
+        "primary_s12",
+        "primary_s13",
+        "liver3.1_s38",
+        "lymph1_s49",
+        "lymph2_s50",
+        "lymph3_s51",
+        "lymph4_s52",
+        "bignet?_s53",
+        "lymph_s61",
+        "small_lymph_s62",
+        "lymph_s63",
+        "peritoneal_s71"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet"
+    },
+    {
+      "name": "met_vs_primary_median_ratio",
+      "columns": [
+        "primary_s4",
+        "primary_s5",
+        "primary_s11",
+        "primary_s12",
+        "primary_s13",
+        "liver3.1_s38",
+        "lymph1_s49",
+        "lymph2_s50",
+        "lymph3_s51",
+        "lymph4_s52",
+        "bignet?_s53",
+        "lymph_s61",
+        "small_lymph_s62",
+        "lymph_s63",
+        "peritoneal_s71"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "In vivo CRISPR metastasis screen (Wang et al., PNAS 2025): engineered APC/TRP53-KO KRAS-mutant colorectal organoids transduced with an sgRNA library, implanted into mice, and primary tumors and metastatic lesions harvested after 5-6 weeks. Counts are raw integers; 'safe' and 'none' guides are non-targeting controls. Each column is one lesion from one mouse. The paper looks for metastasis suppressors whose loss promotes dissemination (Ctnna1, Bcl2l13), i.e. guides ENRICHED in metastases vs primary tumors. Primary analysis: metastasis vs primary (5 primary vs 10 metastatic lesions). IMPORTANT CAVEAT: each metastatic lesion is a clonal outgrowth seeded by one or a few cells, so within a lesion a handful of guides dominate and the biological signal is recurrence of the same gene across independent lesions, not a smooth abundance shift with measurable replicate variance. This lesion-level clonal dominance violates BARCS's replicate-variance model, so the results here are DESCRIPTIVE (which genes recur across lesions), not calibrated hit calls."
+}
