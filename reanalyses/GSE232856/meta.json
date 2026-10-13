@@ -1,0 +1,20 @@
+{
+  "gse": "GSE232856",
+  "pmid": "38981482",
+  "doi": "10.1016/j.cell.2024.06.019",
+  "title": "A non-canonical role for a small nucleolar RNA in ribosome biogenesis and senescence",
+  "journal": "Cell",
+  "published": "2024",
+  "model": "BJ-HRAS(G12V)-dCas9-KRAB fibroblasts, CRiNCL lncRNA CRISPRi library",
+  "contrast": "Day 21 vs day 0 of HRAS(G12V)-induced senescence, 2 clones (2 vs 2)",
+  "paper_method": "MAGeCK",
+  "paper_calls": "EPB41L4A-AS1 (host of SNORA13) required for oncogene-induced senescence",
+  "barcs_calls": "140 genes at FDR 0.10 (median-ratio totals)",
+  "named_hits": "EPB41L4A-AS1 (SNORA13 host) recovered as #1 enriched locus (FDR 1e-11)",
+  "verdict": "Raw reads recovered exactly (normalized to 20M reads/library plus a pseudocount of 1). After correcting for strong composition shift with median-ratio totals, BARCS recovers the paper's lead hit EPB41L4A-AS1/SNORA13 as the top enriched noncoding RNA.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = (normalized - 1) / (one scale factor per sample); integrality 100.0%.",
+  "published_date": "2024-07-08",
+  "published_issue": "2024 Aug 22"
+}

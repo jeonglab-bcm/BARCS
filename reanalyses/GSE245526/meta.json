@@ -1,0 +1,20 @@
+{
+  "gse": "GSE245526",
+  "pmid": "38714682",
+  "doi": "10.1038/s41467-024-48228-x",
+  "title": "Replication competent HIV-guided CRISPR screen identifies antiviral factors including targets of the accessory protein Nef",
+  "journal": "Nature Communications",
+  "published": "2024",
+  "model": "CEM-M7 CD4+ T cell line, replication-competent HIV-1 guide library (~511 host genes)",
+  "contrast": "15 dpi vs virus-stock input, untreated, 3 independent infections (3 vs 3)",
+  "paper_method": "MAGeCK",
+  "paper_calls": "GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging",
+  "barcs_calls": "271 genes at FDR 0.10 (median-ratio totals); 166 enriched",
+  "named_hits": "All six named enrichment hits recovered: EHMT2 #1, CEACAM3 #8, CC2D1B #15, CIITA #91, GRN #96, RHOA #109",
+  "verdict": "Raw reads recovered exactly from the MAGeCK-normalized table. After median-ratio normalization for the strong passaging shift, BARCS recovers all six antiviral factors the paper names as enriched, with EHMT2 the top hit.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0%.",
+  "published_date": "2024-05-07",
+  "published_issue": "2024 May 7"
+}

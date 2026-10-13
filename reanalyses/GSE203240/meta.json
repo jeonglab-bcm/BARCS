@@ -14,5 +14,7 @@
   "named_hits": "Rank among depleted genes: IGF2BP2 #9 (FDR 1.6e-6); 13/15 paper hits at FDR 0.10, PEAK3/C19orf35 #1 and ATP4A #2",
   "verdict": "BARCS calls IGF2BP2 and 13 of the paper's 15 in vivo hits at FDR 0.10, with the same top two genes. Only LPL and KIF5B, the paper's weakest hits, do not move. With a single non-targeting guide, calibration rests on within-arm null contrasts, which call nothing.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-05-09",
+  "published_issue": "2025 Jun 11"
 }

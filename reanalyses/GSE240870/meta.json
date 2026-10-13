@@ -14,5 +14,7 @@
   "named_hits": "1/1: ELMSAN1 #1 (FDR 7e-26)",
   "verdict": "ELMSAN1, the paper's hit, is the strongest gene in BARCS: all ten of its guides with reads rise under ISX9 (four by about 3- to 4.6-fold). The rest of the screen is weak, and non-targeting guides were over-dispersed (20% at p < 0.05), so the hit list was calibrated to them.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-06-11",
+  "published_issue": "2025 Aug 5"
 }

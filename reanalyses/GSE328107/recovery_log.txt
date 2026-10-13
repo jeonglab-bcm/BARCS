@@ -1,0 +1,8 @@
+IntactD4                       vmin=1.02878      best k=1   scale=1.02878      integrality=1.0000 maxdev=1.14e-13 total=24,506,190
+IntactD8                       vmin=1.02598      best k=1   scale=1.02598      integrality=1.0000 maxdev=1.14e-13 total=24,180,639
+IntactD22                      vmin=0.966055     best k=1   scale=0.966055     integrality=1.0000 maxdev=2.27e-13 total=26,071,816
+KOD4                           vmin=0.813199     best k=1   scale=0.813199     integrality=1.0000 maxdev=4.55e-13 total=31,017,395
+KOD8                           vmin=0.813851     best k=1   scale=0.813851     integrality=1.0000 maxdev=2.27e-13 total=30,674,860
+KOD22                          vmin=1.1526       best k=1   scale=1.1526       integrality=1.0000 maxdev=4.55e-13 total=23,081,326
+KOD32                          vmin=1.30367      best k=1   scale=1.30367      integrality=1.0000 maxdev=1.82e-12 total=26,471,244
+Wrote work/GSE328107/recovered_counts.tsv 

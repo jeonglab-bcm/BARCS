@@ -14,5 +14,7 @@
   "named_hits": "4/4: LGALS9 #2, TFAP4 #3, ADD1 #4, IRF1 #13 (all FDR < 1e-7)",
   "verdict": "BARCS ranks the target LGALS9 and all three validated regulators (TFAP4, ADD1, IRF1) in its top 13 of 19,114 genes. It also calls many fitness genes (ribosomal, MYB, HSPA5) that the paper filtered out with an unsorted control.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-03-19",
+  "published_issue": "2025 Mar 21"
 }

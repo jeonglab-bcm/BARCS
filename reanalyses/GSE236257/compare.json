@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/KRT20_GFP_hi_vs_lo/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["SMARCB1", "HDAC3", "SET", "AEBP2", "RBBP4", "DNMT3B", "SETD1A", "SETD1B", "SOX9"],
+  "top_n": [10, 20, 40]
+}

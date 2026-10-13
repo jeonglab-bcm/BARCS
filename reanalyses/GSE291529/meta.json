@@ -1,0 +1,20 @@
+{
+  "gse": "GSE291529",
+  "pmid": "41446233",
+  "doi": "10.64898/2025.12.16.694451",
+  "title": "Identification of Functional Genetic Components Modulating Toxicity Response to PFOS using Genome-wide CRISPR Screens in HepG2/C3A cells",
+  "journal": "bioRxiv",
+  "published": "2025",
+  "model": "HepG2/C3A liver cells, genome-wide Brunello-style KO",
+  "contrast": "PFOS 192 uM (10 doublings) vs control (3 vs 3)",
+  "paper_method": "MAGeCK",
+  "paper_calls": "340 candidate genes (189 sensitizers, 151 resistance); SLC6A9 and CPSF2 validated",
+  "barcs_calls": "0 genes at FDR 0.10",
+  "named_hits": "SLC6A9 #9 of enriched (empirical FDR 0.13); CPSF2 not recovered",
+  "verdict": "Raw reads recovered exactly from the MAGeCK-normalized table. BARCS is far more conservative than the paper's 340-gene list: no gene passes FDR 0.10, though the validated resistance gene SLC6A9 ranks near the top of enriched genes.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0% at k=1.",
+  "published_date": "2025-12-19",
+  "published_issue": "2025 Dec 19"
+}

@@ -12,8 +12,11 @@ agent (or you) writes `design.json` and `compare.json`.
 | `fetch_geo.R` | Series metadata (`series.json`, `samples.tsv`) and supplementary files |
 | `inspect_counts.R` | Header, integer check, totals, replicate correlations, control labels |
 | `run_barcs.R` | BARCS per analysis in `design.json` -> `results/<analysis>/` |
+| `recover_counts.R` | Exact raw reads from a table normalized by one constant per sample (unrounded MAGeCK-normalized or CPM values); accepts a column only when 99.5% of values become integers |
+| `no_replicates.R` | Sourced by `run_barcs.R`: guide fit with a pooled overdispersion for analyses with one library per condition |
 | `compare_results.R` | Named-hit ranks, rank correlation and top-N overlap with a published table |
 | `archive_run.R` | Copy a finished run (with `meta.json`) into `reanalyses/<GSE>/` |
+| `pub_dates.R` | Publication dates from PubMed into every `meta.json` and `excluded.tsv` |
 | `build_site.R` | Static website from `reanalyses/` into `_site/` |
 
 Use it from Claude Code with `/screen-reanalysis` (optionally with a PMID or a
@@ -26,6 +29,7 @@ Rscript tools/screen-reanalysis/inspect_counts.R work/GSE333513/suppl/GSE333513_
 Rscript tools/screen-reanalysis/run_barcs.R work/GSE333513/design.json
 Rscript tools/screen-reanalysis/compare_results.R work/GSE333513/compare.json
 Rscript tools/screen-reanalysis/archive_run.R work/GSE333513
+LANG=C.UTF-8 Rscript tools/screen-reanalysis/pub_dates.R
 Rscript tools/screen-reanalysis/build_site.R
 ```
 

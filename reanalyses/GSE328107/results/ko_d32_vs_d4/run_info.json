@@ -1,0 +1,39 @@
+{
+  "analysis": "ko_d32_vs_d4",
+  "formula": "~condition",
+  "term": "conditionfinal",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 3.5448e-06,
+    "rho_source": "control guides",
+    "rho_guides": 992,
+    "inflation_at_rho0": 100.4046,
+    "haldane_guides": 1271
+  },
+  "guides": 77441,
+  "genes": 19112,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0333,
+  "control_p05": 0.0333,
+  "totals_method": "control",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "KOD4": 0.027,
+    "KOD32": 0.088
+  },
+  "genes_fdr_0_10_up": 32,
+  "genes_fdr_0_10_down": 74,
+  "genes_fdr_0_05": 36,
+  "genes_fdr_0_10": 106,
+  "genes_empirical_fdr_0_10": 47,
+  "empirical_centre": "targets",
+  "control_shift": -0.514,
+  "barcs_version": "0.2.2"
+}

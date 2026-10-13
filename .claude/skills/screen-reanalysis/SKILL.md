@@ -29,8 +29,14 @@ or in `excluded.tsv` with a one-sentence reason, so the site shows full
 coverage; usable series not analyzed yet go in `search.json` as `pending`.
 
 Pick the newest series with `screen_score` 3 (GEO type "Other" plus screen
-keywords) and enough libraries for inference: at least two replicates per
-condition you will compare. Prefer series whose supplementary files look like
+keywords). Two or more replicates per condition give the full BARCS model.
+**Do not skip a screen because it has one library per condition**: when the
+analysis has no residual degrees of freedom, `run_barcs.R` switches to the
+no-replicate path (`no_replicates.R`), which pools the overdispersion across
+the non-targeting guides and tests each guide at that value. Say in the
+report that the calls are screening-level because variation between replicate
+cultures was not measured. Technical re-reads of one library (near-Poisson
+agreement, constant ratio) are one library: sum them before analysis. Prefer series whose supplementary files look like
 a count matrix (`*count*`, `*sgrna*`, `*.txt.gz`, `*.csv`). Skip arrayed
 screens, single-cell CRISPR (Perturb-seq), base/prime-editing variant scans,
 and RNA-seq companion series. Tell the user which series you chose and why,
@@ -50,8 +56,16 @@ with `--sample-files` and combine the per-sample files yourself.
 Decide, and write down why:
 
 - **Is it raw counts?** Every sample column must be integer-valued. Never feed
-  normalized, log-transformed, or CPM values to BARCS; if only those exist,
-  stop and report that the screen cannot be reanalyzed faithfully.
+  normalized, log-transformed, or CPM values to BARCS. Unrounded normalized
+  tables (MAGeCK `count_normalized`, CPM) are often raw reads times one
+  constant per sample: try `tools/screen-reanalysis/recover_counts.R`, which
+  accepts a column only when at least 99.5% of its values become integers
+  (`RECOVER_OFFSET` handles a pseudocount added after scaling). Use the
+  recovered table only when every sample column passes, copy
+  `recovered_counts_scales.json` into the record as `recovery_scales.json`,
+  and say in the report how the counts were recovered. Rounded normalized
+  values cannot be recovered: report that the screen cannot be reanalyzed
+  faithfully.
 - **Column-to-sample mapping.** Use column names, the GSM titles, and the
   correlation matrix from `inspect_counts.R` (replicates of one condition
   correlate most strongly). Generic names such as `S1..S9` usually follow GSM
@@ -211,11 +225,17 @@ Write `work/<GSE>/meta.json` with the headline facts the site shows:
 }
 ```
 
+`pub_dates.R` adds `published_date` (first publication, online if earlier)
+and `published_issue` to every `meta.json`, and a `published_date` column to
+`excluded.tsv`; the site sorts and labels screens by it. Run it under a UTF-8
+locale (`LANG=C.UTF-8`) so non-ASCII text in the records is kept.
+
 `agreement` is `agree` (the paper's main hits pass FDR 0.10 in BARCS),
 `partial` (some do), or `differ` (none do, or BARCS contradicts them). Then:
 
 ```sh
 Rscript tools/screen-reanalysis/archive_run.R work/GSE123456
+Rscript tools/screen-reanalysis/pub_dates.R       # publication dates from PubMed
 Rscript tools/screen-reanalysis/build_site.R      # preview in _site/index.html
 ```
 

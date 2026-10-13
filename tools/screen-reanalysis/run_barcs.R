@@ -1,5 +1,6 @@
 #!/usr/bin/env Rscript
-# Run BARCS on a screen described by a design file.
+# Run BARCS on a screen described by a design file. Analyses with one
+# library per condition (no residual df) use no_replicates.R.
 #
 #   Rscript tools/screen-reanalysis/run_barcs.R <design.json> [--out results]
 #
@@ -12,6 +13,8 @@ suppressPackageStartupMessages({
   library(jsonlite)
   library(BARCS)
 })
+script_dir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1])))
+source(file.path(script_dir, "no_replicates.R"))
 
 args <- commandArgs(trailingOnly = TRUE)
 if (!length(args)) stop("Usage: run_barcs.R <design.json> [--out results]", call. = FALSE)
@@ -127,12 +130,24 @@ for (analysis in analyses) {
   # magnitude to the likelihood-ratio test, where the Wald test breaks down.
   test <- analysis$test %||% design$test %||%
     if ("test" %in% names(formals(bb_screen))) "auto" else "wald"
-  screen <- bb_screen(
-    counts = counts, data = data, formula = formula, term = analysis$term,
-    totals = totals, guide = guide, gene = gene,
-    min_total_count = design$min_total_count %||% 30, ncores = ncores,
-    test = test
-  )
+  residual_df <- ncol(counts) - ncol(stats::model.matrix(formula, data))
+  if (residual_df == 0L) {
+    # One library per condition: bb_screen() needs replicates to estimate
+    # each guide's dispersion, so pool it across guides (no_replicates.R).
+    test <- "wald (pooled rho, no replicates)"
+    screen <- fit_no_replicates(
+      counts = counts, data = data, formula = formula, term = analysis$term,
+      totals = totals, guide = guide, gene = gene, control = control,
+      min_total_count = design$min_total_count %||% 30
+    )
+  } else {
+    screen <- bb_screen(
+      counts = counts, data = data, formula = formula, term = analysis$term,
+      totals = totals, guide = guide, gene = gene,
+      min_total_count = design$min_total_count %||% 30, ncores = ncores,
+      test = test
+    )
+  }
   # Non-targeting guides are a direct null: about 5% should reach p < 0.05.
   # Shared clonal structure between replicates, sort noise, or a dispersion
   # prior that 1-2 residual df cannot estimate all inflate that rate, and the
@@ -201,7 +216,9 @@ for (analysis in analyses) {
   utils::write.csv(genes, file.path(out, "genes.csv"), row.names = FALSE)
   info <- list(
     analysis = name, formula = deparse(formula), term = analysis$term,
-    libraries = ncol(counts), residual_df = ncol(counts) - ncol(stats::model.matrix(formula, data)),
+    libraries = ncol(counts), residual_df = residual_df,
+    replicates = if (residual_df == 0L) "none: one library per condition" else "yes",
+    no_replicates = attr(screen, "no_replicates"),
     guides = nrow(screen), genes = nrow(genes),
     moderated = attr(screen, "moderated"), prior_df = attr(screen, "prior_df"),
     guide_correlation = attr(screen, "guide_correlation"),

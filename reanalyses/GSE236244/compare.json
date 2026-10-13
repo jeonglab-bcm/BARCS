@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/early_vs_nonplur/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Smad2", "Smad4", "Pou5f1", "Sox2", "Smarcc2", "Smarca4", "Hes1", "Fut9"],
+  "published": {
+    "file": "paper/tableS1.xlsx", "sheet": "Early vs non-pluripotent",
+    "gene_column": "id", "score_column": "neg|score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [50, 100, 250]
+}

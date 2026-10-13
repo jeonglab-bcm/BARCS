@@ -1,0 +1,122 @@
+{
+  "gse": "GSE211073",
+  "pmid": "37439113",
+  "counts_file": "counts.txt.gz",
+  "guide_column": "construct",
+  "gene_column": "gene",
+  "control_gene_pattern": "^control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "MTH01_DFPhigh_R1",
+      "treatment": "DFP",
+      "fraction": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "MTH01_DFPhigh_R2",
+      "treatment": "DFP",
+      "fraction": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "MTH01_DFPhigh_R3",
+      "treatment": "DFP",
+      "fraction": "high",
+      "replicate": "3"
+    },
+    {
+      "column": "MTH01_DFPlow_R1",
+      "treatment": "DFP",
+      "fraction": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "MTH01_DFPlow_R2",
+      "treatment": "DFP",
+      "fraction": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "MTH01_DFPlow_R3",
+      "treatment": "DFP",
+      "fraction": "low",
+      "replicate": "3"
+    },
+    {
+      "column": "MTH01_OAhigh_R1",
+      "treatment": "OA",
+      "fraction": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "MTH01_OAhigh_R2",
+      "treatment": "OA",
+      "fraction": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "MTH01_OAhigh_R3",
+      "treatment": "OA",
+      "fraction": "high",
+      "replicate": "3"
+    },
+    {
+      "column": "MTH01_OAlow_R1",
+      "treatment": "OA",
+      "fraction": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "MTH01_OAlow_R2",
+      "treatment": "OA",
+      "fraction": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "MTH01_OAlow_R3",
+      "treatment": "OA",
+      "fraction": "low",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "fraction": [
+      "low",
+      "high"
+    ],
+    "treatment": [
+      "DFP",
+      "OA"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "DFP_high_vs_low",
+      "columns": [
+        "MTH01_DFPhigh_R1",
+        "MTH01_DFPhigh_R2",
+        "MTH01_DFPhigh_R3",
+        "MTH01_DFPlow_R1",
+        "MTH01_DFPlow_R2",
+        "MTH01_DFPlow_R3"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionhigh"
+    },
+    {
+      "name": "OA_high_vs_low",
+      "columns": [
+        "MTH01_OAhigh_R1",
+        "MTH01_OAhigh_R2",
+        "MTH01_OAhigh_R3",
+        "MTH01_OAlow_R1",
+        "MTH01_OAlow_R2",
+        "MTH01_OAlow_R3"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionhigh"
+    }
+  ],
+  "rationale": "Pairwise multiplexed (dual-guide) CRISPR screen of 14 mitophagy receptors in MOLM-13 (MTH01) AML cells (Meyer et al., Autophagy 2023). Each deposited construct is a pair of guides (Guide_1 x Guide_2); per-sample CSVs (GSE211073_RAW.tar) were merged on the construct pair. Counts are raw integers. For a single-construct abundance analysis each construct is a unit and its 'gene' is the non-control gene it targets: control+control -> control (144 non-targeting-like constructs, used for calibration), gene+control or gene+same-gene -> that single gene (112 constructs each, 14 receptors), gene A + gene B -> an A_B pair label. The mitophagy reporter sort (mito-Keima) is read out as high vs low fractions after DFP (deferiprone) or OA (oligomycin+antimycin A) induction, 3 replicates each; receptors required for mitophagy deplete in the high fraction. IMPORTANT: this is a genetic-interaction screen whose published conclusions rest on interaction scores between guide PAIRS (epistasis), which BARCS's single-gene guide-aggregation model does not represent; only the single-gene (control-paired) abundance changes are interpretable here, and the A_B pair labels are aggregated as nominal genes but their interaction scores are out of scope."
+}

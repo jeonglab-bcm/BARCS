@@ -1,0 +1,232 @@
+{
+  "gse": "GSE263580",
+  "pmid": "41218116",
+  "counts_file": "suppl/GSE263580_libAscreen_invivo_seq1.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(safe|none)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "sample1_baseline_i709F1",
+      "condition": "baseline"
+    },
+    {
+      "column": "sample3_mouse1_primary_i701F2",
+      "condition": "primary"
+    },
+    {
+      "column": "sample4_mouse2_primary_i701F4",
+      "condition": "primary"
+    },
+    {
+      "column": "sample5_mouse3_primary_i701F5",
+      "condition": "primary"
+    },
+    {
+      "column": "sample6_mouse4_primary_i701F6",
+      "condition": "primary"
+    },
+    {
+      "column": "sample7_mouse5_primary_i701F7",
+      "condition": "primary"
+    },
+    {
+      "column": "sample8_mouse6_primary_i701F8",
+      "condition": "primary"
+    },
+    {
+      "column": "sample9_mouse7_primary_i701F1",
+      "condition": "primary"
+    },
+    {
+      "column": "sample10_mouse8_primary_i701F3",
+      "condition": "primary"
+    },
+    {
+      "column": "sample11_mouse3_livermet2-1_i702F1",
+      "condition": "met"
+    },
+    {
+      "column": "sample13_mouse3_livermet4-1_i702F3",
+      "condition": "met"
+    },
+    {
+      "column": "sample14_mouse2_lymphnode_i708F4",
+      "condition": "met"
+    },
+    {
+      "column": "sample18_mouse7_lymphnode_i708F1",
+      "condition": "met"
+    },
+    {
+      "column": "sample20_mouse1_lymphnode_i708F2",
+      "condition": "met"
+    },
+    {
+      "column": "sample21_mouse3_lymphnode_i708F6",
+      "condition": "met"
+    },
+    {
+      "column": "sample22_mouse2_livermet_i712F1",
+      "condition": "met"
+    },
+    {
+      "column": "sample26_mouse3_livermet1-4_i703F4",
+      "condition": "met"
+    },
+    {
+      "column": "sample28_mouse3_livermet1-6_i703F6",
+      "condition": "met"
+    },
+    {
+      "column": "sample32_mouse3_livermet3-2_i704F4",
+      "condition": "met"
+    },
+    {
+      "column": "sample33_mouse3_livermet3-3_i704F5",
+      "condition": "met"
+    },
+    {
+      "column": "sample34_mouse3_livermet3-4_i704F6",
+      "condition": "met"
+    },
+    {
+      "column": "sample37_mouse3_livermet4-4_i705F3",
+      "condition": "met"
+    },
+    {
+      "column": "sample38_mouse3_livermet4-5_i705F4",
+      "condition": "met"
+    },
+    {
+      "column": "sample39_mouse3_livermet4-m_i705F5",
+      "condition": "met"
+    },
+    {
+      "column": "sample40_mouse5_livermet_i707F1",
+      "condition": "met"
+    },
+    {
+      "column": "sample42_mouse5_livermet2-1_i707F3",
+      "condition": "met"
+    },
+    {
+      "column": "sample44_mouse6_livermet1-1_i707F4",
+      "condition": "met"
+    },
+    {
+      "column": "sample45_mouse6_livermet1-2_i707F5",
+      "condition": "met"
+    },
+    {
+      "column": "sample48_mouse7_smallintestinemet_i706F5",
+      "condition": "met"
+    },
+    {
+      "column": "sample50_mouse8_livermet1_i707F7",
+      "condition": "met"
+    },
+    {
+      "column": "sample51_mouse8livermet2_i707F8",
+      "condition": "met"
+    },
+    {
+      "column": "sample52_mouse8_smallintestinemet_i706F7",
+      "condition": "met"
+    },
+    {
+      "column": "sample53_mouse8largeintestinemet_i706F8",
+      "condition": "met"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "primary",
+      "met",
+      "baseline"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "met_vs_primary",
+      "columns": [
+        "sample3_mouse1_primary_i701F2",
+        "sample4_mouse2_primary_i701F4",
+        "sample5_mouse3_primary_i701F5",
+        "sample6_mouse4_primary_i701F6",
+        "sample7_mouse5_primary_i701F7",
+        "sample8_mouse6_primary_i701F8",
+        "sample9_mouse7_primary_i701F1",
+        "sample10_mouse8_primary_i701F3",
+        "sample11_mouse3_livermet2-1_i702F1",
+        "sample13_mouse3_livermet4-1_i702F3",
+        "sample14_mouse2_lymphnode_i708F4",
+        "sample18_mouse7_lymphnode_i708F1",
+        "sample20_mouse1_lymphnode_i708F2",
+        "sample21_mouse3_lymphnode_i708F6",
+        "sample22_mouse2_livermet_i712F1",
+        "sample26_mouse3_livermet1-4_i703F4",
+        "sample28_mouse3_livermet1-6_i703F6",
+        "sample32_mouse3_livermet3-2_i704F4",
+        "sample33_mouse3_livermet3-3_i704F5",
+        "sample34_mouse3_livermet3-4_i704F6",
+        "sample37_mouse3_livermet4-4_i705F3",
+        "sample38_mouse3_livermet4-5_i705F4",
+        "sample39_mouse3_livermet4-m_i705F5",
+        "sample40_mouse5_livermet_i707F1",
+        "sample42_mouse5_livermet2-1_i707F3",
+        "sample44_mouse6_livermet1-1_i707F4",
+        "sample45_mouse6_livermet1-2_i707F5",
+        "sample48_mouse7_smallintestinemet_i706F5",
+        "sample50_mouse8_livermet1_i707F7",
+        "sample51_mouse8livermet2_i707F8",
+        "sample52_mouse8_smallintestinemet_i706F7",
+        "sample53_mouse8largeintestinemet_i706F8"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet"
+    },
+    {
+      "name": "met_vs_primary_median_ratio",
+      "columns": [
+        "sample3_mouse1_primary_i701F2",
+        "sample4_mouse2_primary_i701F4",
+        "sample5_mouse3_primary_i701F5",
+        "sample6_mouse4_primary_i701F6",
+        "sample7_mouse5_primary_i701F7",
+        "sample8_mouse6_primary_i701F8",
+        "sample9_mouse7_primary_i701F1",
+        "sample10_mouse8_primary_i701F3",
+        "sample11_mouse3_livermet2-1_i702F1",
+        "sample13_mouse3_livermet4-1_i702F3",
+        "sample14_mouse2_lymphnode_i708F4",
+        "sample18_mouse7_lymphnode_i708F1",
+        "sample20_mouse1_lymphnode_i708F2",
+        "sample21_mouse3_lymphnode_i708F6",
+        "sample22_mouse2_livermet_i712F1",
+        "sample26_mouse3_livermet1-4_i703F4",
+        "sample28_mouse3_livermet1-6_i703F6",
+        "sample32_mouse3_livermet3-2_i704F4",
+        "sample33_mouse3_livermet3-3_i704F5",
+        "sample34_mouse3_livermet3-4_i704F6",
+        "sample37_mouse3_livermet4-4_i705F3",
+        "sample38_mouse3_livermet4-5_i705F4",
+        "sample39_mouse3_livermet4-m_i705F5",
+        "sample40_mouse5_livermet_i707F1",
+        "sample42_mouse5_livermet2-1_i707F3",
+        "sample44_mouse6_livermet1-1_i707F4",
+        "sample45_mouse6_livermet1-2_i707F5",
+        "sample48_mouse7_smallintestinemet_i706F5",
+        "sample50_mouse8_livermet1_i707F7",
+        "sample51_mouse8livermet2_i707F8",
+        "sample52_mouse8_smallintestinemet_i706F7",
+        "sample53_mouse8largeintestinemet_i706F8"
+      ],
+      "formula": "~ condition",
+      "term": "conditionmet",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "In vivo CRISPR metastasis screen (Wang et al., PNAS 2025): engineered APC/TRP53-KO KRAS-mutant colorectal organoids transduced with an sgRNA library, implanted into mice, and primary tumors and metastatic lesions harvested after 5-6 weeks. Counts are raw integers; 'safe' and 'none' guides are non-targeting controls. Each column is one lesion from one mouse. The paper looks for metastasis suppressors whose loss promotes dissemination (Ctnna1, Bcl2l13), i.e. guides ENRICHED in metastases vs primary tumors. Primary analysis: metastasis vs primary (8 primary vs 24 metastatic lesions). IMPORTANT CAVEAT: each metastatic lesion is a clonal outgrowth seeded by one or a few cells, so within a lesion a handful of guides dominate and the biological signal is recurrence of the same gene across independent lesions, not a smooth abundance shift with measurable replicate variance. This lesion-level clonal dominance violates BARCS's replicate-variance model, so the results here are DESCRIPTIVE (which genes recur across lesions), not calibrated hit calls."
+}

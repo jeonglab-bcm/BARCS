@@ -14,5 +14,7 @@
   "named_hits": "DHS 45, 47, 46 ranks 1-3; DHS 72 #5; DHS 71 #34",
   "verdict": "BARCS ranks the paper's intron-3 mechanoenhancers (DHS 45, 47, 46) as the top three elements and the promoter element DHS 72 fifth. Non-targeting guides were strongly inflated (56% at p < 0.05), so calls were calibrated; the top elements are unaffected.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-12-11",
+  "published_issue": "2025 Dec 11"
 }

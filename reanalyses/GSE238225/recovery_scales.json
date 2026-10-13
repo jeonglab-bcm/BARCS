@@ -1,0 +1,80 @@
+[
+  {
+    "column": "Biological replicate 1",
+    "offset": 0,
+    "v_min": 0.69657954,
+    "k": 1,
+    "scale": 0.696579539967549,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 7.18326191417873e-07,
+    "recovered_total": 7192845,
+    "nonzero": 3680,
+    "n": 3709
+  },
+  {
+    "column": "Biological replicate 2",
+    "offset": 0,
+    "v_min": 1.407810751,
+    "k": 2,
+    "scale": 0.703905375252511,
+    "integrality": 1,
+    "rates_k1_10": [0.4791, 1, 0.4791, 1, 0.4791, 1, 0.4791, 1, 0.4791, 1],
+    "max_dev": 3.78162621927913e-06,
+    "recovered_total": 7103642,
+    "nonzero": 3682,
+    "n": 3709
+  },
+  {
+    "column": "Biological replicate 3",
+    "offset": 0,
+    "v_min": 0.759525793,
+    "k": 1,
+    "scale": 0.759525793118062,
+    "integrality": 1,
+    "rates_k1_10": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "max_dev": 5.62081186217256e-06,
+    "recovered_total": 6632691,
+    "nonzero": 3684,
+    "n": 3709
+  },
+  {
+    "column": "sgRNA pool replicate 2",
+    "offset": 0,
+    "v_min": 4.732455499,
+    "k": 4,
+    "scale": 1.18311387463224,
+    "integrality": 1,
+    "rates_k1_10": [0.038, 0.511, 0.0404, 1, 0.0423, 0.511, 0.0445, 1, 0.0421, 0.511],
+    "max_dev": 4.22488710682956e-07,
+    "recovered_total": 4370916,
+    "nonzero": 3685,
+    "n": 3709
+  },
+  {
+    "column": "sgRNA pool replicate 3",
+    "offset": 0,
+    "v_min": 2.696774792,
+    "k": 2,
+    "scale": 1.34838739584137,
+    "integrality": 1,
+    "rates_k1_10": [0.5165, 1, 0.5165, 1, 0.5165, 1, 0.5165, 1, 0.5165, 1],
+    "max_dev": 3.75224772142246e-07,
+    "recovered_total": 3899588,
+    "nonzero": 3686,
+    "n": 3709
+  },
+  {
+    "column": "sgRNA pool replicate 1",
+    "offset": 0,
+    "v_min": 3.393331975,
+    "k": 2,
+    "scale": 1.69666598768259,
+    "integrality": 1,
+    "rates_k1_10": [0.5018, 1, 0.5018, 1, 0.5018, 1, 0.5018, 1, 0.5018, 1],
+    "max_dev": 2.93305583909387e-06,
+    "recovered_total": 3162036,
+    "nonzero": 3685,
+    "n": 3709
+  }
+]

@@ -14,5 +14,7 @@
   "named_hits": "ACTG1 #2, CDC42 #4, ITGAV #7 (FDR 0.05-0.06); TPM3 not supported",
   "verdict": "Three of the four migration genes the paper names (ACTG1, CDC42, ITGAV) are among BARCS's top six, depleted from migrated cells at FDR below 0.10; TPM3 shows no effect. Control guides were well calibrated without adjustment.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-12-11",
+  "published_issue": "2025 Dec 11"
 }

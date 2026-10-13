@@ -14,5 +14,7 @@
   "named_hits": "CCNC #137 (FDR 0.005); CDKN1A #340; MED12 #420",
   "verdict": "With the Firth correction in BARCS 0.2.1, the CCNC guides that have no reads in either control library are kept, and CCNC is enriched at FDR 0.005, as the paper reports. Before the correction BARCS dropped those guides and missed CCNC (rank 1,521). Agreement with the authors' MAGeCK rose to a rank correlation of 0.51.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-03-16",
+  "published_issue": "2026 May"
 }

@@ -1,0 +1,245 @@
+{
+  "gse": "GSE280666",
+  "pmid": "40885801",
+  "counts_file": "counts_utf8.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^nc_guide",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "LT_MSC_day1_rep1",
+      "gsm": "GSM8603356",
+      "condition": "day1",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day1_rep2",
+      "gsm": "GSM8603357",
+      "condition": "day1",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day1_rep3",
+      "gsm": "GSM8603358",
+      "condition": "day1",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day5_rep1",
+      "gsm": "GSM8603359",
+      "condition": "day5",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day5_rep2",
+      "gsm": "GSM8603360",
+      "condition": "day5",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day5_rep3",
+      "gsm": "GSM8603361",
+      "condition": "day5",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day10_rep1",
+      "gsm": "GSM8603362",
+      "condition": "day10",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day10_rep2",
+      "gsm": "GSM8603363",
+      "condition": "day10",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day10_rep3",
+      "gsm": "GSM8603364",
+      "condition": "day10",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day15_rep1",
+      "gsm": "GSM8603365",
+      "condition": "day15",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day15_rep2",
+      "gsm": "GSM8603366",
+      "condition": "day15",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day15_rep3",
+      "gsm": "GSM8603367",
+      "condition": "day15",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day20_rep1",
+      "gsm": "GSM8603368",
+      "condition": "day20",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day20_rep2",
+      "gsm": "GSM8603369",
+      "condition": "day20",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day20_rep3",
+      "gsm": "GSM8603370",
+      "condition": "day20",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day30_rep1",
+      "gsm": "GSM8603371",
+      "condition": "day30",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day30_rep2",
+      "gsm": "GSM8603372",
+      "condition": "day30",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day30_rep3",
+      "gsm": "GSM8603373",
+      "condition": "day30",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day50_rep1",
+      "gsm": "GSM8603374",
+      "condition": "day50",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day50_rep2",
+      "gsm": "GSM8603375",
+      "condition": "day50",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day50_rep3",
+      "gsm": "GSM8603376",
+      "condition": "day50",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day70_rep1",
+      "gsm": "GSM8603377",
+      "condition": "day70",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day70_rep2",
+      "gsm": "GSM8603378",
+      "condition": "day70",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day70_rep3",
+      "gsm": "GSM8603379",
+      "condition": "day70",
+      "replicate": "3"
+    },
+    {
+      "column": "LT_MSC_day100_rep1",
+      "gsm": "GSM8603380",
+      "condition": "day100",
+      "replicate": "1"
+    },
+    {
+      "column": "LT_MSC_day100_rep2",
+      "gsm": "GSM8603381",
+      "condition": "day100",
+      "replicate": "2"
+    },
+    {
+      "column": "LT_MSC_day100_rep3",
+      "gsm": "GSM8603382",
+      "condition": "day100",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day1",
+      "day5",
+      "day10",
+      "day15",
+      "day20",
+      "day30",
+      "day50",
+      "day70",
+      "day100"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "day15_vs_day1",
+      "columns": [
+        "LT_MSC_day1_rep1",
+        "LT_MSC_day1_rep2",
+        "LT_MSC_day1_rep3",
+        "LT_MSC_day15_rep1",
+        "LT_MSC_day15_rep2",
+        "LT_MSC_day15_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday15",
+      "totals": "library"
+    },
+    {
+      "name": "day15_vs_day1_median_ratio",
+      "columns": [
+        "LT_MSC_day1_rep1",
+        "LT_MSC_day1_rep2",
+        "LT_MSC_day1_rep3",
+        "LT_MSC_day15_rep1",
+        "LT_MSC_day15_rep2",
+        "LT_MSC_day15_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday15",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "day10_vs_day1",
+      "columns": [
+        "LT_MSC_day1_rep1",
+        "LT_MSC_day1_rep2",
+        "LT_MSC_day1_rep3",
+        "LT_MSC_day10_rep1",
+        "LT_MSC_day10_rep2",
+        "LT_MSC_day10_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday10",
+      "totals": "library"
+    },
+    {
+      "name": "day30_vs_day1_median_ratio",
+      "columns": [
+        "LT_MSC_day1_rep1",
+        "LT_MSC_day1_rep2",
+        "LT_MSC_day1_rep3",
+        "LT_MSC_day30_rep1",
+        "LT_MSC_day30_rep2",
+        "LT_MSC_day30_rep3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday30",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Long-term screen: AD-bMSC-Cas9 pre-cultured ~75 days, then transduced at high MOI with the same 3,000-guide library as GSE280676 (2,564 guides on 603 genes, 436 nc_guide non-cutting controls, each with its own label), 3 replicate cultures sampled from day 1 to day 100. The counts file is the GEO UTF-16 table converted unchanged to UTF-8; column names match GSM titles. Day 15 is the last time point before clonal takeover (top 1% of guides hold 16-19% of reads; 28-35% at day 20, 66-72% at day 30, >92% from day 50), so the primary contrast is day 15 vs day 1 with library totals, with median-ratio totals as a sensitivity run, day 10 vs day 1 as an earlier, cleaner but weaker contrast, and day 30 vs day 1 (median-ratio totals, enrichment only) to document clonal takeover. Because cells carry several guides (high MOI), passenger guides co-inherited with a driver guide rise with it; gene calls supported by one guide must be read with that in mind. No replicate term: day-1 replicates are indistinguishable."
+}

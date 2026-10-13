@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/d21_vs_d0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["LH12673", "LH06194"],
+  "top_n": [25, 50, 100]
+}

@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/d15_untreated_vs_input/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["GRN", "CIITA", "EHMT2", "CEACAM3", "CC2D1B", "RHOA"],
+  "top_n": [25, 50, 100]
+}

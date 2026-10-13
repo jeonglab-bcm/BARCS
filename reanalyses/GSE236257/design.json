@@ -1,0 +1,174 @@
+{
+  "gse": "GSE236257",
+  "pmid": "38472198",
+  "counts_file": "counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(AAVS1|CCR5|ROSA26)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "L3_F1",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "1",
+      "fraction": "GFP"
+    },
+    {
+      "column": "L3_F4",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "1",
+      "fraction": "mCh"
+    },
+    {
+      "column": "L6_F2",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "2",
+      "fraction": "GFP"
+    },
+    {
+      "column": "L6_F3",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "2",
+      "fraction": "mCh"
+    },
+    {
+      "column": "L3_F2",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "1",
+      "fraction": "DP"
+    },
+    {
+      "column": "L3_F3",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "1",
+      "fraction": "DN"
+    },
+    {
+      "column": "L6_F4",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "2",
+      "fraction": "DP"
+    },
+    {
+      "column": "L6_F1",
+      "gsm": "",
+      "gate": "2",
+      "replicate": "2",
+      "fraction": "DN"
+    },
+    {
+      "column": "L1_F1",
+      "gate": "1",
+      "replicate": "1",
+      "fraction": "GFPq1"
+    },
+    {
+      "column": "L1_F4",
+      "gate": "1",
+      "replicate": "1",
+      "fraction": "GFPq4"
+    },
+    {
+      "column": "L4_F1",
+      "gate": "1",
+      "replicate": "2",
+      "fraction": "GFPq1"
+    },
+    {
+      "column": "L4_F4",
+      "gate": "1",
+      "replicate": "2",
+      "fraction": "GFPq4"
+    },
+    {
+      "column": "L2_F1",
+      "gate": "1",
+      "replicate": "1",
+      "fraction": "mChq1"
+    },
+    {
+      "column": "L2_F4",
+      "gate": "1",
+      "replicate": "1",
+      "fraction": "mChq4"
+    },
+    {
+      "column": "L5_F1",
+      "gate": "1",
+      "replicate": "2",
+      "fraction": "mChq1"
+    },
+    {
+      "column": "L5_F4",
+      "gate": "1",
+      "replicate": "2",
+      "fraction": "mChq4"
+    }
+  ],
+  "factor_levels": {
+    "fraction": [
+      "mCh",
+      "GFP",
+      "DP",
+      "DN",
+      "GFPq1",
+      "GFPq4",
+      "mChq1",
+      "mChq4"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "GFPhigh_vs_mChhigh",
+      "columns": [
+        "L3_F1",
+        "L6_F2",
+        "L3_F4",
+        "L6_F3"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionGFP"
+    },
+    {
+      "name": "DN_vs_DP",
+      "columns": [
+        "L3_F2",
+        "L6_F4",
+        "L3_F3",
+        "L6_F1"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionDN"
+    },
+    {
+      "name": "KRT20_GFP_hi_vs_lo",
+      "columns": [
+        "L1_F1",
+        "L4_F1",
+        "L1_F4",
+        "L4_F4"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionGFPq4"
+    },
+    {
+      "name": "SOX9_mKate2_hi_vs_lo",
+      "columns": [
+        "L2_F1",
+        "L5_F1",
+        "L2_F4",
+        "L5_F4"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionmChq4"
+    }
+  ],
+  "rationale": "Focused epigenetic KO sort screen (542 guides on 78 genes plus reporter and control guides; 30 safe-harbor negative controls (AAVS1, CCR5, ROSA26)) in HT29 SOX9-mKate2/KRT20-GFP dual endogenous reporter CRC cells. The deposited read-count matrix (Epigenetic_Screen_2) is transposed (guides in columns); it was transposed so guides are rows and the 36 sample columns are L1-L6 x fractions F1-F5(+unknown). The Epigenetic_Screen_Design sheet maps Gate2 libraries L3 (Rep1) and L6 (Rep2) to the dual-reporter 4-way sort: L3 F1=GFP,F2=DP/++,F3=DN/--,F4=mCh ; L6 F1=DN/--,F2=GFP,F3=mCh,F4=DP/++. The paper's key dual-reporter comparison (Fig 3d-e, MAGeCK-MLE beta score) is GFPhigh/mKate2low (differentiated) vs mKate2high/GFPlow (stem); reproduced as GFP vs mCh across the two Gate2 replicates (2 vs 2, 1 residual df). Enriched in GFP = induces differentiation (the paper's SMARCB1 and differentiation regulators; SOX9 sgRNAs are the positive control). DN vs DP is a secondary contrast. Only 2 replicates are deposited although the paper reports 3 technical replicates, and there are only 30 negative-control guides, so the test cannot be calibrated and no control null can be built; FDRs are nominal and these are low-power screening-level calls. Two single-reporter quartile contrasts are added to match the paper's MAGeCK-MLE beta comparisons (top vs bottom 25%): KRT20-GFP high vs low (L1/L4, differentiation inducers enriched in GFP-high) and SOX9-mKate2 high vs low (L2/L5, SOX9 suppressors depleted in mKate2-high); F1 and F4 are taken as the extreme quartiles (orientation not stated in the deposit, so the sign may be flipped)."
+}
