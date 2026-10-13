@@ -14,5 +14,7 @@
   "named_hits": "PROM1 rank 1, SOX2 rank 10; neither significant after calibration",
   "verdict": "BARCS ranks PROM1, the gene encoding CD133, first and SOX2 tenth, in line with the paper, but after calibrating to the non-targeting guides (15% reached p < 0.05 before) no gene passes FDR 0.10. The ranking supports SOX2; the screen alone does not establish it at genome-wide significance.",
   "agreement": "partial",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-10-16",
+  "published_issue": "2025 Oct 16"
 }

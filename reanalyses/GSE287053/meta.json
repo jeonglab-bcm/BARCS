@@ -13,5 +13,7 @@
   "named_hits": "Cdk10 depleted, rank 19 of 713, FDR 0.14",
   "verdict": "Cdk10 knockouts are depleted in immunocompetent mice, as the paper reports (rank 20 of 713), but after calibrating to the non-targeting guides (14% reached p < 0.05 before) Cdk10 sits at FDR 0.15; Sgk1, Stk11 and Jak2 rank higher.",
   "agreement": "partial",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-01-08",
+  "published_issue": "2026 Feb"
 }

@@ -14,5 +14,7 @@
   "named_hits": "3/3: Hdac1 #7 (FDR 1.5e-4), Hdac3 #13 (FDR 8e-4), Hdac2 #27 (FDR 0.018)",
   "verdict": "BARCS calls all three class I HDACs as KPK-specific dependencies at FDR < 0.02, and its interaction ranking tracks the authors' MAGeCK-MLE beta difference closely (Spearman 0.94). It ranks Hdac1 above Hdac3, because Hdac3's KPK-specific difference is noisier across guides.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2023-12-30",
+  "published_issue": "2024 Jan 23"
 }

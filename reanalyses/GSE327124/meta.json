@@ -13,5 +13,7 @@
   "named_hits": "TNFAIP3 rank 1 of 1,350, FDR 2e-6",
   "verdict": "TNFAIP3 is BARCS's top gene, enriched in CD80-high cells, with CD274, JUN, IRF8 and IRF9 behind it; the donor-paired model fits cleanly (guide correlation 0.01).",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-08-17",
+  "published_issue": "2026 Aug 17"
 }

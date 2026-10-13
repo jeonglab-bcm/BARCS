@@ -14,5 +14,7 @@
   "named_hits": "DAZAP2 #1 depleted (FDR 2.6e-17), KLF5 #6 (FDR 1.2e-09), VTA1 #42 (FDR 0.013, tiny effect); ESCRT and cohesin depleted; ACE2/CTSL top enriched controls",
   "verdict": "BARCS recovers the paper's two strongest validated anti-viral factors, DAZAP2 (most depleted gene) and KLF5 (#6), plus the ESCRT and cohesin modules; VTA1 passes FDR 0.10 only weakly. Non-targeting guides were inflated (18.8% at p<0.05) and the hit list was calibrated to them. Rank correlation with the deposited MAGeCK is 0.68.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2024-01-02",
+  "published_issue": "2024 Jan 2"
 }

@@ -157,8 +157,27 @@ for (dir in sort(list.dirs(src, recursive = FALSE))) {
   records[[meta$gse]] <- list(dir = dir, meta = meta, compare = compare, primary = primary, runs = runs,
                               control_calls = control_calls)
 }
-order_key <- vapply(records, function(r) r$meta$analyzed %||% "", character(1))
+# Newest publication first; records without a publication date sort by analysis date.
+order_key <- vapply(records, function(r) r$meta$published_date %||% r$meta$analyzed %||% "", character(1))
 records <- records[order(order_key, decreasing = TRUE)]
+
+# "2025-12-29" -> "29 Dec 2025"; "2025-12" -> "Dec 2025"; "2025" stays.
+format_date <- function(iso) {
+  if (is.null(iso) || is.na(iso) || !nzchar(iso)) return("")
+  parts <- strsplit(iso, "-", fixed = TRUE)[[1]]
+  if (length(parts) == 1L) return(parts[1])
+  month <- month.abb[as.integer(parts[2])]
+  if (length(parts) == 2L) return(paste(month, parts[1]))
+  sprintf("%d %s %s", as.integer(parts[3]), month, parts[1])
+}
+published_text <- function(meta) {
+  date <- format_date(meta$published_date)
+  if (!nzchar(date)) return(esc(meta$published %||% ""))
+  issue <- meta$published_issue %||% ""
+  issue_iso <- if (nzchar(issue)) format_date(gsub(" ", "-", issue)) else ""
+  if (nzchar(issue) && !identical(format_date(meta$published_date), issue_iso))
+    sprintf("published %s (issue %s)", esc(date), esc(issue)) else sprintf("published %s", esc(date))
+}
 
 # ---- one page per screen ------------------------------------------------------
 for (rec in records) {
@@ -167,8 +186,10 @@ for (rec in records) {
   dir.create(data_dir, recursive = TRUE, showWarnings = FALSE)
   run_rows <- character()
   downloads <- character()
+  no_replicate_runs <- character()
   for (run in rec$runs) {
     info <- fromJSON(file.path(run, "run_info.json"))
+    if (identical(as.integer(info$residual_df), 0L)) no_replicate_runs <- c(no_replicate_runs, info$analysis)
     file.copy(file.path(run, "genes.csv.gz"), file.path(data_dir, paste0(basename(run), "_genes.csv.gz")),
               overwrite = TRUE)
     downloads <- c(downloads, sprintf('<li><a href="data/%s/%s_genes.csv.gz">%s gene table</a> (CSV)</li>',
@@ -210,8 +231,8 @@ for (rec in records) {
     sprintf('<p class="eyebrow"><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a> &middot; PMID <a href="https://pubmed.ncbi.nlm.nih.gov/%s/">%s</a> &middot; analyzed %s</p>',
             meta$gse, meta$gse, meta$pmid, meta$pmid, esc(meta$analyzed %||% "")),
     sprintf('<h1>%s</h1>', esc(meta$title)),
-    sprintf('<p class="byline"><a href="%s"><em>%s</em> (%s)</a> &middot; %s</p>', paper_link, esc(meta$journal),
-            esc(meta$published), esc(meta$model %||% "")),
+    sprintf('<p class="byline"><a href="%s"><em>%s</em></a>, %s &middot; %s</p>', paper_link, esc(meta$journal),
+            published_text(meta), esc(meta$model %||% "")),
     sprintf('<section class="verdict verdict-%s">%s<p>%s</p></section>', meta$agreement, badge(meta$agreement), esc(meta$verdict)),
     '<dl class="facts">',
     sprintf('<div><dt>Contrast</dt><dd>%s</dd></div>', esc(meta$contrast)),
@@ -228,6 +249,8 @@ for (rec in records) {
     top_rows, '</tbody></table></div>',
     '<h2>Runs</h2><div class="table-wrap"><table><thead><tr><th>Analysis</th><th>Model</th><th>Coefficient</th><th class="num">Libraries</th><th class="num">Residual df</th><th class="num">Guide correlation</th><th class="num">FDR 0.05</th><th class="num">FDR 0.10</th><th class="num">Control null, FDR 0.10</th></tr></thead><tbody>',
     run_rows, '</tbody></table></div>',
+    if (length(no_replicate_runs)) sprintf('<p class="muted"><strong>No replicates</strong> (%s): with one library per condition no guide has residual degrees of freedom, so the overdispersion &rho; is pooled across the non-targeting guides (all guides when there are fewer than 50 controls, which is conservative), each guide is tested at that &rho; against the normal distribution, and the guide correlation is set to 0. Control calibration and the control null still apply. Treat these calls as screening-level evidence: biological variation between replicate cultures is not measured directly.</p>',
+      esc(paste(no_replicate_runs, collapse = ", "))) else NULL,
     control_note,
     '<h2>Report</h2><article class="report">', report, '</article>',
     '<h2>Data</h2><ul class="downloads">', downloads,
@@ -241,8 +264,8 @@ for (rec in records) {
 counts <- table(factor(vapply(records, function(r) r$meta$agreement, character(1)), levels = names(status)))
 rows <- vapply(records, function(rec) {
   m <- rec$meta
-  sprintf('<tr><td>%s</td><td><a href="%s.html">%s</a></td><td><span class="paper">%s</span><span class="muted">%s %s</span></td><td>%s</td><td>%s</td><td>%s</td><td class="num">%s</td><td>%s</td></tr>',
-          esc(m$analyzed %||% ""), m$gse, m$gse, esc(m$title), esc(m$journal), esc(m$published),
+  sprintf('<tr><td class="nowrap">%s</td><td><a href="%s.html">%s</a></td><td><span class="paper">%s</span><span class="muted">%s</span></td><td>%s</td><td>%s</td><td>%s</td><td class="num">%s</td><td>%s</td></tr>',
+          esc(format_date(m$published_date %||% m$published)), m$gse, m$gse, esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
@@ -258,8 +281,12 @@ excluded <- if (file.exists(excluded_path)) {
   data.frame(gse = character(), pmid = character(), title = character(), reason = character())
 }
 excluded <- excluded[!excluded$gse %in% names(records), , drop = FALSE]
+if (is.null(excluded$published_date)) excluded$published_date <- ""
+excluded$published_date[is.na(excluded$published_date)] <- ""
+excluded <- excluded[order(excluded$published_date, decreasing = TRUE), , drop = FALSE]
 excluded_rows <- if (nrow(excluded)) sprintf(
-  '<tr><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a></td><td>%s</td><td>%s</td></tr>',
+  '<tr><td class="nowrap">%s</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a></td><td>%s</td><td>%s</td></tr>',
+  vapply(excluded$published_date, function(d) esc(format_date(d)), character(1)),
   excluded$gse, excluded$gse, esc(excluded$title), esc(excluded$reason)) else character()
 search_note <- if (file.exists(file.path(src, "search.json"))) {
   search <- fromJSON(file.path(src, "search.json"))
@@ -275,14 +302,14 @@ index <- paste(c(
   '<h1>Published CRISPR screens, reanalyzed with BARCS</h1>',
   '<p class="lede">Recent pooled screens with raw counts in GEO, rerun with replicate-aware beta-binomial models and compared with what each paper reported. Each page states the design, the assumptions it rests on, and where BARCS and the paper differ.</p>',
   '<div class="tiles">', tiles, '</div>',
-  '<div class="table-wrap"><table class="index"><thead><tr><th>Analyzed</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th class="num">Control null</th><th>Verdict</th></tr></thead><tbody>',
+  '<div class="table-wrap"><table class="index"><thead><tr><th>Published</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th class="num">Control null</th><th>Verdict</th></tr></thead><tbody>',
   rows, '</tbody></table></div>',
   '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology. <strong>Control null</strong>: genes in the primary contrast at FDR 0.10 against pseudo-genes built from the non-targeting guides (&mdash; when there are fewer than 100 usable controls).</p>',
   search_note,
   if (length(excluded_rows)) c(
     sprintf('<h2>Screened out (%d)</h2>', length(excluded_rows)),
     '<p class="muted">Series the search returned that cannot be reanalyzed faithfully from what was deposited.</p>',
-    '<div class="table-wrap"><table><thead><tr><th>Series</th><th>Title</th><th>Reason</th></tr></thead><tbody>',
+    '<div class="table-wrap"><table><thead><tr><th>Published</th><th>Series</th><th>Title</th><th>Reason</th></tr></thead><tbody>',
     excluded_rows, '</tbody></table></div>')
 ), collapse = "\n")
 write_utf8(page("BARCS reanalyses", index, "Published CRISPR screens reanalyzed with BARCS"), file.path(out, "index.html"))
@@ -335,6 +362,7 @@ th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--gri
 th { color: var(--ink-2); font-weight: 600; white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nowrap { white-space: nowrap; }
 .paper { display: block; max-width: 42ch; }
 table.index td:first-child { white-space: nowrap; }
 .badge { display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; font-size: 13px; font-weight: 600;

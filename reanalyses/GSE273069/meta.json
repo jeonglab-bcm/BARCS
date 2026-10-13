@@ -14,5 +14,7 @@
   "named_hits": "Pou5f1 #3, Zic3 #5 (both FDR < 1e-37)",
   "verdict": "BARCS recovers both activators the paper names for this reporter, Pou5f1 (#3) and Zic3 (#5), behind the reporter's own positive controls. Non-targeting guides were inflated (15% at p < 0.05), so the hit list was calibrated to them.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-10-06",
+  "published_issue": "2025 Dec"
 }

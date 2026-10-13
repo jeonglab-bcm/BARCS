@@ -14,5 +14,7 @@
   "named_hits": "Establishment enriched: Dnmt1 #2, Setdb1 #7, Ehmt2 #13, Dnmt3b #35, Dnmt3a #39 (all FDR<=0.064), Suv39h1 #48 (FDR 0.12); Hdac1/Hdac2 not enriched; Dhx9 depleted. Maintenance enriched: Dnmt3l #1, Uhrf1 #3, Dnmt3a #4, Dnmt1 #5, Setdb1 #35; Dhx9 #143 (ns).",
   "verdict": "BARCS reproduces the establishment screen closely: every methyltransferase the paper names is enriched at FDR 0.10 and the gene ranking correlates 0.88 with the authors' MAGeCK (46/50 top genes shared). HDACs are a named class, not individual hits, and Hdac1 is depleted at the guide level. DHX9 is recovered in neither screen at FDR.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-09-18",
+  "published_issue": "2025 Sep 18"
 }

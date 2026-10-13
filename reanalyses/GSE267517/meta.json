@@ -14,5 +14,7 @@
   "named_hits": "B2m #1, Jak1 #4, Rnf31 #6; Mettl5 rank 927 (p = 0.012)",
   "verdict": "BARCS and the authors' MAGeCK agree closely on this T-cell killing screen (20 of the top 25 genes shared): antigen presentation and interferon genes protect, Rnf31 and Cflar knockouts sensitize. Mettl5 is a modest hit in both, consistent with the paper selecting it through clinical data rather than screen rank.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-10-03",
+  "published_issue": "2025 Dec"
 }

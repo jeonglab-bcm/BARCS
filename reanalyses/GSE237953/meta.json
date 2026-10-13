@@ -14,5 +14,7 @@
   "named_hits": "NR3C1 #2, PAXIP1 #12, STAG2 #13 (all FDR <= 1e-4); 10/10 paper hits at FDR 0.10",
   "verdict": "BARCS recovers all ten of the paper's hits, with NR3C1, PAXIP1 and STAG2 in its top 13. Its 1,861-gene list is inflated by sparse, jackpotted guides that the far more abundant non-targeting controls cannot calibrate. Restricted to well-counted guides, 8 genes pass, the top six all hits from the paper.",
   "agreement": "agree",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2023-10-13",
+  "published_issue": "2023 Oct 13"
 }

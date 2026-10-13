@@ -14,5 +14,7 @@
   "named_hits": "Genome-scale: NHLRC2 #78 depleted (effect -1.30, raw p 0.055, FDR 1), VAC14 not depleted; ALAS2/UROD depleted in effect but FDR 1. Secondary: VAC14 #67 depleted (FDR 2.6e-10), GATA1 #273, ALAS2 #3; NHLRC2 not in library.",
   "verdict": "In the genome-scale screen 46.6% of non-targeting guides reach p<0.05, so calibrating to the controls collapses the whole list to 0 genes at FDR 0.10 (even ALAS2/UROD) and neither named gene passes, though NHLRC2 is depleted in effect (not a contradiction). The validated gene VAC14 is recovered cleanly in the focused secondary library at FDR 2.6e-10.",
   "agreement": "partial",
-  "analyzed": "2026-10-09"
+  "analyzed": "2026-10-09",
+  "published_date": "2025-04-12",
+  "published_issue": "2025 Apr 12"
 }

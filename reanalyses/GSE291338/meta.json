@@ -14,5 +14,7 @@
   "named_hits": "BAX ven #3 (FDR 3e-4); RB1 palbo FDR 0.03; HNRNPU #4, CEBPE #6; IKZF1 combo FDR 0.051",
   "verdict": "BARCS 0.2.1 recovers every resistance gene the paper names. The venetoclax and combination libraries collapsed onto a few clones, so only enrichment is interpretable there, and the Wald test missed BAX (p = 0.79) until the likelihood-ratio test was added.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2025-12-29",
+  "published_issue": "2026 Jan 20"
 }

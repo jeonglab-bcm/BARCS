@@ -14,5 +14,7 @@
   "named_hits": "mir-18a enriched, rank 3 of 2,119, FDR 2e-8",
   "verdict": "BARCS recovers miR-18a among the three strongest enriched miRNAs, but only after median-ratio normalization; with library totals the composition shift buries it at rank 1,415.",
   "agreement": "agree",
-  "analyzed": "2026-10-07"
+  "analyzed": "2026-10-07",
+  "published_date": "2026-05-26",
+  "published_issue": "2026 Aug"
 }
