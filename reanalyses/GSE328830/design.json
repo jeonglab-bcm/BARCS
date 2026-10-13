@@ -2,6 +2,7 @@
   "gse": "GSE328830",
   "pmid": "42225068",
   "counts_file": "counts_aggregated.txt.gz",
+  "fetch": {"max_mb": 800},
   "guide_column": "guide",
   "gene_column": "Gene",
   "control_gene_pattern": "^NTC_",

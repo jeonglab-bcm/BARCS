@@ -7,8 +7,9 @@
 # invivo_screen = 118 mice -> "screen", invivo_validation = 49 mice -> "val")
 # it sums active and inactive counts over all UMIs and tumors of each guide,
 # giving columns screen_active, screen_inactive, val_active, val_inactive.
-# The in vitro groups (inVitro_PD7, inVitro_PD21) are not used. Rows are the
-# guides seen in either cohort, sorted by guide; Gene = gene_symbol.
+# The in vitro groups (inVitro_PD7, inVitro_PD21) are not summed. Rows are all
+# 29,059 guides in the file, sorted by guide (3 seen only in vitro get zeros);
+# Gene = gene_symbol.
 # The file is read in chunks of 2 million lines to keep memory small.
 # Usage: Rscript prepare.R <workdir>
 
@@ -18,12 +19,14 @@ con <- gzfile(file.path(workdir, "suppl",
 header <- strsplit(readLines(con, n = 1L), ",", fixed = TRUE)[[1]]
 cohorts <- c(invivo_screen = "screen", invivo_validation = "val")
 sums <- NULL
+all_ids <- character()
 repeat {
   lines <- readLines(con, n = 2e6L)
   if (!length(lines)) break
   x <- utils::read.csv(text = lines, header = FALSE, col.names = header,
                        colClasses = c("character", "NULL", "character", "NULL",
                                       "numeric", "numeric", "NULL", "character"))
+  all_ids <- unique(c(all_ids, paste(x$guide, x$gene_symbol, sep = "\t")))
   x <- x[x$group_name %in% names(cohorts), ]
   key <- paste(x$guide, x$gene_symbol, cohorts[x$group_name], sep = "\t")
   chunk <- rowsum(cbind(active = x$active_count, inactive = x$inactive_count), key)
@@ -33,7 +36,7 @@ close(con)
 
 parts <- do.call(rbind, strsplit(rownames(sums), "\t", fixed = TRUE))
 id <- paste(parts[, 1], parts[, 2], sep = "\t")
-ids <- sort(unique(id))
+ids <- sort(all_ids, method = "radix")
 counts <- data.frame(guide = sub("\t.*$", "", ids), Gene = sub("^.*\t", "", ids))
 for (cohort in cohorts) for (state in c("active", "inactive")) {
   value <- numeric(length(ids))

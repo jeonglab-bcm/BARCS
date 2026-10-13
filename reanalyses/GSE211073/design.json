@@ -2,6 +2,7 @@
   "gse": "GSE211073",
   "pmid": "37439113",
   "counts_file": "counts.txt.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "construct",
   "gene_column": "gene",
   "control_gene_pattern": "^control$",

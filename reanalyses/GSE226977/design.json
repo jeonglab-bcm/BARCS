@@ -2,6 +2,7 @@
   "gse": "GSE226977",
   "pmid": "39300912",
   "counts_file": "merged_counts.txt.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
