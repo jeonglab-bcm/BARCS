@@ -1,0 +1,67 @@
+{
+  "gse": "GSE276161",
+  "pmid": "39515331",
+  "counts_file": "CRISPRa_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^non-targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CRISPRa_Vehicle_Rep1",
+      "gsm": "GSM8492239",
+      "condition": "vehicle",
+      "replicate": "1"
+    },
+    {
+      "column": "CRISPRa_Vehicle_Rep2",
+      "gsm": "GSM8492240",
+      "condition": "vehicle",
+      "replicate": "2"
+    },
+    {
+      "column": "CRISPRa_Doxo_Rep1",
+      "gsm": "GSM8492241",
+      "condition": "doxo",
+      "replicate": "1"
+    },
+    {
+      "column": "CRISPRa_Doxo_Rep2",
+      "gsm": "GSM8492242",
+      "condition": "doxo",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "vehicle",
+      "doxo"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CRISPRa_doxo_vs_vehicle",
+      "columns": [
+        "CRISPRa_Vehicle_Rep1",
+        "CRISPRa_Vehicle_Rep2",
+        "CRISPRa_Doxo_Rep1",
+        "CRISPRa_Doxo_Rep2"
+      ],
+      "formula": "~ condition",
+      "term": "conditiondoxo"
+    },
+    {
+      "name": "CRISPRa_doxo_vs_vehicle_medianratio",
+      "columns": [
+        "CRISPRa_Vehicle_Rep1",
+        "CRISPRa_Vehicle_Rep2",
+        "CRISPRa_Doxo_Rep1",
+        "CRISPRa_Doxo_Rep2"
+      ],
+      "formula": "~ condition",
+      "term": "conditiondoxo",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Secondary screen: the matching CRISPRa (dCas9-VPR, hCRISPRa-v2 druggable sublibrary) screen, doxorubicin vs vehicle, two replicates each, no replicate term (2 residual df). Deposited values are integers. Activation of genes that promote doxorubicin toxicity (CA12 in the paper's model) should be depleted in doxorubicin. The library-total run warns of composition shift (top 1% of guides hold up to 34% of reads) and a high guide correlation; a second analysis uses median-ratio totals and is read for enrichment first."
+}

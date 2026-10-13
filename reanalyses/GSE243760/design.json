@@ -2,6 +2,9 @@
   "gse": "GSE243760",
   "pmid": "40997217",
   "counts_file": "GSE243760_merged_counts.tsv",
+  "fetch": {
+    "sample_files": true
+  },
   "guide_column": "guide",
   "gene_column": "element",
   "control_gene_pattern": "non-targeting",

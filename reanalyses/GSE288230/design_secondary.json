@@ -1,0 +1,22 @@
+{
+  "gse": "GSE288230",
+  "pmid": "40221460",
+  "counts_file": "GSE288230_Secondary_Library_Raw_Counts_noBOM.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargeting$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "SS_HUDEP2_Rep1_D0", "gsm": "GSM8761575", "condition": "D0", "replicate": "1"},
+    {"column": "SS_HUDEP2_Rep2_D0", "gsm": "GSM8761576", "condition": "D0", "replicate": "2"},
+    {"column": "SS_HUDEP2_Rep3_D0", "gsm": "GSM8761577", "condition": "D0", "replicate": "3"},
+    {"column": "SS_HUDEP2_Rep1_D12", "gsm": "GSM8761578", "condition": "D12", "replicate": "1"},
+    {"column": "SS_HUDEP2_Rep2_D12", "gsm": "GSM8761579", "condition": "D12", "replicate": "2"},
+    {"column": "SS_HUDEP2_Rep3_D12", "gsm": "GSM8761580", "condition": "D12", "replicate": "3"}
+  ],
+  "factor_levels": {"condition": ["D0", "D12"], "replicate": ["1", "2", "3"]},
+  "analyses": [
+    {"name": "secondary_D12_vs_D0", "formula": "~ replicate + condition", "term": "conditionD12"}
+  ],
+  "rationale": "Secondary (focused, 12,444-guide) validation library, same HUDEP-2 D12 vs D0 erythroid differentiation contrast, 3 paired replicates (4 residual df). VAC14 is in this library and was validated; NHLRC2 is not."
+}

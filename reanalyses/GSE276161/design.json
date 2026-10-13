@@ -2,6 +2,7 @@
   "gse": "GSE276161",
   "pmid": "39515331",
   "counts_file": "CRISPRi_counts.tsv",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^non-targeting$",

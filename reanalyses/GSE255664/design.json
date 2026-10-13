@@ -2,6 +2,7 @@
   "gse": "GSE255664",
   "pmid": "41006228",
   "counts_file": "merged_counts.tsv.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "gene",
   "control_gene_pattern": "^control$",

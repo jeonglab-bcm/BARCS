@@ -2,6 +2,9 @@
   "gse": "GSE229584",
   "pmid": "37883554",
   "counts_file": "GSE229584_merged_counts.tsv.gz",
+  "fetch": {
+    "sample_files": true
+  },
   "guide_column": "sgRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^Non_Targeting_Control$",
