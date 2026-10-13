@@ -56,8 +56,16 @@ with `--sample-files` and combine the per-sample files yourself.
 Decide, and write down why:
 
 - **Is it raw counts?** Every sample column must be integer-valued. Never feed
-  normalized, log-transformed, or CPM values to BARCS; if only those exist,
-  stop and report that the screen cannot be reanalyzed faithfully.
+  normalized, log-transformed, or CPM values to BARCS. Unrounded normalized
+  tables (MAGeCK `count_normalized`, CPM) are often raw reads times one
+  constant per sample: try `tools/screen-reanalysis/recover_counts.R`, which
+  accepts a column only when at least 99.5% of its values become integers
+  (`RECOVER_OFFSET` handles a pseudocount added after scaling). Use the
+  recovered table only when every sample column passes, copy
+  `recovered_counts_scales.json` into the record as `recovery_scales.json`,
+  and say in the report how the counts were recovered. Rounded normalized
+  values cannot be recovered: report that the screen cannot be reanalyzed
+  faithfully.
 - **Column-to-sample mapping.** Use column names, the GSM titles, and the
   correlation matrix from `inspect_counts.R` (replicates of one condition
   correlate most strongly). Generic names such as `S1..S9` usually follow GSM

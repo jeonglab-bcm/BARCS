@@ -1,0 +1,7 @@
+10db-cont1                     vmin=0.876446     best k=1   scale=0.876446     integrality=1.0000 maxdev=9.32e-12 total=24,456,189
+10db-cont2                     vmin=0.614159     best k=1   scale=0.614159     integrality=1.0000 maxdev=2e-11 total=35,209,481
+10db-cont3                     vmin=0.527061     best k=1   scale=0.527061     integrality=1.0000 maxdev=1.48e-11 total=41,602,626
+10db-PFOS1                     vmin=2.70852      best k=1   scale=2.70852      integrality=1.0000 maxdev=2.79e-12 total=8,177,206
+10db-PFOS2                     vmin=0.563228     best k=1   scale=0.563228     integrality=1.0000 maxdev=1.39e-11 total=38,374,147
+10db-PFOS3                     vmin=1.69352      best k=1   scale=1.69352      integrality=1.0000 maxdev=4.43e-12 total=13,033,381
+Wrote work/GSE291529/recovered_counts.tsv 

@@ -1,0 +1,18 @@
+{
+  "gse": "GSE268533",
+  "pmid": "38985676",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "sgControl", "gsm": "GSM8335572", "condition": "sgControl", "replicate": "pooled"},
+    {"column": "sgCD274", "gsm": "GSM8335571", "condition": "sgCD274", "replicate": "pooled"}
+  ],
+  "factor_levels": {"condition": ["sgControl", "sgCD274"]},
+  "analyses": [
+    {"name": "sgCD274_vs_sgControl", "columns": ["sgControl", "sgCD274"], "formula": "~ condition", "term": "conditionsgCD274"}
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK count_normalized table (one scale factor per column, integrality 100%). GEO describes duplicates, but only one column per arm was deposited (the duplicates were pooled before or during counting), so this is one library per condition and BARCS uses the no-replicate path. The paper's comparison is Brunello-screened CAL27 PD-L1 knockout versus control cells; synthetic-lethal genes are depleted in sgCD274."
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE238225",
+  "pmid": "40499551",
+  "doi": "10.1016/j.crmeth.2025.101078",
+  "title": "CRISPR GENome and epigenome engineering (CRISPRgenee) improves loss-of-function genetic-screening approaches",
+  "journal": "Cell Reports Methods",
+  "published": "2025",
+  "model": "TF-1 erythroleukemia (ZIM3-Cas9), dual-sgRNA CRISPRgenee chromatin library (1,137 genes)",
+  "contrast": "Day 14 vs plasmid sgRNA pool (3 vs 3)",
+  "paper_method": "CRISPRBetaBinomial (CB2), ROC/AUC vs gold-standard essentials",
+  "paper_calls": "Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out",
+  "barcs_calls": "731 genes at FDR 0.10 (424 up, 307 down)",
+  "named_hits": "CSF2RA, MYC, RPA3, KDM1A, SETD8, ADAR all strongly depleted (FDR < 1e-4)",
+  "verdict": "Raw reads recovered exactly from the normalized table. BARCS recovers every positive control and the essential-gene dropout signal, confirming the methods-paper screen performs as designed.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0%.",
+  "published_date": "2025-06-10",
+  "published_issue": "2025 Jun 16"
+}

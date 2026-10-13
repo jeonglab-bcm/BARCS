@@ -14,5 +14,7 @@
   "named_hits": "3/5 at FDR 0.10 (MED14, GNB1L, RRM2); FTSJ3 rank 9 of 91, FDR 0.12",
   "verdict": "BARCS ranks four of the five named HTelo hits in its top 9 and calls MED14, GNB1L and RRM2, but the calls rest on 2 clonal tumors per arm with single-guide jackpots, the line-by-Cas9 interaction calls nothing, and without controls or a described Wild Type arm the SDL claim cannot be confirmed from these counts.",
   "agreement": "partial",
-  "analyzed": "2026-10-13"
+  "analyzed": "2026-10-13",
+  "published_date": "2026-06-04",
+  "published_issue": "2026 Jun 4"
 }

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE268533",
+  "pmid": "38985676",
+  "doi": "10.1016/j.celrep.2024.114477",
+  "title": "Synthetic lethal CRISPR screen identifies a cancer cell-intrinsic role of PD-L1 in regulation of vulnerability to ferroptosis",
+  "journal": "Cell Reports",
+  "published": "2024",
+  "model": "CAL27 HNSCC, genome-wide Brunello KO",
+  "contrast": "PD-L1 KO (sgCD274) vs control (sgControl), 1 vs 1 (duplicates pooled)",
+  "paper_method": "MAGeCK",
+  "paper_calls": "No gene passes FDR in the deposited table; ferroptosis link from pathway enrichment",
+  "barcs_calls": "0 genes at FDR 0.10",
+  "named_hits": "No single-gene screen hits named; mechanism genes (SOD2, GPX4) are mid-list",
+  "verdict": "Raw reads recovered exactly from the MAGeCK-normalized table. With one pooled library per arm, neither BARCS nor the paper's own MAGeCK calls any gene at FDR; the gene scores correlate 0.68. Screening-level, no replicate variation.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0% at k=1.",
+  "published_date": "2024-07-11",
+  "published_issue": "2024 Jul 23"
+}

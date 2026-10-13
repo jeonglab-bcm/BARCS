@@ -12,6 +12,7 @@ agent (or you) writes `design.json` and `compare.json`.
 | `fetch_geo.R` | Series metadata (`series.json`, `samples.tsv`) and supplementary files |
 | `inspect_counts.R` | Header, integer check, totals, replicate correlations, control labels |
 | `run_barcs.R` | BARCS per analysis in `design.json` -> `results/<analysis>/` |
+| `recover_counts.R` | Exact raw reads from a table normalized by one constant per sample (unrounded MAGeCK-normalized or CPM values); accepts a column only when 99.5% of values become integers |
 | `no_replicates.R` | Sourced by `run_barcs.R`: guide fit with a pooled overdispersion for analyses with one library per condition |
 | `compare_results.R` | Named-hit ranks, rank correlation and top-N overlap with a published table |
 | `archive_run.R` | Copy a finished run (with `meta.json`) into `reanalyses/<GSE>/` |

@@ -1,0 +1,5 @@
+a_D0                           vmin=0.879122     best k=1   scale=0.879122     integrality=1.0000 maxdev=5.65e-07 total=22,749,968
+b_D0                           vmin=0.873272     best k=1   scale=0.873272     integrality=1.0000 maxdev=5.71e-07 total=22,902,359
+a_D21                          vmin=1.01106      best k=1   scale=1.01106      integrality=1.0000 maxdev=0.000438 total=19,781,210
+b_D21                          vmin=1.04469      best k=1   scale=1.04469      integrality=1.0000 maxdev=4.19e-05 total=19,144,452
+Wrote work/GSE232856/recovered_counts.tsv 

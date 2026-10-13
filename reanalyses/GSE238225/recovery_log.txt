@@ -1,0 +1,7 @@
+Biological replicate 1         vmin=0.69658      best k=1   scale=0.69658      integrality=1.0000 maxdev=7.18e-07 total=7,192,845
+Biological replicate 2         vmin=1.40781      best k=2   scale=0.703905     integrality=1.0000 maxdev=3.78e-06 total=7,103,642
+Biological replicate 3         vmin=0.759526     best k=1   scale=0.759526     integrality=1.0000 maxdev=5.62e-06 total=6,632,691
+sgRNA pool replicate 2         vmin=4.73246      best k=4   scale=1.18311      integrality=1.0000 maxdev=4.22e-07 total=4,370,916
+sgRNA pool replicate 3         vmin=2.69677      best k=2   scale=1.34839      integrality=1.0000 maxdev=3.75e-07 total=3,899,588
+sgRNA pool replicate 1         vmin=3.39333      best k=2   scale=1.69667      integrality=1.0000 maxdev=2.93e-06 total=3,162,036
+Wrote work/GSE238225/recovered_counts.tsv 

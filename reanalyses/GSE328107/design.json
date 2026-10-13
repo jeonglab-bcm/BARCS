@@ -1,0 +1,25 @@
+{
+  "gse": "GSE328107",
+  "pmid": "42095550",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting",
+  "min_total_count": 30,
+  "totals": "control",
+  "samples": [
+    {"column": "IntactD4", "gsm": "GSM9672491", "condition": "D4", "genotype": "intact", "replicate": "1"},
+    {"column": "IntactD8", "gsm": "GSM9672492", "condition": "D8", "genotype": "intact", "replicate": "1"},
+    {"column": "IntactD22", "gsm": "GSM9672493", "condition": "final", "genotype": "intact", "replicate": "1"},
+    {"column": "KOD4", "gsm": "GSM9672494", "condition": "D4", "genotype": "KO", "replicate": "1"},
+    {"column": "KOD8", "gsm": "GSM9672495", "condition": "D8", "genotype": "KO", "replicate": "1"},
+    {"column": "KOD22", "gsm": "GSM9672496", "condition": "D22", "genotype": "KO", "replicate": "1"},
+    {"column": "KOD32", "gsm": "GSM9672497", "condition": "final", "genotype": "KO", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["D4", "D8", "D22", "final"], "genotype": ["intact", "KO"]},
+  "analyses": [
+    {"name": "ko_d32_vs_d4", "columns": ["KOD4", "KOD32"], "formula": "~ condition", "term": "conditionfinal"},
+    {"name": "intact_d22_vs_d4", "columns": ["IntactD4", "IntactD22"], "formula": "~ condition", "term": "conditionfinal"}
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK count_normalized table (one scale factor per column, integrality 100%). The paper ran MAGeCK on the final time point (14 population doublings: D22 for KRAS-intact, D32 for KRAS-KO) versus D4, separately per genotype, normalized to non-targeting controls; both analyses reproduce that, with control totals as in the paper. One library per condition, so BARCS uses the no-replicate path (overdispersion pooled across non-targeting guides)."
+}

@@ -14,5 +14,7 @@
   "named_hits": "TP53 recovered as #1 enriched (FDR 5.6e-6); passenger artifacts (OSR2, nc_guide2480) correctly not called",
   "verdict": "BARCS recovers the paper's single firm long-term conclusion: TP53 is the top enriched knockout at day 15 with all guides concordant, while the OSR2 and non-cutting-control enrichments the paper flags as high-MOI passengers are discounted by guide aggregation. Beyond day 20 the library collapses to a few clones and nothing is interpretable.",
   "agreement": "agree",
-  "analyzed": "2026-10-13"
+  "analyzed": "2026-10-13",
+  "published_date": "2025-08-30",
+  "published_issue": "2025 Aug 30"
 }
