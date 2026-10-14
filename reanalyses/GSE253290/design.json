@@ -1,0 +1,64 @@
+{
+  "gse": "GSE253290",
+  "pmid": "41957359",
+  "counts_file": "genomewide_counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^nontargeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "S1",
+      "gsm": "GSM8017807",
+      "condition": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "S2",
+      "gsm": "GSM8017808",
+      "condition": "untreated",
+      "replicate": "1"
+    },
+    {
+      "column": "S3",
+      "gsm": "GSM8017809",
+      "condition": "palbociclib",
+      "replicate": "1"
+    },
+    {
+      "column": "S4",
+      "gsm": "GSM8017810",
+      "condition": "palbociclib",
+      "replicate": "2"
+    },
+    {
+      "column": "S5",
+      "gsm": "GSM8017811",
+      "condition": "palbociclib",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "untreated",
+      "palbociclib",
+      "plasmid"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "genomewide_palbo_vs_untreated",
+      "columns": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "formula": "~ condition",
+      "term": "conditionpalbociclib",
+      "totals": "control"
+    }
+  ],
+  "rationale": "Genome-wide lncRNA CRISPRa screen (dCas9-VP64/MS2-p65-HSF1, ~52k sgRNAs for ~10k lncRNA TSSs, 500 non-targeting) in MCF-7 cells. The paper compares three palbociclib-treated replicates (T14a/b/c) with one untreated sample (P14), MAGeCK MLE. GEO labels S2 'no drug 2 weeks', S3 'no drug 4 weeks' and S4/S5 'palbociclib', but the paper describes P0, P14 and T14a/b/c, and the data agree with the paper: S3-S5 correlate equally with each other, and the gene-level log fold change of S3-S5 vs S2 matches the paper's treatment beta (Spearman 0.77) while S4/S5 vs S3 does not (0.02). So S1 = plasmid, S2 = untreated P14, S3-S5 = palbociclib; 3 vs 1, 2 residual df. Activating lncRNAs that sensitize cells to palbociclib are depleted. prepare.R keeps one row per sgRNA and Ensembl gene (the GEO table repeats sgRNAs per transcript). Totals from the 500 non-targeting guides, as the paper normalized MAGeCK MLE to them: the untreated library is more skewed (top 1% of guides hold 12.5% of reads vs 7.3% under palbociclib), and with library totals every guide, controls included, moved by about +0.39 log.",
+  "counts_md5": "fee8a6f040aa1f6d506b91204dd26a8d"
+}

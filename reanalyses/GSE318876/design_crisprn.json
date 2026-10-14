@@ -1,0 +1,74 @@
+{
+ "gse": "GSE318876",
+ "pmid": "42013838",
+ "counts_file": "suppl/GSE318876_crisprn_gw.count.txt.gz",
+ "guide_column": "sgRNA",
+ "gene_column": "Gene",
+ "control_gene_pattern": "^NO-TARGET",
+ "min_total_count": 30,
+ "samples": [
+  {
+   "column": "D8_GFP-Neg",
+   "gsm": "GSM9505178",
+   "donor": "D1",
+   "bin": "GFPneg"
+  },
+  {
+   "column": "D9_GFP-Neg",
+   "gsm": "GSM9505181",
+   "donor": "D2",
+   "bin": "GFPneg"
+  },
+  {
+   "column": "D10_GFP-Neg",
+   "gsm": "GSM9505184",
+   "donor": "D3",
+   "bin": "GFPneg"
+  },
+  {
+   "column": "D8_GFP-Pos",
+   "gsm": "GSM9505179",
+   "donor": "D1",
+   "bin": "GFPpos"
+  },
+  {
+   "column": "D9_GFP-Pos",
+   "gsm": "GSM9505182",
+   "donor": "D2",
+   "bin": "GFPpos"
+  },
+  {
+   "column": "D10_GFP-Pos",
+   "gsm": "GSM9505185",
+   "donor": "D3",
+   "bin": "GFPpos"
+  }
+ ],
+ "factor_levels": {
+  "bin": [
+   "GFPpos",
+   "GFPneg"
+  ],
+  "donor": [
+   "D1",
+   "D2",
+   "D3"
+  ]
+ },
+ "analyses": [
+  {
+   "name": "crisprn_GFPneg_vs_GFPpos",
+   "columns": [
+    "D8_GFP-Neg",
+    "D9_GFP-Neg",
+    "D10_GFP-Neg",
+    "D8_GFP-Pos",
+    "D9_GFP-Pos",
+    "D10_GFP-Pos"
+   ],
+   "formula": "~ donor + bin",
+   "term": "binGFPneg"
+  }
+ ],
+ "rationale": "Genome-wide CRISPRn (Brunello) sort screen in CD4+ T cells, three donors (D8/D9/D10). Knockout of a proviral dependency lowers the reporter, so proviral host factors are enriched in the reporter-negative sort (positive binGFPneg). 1000 NO-TARGET controls. Same ~ donor + bin design."
+}

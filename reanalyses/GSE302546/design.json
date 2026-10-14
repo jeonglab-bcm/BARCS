@@ -1,0 +1,70 @@
+{
+  "gse": "GSE302546",
+  "pmid": "41974002",
+  "counts_file": "suppl/GSE302546_sgRNA_count_allinfo.txt.gz",
+  "guide_column": "gRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "DMSO-1",
+      "gsm": "GSM9105685",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO-2",
+      "gsm": "GSM9105686",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "DMSO-3",
+      "gsm": "GSM9105687",
+      "treatment": "DMSO",
+      "replicate": "3"
+    },
+    {
+      "column": "R20-1",
+      "gsm": "GSM9105688",
+      "treatment": "RSL3",
+      "replicate": "1"
+    },
+    {
+      "column": "R20-2",
+      "gsm": "GSM9105689",
+      "treatment": "RSL3",
+      "replicate": "2"
+    },
+    {
+      "column": "R20-3",
+      "gsm": "GSM9105690",
+      "treatment": "RSL3",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "RSL3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "RSL3_vs_DMSO",
+      "columns": [
+        "DMSO-1",
+        "DMSO-2",
+        "DMSO-3",
+        "R20-1",
+        "R20-2",
+        "R20-3"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentRSL3"
+    }
+  ],
+  "rationale": "Genome-wide GeCKOv2 library A knockout screen in LIU-LSC-1 HNSCC cells, three DMSO and three RSL3 (IC20, columns R20-1..3) libraries; columns match GSM titles DMSO-1..3 and RSL3-1..3. The paper's question is which knockouts sensitize to ferroptosis, i.e. guides depleted under RSL3 relative to DMSO. No evidence that replicates are paired across arms (correlations do not pair them), so no replicate term (4 residual df). Library totals; 1000 non-targeting guides for calibration.",
+  "counts_md5": "c8eb4f9ed1aa9a28d511b3f976820f8f"
+}

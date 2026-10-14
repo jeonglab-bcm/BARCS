@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/High_vs_Low/genes.csv",
+  "direction": "both",
+  "named_hits": ["ZEB1", "FGFR1", "F11R"],
+  "published": {
+    "file": "paper/mageck_high_vs_low.tsv",
+    "gene_column": "gene", "score_column": "score", "score_better": "lower",
+    "effect_column": "lfc"
+  },
+  "top_n": [10, 25, 50, 100]
+}

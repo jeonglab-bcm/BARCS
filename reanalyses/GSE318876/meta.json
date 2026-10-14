@@ -1,0 +1,20 @@
+{
+  "gse": "GSE318876",
+  "pmid": "42013838",
+  "doi": "10.1016/j.cell.2026.03.046",
+  "pmcid": "PMC13105272",
+  "title": "Systematic discovery of pro- and anti-HIV host factors in primary human CD4+ T cells",
+  "journal": "Cell",
+  "published": "2026",
+  "model": "Primary human CD4+ T cells, HIV-GFP reporter sort; genome-wide CRISPRa (Calabrese pools A and B) and CRISPRn (Brunello)",
+  "contrast": "Reporter-negative vs reporter-positive sort, paired by donor (3 vs 3), CRISPRa pool A (primary), pool B and CRISPRn",
+  "paper_method": "MAGeCK RRA (gene summaries deposited in GEO; CRISPRa pools A and B combined)",
+  "paper_calls": "226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted",
+  "barcs_calls": "CRISPRa pool A 366 genes at FDR 0.10 (126 enriched in reporter-negative) after control calibration; pool B 178 (79), 163 against the control null; CRISPRn 342 (173), 352 against the control null",
+  "named_hits": "Ranks among reporter-negative-enriched genes, pool A / pool B: PPID #1/#1, PI16 #4/#4, SHISA3 #7/#3, ITM2A #8/#6 (FDR <= 7e-6); CRISPRn CXCR4 #1, CD4 #2",
+  "verdict": "BARCS reproduces the paper's main findings: PPID, PI16, SHISA3 and ITM2A are among the eight strongest antiviral hits in each CRISPRa pool analysed separately, and CXCR4 and CD4 top the knockout screen. Rank agreement with the paper's MAGeCK tables is moderate to good (Spearman 0.48-0.74); the CRISPRa pools needed control calibration (raw false-positive rate 13-14%).",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-04-20",
+  "published_issue": "2026 Jun 11"
+}

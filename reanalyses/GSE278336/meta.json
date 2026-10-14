@@ -1,0 +1,20 @@
+{
+  "gse": "GSE278336",
+  "pmid": "41673027",
+  "doi": "10.1038/s41467-026-69090-z",
+  "pmcid": "PMC13004945",
+  "title": "dHyperCas12a enables multiplexed CRISPRi screens.",
+  "journal": "Nature Communications",
+  "published": "2026",
+  "model": "A549, dCas12a CRISPRi pre-crRNA array fitness library (four repressors)",
+  "contrast": "Day 21 vs day 5 per repressor, paired by transduction (3 vs 3); primary dHyperLbCas12a-KRAB",
+  "paper_method": "DESeq2 time course and MAGeCK MLE",
+  "paper_calls": "31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)",
+  "barcs_calls": "46 genes at FDR 0.10 for dHyperLbCas12a-KRAB (28 depleted, all paper calls); 3, 8 and 0 for the other repressors",
+  "named_hits": "6/6 of the paper's top depleted genes at FDR 0.10 (RPL34 #1, SMC2 #2, XPO1 #3, MDM4 #5, SNRPE #7, RPS20 #11 among depleted genes, by p)",
+  "verdict": "BARCS reproduces the repressor ranking (dHyperLbCas12a-KRAB far ahead, dEnAsCas12a-4xSID with no hits) and every BARCS depletion call is a paper call; lists are a little shorter after control calibration (12% raw control rate) and with the day-21 vs day-5 endpoint instead of the time course.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-02-12",
+  "published_issue": "2026 Feb 12"
+}

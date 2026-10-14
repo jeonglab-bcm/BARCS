@@ -1,0 +1,42 @@
+{
+  "gse": "GSE325129",
+  "pmid": "42214332",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgId",
+  "gene_column": "gene",
+  "control_gene_pattern": "^non-targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "MHClo",
+      "gsm": "GSM9596510",
+      "bin": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "MHChi",
+      "gsm": "GSM9596511",
+      "bin": "high",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "low",
+      "high"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "MHChigh_vs_MHClow",
+      "columns": [
+        "MHClo",
+        "MHChi"
+      ],
+      "formula": "~ bin",
+      "term": "binhigh"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRi (hCRISPRi-v2, dCas9-KRAB) screen in PaTu8902 PDAC cells immunostained for surface MHC-I; the top and bottom 30% were sorted. The paper compares the MHC-I high and low bins; knockdown of MHC-I degraders (NFXL1, TEX264-NBR1 capture) raises surface MHC-I, so they are enriched in the high bin, while MHC-I pathway genes (B2M, TAP1, HLA-A) are enriched in the low bin. One library per bin and no unsorted sample, so BARCS uses the no-replicate path (overdispersion pooled over the 1895 non-targeting guides); calls are screening-level. prepare.R removes the four header lines and takes the gene from the sgId prefix (alternative-promoter guides pooled per gene). Library totals; the two bins have similar composition.",
+  "counts_md5": "99e9310f8cb0ce359651e3d400d8ad5c"
+}

@@ -1,0 +1,75 @@
+{
+  "gse": "GSE171674",
+  "pmid": "35817986",
+  "counts_file": "suppl/GSE171674_CRISPR_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Donor1_CD25_high",
+      "gsm": "GSM5230318",
+      "sort": "high",
+      "donor": "D1"
+    },
+    {
+      "column": "Donor1_CD25_low",
+      "gsm": "GSM5230319",
+      "sort": "low",
+      "donor": "D1"
+    },
+    {
+      "column": "Donor2_CD25_high",
+      "gsm": "GSM5230321",
+      "sort": "high",
+      "donor": "D2"
+    },
+    {
+      "column": "Donor2_CD25_low",
+      "gsm": "GSM5230322",
+      "sort": "low",
+      "donor": "D2"
+    },
+    {
+      "column": "Donor3_CD25_high",
+      "gsm": "GSM5230328",
+      "sort": "high",
+      "donor": "D3"
+    },
+    {
+      "column": "Donor3_CD25_low",
+      "gsm": "GSM5230329",
+      "sort": "low",
+      "donor": "D3"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "low",
+      "high"
+    ],
+    "donor": [
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD25_high_vs_low",
+      "columns": [
+        "Donor1_CD25_high",
+        "Donor1_CD25_low",
+        "Donor2_CD25_high",
+        "Donor2_CD25_low",
+        "Donor3_CD25_high",
+        "Donor3_CD25_low"
+      ],
+      "formula": "~ donor + sort",
+      "term": "sorthigh"
+    }
+  ],
+  "rationale": "Pooled knockout screen of ~1,350 transcription factors and immune regulators in primary human CD4+ T cells (Freimer et al. 2022, Nat Genet; GEO also lists PMIDs 39395408 and 41237776, later papers that reuse the data). Columns are self-named. The paper's primary screen sorted CD25 (IL2RA) high and low cells in three donors; high and low sorts come from the same donor's edited pool, so donor is paired and enters the model (2 residual df). Positive regulators of IL2RA are depleted in CD25-high relative to CD25-low; negative regulators are enriched. IL2RA itself is the positive control. IL-2 and CTLA4 sorts exist for two donors only and are not analyzed.",
+  "counts_md5": "be376643a68969a8f8a797a498c16115"
+}

@@ -1,0 +1,62 @@
+{
+  "gse": "GSE294894",
+  "pmid": "42227585",
+  "counts_file": "suppl/GSE294894_SW620_oxaliplatin_Activation.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NO-TARGET$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0",
+      "gsm": "GSM8927818",
+      "condition": "T0"
+    },
+    {
+      "column": "T20",
+      "gsm": "GSM8927820",
+      "condition": "untreated"
+    },
+    {
+      "column": "0.38_OXAL",
+      "gsm": "GSM8927821",
+      "condition": "oxali038"
+    },
+    {
+      "column": "0.50_OXAL",
+      "gsm": "GSM8927822",
+      "condition": "oxali050"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "T0",
+      "untreated",
+      "oxali038",
+      "oxali050"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SW620_Act_oxali050_vs_T20",
+      "columns": [
+        "T20",
+        "0.50_OXAL"
+      ],
+      "formula": "~ condition",
+      "term": "conditionoxali050",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "SW620_Act_oxali038_vs_T20",
+      "columns": [
+        "T20",
+        "0.38_OXAL"
+      ],
+      "formula": "~ condition",
+      "term": "conditionoxali038",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Genome-wide oxaliplatin screens in colorectal cancer lines (MAGeCK count tables deposited per screen; the count_normalized files are ignored). One library per condition, so BARCS uses the no-replicate path (overdispersion pooled over the non-targeting guides); calls are screening-level. The paper compares day-20 oxaliplatin with day-20 untreated cells; SLC43A1 should be enriched in knockout and depleted in activation screens. SW620 Calabrese activation screen, 0.5 and 0.38 uM oxaliplatin vs untreated at day 20. Controls are the NO-TARGET guides."
+}

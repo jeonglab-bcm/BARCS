@@ -1,0 +1,70 @@
+{
+  "gse": "GSE253290",
+  "pmid": "41957359",
+  "counts_file": "suppl/GSE253290_combine_mcf.count.csv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NT[0-9]+$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "p0",
+      "gsm": "GSM8017812",
+      "condition": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "p14a",
+      "gsm": "GSM8017813",
+      "condition": "untreated",
+      "replicate": "1"
+    },
+    {
+      "column": "p14b",
+      "gsm": "GSM8017814",
+      "condition": "untreated",
+      "replicate": "2"
+    },
+    {
+      "column": "cdk1",
+      "gsm": "GSM8017815",
+      "condition": "palbociclib",
+      "replicate": "1"
+    },
+    {
+      "column": "cdk2",
+      "gsm": "GSM8017816",
+      "condition": "palbociclib",
+      "replicate": "2"
+    },
+    {
+      "column": "cdk3",
+      "gsm": "GSM8017817",
+      "condition": "palbociclib",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "untreated",
+      "palbociclib",
+      "plasmid"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "focused_palbo_vs_untreated",
+      "columns": [
+        "p14a",
+        "p14b",
+        "cdk1",
+        "cdk2",
+        "cdk3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionpalbociclib",
+      "totals": "control"
+    }
+  ],
+  "rationale": "Focused lncRNA CRISPRa screen (1000 sgRNAs: 160 genes x 6 plus 40 non-targeting NT1-NT40) in MCF-7. The paper describes P0, untreated P14a/b and palbociclib T14a/b/c. GEO labels cdk1 'no drug 4 weeks', but cdk1 correlates 0.994 with cdk3 and cdk2/3 vs cdk1 is uncorrelated with the paper's treatment beta (Spearman -0.02), whereas cdk1-3 vs p14a/b reproduces it (0.91); p14a/b are not technical re-reads (overdispersed against each other like the palbociclib replicates). So cdk1-3 = palbociclib (T14a/b/c), p14a/b = untreated; 3 vs 2, 3 residual df. The focused library holds only genes picked as proliferation hits, so library totals shift with selection (85% of non-targeting guides reached p < 0.05 with library totals); totals are therefore taken from the 40 non-targeting guides, as the paper normalized MAGeCK MLE to them. Only 40 control guides, so no control null and no automatic calibration (it needs 50)."
+}

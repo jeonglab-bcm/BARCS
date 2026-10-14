@@ -1,0 +1,45 @@
+{
+  "analysis": "poolD_FdU_vs_DMSO_E",
+  "formula": "~treatment",
+  "term": "treatmentFdU",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 20063,
+  "genes": 4952,
+  "moderated": true,
+  "prior_df": 148.1201,
+  "guide_correlation": 0.0077,
+  "control_scale": null,
+  "control_guides": 150,
+  "control_p05_raw": 0.06,
+  "control_p05": 0.06,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 2,
+  "top1pct_read_share": {
+    "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_D15": 0.023,
+    "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_D15": 0.023,
+    "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_FDU_D15": 0.027,
+    "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_FDU_D15": 0.027
+  },
+  "genes_fdr_0_10_up": 266,
+  "genes_fdr_0_10_down": 380,
+  "genes_fdr_0_05": 491,
+  "genes_fdr_0_10": 646,
+  "genes_empirical_fdr_0_10": 775,
+  "empirical_centre": "targets",
+  "control_shift": -0.377,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

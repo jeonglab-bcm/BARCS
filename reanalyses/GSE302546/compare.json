@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/RSL3_vs_DMSO/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["TRAPPC4", "POLR3H", "PSMG4", "LSM11", "LONP1", "GINS4", "USP5", "TPI1"],
+  "published": {
+    "file": "paper/TableS8.tsv",
+    "gene_column": "id", "score_column": "neg|score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [5, 50, 100, 200, 1000]
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE171674",
+  "pmid": "35817986",
+  "doi": "10.1038/s41588-022-01106-y",
+  "pmcid": "PMC10035359",
+  "title": "Systematic discovery and perturbation of regulatory genes in human T cells reveals the architecture of immune networks",
+  "journal": "Nature Genetics",
+  "published": "2022",
+  "model": "Primary human CD4+ T cells (3 donors), ~1,350-gene transcription-factor and immune-regulator knockout library, CD25 FACS sort",
+  "contrast": "CD25 (IL2RA) high vs low bin, paired by donor (3 vs 3)",
+  "paper_method": "MAGeCK (gene summary in Supplementary Table 2)",
+  "paper_calls": "58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators",
+  "barcs_calls": "126 genes at FDR 0.10 (65 up, 61 down in CD25-high); 133 against the control null centred on the targeting guides",
+  "named_hits": "13/13 at FDR 0.10; two-sided ranks: MED12 #1, CBFB #2, HIVEP2 #3, STAT5B #5, IL2RA #6, KLF2 #7, FOXK1 #9, ZNF217 #11, TNFAIP3 #12, STAT5A #19, JAK3 #26, IRF4 #64, ATXN7L3 #68 of 1,350",
+  "verdict": "BARCS recovers all 58 of the authors' MAGeCK calls and every named regulator, with the IL2RA positive control at #6. It adds 68 smaller but guide-consistent effects, such as RUNX3, BCL11B and LEF1, that MAGeCK's permutation floor and unpaired ranking leave out.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2022-07-11",
+  "published_issue": "2022 Aug"
+}

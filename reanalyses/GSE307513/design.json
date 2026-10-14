@@ -1,0 +1,89 @@
+{
+  "gse": "GSE307513",
+  "pmid": "41105755",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Brunello_pDNA_library",
+      "gsm": "GSM9225828",
+      "gate": "plasmid",
+      "sort": "none",
+      "replicate": "1"
+    },
+    {
+      "column": "DAY9_puro_selected_cells",
+      "gsm": "GSM9225822",
+      "gate": "day9",
+      "sort": "none",
+      "replicate": "1"
+    },
+    {
+      "column": "DAY17_puro_selected_cells",
+      "gsm": "GSM9225823",
+      "gate": "day17",
+      "sort": "none",
+      "replicate": "1"
+    },
+    {
+      "column": "CD107a_neg_sort1",
+      "gsm": "GSM9225825",
+      "gate": "neg",
+      "sort": "sort1",
+      "replicate": "1"
+    },
+    {
+      "column": "CD107a_neg_sort2",
+      "gsm": "GSM9225824",
+      "gate": "neg",
+      "sort": "sort2",
+      "replicate": "2"
+    },
+    {
+      "column": "CD107a_hi_sort1",
+      "gsm": "GSM9225827",
+      "gate": "hi",
+      "sort": "sort1",
+      "replicate": "1"
+    },
+    {
+      "column": "CD107a_hi_sort2",
+      "gsm": "GSM9225826",
+      "gate": "hi",
+      "sort": "sort2",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "gate": [
+      "neg",
+      "hi",
+      "plasmid",
+      "day9",
+      "day17"
+    ],
+    "sort": [
+      "sort1",
+      "sort2",
+      "none"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD107a_hi_vs_neg",
+      "columns": [
+        "CD107a_neg_sort1",
+        "CD107a_neg_sort2",
+        "CD107a_hi_sort1",
+        "CD107a_hi_sort2"
+      ],
+      "formula": "~ sort + gate",
+      "term": "gatehi"
+    }
+  ],
+  "rationale": "Genome-wide Brunello KO screen in NK-92 Cas9 cells stimulated with target cells and sorted on surface CD107a (degranulation) into CD107a-high and CD107a-negative gates in two independent sorts. Counts are the GEO PoolQ table with a Gene column derived from 'Row Barcode IDs' by prepare.R; column names equal GSM library names. Knockouts of genes needed for degranulation are depleted from the CD107a-high gate relative to the negative gate. High and negative gates of one sort come from the same stimulated culture (within-sort correlation 0.82 and 0.75 vs 0.78-0.82 across), so the model pairs them with a sort term; this leaves 1 residual df, which BARCS moderates across guides (prior df 24). Because the pairing is not clearly supported by the correlations, the unpaired model (~ gate, residual df 2) is run as a sensitivity analysis. Plasmid and day-9/day-17 libraries are single references kept for context.",
+  "counts_md5": "f069e4a79acb1edd0f9405aabb02c797"
+}

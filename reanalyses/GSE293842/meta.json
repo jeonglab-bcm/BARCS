@@ -1,0 +1,20 @@
+{
+  "gse": "GSE293842",
+  "pmid": "41881024",
+  "doi": "10.1016/j.xcrm.2026.102695",
+  "pmcid": "PMC13130658",
+  "title": "Targeting the ferritinophagy-lysosome axis as a therapeutic vulnerability in gastroenteropancreatic neuroendocrine tumors.",
+  "journal": "Cell Reports Medicine",
+  "published": "2026",
+  "model": "BON-1 pancreatic NET, Brunello kinome KO (two half-pools)",
+  "contrast": "Day 14 vs day 0 per half-pool (1 vs 1)",
+  "paper_method": "Mean guide fold change, libraries A and B integrated",
+  "paper_calls": "44 genes at fold change < -0.3; ILK, PTK2, PIKFYVE, PIK3C3 highlighted",
+  "barcs_calls": "Pool A: 47 genes at FDR 0.10 (29 depleted); pool B: 36 (30 depleted)",
+  "named_hits": "4/4 depleted at FDR 0.10 in pool A (PTK2 #1, ILK #2, PIK3C3 #16, PIKFYVE #26 among depleted genes, by p); 3/4 in pool B",
+  "verdict": "BARCS agrees: PTK2, ILK, PIK3C3 and PIKFYVE are significant depletions in half-pool A, ILK and PIKFYVE also in half-pool B, and the top of the ranking matches the paper's (Spearman 0.69). One library per time point, so the FDR is screening-level without replicate variance.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-03-24",
+  "published_issue": "2026 Apr 21"
+}

@@ -1,0 +1,45 @@
+{
+  "analysis": "YFPhigh_vs_unsorted",
+  "formula": "~bin",
+  "term": "binhigh",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19099,
+  "moderated": true,
+  "prior_df": 6.3886,
+  "guide_correlation": 0,
+  "control_scale": 1.6418,
+  "control_guides": 1000,
+  "control_p05_raw": 0.1001,
+  "control_p05": 0.0495,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 14667,
+  "top1pct_read_share": {
+    "R1_YFP_High": 0.092,
+    "R2_YFP_High": 0.067,
+    "R1_Unsorted": 0.035,
+    "R2_Unsorted": 0.05
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 17,
+  "genes_fdr_0_05": 5,
+  "genes_fdr_0_10": 17,
+  "genes_empirical_fdr_0_10": 36,
+  "empirical_centre": "controls",
+  "control_shift": -0.074,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

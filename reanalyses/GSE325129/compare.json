@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/MHChigh_vs_MHClow/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NFXL1", "TEX264", "NBR1"],
+  "top_n": [25, 50, 100]
+}

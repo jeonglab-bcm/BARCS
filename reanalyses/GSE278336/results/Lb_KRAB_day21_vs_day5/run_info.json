@@ -1,0 +1,47 @@
+{
+  "analysis": "Lb_KRAB_day21_vs_day5",
+  "formula": "~replicate + day",
+  "term": "dayday21",
+  "libraries": 6,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 894,
+  "genes": 199,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0.0442,
+  "control_scale": 1.2789,
+  "control_guides": 75,
+  "control_p05_raw": 0.12,
+  "control_p05": 0.0533,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Lb_KRAB_Day5_1": 0.022,
+    "Lb_KRAB_Day5_2": 0.022,
+    "Lb_KRAB_Day5_3": 0.022,
+    "Lb_KRAB_Day21_1": 0.023,
+    "Lb_KRAB_Day21_2": 0.024,
+    "Lb_KRAB_Day21_3": 0.024
+  },
+  "genes_fdr_0_10_up": 18,
+  "genes_fdr_0_10_down": 28,
+  "genes_fdr_0_05": 41,
+  "genes_fdr_0_10": 46,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

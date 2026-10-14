@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/day14_vs_day0_poolA/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["PIKFYVE", "PIK3C3", "ILK", "PTK2"],
+  "published": {
+    "file": "paper/TableS1.csv",
+    "gene_column": "gene", "score_column": "final", "score_better": "lower",
+    "effect_column": "final"
+  },
+  "top_n": [10, 25, 50]
+}

@@ -1,0 +1,74 @@
+{
+  "gse": "GSE316985",
+  "pmid": "41565695",
+  "counts_file": "crispri_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NEG$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "DoDi_7",
+      "gsm": "GSM9463443",
+      "condition": "D11",
+      "replicate": "1"
+    },
+    {
+      "column": "DoDi_8",
+      "gsm": "GSM9463444",
+      "condition": "D11",
+      "replicate": "2"
+    },
+    {
+      "column": "DoDi_9",
+      "gsm": "GSM9463445",
+      "condition": "D11",
+      "replicate": "3"
+    },
+    {
+      "column": "DoDi_13",
+      "gsm": "GSM9463449",
+      "condition": "D11_T",
+      "replicate": "1"
+    },
+    {
+      "column": "DoDi_14",
+      "gsm": "GSM9463450",
+      "condition": "D11_T",
+      "replicate": "2"
+    },
+    {
+      "column": "DoDi_15",
+      "gsm": "GSM9463451",
+      "condition": "D11_T",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "D11",
+      "D11_T"
+    ],
+    "replicate": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CRISPRi_T_vs_noT_D11",
+      "columns": [
+        "DoDi_7",
+        "DoDi_8",
+        "DoDi_9",
+        "DoDi_13",
+        "DoDi_14",
+        "DoDi_15"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionD11_T"
+    }
+  ],
+  "rationale": "CRISPRi arm of the same study (dCas9-KRAB, ~1,950 risk-locus genes and non-coding transcripts, 999 non-targeting guides). Raw reads recovered from the MAGeCK-normalized table as for the KO screen. D11 = DoDi_7/8/9, D11+T = DoDi_13/14/15; replicate paired. Enriched = knockdown confers resistance, depleted = knockdown sensitizes."
+}

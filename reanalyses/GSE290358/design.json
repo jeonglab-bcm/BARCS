@@ -1,0 +1,73 @@
+{
+  "gse": "GSE290358",
+  "pmid": "41244268",
+  "counts_file": "suppl/GSE290358_CRISPR-KO_RLTPSC.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^CTRL$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "R1_Unsorted",
+      "gsm": "GSM8811184",
+      "fraction": "Unsorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "R1_High",
+      "gsm": "GSM8811185",
+      "fraction": "High",
+      "replicate": "R1"
+    },
+    {
+      "column": "R1_Low",
+      "gsm": "GSM8811186",
+      "fraction": "Low",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_Unsorted",
+      "gsm": "GSM8811187",
+      "fraction": "Unsorted",
+      "replicate": "R2"
+    },
+    {
+      "column": "R2_High",
+      "gsm": "GSM8811188",
+      "fraction": "High",
+      "replicate": "R2"
+    },
+    {
+      "column": "R2_Low",
+      "gsm": "GSM8811189",
+      "fraction": "Low",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "fraction": [
+      "Low",
+      "Unsorted",
+      "High"
+    ],
+    "replicate": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "High_vs_Low",
+      "columns": [
+        "R1_Low",
+        "R1_High",
+        "R2_Low",
+        "R2_High"
+      ],
+      "formula": "~ fraction",
+      "term": "fractionHigh"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in RLT-PSC pancreatic stellate (CAF-like) cells sorted on surface JAM-A. Columns map one to one to the GSM titles (Replicate 1/2: Unsorted, High, Low JAM-A). The paper asks which knockouts raise JAM-A, so the primary analysis is High vs Low: guides enriched in the High bin mark negative regulators of JAM-A (ZEB1). The two replicates are separate sorts; a replicate term would leave 1 residual df, so it is left out (2 residual df). The library carries only 4 guides labelled CTRL (Brunello's 1,000 non-targeting guides are not identifiable in the deposited table), so control calibration and the control null cannot be used.",
+  "counts_md5": "4e4a946ff3226e90483ea5933a1375b9"
+}

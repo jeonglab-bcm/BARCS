@@ -1,0 +1,20 @@
+{
+  "gse": "GSE253290",
+  "pmid": "41957359",
+  "doi": "10.1038/s41467-026-70816-2",
+  "pmcid": "PMC13287569",
+  "title": "CRISPR activation screens identify oncogenic lncRNAs that are susceptible to CDK4/6 inhibitor treatment.",
+  "journal": "Nature Communications",
+  "published": "2026",
+  "model": "MCF-7, lncRNA CRISPRa (SAM), genome-wide and focused libraries",
+  "contrast": "Palbociclib vs untreated, genome-wide (3 vs 1); focused screen (3 vs 2) as secondary",
+  "paper_method": "MAGeCK MLE (non-targeting normalization)",
+  "paper_calls": "685 genes at treatment Wald FDR 0.10 genome-wide (494 sensitizing); 49 in the focused screen; TENM3-AS1, LINC01117, ENSG00000226706 validated",
+  "barcs_calls": "Genome-wide: 13 genes at FDR 0.10 after control calibration (28.8% of controls at p < 0.05 before), 0 against the control null",
+  "named_hits": "0/3 at FDR 0.10 genome-wide (TENM3-AS1 rank 146 among depleted genes by p, FDR 0.60; LINC01117 and ENSG00000226706 lean enriched)",
+  "verdict": "BARCS does not support the paper's lncRNA hits: with one untreated library, non-targeting guides differ between arms as much as targeted lncRNAs (28.8% at p < 0.05), and after calibration only 13 genes pass FDR 0.10 (11 of them paper calls, all marginal and none against the control null); the focused screen's controls fail outright (87.5%). GEO's sample labels conflict with the paper; the mapping used here was inferred from the data.",
+  "agreement": "differ",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-04-09",
+  "published_issue": "2026 Apr 9"
+}

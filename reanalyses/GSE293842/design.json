@@ -1,0 +1,63 @@
+{
+  "gse": "GSE293842",
+  "pmid": "41881024",
+  "counts_file": "counts_by_pool.tsv.gz",
+  "guide_column": "sgrna_id",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Non-Targeting_Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Day0_A",
+      "gsm": "GSM8891594",
+      "time": "day0",
+      "pool": "A"
+    },
+    {
+      "column": "Day14_A",
+      "gsm": "GSM8891595",
+      "time": "day14",
+      "pool": "A"
+    },
+    {
+      "column": "Day0_B",
+      "gsm": "GSM8891596",
+      "time": "day0",
+      "pool": "B"
+    },
+    {
+      "column": "Day14_B",
+      "gsm": "GSM8891597",
+      "time": "day14",
+      "pool": "B"
+    }
+  ],
+  "factor_levels": {
+    "time": [
+      "day0",
+      "day14"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "day14_vs_day0_poolA",
+      "columns": [
+        "Day0_A",
+        "Day14_A"
+      ],
+      "formula": "~ time",
+      "term": "timeday14"
+    },
+    {
+      "name": "day14_vs_day0_poolB",
+      "columns": [
+        "Day0_B",
+        "Day14_B"
+      ],
+      "formula": "~ time",
+      "term": "timeday14"
+    }
+  ],
+  "rationale": "Kinome-wide Brunello knockout screen in BON-1 GEP-NET cells, day 14 vs day 0 (essential genes depleted). The library was split into two half-pools (sgRNA sets 1-4 = A, 5-8 = B; four guides per gene in each) that were transduced and sequenced as separate libraries with different Day14/Day0 read ratios (0.92 vs 1.07), so each half-pool needs its own library totals. prepare.R puts each guide's counts in its own pool's columns (0 elsewhere) and makes the 100 non-targeting IDs unique per pool; each analysis then uses that pool's totals and 4 guides per gene. One library per time point, so BARCS uses the no-replicate path (overdispersion pooled over 100 non-targeting guides per pool); calls are screening-level.",
+  "counts_md5": "3bb04baeb44448a36b52ca6e08a863da"
+}

@@ -1,0 +1,19 @@
+{
+  "gse": "GSE255515",
+  "pmid": "41747251",
+  "doi": "10.1158/2159-8290.CD-25-0545",
+  "title": "Rational Design of Immune Gene Therapy Combinations via In Vivo CRISPR Activation Screen of Tumor Microenvironment Modulators",
+  "journal": "Cancer Discovery",
+  "published": "2026",
+  "model": "E0771 cells, APCM CRISPRa library (107 guides, 36 immune genes), intravenous lung metastases in C57BL/6J mice",
+  "contrast": "Lung tumors vs injected cell pool (14 vs 2; tumors from 5 mice)",
+  "paper_method": "Not stated in the available text (paper not open access)",
+  "paper_calls": "Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng",
+  "barcs_calls": "3 genes at FDR 0.10 (Cd80, Tnfsf18, Tnfsf14, all depleted); no controls, so no control null",
+  "named_hits": "Depletion ranks of 36 genes: Cd80 #1, Tnfsf18 #2, Tnfsf14 #3 (FDR <= 0.002); Cxcl10 #4 (FDR 0.30); Tnfsf9 #6 and Ifng #7 (FDR 0.80)",
+  "verdict": "The paper's six candidates are six of BARCS's seven most depleted genes, and Cd80, Tnfsf18 and Tnfsf14 pass FDR 0.01; Cxcl10, Tnfsf9 and Ifng rest on one or two guides and do not pass. The library has no non-targeting controls and several tumors share a mouse, so the FDR could not be calibrated and is likely optimistic.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-06-01",
+  "published_issue": "2026 Jun 1"
+}

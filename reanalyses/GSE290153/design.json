@@ -1,0 +1,60 @@
+{
+  "gse": "GSE290153",
+  "pmid": "41546867",
+  "counts_file": "coupled_counts.tsv.gz",
+  "guide_column": "construct",
+  "gene_column": "gene",
+  "control_gene_pattern": "^nt$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "day14_rep1",
+      "gsm": "GSM8807117",
+      "condition": "day14",
+      "replicate": "1"
+    },
+    {
+      "column": "day14_rep2",
+      "gsm": "GSM8807118",
+      "condition": "day14",
+      "replicate": "2"
+    },
+    {
+      "column": "IR_day15_rep1",
+      "gsm": "GSM8807120",
+      "condition": "IR",
+      "replicate": "1"
+    },
+    {
+      "column": "IR_day15_rep2",
+      "gsm": "GSM8807121",
+      "condition": "IR",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day14",
+      "IR"
+    ],
+    "replicate": [
+      "1",
+      "2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "IR_vs_day14",
+      "columns": [
+        "day14_rep1",
+        "day14_rep2",
+        "IR_day15_rep1",
+        "IR_day15_rep2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionIR"
+    }
+  ],
+  "rationale": "Combinatorial dual-guide CRISPR screen of 461 DNA-repair genes in eHAP-iCas9 cells (Olivieri et al., PMID 41546867). Each construct is a guide pair; GEO deposits an IR file (IR_day15 rep1-2) and a basal file (day0/day14 rep1-3) with no series matrix, merged on the 809,460 shared construct ids by prepare.R. BARCS models single-construct abundance, NOT the paper's core genetic-interaction (epistasis) analysis between guide pairs, which is out of scope. The interpretable output is single-gene abundance: constructs pairing a gene with a non-targeting guide (or the same gene twice) aggregate under that gene (459 genes), nt+nt pairs are the controls (752 constructs), and gene-pair labels (A_B) are present only so library totals are computed over the whole library; their values must not be read as genetic-interaction results. Primary contrast IR_day15 vs control_day14 (2 vs 2, 2 residual df): single-gene depletion = genes whose loss sensitizes to ionizing radiation.",
+  "counts_md5": "cf43b67a9a881363109cf8becfa30ee7"
+}

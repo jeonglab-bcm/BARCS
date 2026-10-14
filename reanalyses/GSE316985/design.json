@@ -1,0 +1,75 @@
+{
+  "gse": "GSE316985",
+  "pmid": "41565695",
+  "counts_file": "ko_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(NEG|AAVS1)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "HER2_WS_7",
+      "gsm": "GSM9463424",
+      "condition": "D11",
+      "replicate": "1"
+    },
+    {
+      "column": "HER2_WS_11",
+      "gsm": "GSM9463428",
+      "condition": "D11",
+      "replicate": "2"
+    },
+    {
+      "column": "HER2_WS_15",
+      "gsm": "GSM9463432",
+      "condition": "D11",
+      "replicate": "3"
+    },
+    {
+      "column": "HER2_WS_9",
+      "gsm": "GSM9463426",
+      "condition": "D11_T",
+      "replicate": "1"
+    },
+    {
+      "column": "HER2_WS_13",
+      "gsm": "GSM9463430",
+      "condition": "D11_T",
+      "replicate": "2"
+    },
+    {
+      "column": "HER2_WS_17",
+      "gsm": "GSM9463434",
+      "condition": "D11_T",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "D11",
+      "D11_T"
+    ],
+    "replicate": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KO_T_vs_noT_D11",
+      "columns": [
+        "HER2_WS_7",
+        "HER2_WS_11",
+        "HER2_WS_15",
+        "HER2_WS_9",
+        "HER2_WS_13",
+        "HER2_WS_17"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionD11_T"
+    }
+  ],
+  "rationale": "CRISPR knockout screen (sgRNAs against ~1,900 genes at breast-cancer GWAS/TWAS risk loci plus immune controls, 5 guides per gene, 737 non-targeting and 262 AAVS1 guides) in MCF7 cells co-cultured for the last days with HLA-matched cytotoxic T cells. GEO holds MAGeCK-normalized guide tables; raw reads were recovered exactly (100% integral, one scale per column) by prepare.R with tools/screen-reanalysis/recover_counts.R. GSM 'Library name' fields map to count columns (D11 = HER2_WS_7/11/15, D11+T = HER2_WS_9/13/17). The paper's question is which knockouts change survival under T-cell attack, so the primary contrast is D11+T vs D11 without T cells. Arms of one replicate come from the same infected culture (D11 and D11+T of a replicate correlate most strongly), so replicate is paired (2 residual df). Enriched = KO confers resistance (IRF1, ATF7IP, CASP8); depleted = KO sensitizes (CFLAR, CREBBP, PRMT7). AAVS1 cutting controls and non-targeting guides together form the control set. The CRISPRi screen is design_crispri.json.",
+  "counts_md5": "09b3ca32f97a1108ffc307620bf52a01"
+}

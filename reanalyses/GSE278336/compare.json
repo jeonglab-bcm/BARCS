@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/Lb_KRAB_day21_vs_day5/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["RPL34", "MDM4", "RPS20", "SMC2", "XPO1", "SNRPE"],
+  "published": {
+    "file": "paper/SupplementaryData1.xlsx", "sheet": "Beta Scores",
+    "gene_column": "Gene", "score_column": "wald_Lb.KRAB", "score_better": "lower",
+    "effect_column": "beta_Lb.KRAB"
+  },
+  "top_n": [10, 25, 50]
+}

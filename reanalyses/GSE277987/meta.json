@@ -1,0 +1,20 @@
+{
+  "gse": "GSE277987",
+  "pmid": "40640555",
+  "doi": "10.1038/s41589-025-01949-6",
+  "pmcid": "PMC12568631",
+  "title": "Molecular recording of cellular protein kinase activity with chemical labeling",
+  "journal": "Nature Chemical Biology",
+  "published": "2025",
+  "model": "RKO cells with the Kinprola PKA activity recorder, Heidelberg HD CRISPR library A (74,987 guides, 159 non-targeting), sorted into high, basal and low labeling bins",
+  "contrast": "High vs low Kinprola PKA labeling bin, two independent screens (2 vs 2, basal bins in the fit), lanes summed, library totals",
+  "paper_method": "limma on log-normalized guide counts, gene-level, Benjamini-Hochberg FDR 0.05",
+  "paper_calls": "1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1",
+  "barcs_calls": "2,272 genes at FDR 0.10 (1,253 up in high, 1,019 up in low); 2,495 against the control null (centred on targeting guides)",
+  "named_hits": "Rank by p (both directions): FZR1 #8, ADCY7 #53, PRKACA #62, TRIM33 #181, GNAS #185, VPRBP #239, NOP2 #268, PES1 #420, all FDR < 1e-9 in the paper's direction (8/8)",
+  "verdict": "BARCS reproduces the PKA-recorder screen: all eight named regulators are called at FDR < 1e-9 in the paper's direction, all 340 highlighted genes pass, the FDR 0.10 lists are the same size (2,272 vs 2,310, 1,613 shared), and gene effects correlate at r = 0.98.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2025-07-10",
+  "published_issue": "2025 Nov"
+}

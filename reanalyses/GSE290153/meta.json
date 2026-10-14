@@ -1,0 +1,20 @@
+{
+  "gse": "GSE290153",
+  "pmid": "41546867",
+  "doi": "10.1016/j.celrep.2025.116850",
+  "pmcid": "PMC12970561",
+  "title": "Uncovering genetic interactions in the DNA repair network in response to endogenous damage and ionizing radiation",
+  "journal": "Cell Reports",
+  "published": "2026",
+  "model": "eHAP-iCas9 cells, combinatorial dual-guide library of 461 DNA-repair genes (>100,000 gene pairs)",
+  "contrast": "IR day15 vs control day14 (2 vs 2), single-gene abundance",
+  "paper_method": "Combinatorial genetic-interaction (epistasis) scoring over guide pairs; single-gene phenotypes from gene-vs-nontargeting constructs",
+  "paper_calls": "Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list",
+  "barcs_calls": "0 genes at FDR 0.10 (model and control null) in the single-gene IR vs day14 marginal; controls well-calibrated (0% at raw p<0.05)",
+  "named_hits": "No single-gene DDR gene separates: Lig4 #71, Atm #219, Xrcc5 #255, Brca2 #258, Ubr5 #262, Brca1 #453 of 459, all FDR ~1",
+  "verdict": "BARCS models single-construct abundance, not the genetic interactions between guide pairs that are the paper's entire point, so it cannot reproduce the paper's findings; its single-gene IR marginal is correctly null (0 hits, controls well-calibrated), matching the paper's own premise that single-gene DDR effects are modest and the signal is combinatorial.",
+  "agreement": "differ",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-01-16",
+  "published_issue": "2026 Jan 27"
+}
