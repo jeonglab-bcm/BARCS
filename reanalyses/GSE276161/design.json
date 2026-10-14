@@ -2,6 +2,7 @@
   "gse": "GSE276161",
   "pmid": "39515331",
   "counts_file": "CRISPRi_counts.tsv",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^non-targeting$",
@@ -51,5 +52,6 @@
       "term": "conditiondoxo"
     }
   ],
-  "rationale": "Druggable-genome CRISPRi (dCas9-KRAB, hCRISPRi-v2 druggable sublibrary) in iPSC-derived cardiomyocytes, doxorubicin vs vehicle (DMSO), two biological replicates each. One count file per GSM (two columns, guide and value); GSM titles give modality, treatment and replicate. The files list the whole hCRISPRi-v2 library (209,069 guides) but only about 27,000 guides (the druggable sublibrary plus scattered single reads) have reads; the min_total_count filter of 30 removes the rest. The CRISPRi values were deposited scaled: in every sample each nonzero value is an exact integer multiple (deviation < 4e-6) of the sample's smallest nonzero value (1.0685-1.2619). Raw counts were recovered as round(value / smallest nonzero value). That the smallest value is one read follows because raw counts across 27,000 guides cannot share a common factor above 1; recovered totals are 16-18 M reads. Rep1 vehicle and Rep1 doxorubicin are not shown to be paired (correlations are uniform), so no replicate term (2 residual df). Knockdowns that protect cardiomyocytes from doxorubicin (the paper's CA12) should be enriched in doxorubicin."
+  "rationale": "Druggable-genome CRISPRi (dCas9-KRAB, hCRISPRi-v2 druggable sublibrary) in iPSC-derived cardiomyocytes, doxorubicin vs vehicle (DMSO), two biological replicates each. One count file per GSM (two columns, guide and value); GSM titles give modality, treatment and replicate. The files list the whole hCRISPRi-v2 library (209,069 guides) but only about 27,000 guides (the druggable sublibrary plus scattered single reads) have reads; the min_total_count filter of 30 removes the rest. The CRISPRi values were deposited scaled: in every sample each nonzero value is an exact integer multiple (deviation < 4e-6) of the sample's smallest nonzero value (1.0685-1.2619). Raw counts were recovered as round(value / smallest nonzero value). That the smallest value is one read follows because raw counts across 27,000 guides cannot share a common factor above 1; recovered totals are 16-18 M reads. Rep1 vehicle and Rep1 doxorubicin are not shown to be paired (correlations are uniform), so no replicate term (2 residual df). Knockdowns that protect cardiomyocytes from doxorubicin (the paper's CA12) should be enriched in doxorubicin.",
+  "counts_md5": "f3bcc1264eace44769313d39908064ce"
 }

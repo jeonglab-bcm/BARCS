@@ -1,0 +1,59 @@
+{
+  "gse": "GSE241933",
+  "pmid": "37945901",
+  "counts_file": "CRISPR.TFome.ko.with.BATF3.counts_with_gene.tsv.gz",
+  "guide_column": "gRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NT$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low_D1",
+      "gsm": "GSM7745805",
+      "sort": "Low",
+      "donor": "D1"
+    },
+    {
+      "column": "Low_D2",
+      "gsm": "GSM7745806",
+      "sort": "Low",
+      "donor": "D2"
+    },
+    {
+      "column": "High_D1",
+      "gsm": "GSM7745807",
+      "sort": "High",
+      "donor": "D1"
+    },
+    {
+      "column": "High_D2",
+      "gsm": "GSM7745808",
+      "sort": "High",
+      "donor": "D2"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "Low",
+      "High"
+    ],
+    "donor": [
+      "D1",
+      "D2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KO_withBATF3_IL7R_high_vs_low",
+      "columns": [
+        "Low_D1",
+        "Low_D2",
+        "High_D1",
+        "High_D2"
+      ],
+      "formula": "~ donor + sort",
+      "term": "sortHigh"
+    }
+  ],
+  "rationale": "Secondary screen: TFome knockout library (6,450 targeting guides, about 4 per TF, plus 550 non-targeting) in primary CD8 T cells overexpressing BATF3, sorted into IL7R-low and IL7R-high, two donors. Column names match GSM titles CRISPRko-TFome-withBATF3-IL7R-Low/High-D1..D2 (GSM7745805-08, by title order). Donor pairs the bins, leaving 1 residual df. Knockouts of BATF3 cofactors or mediators should be depleted in IL7R-high if BATF3 raises IL7R."
+}

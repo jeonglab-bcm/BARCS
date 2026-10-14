@@ -102,5 +102,6 @@
       "term": "conditionZR"
     }
   ],
-  "rationale": "Brunello rescue screen in EXO1-knockout eHAP cells: the library was transduced in triplicate and each replicate split into sgNT, sgFANCG and sgZRSR2 arms (synthetic-lethal partners of EXO1). Arms of one replicate correlate most strongly with each other, so replicate is a blocking term (2 residual df). Knockouts that relieve replication stress (GINS2, CDC6, SMC5, RRM1, TYMS) should be better tolerated, i.e. enriched, in the double-knockout arms relative to sgNT. FANCG vs NT is the primary comparison; ZRSR2 vs NT is a second analysis the paper also shows."
+  "rationale": "Brunello rescue screen in EXO1-knockout eHAP cells: the library was transduced in triplicate and each replicate split into sgNT, sgFANCG and sgZRSR2 arms (synthetic-lethal partners of EXO1). Arms of one replicate correlate most strongly with each other, so replicate is a blocking term (2 residual df). Knockouts that relieve replication stress (GINS2, CDC6, SMC5, RRM1, TYMS) should be better tolerated, i.e. enriched, in the double-knockout arms relative to sgNT. FANCG vs NT is the primary comparison; ZRSR2 vs NT is a second analysis the paper also shows.",
+  "counts_md5": "115344d1cc9d1b35681a41dbd8fcb6e4"
 }

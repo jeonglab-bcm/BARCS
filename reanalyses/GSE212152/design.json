@@ -34,5 +34,6 @@
       "term": "conditionGFPpos"
     }
   ],
-  "rationale": "Inducible H3K9me3 reporter-silencing KO screen (custom 1,310-gene chromatin library, 150 non-targeting guides) in mESCs. Two screens, establishment and maintenance, each with paired repA/repB eGFP+ (silencing lost) vs unsorted fractions from one infection, so replicate is a blocking term (1 residual df). KO of a required silencing factor leaves cells GFP+, so hits are enriched in GFPpos. Establishment is the paper's primary claim (which factors set up silencing); maintenance is the second screen (DHX9/R-loops)."
+  "rationale": "Inducible H3K9me3 reporter-silencing KO screen (custom 1,310-gene chromatin library, 150 non-targeting guides) in mESCs. Two screens, establishment and maintenance, each with paired repA/repB eGFP+ (silencing lost) vs unsorted fractions from one infection, so replicate is a blocking term (1 residual df). KO of a required silencing factor leaves cells GFP+, so hits are enriched in GFPpos. Establishment is the paper's primary claim (which factors set up silencing); maintenance is the second screen (DHX9/R-loops).",
+  "counts_md5": "ad06ae5d870ba3576644e48c4a87a08a"
 }

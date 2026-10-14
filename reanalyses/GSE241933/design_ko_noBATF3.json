@@ -1,0 +1,59 @@
+{
+  "gse": "GSE241933",
+  "pmid": "37945901",
+  "counts_file": "CRISPR.TFome.ko.without.BATF3.counts_with_gene.tsv.gz",
+  "guide_column": "gRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NT$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low_D1",
+      "gsm": "GSM7745801",
+      "sort": "Low",
+      "donor": "D1"
+    },
+    {
+      "column": "Low_D2",
+      "gsm": "GSM7745802",
+      "sort": "Low",
+      "donor": "D2"
+    },
+    {
+      "column": "High_D1",
+      "gsm": "GSM7745803",
+      "sort": "High",
+      "donor": "D1"
+    },
+    {
+      "column": "High_D2",
+      "gsm": "GSM7745804",
+      "sort": "High",
+      "donor": "D2"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "Low",
+      "High"
+    ],
+    "donor": [
+      "D1",
+      "D2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KO_noBATF3_IL7R_high_vs_low",
+      "columns": [
+        "Low_D1",
+        "Low_D2",
+        "High_D1",
+        "High_D2"
+      ],
+      "formula": "~ donor + sort",
+      "term": "sortHigh"
+    }
+  ],
+  "rationale": "Context for the BATF3-overexpression KO screen: the same TFome knockout library and IL7R sort in CD8 T cells without BATF3 overexpression, two donors, donor as pairing term (1 residual df)."
+}

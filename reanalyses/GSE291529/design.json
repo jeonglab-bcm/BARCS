@@ -19,5 +19,6 @@
     {"name": "pfos_vs_control", "columns": ["10db-cont1", "10db-cont2", "10db-cont3", "10db-PFOS1", "10db-PFOS2", "10db-PFOS3"],
      "formula": "~ condition", "term": "conditionPFOS"}
   ],
-  "rationale": "Raw reads recovered exactly from the deposited MAGeCK-normalized table (one scale factor per column, integrality 100%). The paper compares PFOS (192 uM, 10 doublings) with untreated control, 3 vs 3; column names map one-to-one to the GSM titles (Control_1-3, PFOS_1-3). Replicate numbers are not described as paired infections and the correlations do not show pairing, so no replicate term. Non-targeting and safe-harbor guides are the controls. The plasmid/T0 column named in the sheet title was not deposited."
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK-normalized table (one scale factor per column, integrality 100%). The paper compares PFOS (192 uM, 10 doublings) with untreated control, 3 vs 3; column names map one-to-one to the GSM titles (Control_1-3, PFOS_1-3). Replicate numbers are not described as paired infections and the correlations do not show pairing, so no replicate term. Non-targeting and safe-harbor guides are the controls. The plasmid/T0 column named in the sheet title was not deposited.",
+  "counts_md5": "38a16fd3bf61fce22e4d0d59e5baf1aa"
 }

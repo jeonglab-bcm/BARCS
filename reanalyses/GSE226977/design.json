@@ -2,6 +2,7 @@
   "gse": "GSE226977",
   "pmid": "39300912",
   "counts_file": "merged_counts.txt.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
@@ -144,5 +145,6 @@
       "totals": "library"
     }
   ],
-  "rationale": "Genome-wide KO screen in LNCaP prostate cancer cells (Brunello-like, 4 guides/gene, 142 non-cutting controls: LacZ 96, luciferase 24, EGFP 22). Per-sample count files (GSE226977_RAW.tar) were merged on sgRNA. 12 libraries: T0 and final time point (TF), each with DMSO and enzalutamide (EZ), 3 replicates. The paper's screen contrasts enzalutamide vs DMSO at the final time point: sensitizers (e.g. HOXA9) deplete in EZ. Primary analysis TF-EZ vs TF-DMSO with median-ratio totals, because the final EZ libraries are severely bottlenecked (17-21% of guides at zero, top 1% of guides hold 23-33% of reads), so library totals call most genes depleted. A library-totals run is kept to show the swing. No T0-anchored design: the deposited T0-DMSO and T0-EZ labels appear swapped (T0-EZ-Rep1 alone shows a bottleneck the other T0 libraries do not), and T0 is a single pre-treatment pool split by label, so anchoring to it is not reliable."
+  "rationale": "Genome-wide KO screen in LNCaP prostate cancer cells (Brunello-like, 4 guides/gene, 142 non-cutting controls: LacZ 96, luciferase 24, EGFP 22). Per-sample count files (GSE226977_RAW.tar) were merged on sgRNA. 12 libraries: T0 and final time point (TF), each with DMSO and enzalutamide (EZ), 3 replicates. The paper's screen contrasts enzalutamide vs DMSO at the final time point: sensitizers (e.g. HOXA9) deplete in EZ. Primary analysis TF-EZ vs TF-DMSO with median-ratio totals, because the final EZ libraries are severely bottlenecked (17-21% of guides at zero, top 1% of guides hold 23-33% of reads), so library totals call most genes depleted. A library-totals run is kept to show the swing. No T0-anchored design: the deposited T0-DMSO and T0-EZ labels appear swapped (T0-EZ-Rep1 alone shows a bottleneck the other T0 libraries do not), and T0 is a single pre-treatment pool split by label, so anchoring to it is not reliable.",
+  "counts_md5": "381d5e60f506584dc94b63d923e9fdb0"
 }

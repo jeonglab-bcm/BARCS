@@ -2,7 +2,7 @@
 # Find recent pooled CRISPR screen papers in PubMed that link to a GEO series
 # with supplementary files, and list the candidate series.
 #
-#   Rscript tools/screen-reanalysis/search_pubmed.R [--days 365] [--max 40]
+#   Rscript tools/screen-reanalysis/search_pubmed.R [--days 365] [--max 40] [--broad]
 #       [--query '<extra PubMed terms>'] [--out screens.tsv]
 #
 # Uses NCBI E-utilities (esearch -> esummary -> elink -> esummary). Set
@@ -46,9 +46,15 @@ call_eutils <- function(tool, params) {
   stop("E-utilities request failed: ", tool, call. = FALSE)
 }
 
+phrases <- c("CRISPR screen", "CRISPR screening", "pooled screen", "genome-wide screen")
+if ("--broad" %in% args) {
+  # The wording papers actually use; about doubles the matches of the default.
+  phrases <- c(phrases, "CRISPR screens", "pooled screens", "CRISPRi screen",
+               "CRISPRa screen", "knockout screen", "sgRNA library",
+               "guide RNA library", "CRISPR-Cas9 screen", "CRISPR/Cas9 screen")
+}
 term <- paste(
-  '("CRISPR screen"[Title/Abstract] OR "CRISPR screening"[Title/Abstract]',
-  'OR "pooled screen"[Title/Abstract] OR "genome-wide screen"[Title/Abstract])',
+  paste0("(", paste0('"', phrases, '"[Title/Abstract]', collapse = " OR "), ")"),
   "AND pubmed_gds[filter]",
   if (nzchar(extra)) paste("AND", extra) else ""
 )

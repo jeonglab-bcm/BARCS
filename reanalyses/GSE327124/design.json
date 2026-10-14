@@ -75,5 +75,6 @@
       "term": "binhigh"
     }
   ],
-  "rationale": "FACS sort of LPS-stimulated macrophages into CD80-high and CD80-low bins from four donors (column names give donor and bin; GSM9648645-52). High and low bins of one donor come from the same infected population, so donor is a blocking term (~ donor + bin, 3 residual df). Donors 1-2 and 3-4 cluster apart in log counts, consistent with separate experiments, which the donor term absorbs. A negative regulator of inflammation (TNFAIP3) should be enriched in the CD80-high bin."
+  "rationale": "FACS sort of LPS-stimulated macrophages into CD80-high and CD80-low bins from four donors (column names give donor and bin; GSM9648645-52). High and low bins of one donor come from the same infected population, so donor is a blocking term (~ donor + bin, 3 residual df). Donors 1-2 and 3-4 cluster apart in log counts, consistent with separate experiments, which the donor term absorbs. A negative regulator of inflammation (TNFAIP3) should be enriched in the CD80-high bin.",
+  "counts_md5": "616658696361495d5abb3b8db151fff9"
 }

@@ -2,6 +2,9 @@
   "gse": "GSE222531",
   "pmid": "38243310",
   "counts_file": "merged_K562_counts.tsv.gz",
+  "fetch": {
+    "sample_files": true
+  },
   "guide_column": "sgRNA",
   "gene_column": "gene",
   "control_gene_pattern": "^non-targeting$",
@@ -102,5 +105,6 @@
       "term": "conditiondasatinib"
     }
   ],
-  "rationale": "Methods paper on low-skew guide-library cloning, tested with hCRISPRi-v2 genome-wide screens in K562 (103,074 guides, 1,895 non-targeting). Per-sample count files (GSM6925562-99) were merged by guide id; gene = guide id up to the first '_' (multi-TSS genes' P1/P2 guides share one gene label). The primary analysis is the growth (essentiality) screen with the low-skew (LGR) library at 100X coverage: end point (Tf, 4 replicates) vs T0 (2 replicates), 4 residual df; essential genes should be depleted. T0 and Tf replicates are not paired (2 vs 4 samples), so no replicate term. The second analysis is the LGR dasatinib vs DMSO arm (2 vs 2, 2 residual df), where resistance genes should be enriched. The other coverage arms (10X-1000X) and the Legacy library are not reanalysed."
+  "rationale": "Methods paper on low-skew guide-library cloning, tested with hCRISPRi-v2 genome-wide screens in K562 (103,074 guides, 1,895 non-targeting). Per-sample count files (GSM6925562-99) were merged by guide id; gene = guide id up to the first '_' (multi-TSS genes' P1/P2 guides share one gene label). The primary analysis is the growth (essentiality) screen with the low-skew (LGR) library at 100X coverage: end point (Tf, 4 replicates) vs T0 (2 replicates), 4 residual df; essential genes should be depleted. T0 and Tf replicates are not paired (2 vs 4 samples), so no replicate term. The second analysis is the LGR dasatinib vs DMSO arm (2 vs 2, 2 residual df), where resistance genes should be enriched. The other coverage arms (10X-1000X) and the Legacy library are not reanalysed.",
+  "counts_md5": "87125e794b25edb5901c9dd6e37aec16"
 }

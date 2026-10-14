@@ -2,6 +2,7 @@
   "gse": "GSE255664",
   "pmid": "41006228",
   "counts_file": "merged_counts.tsv.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "sgRNA",
   "gene_column": "gene",
   "control_gene_pattern": "^control$",
@@ -122,5 +123,6 @@
       "term": "genotypeEXO1_KO"
     }
   ],
-  "rationale": "Genome-wide Brunello dropout screen in eHAP iCas9 WT and EXO1 KO cells (SubSeries GSE255664 of SuperSeries GSE255665). Counts merged from the per-sample '+' and '-' strand files (summed; '-' adds <200 reads per library); sample names from GEO titles. The paper compares EXO1 KO with WT at the end point (day 16), so the primary analysis is EXO1_KO D16 vs WT D16. Genotypes are separate infections and replicates are not shared across genotypes, so no replicate term (4 residual df). Synthetic-lethal partners of EXO1 should be depleted in EXO1 KO."
+  "rationale": "Genome-wide Brunello dropout screen in eHAP iCas9 WT and EXO1 KO cells (SubSeries GSE255664 of SuperSeries GSE255665). Counts merged from the per-sample '+' and '-' strand files (summed; '-' adds <200 reads per library); sample names from GEO titles. The paper compares EXO1 KO with WT at the end point (day 16), so the primary analysis is EXO1_KO D16 vs WT D16. Genotypes are separate infections and replicates are not shared across genotypes, so no replicate term (4 residual df). Synthetic-lethal partners of EXO1 should be depleted in EXO1 KO.",
+  "counts_md5": "59d0214b8b8fa78b4d0fdb6d9281a667"
 }

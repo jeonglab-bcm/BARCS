@@ -108,5 +108,6 @@
       "totals": "median_ratio"
     }
   ],
-  "rationale": "Column names state treatment and replicate (A1-A9 match GSM titles). The paper compares each drug arm with DMSO at day 21 (depleted = sensitizer, enriched = resistance); ven vs DMSO is primary because BAX loss and translation-gene sensitization are its claims. Palbo (RB1) and combo (IKZF1) are run as the paper's other named comparisons. Two replicates per arm gives 2 residual df; no pairing term since pairing is not documented. Only 5 'CTRL' guides, so no control calibration. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene."
+  "rationale": "Column names state treatment and replicate (A1-A9 match GSM titles). The paper compares each drug arm with DMSO at day 21 (depleted = sensitizer, enriched = resistance); ven vs DMSO is primary because BAX loss and translation-gene sensitization are its claims. Palbo (RB1) and combo (IKZF1) are run as the paper's other named comparisons. Two replicates per arm gives 2 residual df; no pairing term since pairing is not documented. Only 5 'CTRL' guides, so no control calibration. Median-ratio totals for the strongly selected arms: the top 1% of guides hold 25-68% of reads there, so library totals turn a population collapse into depletion of nearly every gene.",
+  "counts_md5": "052577e190e4566a04e6a3823bc21abc"
 }

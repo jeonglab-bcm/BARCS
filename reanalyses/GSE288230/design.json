@@ -25,5 +25,6 @@
       "term": "conditionD12"
     }
   ],
-  "rationale": "Genome-scale GeCKOv2 KO screen in HUDEP-2 cells comparing proerythroblasts (D0) with orthochromatic erythroblasts (D12), three replicates paired by infection, so replicate is a blocking term (4 residual df). Genes required for terminal erythroid differentiation drop out (depleted) at D12. This is the paper's primary screen (NHLRC2, VAC14 named)."
+  "rationale": "Genome-scale GeCKOv2 KO screen in HUDEP-2 cells comparing proerythroblasts (D0) with orthochromatic erythroblasts (D12), three replicates paired by infection, so replicate is a blocking term (4 residual df). Genes required for terminal erythroid differentiation drop out (depleted) at D12. This is the paper's primary screen (NHLRC2, VAC14 named).",
+  "counts_md5": "1fc9995152e78443d42accd031383784"
 }

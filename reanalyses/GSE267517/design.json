@@ -95,5 +95,6 @@
       "term": "treatmentET0.2"
     }
   ],
-  "rationale": "In vitro genome-wide screen of ID8/GC ovarian cancer cells cultured with gp100-specific pmel T cells at effector:target 1 or 0.2, versus no T cells; column names match the overall design (lanes already summed in this file). The paper's MAGeCK comparisons are ET1 vs Ctrl and ET02 vs Ctrl with all four controls, reproduced here. Knockouts that sensitize to T-cell killing (Mettl5) are depleted. No pairing between control and treated cultures is documented. The in vivo anti-PD-1 sub-library screen is a separate count file and is not reanalyzed here."
+  "rationale": "In vitro genome-wide screen of ID8/GC ovarian cancer cells cultured with gp100-specific pmel T cells at effector:target 1 or 0.2, versus no T cells; column names match the overall design (lanes already summed in this file). The paper's MAGeCK comparisons are ET1 vs Ctrl and ET02 vs Ctrl with all four controls, reproduced here. Knockouts that sensitize to T-cell killing (Mettl5) are depleted. No pairing between control and treated cultures is documented. The in vivo anti-PD-1 sub-library screen is a separate count file and is not reanalyzed here.",
+  "counts_md5": "93aed39158cefc02d83f04c1f1bcfc8a"
 }

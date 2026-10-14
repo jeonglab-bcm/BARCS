@@ -2,6 +2,7 @@
   "gse": "GSE275043",
   "pmid": "40106574",
   "counts_file": "GSE275043_merged_counts.txt.gz",
+  "fetch": {"sample_files": true},
   "guide_column": "gRNA",
   "gene_column": "Gene",
   "control_gene_pattern": "^Non-Targeting Control$",
@@ -68,5 +69,6 @@
       "term": "binhigh20"
     }
   ],
-  "rationale": "Genome-wide Brunello knockout screen in Jurkat T-ALL cells stained for Galectin-9 and sorted into the top and bottom 20%, two replicate infections. Counts were merged from the six per-sample GEO files (one file per GSM; bin and replicate in the file names). Both bins of a replicate were sorted from one infected population, so replicate is a blocking term (1 residual df). Activators of LGALS9 (IRF1, TFAP4) should be depleted in the Galectin-9-high bin; LGALS9 guides themselves are the positive control. Unsorted libraries are not used."
+  "rationale": "Genome-wide Brunello knockout screen in Jurkat T-ALL cells stained for Galectin-9 and sorted into the top and bottom 20%, two replicate infections. Counts were merged from the six per-sample GEO files (one file per GSM; bin and replicate in the file names). Both bins of a replicate were sorted from one infected population, so replicate is a blocking term (1 residual df). Activators of LGALS9 (IRF1, TFAP4) should be depleted in the Galectin-9-high bin; LGALS9 guides themselves are the positive control. Unsorted libraries are not used.",
+  "counts_md5": "6d1456c913404d883c7a43fc3b85eb92"
 }

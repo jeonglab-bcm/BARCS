@@ -14,5 +14,6 @@
   "analyses": [
     {"name": "sgCD274_vs_sgControl", "columns": ["sgControl", "sgCD274"], "formula": "~ condition", "term": "conditionsgCD274"}
   ],
-  "rationale": "Raw reads recovered exactly from the deposited MAGeCK count_normalized table (one scale factor per column, integrality 100%). GEO describes duplicates, but only one column per arm was deposited (the duplicates were pooled before or during counting), so this is one library per condition and BARCS uses the no-replicate path. The paper's comparison is Brunello-screened CAL27 PD-L1 knockout versus control cells; synthetic-lethal genes are depleted in sgCD274."
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK count_normalized table (one scale factor per column, integrality 100%). GEO describes duplicates, but only one column per arm was deposited (the duplicates were pooled before or during counting), so this is one library per condition and BARCS uses the no-replicate path. The paper's comparison is Brunello-screened CAL27 PD-L1 knockout versus control cells; synthetic-lethal genes are depleted in sgCD274.",
+  "counts_md5": "01efcc573537274d964b39be086af952"
 }

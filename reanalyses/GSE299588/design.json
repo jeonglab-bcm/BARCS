@@ -62,5 +62,6 @@
       "term": "bintop"
     }
   ],
-  "rationale": "Columns GBM_80-89 are not named by condition. PROM1 (the gene encoding CD133) knockouts are depleted about 4-fold in GBM_84-86 and not in GBM_87-89, so 84-86 are the CD133-top 5% sorts and 87-89 the bottom 5%; GBM_81-83 are unsorted and GBM_80 is T0. Log-count correlations pair 81/84/87, 82/85/88 and 83/86/89 (0.84-0.86 within, about 0.5 across), matching replicates A-C, so replicate is a blocking term. Missing counts are read as zero."
+  "rationale": "Columns GBM_80-89 are not named by condition. PROM1 (the gene encoding CD133) knockouts are depleted about 4-fold in GBM_84-86 and not in GBM_87-89, so 84-86 are the CD133-top 5% sorts and 87-89 the bottom 5%; GBM_81-83 are unsorted and GBM_80 is T0. Log-count correlations pair 81/84/87, 82/85/88 and 83/86/89 (0.84-0.86 within, about 0.5 across), matching replicates A-C, so replicate is a blocking term. Missing counts are read as zero.",
+  "counts_md5": "c9e1f9bcac45f105ec3774d0a74a083b"
 }
