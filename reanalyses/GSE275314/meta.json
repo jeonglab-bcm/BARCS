@@ -1,0 +1,20 @@
+{
+  "gse": "GSE275314",
+  "pmid": "41165456",
+  "doi": "10.1158/0008-5472.CAN-25-0600",
+  "pmcid": "PMC12962340",
+  "title": "RAS-GTP Inhibition Overcomes Acquired Resistance to KRASG12C Inhibitors Mediated by Oncogenic and Wild-Type RAS Activation in Non-Small Cell Lung Cancer",
+  "journal": "Cancer Research",
+  "published": "2026",
+  "model": "NCI-H358 parental (DMSO) and sotorasib-resistant H358-AMGR cells (on sotorasib), Addgene #75314 kinome library (3,149 guides, 763 genes, 100 non-targeting)",
+  "contrast": "Sotorasib-resistant vs parental H358 after 2 weeks (2 vs 2 replicate cultures), library totals",
+  "paper_method": "Not stated (heatmap of gene-aggregated test scores, Fig. 6F); no gene table published",
+  "paper_calls": "Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells",
+  "barcs_calls": "4 genes at FDR 0.10 after control calibration (MAPK1, EGFR, ROCK2, CDK15); 4 against the control null",
+  "named_hits": "BARCS rank by p value (both directions): MAPK1 #1, EGFR #2, ROCK2 #3, CDK15 #4 (FDR < 0.10); FASTKD3 #5, RAB11FIP5 #6, PTK2 #7, ILK #10 (FDR 0.17-0.50); CDK1 #100, PLK1 #286, CHEK1 #639, ATR #708 (4/12 at FDR 0.10)",
+  "verdict": "BARCS's top ten contains all eight kinases the paper calls differential between resistant and parental cells, with MAPK1, EGFR, ROCK2 and CDK15 at FDR 0.10, but the paper's headline cell-cycle kinases (PLK1, ATR, CHEK1, CDK1) drop out equally in both lines and are not resistance-specific dependencies.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-01-16",
+  "published_issue": "2026 Jan 16"
+}

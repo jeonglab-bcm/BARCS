@@ -1,0 +1,84 @@
+{
+  "gse": "GSE328470",
+  "pmid": "42098118",
+  "counts_file": "suppl/GSE328470_Readcount_per_guide.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Control_",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "R1_YFP_Low",
+      "gsm": "GSM9684106",
+      "bin": "low",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_YFP_Low",
+      "gsm": "GSM9684107",
+      "bin": "low",
+      "replicate": "R2"
+    },
+    {
+      "column": "R1_YFP_High",
+      "gsm": "GSM9684108",
+      "bin": "high",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_YFP_High",
+      "gsm": "GSM9684109",
+      "bin": "high",
+      "replicate": "R2"
+    },
+    {
+      "column": "R1_Unsorted",
+      "gsm": "GSM9684110",
+      "bin": "unsorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "R2_Unsorted",
+      "gsm": "GSM9684111",
+      "bin": "unsorted",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "unsorted",
+      "high",
+      "low"
+    ],
+    "replicate": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "YFPlow_vs_unsorted",
+      "columns": [
+        "R1_Unsorted",
+        "R2_Unsorted",
+        "R1_YFP_Low",
+        "R2_YFP_Low"
+      ],
+      "formula": "~ bin",
+      "term": "binlow"
+    },
+    {
+      "name": "YFPhigh_vs_unsorted",
+      "columns": [
+        "R1_Unsorted",
+        "R2_Unsorted",
+        "R1_YFP_High",
+        "R2_YFP_High"
+      ],
+      "formula": "~ bin",
+      "term": "binhigh"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout FACS screen on the YFP-CL1 degradation reporter in MelJuSo cells, two independent experiments (R1, R2), each with an unsorted pool and the ~0.5% YFP-low and YFP-high tails; column names match the GSM titles. The paper ran MAGeCK per experiment, sorted bin versus the unsorted pool (Supplementary Data 1), and took genes enriched in both experiments. Primary analysis: YFP-low vs unsorted (suppressors of degradation such as EIF5A are enriched in low), 2 vs 2. Second analysis: YFP-high vs unsorted, the paper's positive-control arm (UBE2G2, RNF139). No experiment term: with it only 1 residual df would remain, and the sorted libraries do not correlate more within an experiment than across. Library totals. The sorted libraries are heavily bottlenecked (10-36% zero guides, Spearman 0.2-0.4 with any other library), so single-guide jackpots are expected.",
+  "counts_md5": "394f3d3d7eca5d23bd08cd6a6188d00b"
+}

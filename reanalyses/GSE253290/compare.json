@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/genomewide_palbo_vs_untreated/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ENSG00000177822", "ENSG00000224577", "ENSG00000226706"],
+  "published": {
+    "file": "paper/Dataset1_genes.csv",
+    "gene_column": "gene", "score_column": "p_value", "score_better": "lower",
+    "effect_column": "beta"
+  },
+  "top_n": [25, 50, 100]
+}

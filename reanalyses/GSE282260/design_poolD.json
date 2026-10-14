@@ -1,0 +1,238 @@
+{
+  "gse": "GSE282260",
+  "pmid": "40193195",
+  "counts_file": "suppl/GSE282260_PoolD_cts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NT_?[0-9]+$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T0_A_E1_D0",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E1",
+      "treatment": "T0",
+      "day": "0",
+      "replicate": "1",
+      "gsm": "GSM8640193 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T0_A_E2_D0",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E2",
+      "treatment": "T0",
+      "day": "0",
+      "replicate": "2",
+      "gsm": "GSM8640194 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T0_A_U1_D0",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U1",
+      "treatment": "T0",
+      "day": "0",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T0_A_U2_D0",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U2",
+      "treatment": "T0",
+      "day": "0",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_D15",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E1",
+      "treatment": "DMSO",
+      "day": "15",
+      "replicate": "1",
+      "gsm": "GSM8640195 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_D15",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E2",
+      "treatment": "DMSO",
+      "day": "15",
+      "replicate": "2",
+      "gsm": "GSM8640196 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_FDU_D15",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E1",
+      "treatment": "FdU",
+      "day": "15",
+      "replicate": "1",
+      "gsm": "GSM8640197 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_FDU_D15",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E2",
+      "treatment": "FdU",
+      "day": "15",
+      "replicate": "2",
+      "gsm": "GSM8640198 (assumed: GEO lists REP1/REP2 only)"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U1_D15",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U1",
+      "treatment": "DMSO",
+      "day": "15",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U2_D15",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U2",
+      "treatment": "DMSO",
+      "day": "15",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U1_FDU_D15",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U1",
+      "treatment": "FdU",
+      "day": "15",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U2_FDU_D15",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U2",
+      "treatment": "FdU",
+      "day": "15",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_E1_D18",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E1",
+      "treatment": "DMSO",
+      "day": "18",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_E2_D18",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E2",
+      "treatment": "DMSO",
+      "day": "18",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_E1_FDU_D18",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E1",
+      "treatment": "FdU",
+      "day": "18",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_E2_FDU_D18",
+      "pool": "D",
+      "arm": "E",
+      "culture": "E2",
+      "treatment": "FdU",
+      "day": "18",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_U1_D18",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U1",
+      "treatment": "DMSO",
+      "day": "18",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_U2_D18",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U2",
+      "treatment": "DMSO",
+      "day": "18",
+      "replicate": "2"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_U1_FDU_D18",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U1",
+      "treatment": "FdU",
+      "day": "18",
+      "replicate": "1"
+    },
+    {
+      "column": "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T18_A_U2_FDU_D18",
+      "pool": "D",
+      "arm": "U",
+      "culture": "U2",
+      "treatment": "FdU",
+      "day": "18",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "FdU",
+      "T0",
+      "FdU_R"
+    ],
+    "arm": [
+      "E",
+      "U"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "poolD_FdU_vs_DMSO_E",
+      "columns": [
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_FDU_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_FDU_D15"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentFdU"
+    },
+    {
+      "name": "poolD_FdU_vs_DMSO_EU",
+      "columns": [
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E1_FDU_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_E2_FDU_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U1_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U2_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U1_FDU_D15",
+        "HT29_LARGE_INTESTINE_CRISPR_hTF_D_P1_shON_T15_A_U2_FDU_D15"
+      ],
+      "formula": "~ arm + treatment",
+      "term": "treatmentFdU"
+    }
+  ],
+  "rationale": "Pool D of a genome-wide KO library split into four separately transduced sub-library pools (A-D, ~20k guides each, ~150 non-targeting guides per pool, own count file, so library totals are per pool). After puromycin selection (t0) cells were split into untreated (DMSO) and 2.2 nM floxuridine (FdU) arms. The count files hold more libraries than the 6 GSMs per pool in GEO: two arm series E and U, each with two replicate cultures (E1/E2, U1/U2), T0, the GEO end point and later time points (plus FdU_R libraries in pool A). Neither the paper nor GEO defines E and U. The FdU-vs-DMSO log-fold changes of E1 and E2 agree with each other (r 0.34-0.55) more than with U1/U2 (r 0.16-0.32), so E and U are different arms, not replicates; in pool A the UNG guides fall in E-FdU by day 11 but in U-FdU only by day 21. The paper's published gene table (eLife Supplementary file 1) is reproduced by the E arm at the GEO end point and not by the U arm: Pearson r between the paper's log2 fold changes and E1/E2 FdU-vs-DMSO median guide log-fold changes is 0.997/0.990/0.986/0.992 for pools A-D, versus 0.31-0.52 for U and 0.55-0.83 for later time points. So the primary analysis is the E arm at the GEO end point (FdU vs DMSO, 2 vs 2), and GEO REP1/REP2 are taken to be E1/E2; what U is remains undocumented; the second analysis adds the U arm with an arm term (~ arm + treatment, 4 vs 4) as a sensitivity check. Sensitizers (paper: UNG, METTL3, METTL4 in pool A) are depleted under FdU. DMSO and FdU cultures were split at t0, not paired per replicate, so there is no culture term."
+}

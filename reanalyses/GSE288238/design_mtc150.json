@@ -1,0 +1,237 @@
+{
+ "gse": "GSE288238",
+ "pmid": "42611972",
+ "counts_file": "suppl/GSE288238_IBER_reads.csv.gz",
+ "guide_column": "sgRNA",
+ "gene_column": "Gene",
+ "min_total_count": 150,
+ "samples": [
+  {
+   "column": "Plasmid",
+   "gsm": "GSM8761695",
+   "arm": "plasmid",
+   "bin": "plasmid",
+   "culture": "plasmid"
+  },
+  {
+   "column": "B6_Pre_1",
+   "gsm": "GSM8761696",
+   "arm": "unprimed",
+   "bin": "pre",
+   "culture": "B6_1"
+  },
+  {
+   "column": "B6_GFPNeg_1",
+   "gsm": "GSM8761697",
+   "arm": "unprimed",
+   "bin": "GFPneg",
+   "culture": "B6_1"
+  },
+  {
+   "column": "B6_GFPHigh_1",
+   "gsm": "GSM8761698",
+   "arm": "unprimed",
+   "bin": "GFPhigh",
+   "culture": "B6_1"
+  },
+  {
+   "column": "B6B_1.0_PRE_FACS_PRIMED",
+   "gsm": "GSM8761708",
+   "arm": "primed",
+   "bin": "pre",
+   "culture": "B6B_1"
+  },
+  {
+   "column": "B6B_1.0_GFP_NEG_PRIMED",
+   "gsm": "GSM8761709",
+   "arm": "primed",
+   "bin": "GFPneg",
+   "culture": "B6B_1"
+  },
+  {
+   "column": "B6B_1.0_GFP_5pct_HIGH_PRIMED",
+   "gsm": "GSM8761710",
+   "arm": "primed",
+   "bin": "GFPhigh",
+   "culture": "B6B_1"
+  },
+  {
+   "column": "B6_Pre_2",
+   "gsm": "GSM8761699",
+   "arm": "unprimed",
+   "bin": "pre",
+   "culture": "B6_2"
+  },
+  {
+   "column": "B6_GFPNeg_2",
+   "gsm": "GSM8761700",
+   "arm": "unprimed",
+   "bin": "GFPneg",
+   "culture": "B6_2"
+  },
+  {
+   "column": "B6_GFPHigh_2",
+   "gsm": "GSM8761701",
+   "arm": "unprimed",
+   "bin": "GFPhigh",
+   "culture": "B6_2"
+  },
+  {
+   "column": "B6B_2.0_PRE_FACS_PRIMED",
+   "gsm": "GSM8761711",
+   "arm": "primed",
+   "bin": "pre",
+   "culture": "B6B_2"
+  },
+  {
+   "column": "B6B_2.0_GFP_NEG_PRIMED",
+   "gsm": "GSM8761712",
+   "arm": "primed",
+   "bin": "GFPneg",
+   "culture": "B6B_2"
+  },
+  {
+   "column": "B6B_2.0_GFP_5pct_HIGH_PRIMED",
+   "gsm": "GSM8761713",
+   "arm": "primed",
+   "bin": "GFPhigh",
+   "culture": "B6B_2"
+  },
+  {
+   "column": "C3_Pre_1",
+   "gsm": "GSM8761702",
+   "arm": "unprimed",
+   "bin": "pre",
+   "culture": "C3_1"
+  },
+  {
+   "column": "C3_GFPNeg_1",
+   "gsm": "GSM8761703",
+   "arm": "unprimed",
+   "bin": "GFPneg",
+   "culture": "C3_1"
+  },
+  {
+   "column": "C3_GFPHigh_1",
+   "gsm": "GSM8761704",
+   "arm": "unprimed",
+   "bin": "GFPhigh",
+   "culture": "C3_1"
+  },
+  {
+   "column": "C3B_1.0_PRE_FACS_PRIMED",
+   "gsm": "GSM8761714",
+   "arm": "primed",
+   "bin": "pre",
+   "culture": "C3B_1"
+  },
+  {
+   "column": "C3B_1.0_GFP_NEG_PRIMED",
+   "gsm": "GSM8761715",
+   "arm": "primed",
+   "bin": "GFPneg",
+   "culture": "C3B_1"
+  },
+  {
+   "column": "C3B_1.0_GFP_5pct_HIGH_PRIMED",
+   "gsm": "GSM8761716",
+   "arm": "primed",
+   "bin": "GFPhigh",
+   "culture": "C3B_1"
+  },
+  {
+   "column": "C3_Pre_2",
+   "gsm": "GSM8761705",
+   "arm": "unprimed",
+   "bin": "pre",
+   "culture": "C3_2"
+  },
+  {
+   "column": "C3_GFPNeg_2",
+   "gsm": "GSM8761706",
+   "arm": "unprimed",
+   "bin": "GFPneg",
+   "culture": "C3_2"
+  },
+  {
+   "column": "C3_GFPHigh_2",
+   "gsm": "GSM8761707",
+   "arm": "unprimed",
+   "bin": "GFPhigh",
+   "culture": "C3_2"
+  },
+  {
+   "column": "C3B_2.0_PRE_FACS_PRIMED",
+   "gsm": "GSM8761717",
+   "arm": "primed",
+   "bin": "pre",
+   "culture": "C3B_2"
+  },
+  {
+   "column": "C3B_2.0_GFP_NEG_PRIMED",
+   "gsm": "GSM8761718",
+   "arm": "primed",
+   "bin": "GFPneg",
+   "culture": "C3B_2"
+  },
+  {
+   "column": "C3B_2.0_GFP_5pct_HIGH_PRIMED",
+   "gsm": "GSM8761719",
+   "arm": "primed",
+   "bin": "GFPhigh",
+   "culture": "C3B_2"
+  }
+ ],
+ "factor_levels": {
+  "bin": [
+   "GFPhigh",
+   "pre",
+   "GFPneg",
+   "plasmid"
+  ],
+  "culture": [
+   "B6_1",
+   "B6_2",
+   "C3_1",
+   "C3_2",
+   "B6B_1",
+   "B6B_2",
+   "C3B_1",
+   "C3B_2",
+   "plasmid"
+  ]
+ },
+ "analyses": [
+  {
+   "name": "mtc150_unprimed_GFPneg_vs_GFPhigh",
+   "columns": [
+    "B6_GFPNeg_1",
+    "B6_GFPHigh_1",
+    "B6_GFPNeg_2",
+    "B6_GFPHigh_2",
+    "C3_GFPNeg_1",
+    "C3_GFPHigh_1",
+    "C3_GFPNeg_2",
+    "C3_GFPHigh_2"
+   ],
+   "formula": "~ culture + bin",
+   "term": "binGFPneg"
+  },
+  {
+   "name": "mtc150_primed_GFPneg_vs_GFPhigh",
+   "columns": [
+    "B6B_1.0_GFP_NEG_PRIMED",
+    "B6B_1.0_GFP_5pct_HIGH_PRIMED",
+    "B6B_2.0_GFP_NEG_PRIMED",
+    "B6B_2.0_GFP_5pct_HIGH_PRIMED",
+    "C3B_1.0_GFP_NEG_PRIMED",
+    "C3B_1.0_GFP_5pct_HIGH_PRIMED",
+    "C3B_2.0_GFP_NEG_PRIMED",
+    "C3B_2.0_GFP_5pct_HIGH_PRIMED"
+   ],
+   "formula": "~ culture + bin",
+   "term": "binGFPneg"
+  }
+ ],
+ "rationale": "Sensitivity check only: same as design.json with min_total_count 150 (bottlenecked sorted libraries, 8-39% zero guides)."
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE325129",
+  "pmid": "42214332",
+  "doi": "10.1016/j.molcel.2026.05.005",
+  "pmcid": "PMC13380935",
+  "title": "A multi-subunit autophagic capture complex facilitates degradation of ER-stalled MHC class I in pancreatic cancer.",
+  "journal": "Molecular Cell",
+  "published": "2026",
+  "model": "PaTu8902 PDAC, hCRISPRi-v2 (dCas9-KRAB), surface MHC-I FACS",
+  "contrast": "MHC-I high vs low sort bin (1 vs 1)",
+  "paper_method": "ScreenProcessing (Horlbeck)",
+  "paper_calls": "NFXL1 named as the screen hit; no gene table published",
+  "barcs_calls": "165 genes at FDR 0.10 (216 against the control null); NLRC5, TAP1, B2M, HLA-A in the MHC-I low bin",
+  "named_hits": "NFXL1 rank 455 enriched in the high bin (by p), FDR 0.52; TEX264, NBR1 not significant",
+  "verdict": "BARCS recovers the MHC-I pathway (NLRC5 #1, TAP1, B2M, HLA-A) but not the paper's named hit NFXL1, whose signal rests on one of five guides. One library per bin, so the FDR is screening-level without replicate variance.",
+  "agreement": "differ",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-05-29",
+  "published_issue": "2026 Jun 4"
+}

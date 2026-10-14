@@ -1,0 +1,100 @@
+{
+  "gse": "GSE277987",
+  "pmid": "40640555",
+  "counts_file": "counts_lanes_summed.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NONTARG$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "R2_B",
+      "gsm": "GSM8536777-GSM8536780",
+      "bin": "basal",
+      "screen": "2",
+      "replicate": "2",
+      "bin_hl": "basal"
+    },
+    {
+      "column": "R2_H",
+      "gsm": "GSM8536781-GSM8536784",
+      "bin": "high",
+      "screen": "2",
+      "replicate": "2",
+      "bin_hl": "high"
+    },
+    {
+      "column": "R2_L",
+      "gsm": "GSM8536785-GSM8536788",
+      "bin": "low",
+      "screen": "2",
+      "replicate": "2",
+      "bin_hl": "low"
+    },
+    {
+      "column": "R2_T0",
+      "gsm": "GSM8536789-GSM8536792",
+      "bin": "T0",
+      "screen": "2",
+      "replicate": "2",
+      "bin_hl": "T0"
+    },
+    {
+      "column": "R3_B",
+      "gsm": "GSM8536793-GSM8536796",
+      "bin": "basal",
+      "screen": "3",
+      "replicate": "3",
+      "bin_hl": "basal"
+    },
+    {
+      "column": "R3_H",
+      "gsm": "GSM8536797-GSM8536800",
+      "bin": "high",
+      "screen": "3",
+      "replicate": "3",
+      "bin_hl": "high"
+    },
+    {
+      "column": "R3_L",
+      "gsm": "GSM8536801-GSM8536804",
+      "bin": "low",
+      "screen": "3",
+      "replicate": "3",
+      "bin_hl": "low"
+    },
+    {
+      "column": "R3_T0",
+      "gsm": "GSM8536805-GSM8536808",
+      "bin": "T0",
+      "screen": "3",
+      "replicate": "3",
+      "bin_hl": "T0"
+    }
+  ],
+  "factor_levels": {
+    "bin_hl": [
+      "low",
+      "high",
+      "basal",
+      "T0"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "high_vs_low",
+      "columns": [
+        "R2_B",
+        "R2_H",
+        "R2_L",
+        "R3_B",
+        "R3_H",
+        "R3_L"
+      ],
+      "formula": "~ bin_hl",
+      "term": "bin_hlhigh"
+    }
+  ],
+  "rationale": "Genome-wide HD CRISPR library A screen in RKO cells expressing the Kinprola PKA-activity recorder, labeled and sorted into high, basal and low recorder-signal bins in two independent screens (R2, R3), plus a day-0 library per screen. Each sample was sequenced on four lanes (one GSM each); prepare.R sums the lanes (technical re-reads, r = 0.98) and drops the unassigned columns. The paper's main volcano (Fig. 3b, limma on log-normalized counts) compares the high and low bins: knockouts that raise PKA activity are enriched in high, those that lower it in low. The primary analysis is high vs low; all three bins of both screens are fitted together so the basal bin contributes to the dispersion. design_vs_basal.json holds the paper's Extended Data high-vs-basal and low-vs-basal comparisons. All three bins of both screens are fitted together (~ bin, residual df 3). Bins correlate more across screens (high-high 0.95, low-low 0.95) than with other bins of the same screen (0.91-0.94), so there is no screen term. 159 NONTARG guides are the controls (the CONTROL_C_* cutting controls are not used as controls). Gene IDs are Ensembl.",
+  "counts_md5": "08c0a23d973da3ba21bc566df94ba052"
+}

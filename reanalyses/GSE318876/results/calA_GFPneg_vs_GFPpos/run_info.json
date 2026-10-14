@@ -1,0 +1,47 @@
+{
+  "analysis": "calA_GFPneg_vs_GFPpos",
+  "formula": "~donor + bin",
+  "term": "binGFPneg",
+  "libraries": 6,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 56762,
+  "genes": 18886,
+  "moderated": true,
+  "prior_df": 24.9854,
+  "guide_correlation": 0.0131,
+  "control_scale": 1.2951,
+  "control_guides": 496,
+  "control_p05_raw": 0.127,
+  "control_p05": 0.0504,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "D11a_GFP-Neg": 0.03,
+    "D12a_GFP-Neg": 0.029,
+    "D13a_GFP-Neg": 0.029,
+    "D11a_GFP-Pos": 0.036,
+    "D12a_GFP-Pos": 0.03,
+    "D13a_GFP-Pos": 0.03
+  },
+  "genes_fdr_0_10_up": 126,
+  "genes_fdr_0_10_down": 240,
+  "genes_fdr_0_05": 201,
+  "genes_fdr_0_10": 366,
+  "genes_empirical_fdr_0_10": 956,
+  "empirical_centre": "controls",
+  "control_shift": -0.247,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

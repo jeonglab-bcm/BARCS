@@ -1,0 +1,75 @@
+{
+  "gse": "GSE318876",
+  "pmid": "42013838",
+  "counts_file": "suppl/GSE318876_HIV-calA.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NO-TARGET",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "D11a_GFP-Neg",
+      "gsm": "GSM9505188",
+      "donor": "D1",
+      "bin": "GFPneg"
+    },
+    {
+      "column": "D12a_GFP-Neg",
+      "gsm": "GSM9505191",
+      "donor": "D2",
+      "bin": "GFPneg"
+    },
+    {
+      "column": "D13a_GFP-Neg",
+      "gsm": "GSM9505194",
+      "donor": "D3",
+      "bin": "GFPneg"
+    },
+    {
+      "column": "D11a_GFP-Pos",
+      "gsm": "GSM9505189",
+      "donor": "D1",
+      "bin": "GFPpos"
+    },
+    {
+      "column": "D12a_GFP-Pos",
+      "gsm": "GSM9505192",
+      "donor": "D2",
+      "bin": "GFPpos"
+    },
+    {
+      "column": "D13a_GFP-Pos",
+      "gsm": "GSM9505195",
+      "donor": "D3",
+      "bin": "GFPpos"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "GFPpos",
+      "GFPneg"
+    ],
+    "donor": [
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "calA_GFPneg_vs_GFPpos",
+      "columns": [
+        "D11a_GFP-Neg",
+        "D12a_GFP-Neg",
+        "D13a_GFP-Neg",
+        "D11a_GFP-Pos",
+        "D12a_GFP-Pos",
+        "D13a_GFP-Pos"
+      ],
+      "formula": "~ donor + bin",
+      "term": "binGFPneg"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRa (Calabrese pool A) sort screen in primary CD4+ T cells from three donors (D11a/D12a/D13a; the sorted GFP reporter marks infected cells). Each donor's reporter-negative and reporter-positive sorts are paired, so donor is a blocking factor (~ donor + bin), 6 libraries, 2 residual df. Antiviral factors that reduce the reporter are enriched in the reporter-negative sort, so a positive binGFPneg estimate is the paper's main direction. The GFP-Total and Uninfected columns are not used. Controls are the 496 NO-TARGET guides. calB (pool B) and the genome-wide CRISPRn screen are run as separate designs (design_calB.json, design_crisprn.json).",
+  "counts_md5": "ff2796943295f4be46bd4bee6daff980"
+}

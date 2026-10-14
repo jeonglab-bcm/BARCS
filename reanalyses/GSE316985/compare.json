@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/KO_T_vs_noT_D11/genes.csv",
+  "direction": "both",
+  "named_hits": ["PRMT7", "CFLAR", "CREBBP", "IRF1", "ATF7IP", "CASP8", "IFNGR1", "IFNGR2", "JAK1", "JAK2", "HLA-A", "TAP1", "CD58"],
+  "published": {
+    "file": "paper/ko_tcell.tsv",
+    "gene_column": "gene", "score_column": "p", "score_better": "lower",
+    "effect_column": "beta"
+  },
+  "top_n": [25, 50, 100]
+}

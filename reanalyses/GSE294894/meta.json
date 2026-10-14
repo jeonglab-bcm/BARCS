@@ -1,0 +1,20 @@
+{
+  "gse": "GSE294894",
+  "pmid": "42227585",
+  "doi": "10.1158/1535-7163.MCT-25-0508",
+  "pmcid": "PMC13317012",
+  "title": "A whole genomic CRISPR-Cas9 screen identifies the amino acid transporter SLC43A1 (LAT3) as a major determinant of oxaliplatin sensitivity in colorectal cancer cells.",
+  "journal": "Molecular Cancer Therapeutics",
+  "published": "2026",
+  "model": "RKO and SW620 colorectal cancer, Brunello KO and Calabrese activation",
+  "contrast": "Oxaliplatin vs untreated, day 20 (1 vs 1 per screen); primary RKO KO",
+  "paper_method": "MAGeCK test (control-normalized)",
+  "paper_calls": "SLC43A1 most enriched in both KO screens and depleted in both activation screens",
+  "barcs_calls": "RKO KO: 68 genes at FDR 0.10 (8 against the control null); SLC43A1 #1 in all three KO analyses",
+  "named_hits": "SLC43A1 rank 1 (enriched, by p) in every KO analysis; not called depleted in activation screens",
+  "verdict": "BARCS reproduces the main claim: SLC43A1 knockout is the top oxaliplatin-resistance hit in RKO and SW620 (rank 1, FDR < 1e-27 in every KO analysis), but it does not call the SLC43A1 depletion in the activation screens (guides fall to zero under strong selection). One library per condition, so the FDR is screening-level without replicate variance.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-06-02",
+  "published_issue": "2026 Jun 2"
+}

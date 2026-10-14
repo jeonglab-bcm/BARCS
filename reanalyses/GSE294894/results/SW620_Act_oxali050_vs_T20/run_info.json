@@ -1,0 +1,49 @@
+{
+  "analysis": "SW620_Act_oxali050_vs_T20",
+  "formula": "~condition",
+  "term": "conditionoxali050",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 5.6871e-06,
+    "rho_source": "control guides",
+    "rho_guides": 495,
+    "inflation_at_rho0": 28.4231,
+    "haldane_guides": 124
+  },
+  "guides": 56762,
+  "genes": 18881,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 496,
+  "control_p05_raw": 0.0222,
+  "control_p05": 0.0222,
+  "totals_method": "median_ratio",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "T20": 0.024,
+    "0.50_OXAL": 0.102
+  },
+  "genes_fdr_0_10_up": 54,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 41,
+  "genes_fdr_0_10": 54,
+  "genes_empirical_fdr_0_10": 81,
+  "empirical_centre": "controls",
+  "control_shift": 0.002,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

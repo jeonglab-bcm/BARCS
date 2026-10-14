@@ -1,0 +1,19 @@
+{
+  "gse": "GSE288238",
+  "pmid": "42611972",
+  "doi": "10.1126/scisignal.adx3808",
+  "title": "A genome-wide map of the genetic network in monocytes that regulates type I interferon induction by the cGAS-STING pathway",
+  "journal": "Science Signaling",
+  "published": "2026",
+  "model": "THP-1 IFNB1-GFP reporter clones, MinLibCas9 genome-wide knockout library, cGAMP stimulation unprimed or IFN-a primed",
+  "contrast": "GFP-negative vs GFP-high sort, paired by culture (4 vs 4), unprimed (primary) and IFN-a primed",
+  "paper_method": "Not stated in the available text (paper not open access)",
+  "paper_calls": "Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted",
+  "barcs_calls": "Unprimed 14 genes at FDR 0.10 (11 positive regulators); primed 150 (126); no controls, so no calibration and no control null",
+  "named_hits": "Ranks among positive regulators, unprimed / primed: TBL1XR1 #7 (FDR 0.03) / #187 (0.18); HDAC3 #164 (0.69) / #114 (0.09); STING #1 / #1; TBK1 #2 / #348",
+  "verdict": "BARCS recovers STING and TBK1 at the top and calls TBL1XR1 in the unprimed screen and HDAC3, borderline, in the primed screen, so each named NCoR/SMRT component passes FDR 0.10 in only one arm. The library has no non-targeting guides, so the FDR could not be calibrated.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-08-18",
+  "published_issue": "2026 Aug 18"
+}

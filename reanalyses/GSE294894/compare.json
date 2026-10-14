@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/RKO_KO_oxali_vs_T20/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["SLC43A1"],
+  "top_n": [10, 25, 50]
+}

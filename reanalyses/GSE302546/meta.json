@@ -1,0 +1,20 @@
+{
+  "gse": "GSE302546",
+  "pmid": "41974002",
+  "doi": "10.1158/0008-5472.CAN-25-3654",
+  "pmcid": "PMC13370119",
+  "title": "TRAPPC4 Promotes GPX4 Stability to Drive Ferroptosis Resistance and Tumor Progression in Head and Neck Squamous Cell Carcinoma",
+  "journal": "Cancer Research",
+  "published": "2026",
+  "model": "LIU-LSC-1 HNSCC cells, GeCKO v2 library A knockout",
+  "contrast": "RSL3 (IC20) vs DMSO, 7 days (3 vs 3)",
+  "paper_method": "MAGeCK RRA, median normalization (gene summary in Supplementary Table S8)",
+  "paper_calls": "2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized",
+  "barcs_calls": "261 genes at FDR 0.10 (257 depleted) after control calibration; 601 against the control null centred on the targeting guides",
+  "named_hits": "Depletion ranks: TRAPPC4 #1 (FDR 1e-12); LSM11 #2, POLR3H #3, PSMG4 #4, LONP1 #5; GINS4 #19, USP5 #28, TPI1 #87 (all FDR < 0.01)",
+  "verdict": "BARCS reproduces the paper's screen exactly at the top: its top five depleted genes are the five candidates the authors prioritized, with TRAPPC4 first. BARCS calls about a tenth as many genes as MAGeCK RRA because replicate variation and control calibration (raw false-positive rate 15%) shorten the list.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-07-15",
+  "published_issue": "2026 Jul 15"
+}

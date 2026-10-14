@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/AMGR_vs_parental_T1/genes.csv",
+  "direction": "both",
+  "named_hits": ["PLK1", "ATR", "CHEK1", "CDK1", "ILK", "PTK2", "ROCK2", "FASTKD3", "CDK15", "RAB11FIP5", "EGFR", "MAPK1"],
+  "top_n": [10, 25, 50]
+}

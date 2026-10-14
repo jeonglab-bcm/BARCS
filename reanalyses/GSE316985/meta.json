@@ -1,0 +1,20 @@
+{
+  "gse": "GSE316985",
+  "pmid": "41565695",
+  "doi": "10.1038/s41523-025-00888-8",
+  "pmcid": "PMC12891518",
+  "title": "CRISPR screens identify PRMT7 as a therapeutic target to enhance T cell-mediated killing in breast cancer",
+  "journal": "npj Breast Cancer",
+  "published": "2026",
+  "model": "MCF7 breast cancer cells, custom breast-cancer risk-gene CRISPRko and CRISPRi libraries, cytotoxic-T-cell co-culture",
+  "contrast": "Day 11 + T cells vs day 11 no T cells, replicate-paired (3 vs 3), KO and CRISPRi arms",
+  "paper_method": "MAGeCK-MLE (Common, IFN, Tcell terms); 33 final genes (20 resistors, 13 sensitizers) after fitness filtering, 88 at Tcell FDR 0.2",
+  "paper_calls": "33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target",
+  "barcs_calls": "KO: 88 genes at FDR 0.10 (105 vs control null); CRISPRi: 175 (184 vs control null); counts recovered exactly from MAGeCK-normalized tables",
+  "named_hits": "Positive controls IFNGR1/IFNGR2 #1-2 in both arms; all 6 validated genes called in at least one arm (CFLAR, IRF1 both; CASP8, CREBBP in KO; PRMT7, ATF7IP in CRISPRi)",
+  "verdict": "The positive controls (IFNGR1/2, JAK1/2, HLA-A, TAP1, CD58) top both arms and all six validated genes are BARCS calls in at least one arm, matching the paper's own pooled-evidence pattern; BARCS's single D11+T vs D11 contrast calls more genes than the paper's 33 because it cannot subtract fitness effects the way the paper's MLE Common term does.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-01-21",
+  "published_issue": "2026 Jan 21"
+}

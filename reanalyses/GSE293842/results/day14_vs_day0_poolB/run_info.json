@@ -1,0 +1,49 @@
+{
+  "analysis": "day14_vs_day0_poolB",
+  "formula": "~time",
+  "term": "timeday14",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 1.6677e-06,
+    "rho_source": "control guides",
+    "rho_guides": 99,
+    "inflation_at_rho0": 8.6845,
+    "haldane_guides": 0
+  },
+  "guides": 6304,
+  "genes": 763,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": 1.38,
+  "control_guides": 200,
+  "control_p05_raw": 0.0909,
+  "control_p05": 0.0505,
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Day0_B": 0.06,
+    "Day14_B": 0.061
+  },
+  "genes_fdr_0_10_up": 6,
+  "genes_fdr_0_10_down": 30,
+  "genes_fdr_0_05": 31,
+  "genes_fdr_0_10": 36,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

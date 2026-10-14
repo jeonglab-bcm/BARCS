@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/lung_tumor_vs_cellpool/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Cd80", "Tnfsf14", "Cxcl10", "Tnfsf18", "Tnfsf9", "Ifng"],
+  "top_n": [6, 10]
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE282260",
+  "pmid": "40193195",
+  "doi": "10.7554/eLife.101626",
+  "pmcid": "PMC11975372",
+  "title": "N6-methyladenosine in DNA promotes genome stability",
+  "journal": "eLife",
+  "published": "2025",
+  "model": "HT-29 Cas9 cells, genome-wide KO library split into four separately transduced sub-library pools (~20k guides, ~150 non-targeting each), 2.2 nM floxuridine",
+  "contrast": "Floxuridine vs DMSO at the end point (day 11-15), E arm, per pool (2 vs 2 each), library totals per pool; E arm identified by matching the published table (r 0.99)",
+  "paper_method": "MAGeCK per pool, cutoff p < 0.01 and |log2 FC| > 0.5",
+  "paper_calls": "873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named",
+  "barcs_calls": "2,477 genes at FDR 0.10 across four pools (1,531 depleted, 946 enriched; pool A 693, B 437, C 701, D 646); control null 3,285",
+  "named_hits": "Depletion rank within pool: UNG #7, APEX1 #8, LIG1 #10, METTL3 #74, METTL14 #91, METTL4 #105 (pool A of 4,853), EXO1 #19 (B), MSH2 #68 (D); all at FDR < 0.001 (8/8)",
+  "verdict": "BARCS reproduces the floxuridine screen closely, with every named sensitizer (UNG, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4) at FDR < 0.001, 98-99% of the paper's hits at FDR 0.10 and rank correlations of 0.94-0.97 per pool; the published table matches the undocumented E arm of the count files, not the U arm.",
+  "agreement": "agree",
+  "analyzed": "2026-10-13",
+  "published_date": "2025-04-07",
+  "published_issue": "2025 Apr 7"
+}

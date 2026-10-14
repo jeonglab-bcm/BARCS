@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/high_vs_low/genes.csv",
+  "direction": "both",
+  "named_hits": ["ENSG00000072062", "ENSG00000087460", "ENSG00000121281", "ENSG00000100029", "ENSG00000111641", "ENSG00000145041", "ENSG00000197323", "ENSG00000105325"],
+  "published": {
+    "file": "paper/fig3b_high_vs_low.csv",
+    "gene_column": "Geneid", "score_column": "pval", "score_better": "lower",
+    "effect_column": "mean_fc"
+  },
+  "top_n": [50, 100, 200, 500]
+}

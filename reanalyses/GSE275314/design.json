@@ -1,0 +1,91 @@
+{
+  "gse": "GSE275314",
+  "pmid": "41165456",
+  "counts_file": "suppl/GSE275314_counts_mat.csv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControl$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Ref1",
+      "gsm": "GSM8474638",
+      "line": "parental",
+      "time": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "Ref2",
+      "gsm": "GSM8474639",
+      "line": "AMGR",
+      "time": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "H358R1T1",
+      "gsm": "GSM8474640",
+      "line": "parental",
+      "time": "T1",
+      "replicate": "1"
+    },
+    {
+      "column": "H358R2T1",
+      "gsm": "GSM8474641",
+      "line": "parental",
+      "time": "T1",
+      "replicate": "2"
+    },
+    {
+      "column": "AMGR1T1",
+      "gsm": "GSM8474642",
+      "line": "AMGR",
+      "time": "T1",
+      "replicate": "1"
+    },
+    {
+      "column": "AMGR2T1",
+      "gsm": "GSM8474643",
+      "line": "AMGR",
+      "time": "T1",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "line": [
+      "parental",
+      "AMGR"
+    ],
+    "time": [
+      "T0",
+      "T1"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "AMGR_vs_parental_T1",
+      "columns": [
+        "H358R1T1",
+        "H358R2T1",
+        "AMGR1T1",
+        "AMGR2T1"
+      ],
+      "formula": "~ line",
+      "term": "lineAMGR"
+    },
+    {
+      "name": "AMGR_vs_parental_dropout",
+      "columns": [
+        "Ref1",
+        "Ref2",
+        "H358R1T1",
+        "H358R2T1",
+        "AMGR1T1",
+        "AMGR2T1"
+      ],
+      "formula": "~ line * time",
+      "term": "lineAMGR:timeT1"
+    }
+  ],
+  "rationale": "Kinome KO screen (Addgene #75314, 3,149 guides on 764 genes, 100 non-targeting) in H358 parental cells (DMSO) and sotorasib-resistant H358-AMGR cells (on sotorasib) for 2 weeks. Column names match GSM titles (Ref1 = parental T0, Ref2 = AMGR T0, two T1 replicate cultures per line). GEO: 'depleted sgRNAs in sotorasib-R H358 cells compared to reference or parental cells'. Primary analysis compares end points directly (2 vs 2); the second fits line x time with each line's single T0 reference so the interaction asks whether a knockout drops out more in AMGR than in parental cells relative to each line's own starting library (residual df 2; the T0 references are single libraries). T1 replicates are not paired across lines, so no replicate term.",
+  "counts_md5": "128203b4d51547e82bc1ffa990844e29"
+}

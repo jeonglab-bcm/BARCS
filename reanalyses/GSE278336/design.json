@@ -1,0 +1,459 @@
+{
+  "gse": "GSE278336",
+  "pmid": "41673027",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "array",
+  "gene_column": "gene",
+  "control_gene_pattern": "^(NT|NEG)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Lb_KRAB_Day5_1",
+      "gsm": "GSM9085321",
+      "repressor": "Lb_KRAB",
+      "day": "day5",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_KRAB_Day5_2",
+      "gsm": "GSM9085322",
+      "repressor": "Lb_KRAB",
+      "day": "day5",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_KRAB_Day5_3",
+      "gsm": "GSM9085323",
+      "repressor": "Lb_KRAB",
+      "day": "day5",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_KRAB_Day7_1",
+      "gsm": "GSM9085324",
+      "repressor": "Lb_KRAB",
+      "day": "day7",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_KRAB_Day7_2",
+      "gsm": "GSM9085325",
+      "repressor": "Lb_KRAB",
+      "day": "day7",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_KRAB_Day7_3",
+      "gsm": "GSM9085326",
+      "repressor": "Lb_KRAB",
+      "day": "day7",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_KRAB_Day14_1",
+      "gsm": "GSM9085327",
+      "repressor": "Lb_KRAB",
+      "day": "day14",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_KRAB_Day14_2",
+      "gsm": "GSM9085328",
+      "repressor": "Lb_KRAB",
+      "day": "day14",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_KRAB_Day14_3",
+      "gsm": "GSM9085329",
+      "repressor": "Lb_KRAB",
+      "day": "day14",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_KRAB_Day21_1",
+      "gsm": "GSM9085330",
+      "repressor": "Lb_KRAB",
+      "day": "day21",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_KRAB_Day21_2",
+      "gsm": "GSM9085331",
+      "repressor": "Lb_KRAB",
+      "day": "day21",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_KRAB_Day21_3",
+      "gsm": "GSM9085332",
+      "repressor": "Lb_KRAB",
+      "day": "day21",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_SID_Day5_1",
+      "gsm": "GSM9085333",
+      "repressor": "Lb_SID",
+      "day": "day5",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_SID_Day5_2",
+      "gsm": "GSM9085334",
+      "repressor": "Lb_SID",
+      "day": "day5",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_SID_Day5_3",
+      "gsm": "GSM9085335",
+      "repressor": "Lb_SID",
+      "day": "day5",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_SID_Day7_1",
+      "gsm": "GSM9085336",
+      "repressor": "Lb_SID",
+      "day": "day7",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_SID_Day7_2",
+      "gsm": "GSM9085337",
+      "repressor": "Lb_SID",
+      "day": "day7",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_SID_Day7_3",
+      "gsm": "GSM9085338",
+      "repressor": "Lb_SID",
+      "day": "day7",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_SID_Day14_1",
+      "gsm": "GSM9085339",
+      "repressor": "Lb_SID",
+      "day": "day14",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_SID_Day14_2",
+      "gsm": "GSM9085340",
+      "repressor": "Lb_SID",
+      "day": "day14",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_SID_Day14_3",
+      "gsm": "GSM9085341",
+      "repressor": "Lb_SID",
+      "day": "day14",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_SID_Day21_1",
+      "gsm": "GSM9085342",
+      "repressor": "Lb_SID",
+      "day": "day21",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_SID_Day21_2",
+      "gsm": "GSM9085343",
+      "repressor": "Lb_SID",
+      "day": "day21",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_SID_Day21_3",
+      "gsm": "GSM9085344",
+      "repressor": "Lb_SID",
+      "day": "day21",
+      "replicate": "3"
+    },
+    {
+      "column": "As_KRAB_Day5_1",
+      "gsm": "GSM9085345",
+      "repressor": "As_KRAB",
+      "day": "day5",
+      "replicate": "1"
+    },
+    {
+      "column": "As_KRAB_Day5_2",
+      "gsm": "GSM9085346",
+      "repressor": "As_KRAB",
+      "day": "day5",
+      "replicate": "2"
+    },
+    {
+      "column": "As_KRAB_Day5_3",
+      "gsm": "GSM9085347",
+      "repressor": "As_KRAB",
+      "day": "day5",
+      "replicate": "3"
+    },
+    {
+      "column": "As_KRAB_Day7_1",
+      "gsm": "GSM9085348",
+      "repressor": "As_KRAB",
+      "day": "day7",
+      "replicate": "1"
+    },
+    {
+      "column": "As_KRAB_Day7_2",
+      "gsm": "GSM9085349",
+      "repressor": "As_KRAB",
+      "day": "day7",
+      "replicate": "2"
+    },
+    {
+      "column": "As_KRAB_Day7_3",
+      "gsm": "GSM9085350",
+      "repressor": "As_KRAB",
+      "day": "day7",
+      "replicate": "3"
+    },
+    {
+      "column": "As_KRAB_Day14_1",
+      "gsm": "GSM9085351",
+      "repressor": "As_KRAB",
+      "day": "day14",
+      "replicate": "1"
+    },
+    {
+      "column": "As_KRAB_Day14_2",
+      "gsm": "GSM9085352",
+      "repressor": "As_KRAB",
+      "day": "day14",
+      "replicate": "2"
+    },
+    {
+      "column": "As_KRAB_Day14_3",
+      "gsm": "GSM9085353",
+      "repressor": "As_KRAB",
+      "day": "day14",
+      "replicate": "3"
+    },
+    {
+      "column": "As_KRAB_Day21_1",
+      "gsm": "GSM9085354",
+      "repressor": "As_KRAB",
+      "day": "day21",
+      "replicate": "1"
+    },
+    {
+      "column": "As_KRAB_Day21_2",
+      "gsm": "GSM9085355",
+      "repressor": "As_KRAB",
+      "day": "day21",
+      "replicate": "2"
+    },
+    {
+      "column": "As_KRAB_Day21_3",
+      "gsm": "GSM9085356",
+      "repressor": "As_KRAB",
+      "day": "day21",
+      "replicate": "3"
+    },
+    {
+      "column": "As_SID_Day5_1",
+      "gsm": "GSM9085357",
+      "repressor": "As_SID",
+      "day": "day5",
+      "replicate": "1"
+    },
+    {
+      "column": "As_SID_Day5_2",
+      "gsm": "GSM9085358",
+      "repressor": "As_SID",
+      "day": "day5",
+      "replicate": "2"
+    },
+    {
+      "column": "As_SID_Day5_3",
+      "gsm": "GSM9085359",
+      "repressor": "As_SID",
+      "day": "day5",
+      "replicate": "3"
+    },
+    {
+      "column": "As_SID_Day7_1",
+      "gsm": "GSM9085360",
+      "repressor": "As_SID",
+      "day": "day7",
+      "replicate": "1"
+    },
+    {
+      "column": "As_SID_Day7_2",
+      "gsm": "GSM9085361",
+      "repressor": "As_SID",
+      "day": "day7",
+      "replicate": "2"
+    },
+    {
+      "column": "As_SID_Day7_3",
+      "gsm": "GSM9085362",
+      "repressor": "As_SID",
+      "day": "day7",
+      "replicate": "3"
+    },
+    {
+      "column": "As_SID_Day14_1",
+      "gsm": "GSM9085363",
+      "repressor": "As_SID",
+      "day": "day14",
+      "replicate": "1"
+    },
+    {
+      "column": "As_SID_Day14_2",
+      "gsm": "GSM9085364",
+      "repressor": "As_SID",
+      "day": "day14",
+      "replicate": "2"
+    },
+    {
+      "column": "As_SID_Day14_3",
+      "gsm": "GSM9085365",
+      "repressor": "As_SID",
+      "day": "day14",
+      "replicate": "3"
+    },
+    {
+      "column": "As_SID_Day21_1",
+      "gsm": "GSM9085366",
+      "repressor": "As_SID",
+      "day": "day21",
+      "replicate": "1"
+    },
+    {
+      "column": "As_SID_Day21_2",
+      "gsm": "GSM9085367",
+      "repressor": "As_SID",
+      "day": "day21",
+      "replicate": "2"
+    },
+    {
+      "column": "As_SID_Day21_3",
+      "gsm": "GSM9085368",
+      "repressor": "As_SID",
+      "day": "day21",
+      "replicate": "3"
+    },
+    {
+      "column": "Lb_Plasmid_1",
+      "gsm": "GSM9085369",
+      "repressor": "Lb_plasmid",
+      "day": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "Lb_Plasmid_2",
+      "gsm": "GSM9085370",
+      "repressor": "Lb_plasmid",
+      "day": "plasmid",
+      "replicate": "2"
+    },
+    {
+      "column": "Lb_Plasmid_3",
+      "gsm": "GSM9085371",
+      "repressor": "Lb_plasmid",
+      "day": "plasmid",
+      "replicate": "3"
+    },
+    {
+      "column": "As_Plasmid_1",
+      "gsm": "GSM9085372",
+      "repressor": "As_plasmid",
+      "day": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "As_Plasmid_2",
+      "gsm": "GSM9085373",
+      "repressor": "As_plasmid",
+      "day": "plasmid",
+      "replicate": "2"
+    },
+    {
+      "column": "As_Plasmid_3",
+      "gsm": "GSM9085374",
+      "repressor": "As_plasmid",
+      "day": "plasmid",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "day": [
+      "plasmid",
+      "day5",
+      "day7",
+      "day14",
+      "day21"
+    ],
+    "replicate": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "Lb_KRAB_day21_vs_day5",
+      "columns": [
+        "Lb_KRAB_Day5_1",
+        "Lb_KRAB_Day5_2",
+        "Lb_KRAB_Day5_3",
+        "Lb_KRAB_Day21_1",
+        "Lb_KRAB_Day21_2",
+        "Lb_KRAB_Day21_3"
+      ],
+      "formula": "~ replicate + day",
+      "term": "dayday21"
+    },
+    {
+      "name": "Lb_SID_day21_vs_day5",
+      "columns": [
+        "Lb_SID_Day5_1",
+        "Lb_SID_Day5_2",
+        "Lb_SID_Day5_3",
+        "Lb_SID_Day21_1",
+        "Lb_SID_Day21_2",
+        "Lb_SID_Day21_3"
+      ],
+      "formula": "~ replicate + day",
+      "term": "dayday21"
+    },
+    {
+      "name": "As_KRAB_day21_vs_day5",
+      "columns": [
+        "As_KRAB_Day5_1",
+        "As_KRAB_Day5_2",
+        "As_KRAB_Day5_3",
+        "As_KRAB_Day21_1",
+        "As_KRAB_Day21_2",
+        "As_KRAB_Day21_3"
+      ],
+      "formula": "~ replicate + day",
+      "term": "dayday21"
+    },
+    {
+      "name": "As_SID_day21_vs_day5",
+      "columns": [
+        "As_SID_Day5_1",
+        "As_SID_Day5_2",
+        "As_SID_Day5_3",
+        "As_SID_Day21_1",
+        "As_SID_Day21_2",
+        "As_SID_Day21_3"
+      ],
+      "formula": "~ replicate + day",
+      "term": "dayday21"
+    }
+  ],
+  "rationale": "Pooled dCas12a CRISPRi fitness screen in A549 cells with four-crRNA pre-crRNA arrays (171 arrays for 145 core-essential genes, 34-48 cell-surface control arrays, 50 non-targeting and 25 intergenic arrays, plus synthetic-lethal combination arrays), run with four repressors (dHyperLbCas12a-KRAB or -4xSID, dEnAsCas12a-KRAB or -4xSID) in three independent transductions sampled at days 5, 7, 14 and 21. The paper models array abundance over time per repressor (DESeq2 LRT on days, MAGeCK MLE) and compares repressors by depletion of essential-gene arrays. BARCS compares day 21 with day 5 per repressor, paired by transduction (~ replicate + day), with library totals; 3 vs 3, 2 residual df. Counts are column 3 of the per-sample idxstats files (identical to the paper's Supplementary Data 1 raw counts); prepare.R labels genes as the paper's MAGeCK gene names (single-target combination arrays X-k-NT / NT-X-k pooled under X, double-target arrays under the sorted pair). Controls: NT and NEG (intergenic) arrays. Primary analysis: dHyperLbCas12a-KRAB.",
+  "counts_md5": "73623262625b7c28d5ef583ee432861d"
+}

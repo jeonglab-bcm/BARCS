@@ -1,0 +1,20 @@
+{
+  "gse": "GSE328470",
+  "pmid": "42098118",
+  "doi": "10.1038/s41467-026-72783-0",
+  "pmcid": "PMC13153185",
+  "title": "Mitochondria serve as a holdout compartment for aggregation-prone proteins hindering efficient degradation",
+  "journal": "Nature Communications",
+  "published": "2026",
+  "model": "MelJuSo YFP-CL1 degradation reporter cells, Brunello knockout library, FACS on YFP",
+  "contrast": "YFP-low tail vs unsorted pool (2 vs 2); YFP-high vs unsorted as positive-control arm",
+  "paper_method": "MAGeCK per experiment, genes enriched in both experiments (Supplementary Data 1)",
+  "paper_calls": "1,187 YFP-low genes enriched in both experiments (no gene at MAGeCK FDR 0.10); eIF5A the only strongly enriched gene; mitochondrial genes enriched",
+  "barcs_calls": "1 enriched gene at FDR 0.10 (GORAB) plus 320 depleted fitness genes; 121 against the control null",
+  "named_hits": "Ranks among YFP-low-enriched genes: EIF5A #20 (FDR 0.24), COMMD10 #580, BOLA3 #594; YFP-high arm: RNF139 #1, UBE2G2 #3 (FDR 0.21, 0.33)",
+  "verdict": "BARCS ranks EIF5A near the top of YFP-low enrichment and agrees with the paper's per-experiment MAGeCK ranking (Spearman 0.65), but with two bottlenecked libraries per arm neither EIF5A nor the positive controls RNF139 and UBE2G2 pass FDR 0.10, as in the paper's own MAGeCK FDRs; the FDR-0.10 list is dominated by depleted fitness genes.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2026-05-07",
+  "published_issue": "2026 May 7"
+}

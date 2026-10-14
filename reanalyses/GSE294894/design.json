@@ -1,0 +1,47 @@
+{
+  "gse": "GSE294894",
+  "pmid": "42227585",
+  "counts_file": "suppl/GSE294894_RKO_oxaliplatin_KO.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0",
+      "gsm": "GSM8927809",
+      "condition": "T0"
+    },
+    {
+      "column": "T20",
+      "gsm": "GSM8927811",
+      "condition": "untreated"
+    },
+    {
+      "column": "OXAL",
+      "gsm": "GSM8927813",
+      "condition": "oxaliplatin"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "T0",
+      "untreated",
+      "oxaliplatin"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "RKO_KO_oxali_vs_T20",
+      "columns": [
+        "T20",
+        "OXAL"
+      ],
+      "formula": "~ condition",
+      "term": "conditionoxaliplatin",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Genome-wide oxaliplatin screens in colorectal cancer lines (MAGeCK count tables deposited per screen; the count_normalized files are ignored). One library per condition, so BARCS uses the no-replicate path (overdispersion pooled over the non-targeting guides); calls are screening-level. The paper compares day-20 oxaliplatin with day-20 untreated cells; SLC43A1 should be enriched in knockout and depleted in activation screens. Primary analysis: RKO Brunello knockout, oxaliplatin 1.9 uM vs untreated at day 20. SLC43A1 guides hold about 17% of the OXAL library (strong selection), so median-ratio totals are used and enrichment is read first.",
+  "counts_md5": "77c396f4edfd2b5dff7860266e7b027b"
+}

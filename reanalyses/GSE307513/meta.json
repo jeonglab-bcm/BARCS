@@ -1,0 +1,20 @@
+{
+  "gse": "GSE307513",
+  "pmid": "41105755",
+  "doi": "10.1126/sciimmunol.ado3825",
+  "pmcid": "",
+  "title": "Protein palmitoylation and sphingolipid metabolism control regulated exocytosis in cytotoxic lymphocytes",
+  "journal": "Science Immunology",
+  "published": "2025",
+  "model": "NK-92 Cas9 cells, Brunello genome-wide KO library (77,441 guides, 1,000 non-targeting), sorted on CD107a degranulation after target-cell stimulation",
+  "contrast": "CD107a-high vs CD107a-negative gate, paired within two sorts (2 vs 2), library totals",
+  "paper_method": "Not stated in the abstract; supplement not accessible",
+  "paper_calls": "ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators",
+  "barcs_calls": "90 genes at FDR 0.10 (44 depleted, 46 enriched); 82 against the control null; unpaired sensitivity 70",
+  "named_hits": "Depletion rank: ZDHHC17 #8 (FDR 3e-4), SNAP23 #18 (FDR 0.009), SPTLC1 #108 (FDR 0.29), SPTLC2 #170 (FDR 0.40); positive controls LAMP1 #3, STXBP2 #2, RAB27A #12 (2/4 named at FDR 0.10)",
+  "verdict": "BARCS confirms ZDHHC17 and SNAP23 among the strongest degranulation hits next to the known controls (STXBP2, RAB27A, STX11, LAMP1), but SPTLC1 and SPTLC2 are only directionally depleted, with guides that disagree between the two sorts, and miss FDR 0.10.",
+  "agreement": "partial",
+  "analyzed": "2026-10-13",
+  "published_date": "2025-10-17",
+  "published_issue": "2025 Oct 17"
+}

@@ -1,0 +1,139 @@
+{
+  "gse": "GSE255515",
+  "pmid": "41747251",
+  "counts_file": "counts_with_gene.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "GAA21.4L",
+      "gsm": "GSM8073614",
+      "condition": "tumor",
+      "mouse": "GAA21.4"
+    },
+    {
+      "column": "GAA21.4LR",
+      "gsm": "GSM8073615",
+      "condition": "tumor",
+      "mouse": "GAA21.4"
+    },
+    {
+      "column": "GAA21.4NC",
+      "gsm": "GSM8073616",
+      "condition": "tumor",
+      "mouse": "GAA21.4"
+    },
+    {
+      "column": "GAA21.4R",
+      "gsm": "GSM8073617",
+      "condition": "tumor",
+      "mouse": "GAA21.4"
+    },
+    {
+      "column": "GAT4.1L",
+      "gsm": "GSM8073618",
+      "condition": "tumor",
+      "mouse": "GAT4.1"
+    },
+    {
+      "column": "GAT4.2L",
+      "gsm": "GSM8073619",
+      "condition": "tumor",
+      "mouse": "GAT4.2"
+    },
+    {
+      "column": "GAT4.2NC",
+      "gsm": "GSM8073620",
+      "condition": "tumor",
+      "mouse": "GAT4.2"
+    },
+    {
+      "column": "GAT4.2R",
+      "gsm": "GSM8073621",
+      "condition": "tumor",
+      "mouse": "GAT4.2"
+    },
+    {
+      "column": "GAT4.3L",
+      "gsm": "GSM8073622",
+      "condition": "tumor",
+      "mouse": "GAT4.3"
+    },
+    {
+      "column": "GAT4.3LR",
+      "gsm": "GSM8073623",
+      "condition": "tumor",
+      "mouse": "GAT4.3"
+    },
+    {
+      "column": "GAT4.3NC",
+      "gsm": "GSM8073624",
+      "condition": "tumor",
+      "mouse": "GAT4.3"
+    },
+    {
+      "column": "GAT4.3R",
+      "gsm": "GSM8073625",
+      "condition": "tumor",
+      "mouse": "GAT4.3"
+    },
+    {
+      "column": "GAT4.4L",
+      "gsm": "GSM8073626",
+      "condition": "tumor",
+      "mouse": "GAT4.4"
+    },
+    {
+      "column": "GAT4.4R",
+      "gsm": "GSM8073627",
+      "condition": "tumor",
+      "mouse": "GAT4.4"
+    },
+    {
+      "column": "cellPool.1",
+      "gsm": "GSM8073628",
+      "condition": "cellPool",
+      "mouse": "none"
+    },
+    {
+      "column": "cellPool.2",
+      "gsm": "GSM8073629",
+      "condition": "cellPool",
+      "mouse": "none"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "cellPool",
+      "tumor"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "lung_tumor_vs_cellpool",
+      "columns": [
+        "GAA21.4L",
+        "GAA21.4LR",
+        "GAA21.4NC",
+        "GAA21.4R",
+        "GAT4.1L",
+        "GAT4.2L",
+        "GAT4.2NC",
+        "GAT4.2R",
+        "GAT4.3L",
+        "GAT4.3LR",
+        "GAT4.3NC",
+        "GAT4.3R",
+        "GAT4.4L",
+        "GAT4.4R",
+        "cellPool.1",
+        "cellPool.2"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontumor"
+    }
+  ],
+  "rationale": "Focused in vivo CRISPRa screen: E0771 cells carrying the APCM library (107 guides, about 3 per gene, for 36 antigen-presentation, cytokine and co-stimulation genes; no non-targeting guides) injected intravenously into C57BL/6J mice; 14 lung tumor samples from five mice (GAA21.4, GAT4.1-4.4; suffixes L, R, LR, NC are not explained in GEO) and two libraries of the injected cell pool. The count file has no gene column, so prepare.R adds it from the deposited library file. Activation of immunostimulatory genes exposes cells to immune rejection, so the paper's candidates should be depleted in tumors relative to the pool. Tumor vs cell pool, ~ condition, 16 libraries (14 residual df). The two cell-pool libraries correlate at 0.99 but disagree far beyond Poisson (variance of the binomial z about 80), so they are kept as two libraries rather than summed. Samples from the same mouse are not independent; no mouse term is possible because the cell pool has no mouse. Library totals.",
+  "counts_md5": "2441515f92f94d1f2c09c9abe1e6b477"
+}

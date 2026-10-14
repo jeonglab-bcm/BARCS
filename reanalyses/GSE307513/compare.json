@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/CD107a_hi_vs_neg/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ZDHHC17", "SNAP23", "SPTLC1", "SPTLC2", "STXBP2", "UNC13D", "RAB27A", "LAMP1"],
+  "top_n": [25, 50, 100]
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/CD25_high_vs_low/genes.csv",
+  "direction": "both",
+  "named_hits": ["IL2RA", "JAK3", "STAT5A", "STAT5B", "MED12", "CBFB", "TNFAIP3", "KLF2", "ZNF217", "FOXK1", "HIVEP2", "IRF4", "ATXN7L3"],
+  "published": {
+    "file": "paper/il2ra_screen.tsv",
+    "gene_column": "gene", "score_column": "min_p", "score_better": "lower",
+    "effect_column": "lfc_high_vs_low"
+  },
+  "top_n": [25, 50, 100, 200]
+}
