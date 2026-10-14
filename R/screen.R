@@ -25,8 +25,9 @@
 # does. Each gene contributes equally to the within-gene average, so a large
 # bucket of control guides labelled as one "gene" cannot dominate it. The
 # between-gene baseline removes correlation that every guide shares, such as
-# library-wide normalisation artefacts, and is formed from deterministic
-# offset pairs so that the estimate does not consume random numbers.
+# library-wide normalisation artefacts. It averages over every pair of guides
+# from different genes, computed from column sums rather than pair by pair,
+# so it does not depend on the order of the rows or of the gene labels.
 .bb_guide_correlation <- function(residuals, gene) {
   usable <- rowSums(!is.finite(residuals)) == 0
   usable[usable] <- rowSums(residuals[usable, , drop = FALSE]^2) > 0
@@ -47,20 +48,14 @@
     gram <- tcrossprod(unit[index, , drop = FALSE])
     mean(gram[upper.tri(gram)])
   }, numeric(1L))
-  ordering <- order(gene)
-  n <- length(ordering)
-  offsets <- unique(pmax(
-    1L, round(n * c(0.13, 0.29, 0.41, 0.53, 0.67, 0.79))
-  ))
-  between <- unlist(lapply(offsets, function(offset) {
-    first <- ordering
-    second <- ordering[(seq_len(n) + offset - 1L) %% n + 1L]
-    different <- gene[first] != gene[second]
-    rowSums(unit[first[different], , drop = FALSE] *
-              unit[second[different], , drop = FALSE])
-  }))
+  # Sum of u_i . u_j over ordered pairs (i, j) in different genes: all pairs,
+  # minus the pairs within each gene (self-pairs included in both).
+  gene_sums <- rowsum(unit, gene, reorder = FALSE)
+  gene_sizes <- as.numeric(table(factor(gene, levels = unique(gene))))
+  between_pairs <- length(gene)^2 - sum(gene_sizes^2)
+  between_total <- sum(colSums(unit)^2) - sum(gene_sums^2)
   within_mean <- mean(within)
-  between_mean <- if (length(between)) mean(between) else 0
+  between_mean <- if (between_pairs > 0) between_total / between_pairs else 0
   list(
     correlation = min(1, max(0, within_mean - between_mean)),
     within = within_mean,
