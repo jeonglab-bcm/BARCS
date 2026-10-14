@@ -8,6 +8,8 @@
 # column, accepted only when >= 99.5% of values become integers; here every
 # column is 100% integral). When the record's recovery_scales_<screen>.json is
 # present, the run stops unless every column's k and recovered total match it.
+# Also downloads Supplementary Data 4 and writes the paper's MAGeCK-MLE Tcell
+# term to paper/ko_tcell.tsv and paper/i_tcell.tsv.
 # Usage: Rscript prepare.R <workdir>
 
 workdir <- commandArgs(trailingOnly = TRUE)[[1]]
@@ -32,4 +34,25 @@ for (s in names(screens)) {
     stopifnot(identical(new$column, old$column), identical(new$k, old$k),
               identical(new$recovered_total, old$recovered_total))
   }
+}
+
+# The paper's MAGeCK-MLE Tcell term (Supplementary Data 4), one table per
+# screen, for compare.json (paper/ko_tcell.tsv) and the CRISPRi comparison
+# (paper/i_tcell.tsv).
+paper <- file.path(workdir, "paper")
+dir.create(paper, showWarnings = FALSE)
+supp <- file.path(paper, "41523_2025_888_MOESM4_ESM.xlsx")
+if (!file.exists(supp)) {
+  utils::download.file(paste0("https://static-content.springer.com/esm/",
+                              "art%3A10.1038%2Fs41523-025-00888-8/MediaObjects/",
+                              "41523_2025_888_MOESM4_ESM.xlsx"),
+                       supp, mode = "wb", quiet = TRUE)
+}
+sheets <- c(ko = "CRISPRko", i = "CRISPRi")
+for (s in names(sheets)) {
+  x <- as.data.frame(readxl::read_excel(supp, sheet = sheets[[s]]))
+  out <- data.frame(gene = x$Gene, beta = x[["Tcell|beta"]],
+                    fdr = x[["Tcell|fdr"]], p = x[["Tcell|p-value"]])
+  utils::write.table(out, file.path(paper, paste0(s, "_tcell.tsv")),
+                     sep = "\t", quote = FALSE, row.names = FALSE)
 }

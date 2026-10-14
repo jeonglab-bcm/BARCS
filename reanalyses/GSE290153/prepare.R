@@ -22,7 +22,7 @@ ir <- rd("GSE290153_IR_grna1_coupled_counts.tsv.gz")
 ba <- rd("GSE290153_fullbasal_grna1_coupled_counts.tsv.gz")
 m <- merge(ba[, c("construct", "day14_rep1", "day14_rep2")],
            ir[, c("construct", "IR_day15_rep1", "IR_day15_rep2")], by = "construct")
-m <- m[order(m$construct), ]
+m <- m[order(m$construct, method = "radix"), ]  # byte order, whatever the locale
 gene_of <- function(ids) {
   parts <- strsplit(ids, ";", fixed = TRUE)
   vapply(parts, function(p) {
