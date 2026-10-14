@@ -222,6 +222,27 @@ test_that("guide correlation detects shared noise but not real effects", {
   expect_gt(correlated, 0.25)
 })
 
+test_that("the guide-correlation baseline averages every between-gene pair", {
+  set.seed(8)
+  gene <- sample(c(sprintf("G%02d", 1:30), sprintf("g%02d", 1:20)), 150, TRUE)
+  residuals <- matrix(rnorm(150 * 6), 150) +
+    rnorm(50)[match(gene, unique(gene))] * 0.3
+  unit <- residuals / sqrt(rowSums(residuals^2))
+  gram <- tcrossprod(unit)
+  brute <- mean(gram[outer(gene, gene, "!=")])
+
+  estimate <- .bb_guide_correlation(residuals, gene)
+  expect_equal(estimate$between, brute)
+
+  # Neither the row order nor how the labels sort changes the estimate.
+  shuffled <- sample(150)
+  expect_equal(.bb_guide_correlation(residuals[shuffled, ], gene[shuffled]),
+               estimate)
+  labels <- sort(unique(gene))
+  relabelled <- setNames(rev(labels), labels)[gene]
+  expect_equal(.bb_guide_correlation(residuals, unname(relabelled)), estimate)
+})
+
 test_that("bb_screen() records no correlation without genes", {
   x <- fixture_correlated_screen(n_genes = 15L)
   result <- bb_screen(x$counts, x$data, ~ group, "group", totals = x$total,

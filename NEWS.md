@@ -1,3 +1,13 @@
+# BARCS 0.2.3
+
+## Bug fixes
+
+* The between-gene baseline of the guide correlation that `bb_screen()`
+  records now averages every pair of guides from different genes, computed
+  exactly from column sums. It used to sample pairs at fixed offsets in sorted
+  gene order, so the estimate, and the gene p-values widened by it, changed
+  with the row order of the input and with the collation locale (#8).
+
 # BARCS 0.2.2
 
 ## Gene-level summaries
