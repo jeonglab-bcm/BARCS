@@ -1,4 +1,4 @@
-# GSE220831 reanalysis with BARCS 0.2.2
+# GSE220831 reanalysis with BARCS 0.2.3
 
 **Paper.** "Metabolic reprogramming by histone deacetylase inhibition preferentially targets NRF2-activated tumors", *Cell Reports* (2024), PMID 38165806, doi:10.1016/j.celrep.2023.113629 (PMC10853943).
 
@@ -10,12 +10,12 @@
 
 ## Results
 
-| | BARCS 0.2.2 | Authors' MAGeCK-MLE (KPK − KP beta) |
+| | BARCS 0.2.3 | Authors' MAGeCK-MLE (KPK − KP beta) |
 |---|---|---|
 | Genes at FDR 0.10 | 84 (44 more depleted in KPK, 40 less) | no FDR for the difference |
 | Hdac1 | **#7, FDR 1.5 × 10⁻⁴** | #19 |
 | Hdac3 | **#13, FDR 8 × 10⁻⁴** | #4 |
-| Hdac2 | **#27, FDR 0.018** | #14 |
+| Hdac2 | **#27, FDR 0.019** | #14 |
 | Top depleted | Kdm1a, Setd5, Setdb1, Actr5, H2afz, Sirt6 | Mtr, Setd5, Kdm1a, Hdac3, H2afz, Chd4 |
 | Rank correlation (KPK-specific depletion) | 0.94 | |
 | Top-25 / top-50 overlap | 17 / 38 | |

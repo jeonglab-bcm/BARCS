@@ -1,4 +1,4 @@
-# GSE287053 reanalysis with BARCS 0.2.1
+# GSE287053 reanalysis with BARCS 0.2.3
 
 **Paper.** "CDK10 suppresses nucleic acid sensors-mediated antitumor immunity", *Nature Cancer* (2026), PMID 41507536, doi:10.1038/s43018-025-01100-3. The paper is not open access, so the comparison uses the abstract's named gene only.
 
@@ -13,7 +13,7 @@
 | | Value |
 |---|---|
 | Genes at FDR 0.10 | 9 after control calibration (43 before) |
-| Cdk10 | depleted, effect −1.0, p = 0.004, FDR 0.15 after calibration, rank 20 of 713 |
+| Cdk10 | depleted, effect −1.0, p = 0.004, FDR 0.15 after calibration, rank 19 of 713 |
 | Top depleted | Sgk1, Stk11, Jak2, Ephb6, Ern1, Cdk13 |
 
 ## Where BARCS agrees and differs

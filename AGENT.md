@@ -106,7 +106,7 @@ Every record in `reanalyses/` can be rebuilt from public data:
 Rscript tools/screen-reanalysis/reproduce.R --all          # or one GSE
 ```
 
-It downloads the GEO inputs, runs the record's `prepare.R` (count tables that needed merging, summing, recovery or encoding fixes, and the paper's published table), checks `counts_md5`, reruns BARCS on every `design*.json` and compares the archived gene tables and call counts. 45 of 46 records reproduce exactly. GSE328830 reproduces its counts but its p-values move slightly, because the guide-correlation baseline depends on row order and locale (issue #8). `run_barcs.R` sets C collation so every machine sorts gene names the way the records were built; that is what makes GSE273069 reproduce on CI. GSE328830 was built with an unknown order, so only the package fix for issue #8 will settle it. A workflow runs three small records on pull requests and weekly. New records must ship a `prepare.R` whenever their count file or published table is not a GEO file as is.
+It downloads the GEO inputs, runs the record's `prepare.R` (count tables that needed merging, summing, recovery or encoding fixes, and the paper's published table), checks `counts_md5`, reruns BARCS on every `design*.json` and compares the archived gene tables and call counts. All 46 records reproduce exactly with BARCS 0.2.3, which computes the guide-correlation baseline over every between-gene pair, so it no longer depends on row order or the collation locale (issue #8). Records built with 0.2.2 were refreshed with 0.2.3. A workflow runs three small records on pull requests and weekly. New records must ship a `prepare.R` whenever their count file or published table is not a GEO file as is.
 
 ### Using the agent well
 

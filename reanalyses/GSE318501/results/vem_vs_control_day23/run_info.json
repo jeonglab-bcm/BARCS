@@ -4,11 +4,13 @@
   "term": "treatmentvemurafenib",
   "libraries": 6,
   "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 8093,
   "genes": 2119,
   "moderated": true,
   "prior_df": 12.7996,
-  "guide_correlation": 0.0055,
+  "guide_correlation": 0.0039,
   "control_scale": null,
   "control_guides": 0,
   "control_p05_raw": "NA",
@@ -24,12 +26,22 @@
     "VEM_Day23_rep2": 0.248,
     "VEM_Day23_rep3": 0.31
   },
-  "genes_fdr_0_10_up": 291,
+  "genes_fdr_0_10_up": 294,
   "genes_fdr_0_10_down": 155,
-  "genes_fdr_0_05": 316,
-  "genes_fdr_0_10": 446,
+  "genes_fdr_0_05": 322,
+  "genes_fdr_0_10": 449,
   "genes_empirical_fdr_0_10": null,
   "empirical_centre": null,
   "control_shift": null,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# GSE291529 reanalysis with BARCS 0.2.2
+# GSE291529 reanalysis with BARCS 0.2.3
 
 **Paper.** "Identification of Functional Genetic Components Modulating Toxicity Response to PFOS using Genome-wide CRISPR Screens in HepG2/C3A cells", bioRxiv 2025, PMID 41446233 (PMC12724516).
 

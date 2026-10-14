@@ -1,4 +1,4 @@
-# GSE302335 reanalysis with BARCS 0.2.2
+# GSE302335 reanalysis with BARCS 0.2.3
 
 **Paper.** "Multiplexed perturbation enables scalable pooled screens", *Nature Methods* (2026), PMID 42185540, doi:10.1038/s41592-026-03095-w. It is a methods paper whose application is a genome-wide CRISPRi screen for regulators of ICAM-1 (CD54).
 

@@ -1,4 +1,4 @@
-# GSE263581 reanalysis with BARCS 0.2.2
+# GSE263581 reanalysis with BARCS 0.2.3
 
 **Paper.** Wang et al., "Forward genetic screening in engineered colorectal cancer organoids identifies novel regulators of metastasis", *Proceedings of the National Academy of Sciences* 122 (2025), PMID 41218116, doi:10.1073/pnas.2510910122 (PMC12646219, open access). This series is one of three deposited knockout-screening sub-datasets (GSE263580/581/582).
 

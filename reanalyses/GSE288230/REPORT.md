@@ -1,4 +1,4 @@
-# GSE288230 reanalysis with BARCS 0.2.2
+# GSE288230 reanalysis with BARCS 0.2.3
 
 **Paper.** "A genome-wide screen identifies genes required for erythroid differentiation", *Nature Communications* (2025), PMID 40221460, doi:10.1038/s41467-025-58739-w (PMC11993733).
 
@@ -19,9 +19,9 @@
 |---|---|---|---|---|---|
 | NHLRC2 | 78 | -1.30 | 0.055 | 1 | 1 |
 | VAC14 | 2,343 | -0.28 | 0.50 | 1 | 1 |
-| KLF1 | 521 | -0.93 | 0.22 | 1 | 1 |
-| GATA1 | 3,250 | -0.27 | 0.57 | 1 | 1 |
-| ALAS2 | 4 | -1.13 | 0.0015 | 1 | 0.18 |
+| KLF1 | 520 | -0.93 | 0.22 | 1 | 1 |
+|| GATA1 | 3,251 | -0.27 | 0.58 || 1 | 1 |
+|| ALAS2 | 4 | -1.13 | 0.0016 || 1 | 0.18 |
 
 Top depleted (by effect/p): LDHB, NDUFA5/A4, ALAS2, NCEH1, NDUFS6, UROD, HMBS — erythroid/heme and respiratory genes in the right direction.
 
@@ -29,18 +29,18 @@ Top depleted (by effect/p): LDHB, NDUFA5/A4, ALAS2, NCEH1, NDUFS6, UROD, HMBS �
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 729 (485 depleted); control-null 940 |
+| Genes at FDR 0.10 || 723 (484 depleted); control-null 940 ||
 
 | Named gene | BARCS depleted rank | Effect | p | FDR | guides |
 |---|---|---|---|---|---|
-| VAC14 | 67 | -0.43 | 2.0e-11 | 2.6e-10 | 10 |
-| GATA1 | 273 | -0.52 | 6.2e-05 | 2.4e-04 | 10 |
-| ALAS2 | 3 | -1.36 | 6.6e-30 | 1.0e-27 | 10 |
+|| VAC14 | 67 | -0.43 | 3.2e-11 | 4.3e-10 || 10 |
+|| GATA1 | 273 | -0.52 | 7.4e-05 | 2.9e-04 || 10 |
+|| ALAS2 | 3 | -1.36 | 2.6e-29 | 3.9e-27 || 10 |
 | NHLRC2 | not in library | | | | |
 
 ## Where BARCS agrees and differs
 
-- **The validated gene VAC14 is recovered in the secondary library** at FDR 2.6e-10 (#67 depleted), with the expected direction, matching the paper's in-vivo validation.
+- **The validated gene VAC14 is recovered in the secondary library** at FDR 4.3e-10 (#67 depleted), with the expected direction, matching the paper's in-vivo validation.
 - **The genome-scale screen's hit list collapses under control calibration.** Nearly half the non-targeting guides reach p < 0.05, so calibrating to them drives every gene to model FDR 1 — including known erythroid genes ALAS2 (#4) and UROD (#7). BARCS calls 0 genes where the paper calls 277. This is a power/calibration failure on a noisy, lowly-replicated genome-scale screen, **not a contradiction**: NHLRC2 is depleted at the guide level (effect -1.30, raw p 0.055) and simply does not clear the calibrated threshold; VAC14 is weak in the genome-scale library but strong in the cleaner secondary one.
 - **Control null.** The non-targeting guides sit away from the targeting guides (+0.59 z genome-scale, −0.75 z secondary; they make no cut), so the null is centred on the targeting guides. It agrees with the calibrated model in the genome-scale screen (0 genes; NHLRC2 and VAC14 at FDR 1) and gives 940 genes in the secondary library, VAC14, GATA1 and ALAS2 among them (FDR 7e-5). An earlier, uncentred version of this null reported 3,733 genome-scale genes; that count was an artifact of the offset.
 

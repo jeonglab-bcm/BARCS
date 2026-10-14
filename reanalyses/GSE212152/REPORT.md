@@ -1,4 +1,4 @@
-# GSE212152 reanalysis with BARCS 0.2.2
+# GSE212152 reanalysis with BARCS 0.2.3
 
 **Paper.** "Requirements for establishment and epigenetic stability of mammalian heterochromatin", *Molecular Cell* (2025), PMID 40972525, doi:10.1016/j.molcel.2025.08.025 (PMC12478525).
 
@@ -12,21 +12,21 @@
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 106 (47 enriched, 59 depleted); control-null 217 |
+| Genes at FDR 0.10 | 94 (44 enriched, 50 depleted); control-null 214 |
 | Rank correlation with authors' MAGeCK (pos) | 0.88 |
 | Top-50 overlap with MAGeCK | 46 / 50 |
 
 | Named hit (enriched) | BARCS rank (enriched) | Effect | p | FDR |
 |---|---|---|---|---|
-| Dnmt1 | 2 | +1.99 | 8.2e-09 | 4.7e-06 |
-| Setdb1 | 7 | +2.00 | 4.9e-07 | 8.0e-05 |
-| Ehmt2 (G9a) | 13 | +1.56 | 1.5e-05 | 1.3e-03 |
-| Dnmt3b | 35 | +1.30 | 2.2e-03 | 0.053 |
-| Dnmt3a | 39 | +1.41 | 3.7e-03 | 0.064 |
-| Suv39h1 | 48 | +1.28 | 0.013 | 0.12 |
-| Hdac2 | 168 | +0.12 | 0.52 | 0.72 |
-| Hdac1 | 1160 | -0.85 | 4.7e-05 | 3.4e-03 (depleted) |
-| Dhx9 | 1128 | -1.32 | 4.5e-03 | 0.072 (depleted) |
+| Dnmt1 | 2 | +1.99 | 1.1e-08 | 6.5e-06 |
+| Setdb1 | 7 | +2.00 | 6.2e-07 | 1.0e-04 |
+| Ehmt2 (G9a) | 13 | +1.56 | 1.8e-05 | 1.6e-03 |
+| Dnmt3b | 35 | +1.30 | 2.4e-03 | 0.058 |
+| Dnmt3a | 39 | +1.41 | 4.0e-03 | 0.070 |
+| Suv39h1 | 48 | +1.28 | 0.014 | 0.13 |
+| Hdac2 | 168 | +0.12 | 0.53 | 0.72 |
+| Hdac1 | 1160 | -0.85 | 5.5e-05 | 4.0e-03 (depleted) |
+| Dhx9 | 1128 | -1.32 | 4.9e-03 | 0.078 (depleted) |
 
 Top enriched genes: Atf7ip, Dnmt1, Cbx1, Kdm1a, Atrx, Rbm14, Setdb1, Cbx5, Daxx, Smarcad1 — the H3K9 and DNA-methylation machinery the paper names.
 
@@ -34,24 +34,24 @@ Top enriched genes: Atf7ip, Dnmt1, Cbx1, Kdm1a, Atrx, Rbm14, Setdb1, Cbx5, Daxx,
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 164 (49 enriched, 115 depleted); control-null 309 |
+| Genes at FDR 0.10 | 179 (54 enriched, 125 depleted); control-null 326 |
 
 | Named hit (enriched) | BARCS rank (enriched) | Effect | p | FDR |
 |---|---|---|---|---|
-| Dnmt3l | 1 | +1.66 | 2.2e-17 | 2.6e-14 |
-| Uhrf1 | 3 | +1.47 | 1.7e-14 | 6.5e-12 |
-| Dnmt3a | 4 | +1.19 | 4.1e-14 | 1.2e-11 |
-| Dnmt1 | 5 | +1.51 | 1.3e-13 | 2.9e-11 |
-| Dnmt3b | 15 | +0.40 | 6.4e-06 | 2.7e-04 |
-| Setdb1 | 35 | +1.03 | 1.3e-03 | 0.020 |
-| Ehmt2 | 61 | +0.28 | 0.023 | 0.13 |
-| Dhx9 | 143 | +0.33 | 0.21 | 0.41 |
+| Dnmt3l | 1 | +1.66 | 5.0e-18 | 5.8e-15 |
+| Uhrf1 | 3 | +1.47 | 4.9e-15 | 1.9e-12 |
+| Dnmt3a | 4 | +1.19 | 1.3e-14 | 3.6e-12 |
+| Dnmt1 | 5 | +1.51 | 4.0e-14 | 9.3e-12 |
+| Dnmt3b | 15 | +0.40 | 4.1e-06 | 1.8e-04 |
+| Setdb1 | 35 | +1.03 | 1.1e-03 | 0.016 |
+| Ehmt2 | 61 | +0.28 | 0.020 | 0.12 |
+| Dhx9 | 143 | +0.33 | 0.20 | 0.40 |
 
 ## Where BARCS agrees and differs
 
-- **Agrees strongly on establishment.** Every DNA/H3K9 methyltransferase the paper highlights is enriched at FDR 0.10 except Suv39h1 (borderline, 0.12); Dnmt3a passes at 0.064. Rank correlation with the authors' MAGeCK is 0.88 and 46 of the top 50 genes are shared.
+- **Agrees strongly on establishment.** Every DNA/H3K9 methyltransferase the paper highlights is enriched at FDR 0.10 except Suv39h1 (borderline, 0.13); Dnmt3a passes at 0.070. Rank correlation with the authors' MAGeCK is 0.88 and 46 of the top 50 genes are shared.
 - **Hdac1/Hdac2 are not enriched.** Not a disagreement with a specific named gene: the abstract names HDACs as a class, and at the guide level Hdac1 moves the opposite way (depleted, essential-gene behaviour), so BARCS places it at the bottom of the enriched list. Hdac2 is flat.
-- **Dhx9.** In establishment it is depleted (essential-gene loss), matching its guide counts. In maintenance — where the paper reports DHX9 is required — BARCS ranks it #143 enriched (p = 0.21), so BARCS does not reach significance for the single R-loop gene the paper validated, though the direction is now enriched.
+- **Dhx9.** In establishment it is depleted (essential-gene loss), matching its guide counts. In maintenance — where the paper reports DHX9 is required — BARCS ranks it #143 enriched (p = 0.20), so BARCS does not reach significance for the single R-loop gene the paper validated, though the direction is now enriched.
 
 ## Limits
 

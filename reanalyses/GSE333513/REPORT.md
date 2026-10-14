@@ -1,4 +1,4 @@
-# GSE333513 reanalysis with BARCS 0.2.1
+# GSE333513 reanalysis with BARCS 0.2.3
 
 **Paper.** Acero-Riaguas et al., "Genome-wide CRISPR screen identifies AMBRA1 as a potential biomarker of response to platinum-based therapies in oral squamous cell carcinomas", *iScience* (2026), PMID 42548798, doi:10.1016/j.isci.2026.116959 (PMC13429904).
 

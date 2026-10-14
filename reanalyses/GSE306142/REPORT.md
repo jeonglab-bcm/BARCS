@@ -1,4 +1,4 @@
-# GSE306142 reanalysis with BARCS 0.2.1
+# GSE306142 reanalysis with BARCS 0.2.3
 
 **Paper.** "Leveraging Medulloblastoma Clonal Dynamics to Overcome Treatment Resistance", *Clinical Cancer Research* (2026), PMID 41091115, doi:10.1158/1078-0432.CCR-24-4010.
 
@@ -15,7 +15,7 @@
 | Genes at FDR 0.10 | 2 |
 | Top gene | EED, enriched (knockout tolerates PTC596), FDR 0.08 |
 | MTOR, RPTOR, AKT1/2 | ranks 7,000–17,000, no effect |
-| PIK3CA, PLK1, RICTOR | ranks 766–2,741, slightly *enriched*, not significant |
+| PIK3CA, PLK1, RICTOR | ranks 1,442–2,936, slightly *enriched*, not significant |
 
 ## Where BARCS agrees and differs
 

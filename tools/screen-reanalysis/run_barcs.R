@@ -13,10 +13,10 @@ suppressPackageStartupMessages({
   library(jsonlite)
   library(BARCS)
 })
-# BARCS 0.2.2 estimates the guide-correlation baseline from guides in
-# sorted gene order, and the sort follows the collation locale (issue #8).
-# The records were built with C collation; use it everywhere so a rerun on
-# another machine sorts the same way.
+# BARCS 0.2.2 and earlier estimated the guide-correlation baseline from guides
+# in sorted gene order, and the sort follows the collation locale (issue #8;
+# fixed in 0.2.3). Sort with C collation everywhere so runs with an older
+# BARCS still match across machines.
 invisible(Sys.setlocale("LC_COLLATE", "C"))
 script_dir <- dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[1])))
 source(file.path(script_dir, "no_replicates.R"))

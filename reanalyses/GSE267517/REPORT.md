@@ -1,4 +1,4 @@
-# GSE267517 reanalysis with BARCS 0.2.1
+# GSE267517 reanalysis with BARCS 0.2.3
 
 **Paper.** "Tumor Intrinsic METTL5 Modulates ATF4 Translation to Prevent T Cell-Induced Ferroptosis in Ovarian Cancer", *Advanced Science* (2025), PMID 41042068, doi:10.1002/advs.202507718 (PMC12697795).
 
@@ -12,7 +12,7 @@
 |---|---|---|
 | Top protective (enriched) | B2m #1, Jak1 #4, H2-D1, Jak2, Tap1, Tap2 | B2m pos rank 1 |
 | Top sensitizing (depleted) | Rnf31 #6, Cflar | Rnf31 neg rank 1 |
-| Mettl5 | depleted, p = 0.012, FDR 0.23, rank 927 | neg rank 312, p = 0.012 |
+| Mettl5 | depleted, p = 0.012, FDR 0.23, rank 926 | neg rank 312, p = 0.012 |
 | Top-25 overlap | 20 of 25 shared | |
 | Rank correlation | 0.50 | |
 

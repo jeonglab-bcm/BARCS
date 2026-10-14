@@ -1,4 +1,4 @@
-# GSE263580 reanalysis with BARCS 0.2.2
+# GSE263580 reanalysis with BARCS 0.2.3
 
 **Paper.** Wang et al., "Forward genetic screening in engineered colorectal cancer organoids identifies novel regulators of metastasis", *Proceedings of the National Academy of Sciences* 122 (2025), PMID 41218116, doi:10.1073/pnas.2510910122 (PMC12646219, open access). This series is one of three deposited knockout-screening sub-datasets (GSE263580/581/582).
 
@@ -11,7 +11,7 @@ Each metastatic lesion is a **clonal outgrowth** seeded by one or a few dissemin
 ## Results (metastasis vs primary; enrichment = metastasis-promoting knockout)
 
 - Top genes by enrichment: Il17b, Ncapd3, Col7a1, Cldn5, Pprc1.
-- Paper's validated suppressors: Ctnna1 rank 316/903 (FDR 0.91), Bcl2l13 rank 812/903 (FDR 0.95) in met vs primary.
+- Paper's validated suppressors: Ctnna1 rank 317/903 (FDR 0.91), Bcl2l13 rank 812/903 (FDR 0.95) in met vs primary.
 - With library totals the composition warning fires (top 1% of guides hold ~99-100% of reads in some lesions); with median-ratio totals the size factors are capped, so neither normalization supports calibrated calls.
 
 ## Where BARCS agrees and differs

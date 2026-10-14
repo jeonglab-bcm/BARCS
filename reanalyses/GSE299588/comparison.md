@@ -6,8 +6,8 @@ BARCS genes: `results/cd133_top_vs_bottom/genes.csv` (18047 genes, direction: de
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| PROM1 | 1 | 18047 | -1.725 | 0.00015 | 1 |
-| SOX2 | 7 | 18047 | -1.980 | 0.0018 | 1 |
+| PROM1 | 1 | 18047 | -1.725 | 0.00014 | 1 |
+| SOX2 | 7 | 18047 | -1.980 | 0.0017 | 1 |
 
 ## BARCS calls
 

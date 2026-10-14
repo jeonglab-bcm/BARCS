@@ -1,4 +1,4 @@
-# GSE328107 reanalysis with BARCS 0.2.2
+# GSE328107 reanalysis with BARCS 0.2.3
 
 **Paper.** "PI3K Regulates Wild-type RAS Signaling to Confer Resistance to KRAS Inhibition", *Cancer Research* 2026, PMID 42095550 (PMC13237827).
 

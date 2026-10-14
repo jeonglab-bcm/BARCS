@@ -4,11 +4,13 @@
   "term": "conditiondoxo",
   "libraries": 4,
   "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 209079,
   "genes": 6807,
   "moderated": true,
   "prior_df": "Inf",
-  "guide_correlation": 0.3869,
+  "guide_correlation": 0.39,
   "control_scale": null,
   "control_guides": 3789,
   "control_p05_raw": 0.0567,
@@ -23,11 +25,21 @@
     "CRISPRa_Doxo_Rep2": 0.24
   },
   "genes_fdr_0_10_up": 8,
-  "genes_fdr_0_10_down": 1012,
-  "genes_fdr_0_05": 875,
-  "genes_fdr_0_10": 1020,
-  "genes_empirical_fdr_0_10": 824,
+  "genes_fdr_0_10_down": 1007,
+  "genes_fdr_0_05": 861,
+  "genes_fdr_0_10": 1015,
+  "genes_empirical_fdr_0_10": 820,
   "empirical_centre": "controls",
   "control_shift": 0.108,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

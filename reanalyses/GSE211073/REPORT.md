@@ -1,4 +1,4 @@
-# GSE211073 reanalysis with BARCS 0.2.2
+# GSE211073 reanalysis with BARCS 0.2.3
 
 **Paper.** Meyer et al., "Deciphering the mitophagy receptor network identifies a crucial role for OPTN (optineurin) in acute myeloid leukemia", *Autophagy* 19 (2023), PMID 37439113, doi:10.1080/15548627.2023.2230839 (PMC10549194, open access).
 
@@ -13,11 +13,11 @@ This is a genetic-interaction screen. **BARCS models single-gene guide aggregati
 | Receptor | OA high vs low | | DFP high vs low | |
 |---|---|---|---|---|
 | | effect | FDR | effect | FDR |
-| **PHB2** | −0.98 | 5e-6 | −0.80 | 0.003 |
-| FKBP8 | −0.27 | 0.034 | −0.18 | 0.37 |
-| OPTN | +0.06 | 0.51 | +0.04 | 0.76 |
-| SQSTM1 | +0.16 | 0.13 | +0.08 | 0.56 |
-| CALCOCO2 | +0.09 | 0.18 | +0.07 | 0.61 |
+| **PHB2** | −0.98 | 4e-5 | −0.80 | 0.003 |
+| FKBP8 | −0.27 | 0.056 | −0.18 | 0.38 |
+| OPTN | +0.06 | 0.56 | +0.04 | 0.76 |
+| SQSTM1 | +0.16 | 0.16 | +0.08 | 0.56 |
+| CALCOCO2 | +0.09 | 0.22 | +0.07 | 0.62 |
 
 PHB2 is by far the strongest single-gene hit in both inductions, depleted in the high-mitophagy fraction (its knockout reduces mitophagy). FKBP8 is the next required receptor. The remaining receptors, including OPTN, show little single-gene abundance change in the sort.
 

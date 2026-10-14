@@ -1,4 +1,4 @@
-# GSE232856 reanalysis with BARCS 0.2.2
+# GSE232856 reanalysis with BARCS 0.2.3
 
 **Paper.** "A non-canonical role for a small nucleolar RNA in ribosome biogenesis and senescence", *Cell* 2024, PMID 38981482 (PMC11344685).
 
@@ -13,8 +13,8 @@
 **Composition.** The two D21 libraries are dominated by a few surviving clones (top 1% of guides hold 58% and 70% of reads). Library-total normalization therefore over-calls depletion (6,616 genes down); rerun with median-ratio totals, which is the correct read on a strong-selection screen. Reported numbers use median-ratio totals.
 
 ## Results (median-ratio totals)
-- 140 genes at FDR 0.10 (131 against the control null); control p<0.05 rate 2.5% after; guide correlation ~0.
-- The paper's single highlighted hit, **EPB41L4A-AS1** (host transcript of SNORA13; gene id LH12673) is the **#1 enriched locus** (estimate +2.3, FDR 1e-11, empirical FDR 0.003).
+- 143 genes at FDR 0.10 (138 against the control null); control p<0.05 rate 2.5% after; guide correlation ~0.
+- The paper's single highlighted hit, **EPB41L4A-AS1** (host transcript of SNORA13; gene id LH12673) is the **#1 enriched locus** (estimate +2.3, FDR 8e-12, empirical FDR 0.003).
 - **FENDRR** (LH06194) is #3 enriched; the paper's other highly-ranked signals are promoter-proximal protein-coding units (CCNC, CDKN1A, FOXF1) that are not direct members of this lncRNA library and so are not named genes here.
 
 ## BARCS vs paper

@@ -1,4 +1,4 @@
-# GSE236257 reanalysis with BARCS 0.2.2
+# GSE236257 reanalysis with BARCS 0.2.3
 
 **Paper.** Spisak et al., "Identifying regulators of aberrant stem cell and differentiation activity in colorectal cancer using a dual endogenous reporter system", *Nature Communications* 15 (2024), PMID 38472198, doi:10.1038/s41467-024-46285-w (PMC10933491, open access).
 

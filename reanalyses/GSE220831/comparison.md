@@ -7,8 +7,8 @@ BARCS genes: `results/KPK_specific_dropout/genes.csv` (611 genes, direction: dep
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
 | Hdac1 | 7 | 611 | -0.307 | 2.2e-06 | 0.00015 |
-| Hdac2 | 27 | 611 | -0.309 | 0.0014 | 0.018 |
-| Hdac3 | 13 | 611 | -0.544 | 2.4e-05 | 0.00083 |
+| Hdac2 | 27 | 611 | -0.309 | 0.0014 | 0.019 |
+| Hdac3 | 13 | 611 | -0.544 | 2.5e-05 | 0.00085 |
 
 ## Agreement with the published table
 

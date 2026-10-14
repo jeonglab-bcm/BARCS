@@ -6,9 +6,9 @@ BARCS genes: `results/infected_vs_mock/genes.csv` (18856 genes, direction: deple
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| DAZAP2 | 1 | 18856 | -0.856 | 2.8e-21 | 2.6e-17 |
-| VTA1 | 42 | 18856 | -0.038 | 9.8e-05 | 0.013 |
-| KLF5 | 6 | 18856 | -0.342 | 1.2e-12 | 1.2e-09 |
+| DAZAP2 | 1 | 18856 | -0.856 | 2.5e-21 | 2.4e-17 |
+| VTA1 | 42 | 18856 | -0.038 | 9.6e-05 | 0.013 |
+| KLF5 | 6 | 18856 | -0.342 | 1.1e-12 | 1.1e-09 |
 
 ## Agreement with the published table
 
@@ -36,4 +36,4 @@ Gene (published rank / BARCS rank): CCBE1 (31 / 614), XYLT2 (36 / 80), ZCCHC14 (
 
 ## BARCS calls
 
-Genes at FDR 0.05: 197; at FDR 0.10: 257. Top 15: DAZAP2, CAB39, LY6E, PAXIP1, VPS4A, KLF5, P4HB, RFWD2, VPS28, CCDC101, TADA2B, AP2B1, CHMP1B, PDCD6IP, ARNT
+Genes at FDR 0.05: 197; at FDR 0.10: 260. Top 15: DAZAP2, CAB39, LY6E, PAXIP1, VPS4A, KLF5, P4HB, RFWD2, VPS28, CCDC101, TADA2B, AP2B1, CHMP1B, PDCD6IP, ARNT

@@ -1,4 +1,4 @@
-# GSE243761 reanalysis with BARCS 0.2.1
+# GSE243761 reanalysis with BARCS 0.2.3
 
 **Paper.** "Mechanosensitive genomic enhancers potentiate the cellular response to matrix stiffness", *Science* (2025), PMID 40997217, doi:10.1126/science.adl1988 (PMC13005951).
 
@@ -12,11 +12,11 @@
 
 | Element | Paper | BARCS rank (of 114) | FDR |
 |---|---|---|---|
-| DHS_45 (pRE#1, intron 3) | top mechanoenhancer | 1 | 2 × 10⁻⁵⁸ |
-| DHS_47 (intron 3) | named | 2 | 2 × 10⁻²⁹ |
-| DHS_46 (intron 3) | named | 3 | 1 × 10⁻²¹ |
-| DHS_72 (promoter) | named | 5 | 2 × 10⁻¹⁵ |
-| DHS_71 (promoter) | named | 34 | 5 × 10⁻⁷ |
+| DHS_45 (pRE#1, intron 3) | top mechanoenhancer | 1 | 6 × 10⁻⁴⁹ |
+| DHS_47 (intron 3) | named | 2 | 2 × 10⁻²⁶ |
+| DHS_46 (intron 3) | named | 4 | 6 × 10⁻¹⁹ |
+| DHS_72 (promoter) | named | 5 | 9 × 10⁻¹³ |
+| DHS_71 (promoter) | named | 33 | 2 × 10⁻⁶ |
 
 ## Where BARCS agrees and differs
 

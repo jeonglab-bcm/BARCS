@@ -4,11 +4,13 @@
   "term": "treatmentpalbo",
   "libraries": 4,
   "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 90709,
   "genes": 17982,
   "moderated": true,
   "prior_df": 5.8187,
-  "guide_correlation": 0.0005,
+  "guide_correlation": 0.0026,
   "control_scale": null,
   "control_guides": 5,
   "control_p05_raw": "NA",
@@ -22,12 +24,22 @@
     "LIB240222JT_Palbo1_A4": 0.116,
     "LIB240222JT_Palbo2_A5": 0.118
   },
-  "genes_fdr_0_10_up": 283,
-  "genes_fdr_0_10_down": 1242,
-  "genes_fdr_0_05": 745,
-  "genes_fdr_0_10": 1525,
+  "genes_fdr_0_10_up": 271,
+  "genes_fdr_0_10_down": 1193,
+  "genes_fdr_0_05": 715,
+  "genes_fdr_0_10": 1464,
   "genes_empirical_fdr_0_10": null,
   "empirical_centre": null,
   "control_shift": null,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

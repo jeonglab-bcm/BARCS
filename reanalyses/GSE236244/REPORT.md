@@ -1,4 +1,4 @@
-# GSE236244 reanalysis with BARCS 0.2.2
+# GSE236244 reanalysis with BARCS 0.2.3
 
 **Paper.** Barrero et al., "The interferon γ pathway enhances pluripotency and X-chromosome reactivation in iPSC reprogramming", *Science Advances* 10 (2024), PMID 39110794, doi:10.1126/sciadv.adj8862 (PMC11305397, open access). Supplementary Table S1 gives the MAGeCK RRA gene results for all five population comparisons.
 

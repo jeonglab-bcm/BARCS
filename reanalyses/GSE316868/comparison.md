@@ -6,12 +6,12 @@ BARCS genes: `results/tfe3_on_vs_off/genes.csv` (19044 genes, direction: both)
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| CCNC | 137 | 19044 | 5.703 | 3.3e-05 | 0.0046 |
+| CCNC | 137 | 19044 | 5.703 | 3.5e-05 | 0.0048 |
 | CDK8 | not tested | | | | |
-| MED12 | 420 | 19044 | 1.382 | 0.00064 | 0.029 |
-| MED13 | 10166 | 19044 | 0.793 | 0.43 | 0.81 |
-| CDKN1A | 340 | 19044 | 1.394 | 0.00035 | 0.019 |
-| TP53 | 1785 | 19044 | 0.668 | 0.017 | 0.19 |
+| MED12 | 421 | 19044 | 1.382 | 0.00066 | 0.03 |
+| MED13 | 10167 | 19044 | 0.793 | 0.43 | 0.81 |
+| CDKN1A | 341 | 19044 | 1.394 | 0.00036 | 0.02 |
+| TP53 | 1786 | 19044 | 0.668 | 0.018 | 0.19 |
 
 ## Agreement with the published table
 
@@ -35,8 +35,8 @@ Gene (BARCS rank / published rank): GOLGA6L1 (3 / 171), CKAP2 (4 / 935), NOP10 (
 
 ### In the published top 25 but not the BARCS top 25
 
-Gene (published rank / BARCS rank): MYL1 (2 / 549), TMEM185B (3 / 1054), PCDHB4 (6 / 1522), DDX42 (7 / 1497), ANP32E (9 / 79), SYVN1 (10 / 44), ZNF827 (11 / 2300), FAM103A1 (12 / 28), FBRSL1 (13 / 1535), UBE3B (14 / 1029), SPDYE2B (15 / 41), WBSCR16 (18 / 346), RBM4 (19 / 2600), CCNC (20 / 137), NUP107 (21 / 131), ATP6V0D1 (22 / 30), SH3TC1 (23 / 3028), C17orf67 (24 / 78), ZNF236 (25 / 580)
+Gene (published rank / BARCS rank): MYL1 (2 / 551), TMEM185B (3 / 1062), PCDHB4 (6 / 1521), DDX42 (7 / 1498), ANP32E (9 / 80), SYVN1 (10 / 44), ZNF827 (11 / 2303), FAM103A1 (12 / 28), FBRSL1 (13 / 1536), UBE3B (14 / 1031), SPDYE2B (15 / 41), WBSCR16 (18 / 346), RBM4 (19 / 2603), CCNC (20 / 137), NUP107 (21 / 131), ATP6V0D1 (22 / 30), SH3TC1 (23 / 3030), C17orf67 (24 / 78), ZNF236 (25 / 580)
 
 ## BARCS calls
 
-Genes at FDR 0.05: 612; at FDR 0.10: 1151. Top 15: EIF6, MYC, GOLGA6L1, CKAP2, NOP10, TIMELESS, PHB, BCL2L1, COPE, TP53TG3D, RNF149, NEDD1, DNAJC2, SNF8, C19orf53
+Genes at FDR 0.05: 591; at FDR 0.10: 1135. Top 15: EIF6, MYC, GOLGA6L1, CKAP2, NOP10, TIMELESS, PHB, BCL2L1, COPE, TP53TG3D, RNF149, NEDD1, DNAJC2, SNF8, C19orf53

@@ -6,8 +6,8 @@ BARCS genes: `results/re57m_gfp_low_vs_high/genes.csv` (142 genes, direction: bo
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Pou5f1_p1 | 3 | 142 | 2.402 | 9.4e-65 | 4.5e-63 |
-| Zic3_p1 | 5 | 142 | 1.261 | 2.4e-39 | 6.9e-38 |
+| Pou5f1_p1 | 3 | 142 | 2.402 | 3.1e-66 | 1.5e-64 |
+| Zic3_p1 | 5 | 142 | 1.261 | 3.2e-40 | 9e-39 |
 
 ## BARCS calls
 

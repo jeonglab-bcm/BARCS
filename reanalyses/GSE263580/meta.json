@@ -11,7 +11,7 @@
   "paper_method": "Recurrence of guides across independent lesions (MAGeCK); functional validation",
   "paper_calls": "Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)",
   "barcs_calls": "0-1 genes at FDR 0.10; clonal lesions, results descriptive",
-  "named_hits": "Ctnna1 rank 316/903 (FDR 0.91), Bcl2l13 rank 812/903 (FDR 0.95) in met vs primary",
+  "named_hits": "Ctnna1 rank 317/903 (FDR 0.91), Bcl2l13 rank 812/903 (FDR 0.95) in met vs primary",
   "verdict": "Each metastatic lesion is a clonal outgrowth (top 1% of guides hold 99-100% of reads), so lesion-level clonal dominance violates BARCS's replicate-variance model; BARCS does not recover the paper's recurrence-based suppressors Ctnna1/Bcl2l13 at FDR, and the reanalysis is reported as descriptive confirmation that these counts are not analyzable as a conventional variance-based screen.",
   "agreement": "differ",
   "analyzed": "2026-10-13",

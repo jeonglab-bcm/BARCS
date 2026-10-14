@@ -1,4 +1,4 @@
-# GSE223716 reanalysis with BARCS 0.2.2
+# GSE223716 reanalysis with BARCS 0.2.3
 
 **Paper.** Price et al., "Epigenetic control of telomeric RNA maintains heterochromatin in telomerase-driven cancers", *Signal Transduction and Targeted Therapy* 11 (2026), PMID 42236690, doi:10.1038/s41392-026-02750-0 (PMC13233980). The genome-wide screens are in GSE211312; this series holds the in vivo validation pool.
 
@@ -20,17 +20,17 @@
 | Cas9 vs WT, HCT-15 | 2 vs 2 | `~ cas9` | 4 (PRMT1, FTSJ3, MCM5, BIRC5) |
 | Cas9 vs WT, 22Rv1 / ES-2 / MDA-MB-231 / MIA PaCa-2 | 2 vs 2 each | `~ cas9` | 0 each |
 
-All analyses use library totals, 2 residual df and moderated dispersion. Guide correlation is 0.02 in the primary analysis.
+All analyses use library totals, 2 residual df and moderated dispersion. Guide correlation is 0.01 in the primary analysis.
 
 ## Results (primary: HTelo+ vs HTelo− Cas9 tumors)
 
 | Gene | Paper | BARCS rank (depleted, of 91) | log-odds effect | FDR |
 |---|---|---|---|---|
-| MED14 | top SDL hit | 3 | −3.85 | 0.029 |
-| GNB1L | top SDL hit | 4 | −7.65 | 0.032 |
+| MED14 | top SDL hit | 3 | −3.85 | 0.028 |
+| GNB1L | top SDL hit | 4 | −7.65 | 0.031 |
 | RRM2 | top SDL hit | 6 | −6.47 | 0.038 |
 | FTSJ3 | top SDL hit, lead gene | 9 | −3.95 | 0.12 |
-| PRMT1 | top SDL hit | 17 | −2.28 | 0.35 |
+| PRMT1 | top SDL hit | 17 | −2.28 | 0.34 |
 
 BARCS's 8 calls are POLA2, GINS4, MED14, GNB1L, CGRRF1, RRM2, ARHGAP15 and PLK1.
 

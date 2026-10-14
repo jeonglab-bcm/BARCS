@@ -4,11 +4,13 @@
   "term": "conditionTf",
   "libraries": 6,
   "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 103074,
   "genes": 18788,
   "moderated": true,
   "prior_df": 38.676,
-  "guide_correlation": 0.005,
+  "guide_correlation": 0.0041,
   "control_scale": null,
   "control_guides": 1895,
   "control_p05_raw": 0.0444,
@@ -24,12 +26,22 @@
     "LGR_100X_Tf_3": 0.024,
     "LGR_100X_Tf_4": 0.025
   },
-  "genes_fdr_0_10_up": 371,
-  "genes_fdr_0_10_down": 1962,
-  "genes_fdr_0_05": 1971,
-  "genes_fdr_0_10": 2333,
-  "genes_empirical_fdr_0_10": 2290,
+  "genes_fdr_0_10_up": 372,
+  "genes_fdr_0_10_down": 1966,
+  "genes_fdr_0_05": 1979,
+  "genes_fdr_0_10": 2338,
+  "genes_empirical_fdr_0_10": 2294,
   "empirical_centre": "controls",
   "control_shift": -0.14,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

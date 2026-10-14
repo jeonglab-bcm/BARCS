@@ -1,4 +1,4 @@
-# GSE299588 reanalysis with BARCS 0.2.1
+# GSE299588 reanalysis with BARCS 0.2.3
 
 **Paper.** "CRISPR screen reveals SOX2 as a critical regulator of CD133 and cellular stress response in glioblastoma", *Scientific Reports* (2025), PMID 41102523, doi:10.1038/s41598-025-20183-7 (PMC12533111). The supplement is a Word file without a gene table, so the comparison uses the named genes.
 
@@ -17,7 +17,7 @@ Model: `~ replicate + bin`, 6 libraries, 2 residual df, `test = "auto"` (471 gui
 | | Value |
 |---|---|
 | Genes at FDR 0.10 | 0 after control calibration (131 before) |
-| PROM1 | **rank 1**, p = 1.5 × 10⁻⁴ |
+| PROM1 | **rank 1**, p = 1.4 × 10⁻⁴ |
 | SOX2 | **rank 10**, p = 0.002 |
 | Other genes lower in CD133-high cells | SLC25A36, NDUFB11, KEAP1, APBB1, MEN1, NF2, TADA1, TADA2B, FBXW7 |
 | Higher in CD133-high cells | YPEL5, EGLN1, SPAST, PAXIP1, PLCG1 |
