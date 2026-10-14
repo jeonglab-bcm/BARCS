@@ -1,4 +1,4 @@
-# GSE316868 reanalysis with BARCS 0.2.1
+# GSE316868 reanalysis with BARCS 0.2.3
 
 **Paper.** "The Cyclin C-CDK8/19 Mediator kinase module controls PRCC-TFE3 driven senescence in renal epithelium and tumorigenesis in TFE3-RCC", *Neoplasia* (2026), PMID 41843980, doi:10.1016/j.neo.2026.101296 (PMC13069303).
 
@@ -10,12 +10,12 @@
 
 ## Results
 
-| | BARCS 0.2.1 | Before the Firth fix | Authors' MAGeCK |
+| | BARCS 0.2.3 | Before the Firth fix | Authors' MAGeCK |
 |---|---|---|---|
-| Genes at FDR 0.10 | 1,151 | 0 | 0 (lowest FDR 0.35) |
+| Genes at FDR 0.10 | 1,135 | 0 || 0 (lowest FDR 0.35) |
 | CCNC | **#137, FDR 0.005** | #1,521, p = 0.21 | positive rank 8 |
-| CDKN1A (p21) | #340, FDR 0.02 | #2 | |
-| MED12 | #420, FDR 0.03 | #8 | positive rank 237 |
+| CDKN1A (p21) | #341, FDR 0.02 || #2 | |
+| MED12 | #421, FDR 0.03 || #8 | positive rank 237 |
 | Top genes | EIF6, MYC, … | | MYC, EIF6, … |
 | Rank correlation with MAGeCK | 0.51 | 0.35 | |
 | Top-100 overlap with MAGeCK | 37 | 6 | |
@@ -27,7 +27,7 @@ The CCNC data are clear: three of four guides have zero or near-zero reads in bo
 ## Where BARCS agrees and differs
 
 - **Agrees.** CCNC is enriched in induced cells at FDR 0.005, and the two strongest genes (EIF6, MYC) are also MAGeCK's top two.
-- **More calls.** BARCS calls 1,151 genes where MAGeCK calls none at FDR 0.10. The control-guide checks above indicate the excess is signal. Even so, one residual df and a heavily bottlenecked control library mean the long tail should be confirmed independently.
+- **More calls.** BARCS calls 1,135 genes where MAGeCK calls none at FDR 0.10. The control-guide checks above indicate the excess is signal. Even so, one residual df and a heavily bottlenecked control library mean the long tail should be confirmed independently.
 
 ## Limits
 

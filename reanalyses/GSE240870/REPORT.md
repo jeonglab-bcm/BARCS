@@ -1,4 +1,4 @@
-# GSE240870 reanalysis with BARCS 0.2.2
+# GSE240870 reanalysis with BARCS 0.2.3
 
 **Paper.** "Derepressing nuclear pyruvate dehydrogenase induces therapeutic cancer cell reprogramming", *Cell Metabolism* (2025), PMID 40505660, doi:10.1016/j.cmet.2025.05.009. The paper is not open access. Its full text and supplementary tables could not be retrieved, so the comparison rests on the abstract, the GEO record and the one named hit.
 
@@ -12,8 +12,8 @@
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 86 (38 enriched in ISX9, 48 depleted); 46 against the control-guide null |
-| ELMSAN1 (MIDEAS) | **#1 of 18,534, enriched, FDR 7 × 10⁻²⁶** (control null FDR 0.02) |
+| Genes at FDR 0.10 | 88 (39 enriched in ISX9, 49 depleted); 46 against the control-guide null |
+| ELMSAN1 (MIDEAS) | **#1 of 18,534, enriched, FDR 5 × 10⁻²⁶** (control null FDR 0.02) |
 | Next enriched | DUSP9, KDM1B, CFLAR, AHR |
 | Strongest depleted | MYC, PDGFRB, TNF, GPR132, PDGFRA |
 

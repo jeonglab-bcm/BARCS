@@ -4,11 +4,13 @@
   "term": "conditionGFPpos",
   "libraries": 4,
   "residual_df": 1,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 5950,
   "genes": 1160,
   "moderated": true,
   "prior_df": 4.5917,
-  "guide_correlation": 0.0369,
+  "guide_correlation": 0.0255,
   "control_scale": 1.1514,
   "control_guides": 150,
   "control_p05_raw": 0.1067,
@@ -22,12 +24,22 @@
     "Unsorted.maintenance.repA": 0.051,
     "Unsorted.maintenance.repB": 0.052
   },
-  "genes_fdr_0_10_up": 49,
-  "genes_fdr_0_10_down": 115,
-  "genes_fdr_0_05": 109,
-  "genes_fdr_0_10": 164,
-  "genes_empirical_fdr_0_10": 309,
+  "genes_fdr_0_10_up": 54,
+  "genes_fdr_0_10_down": 125,
+  "genes_fdr_0_05": 115,
+  "genes_fdr_0_10": 179,
+  "genes_empirical_fdr_0_10": 326,
   "empirical_centre": "targets",
   "control_shift": 0.478,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# GSE209750 reanalysis with BARCS 0.2.2
+# GSE209750 reanalysis with BARCS 0.2.3
 
 **Paper.** "Integrated multi-omics analyses identify anti-viral host factors and pathways controlling SARS-CoV-2 infection", *Nature Communications* (2024), PMID 38168026, doi:10.1038/s41467-023-44175-1 (PMC10761986).
 
@@ -12,21 +12,21 @@
 
 | | Value |
 |---|---|
-| Genes at FDR 0.10 | 257 (93 depleted / anti-viral, 164 enriched / pro-viral); control-null 312 |
+| Genes at FDR 0.10 | 260 (94 depleted / anti-viral, 166 enriched / pro-viral); control-null 312 |
 | Rank correlation with deposited MAGeCK (neg) | 0.68 |
 | Top-50 overlap with MAGeCK (neg) | 38 / 50 |
 
 | Named hit (anti-viral, depleted) | BARCS depleted rank | Effect | p | FDR | guides |
 |---|---|---|---|---|---|
-| DAZAP2 | 1 | -0.86 | 2.8e-21 | 2.6e-17 | 5 |
-| KLF5 | 6 | -0.34 | 1.2e-12 | 1.2e-09 | 5 |
-| VTA1 | 42 | -0.04 | 9.8e-05 | 0.013 | 5 |
+| DAZAP2 | 1 | -0.86 | 2.5e-21 | 2.4e-17 | 5 |
+| KLF5 | 6 | -0.34 | 1.1e-12 | 1.1e-09 | 5 |
+| VTA1 | 42 | -0.04 | 9.6e-05 | 0.013 | 5 |
 
-Direction check (controls): ACE2 (#1 enriched, FDR 3.8e-32) and CTSL (FDR 2.5e-12) are the two most enriched genes, confirming the label orientation. ESCRT (VPS4A #5, VPS28, CHMP6 #46) and cohesin (SMC3 #92, FDR 0.097) are depleted, as the paper reports; V-ATPase subunits are enriched (pro-viral).
+Direction check (controls): ACE2 (#1 enriched, FDR 3.1e-32) and CTSL (FDR 2.3e-12) are the two most enriched genes, confirming the label orientation. ESCRT (VPS4A #5, VPS28, CHMP6 #46) and cohesin (SMC3 #92, FDR 0.096) are depleted, as the paper reports; V-ATPase subunits are enriched (pro-viral).
 
 ## Where BARCS agrees and differs
 
-- **Agrees on the validated genes.** DAZAP2 is the single most depleted gene (FDR 2.6e-17) and KLF5 is #6 (FDR 1.2e-09) — both validated anti-viral factors.
+- **Agrees on the validated genes.** DAZAP2 is the single most depleted gene (FDR 2.4e-17) and KLF5 is #6 (FDR 1.1e-09) — both validated anti-viral factors.
 - **VTA1 is weakly recovered.** It passes FDR 0.10 (0.013) but with a very small effect (-0.04); at the guide level it is only marginally depleted, so BARCS supports its direction but not as a strong hit.
 - **Pathway-level agreement.** ESCRT and cohesin components are depleted and the pro-viral entry factors enriched, matching the paper's mechanistic claims; rank correlation with the deposited MAGeCK neg table is 0.68 (38/50 top genes shared).
 

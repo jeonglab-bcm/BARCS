@@ -1,4 +1,4 @@
-# GSE291338 reanalysis with BARCS 0.2.1
+# GSE291338 reanalysis with BARCS 0.2.3
 
 **Paper.** "CDK4/6 inhibition overcomes venetoclax resistance mechanisms with enhanced combination activity in acute myeloid leukemia", *Cell Reports Medicine* (2026), PMID 41468895, doi:10.1016/j.xcrm.2025.102526 (PMC12866115).
 
@@ -21,11 +21,11 @@ Venetoclax killed nearly every clone. The five BAX guides alone hold about half 
 
 | Arm | Genes at FDR 0.10 | Named genes (rank among enriched or all, FDR) |
 |---|---|---|
-| Palbo vs DMSO | 1,525 | HNRNPU #4 (9e-6), CEBPE #6 (1e-5), IKZF1 #115 (0.009), RB1 #387 (0.03) |
+| Palbo vs DMSO | 1,464 | HNRNPU #4 (1e-5), CEBPE #6 (2e-5), IKZF1 #117 (0.008), RB1 #387 (0.03) |
 | Ven vs DMSO | 92 enriched | **BAX #3 (3e-4)**, IKZF1 #5 (0.001), PMAIP1 #51 (0.047) |
 | Combo vs DMSO | 87 enriched | IKZF1 #36 (0.051) |
 
-- **Palbociclib** (no bottleneck): 8 of the paper's top 25 genes are in BARCS's top 25. RB1, the paper's palbo resistance gene, passes FDR 0.05.
+- **Palbociclib** (no bottleneck): 9 of the paper's top 25 genes are in BARCS's top 25. RB1, the paper's palbo resistance gene, passes FDR 0.05.
 - **Venetoclax:** BAX, the paper's headline ven resistance gene, ranks third among enriched genes.
 - **Combination:** IKZF1, the paper's ven+palbo resistance gene, is borderline (FDR 0.051).
 

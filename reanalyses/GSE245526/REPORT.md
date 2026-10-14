@@ -1,4 +1,4 @@
-# GSE245526 reanalysis with BARCS 0.2.2
+# GSE245526 reanalysis with BARCS 0.2.3
 
 **Paper.** "Replication competent HIV-guided CRISPR screen identifies antiviral factors including targets of the accessory protein Nef", *Nature Communications* 2024, PMID 38714682 (PMC11076291).
 
@@ -13,8 +13,8 @@
 **Composition.** The 15 dpi libraries concentrate reads on surviving guides (top 1% hold 20-24% of reads vs ~5% at input), so library-total normalization over-calls depletion. Reported numbers use median-ratio totals (the correct read for a strong-enrichment screen); enrichment is the paper's direction.
 
 ## Results (median-ratio totals)
-- 271 genes at FDR 0.10 (166 enriched, 105 depleted); guide correlation ~0.
-- Every antiviral factor the abstract names as enriched >50-fold is recovered among enriched genes: **EHMT2 #1** (FDR 3e-10), **CEACAM3 #8** (FDR 9e-8), **CC2D1B #15** (FDR 4e-7), **CIITA #91** (FDR 8e-3), **GRN #96** (FDR 9e-3), **RHOA #109** (FDR 2e-2).
+- 269 genes at FDR 0.10 (165 enriched, 104 depleted); guide correlation ~0.
+- Every antiviral factor the abstract names as enriched >50-fold is recovered among enriched genes: **EHMT2 #1** (FDR 4e-10), **CEACAM3 #8** (FDR 1e-7), **CC2D1B #15** (FDR 4e-7), **CIITA #91** (FDR 8e-3), **GRN #96** (FDR 9e-3), **RHOA #109** (FDR 2e-2).
 
 ## BARCS vs paper
 Full agreement on the paper's named enrichment hits, with EHMT2 as the single strongest. IFI16 (reported only for the Nef-deleted virus arm) is not expected in this untreated comparison and was not tested here. The paper used MAGeCK on the passaging enrichment; BARCS reaches the same lead genes once the composition shift is handled with median-ratio totals.

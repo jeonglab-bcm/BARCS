@@ -1,4 +1,4 @@
-# GSE255579 reanalysis with BARCS 0.2.2
+# GSE255579 reanalysis with BARCS 0.2.3
 
 **Paper.** "EXO1 as a therapeutic target for Fanconi Anaemia, ZRSR2 and BRCA1-A complex deficient cancers", *Nature Communications* (2025), PMID 41006228, doi:10.1038/s41467-025-63349-7 (PMC12475092). This series holds the rescue screens. The headline synthetic-lethal dropout screen (EXO1 knockout vs wild type) is in a separate series, GSE255664, and is not reanalyzed here.
 

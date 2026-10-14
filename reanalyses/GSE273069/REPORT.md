@@ -1,4 +1,4 @@
-# GSE273069 reanalysis with BARCS 0.2.1
+# GSE273069 reanalysis with BARCS 0.2.3
 
 **Paper.** "Reporter CRISPR screens decipher cis-regulatory and trans-regulatory principles at the Xist locus", *Nature Structural & Molecular Biology* (2025), PMID 41053217 (PMC12700789). This is the reporter companion to GSE273070.
 
@@ -13,8 +13,8 @@
 | | Value |
 |---|---|
 | Promoters at FDR 0.10 | 95 |
-| Pou5f1_p1 | #3, enriched in GFP-low, FDR 4 × 10⁻⁶³ |
-| Zic3_p1 | #5, enriched in GFP-low, FDR 7 × 10⁻³⁸ |
+| Pou5f1_p1 | #3, enriched in GFP-low, FDR 1 × 10⁻⁶⁴ |
+| Zic3_p1 | #5, enriched in GFP-low, FDR 9 × 10⁻³⁹ |
 | Top 2 | FIREWACh and RE57: guides against the reporter construct itself (positive controls) |
 
 ## Where BARCS agrees and differs

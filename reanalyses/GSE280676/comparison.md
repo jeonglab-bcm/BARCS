@@ -6,15 +6,15 @@ BARCS genes: `results/day16_vs_day1/genes.csv` (603 genes, direction: enriched)
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| TP53 | 2 | 603 | 2.196 | 1.5e-05 | 0.00045 |
-| PTEN | 1 | 603 | 0.820 | 3.5e-06 | 0.00014 |
-| VGLL4 | 3 | 603 | 0.698 | 9.3e-05 | 0.0019 |
-| MPC1 | 18 | 603 | 0.169 | 0.13 | 0.31 |
-| MPC2 | 80 | 603 | 0.331 | 0.5 | 0.71 |
-| SMAD3 | 31 | 603 | 0.255 | 0.2 | 0.41 |
-| SMAD4 | 4 | 603 | 1.071 | 0.0092 | 0.059 |
-| SMAD5 | 42 | 603 | 0.455 | 0.26 | 0.48 |
-| RUNX1 | 112 | 603 | 0.043 | 0.64 | 0.81 |
+| TP53 | 2 | 603 | 2.196 | 2.6e-05 | 0.00077 |
+| PTEN | 1 | 603 | 0.820 | 5.6e-06 | 0.00022 |
+| VGLL4 | 3 | 603 | 0.698 | 0.00014 | 0.0028 |
+| MPC1 | 18 | 603 | 0.169 | 0.14 | 0.33 |
+| MPC2 | 81 | 603 | 0.331 | 0.51 | 0.73 |
+| SMAD3 | 31 | 603 | 0.255 | 0.21 | 0.43 |
+| SMAD4 | 4 | 603 | 1.071 | 0.01 | 0.068 |
+| SMAD5 | 42 | 603 | 0.455 | 0.27 | 0.5 |
+| RUNX1 | 112 | 603 | 0.043 | 0.65 | 0.82 |
 
 ## Agreement with the published table
 
@@ -42,4 +42,4 @@ Gene (published rank / BARCS rank): IZUMO3 (4 / 25), TNNI2 (5 / 26), KCNMB1 (7 /
 
 ## BARCS calls
 
-Genes at FDR 0.05: 80; at FDR 0.10: 135. Top 15: PTEN, TP53, VGLL4, SMAD4, INSL6, ZBTB20, PDCD10, NLK, NR3C1, ZKSCAN1, FOXO4, GAD2, GAP43, RELA, OVOL2
+Genes at FDR 0.05: 72; at FDR 0.10: 116. Top 15: PTEN, TP53, VGLL4, SMAD4, INSL6, ZBTB20, PDCD10, NLK, NR3C1, ZKSCAN1, FOXO4, GAD2, RELA, GAP43, OVOL2

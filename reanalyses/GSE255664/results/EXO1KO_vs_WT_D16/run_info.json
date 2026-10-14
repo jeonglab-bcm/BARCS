@@ -4,11 +4,13 @@
   "term": "genotypeEXO1_KO",
   "libraries": 6,
   "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 77441,
   "genes": 19114,
   "moderated": true,
   "prior_df": 138.5222,
-  "guide_correlation": 0.0021,
+  "guide_correlation": 0.002,
   "control_scale": null,
   "control_guides": 1000,
   "control_p05_raw": 0.0674,
@@ -31,5 +33,15 @@
   "genes_empirical_fdr_0_10": 13,
   "empirical_centre": "targets",
   "control_shift": -0.35,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

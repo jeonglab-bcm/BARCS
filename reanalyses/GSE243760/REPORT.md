@@ -1,4 +1,4 @@
-# GSE243760 reanalysis with BARCS 0.2.1
+# GSE243760 reanalysis with BARCS 0.2.3
 
 **Paper.** "Mechanosensitive genomic enhancers potentiate the cellular response to matrix stiffness", *Science* (2025), PMID 40997217 (PMC13005951). This is the migration screen from the same study as GSE243761.
 

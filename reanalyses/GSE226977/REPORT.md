@@ -1,4 +1,4 @@
-# GSE226977 reanalysis with BARCS 0.2.2
+# GSE226977 reanalysis with BARCS 0.2.3
 
 **Paper.** Roes & Dick, "A Genome Wide CRISPR Screen Reveals That HOXA9 Promotes Enzalutamide Resistance in Prostate Cancer", *Molecular and Cellular Biology* 44 (2024), PMID 39300912, doi:10.1080/10985549.2024.2401465 (PMC11583586, open access).
 

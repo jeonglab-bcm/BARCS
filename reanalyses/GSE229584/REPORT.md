@@ -1,4 +1,4 @@
-# GSE229584 reanalysis with BARCS 0.2.2
+# GSE229584 reanalysis with BARCS 0.2.3
 
 **Paper.** "Unbiased transcription factor CRISPR screen identifies ZNF800 as master repressor of enteroendocrine differentiation", *Science* (2023), PMID 37883554, doi:10.1126/science.adi2246. The paper is not open access. Its supplementary tables could not be downloaded (HTTP 403), so the comparison uses only the genes the paper names. Those names come from the abstract and the authors' own summary of the screen (Lin & Clevers, PMC10819080).
 
@@ -6,14 +6,14 @@
 
 **Design.** iRFP+ vs double-negative, `~ replicate + condition`, 4 libraries, 1 residual df. Within a replicate the three sorted fractions correlate 0.89–0.94, against 0.77–0.81 across replicates. They therefore come from one transduced culture, and replicate is a blocking term. The paper's exact comparison could not be checked. iRFP+ vs double-negative is *inferred* as the one that answers its question.
 
-**Composition and normalization.** In the double-negative fraction the top 1% of guides hold 56–59% of reads; in iRFP+ they hold 29–33%. Most of those reads are on four guides against IRF2 and NFKB1, which take 20–29% of the reads in each sorted library. Non-targeting guides make up 0.7% of double-negative reads and 1.3% of iRFP+ reads. With library totals, 65% of control guides reached p < 0.05. Of the 642 genes called, 640 were "enriched", which is the dilution and not biology. The headline run therefore normalizes to the 96 non-targeting guides (`totals = "control"`). After that, 7.3% of control guides reach p < 0.05, below the 7.5% threshold, so no calibration was applied. A median-ratio run gives the same answer: 65 genes, all 58 control-normalized calls among them, and a gene p-value rank correlation of 0.99. There are fewer than 100 control guides, so the control-pseudo-gene null was not computed.
+**Composition and normalization.** In the double-negative fraction the top 1% of guides hold 56–59% of reads; in iRFP+ they hold 29–33%. Most of those reads are on four guides against IRF2 and NFKB1, which take 20–29% of the reads in each sorted library. Non-targeting guides make up 0.7% of double-negative reads and 1.3% of iRFP+ reads. With library totals, 65% of control guides reached p < 0.05. Of the 642 genes called, 640 were "enriched", which is the dilution and not biology. The headline run therefore normalizes to the 96 non-targeting guides (`totals = "control"`). After that, 7.3% of control guides reach p < 0.05, below the 7.5% threshold, so no calibration was applied. A median-ratio run gives the same answer: 68 genes, all 58 control-normalized calls among them, and a gene p-value rank correlation of 0.99. There are fewer than 100 control guides, so the control-pseudo-gene null was not computed.
 
 ## Results
 
 | | BARCS (control totals) |
 |---|---|
 | Genes at FDR 0.10 | 58 (8 enriched, 50 depleted in iRFP+) |
-| ZNF800 (repressor of EEC fate) | **#1 enriched** (#6 overall), FDR 0.0004 |
+| ZNF800 (repressor of EEC fate) | **#1 enriched** (#6 overall), FDR 0.0003 |
 | SOX4 (required for EECs) | depleted, #3, FDR 6 × 10⁻⁶ |
 | NEUROG3 (required for EECs) | depleted, #23, FDR 0.014 |
 | INSM1 (required for EECs) | #361, FDR 0.43 |

@@ -1,4 +1,4 @@
-# GSE276161 reanalysis with BARCS 0.2.2
+# GSE276161 reanalysis with BARCS 0.2.3
 
 **Paper.** "CRISPRi/a screens in human iPSC-cardiomyocytes identify glycolytic activation as a druggable target for doxorubicin-induced cardiotoxicity", *Cell Stem Cell* (2024), PMID 39515331, doi:10.1016/j.stem.2024.10.007 (PMC11646563).
 
@@ -12,22 +12,22 @@
 
 ## Results (CRISPRi, primary)
 
-| | BARCS 0.2.2 | Paper |
+| | BARCS 0.2.3 | Paper |
 |---|---|---|
 | Genes at FDR 0.10 | 1 (IL2, a one-guide jackpot, see below); 0 against the control-pseudo-gene null | 21 protective hits (score > 2, p < 0.01) |
-| CA12 | **#1 enriched** of 2,484 genes (#2 overall), +0.48, p 3 × 10⁻⁴, FDR 0.35; control-null FDR 0.50 | top 5, validated |
+| CA12 | **#1 enriched** of 2,484 genes (#2 overall), +0.48, p 3 × 10⁻⁴, FDR 0.39; control-null FDR 0.55 | top 5, validated |
 | HPGDS | #8 enriched, p 0.010, FDR 1 | top 5, validated |
 | ERBB2 | #5 enriched, p 0.008, FDR 1 | top 5 |
-| DGKH | #178 enriched, FDR 1 | top 5 |
-| SCMH1 | #1,359 (−0.07), FDR 1 | top 5, validated |
+| DGKH | #180 enriched, FDR 1 | top 5 |
+| SCMH1 | #1,358 (−0.07), FDR 1 | top 5, validated |
 
-**The only call is an artifact.** IL2 has one guide, with 10,399 reads in Vehicle Rep1 and 183, 2,796 and 175 in the other libraries. It is a jackpot in one vehicle library and is discounted. The control null does not support it either (empirical FDR 0.76).
+**The only call is an artifact.** IL2 has one guide, with 10,399 reads in Vehicle Rep1 and 183, 2,796 and 175 in the other libraries. It is a jackpot in one vehicle library and is discounted. The control null does not support it either (empirical FDR 0.83).
 
 **CA12.** Eight of ten guides are enriched after doxorubicin and the other two are flat (−0.06, +0.02). Seven move by +0.23 to +0.81 log. The eighth (0, 0, 134, 55 reads) is absent from both vehicle libraries and was tested by likelihood ratio (+5.9). Several CA12 guides are lowest in Vehicle Rep2, so the signal partly rests on one library.
 
 ## CRISPRa (secondary)
 
-Library totals give 1,020 genes at FDR 0.10, all but 8 depleted after doxorubicin (824 against the control null), with guide correlation 0.39. Median-ratio totals give 1,207, all depleted (1,353 against the null centred on targeting guides). Neither result is credible. 6,563 targeting guides (12%) have reads in both vehicle libraries but none in either doxorubicin library, often every guide of a gene (for example all ACSM2A guides: 4–21 and 51–132 reads in vehicle, 0 in doxorubicin). Not one of the 812 counted non-targeting guides does this. The doxorubicin libraries therefore lack whole blocks of targeting guides for technical reasons (library representation or sequencing), and the depletion calls are not interpretable. On the enrichment side, which the paper used, nothing passes FDR 0.10. The paper's top CRISPRa hits still rank high among enriched genes: TWF2 #18, CLK2 #21, FLT4 #28, MAP3K4 #56 of 6,807 (FDR 0.27–0.54); ATP4A is #363. CA12 is neutral in CRISPRa (+0.03, #3,623), consistent with the paper's "ranked low" rather than a depletion.
+Library totals give 1,015 genes at FDR 0.10, all but 8 depleted after doxorubicin (820 against the control null), with guide correlation 0.39. Median-ratio totals give 1,207, all depleted (1,353 against the null centred on targeting guides). Neither result is credible. 6,563 targeting guides (12%) have reads in both vehicle libraries but none in either doxorubicin library, often every guide of a gene (for example all ACSM2A guides: 4–21 and 51–132 reads in vehicle, 0 in doxorubicin). Not one of the 812 counted non-targeting guides does this. The doxorubicin libraries therefore lack whole blocks of targeting guides for technical reasons (library representation or sequencing), and the depletion calls are not interpretable. On the enrichment side, which the paper used, nothing passes FDR 0.10. The paper's top CRISPRa hits still rank high among enriched genes: TWF2 #18, CLK2 #21, FLT4 #28, MAP3K4 #56 of 6,807 (FDR 0.27–0.55); ATP4A is #363. CA12 is neutral in CRISPRa (+0.03, #3,624), consistent with the paper's "ranked low" rather than a depletion.
 
 ## Where BARCS agrees and differs
 

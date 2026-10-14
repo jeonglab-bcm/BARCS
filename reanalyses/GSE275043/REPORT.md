@@ -1,4 +1,4 @@
-# GSE275043 reanalysis with BARCS 0.2.2
+# GSE275043 reanalysis with BARCS 0.2.3
 
 **Paper.** "Genome-wide CRISPR screen identifies IRF1 and TFAP4 as transcriptional regulators of Galectin-9 in T cell acute lymphoblastic leukemia", *Science Advances* (2025), PMID 40106574, doi:10.1126/sciadv.ads8351 (PMC11922064).
 
@@ -10,9 +10,9 @@
 
 ## Results
 
-| | BARCS 0.2.2 | Paper (MAGeCK per replicate, then validation) |
+| | BARCS 0.2.3 | Paper (MAGeCK per replicate, then validation) |
 |---|---|---|
-| Genes at FDR 0.10 | 489 (358 depleted in high, 131 enriched); 681 against the control-guide null | 41 low-bin genes at FDR < 0.15 in both replicates |
+| Genes at FDR 0.10 | 490 (358 depleted in high, 132 enriched); 681 against the control-guide null | 41 low-bin genes at FDR < 0.15 in both replicates |
 | LGALS9 (positive control) | **#2, FDR 2 × 10⁻¹²** | top hit in both replicates |
 | TFAP4 | **#3, FDR 2 × 10⁻¹²** | validated |
 | ADD1 | **#4, FDR 2 × 10⁻¹²** | validated |
@@ -22,7 +22,7 @@
 ## Where BARCS agrees and differs
 
 - **Agrees.** The target gene and all three validated regulators are in the BARCS top 13 of 19,114 genes. IRF1 has the second-largest effect after LGALS9, but only three of its four guides pass the count filter (one has 16 reads in total), which costs it rank.
-- **More calls.** BARCS calls many more genes than the paper's FDR < 0.15-in-both-replicates rule. Many of the extra genes affect fitness rather than Galectin-9 levels: 75 of the 489 calls are ribosomal or translation-initiation genes (RPL, RPS, EIF), and MYB, HSPA5 and FAU, which the paper's validation screen flagged as essential-gene artifacts, pass FDR 0.10 too. The paper removed such genes using the unsorted sample and DepMap. BARCS's FDR is valid for "differs between bins", not for "regulates Galectin-9", so a fitness filter is still needed. GATA3, the BARCS #1, is a Jurkat lineage factor; whether it acts directly on LGALS9 or through fitness cannot be told from this sort.
+- **More calls.** BARCS calls many more genes than the paper's FDR < 0.15-in-both-replicates rule. Many of the extra genes affect fitness rather than Galectin-9 levels: 75 of the 490 calls are ribosomal or translation-initiation genes (RPL, RPS, EIF), and MYB, HSPA5 and FAU, which the paper's validation screen flagged as essential-gene artifacts, pass FDR 0.10 too. The paper removed such genes using the unsorted sample and DepMap. BARCS's FDR is valid for "differs between bins", not for "regulates Galectin-9", so a fitness filter is still needed. GATA3, the BARCS #1, is a Jurkat lineage factor; whether it acts directly on LGALS9 or through fitness cannot be told from this sort.
 
 ## Limits
 

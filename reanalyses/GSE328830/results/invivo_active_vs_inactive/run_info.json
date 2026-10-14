@@ -10,7 +10,7 @@
   "genes": 7196,
   "moderated": true,
   "prior_df": 3.6104,
-  "guide_correlation": 0.0065,
+  "guide_correlation": 0.0046,
   "control_scale": 1.8511,
   "control_guides": 500,
   "control_p05_raw": 0.4289,
@@ -25,11 +25,21 @@
     "val_inactive": 0.048
   },
   "genes_fdr_0_10_up": 44,
-  "genes_fdr_0_10_down": 254,
-  "genes_fdr_0_05": 204,
-  "genes_fdr_0_10": 298,
-  "genes_empirical_fdr_0_10": 2310,
+  "genes_fdr_0_10_down": 259,
+  "genes_fdr_0_05": 209,
+  "genes_fdr_0_10": 303,
+  "genes_empirical_fdr_0_10": 2330,
   "empirical_centre": "targets",
   "control_shift": -1.117,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

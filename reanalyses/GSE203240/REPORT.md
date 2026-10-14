@@ -1,4 +1,4 @@
-# GSE203240 reanalysis with BARCS 0.2.2
+# GSE203240 reanalysis with BARCS 0.2.3
 
 **Paper.** "Identification of targetable vulnerabilities of PLK1-overexpressing cancers by synthetic dosage lethality", *Cell Genomics* (2025), PMID 40347943, doi:10.1016/j.xgen.2025.100876 (PMC12230241).
 

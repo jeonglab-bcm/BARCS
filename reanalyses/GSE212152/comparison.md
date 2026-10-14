@@ -6,15 +6,15 @@ BARCS genes: `results/establishment_GFP_vs_unsorted/genes.csv` (1160 genes, dire
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Setdb1 | 7 | 1160 | 2.003 | 4.9e-07 | 8e-05 |
-| Suv39h1 | 48 | 1160 | 1.276 | 0.013 | 0.12 |
-| Ehmt2 | 13 | 1160 | 1.556 | 1.5e-05 | 0.0013 |
-| Dnmt1 | 2 | 1160 | 1.986 | 8.2e-09 | 4.7e-06 |
-| Dnmt3a | 39 | 1160 | 1.411 | 0.0037 | 0.064 |
-| Dnmt3b | 35 | 1160 | 1.301 | 0.0022 | 0.053 |
-| Hdac1 | 1160 | 1160 | -0.849 | 4.7e-05 | 0.0034 |
-| Hdac2 | 168 | 1160 | 0.121 | 0.52 | 0.72 |
-| Dhx9 | 1128 | 1160 | -1.315 | 0.0045 | 0.072 |
+| Setdb1 | 7 | 1160 | 2.003 | 6.2e-07 | 0.0001 |
+| Suv39h1 | 48 | 1160 | 1.276 | 0.014 | 0.13 |
+| Ehmt2 | 13 | 1160 | 1.556 | 1.8e-05 | 0.0016 |
+| Dnmt1 | 2 | 1160 | 1.986 | 1.1e-08 | 6.5e-06 |
+| Dnmt3a | 39 | 1160 | 1.411 | 0.004 | 0.07 |
+| Dnmt3b | 35 | 1160 | 1.301 | 0.0024 | 0.058 |
+| Hdac1 | 1160 | 1160 | -0.849 | 5.5e-05 | 0.004 |
+| Hdac2 | 168 | 1160 | 0.121 | 0.53 | 0.72 |
+| Dhx9 | 1128 | 1160 | -1.315 | 0.0049 | 0.078 |
 
 ## Agreement with the published table
 
@@ -42,4 +42,4 @@ Gene (published rank / BARCS rank): Uhrf2 (12 / 27), Dnmt3b (15 / 35), Dnmt3a (1
 
 ## BARCS calls
 
-Genes at FDR 0.05: 47; at FDR 0.10: 106. Top 15: Atf7ip, Dnmt1, Cbx1, Kdm1a, Atrx, Rbm14, Setdb1, Cbx5, Daxx, Smarcad1, Morc3, Dnmt3l, Ehmt2, Ctbp2, Trim28
+Genes at FDR 0.05: 43; at FDR 0.10: 94. Top 15: Atf7ip, Dnmt1, Cbx1, Kdm1a, Atrx, Rbm14, Setdb1, Cbx5, Daxx, Smarcad1, Morc3, Dnmt3l, Ehmt2, Ctbp2, Trim28

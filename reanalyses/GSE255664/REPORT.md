@@ -1,4 +1,4 @@
-# GSE255664 reanalysis with BARCS 0.2.2
+# GSE255664 reanalysis with BARCS 0.2.3
 
 **Paper.** "EXO1 as a therapeutic target for Fanconi Anaemia, ZRSR2 and BRCA1-A complex deficient cancers", *Nature Communications* (2025), PMID 41006228, doi:10.1038/s41467-025-63349-7 (PMC12475092). The dropout screen is SubSeries GSE255664 of SuperSeries GSE255665. The rescue screens in the other SubSeries, GSE255579, are not reanalyzed here.
 
@@ -10,17 +10,17 @@
 
 ## Results
 
-| | BARCS 0.2.2 | Authors' MAGeCK (Supplementary Data 2) |
+| | BARCS 0.2.3 | Authors' MAGeCK (Supplementary Data 2) |
 |---|---|---|
 | Genes at FDR 0.10 | 10 (6 depleted in KO); 13 against the control null centred on targeting guides (see below) | 2 KO-depleted genes (ACAD10, RMI2); 5 at FDR 0.25 |
 | RMI2 | **#1, FDR 2 × 10⁻⁴** | #2, FDR 0.04 |
 | STRA13 (CENPX, FANCM complex) | **#2, FDR 5 × 10⁻⁴** | #4, FDR 0.13 |
 | FAM175A (ABRAXAS1, BRCA1-A) | **#3, FDR 5 × 10⁻⁴** | #5, FDR 0.13 |
 | ACAD10 | **#4, FDR 0.03** | #1, FDR 0.04 |
-| APITD1 (CENPS, FANCM complex) | #11, FDR 0.13 | #21 |
+| APITD1 (CENPS, FANCM complex) | #12, FDR 0.13 | #21 |
 | ZRSR2 | #16, FDR 0.16 | #3, FDR 0.10 |
 | BRCC3 (BRCA1-A) | #25, FDR 0.24 | #24 |
-| C19orf40 (FAAP24) | #53, FDR 0.33 | #68 |
+| C19orf40 (FAAP24) | #52, FDR 0.33 | #68 |
 | CDK11B | #346, FDR 0.49 | #50 |
 | FANCG | #2,349, FDR 0.76 | #42 |
 | BABAM1, FANCM, FANCD2, FANCL | #3,700–9,600 | #1,098–9,378 |

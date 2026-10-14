@@ -1,4 +1,4 @@
-# GSE211312 reanalysis with BARCS 0.2.1
+# GSE211312 reanalysis with BARCS 0.2.3
 
 **Paper.** "Epigenetic control of telomeric RNA maintains heterochromatin in telomerase-driven cancers", *Signal Transduction and Targeted Therapy* (2026), PMID 42236690 (PMC13233980).
 

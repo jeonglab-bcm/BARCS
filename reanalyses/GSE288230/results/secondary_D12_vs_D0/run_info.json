@@ -4,11 +4,13 @@
   "term": "conditionD12",
   "libraries": 6,
   "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 12444,
   "genes": 1223,
   "moderated": true,
   "prior_df": 21.7823,
-  "guide_correlation": 0,
+  "guide_correlation": 0.0024,
   "control_scale": 1.3858,
   "control_guides": 500,
   "control_p05_raw": 0.1482,
@@ -24,12 +26,22 @@
     "SS_HUDEP2_Rep2_D12": 0.043,
     "SS_HUDEP2_Rep3_D12": 0.045
   },
-  "genes_fdr_0_10_up": 244,
-  "genes_fdr_0_10_down": 485,
-  "genes_fdr_0_05": 616,
-  "genes_fdr_0_10": 729,
+  "genes_fdr_0_10_up": 239,
+  "genes_fdr_0_10_down": 484,
+  "genes_fdr_0_05": 603,
+  "genes_fdr_0_10": 723,
   "genes_empirical_fdr_0_10": 940,
   "empirical_centre": "targets",
   "control_shift": -0.753,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

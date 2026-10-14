@@ -1,4 +1,4 @@
-# GSE328830 reanalysis with BARCS 0.2.2
+# GSE328830 reanalysis with BARCS 0.2.3
 
 **Paper.** Fenoglio et al., "Temporal control of sgRNA library activation unlocks large-scale in vivo CRISPR screens", *Cell Reports Methods* 6 (2026), PMID 42225068, doi:10.1016/j.crmeth.2026.101470 (PMC13390110, open access).
 
@@ -14,17 +14,17 @@ The faithful BARCS mapping is **active vs inactive as the knockout effect**, wit
 
 ## Results (in vivo active vs inactive, cohort-paired)
 
-- **298 genes at FDR 0.10.** Top depleted are canonical essentials: KPNB1, SF3B5, MYC, TRMT112, RPL8, KIF11.
-- **Essential-gene recovery is strong despite the bulk aggregation:** 90/197 essential genes called depleted; median effect −0.74 (essential) vs +0.01 (non-essential); **AUC essential-vs-non-essential = 0.905**. Non-essential false-positive rate 2.4%; 0/72 ITC called.
-- **PLK1** (the paper's example essential, shown dropping out across 118 tumors): depleted, estimate −0.92, FDR 0.015.
+- **303 genes at FDR 0.10.** Top depleted are canonical essentials: KPNB1, SF3B5, MYC, TRMT112, RPL8, KIF11.
+- **Essential-gene recovery is strong despite the bulk aggregation:** 94/197 essential genes called depleted; median effect −0.74 (essential) vs +0.01 (non-essential); **AUC essential-vs-non-essential = 0.905**. Non-essential false-positive rate 2.4%; 0/72 ITC called.
+- **PLK1** (the paper's example essential, shown dropping out across 118 tumors): depleted, estimate −0.92, FDR 0.014.
 
 | Gene | Paper | BARCS effect | FDR |
 |---|---|---|---|
-| PLK1 | essential dropout example | −0.92 (depleted) | 0.015 |
+| PLK1 | essential dropout example || −0.92 (depleted) | 0.014 ||
 | MYC / KIF11 | essential | −1.85 / −1.64 | 7e-4 |
-| **KMT2D** | in vivo growth-required | **−1.61 (depleted)** | 8e-4 |
-| **KMT2C** | in vivo tumor-suppressor (opposite of KMT2D) | **+1.99 (enriched)** | 0.0015 |
-| PTEN | tumor-suppressor positive control | +1.95 (enriched) | 8e-4 |
+| **KMT2D** | in vivo growth-required || **−1.61 (depleted)** | 7e-4 ||
+| **KMT2C** | in vivo tumor-suppressor (opposite of KMT2D) || **+1.99 (enriched)** | 0.0014 ||
+| PTEN | tumor-suppressor positive control || +1.95 (enriched) | 7e-4 ||
 
 ## Where BARCS agrees and differs
 

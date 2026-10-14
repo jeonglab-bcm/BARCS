@@ -4,11 +4,13 @@
   "term": "doxon",
   "libraries": 4,
   "residual_df": 1,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 77441,
   "genes": 19044,
   "moderated": true,
   "prior_df": 0.4248,
-  "guide_correlation": 0.0027,
+  "guide_correlation": 0.0046,
   "control_scale": 1.5198,
   "control_guides": 1000,
   "control_p05_raw": 0.0909,
@@ -22,12 +24,22 @@
     "Doxy-_2": 0.062,
     "Doxy+_2": 0.049
   },
-  "genes_fdr_0_10_up": 725,
-  "genes_fdr_0_10_down": 426,
-  "genes_fdr_0_05": 612,
-  "genes_fdr_0_10": 1151,
-  "genes_empirical_fdr_0_10": 1629,
+  "genes_fdr_0_10_up": 713,
+  "genes_fdr_0_10_down": 422,
+  "genes_fdr_0_05": 591,
+  "genes_fdr_0_10": 1135,
+  "genes_empirical_fdr_0_10": 1605,
   "empirical_centre": "controls",
   "control_shift": 0.063,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# GSE268533 reanalysis with BARCS 0.2.2
+# GSE268533 reanalysis with BARCS 0.2.3
 
 **Paper.** "Synthetic lethal CRISPR screen identifies a cancer cell-intrinsic role of PD-L1 in regulation of vulnerability to ferroptosis", *Cell Reports* 2024, PMID 38985676.
 

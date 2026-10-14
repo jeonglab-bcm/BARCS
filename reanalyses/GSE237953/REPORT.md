@@ -1,4 +1,4 @@
-# GSE237953 reanalysis with BARCS 0.2.2
+# GSE237953 reanalysis with BARCS 0.2.3
 
 **Paper.** "PAXIP1 and STAG2 converge to maintain 3D genome architecture and facilitate promoter/enhancer contacts to enable stress hormone-dependent transcription", *Nucleic Acids Research* (2023), PMID 37070193, doi:10.1093/nar/gkad267 (PMC10570044).
 

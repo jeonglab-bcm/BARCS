@@ -1,46 +1,44 @@
 # BARCS versus published results
 
-BARCS genes: `results/late_vs_early/genes.csv` (18360 genes, direction: depleted)
+BARCS genes: `results/early_vs_nonplur/genes.csv` (18358 genes, direction: depleted)
 
 ## Genes the paper highlights
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Nanog | 178 | 18360 | -1.776 | 0.047 | 1 |
-| Il6st | 185 | 18360 | -0.811 | 0.051 | 1 |
-| Dazl | 1020 | 18360 | -0.095 | 0.4 | 1 |
-| Hes6 | 290 | 18360 | -0.704 | 0.096 | 1 |
-| Hes7 | 1193 | 18360 | -0.421 | 0.45 | 1 |
-| Stat1 | 2464 | 18360 | -0.257 | 0.74 | 1 |
-| Jak1 | 1180 | 18360 | -0.324 | 0.45 | 1 |
-| Spi1 | 596 | 18360 | -0.203 | 0.23 | 1 |
-| Irf2 | 5712 | 18360 | 0.196 | 0.87 | 1 |
-| Ifngr2 | 2356 | 18360 | -0.064 | 0.72 | 1 |
+| Smad2 | 2790 | 18358 | -0.989 | 0.3 | 1 |
+| Smad4 | 605 | 18358 | -1.720 | 0.073 | 1 |
+| Pou5f1 | 1838 | 18358 | -1.835 | 0.21 | 1 |
+| Sox2 | 4212 | 18358 | -1.576 | 0.42 | 1 |
+| Smarcc2 | 13101 | 18358 | 0.060 | 0.9 | 1 |
+| Smarca4 | 4469 | 18358 | -1.216 | 0.44 | 1 |
+| Hes1 | 5020 | 18358 | -0.818 | 0.48 | 1 |
+| Fut9 | 573 | 18358 | -3.036 | 0.069 | 1 |
 
 ## Agreement with the published table
 
-Published: `paper/tableS1.xlsx` (score `neg|score`, lower is stronger); 18376 genes, 18360 shared with BARCS.
+Published: `paper/tableS1.xlsx` (score `neg|score`, lower is stronger); 18380 genes, 18358 shared with BARCS.
 
-Spearman correlation of gene scores: **0.69**
+Spearman correlation of gene scores: **0.51**
 
 
-Effect direction agreement: 72.4% of 18360 genes
+Effect direction agreement: 82.0% of 18358 genes
 
 
 | Top N | Shared | Jaccard | BARCS only | Published only |
 |---|---|---|---|---|
-| 50 | 2 | 0.02 | 48 | 48 |
-| 100 | 11 | 0.06 | 89 | 89 |
-| 250 | 34 | 0.07 | 216 | 216 |
+| 50 | 1 | 0.01 | 49 | 49 |
+| 100 | 4 | 0.02 | 96 | 96 |
+| 250 | 22 | 0.05 | 228 | 228 |
 
 ### In the BARCS top 50 but not the published top 50
 
-Gene (BARCS rank / published rank): Trp53 (1 / 126), Gm7714 (2 / 692), Pex7 (3 / 1604), Gm684 (4 / 853), Oxnad1 (5 / 97), Mt3 (6 / 5594), Lrrc6 (7 / 563), Phc1 (8 / 646), Acsl4 (9 / 691), Slit1 (10 / 743), AI848285 (11 / 303), Clpb (12 / 1699), Crebbp (13 / 98), Trim32 (14 / 80), Casz1 (15 / 2013), P2ry10 (17 / 1388), Ipo9 (18 / 86), Phf2 (19 / 1649), Foxc2 (20 / 3747), Pde6c (21 / 1892), Thoc6 (22 / 687), Myog (23 / 95), Rnf150 (24 / 295), Hbb-bh2 (25 / 585), Ugt1a7c (26 / 988)
+Gene (BARCS rank / published rank): Nf2 (1 / 3362), Agfg1 (2 / 5201), Mcee (3 / 10003), Glis1 (4 / 5212), Ccdc7 (5 / 2859), Pld2 (6 / 5024), Gm2a (7 / 2321), Tprgl (8 / 5328), Trim32 (9 / 13322), Pde6c (10 / 16252), Cldn10 (11 / 13380), Bcas1 (12 / 7248), Zc3h12d (13 / 623), Pex7 (14 / 13331), Setd6 (15 / 4691), Nin (16 / 1057), Clpsl2 (17 / 2904), Fam184b (18 / 5290), Gna13 (19 / 740), Gm7714 (20 / 3990), Scn2b (21 / 924), Eps8l3 (22 / 2034), Zcchc5 (23 / 17294), Abca1 (24 / 16570), Vil1 (25 / 944)
 
 ### In the published top 50 but not the BARCS top 50
 
-Gene (published rank / BARCS rank): Adnp (1 / 404), Adat2 (2 / 3538), Vmn2r117 (3 / 2065), Alg11 (4 / 2673), Prss53 (5 / 153), Prpf19 (6 / 474), Efcab3 (7 / 111), Sec22a (8 / 913), Nanog (9 / 178), Ddx6 (10 / 1558), Fabp1 (11 / 2135), Trem2 (12 / 10689), Mob2 (13 / 449), Mier1 (14 / 1186), Got2 (15 / 3171), Mtfr1 (16 / 3721), Ypel5 (17 / 2329), Tbc1d2 (18 / 1503), Ifitm6 (19 / 3279), Mtap7d3 (20 / 12343), Suv39h2 (21 / 469), Cd302 (22 / 821), Ceacam1 (23 / 9259), Tpi1 (24 / 698), Hhat (26 / 12999)
+Gene (published rank / BARCS rank): Fut9 (1 / 573), Psmb7 (2 / 3227), Gmds (3 / 788), Dhx35 (4 / 3433), Hgd (5 / 6286), Sfrp5 (6 / 1455), Myef2 (7 / 10594), Dynap (8 / 5190), Ube2m (9 / 1398), Ccl28 (10 / 14795), Tsta3 (11 / 152), Vmp1 (12 / 10707), Apod (13 / 2390), Polrmt (14 / 2460), Slc35c1 (15 / 69), Cenpa (16 / 9391), Pou5f1 (17 / 1838), Pqbp1 (18 / 519), Gdpd4 (20 / 5131), Cer1 (21 / 130), Utp11l (22 / 7157), Sfi1 (23 / 2590), Ddx5 (24 / 6138), Ptprn (25 / 3390), Slc35a2 (26 / 1262)
 
 ## BARCS calls
 
-Genes at FDR 0.05: 17; at FDR 0.10: 22. Top 15: Trp53, Gm7714, Pex7, Gm684, Oxnad1, Mt3, Lrrc6, Phc1, Acsl4, Slit1, AI848285, Clpb, Crebbp, Trim32, Casz1
+Genes at FDR 0.05: 56; at FDR 0.10: 73. Top 15: Nf2, Agfg1, Mcee, Glis1, Ccdc7, Pld2, Gm2a, Tprgl, Trim32, Pde6c, Cldn10, Bcas1, Zc3h12d, Pex7, Setd6

@@ -1,4 +1,4 @@
-# GSE273070 reanalysis with BARCS 0.2.1
+# GSE273070 reanalysis with BARCS 0.2.3
 
 **Paper.** "Reporter CRISPR screens decipher cis-regulatory and trans-regulatory principles at the Xist locus", *Nature Structural & Molecular Biology* (2025), PMID 41053217, doi:10.1038/s41594-025-01686-3 (PMC12700789).
 
@@ -10,10 +10,10 @@
 
 | | BARCS | Authors' MAGeCK MLE |
 |---|---|---|
-| Promoters at FDR 0.10 | 101 (53 depleted, 48 enriched) | 13 |
+| Promoters at FDR 0.10 | 104 (54 depleted, 50 enriched) | 13 |
 | Xist_p1 (positive control) | #1, depleted | top |
 | Tsix_p2 (Xist antisense repressor) | #2, enriched | #29 |
-| Zic3_p1 | #4, depleted, FDR 3 × 10⁻²³ | top 10 |
+| Zic3_p1 | #4, depleted, FDR 4 × 10⁻²³ | top 10 |
 | Rlim_p1 | #5, depleted | top 10 |
 | Rank correlation | 0.95 | |
 | Top-10 / top-25 overlap | 8 / 20 shared | |

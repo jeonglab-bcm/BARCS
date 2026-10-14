@@ -1,4 +1,4 @@
-# GSE280666 reanalysis with BARCS 0.2.2
+# GSE280666 reanalysis with BARCS 0.2.3
 
 **Paper.** Zirman et al., "Pooled CRISPR screens identifies key regulators of bovine stem cell expansion for cultured meat", *Communications Biology* 8 (2025), PMID 40885801, doi:10.1038/s42003-025-08760-y (PMC12398484, open access). This series is the **long-term (100-day) screen**; the short-term (30-day) screen is GSE280676 (already reanalyzed, agrees). The paper's long-term analysis is a clustering of guide trajectories (Fig. 3) plus the Fig. 4D narrative; no gene-level MaGeCK table for the long-term screen is deposited (the supplement's "MaGeCK Results" sheet covers only the short-term days 3-30). The paper's long-term conclusion is that **TP53 is "the dominant and most robust candidate for enhancing proliferation following knockout,"** and that the co-enrichment of OSR2 (replicate B) and the non-cutting control nc_guide2480 (replicate A) is a **passenger artifact of co-inheritance at high MOI**, not a real effect.
 
@@ -27,7 +27,7 @@ The primary contrast is **day 15 vs day 1** with median-ratio totals (library to
 
 | Analysis | Enriched at FDR 0.10 | TP53 | PTEN | OSR2 | nc_guide2480 |
 |---|---|---|---|---|---|
-| **day 15 vs day 1 (median-ratio)** | 11 | **#1, FDR 5.6e-6**, 5/5 guides up | #37, FDR 0.13 | #151, FDR 0.38 | not called |
+| **day 15 vs day 1 (median-ratio)** | 9 | **#1, FDR 6.3e-6**, 5/5 guides up | #37, FDR 0.13 | #151, FDR 0.38 | not called |
 | day 10 vs day 1 (library) | 2 | **#1, FDR 0.001** | not enriched | #56 | not called |
 | day 30 vs day 1 (median-ratio) | 0 (clonal) | #1 of enriched but FDR 0.12 | FDR 0.39 | FDR 0.66 | not called |
 

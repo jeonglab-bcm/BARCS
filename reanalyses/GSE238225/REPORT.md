@@ -1,4 +1,4 @@
-# GSE238225 reanalysis with BARCS 0.2.2
+# GSE238225 reanalysis with BARCS 0.2.3
 
 **Paper.** "CRISPR GENome and epigenome engineering (CRISPRgenee) improves loss-of-function genetic-screening approaches", *Cell Reports Methods* 2025, PMID 40499551 (PMC12272254).
 
@@ -11,8 +11,8 @@
 **Design.** `~ condition`, day14 vs pool, 6 libraries, 4 residual df. The 10 "Control" guides are the library's neutral controls. (The deposited pool-column order differs from Table S7; it does not matter for this unpaired design.)
 
 ## Results
-- 731 genes at FDR 0.10 (424 up, 307 down). Guide correlation 0.08.
-- The paper's internal positive controls all deplete strongly: **CSF2RA** (#20 depleted, FDR 1e-12), **ADAR** (FDR 3e-10), **MYC** (FDR 4e-10), **KDM1A** (FDR 8e-9), **RPA3** (FDR 5e-7), **SETD8** (FDR 3e-5). The top depleted genes are canonical essentials (DDX46, CHAF1B, NOP2, MCM2, NDC80...).
+- 728 genes at FDR 0.10 (422 up, 306 down). Guide correlation 0.09.
+- The paper's internal positive controls all deplete strongly: **CSF2RA** (#20 depleted, FDR 2e-12), **ADAR** (FDR 6e-10), **MYC** (FDR 6e-10), **KDM1A** (FDR 1e-8), **RPA3** (FDR 5e-7), **SETD8** (FDR 4e-5). The top depleted genes are canonical essentials (DDX46, CHAF1B, NOP2, MCM2, NDC80...).
 - BUB1, validated separately in the paper, is not in this chromatin-focused library.
 
 ## BARCS vs paper

@@ -4,11 +4,13 @@
   "term": "binhigh20",
   "libraries": 4,
   "residual_df": 1,
+  "replicates": "yes",
+  "no_replicates": null,
   "guides": 77441,
   "genes": 19114,
   "moderated": true,
   "prior_df": 19.5644,
-  "guide_correlation": 0.0172,
+  "guide_correlation": 0.017,
   "control_scale": null,
   "control_guides": 1000,
   "control_p05_raw": 0.0413,
@@ -22,12 +24,22 @@
     "high20_rep2": 0.031,
     "low20_rep2": 0.031
   },
-  "genes_fdr_0_10_up": 131,
+  "genes_fdr_0_10_up": 132,
   "genes_fdr_0_10_down": 358,
-  "genes_fdr_0_05": 392,
-  "genes_fdr_0_10": 489,
+  "genes_fdr_0_05": 393,
+  "genes_fdr_0_10": 490,
   "genes_empirical_fdr_0_10": 681,
   "empirical_centre": "controls",
   "control_shift": 0.062,
-  "barcs_version": "0.2.2"
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
 }

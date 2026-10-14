@@ -1,4 +1,4 @@
-# GSE241933 reanalysis with BARCS 0.2.2
+# GSE241933 reanalysis with BARCS 0.2.3
 
 **Paper.** "Transcriptional and epigenetic regulators of human CD8+ T cell function identified through orthogonal CRISPR screens", *Nature Genetics* (2023), PMID 37945901, doi:10.1038/s41588-023-01554-0 (PMC10703699).
 

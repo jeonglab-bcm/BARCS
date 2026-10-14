@@ -10,7 +10,7 @@
   "contrast": "Mitophagy-high vs -low sort after OA or DFP induction (3 vs 3), single-construct abundance",
   "paper_method": "MAGeCK plus pairwise genetic-interaction (epistasis) scoring",
   "paper_calls": "OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival",
-  "barcs_calls": "Single-gene abundance: PHB2 (FDR 5e-6) and FKBP8 required for mitophagy; OPTN not significant",
+  "barcs_calls": "Single-gene abundance: PHB2 (FDR 4e-5) and FKBP8 required for mitophagy; OPTN not significant",
   "named_hits": "PHB2 strong (depleted in high); OPTN not recovered by single-gene abundance",
   "verdict": "BARCS's single-construct analysis identifies PHB2 and FKBP8 as the receptors whose knockout most reduces mitophagy, but it cannot address the paper's central OPTN claim, which rests on genetic-interaction scores between guide pairs that BARCS's single-gene model does not represent.",
   "agreement": "differ",

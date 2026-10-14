@@ -6,7 +6,7 @@ BARCS genes: `results/met_vs_primary/genes.csv` (1519 genes, direction: enriched
 
 | Gene | BARCS rank | of | Effect | p | FDR |
 |---|---|---|---|---|---|
-| Ctnna1 | 316 | 1519 | 1.605 | 0.57 | 0.91 |
+| Ctnna1 | 317 | 1519 | 1.605 | 0.57 | 0.91 |
 | Bcl2l13 | 812 | 1519 | 1.736 | 0.89 | 0.95 |
 
 ## BARCS calls
