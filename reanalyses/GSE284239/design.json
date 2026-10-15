@@ -1,0 +1,30 @@
+{
+  "gse": "GSE284239",
+  "pmid": "39886906",
+  "fetch": {"sample_files": true},
+  "counts_file": "counts_ddr.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "UWB1.289_DMSO", "gsm": "GSM8680598", "line": "UWB1289", "condition": "DMSO", "replicate": "1"},
+    {"column": "UWB1.289_TNG348", "gsm": "GSM8680599", "line": "UWB1289", "condition": "TNG348", "replicate": "1"},
+    {"column": "UWB1.289_olaparib", "gsm": "GSM8680600", "line": "UWB1289", "condition": "olaparib", "replicate": "1"},
+    {"column": "MDAMB436_DMSO_1", "gsm": "GSM8680601", "line": "MDAMB436", "condition": "DMSO", "replicate": "1"},
+    {"column": "MDAMB436_TNG348", "gsm": "GSM8680602", "line": "MDAMB436", "condition": "TNG348", "replicate": "1"},
+    {"column": "MDAMB436_DMSO_2", "gsm": "GSM8680603", "line": "MDAMB436", "condition": "DMSO", "replicate": "2"},
+    {"column": "MDAMB436_olaparib", "gsm": "GSM8680604", "line": "MDAMB436", "condition": "olaparib", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["DMSO", "TNG348", "olaparib"]},
+  "analyses": [
+    {"name": "uwb_tng348_vs_dmso", "columns": ["UWB1.289_DMSO", "UWB1.289_TNG348"],
+     "formula": "~ condition", "term": "conditionTNG348"},
+    {"name": "uwb_olaparib_vs_dmso", "columns": ["UWB1.289_DMSO", "UWB1.289_olaparib"],
+     "formula": "~ condition", "term": "conditionolaparib"},
+    {"name": "mda_tng348_vs_dmso", "columns": ["MDAMB436_DMSO_1", "MDAMB436_DMSO_2", "MDAMB436_TNG348"],
+     "formula": "~ condition", "term": "conditionTNG348"}
+  ],
+  "rationale": "DDR-focused library (1145 genes, 992 non-targeting guides). Counts built by prepare.R: per-sample GEO files list reads per guide and lineage barcode, summed per guide and merged. The paper compares TNG348- (or olaparib-) treated with DMSO-treated cells after 10 population doublings; resistance knockouts (RAD18, USP1 pathway) enrich and sensitizers (PARP1) deplete under TNG348, while PARP1 loss enriches under olaparib. UWB1.289 has one library per arm (no-replicate path, screening-level calls). MDA-MB-436 has two DMSO cultures and one TNG348 culture (1 residual df).",
+  "counts_md5": "031efa92a8cf1e682cd2a2aba5765efc"
+}

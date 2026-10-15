@@ -1,0 +1,19 @@
+{
+  "gse": "GSE219136",
+  "pmid": "38879607",
+  "doi": "10.1038/s41467-024-49298-7",
+  "title": "G6PD and ACSL3 are synthetic lethal partners of NF2 in Schwann cells",
+  "journal": "Nature communications",
+  "published": "2024",
+  "model": "Human Schwann cells (ipn02.3 2λ) NF2-WT and NF2-KO, TKOv3 KO library",
+  "contrast": "NF2-KO vs NF2-WT dropout, passage 7 vs passage 0 (genotype x time; 1+2 per genotype)",
+  "paper_method": "Difference in log2FC (KO minus WT, passage 7 / passage 0), ranked",
+  "paper_calls": "ACSL3 and G6PD as synthetic-lethal partners of NF2",
+  "barcs_calls": "314 genes at FDR 0.10 (122 depleted); 361 against the control null",
+  "named_hits": "2/2 at FDR 0.10 (ACSL3 FDR 1e-4, G6PD 0.054)",
+  "verdict": "BARCS confirms ACSL3 and G6PD as NF2-synthetic-lethal genes; its strongest interaction calls are WT-specific overgrowth genes (CUL3, NF2, TSC1, KEAP1) that the paper deliberately excluded.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-06-15",
+  "published_issue": "2024 Jun 15"
+}

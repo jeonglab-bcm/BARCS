@@ -1,0 +1,23 @@
+{
+  "gse": "GSE284239",
+  "pmid": "39886906",
+  "fetch": {"sample_files": true},
+  "counts_file": "counts_gw.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "COV362_DMSO", "gsm": "GSM8680605", "line": "COV362", "condition": "DMSO", "replicate": "1"},
+    {"column": "COV362_TNG348", "gsm": "GSM8680606", "line": "COV362", "condition": "TNG348", "replicate": "1"},
+    {"column": "HCC1395_DMSO", "gsm": "GSM8680607", "line": "HCC1395", "condition": "DMSO", "replicate": "1"},
+    {"column": "HCC1395_TNG348", "gsm": "GSM8680608", "line": "HCC1395", "condition": "TNG348", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["DMSO", "TNG348"], "line": ["COV362", "HCC1395"]},
+  "analyses": [
+    {"name": "gw_tng348_vs_dmso", "columns": ["COV362_DMSO", "COV362_TNG348", "HCC1395_DMSO", "HCC1395_TNG348"],
+     "formula": "~ line + condition", "term": "conditionTNG348"}
+  ],
+  "rationale": "Genome-wide screens in COV362 and HCC1395 (one DMSO and one TNG348 library each). The cell-line term pairs each TNG348 library with its own DMSO library, so the TNG348 effect shared by both lines is tested with 1 residual df (between-line variation of the drug effect serves as the replicate variation).",
+  "counts_md5": "eec0bc1f376018ae589103c5e4620116"
+}

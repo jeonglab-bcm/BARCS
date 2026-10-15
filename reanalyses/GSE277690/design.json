@@ -1,0 +1,108 @@
+{
+  "gse": "GSE277690",
+  "pmid": "40164474",
+  "counts_file": "suppl/GSE277690_Comparison_all.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "a02",
+      "gsm": "GSM8527690",
+      "condition": "collection",
+      "round": "0",
+      "nk": "none"
+    },
+    {
+      "column": "a03",
+      "gsm": "GSM8527691",
+      "condition": "KHYG1",
+      "round": "1",
+      "nk": "WT"
+    },
+    {
+      "column": "a04",
+      "gsm": "GSM8527692",
+      "condition": "KHYG1_antiNKp44",
+      "round": "1",
+      "nk": "antiNKp44"
+    },
+    {
+      "column": "a05",
+      "gsm": "GSM8527693",
+      "condition": "KHYG1_NKp44KO",
+      "round": "1",
+      "nk": "NKp44KO"
+    },
+    {
+      "column": "a07",
+      "gsm": "GSM8527694",
+      "condition": "KHYG1_r2",
+      "round": "2",
+      "nk": "WT"
+    },
+    {
+      "column": "a08",
+      "gsm": "GSM8527695",
+      "condition": "KHYG1_antiNKp44_r2",
+      "round": "2",
+      "nk": "antiNKp44"
+    },
+    {
+      "column": "a09",
+      "gsm": "GSM8527696",
+      "condition": "KHYG1_NKp44KO_r2",
+      "round": "2",
+      "nk": "NKp44KO"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "collection",
+      "KHYG1",
+      "KHYG1_antiNKp44",
+      "KHYG1_NKp44KO",
+      "KHYG1_r2",
+      "KHYG1_antiNKp44_r2",
+      "KHYG1_NKp44KO_r2"
+    ],
+    "nk": [
+      "NKp44KO",
+      "WT",
+      "antiNKp44",
+      "none"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "khyg1_r1_vs_collection",
+      "columns": [
+        "a02",
+        "a03"
+      ],
+      "formula": "~ condition",
+      "term": "conditionKHYG1"
+    },
+    {
+      "name": "khyg1_r2_vs_collection",
+      "columns": [
+        "a02",
+        "a07"
+      ],
+      "formula": "~ condition",
+      "term": "conditionKHYG1_r2"
+    },
+    {
+      "name": "khyg1_vs_nkp44ko_r1",
+      "columns": [
+        "a05",
+        "a03"
+      ],
+      "formula": "~ nk",
+      "term": "nkWT"
+    }
+  ],
+  "rationale": "Column names a02-a09 are given in the GSM descriptions. HCT-116 Brunello KO library (a02, collection of mutants before selection) co-cultured with KHYG-1 NK cells; survivors sequenced after round 1 (a03) and after a second challenge of the round-1 survivors (a07). The paper reads guides enriched in survivors (resistance to NK killing), so the main contrast is KHYG-1 round 1 vs the pre-selection collection; round 2 vs collection is the cumulative selection the paper also shows; KHYG-1 vs NKp44-KO KHYG-1 (round 1) isolates NKp44-dependent resistance (ICAM1). One library per condition: no residual df, so run_barcs.R uses the no-replicate path and calls are screening-level.",
+  "counts_md5": "ab0107a8736a1f3f59dfb06fc97296b2"
+}

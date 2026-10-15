@@ -113,7 +113,10 @@ for (analysis in analyses) {
   }
   counts <- counts_all[, keep, drop = FALSE]
   totals <- library_totals[keep]
-  totals_method <- analysis$totals %||% design$totals %||% "library"
+  # analyses is read as a data frame, so an analysis without its own totals
+  # holds NA rather than NULL; fall back to the design-level setting then.
+  totals_method <- analysis$totals
+  if (is.null(totals_method) || is.na(totals_method)) totals_method <- design$totals %||% "library"
   if (identical(totals_method, "control")) {
     if (!any(control)) stop("Control totals requested but no control guides matched.", call. = FALSE)
     totals <- barcs_control_totals(counts, control)

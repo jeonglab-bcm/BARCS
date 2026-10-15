@@ -1,0 +1,45 @@
+{
+  "analysis": "utp_gfplow_vs_unsorted",
+  "formula": "~bin",
+  "term": "binlow",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19096,
+  "moderated": true,
+  "prior_df": 4.1935,
+  "guide_correlation": 0.0044,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0524,
+  "control_p05": 0.0524,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 2590,
+  "top1pct_read_share": {
+    "utp_dim_2_5_1": 0.049,
+    "utp_dim_2_5_2": 0.047,
+    "utp_un_1": 0.034,
+    "utp_un_2": 0.034
+  },
+  "genes_fdr_0_10_up": 14,
+  "genes_fdr_0_10_down": 10,
+  "genes_fdr_0_05": 18,
+  "genes_fdr_0_10": 24,
+  "genes_empirical_fdr_0_10": 34,
+  "empirical_centre": "controls",
+  "control_shift": 0.069,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

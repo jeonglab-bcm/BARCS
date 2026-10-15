@@ -1,0 +1,20 @@
+{
+  "gse": "GSE262028",
+  "pmid": "38935708",
+  "doi": "10.1126/science.adl0370",
+  "pmcid": "PMC7616247",
+  "title": "Mef2d potentiates type-2 immune responses and allergic lung inflammation",
+  "journal": "Science",
+  "published": "2024",
+  "model": "In vitro differentiated mouse ILCs (Cas9 reporter mice), 1,131-gene transcription-factor knockout library, Il13-tdTomato and GATA3/T-bet reporter sorts",
+  "contrast": "Il13-tdTomato+ vs negative sort, paired by screen (2 vs 2); second: GATA3+ vs T-bet+ (2 vs 2)",
+  "paper_method": "caRpools Wilcoxon test per screen vs non-targeting guides, screens combined by Fisher's method",
+  "paper_calls": "Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1",
+  "barcs_calls": "IL-13: 0 genes at FDR 0.10 (18 against the control null); GATA3: 36 genes (44 against the control null)",
+  "named_hits": "IL-13: 8/10 in the BARCS top 10 but 0/10 at model FDR 0.10 (9/10 against the control null; Mef2d #2); GATA3: 7/13 at FDR 0.10, Mef2d #52 not called",
+  "verdict": "BARCS ranks the paper's IL-13 regulators at the top with the right signs, Mef2d at #2 of 1,131. With two paired screens none passes the model's FDR 0.10, though the control null supports nine. In the GATA3 screen BARCS calls Maf, Runx1, Myb and four other named candidates, but not Mef2d.",
+  "agreement": "partial",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-06-28",
+  "published_issue": "2024 Jun 28"
+}

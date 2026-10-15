@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/LowCov_HighMOI_Q4_vs_Q1/genes.csv",
+  "direction": "both",
+  "named_hits": ["IL2RA", "JAK3", "STAT5A", "STAT5B", "MED12", "CBFB", "TNFAIP3", "KLF2", "ZNF217", "FOXK1", "HIVEP2", "IRF4", "ATXN7L3", "MYB"],
+  "top_n": [25, 50, 100]
+}

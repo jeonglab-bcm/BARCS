@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/IL13_TomPos_vs_Neg/genes.csv",
+  "direction": "both",
+  "named_hits": ["Mef2d", "Zfp871", "Nfkb2", "Nfe2", "Gfi1b", "Runx3", "Tcf12", "Nfil3", "Fli1", "Zbtb7a"],
+  "top_n": [10, 25, 50]
+}

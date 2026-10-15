@@ -1,0 +1,66 @@
+{
+  "gse": "GSE252651",
+  "pmid": "39009674",
+  "counts_file": "merged_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "L8",
+      "gsm": "GSM8004837",
+      "screen": "suppressor",
+      "population": "unsorted"
+    },
+    {
+      "column": "S8",
+      "gsm": "GSM8004838",
+      "screen": "suppressor",
+      "population": "sorted"
+    },
+    {
+      "column": "L7",
+      "gsm": "GSM8004839",
+      "screen": "activator",
+      "population": "unsorted"
+    },
+    {
+      "column": "S7",
+      "gsm": "GSM8004840",
+      "screen": "activator",
+      "population": "sorted"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "unsorted",
+      "sorted"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "activator_GFPlow_vs_unsorted",
+      "columns": [
+        "L7",
+        "S7"
+      ],
+      "formula": "~ population",
+      "term": "populationsorted"
+    },
+    {
+      "name": "suppressor_GFPhigh_vs_unsorted",
+      "columns": [
+        "L8",
+        "S8"
+      ],
+      "formula": "~ population",
+      "term": "populationsorted"
+    }
+  ],
+  "rationale": "DUB-focused knockout library (~93 DUBs, 10 guides each, 10 non-targeting) in HeLa cells carrying a HIF-ODD-GFP (HRE) reporter (Pauzaite et al. 2024, EMBO J). Activator screen: cells in 1% oxygen sorted for GFP-low at day 8, compared with the unsorted library at the same time (S7 vs L7). Suppressor screen: cells in 21% oxygen sorted for GFP-high (S8 vs L8). The four per-sample GEO files are merged by guide in prepare.R. The column letters follow the authors' own MAGeCK configuration on Zenodo (exp1: test S8, control L8; exp2: test S7, control L7), so S is sorted and L unsorted; GEO attaches the files to the opposite GSMs (GSM8004837 'FACS' holds L8), which is a labelling swap. One library per population, so run_barcs.R uses the no-replicate path and the calls are screening-level. Only 10 non-targeting guides: calibration and the control null are weak.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "c57d9e9f9e6e35cbd0e4f1b8cf026f03"
+}

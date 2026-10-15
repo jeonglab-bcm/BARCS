@@ -1,0 +1,19 @@
+{
+  "gse": "GSE277690",
+  "pmid": "40164474",
+  "doi": "10.1136/jitc-2024-010699",
+  "title": "Genome-wide CRISPR/Cas9 screen reveals factors that influence the susceptibility of tumor cells to NK cell-mediated killing",
+  "journal": "Journal for immunotherapy of cancer",
+  "published": "2025",
+  "model": "HCT-116-Cas9, Brunello KO library, KHYG-1 NK-cell co-culture",
+  "contrast": "Survivors of KHYG-1 co-culture, round 1 vs mutant collection (1 vs 1)",
+  "paper_method": "MAGeCK (FDR < 0.5, set subtraction across conditions)",
+  "paper_calls": "119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted",
+  "barcs_calls": "265 genes at FDR 0.10 (9 enriched), screening-level; round 2: 178 (49 enriched)",
+  "named_hits": "Apoptosis/IFN-gamma: 4/10 at FDR 0.10 in round 1 (CASP8, FADD, FAF1, IFNGR1), 10/10 in round 2; ICAM1 not recovered",
+  "verdict": "BARCS recovers the apoptosis (CASP8, FADD, BID, FAS, FAF1) and IFN-gamma (IFNGR1/2, JAK1/2, STAT1) resistance genes, strongly after two rounds, but finds no enrichment of the headline NKp44-synapse gene ICAM1.",
+  "agreement": "partial",
+  "analyzed": "2026-10-15",
+  "published_date": "2025-03-31",
+  "published_issue": "2025 Mar 31"
+}

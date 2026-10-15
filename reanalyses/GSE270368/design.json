@@ -1,0 +1,84 @@
+{
+  "gse": "GSE270368",
+  "pmid": "39478150",
+  "counts_file": "suppl/GSE270368_MB157.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0.1",
+      "gsm": "GSM8340332",
+      "treatment": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "T0.2",
+      "gsm": "GSM8340333",
+      "treatment": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "DMSO.1",
+      "gsm": "GSM8340326",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO.2",
+      "gsm": "GSM8340327",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "DMSO.3",
+      "gsm": "GSM8340328",
+      "treatment": "DMSO",
+      "replicate": "3"
+    },
+    {
+      "column": "LY.1",
+      "gsm": "GSM8340329",
+      "treatment": "GSI",
+      "replicate": "1"
+    },
+    {
+      "column": "LY.2",
+      "gsm": "GSM8340330",
+      "treatment": "GSI",
+      "replicate": "2"
+    },
+    {
+      "column": "LY.3",
+      "gsm": "GSM8340331",
+      "treatment": "GSI",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "T0",
+      "GSI"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "GSI_vs_DMSO",
+      "columns": [
+        "DMSO.1",
+        "DMSO.2",
+        "DMSO.3",
+        "LY.1",
+        "LY.2",
+        "LY.3"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentGSI"
+    }
+  ],
+  "rationale": "Genome-wide GeCKO v2 (A+B, 119,461 guides) knockout screen in GSI-resistant MB157R TNBC cells (EMBO Mol Med 2024, SOX2). Columns match the GSM titles (T0 x2, DMSO x3, LY3039478 GSI x3). The paper ran MAGeCK test (RRA) on GSI vs DMSO; the same comparison here, 3 vs 3, ~ treatment, 4 residual df, no replicate pairing stated. Genes whose loss re-sensitizes cells to GSI (SOX2) are depleted under GSI. One guide (HGLibB_53702, VPS33B) holds 7.1 M reads (39% of the library) in LY.1 and is already over-represented in every library, including T0, so library totals would call almost every gene depleted in LY.1; median-ratio totals are used instead.",
+  "totals": "median_ratio",
+  "counts_md5": "5e4998cba39b0fcc23578d25a47ab953"
+}

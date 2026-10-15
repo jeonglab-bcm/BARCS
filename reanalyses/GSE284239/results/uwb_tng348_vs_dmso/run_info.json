@@ -1,0 +1,49 @@
+{
+  "analysis": "uwb_tng348_vs_dmso",
+  "formula": "~condition",
+  "term": "conditionTNG348",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 0,
+    "rho_source": "control guides",
+    "rho_guides": 594,
+    "inflation_at_rho0": 4466.047,
+    "haldane_guides": 328
+  },
+  "guides": 7825,
+  "genes": 1180,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 598,
+  "control_p05_raw": 0.0387,
+  "control_p05": 0.0387,
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "UWB1.289_DMSO": 0.107,
+    "UWB1.289_TNG348": 0.105
+  },
+  "genes_fdr_0_10_up": 3,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 2,
+  "genes_fdr_0_10": 3,
+  "genes_empirical_fdr_0_10": 6,
+  "empirical_centre": "controls",
+  "control_shift": -0.047,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

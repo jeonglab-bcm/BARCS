@@ -1,0 +1,137 @@
+{
+  "gse": "GSE266057",
+  "pmid": "39014073",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^non-targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_low_1",
+      "gsm": "GSM8239950",
+      "reporter": "WT",
+      "bin": "low",
+      "replicate": "1",
+      "pool": "WT_1",
+      "ga77_high": "no"
+    },
+    {
+      "column": "WT_high_1",
+      "gsm": "GSM8239951",
+      "reporter": "WT",
+      "bin": "high",
+      "replicate": "1",
+      "pool": "WT_1",
+      "ga77_high": "no"
+    },
+    {
+      "column": "WT_low_2",
+      "gsm": "GSM8239952",
+      "reporter": "WT",
+      "bin": "low",
+      "replicate": "2",
+      "pool": "WT_2",
+      "ga77_high": "no"
+    },
+    {
+      "column": "WT_high_2",
+      "gsm": "GSM8239953",
+      "reporter": "WT",
+      "bin": "high",
+      "replicate": "2",
+      "pool": "WT_2",
+      "ga77_high": "no"
+    },
+    {
+      "column": "GA77_low_1",
+      "gsm": "GSM8239946",
+      "reporter": "GA77",
+      "bin": "low",
+      "replicate": "1",
+      "pool": "GA77_1",
+      "ga77_high": "no"
+    },
+    {
+      "column": "GA77_high_1",
+      "gsm": "GSM8239947",
+      "reporter": "GA77",
+      "bin": "high",
+      "replicate": "1",
+      "pool": "GA77_1",
+      "ga77_high": "yes"
+    },
+    {
+      "column": "GA77_low_2",
+      "gsm": "GSM8239948",
+      "reporter": "GA77",
+      "bin": "low",
+      "replicate": "2",
+      "pool": "GA77_2",
+      "ga77_high": "no"
+    },
+    {
+      "column": "GA77_high_2",
+      "gsm": "GSM8239949",
+      "reporter": "GA77",
+      "bin": "high",
+      "replicate": "2",
+      "pool": "GA77_2",
+      "ga77_high": "yes"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "low",
+      "high"
+    ],
+    "reporter": [
+      "WT",
+      "GA77"
+    ],
+    "pool": [
+      "WT_1",
+      "WT_2",
+      "GA77_1",
+      "GA77_2"
+    ],
+    "ga77_high": [
+      "no",
+      "yes"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "high_vs_low",
+      "columns": [
+        "WT_low_1",
+        "WT_high_1",
+        "WT_low_2",
+        "WT_high_2",
+        "GA77_low_1",
+        "GA77_high_1",
+        "GA77_low_2",
+        "GA77_high_2"
+      ],
+      "formula": "~ pool + bin",
+      "term": "binhigh"
+    },
+    {
+      "name": "GA77_vs_WT_bin_interaction",
+      "columns": [
+        "WT_low_1",
+        "WT_high_1",
+        "WT_low_2",
+        "WT_high_2",
+        "GA77_low_1",
+        "GA77_high_1",
+        "GA77_low_2",
+        "GA77_high_2"
+      ],
+      "formula": "~ pool + bin + ga77_high",
+      "term": "ga77_highyes"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRi (hCRISPRi-v2, 5 guides per TSS, 1,881 non-targeting) FACS screens in Jurkat cells carrying a GFP reporter with the native RORC 3' UTR RNA switch (WT) or the 77-GA mutant, sorted into top and bottom 25% of the GFP:mCherry ratio, two replicates each (Nat Methods 2024, SwitchSeeker). The GEO table has an unnamed guide column; prepare.R names it, derives the gene from the guide ID and shortens the self-describing column names. The paper's Fig. 6a compares high vs low bins across both reporter lines, so the primary analysis uses all eight libraries with ~ pool + bin, where pool (reporter x replicate) pairs the two bins sorted from one culture (3 residual df). Knockdown of NMD factors relieves the switch's repression and is enriched in the GFP-high bin. The second analysis is the bin x reporter interaction, coded as an indicator for the 77-GA high bin (ga77_high) so the design stays full rank (the paper's 'ratio of ratios', Fig. 6b), positive when knockdown raises the 77-GA reporter more than WT.",
+  "counts_md5": "debeb491013a3524b006589f8790c138"
+}

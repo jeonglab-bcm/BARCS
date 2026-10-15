@@ -1,0 +1,20 @@
+{
+  "gse": "GSE261338",
+  "pmid": "39198401",
+  "doi": "10.1038/s41467-024-51646-6",
+  "pmcid": "PMC11358519",
+  "title": "TOPORS E3 ligase mediates resistance to hypomethylating agent cytotoxicity in acute myeloid leukemia cells",
+  "journal": "Nature Communications",
+  "published": "2024",
+  "model": "MDS-L cells (Cas9), Brunello genome-wide knockout library (65,535 of 77,441 guides in the deposited file)",
+  "contrast": "Azacitidine vs DMSO, day 19 (2 vs 2)",
+  "paper_method": "MAGeCK MLE with MAGeCKFlute cell-cycle normalization (nine-square plot)",
+  "paper_calls": "50 AZA-specific depleted and 11 enriched genes (nine-square groups); UBE2K, UBXN7 and TOPORS top-ranked and validated",
+  "barcs_calls": "516 genes at FDR 0.10 (77 depleted, 439 enriched) after control calibration; 519 against the centred control null",
+  "named_hits": "3/3 at FDR 0.10: UBE2K #2, TOPORS #4, UBXN7 #16 of 19,010 (depleted)",
+  "verdict": "BARCS puts the three validated sensitizers, UBE2K, TOPORS and UBXN7, among its 16 most depleted genes and calls the AZA-activating kinase UCK2 as resistance. Without the paper's cell-cycle normalization, essential genes appear enriched under AZA instead of depleted, so the two top lists share few other genes.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-08-28",
+  "published_issue": "2024 Aug 28"
+}

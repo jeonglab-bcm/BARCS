@@ -1,0 +1,69 @@
+{
+  "gse": "GSE261338",
+  "pmid": "39198401",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0-1",
+      "gsm": "GSM8140763",
+      "condition": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "T0-2",
+      "gsm": "GSM8140764",
+      "condition": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "T19-DMSO-1",
+      "gsm": "GSM8140765",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "T19-DMSO-2",
+      "gsm": "GSM8140766",
+      "condition": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "T19-AZA-1",
+      "gsm": "GSM8140767",
+      "condition": "AZA",
+      "replicate": "1"
+    },
+    {
+      "column": "T19-AZA-2",
+      "gsm": "GSM8140768",
+      "condition": "AZA",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "T0",
+      "AZA"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "AZA_vs_DMSO",
+      "columns": [
+        "T19-DMSO-1",
+        "T19-DMSO-2",
+        "T19-AZA-1",
+        "T19-AZA-2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionAZA"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in MDS-L cells (Truong et al. 2024 Nat Commun, TOPORS). Columns are self-named and match the GSM titles (T0, T19 DMSO, T19 AZA, replicates 1 and 2). The GEO count file is a gzipped binary .xls that stops at the 65,535-row Excel limit, so 65,535 of 77,441 guides (19,040 genes; the paper's Supplementary Data 1 is truncated the same way) are available; prepare.R converts the 'AZA_DROPOUT.count' sheet to a tab-separated file. The paper compared AZA and vehicle arms with MAGeCK MLE and MAGeCKFlute cell-cycle normalization; here AZA and DMSO at T19 are compared directly (2 vs 2, ~ condition, 2 residual df). Replicates are not marked as paired across arms, so no replicate term. Sensitizers such as TOPORS are depleted under AZA. The AZA arm went through fewer divisions (12 vs 18), so without the paper's cell-cycle normalization essential genes appear enriched in AZA; depletion is the paper's question and is read first.",
+  "counts_md5": "105a86e36dff71b571965dab5fa95e72"
+}

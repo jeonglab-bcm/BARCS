@@ -1,0 +1,47 @@
+{
+  "analysis": "nf2ko_vs_wt_dropout_interaction",
+  "formula": "~genotype * time",
+  "term": "genotypeKO:timeT7",
+  "libraries": 6,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 91320,
+  "genes": 17230,
+  "moderated": true,
+  "prior_df": 35.2059,
+  "guide_correlation": 0,
+  "control_scale": 1.4988,
+  "control_guides": 142,
+  "control_p05_raw": 0.1831,
+  "control_p05": 0.0493,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 681,
+  "top1pct_read_share": {
+    "WT_T0": 0.036,
+    "WT_T7_R1": 0.056,
+    "WT_T7_R2": 0.054,
+    "KO_T0": 0.043,
+    "KO_T7_R1": 0.043,
+    "KO_T7_R2": 0.043
+  },
+  "genes_fdr_0_10_up": 192,
+  "genes_fdr_0_10_down": 122,
+  "genes_fdr_0_05": 235,
+  "genes_fdr_0_10": 314,
+  "genes_empirical_fdr_0_10": 361,
+  "empirical_centre": "controls",
+  "control_shift": 0.065,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

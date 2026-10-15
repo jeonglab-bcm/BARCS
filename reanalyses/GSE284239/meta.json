@@ -1,0 +1,19 @@
+{
+  "gse": "GSE284239",
+  "pmid": "39886906",
+  "doi": "10.1158/1535-7163.MCT-24-0515",
+  "title": "Characterization of TNG348: A Selective, Allosteric USP1 Inhibitor That Synergizes with PARP Inhibitors in Tumors with Homologous Recombination Deficiency",
+  "journal": "Molecular Cancer Therapeutics",
+  "published": "2025",
+  "model": "BRCA1-mutant UWB1.289 and MDA-MB-436 (DDR library); COV362 and HCC1395 (genome-wide)",
+  "contrast": "TNG348 vs DMSO, UWB1.289 (1 vs 1); also MDA-MB-436 (1 vs 2), olaparib vs DMSO, and genome-wide paired by line (2 vs 2)",
+  "paper_method": "Per-gene wtheta and p-value (single libraries)",
+  "paper_calls": "RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)",
+  "barcs_calls": "3 genes at FDR 0.10 (UWB1.289, screening-level); 10 (MDA-MB-436); 102 (genome-wide)",
+  "named_hits": "RAD18 in all three TNG348 analyses; UBE2A/UBE2K in MDA-MB-436; PARP1 genome-wide only; RFWD3 not called",
+  "verdict": "BARCS recovers RAD18 and the PCNA-ubiquitination genes as TNG348 resistance hits and PARP1 and the BRCA1-A complex as genome-wide sensitizers, but not USP1 or PCNA, and PARP1 passes only in the pooled genome-wide screen. With one library per arm it calls far fewer genes than the paper's p < 0.05 lists.",
+  "agreement": "partial",
+  "analyzed": "2026-10-15",
+  "published_date": "2025-05-02",
+  "published_issue": "2025 May 2"
+}

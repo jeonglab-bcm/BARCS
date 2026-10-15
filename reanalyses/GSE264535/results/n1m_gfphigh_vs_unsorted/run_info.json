@@ -1,0 +1,45 @@
+{
+  "analysis": "n1m_gfphigh_vs_unsorted",
+  "formula": "~bin",
+  "term": "binhigh",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19100,
+  "moderated": true,
+  "prior_df": 5.0984,
+  "guide_correlation": 0.0027,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0493,
+  "control_p05": 0.0493,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 1108,
+  "top1pct_read_share": {
+    "n1m_bri_2_5_1": 0.042,
+    "n1m_bri_2_5_2": 0.046,
+    "n1m_un_1": 0.035,
+    "n1m_un_2": 0.034
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "genes_empirical_fdr_0_10": 0,
+  "empirical_centre": "controls",
+  "control_shift": 0.07,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

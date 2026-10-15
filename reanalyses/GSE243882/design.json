@@ -1,0 +1,58 @@
+{
+  "gse": "GSE243882",
+  "pmid": "39003349",
+  "counts_file": "suppl/GSE243882_counts_MCF-7.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "MCFT0",
+      "gsm": "GSM7797754",
+      "culture": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "MCFT3_2D",
+      "gsm": "GSM7797755",
+      "culture": "2D",
+      "replicate": "1"
+    },
+    {
+      "column": "MCFT3_3D",
+      "gsm": "GSM7797756",
+      "culture": "3D",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "culture": [
+      "2D",
+      "3D",
+      "T0"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "MCF7_3D_vs_2D",
+      "columns": [
+        "MCFT3_2D",
+        "MCFT3_3D"
+      ],
+      "formula": "~ culture",
+      "term": "culture3D"
+    },
+    {
+      "name": "MCF7_2D_vs_T0",
+      "columns": [
+        "MCFT0",
+        "MCFT3_2D"
+      ],
+      "formula": "~ culture",
+      "term": "cultureT0"
+    }
+  ],
+  "rationale": "Genome-wide GeCKO v2 knockout screens (Cimmino/Pérez-Riba lab, Commun Biol 2024) in MCF-7: after selection, cells were split into 2D culture and 3D tumourspheres for 3-4 weeks; one library each for T0, 2D and 3D, column names match the GSM titles. The paper's selection is the MAGeCK-MLE 3D-2D beta difference (both arms vs T0); BARCS tests 3D vs 2D directly, the same log-ratio contrast. Depletion in 3D marks genes and miRNAs needed for tumoursphere growth (hsa-mir-4787); enrichment marks suppressors (ARHGAP17, FOXO3, PDCD4). One library per arm, so run_barcs.R uses the no-replicate path and the calls are screening-level. A second analysis, 2D vs T0, checks that the screen selected (core-essential dropout).",
+  "counts_md5": "a7355f1b4714854a5c49ccf1e49b952e"
+}

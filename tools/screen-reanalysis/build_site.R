@@ -288,10 +288,16 @@ excluded <- excluded[!excluded$gse %in% names(records), , drop = FALSE]
 if (is.null(excluded$published_date)) excluded$published_date <- ""
 excluded$published_date[is.na(excluded$published_date)] <- ""
 excluded <- excluded[order(excluded$published_date, decreasing = TRUE), , drop = FALSE]
+# A paper whose counts were never deposited has no GEO series; link it to
+# PubMed instead.
+on_geo <- grepl("^GSE[0-9]+$", excluded$gse)
+excluded_link <- ifelse(on_geo,
+  sprintf('<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a>', excluded$gse, excluded$gse),
+  sprintf('<a href="https://pubmed.ncbi.nlm.nih.gov/%s/">PMID %s</a>', excluded$pmid, excluded$pmid))
 excluded_rows <- if (nrow(excluded)) sprintf(
-  '<tr><td class="nowrap">%s</td><td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a></td><td>%s</td><td>%s</td></tr>',
+  '<tr><td class="nowrap">%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
   vapply(excluded$published_date, function(d) esc(format_date(d)), character(1)),
-  excluded$gse, excluded$gse, esc(excluded$title), esc(excluded$reason)) else character()
+  excluded_link, esc(excluded$title), esc(excluded$reason)) else character()
 search_note <- if (file.exists(file.path(src, "search.json"))) {
   search <- fromJSON(file.path(src, "search.json"))
   note <- sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',

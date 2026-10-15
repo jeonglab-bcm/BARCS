@@ -1,0 +1,20 @@
+{
+  "gse": "GSE264535",
+  "pmid": "40179174",
+  "doi": "10.1126/science.ads4539",
+  "title": "Exogenous RNA surveillance by proton-sensing TRIM25",
+  "journal": "Science (New York, N.Y.)",
+  "published": "2025",
+  "model": "HCT116, Brunello KO library, LNP-delivered GFP mRNA (unmodified or N1m-pseudouridine), GFP FACS sort",
+  "contrast": "Unmodified mRNA, GFP top 2.5% vs unsorted input (2 vs 2); also GFP bottom 2.5% and N1m mRNA",
+  "paper_method": "Not stated in accessible text (supplement paywalled)",
+  "paper_calls": "HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA",
+  "barcs_calls": "2 genes at FDR 0.10 in GFP-high (TRIM25, N4BP1); 24 in GFP-low (V-ATPase, SLC35B2, EXTL3)",
+  "named_hits": "TRIM25 #1 and N4BP1 #2 (FDR 0.003, 0.053); V-ATPase and HSPG genes top the GFP-low bins; KHNYN and ZAP not called alone",
+  "verdict": "BARCS reproduces the screen's main findings: TRIM25 and N4BP1 suppress unmodified but not N1m mRNA, and V-ATPase and heparan-sulfate synthesis genes are needed for LNP-mRNA expression.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "count_recovery": "Raw reads = (normalized - 1) / (one scale factor per sample); integrality 100.0%.",
+  "published_date": "2025-04-04",
+  "published_issue": "2025 Apr 4"
+}

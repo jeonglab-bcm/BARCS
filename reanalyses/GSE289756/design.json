@@ -1,0 +1,902 @@
+{
+  "gse": "GSE289756",
+  "pmid": "40050266",
+  "counts_file": "raw_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Control",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "BXPC3_Initial_1",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "initial",
+      "replicate": "1",
+      "stage": "initial",
+      "culture": "BXPC3_1"
+    },
+    {
+      "column": "BXPC3_Initial_2",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "initial",
+      "replicate": "2",
+      "stage": "initial",
+      "culture": "BXPC3_2"
+    },
+    {
+      "column": "BXPC3_Initial_3",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "initial",
+      "replicate": "3",
+      "stage": "initial",
+      "culture": "BXPC3_3"
+    },
+    {
+      "column": "BXPC3_Initial_4",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "initial",
+      "replicate": "4",
+      "stage": "initial",
+      "culture": "BXPC3_4"
+    },
+    {
+      "column": "BXPC3_Final_1",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "culture",
+      "replicate": "1",
+      "stage": "final",
+      "culture": "BXPC3_1"
+    },
+    {
+      "column": "BXPC3_Final_2",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "culture",
+      "replicate": "2",
+      "stage": "final",
+      "culture": "BXPC3_2"
+    },
+    {
+      "column": "BXPC3_Final_3",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "culture",
+      "replicate": "3",
+      "stage": "final",
+      "culture": "BXPC3_3"
+    },
+    {
+      "column": "BXPC3_Final_4",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "culture",
+      "replicate": "4",
+      "stage": "final",
+      "culture": "BXPC3_4"
+    },
+    {
+      "column": "BXPC3_Male_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "M1",
+      "stage": "tumor",
+      "culture": "BXPC3_Male_Mouse_1"
+    },
+    {
+      "column": "BXPC3_Male_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "M2",
+      "stage": "tumor",
+      "culture": "BXPC3_Male_Mouse_2"
+    },
+    {
+      "column": "BXPC3_Male_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "M3",
+      "stage": "tumor",
+      "culture": "BXPC3_Male_Mouse_3"
+    },
+    {
+      "column": "BXPC3_Male_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "M4",
+      "stage": "tumor",
+      "culture": "BXPC3_Male_Mouse_4"
+    },
+    {
+      "column": "BXPC3_Female_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "F1",
+      "stage": "tumor",
+      "culture": "BXPC3_Female_Mouse_1"
+    },
+    {
+      "column": "BXPC3_Female_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "F2",
+      "stage": "tumor",
+      "culture": "BXPC3_Female_Mouse_2"
+    },
+    {
+      "column": "BXPC3_Female_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "F3",
+      "stage": "tumor",
+      "culture": "BXPC3_Female_Mouse_3"
+    },
+    {
+      "column": "BXPC3_Female_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "BXPC3",
+      "site": "tumor",
+      "replicate": "F4",
+      "stage": "tumor",
+      "culture": "BXPC3_Female_Mouse_4"
+    },
+    {
+      "column": "CFPAC1_Initial_1",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "initial",
+      "replicate": "1",
+      "stage": "initial",
+      "culture": "CFPAC1_1"
+    },
+    {
+      "column": "CFPAC1_Initial_2",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "initial",
+      "replicate": "2",
+      "stage": "initial",
+      "culture": "CFPAC1_2"
+    },
+    {
+      "column": "CFPAC1_Initial_3",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "initial",
+      "replicate": "3",
+      "stage": "initial",
+      "culture": "CFPAC1_3"
+    },
+    {
+      "column": "CFPAC1_Initial_4",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "initial",
+      "replicate": "4",
+      "stage": "initial",
+      "culture": "CFPAC1_4"
+    },
+    {
+      "column": "CFPAC1_Final_1",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "culture",
+      "replicate": "1",
+      "stage": "final",
+      "culture": "CFPAC1_1"
+    },
+    {
+      "column": "CFPAC1_Final_2",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "culture",
+      "replicate": "2",
+      "stage": "final",
+      "culture": "CFPAC1_2"
+    },
+    {
+      "column": "CFPAC1_Final_3",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "culture",
+      "replicate": "3",
+      "stage": "final",
+      "culture": "CFPAC1_3"
+    },
+    {
+      "column": "CFPAC1_Final_4",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "culture",
+      "replicate": "4",
+      "stage": "final",
+      "culture": "CFPAC1_4"
+    },
+    {
+      "column": "CFPAC1_Male_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "M1",
+      "stage": "tumor",
+      "culture": "CFPAC1_Male_Mouse_1"
+    },
+    {
+      "column": "CFPAC1_Male_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "M2",
+      "stage": "tumor",
+      "culture": "CFPAC1_Male_Mouse_2"
+    },
+    {
+      "column": "CFPAC1_Male_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "M3",
+      "stage": "tumor",
+      "culture": "CFPAC1_Male_Mouse_3"
+    },
+    {
+      "column": "CFPAC1_Male_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "M4",
+      "stage": "tumor",
+      "culture": "CFPAC1_Male_Mouse_4"
+    },
+    {
+      "column": "CFPAC1_Female_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "F1",
+      "stage": "tumor",
+      "culture": "CFPAC1_Female_Mouse_1"
+    },
+    {
+      "column": "CFPAC1_Female_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "F2",
+      "stage": "tumor",
+      "culture": "CFPAC1_Female_Mouse_2"
+    },
+    {
+      "column": "CFPAC1_Female_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "F3",
+      "stage": "tumor",
+      "culture": "CFPAC1_Female_Mouse_3"
+    },
+    {
+      "column": "CFPAC1_Female_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "CFPAC1",
+      "site": "tumor",
+      "replicate": "F4",
+      "stage": "tumor",
+      "culture": "CFPAC1_Female_Mouse_4"
+    },
+    {
+      "column": "HPAFII_Initial_1",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "initial",
+      "replicate": "1",
+      "stage": "initial",
+      "culture": "HPAFII_1"
+    },
+    {
+      "column": "HPAFII_Initial_2",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "initial",
+      "replicate": "2",
+      "stage": "initial",
+      "culture": "HPAFII_2"
+    },
+    {
+      "column": "HPAFII_Initial_3",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "initial",
+      "replicate": "3",
+      "stage": "initial",
+      "culture": "HPAFII_3"
+    },
+    {
+      "column": "HPAFII_Initial_4",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "initial",
+      "replicate": "4",
+      "stage": "initial",
+      "culture": "HPAFII_4"
+    },
+    {
+      "column": "HPAFII_Final_1",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "culture",
+      "replicate": "1",
+      "stage": "final",
+      "culture": "HPAFII_1"
+    },
+    {
+      "column": "HPAFII_Final_2",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "culture",
+      "replicate": "2",
+      "stage": "final",
+      "culture": "HPAFII_2"
+    },
+    {
+      "column": "HPAFII_Final_3",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "culture",
+      "replicate": "3",
+      "stage": "final",
+      "culture": "HPAFII_3"
+    },
+    {
+      "column": "HPAFII_Final_4",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "culture",
+      "replicate": "4",
+      "stage": "final",
+      "culture": "HPAFII_4"
+    },
+    {
+      "column": "HPAFII_Male_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "M1",
+      "stage": "tumor",
+      "culture": "HPAFII_Male_Mouse_1"
+    },
+    {
+      "column": "HPAFII_Male_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "M2",
+      "stage": "tumor",
+      "culture": "HPAFII_Male_Mouse_2"
+    },
+    {
+      "column": "HPAFII_Male_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "M3",
+      "stage": "tumor",
+      "culture": "HPAFII_Male_Mouse_3"
+    },
+    {
+      "column": "HPAFII_Male_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "M4",
+      "stage": "tumor",
+      "culture": "HPAFII_Male_Mouse_4"
+    },
+    {
+      "column": "HPAFII_Female_Mouse_1",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "F1",
+      "stage": "tumor",
+      "culture": "HPAFII_Female_Mouse_1"
+    },
+    {
+      "column": "HPAFII_Female_Mouse_2",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "F2",
+      "stage": "tumor",
+      "culture": "HPAFII_Female_Mouse_2"
+    },
+    {
+      "column": "HPAFII_Female_Mouse_3",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "F3",
+      "stage": "tumor",
+      "culture": "HPAFII_Female_Mouse_3"
+    },
+    {
+      "column": "HPAFII_Female_Mouse_4",
+      "gsm": "GSM8798089",
+      "line": "HPAFII",
+      "site": "tumor",
+      "replicate": "F4",
+      "stage": "tumor",
+      "culture": "HPAFII_Female_Mouse_4"
+    },
+    {
+      "column": "MIAPACA2_Initial_1",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "initial",
+      "replicate": "1",
+      "stage": "initial",
+      "culture": "MIAPACA2_1"
+    },
+    {
+      "column": "MIAPACA2_Initial_2",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "initial",
+      "replicate": "2",
+      "stage": "initial",
+      "culture": "MIAPACA2_2"
+    },
+    {
+      "column": "MIAPACA2_Initial_3",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "initial",
+      "replicate": "3",
+      "stage": "initial",
+      "culture": "MIAPACA2_3"
+    },
+    {
+      "column": "MIAPACA2_Initial_4",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "initial",
+      "replicate": "4",
+      "stage": "initial",
+      "culture": "MIAPACA2_4"
+    },
+    {
+      "column": "MIAPACA2_Final_1",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "culture",
+      "replicate": "1",
+      "stage": "final",
+      "culture": "MIAPACA2_1"
+    },
+    {
+      "column": "MIAPACA2_Final_2",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "culture",
+      "replicate": "2",
+      "stage": "final",
+      "culture": "MIAPACA2_2"
+    },
+    {
+      "column": "MIAPACA2_Final_3",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "culture",
+      "replicate": "3",
+      "stage": "final",
+      "culture": "MIAPACA2_3"
+    },
+    {
+      "column": "MIAPACA2_Final_4",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "culture",
+      "replicate": "4",
+      "stage": "final",
+      "culture": "MIAPACA2_4"
+    },
+    {
+      "column": "MIAPACA2_Male_Mouse_1",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "M1",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Male_Mouse_1"
+    },
+    {
+      "column": "MIAPACA2_Male_Mouse_2",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "M2",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Male_Mouse_2"
+    },
+    {
+      "column": "MIAPACA2_Male_Mouse_3",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "M3",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Male_Mouse_3"
+    },
+    {
+      "column": "MIAPACA2_Male_Mouse_4",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "M4",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Male_Mouse_4"
+    },
+    {
+      "column": "MIAPACA2_Female_Mouse_1",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "F1",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Female_Mouse_1"
+    },
+    {
+      "column": "MIAPACA2_Female_Mouse_2",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "F2",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Female_Mouse_2"
+    },
+    {
+      "column": "MIAPACA2_Female_Mouse_3",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "F3",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Female_Mouse_3"
+    },
+    {
+      "column": "MIAPACA2_Female_Mouse_4",
+      "gsm": "GSM8798090",
+      "line": "MIAPACA2",
+      "site": "tumor",
+      "replicate": "F4",
+      "stage": "tumor",
+      "culture": "MIAPACA2_Female_Mouse_4"
+    },
+    {
+      "column": "PANC1_Initial_1",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "initial",
+      "replicate": "1",
+      "stage": "initial",
+      "culture": "PANC1_1"
+    },
+    {
+      "column": "PANC1_Initial_2",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "initial",
+      "replicate": "2",
+      "stage": "initial",
+      "culture": "PANC1_2"
+    },
+    {
+      "column": "PANC1_Initial_3",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "initial",
+      "replicate": "3",
+      "stage": "initial",
+      "culture": "PANC1_3"
+    },
+    {
+      "column": "PANC1_Initial_4",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "initial",
+      "replicate": "4",
+      "stage": "initial",
+      "culture": "PANC1_4"
+    },
+    {
+      "column": "PANC1_Final_1",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "culture",
+      "replicate": "1",
+      "stage": "final",
+      "culture": "PANC1_1"
+    },
+    {
+      "column": "PANC1_Final_2",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "culture",
+      "replicate": "2",
+      "stage": "final",
+      "culture": "PANC1_2"
+    },
+    {
+      "column": "PANC1_Final_3",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "culture",
+      "replicate": "3",
+      "stage": "final",
+      "culture": "PANC1_3"
+    },
+    {
+      "column": "PANC1_Final_4",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "culture",
+      "replicate": "4",
+      "stage": "final",
+      "culture": "PANC1_4"
+    },
+    {
+      "column": "PANC1_Male_Mouse_1",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "M1",
+      "stage": "tumor",
+      "culture": "PANC1_Male_Mouse_1"
+    },
+    {
+      "column": "PANC1_Male_Mouse_2",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "M2",
+      "stage": "tumor",
+      "culture": "PANC1_Male_Mouse_2"
+    },
+    {
+      "column": "PANC1_Male_Mouse_3",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "M3",
+      "stage": "tumor",
+      "culture": "PANC1_Male_Mouse_3"
+    },
+    {
+      "column": "PANC1_Male_Mouse_4",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "M4",
+      "stage": "tumor",
+      "culture": "PANC1_Male_Mouse_4"
+    },
+    {
+      "column": "PANC1_Female_Mouse_1",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "F1",
+      "stage": "tumor",
+      "culture": "PANC1_Female_Mouse_1"
+    },
+    {
+      "column": "PANC1_Female_Mouse_2",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "F2",
+      "stage": "tumor",
+      "culture": "PANC1_Female_Mouse_2"
+    },
+    {
+      "column": "PANC1_Female_Mouse_3",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "F3",
+      "stage": "tumor",
+      "culture": "PANC1_Female_Mouse_3"
+    },
+    {
+      "column": "PANC1_Female_Mouse_4",
+      "gsm": "GSM8798090",
+      "line": "PANC1",
+      "site": "tumor",
+      "replicate": "F4",
+      "stage": "tumor",
+      "culture": "PANC1_Female_Mouse_4"
+    }
+  ],
+  "factor_levels": {
+    "site": [
+      "culture",
+      "initial",
+      "tumor"
+    ],
+    "line": [
+      "BXPC3",
+      "CFPAC1",
+      "HPAFII",
+      "MIAPACA2",
+      "PANC1"
+    ],
+    "stage": [
+      "initial",
+      "final",
+      "tumor"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "bxpc3_tumor_vs_culture",
+      "columns": [
+        "BXPC3_Final_1",
+        "BXPC3_Final_2",
+        "BXPC3_Final_3",
+        "BXPC3_Final_4",
+        "BXPC3_Male_Mouse_1",
+        "BXPC3_Male_Mouse_2",
+        "BXPC3_Male_Mouse_3",
+        "BXPC3_Male_Mouse_4",
+        "BXPC3_Female_Mouse_1",
+        "BXPC3_Female_Mouse_2",
+        "BXPC3_Female_Mouse_3",
+        "BXPC3_Female_Mouse_4"
+      ],
+      "formula": "~ site",
+      "term": "sitetumor",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "cfpac1_tumor_vs_culture",
+      "columns": [
+        "CFPAC1_Final_1",
+        "CFPAC1_Final_2",
+        "CFPAC1_Final_3",
+        "CFPAC1_Final_4",
+        "CFPAC1_Male_Mouse_1",
+        "CFPAC1_Male_Mouse_2",
+        "CFPAC1_Male_Mouse_3",
+        "CFPAC1_Male_Mouse_4",
+        "CFPAC1_Female_Mouse_1",
+        "CFPAC1_Female_Mouse_2",
+        "CFPAC1_Female_Mouse_3",
+        "CFPAC1_Female_Mouse_4"
+      ],
+      "formula": "~ site",
+      "term": "sitetumor",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "hpafii_tumor_vs_culture",
+      "columns": [
+        "HPAFII_Final_1",
+        "HPAFII_Final_2",
+        "HPAFII_Final_3",
+        "HPAFII_Final_4",
+        "HPAFII_Male_Mouse_1",
+        "HPAFII_Male_Mouse_2",
+        "HPAFII_Male_Mouse_3",
+        "HPAFII_Male_Mouse_4",
+        "HPAFII_Female_Mouse_1",
+        "HPAFII_Female_Mouse_2",
+        "HPAFII_Female_Mouse_3",
+        "HPAFII_Female_Mouse_4"
+      ],
+      "formula": "~ site",
+      "term": "sitetumor",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "miapaca2_tumor_vs_culture",
+      "columns": [
+        "MIAPACA2_Final_1",
+        "MIAPACA2_Final_2",
+        "MIAPACA2_Final_3",
+        "MIAPACA2_Final_4",
+        "MIAPACA2_Male_Mouse_1",
+        "MIAPACA2_Male_Mouse_2",
+        "MIAPACA2_Male_Mouse_3",
+        "MIAPACA2_Male_Mouse_4",
+        "MIAPACA2_Female_Mouse_1",
+        "MIAPACA2_Female_Mouse_2",
+        "MIAPACA2_Female_Mouse_3",
+        "MIAPACA2_Female_Mouse_4"
+      ],
+      "formula": "~ site",
+      "term": "sitetumor",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "panc1_tumor_vs_culture",
+      "columns": [
+        "PANC1_Final_1",
+        "PANC1_Final_2",
+        "PANC1_Final_3",
+        "PANC1_Final_4",
+        "PANC1_Male_Mouse_1",
+        "PANC1_Male_Mouse_2",
+        "PANC1_Male_Mouse_3",
+        "PANC1_Male_Mouse_4",
+        "PANC1_Female_Mouse_1",
+        "PANC1_Female_Mouse_2",
+        "PANC1_Female_Mouse_3",
+        "PANC1_Female_Mouse_4"
+      ],
+      "formula": "~ site",
+      "term": "sitetumor",
+      "totals": "median_ratio"
+    },
+    {
+      "name": "all_lines_final_vs_initial",
+      "columns": [
+        "BXPC3_Initial_1",
+        "BXPC3_Initial_2",
+        "BXPC3_Initial_3",
+        "BXPC3_Initial_4",
+        "BXPC3_Final_1",
+        "BXPC3_Final_2",
+        "BXPC3_Final_3",
+        "BXPC3_Final_4",
+        "CFPAC1_Initial_1",
+        "CFPAC1_Initial_2",
+        "CFPAC1_Initial_3",
+        "CFPAC1_Initial_4",
+        "CFPAC1_Final_1",
+        "CFPAC1_Final_2",
+        "CFPAC1_Final_3",
+        "CFPAC1_Final_4",
+        "HPAFII_Initial_1",
+        "HPAFII_Initial_2",
+        "HPAFII_Initial_3",
+        "HPAFII_Initial_4",
+        "HPAFII_Final_1",
+        "HPAFII_Final_2",
+        "HPAFII_Final_3",
+        "HPAFII_Final_4",
+        "MIAPACA2_Initial_1",
+        "MIAPACA2_Initial_2",
+        "MIAPACA2_Initial_3",
+        "MIAPACA2_Initial_4",
+        "MIAPACA2_Final_1",
+        "MIAPACA2_Final_2",
+        "MIAPACA2_Final_3",
+        "MIAPACA2_Final_4",
+        "PANC1_Initial_1",
+        "PANC1_Initial_2",
+        "PANC1_Initial_3",
+        "PANC1_Initial_4",
+        "PANC1_Final_1",
+        "PANC1_Final_2",
+        "PANC1_Final_3",
+        "PANC1_Final_4"
+      ],
+      "formula": "~ culture + stage",
+      "term": "stagefinal",
+      "totals": "control"
+    }
+  ],
+  "rationale": "Self-describing column names (<LINE> Initial/Final 1-4, Male/Female Mouse 1-4); the two GSMs (Part1, Part2) each hold the libraries of several lines, so samples carry the GSM of their part. The paper scores each gene by the mean of its five guides' fold changes against the paired initial culture, z-scores them against the control guides, and compares in vivo (8 xenografts) with in vitro (4 cultures after two weeks) by t-test per line (Fig. 1b). The BARCS equivalent is xenograft tumors vs final cultures within each line (4 vs 8 libraries, 10 residual df); the shared initial library cancels in that contrast. Tumors are not stated to derive from specific cultures, so the comparison is unpaired. Controls are the 50 control sgRNAs (ControlA1-ControlJ5), which behave as non-targeting (they rise in final cultures as targeting guides deplete); fewer than 100 controls, so the control null is not available. Ribosomal-protein positive-control sgRNAs (sgRPL11_1 ..) are assigned to their genes. Median-ratio totals for the tumor analyses: in tumors a few guides (PTEN, AP2 subunits) take up to 94% of a library's reads, so library totals would call most genes depleted; median ratios over the 660 guides are robust to that. A second analysis, final vs initial cultures across all lines (~ culture + stage, pairing each final culture with its own initial culture, 20 pairs), checks in vitro essentiality (AP2, ribosomal positive controls); it uses control totals because the paper zeroes each sample on its control guides and the controls rise as targeting guides deplete in culture.",
+  "counts_md5": "0653a716dd17f294915bb8a007ad7874"
+}

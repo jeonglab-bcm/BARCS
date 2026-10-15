@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/AZA_vs_DMSO/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["TOPORS", "UBE2K", "UBXN7"],
+  "published": {
+    "file": "paper/beta_scores.tsv",
+    "gene_column": "gene", "score_column": "diff", "score_better": "lower",
+    "effect_column": "diff"
+  },
+  "top_n": [25, 50, 100, 200]
+}

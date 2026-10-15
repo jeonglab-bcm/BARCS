@@ -1,0 +1,97 @@
+{
+  "gse": "GSE262028",
+  "pmid": "38935708",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "UID",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "S17_N",
+      "gsm": "GSM8156255",
+      "screen": "S17",
+      "population": "neg"
+    },
+    {
+      "column": "S17_P",
+      "gsm": "GSM8156256",
+      "screen": "S17",
+      "population": "pos"
+    },
+    {
+      "column": "S25_N",
+      "gsm": "GSM8156257",
+      "screen": "S25",
+      "population": "neg"
+    },
+    {
+      "column": "S25_P",
+      "gsm": "GSM8156258",
+      "screen": "S25",
+      "population": "pos"
+    },
+    {
+      "column": "S31_P",
+      "gsm": "GSM8156259",
+      "screen": "S31",
+      "population": "pos"
+    },
+    {
+      "column": "S31_N",
+      "gsm": "GSM8156260",
+      "screen": "S31",
+      "population": "neg"
+    },
+    {
+      "column": "S35_P",
+      "gsm": "GSM8156261",
+      "screen": "S35",
+      "population": "pos"
+    },
+    {
+      "column": "S35_N",
+      "gsm": "GSM8156262",
+      "screen": "S35",
+      "population": "neg"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "neg",
+      "pos"
+    ],
+    "screen": [
+      "S17",
+      "S25",
+      "S31",
+      "S35"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "IL13_TomPos_vs_Neg",
+      "columns": [
+        "S17_N",
+        "S17_P",
+        "S25_N",
+        "S25_P"
+      ],
+      "formula": "~ screen + population",
+      "term": "populationpos"
+    },
+    {
+      "name": "GATA3_vs_TBET",
+      "columns": [
+        "S31_N",
+        "S31_P",
+        "S35_N",
+        "S35_P"
+      ],
+      "formula": "~ screen + population",
+      "term": "populationpos"
+    }
+  ],
+  "rationale": "Focused knockout screens of 1,131 transcription factors (Brie-derived, 4,732 guides, 200 non-targeting) in ILCs differentiated in vitro from Cas9 reporter-mouse progenitors (Mef2d paper, Science 2024). GEO deposits four multiplexed count files; each lib_data file's pool.k is row k of the matching screen_list, and the screen lists themselves mark the two pools of each screen the authors compared (columns Screen and Bin, P or N). prepare.R takes exactly those pools: IL-13 tdTomato screens S17 (tomp vs linn) and S25 (Tp vs Neg), and GATA3/T-bet reporter screens S31 (ILC2 vs NK) and S35 (GATA3 vs TBET). This assignment differs from a reading of the GSM titles alone (S25 negative could be S25_Tn, S31 T-bet could be S31_ILC1); the authors' own P/N flags were used, and the IL-13 result reproduces the paper's named regulators (8 of 10 in the BARCS top 10), which supports it. The two sorted populations of a screen come from one infected culture, so screen is a paired term: ~ screen + population, 4 libraries, 1 residual df per analysis. Positive regulators are depleted in the positive population (Tom+ or GATA3+). The paper ran caRpools Wilcoxon tests per screen against non-targeting guides and combined screens with Fisher's method; the IL-13 screen is the primary comparison here and the GATA3 screen a second analysis because the paper's main claim (Mef2d) rests on both.",
+  "counts_md5": "5b2919ae227dabf6ab5e84cc03c23807"
+}
