@@ -51,11 +51,15 @@ build(sprintf("GSM%d", 8680605:8680608), "counts_gw.tsv")
 paper <- file.path(workdir, "paper")
 dir.create(paper, showWarnings = FALSE)
 bundle <- file.path(paper, "PMC12046316_supplementary.zip")
-options(timeout = max(3600, getOption("timeout")))
+# The Europe PMC service sometimes drops or stalls the connection, so give
+# each attempt 10 minutes and start again from scratch on failure.
+options(timeout = 600)
 url <- "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12046316/supplementaryFiles"
-for (attempt in 1:3) {  # the Europe PMC service sometimes drops the connection
+for (attempt in 1:5) {
+  unlink(bundle)
   ok <- tryCatch(utils::download.file(url, bundle, mode = "wb", quiet = TRUE) == 0,
-                 error = function(e) FALSE)
+                 error = function(e) FALSE) &&
+    tryCatch(length(utils::unzip(bundle, list = TRUE)$Name) > 0, error = function(e) FALSE)
   if (ok) break
   Sys.sleep(30 * attempt)
 }
