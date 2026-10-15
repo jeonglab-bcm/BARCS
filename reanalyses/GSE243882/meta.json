@@ -1,0 +1,20 @@
+{
+  "gse": "GSE243882",
+  "pmid": "39003349",
+  "doi": "10.1038/s42003-024-06555-1",
+  "pmcid": "PMC11246431",
+  "title": "CRISPR screens in 3D tumourspheres identified miR-4787-3p as a transcriptional start site miRNA essential for breast tumour-initiating cell growth",
+  "journal": "Communications Biology",
+  "published": "2024",
+  "model": "MCF-7 and HCC1395 breast cancer cells, GeCKO v2 genome-wide knockout library (genes and miRNAs), 2D culture vs 3D tumourspheres",
+  "contrast": "MCF-7 3D tumourspheres vs 2D culture, 3-4 weeks (1 vs 1 library); HCC1395 not reported (bottlenecked)",
+  "paper_method": "MAGeCK-MLE (3D-2D beta difference; FDR < 0.05 in 3D vs T0 and |3D-2D beta| > 0.4)",
+  "paper_calls": "MCF-7: 235 protein-coding genes depleted and 17 enriched (plus miRNAs); HCC1395: 320 depleted and 24 enriched; no FDR on the 3D-2D difference itself",
+  "barcs_calls": "MCF-7: 14 genes at FDR 0.10 (6 against the control null), most driven by single jackpot guides; HCC1395 not reported (libraries bottlenecked from T0)",
+  "named_hits": "0/4 at FDR 0.10 (MCF-7 ranks: ARHGAP17 #1,153, FOXO3 #2,236, hsa-mir-4787 #2,814, PDCD4 #7,790 of 20,703)",
+  "verdict": "With one library per arm, BARCS finds no support for the paper's named hits: miR-4787 and its targets ARHGAP17, FOXO3 and PDCD4 sit far from significance in both cell lines. BARCS's own few MCF-7 calls are mostly single jackpot guides from clonal tumourspheres.",
+  "agreement": "differ",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-07-13",
+  "published_issue": "2024 Jul 13"
+}

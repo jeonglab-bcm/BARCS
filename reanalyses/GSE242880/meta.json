@@ -1,0 +1,20 @@
+{
+  "gse": "GSE242880",
+  "pmid": "38948774",
+  "doi": "10.1101/2024.06.17.599448",
+  "pmcid": "PMC11213010",
+  "title": "A model for accurate quantification of CRISPR effects in pooled FACS screens",
+  "journal": "bioRxiv (preprint)",
+  "published": "2024",
+  "model": "Primary human CD4+ T cells (3 donors), ~1,350-gene transcription-factor knockout library, CD25 (IL2RA) FACS sort into 4 bins at low/high coverage and MOI",
+  "contrast": "Highest vs lowest CD25 bin (Q4 vs Q1), low-coverage high-MOI screen, paired by donor (3 vs 3); high-coverage low-MOI screen as second analysis",
+  "paper_method": "Waterbear (Bayesian random-effects model over all four bins); MAGeCK and MAUDE for comparison",
+  "paper_calls": "Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published",
+  "barcs_calls": "82 genes at FDR 0.10 (45 up, 37 down in CD25-high); 70 against the control null centred on the targeting guides. High-coverage low-MOI screen: 107 genes",
+  "named_hits": "13/14 at FDR 0.10; ranks: MED12 #1, MYB #2, HIVEP2 #3, STAT5B #4, CBFB #5, IL2RA #6, KLF2 #7, TNFAIP3 #9, FOXK1 #10, ZNF217 #13, STAT5A #14, ATXN7L3 #23, JAK3 #37; IRF4 #131 (FDR 0.25)",
+  "verdict": "Using only the outer two of four bins, BARCS recovers the paper's result: the cheap low-coverage, high-MOI screen still finds the validated IL2RA regulators (13 of 14 named, IRF4 missed), and it calls about as many genes (82) as Waterbear (79), well above MAGeCK's 31.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-06-18",
+  "published_issue": "2024 Jun 18"
+}

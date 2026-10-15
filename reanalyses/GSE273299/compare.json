@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/d22_vs_d8/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["IL4", "CSF2", "SOCS1", "PTPN2"],
+  "top_n": [50, 100, 200]
+}

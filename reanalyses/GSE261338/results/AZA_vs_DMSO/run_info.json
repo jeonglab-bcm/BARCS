@@ -1,0 +1,45 @@
+{
+  "analysis": "AZA_vs_DMSO",
+  "formula": "~condition",
+  "term": "conditionAZA",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 65535,
+  "genes": 19010,
+  "moderated": true,
+  "prior_df": 37.5386,
+  "guide_correlation": 0.0061,
+  "control_scale": 1.6371,
+  "control_guides": 982,
+  "control_p05_raw": 0.2098,
+  "control_p05": 0.0499,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 6,
+  "top1pct_read_share": {
+    "T19-DMSO-1": 0.045,
+    "T19-DMSO-2": 0.045,
+    "T19-AZA-1": 0.039,
+    "T19-AZA-2": 0.038
+  },
+  "genes_fdr_0_10_up": 439,
+  "genes_fdr_0_10_down": 77,
+  "genes_fdr_0_05": 370,
+  "genes_fdr_0_10": 516,
+  "genes_empirical_fdr_0_10": 519,
+  "empirical_centre": "targets",
+  "control_shift": 0.274,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "gse": "GSE219136",
+  "pmid": "38879607",
+  "counts_file": "raw_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "WT_T0", "gsm": "GSM6774457", "genotype": "WT", "time": "T0", "replicate": "0"},
+    {"column": "WT_T7_R1", "gsm": "GSM6774458", "genotype": "WT", "time": "T7", "replicate": "1"},
+    {"column": "WT_T7_R2", "gsm": "GSM6774459", "genotype": "WT", "time": "T7", "replicate": "2"},
+    {"column": "KO_T0", "gsm": "GSM6774460", "genotype": "KO", "time": "T0", "replicate": "0"},
+    {"column": "KO_T7_R1", "gsm": "GSM6774461", "genotype": "KO", "time": "T7", "replicate": "1"},
+    {"column": "KO_T7_R2", "gsm": "GSM6774462", "genotype": "KO", "time": "T7", "replicate": "2"}
+  ],
+  "factor_levels": {"genotype": ["WT", "KO"], "time": ["T0", "T7"]},
+  "analyses": [
+    {"name": "nf2ko_vs_wt_dropout_interaction", "columns": ["WT_T0", "WT_T7_R1", "WT_T7_R2", "KO_T0", "KO_T7_R1", "KO_T7_R2"],
+     "formula": "~ genotype * time", "term": "genotypeKO:timeT7"},
+    {"name": "nf2ko_vs_wt_t7", "columns": ["WT_T7_R1", "WT_T7_R2", "KO_T7_R1", "KO_T7_R2"],
+     "formula": "~ genotype", "term": "genotypeKO"}
+  ],
+  "rationale": "Raw-count columns (block 'raw counts', columns 4-9) are named WT_T0, KO_T0, WT_T7_R1/R2, KO_T7_R1/R2, matching the GSM titles; prepare.R extracts them. The paper ranks genes by the difference between NF2-KO and NF2-WT in log2(passage 7 / passage 0) (Fig. 1F-G), i.e. the genotype x time interaction: 6 libraries, 4 coefficients, 2 residual df. Replicates R1/R2 are not stated to be paired across genotypes, so no replicate term. The direct KO vs WT comparison at passage 7 (2 vs 2) is a sensitivity analysis that does not correct for the passage-0 representation. Controls are the 142 non-cutting EGFP/LacZ/luciferase guides of TKOv3.",
+  "counts_md5": "26a6cb1a6d2d368ccd3346c8d5e325fa"
+}

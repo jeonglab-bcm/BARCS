@@ -1,0 +1,20 @@
+{
+  "gse": "GSE252651",
+  "pmid": "39009674",
+  "doi": "10.1038/s44318-024-00166-6",
+  "pmcid": "PMC11377827",
+  "title": "Deubiquitinating enzyme mutagenesis screens identify a USP43-dependent HIF-1 transcriptional response",
+  "journal": "The EMBO Journal",
+  "published": "2024",
+  "model": "HeLa HIF-ODD-GFP (HRE) reporter cells, DUB-focused knockout library (93 DUBs, 10 guides each)",
+  "contrast": "Activator screen: GFP-low sort in 1% oxygen vs unsorted (1 vs 1); suppressor screen: GFP-high sort in 21% oxygen vs unsorted (1 vs 1)",
+  "paper_method": "MAGeCK RRA (Dataset EV1)",
+  "paper_calls": "Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45",
+  "barcs_calls": "Activator: 2 genes at FDR 0.10 (USP52, JOSD1); suppressor: 2 (OTUD5, EIF3H); no control null (10 non-targeting guides)",
+  "named_hits": "2/3 at FDR 0.10: USP52 #1, OTUD5 #1; USP43 #4 of 93 (FDR 0.16)",
+  "verdict": "BARCS ranks the same top five DUBs as the authors' MAGeCK in both screens and calls USP52 and OTUD5. The paper's headline hit USP43 ranks fourth but misses FDR 0.10 (0.16), because with one library per arm and no usable controls the overdispersion is pooled conservatively over all guides.",
+  "agreement": "partial",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-07-15",
+  "published_issue": "2024 Sep"
+}

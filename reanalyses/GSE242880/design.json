@@ -1,0 +1,136 @@
+{
+  "gse": "GSE242880",
+  "pmid": "38948774",
+  "counts_file": "suppl/GSE242880_high_low_MOI_screens_D1_D2_D3_2022-04-23.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low_Coverage_High_MOI_D1_Q1",
+      "gsm": "GSM7774268",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q1",
+      "donor": "D1"
+    },
+    {
+      "column": "Low_Coverage_High_MOI_D1_Q4",
+      "gsm": "GSM7774271",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q4",
+      "donor": "D1"
+    },
+    {
+      "column": "Low_Coverage_High_MOI_D2_Q1",
+      "gsm": "GSM7774272",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q1",
+      "donor": "D2"
+    },
+    {
+      "column": "Low_Coverage_High_MOI_D2_Q4",
+      "gsm": "GSM7774275",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q4",
+      "donor": "D2"
+    },
+    {
+      "column": "Low_Coverage_High_MOI_D3_Q1",
+      "gsm": "GSM7774276",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q1",
+      "donor": "D3"
+    },
+    {
+      "column": "Low_Coverage_High_MOI_D3_Q4",
+      "gsm": "GSM7774279",
+      "screen": "Low_Coverage_High_MOI",
+      "bin": "Q4",
+      "donor": "D3"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D1_Q1",
+      "gsm": "GSM7774254",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q1",
+      "donor": "D1"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D1_Q4",
+      "gsm": "GSM7774257",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q4",
+      "donor": "D1"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D2_Q1",
+      "gsm": "GSM7774259",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q1",
+      "donor": "D2"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D2_Q4",
+      "gsm": "GSM7774262",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q4",
+      "donor": "D2"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D3_Q1",
+      "gsm": "GSM7774264",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q1",
+      "donor": "D3"
+    },
+    {
+      "column": "High_Coverage_Low_MOI_D3_Q4",
+      "gsm": "GSM7774267",
+      "screen": "High_Coverage_Low_MOI",
+      "bin": "Q4",
+      "donor": "D3"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "Q1",
+      "Q4"
+    ],
+    "donor": [
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "LowCov_HighMOI_Q4_vs_Q1",
+      "columns": [
+        "Low_Coverage_High_MOI_D1_Q1",
+        "Low_Coverage_High_MOI_D1_Q4",
+        "Low_Coverage_High_MOI_D2_Q1",
+        "Low_Coverage_High_MOI_D2_Q4",
+        "Low_Coverage_High_MOI_D3_Q1",
+        "Low_Coverage_High_MOI_D3_Q4"
+      ],
+      "formula": "~ donor + bin",
+      "term": "binQ4"
+    },
+    {
+      "name": "HighCov_LowMOI_Q4_vs_Q1",
+      "columns": [
+        "High_Coverage_Low_MOI_D1_Q1",
+        "High_Coverage_Low_MOI_D1_Q4",
+        "High_Coverage_Low_MOI_D2_Q1",
+        "High_Coverage_Low_MOI_D2_Q4",
+        "High_Coverage_Low_MOI_D3_Q1",
+        "High_Coverage_Low_MOI_D3_Q4"
+      ],
+      "formula": "~ donor + bin",
+      "term": "binQ4"
+    }
+  ],
+  "rationale": "Methods paper introducing Waterbear (Pimentel et al. 2024, bioRxiv): a ~1,350-gene transcription-factor knockout library (6,000 guides, 593 non-targeting) in primary human CD4+ T cells, sorted into four CD25 (IL2RA) bins, repeated in three donors at high or low coverage and low (0.3) or high (2) MOI. Column names equal the GSM titles. Q1 is the lowest and Q4 the highest CD25 bin: IL2RA and STAT5B guides are enriched in Q1 and MYB guides in Q4. The paper's headline experiment is the low-coverage, high-MOI screen (Waterbear 79 genes, 24/26 validated regulators); the high-coverage, low-MOI screen is its reference condition. BARCS compares the two outer bins (Q4 vs Q1) per condition; Waterbear models all four bins, so the middle bins are not used here. All bins of a donor come from one edited pool, so donor enters the model (2 residual df). EGFP-targeting guides are not used as controls.",
+  "counts_md5": "7713c11d18c325dfcface08a0ed71b68"
+}

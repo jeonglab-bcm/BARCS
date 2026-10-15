@@ -1,0 +1,82 @@
+{
+  "gse": "GSE273299",
+  "pmid": "39266501",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "C384K122LAD8",
+      "gsm": "GSM8425869",
+      "condition": "D8",
+      "donor": "d1",
+      "replicate": "1"
+    },
+    {
+      "column": "C384K122LAD22",
+      "gsm": "GSM8425870",
+      "condition": "D22",
+      "donor": "d1",
+      "replicate": "1"
+    },
+    {
+      "column": "C385K122LAD8",
+      "gsm": "GSM8425871",
+      "condition": "D8",
+      "donor": "d2",
+      "replicate": "2"
+    },
+    {
+      "column": "C385K122LAD22",
+      "gsm": "GSM8425872",
+      "condition": "D22",
+      "donor": "d2",
+      "replicate": "2"
+    },
+    {
+      "column": "C386K122LAD8",
+      "gsm": "GSM8425873",
+      "condition": "D8",
+      "donor": "d3",
+      "replicate": "3"
+    },
+    {
+      "column": "C386K122LAD22",
+      "gsm": "GSM8425874",
+      "condition": "D22",
+      "donor": "d3",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "D8",
+      "D22"
+    ],
+    "donor": [
+      "d1",
+      "d2",
+      "d3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "d22_vs_d8",
+      "columns": [
+        "C384K122LAD8",
+        "C384K122LAD22",
+        "C385K122LAD8",
+        "C385K122LAD22",
+        "C386K122LAD8",
+        "C386K122LAD22"
+      ],
+      "formula": "~ donor + condition",
+      "term": "conditionD22"
+    }
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited MAGeCK-normalized table (one constant per library, integrality 1.0000 in every column). The paper screened GeCKO v2 library A in CART19-28z cells from three donors (C384, C385, C386; GSM descriptions match the column names) and compared exhausted cells after chronic stimulation (day 22) with day 8 baseline. Each donor has its own D8 and D22 library, so the donor term pairs them: 6 libraries, 2 residual df. Knockouts that resist exhaustion should be enriched at day 22. Library sizes are taken from the 1000 non-targeting guides (\"totals\": \"control\"), as the paper normalized all guide counts to them in MAGeCK-VISPR MLE.",
+  "counts_md5": "022c1da3400b7f7f9c4ce3e15088c133",
+  "totals": "control"
+}

@@ -1,0 +1,47 @@
+{
+  "analysis": "LowCov_HighMOI_Q4_vs_Q1",
+  "formula": "~donor + bin",
+  "term": "binQ4",
+  "libraries": 6,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 6000,
+  "genes": 1350,
+  "moderated": true,
+  "prior_df": "Inf",
+  "guide_correlation": 0.0148,
+  "control_scale": null,
+  "control_guides": 593,
+  "control_p05_raw": 0.0607,
+  "control_p05": 0.0607,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 1,
+  "top1pct_read_share": {
+    "Low_Coverage_High_MOI_D1_Q1": 0.025,
+    "Low_Coverage_High_MOI_D1_Q4": 0.027,
+    "Low_Coverage_High_MOI_D2_Q1": 0.026,
+    "Low_Coverage_High_MOI_D2_Q4": 0.027,
+    "Low_Coverage_High_MOI_D3_Q1": 0.027,
+    "Low_Coverage_High_MOI_D3_Q4": 0.028
+  },
+  "genes_fdr_0_10_up": 45,
+  "genes_fdr_0_10_down": 37,
+  "genes_fdr_0_05": 62,
+  "genes_fdr_0_10": 82,
+  "genes_empirical_fdr_0_10": 70,
+  "empirical_centre": "targets",
+  "control_shift": 0.29,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

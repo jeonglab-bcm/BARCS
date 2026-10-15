@@ -1,0 +1,20 @@
+{
+  "gse": "GSE270368",
+  "pmid": "39478150",
+  "doi": "10.1038/s44321-024-00161-8",
+  "pmcid": "PMC11628624",
+  "title": "Reciprocal inhibition of NOTCH and SOX2 shapes tumor cell plasticity and therapeutic escape in triple-negative breast cancer",
+  "journal": "EMBO Molecular Medicine",
+  "published": "2024",
+  "model": "GSI-resistant MB157R TNBC cells, GeCKO v2 genome-wide knockout library",
+  "contrast": "GSI (LY3039478) vs DMSO, day 14 (3 vs 3)",
+  "paper_method": "MAGeCK test (RRA)",
+  "paper_calls": "0 genes at FDR 0.10; 5 negative hits by p < 0.001 and LFC < -1, SOX2 among them (neg rank 11)",
+  "barcs_calls": "3 genes at FDR 0.10, each from one jackpot guide (artifacts); 11 against the control null",
+  "named_hits": "0/1: SOX2 depleted #1,462 of 20,706, p 0.14",
+  "verdict": "Neither MAGeCK nor BARCS finds genome-wide significant hits in this shallow, noisy screen. BARCS's three FDR calls come from single jackpot guides, and SOX2, which MAGeCK ranks 11th, shows only weak, inconsistent depletion across its six guides.",
+  "agreement": "differ",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-10-30",
+  "published_issue": "2024 Dec"
+}

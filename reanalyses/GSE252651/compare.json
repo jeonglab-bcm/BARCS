@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/activator_GFPlow_vs_unsorted/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["USP43", "USP52", "JOSD1"],
+  "published": {
+    "file": "paper/EV1_GFP_low.tsv",
+    "gene_column": "id", "score_column": "pos|p-value", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [5, 10, 20]
+}

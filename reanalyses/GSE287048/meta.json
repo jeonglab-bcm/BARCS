@@ -1,0 +1,19 @@
+{
+  "gse": "GSE287048",
+  "pmid": "39924553",
+  "doi": "10.1038/s41467-025-56674-4",
+  "title": "Discrete vulnerability to pharmacological CDK2 inhibition is governed by heterogeneity of the cancer cell cycle",
+  "journal": "Nature Communications",
+  "published": "2025",
+  "model": "HCC1806 and MIA PaCa-2, TKOv3 library",
+  "contrast": "INX-315 500 nM vs DMSO at passage 8, HCC1806 (2 vs 2); MIA PaCa-2 (1 vs 1)",
+  "paper_method": "DrugZ",
+  "paper_calls": "HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched",
+  "barcs_calls": "3 genes at FDR 0.10 (HCC1806 2 vs 2; 347 without the outlier DMSO culture); 6 in MIA PaCa-2",
+  "named_hits": "CDK2 recovered (#1 in HCC1806, #3 in MIA PaCa-2)",
+  "verdict": "BARCS finds CDK2 loss as the top INX-315 resistance hit in both lines and closely matches DrugZ (Spearman 0.93-0.94; identical MIA PaCa-2 calls). An outlier DMSO culture makes the HCC1806 2 vs 2 model conservative.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "published_date": "2025-02-09",
+  "published_issue": "2025 Feb 9"
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE273299",
+  "pmid": "39266501",
+  "doi": "10.1038/s41467-024-51978-3",
+  "title": "IL-4 drives exhaustion of CD8+ CART cells",
+  "journal": "Nature Communications",
+  "published": "2024",
+  "model": "Healthy-donor CART19-28z cells (3 donors), GeCKO v2 library A",
+  "contrast": "Day 22 (chronic stimulation) vs day 8, paired by donor (3 vs 3)",
+  "paper_method": "MAGeCK-VISPR MLE",
+  "paper_calls": "CSF2, SOCS1, PTPN2 top positively selected; 2 of 3 IL4 guides enriched",
+  "barcs_calls": "215 genes at FDR 0.10 (22 enriched)",
+  "named_hits": "3/4 at FDR 0.10 (PTPN2, SOCS1, CSF2; CSF2 from one jackpot guide); IL4 not called",
+  "verdict": "BARCS confirms PTPN2 and SOCS1 as knockouts that resist exhaustion, but IL4, the paper's headline gene, is not a screen hit: its guides rise in two donors and fall in the third.",
+  "agreement": "partial",
+  "analyzed": "2026-10-15",
+  "count_recovery": "Raw reads = normalized / (one scale factor per sample); integrality 100.0%.",
+  "published_date": "2024-09-12",
+  "published_issue": "2024 Sep 12"
+}

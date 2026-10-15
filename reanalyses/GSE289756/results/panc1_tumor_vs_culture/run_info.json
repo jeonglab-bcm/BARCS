@@ -1,0 +1,53 @@
+{
+  "analysis": "panc1_tumor_vs_culture",
+  "formula": "~site",
+  "term": "sitetumor",
+  "libraries": 12,
+  "residual_df": 10,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 660,
+  "genes": 122,
+  "moderated": true,
+  "prior_df": 5.5726,
+  "guide_correlation": 0.0167,
+  "control_scale": null,
+  "control_guides": 50,
+  "control_p05_raw": 0,
+  "control_p05": 0,
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 7,
+  "top1pct_read_share": {
+    "PANC1_Final_1": 0.034,
+    "PANC1_Final_2": 0.039,
+    "PANC1_Final_3": 0.032,
+    "PANC1_Final_4": 0.033,
+    "PANC1_Male_Mouse_1": 0.512,
+    "PANC1_Male_Mouse_2": 0.112,
+    "PANC1_Male_Mouse_3": 0.287,
+    "PANC1_Male_Mouse_4": 0.463,
+    "PANC1_Female_Mouse_1": 0.526,
+    "PANC1_Female_Mouse_2": 0.292,
+    "PANC1_Female_Mouse_3": 0.115,
+    "PANC1_Female_Mouse_4": 0.834
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

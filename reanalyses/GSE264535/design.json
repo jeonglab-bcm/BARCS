@@ -1,0 +1,283 @@
+{
+  "gse": "GSE264535",
+  "pmid": "40179174",
+  "counts_file": "recovered_counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "n1m_bri_2_5_1",
+      "gsm": "GSM8219620",
+      "mrna": "n1m",
+      "bin": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "n1m_bri_2_5_2",
+      "gsm": "GSM8219625",
+      "mrna": "n1m",
+      "bin": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "n1m_bri_5_1",
+      "gsm": "GSM8219621",
+      "mrna": "n1m",
+      "bin": "high2",
+      "replicate": "1"
+    },
+    {
+      "column": "n1m_bri_5_2",
+      "gsm": "GSM8219626",
+      "mrna": "n1m",
+      "bin": "high2",
+      "replicate": "2"
+    },
+    {
+      "column": "n1m_dim_2_5_1",
+      "gsm": "GSM8219623",
+      "mrna": "n1m",
+      "bin": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "n1m_dim_2_5_2",
+      "gsm": "GSM8219628",
+      "mrna": "n1m",
+      "bin": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "n1m_dim_5_1",
+      "gsm": "GSM8219622",
+      "mrna": "n1m",
+      "bin": "low2",
+      "replicate": "1"
+    },
+    {
+      "column": "n1m_dim_5_2",
+      "gsm": "GSM8219627",
+      "mrna": "n1m",
+      "bin": "low2",
+      "replicate": "2"
+    },
+    {
+      "column": "n1m_un_1",
+      "gsm": "GSM8219624",
+      "mrna": "n1m",
+      "bin": "unsorted",
+      "replicate": "1"
+    },
+    {
+      "column": "n1m_un_2",
+      "gsm": "GSM8219629",
+      "mrna": "n1m",
+      "bin": "unsorted",
+      "replicate": "2"
+    },
+    {
+      "column": "utp_bri_2_5_1",
+      "gsm": "GSM8219630",
+      "mrna": "utp",
+      "bin": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "utp_bri_2_5_2",
+      "gsm": "GSM8219635",
+      "mrna": "utp",
+      "bin": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "utp_bri_5_1",
+      "gsm": "GSM8219631",
+      "mrna": "utp",
+      "bin": "high2",
+      "replicate": "1"
+    },
+    {
+      "column": "utp_bri_5_2",
+      "gsm": "GSM8219636",
+      "mrna": "utp",
+      "bin": "high2",
+      "replicate": "2"
+    },
+    {
+      "column": "utp_dim_2_5_1",
+      "gsm": "GSM8219633",
+      "mrna": "utp",
+      "bin": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "utp_dim_2_5_2",
+      "gsm": "GSM8219638",
+      "mrna": "utp",
+      "bin": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "utp_dim_5_1",
+      "gsm": "GSM8219632",
+      "mrna": "utp",
+      "bin": "low2",
+      "replicate": "1"
+    },
+    {
+      "column": "utp_dim_5_2",
+      "gsm": "GSM8219637",
+      "mrna": "utp",
+      "bin": "low2",
+      "replicate": "2"
+    },
+    {
+      "column": "utp_un_1",
+      "gsm": "GSM8219634",
+      "mrna": "utp",
+      "bin": "unsorted",
+      "replicate": "1"
+    },
+    {
+      "column": "utp_un_2",
+      "gsm": "GSM8219639",
+      "mrna": "utp",
+      "bin": "unsorted",
+      "replicate": "2"
+    },
+    {
+      "column": "stbl_bri_2_5_1",
+      "gsm": "GSM8219640",
+      "mrna": "stbl",
+      "bin": "high",
+      "replicate": "1"
+    },
+    {
+      "column": "stbl_bri_2_5_2",
+      "gsm": "GSM8219645",
+      "mrna": "stbl",
+      "bin": "high",
+      "replicate": "2"
+    },
+    {
+      "column": "stbl_bri_5_1",
+      "gsm": "GSM8219641",
+      "mrna": "stbl",
+      "bin": "high2",
+      "replicate": "1"
+    },
+    {
+      "column": "stbl_bri_5_2",
+      "gsm": "GSM8219646",
+      "mrna": "stbl",
+      "bin": "high2",
+      "replicate": "2"
+    },
+    {
+      "column": "stbl_dim_2_5_1",
+      "gsm": "GSM8219643",
+      "mrna": "stbl",
+      "bin": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "stbl_dim_2_5_2",
+      "gsm": "GSM8219648",
+      "mrna": "stbl",
+      "bin": "low",
+      "replicate": "2"
+    },
+    {
+      "column": "stbl_dim_5_1",
+      "gsm": "GSM8219642",
+      "mrna": "stbl",
+      "bin": "low2",
+      "replicate": "1"
+    },
+    {
+      "column": "stbl_dim_5_2",
+      "gsm": "GSM8219647",
+      "mrna": "stbl",
+      "bin": "low2",
+      "replicate": "2"
+    },
+    {
+      "column": "stbl_un_1",
+      "gsm": "GSM8219644",
+      "mrna": "stbl",
+      "bin": "unsorted",
+      "replicate": "1"
+    },
+    {
+      "column": "stbl_un_2",
+      "gsm": "GSM8219649",
+      "mrna": "stbl",
+      "bin": "unsorted",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "unsorted",
+      "high",
+      "high2",
+      "low2",
+      "low"
+    ],
+    "mrna": [
+      "utp",
+      "n1m",
+      "stbl"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "utp_gfphigh_vs_unsorted",
+      "columns": [
+        "utp_bri_2_5_1",
+        "utp_bri_2_5_2",
+        "utp_un_1",
+        "utp_un_2"
+      ],
+      "formula": "~ bin",
+      "term": "binhigh"
+    },
+    {
+      "name": "utp_gfplow_vs_unsorted",
+      "columns": [
+        "utp_dim_2_5_1",
+        "utp_dim_2_5_2",
+        "utp_un_1",
+        "utp_un_2"
+      ],
+      "formula": "~ bin",
+      "term": "binlow"
+    },
+    {
+      "name": "n1m_gfphigh_vs_unsorted",
+      "columns": [
+        "n1m_bri_2_5_1",
+        "n1m_bri_2_5_2",
+        "n1m_un_1",
+        "n1m_un_2"
+      ],
+      "formula": "~ bin",
+      "term": "binhigh"
+    },
+    {
+      "name": "n1m_gfplow_vs_unsorted",
+      "columns": [
+        "n1m_dim_2_5_1",
+        "n1m_dim_2_5_2",
+        "n1m_un_1",
+        "n1m_un_2"
+      ],
+      "formula": "~ bin",
+      "term": "binlow"
+    }
+  ],
+  "rationale": "Raw reads recovered exactly from the deposited normalized table (reads times one scale per library plus a pseudocount of 1; prepare.R). Columns {n1m,utp,stbl}_{bri_2_5,bri_5,dim_5,dim_2_5,un}_{1,2} match the GSM titles (N1m / UTP / Stable-cell; Top 0-2.5%, Top 2.5-5%, Bottom 2.5-5%, Bottom 0-2.5%, unsorted input; rep 1/2); that '2_5' is the outer 0-2.5% bin is inferred from the names and supported by TRIM25 guides being more enriched in bri_2_5 than in bri_5. HCT116 Brunello KO cells were given LNP-delivered GFP mRNA (unmodified UTP or N1m-pseudouridine) and sorted on GFP. Suppressors of exogenous mRNA (TRIM25, N4BP1, KHNYN, ZAP) are enriched in the GFP-high bin; uptake and endosomal-escape factors (HSPG synthesis such as EXT1 and SLC35B2, V-ATPase) are enriched in the GFP-low bin. Each outer bin is compared with the unsorted input of the same mRNA (2 vs 2, 2 residual df); a replicate term would pair each sort with its own input but leave 1 residual df, so it is left out. The stable-GFP cell line is the paper's cellular control and is not analyzed.",
+  "counts_md5": "9e3975a50fe596cbfa420ab7ac03dc23"
+}

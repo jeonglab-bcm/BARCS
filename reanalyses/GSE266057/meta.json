@@ -1,0 +1,20 @@
+{
+  "gse": "GSE266057",
+  "pmid": "39014073",
+  "doi": "10.1038/s41592-024-02335-1",
+  "pmcid": "PMC11399106",
+  "title": "A systematic search for RNA structural switches across the human transcriptome",
+  "journal": "Nature Methods",
+  "published": "2024",
+  "model": "Jurkat CRISPRi (hCRISPRi-v2) with RORC 3' UTR switch GFP reporters (WT and 77-GA), GFP:mCherry FACS sort",
+  "contrast": "GFP-high vs GFP-low bin, paired by sorted culture, both reporter lines (4 vs 4); second: 77-GA vs WT interaction",
+  "paper_method": "iAnalyzer GLM z-scored to non-targeting guides; DESeq2 ratio of ratios between lines",
+  "paper_calls": "NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components",
+  "barcs_calls": "1,480 genes at FDR 0.10 (745 against the control null); interaction: 2 genes (SMG8, CSDE1)",
+  "named_hits": "4/4 at FDR 0.10: UPF2 #2, UPF3B #3, SMG8 #4, UPF1 #28 of 18,903; SMG1 at FDR 8e-4 but tiny effect",
+  "verdict": "BARCS ranks the paper's NMD factors UPF2, UPF3B, SMG8 and UPF1 among its top 28 genes, leaves the exon junction core flat, and finds SMG8 knockdown acting more strongly on the native switch than on the 77-GA mutant. Its model list is about twice the control-null list.",
+  "agreement": "agree",
+  "analyzed": "2026-10-15",
+  "published_date": "2024-07-16",
+  "published_issue": "2024 Sep"
+}

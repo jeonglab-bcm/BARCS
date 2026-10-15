@@ -1,0 +1,25 @@
+{
+  "gse": "GSE287048",
+  "pmid": "39924553",
+  "counts_file": "suppl/GSE287048_HCC1806-INX315.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(LacZ|EGFP|luciferase)$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "HCC1806-TKO-P0", "gsm": "GSM8737627", "condition": "P0", "replicate": "0"},
+    {"column": "HCC1806-TKO-DMSO-P8_R1", "gsm": "GSM8737628", "condition": "DMSO", "replicate": "1"},
+    {"column": "HCC1806-TKO-DMSO-P8_R2", "gsm": "GSM8737629", "condition": "DMSO", "replicate": "2"},
+    {"column": "HCC1806-TKO-ARC-500-P8_R1", "gsm": "GSM8737630", "condition": "INX315", "replicate": "1"},
+    {"column": "HCC1806-TKO-ARC-500-P8_R2", "gsm": "GSM8737631", "condition": "INX315", "replicate": "2"}
+  ],
+  "factor_levels": {"condition": ["DMSO", "INX315", "P0"]},
+  "analyses": [
+    {"name": "inx315_vs_dmso", "columns": ["HCC1806-TKO-DMSO-P8_R1", "HCC1806-TKO-DMSO-P8_R2", "HCC1806-TKO-ARC-500-P8_R1", "HCC1806-TKO-ARC-500-P8_R2"],
+     "formula": "~ condition", "term": "conditionINX315"},
+    {"name": "inx315_vs_dmso_noR1", "columns": ["HCC1806-TKO-DMSO-P8_R2", "HCC1806-TKO-ARC-500-P8_R1", "HCC1806-TKO-ARC-500-P8_R2"],
+     "formula": "~ condition", "term": "conditionINX315"}
+  ],
+  "rationale": "HCC1806 TKOv3 screen: column names equal the GSM titles (ARC-500 = INX-315 500 nM). The paper compares INX-315-treated with DMSO-treated cells at passage 8 to find knockouts that resist CDK2 inhibition (enriched). Two cultures per arm, not paired: 4 libraries, 2 residual df. DMSO R1 is an outlier (Spearman 0.47 with every other library versus 0.88-0.95 among the rest, 4.8% zero guides), so a sensitivity analysis drops it (3 libraries, 1 residual df).",
+  "counts_md5": "67c83e88bed6c851f308ae9a1f2b8bf2"
+}

@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/utp_gfphigh_vs_unsorted/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TRIM25", "N4BP1", "KHNYN", "ZC3HAV1"],
+  "top_n": [50, 100, 200]
+}

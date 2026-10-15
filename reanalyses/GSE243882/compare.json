@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/MCF7_3D_vs_2D/genes.csv",
+  "direction": "both",
+  "named_hits": ["hsa-mir-4787", "ARHGAP17", "FOXO3", "PDCD4"],
+  "published": {
+    "file": "paper/supp1_MCF7.tsv",
+    "gene_column": "gene", "score_column": "abs_diff", "score_better": "higher",
+    "effect_column": "diff_3D_2D"
+  },
+  "top_n": [50, 100, 200]
+}

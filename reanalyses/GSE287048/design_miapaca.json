@@ -1,0 +1,22 @@
+{
+  "gse": "GSE287048",
+  "pmid": "39924553",
+  "counts_file": "suppl/GSE287048_MIA-PaCa-TKOv3.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(LacZ|EGFP|luciferase)$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "MIA-PaCa-TKOv3-P1-control", "gsm": "GSM8737632", "condition": "P1", "replicate": "1"},
+    {"column": "MIA-PaCa-TKOv3-P8-control", "gsm": "GSM8737633", "condition": "control", "replicate": "1"},
+    {"column": "MIA-PaCa-TKOv3-P8-ARC-500", "gsm": "GSM8737634", "condition": "INX315", "replicate": "1"},
+    {"column": "MIA-PaCa-TKOv3-P8-Palbo-250", "gsm": "GSM8737635", "condition": "palbociclib", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["control", "INX315", "palbociclib", "P1"]},
+  "analyses": [
+    {"name": "miapaca_inx315_vs_control", "columns": ["MIA-PaCa-TKOv3-P8-control", "MIA-PaCa-TKOv3-P8-ARC-500"],
+     "formula": "~ condition", "term": "conditionINX315"}
+  ],
+  "rationale": "MIA PaCa-2 TKOv3 screen, second cell line of the paper: INX-315 500 nM versus untreated control at passage 8, one library each (column names equal GSM titles). No residual df, so the no-replicate path pools the overdispersion over the 142 LacZ/EGFP/luciferase control guides; calls are screening-level.",
+  "counts_md5": "32071bdabf04f319670eacb413062fd4"
+}

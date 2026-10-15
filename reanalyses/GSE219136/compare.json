@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/nf2ko_vs_wt_dropout_interaction/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ACSL3", "G6PD"],
+  "top_n": [50, 100, 200]
+}
