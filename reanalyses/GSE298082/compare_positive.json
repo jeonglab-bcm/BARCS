@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/ptar1_vs_wt_gi/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ABHD16A", "ABHD17B"],
+  "published": {
+    "file": "paper/PTAR1_qGI.csv",
+    "gene_column": "Gene", "score_column": "qGI_medium_mean", "score_better": "higher",
+    "effect_column": "qGI_medium_mean"
+  },
+  "top_n": [50, 100, 200],
+  "out": "comparison_positive"
+}

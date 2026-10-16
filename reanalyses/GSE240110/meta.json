@@ -1,0 +1,18 @@
+{
+  "gse": "GSE240110",
+  "pmid": "37729426",
+  "doi": "10.1158/0008-5472.can-23-2729",
+  "pmcid": "PMC10841254",
+  "title": "Genome-Wide CRISPR Screens Identify Multiple Synthetic Lethal Targets That Enhance KRAS(G12C) Inhibitor Efficacy",
+  "journal": "Cancer Research",
+  "published": "2023",
+  "model": "Four KRAS-G12C NSCLC lines (H2030, H2122, H23, HCC44), genome-wide knockout library, MRTX849 +/- TNO155",
+  "contrast": "MRTX849 vs DMSO, 8 doublings, pooled over 4 cell lines (8 vs 8); COMBO vs DMSO also analyzed",
+  "paper_method": "MAGeCK (synthetic-lethal screen; paper not open access)",
+  "paper_calls": "Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination",
+  "barcs_calls": "25 genes at FDR 0.10 in the MRTX screen (calibrated to controls); 1,882 in the far more cytotoxic COMBO screen",
+  "named_hits": "NF2 #1, KIRREL #2, LATS2 #3, NRP1 #4, TAOK1 #5, AMOTL2 #7 (all resistance, FDR 0.10); WWTR1/TAZ depleted #11",
+  "verdict": "BARCS places the paper's Hippo-pathway resistance genes (NF2, KIRREL, LATS2, TAOK1) at the very top of the MRTX screen, all FDR-significant, reproducing the finding that motivates the G12C + TEAD inhibitor combination.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16"
+}

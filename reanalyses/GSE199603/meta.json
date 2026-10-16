@@ -1,0 +1,17 @@
+{
+  "gse": "GSE199603",
+  "pmid": "37674079",
+  "doi": "10.1038/s41586-023-06511-9",
+  "title": "CD300ld on neutrophils is required for tumour-driven immune suppression",
+  "journal": "Nature",
+  "published": "2023",
+  "model": "Cas9 mouse haematopoietic progenitors transplanted in vivo, 355-gene myeloid transmembrane knockout library, B16-F10 tumours",
+  "contrast": "Tumour-infiltrating vs bone-marrow CD45+ cells (1 vs 1, no replicates)",
+  "paper_method": "MAGeCK (Supplementary Table 1)",
+  "paper_calls": "No gene at FDR 0.10; Cd300ld ranked first (FDR 0.069) and followed up",
+  "barcs_calls": "1 gene at FDR 0.10 (Cd300ld), screening-level; no control guides for calibration or a control null",
+  "named_hits": "1/1: Cd300ld #1, FDR 0.006",
+  "verdict": "Both methods single out Cd300ld as the only standout gene, and BARCS calls it at FDR 0.006. The screen has one library per tissue and no controls, so the call is screening-level.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16"
+}

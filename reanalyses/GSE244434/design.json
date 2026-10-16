@@ -1,0 +1,42 @@
+{
+  "gse": "GSE244434",
+  "pmid": "37977119",
+  "counts_file": "suppl/GSE244434_sgRNA_read_counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "gene(s)",
+  "control_gene_pattern": "^non-targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "ICEC0942_0_35uM",
+      "gsm": "GSM7816077",
+      "condition": "samuraciclib",
+      "replicate": "1"
+    },
+    {
+      "column": "Combined_controls",
+      "gsm": "GSM7816078-GSM7816093",
+      "condition": "control",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "control",
+      "samuraciclib"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "samuraciclib_vs_controls",
+      "columns": [
+        "ICEC0942_0_35uM",
+        "Combined_controls"
+      ],
+      "formula": "~ condition",
+      "term": "conditionsamuraciclib"
+    }
+  ],
+  "rationale": "GEO deposits only two count columns: the single samuraciclib (ICEC0942, 0.35 uM, 8 days) library and the sum of all 16 control libraries (DMSO, ethanol, untreated and the spinner-flask time course), which is exactly the reference the paper's RANKS scoring used ('read counts from all time-points of the control screens were summed'). The per-sample control counts are not deposited, so the comparison is one library per arm and goes through the no-replicate path; calls are screening-level. Positive interactors (resistance, enriched) are the paper's main question (mTOR signalling).",
+  "counts_md5": "db88ea4a236fefcab43dd305f75aa4cb"
+}

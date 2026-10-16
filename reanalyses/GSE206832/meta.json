@@ -1,0 +1,18 @@
+{
+  "gse": "GSE206832",
+  "pmid": "37813864",
+  "doi": "10.1038/s41467-023-41792-8",
+  "pmcid": "PMC10562403",
+  "title": "Systematic identification of gene combinations to target in innate immune cells to enhance T cell activation",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "Cas9 mouse bone-marrow-derived dendritic cells, Brie genome-wide and ~2,300-gene secondary knockout libraries, CD86 and PD-L1 FACS sorts",
+  "contrast": "CD86 low vs high 10% bin, genome-wide screen (2 vs 2); PD-L1 genome-wide (1 vs 1) and both secondary screens (1 vs 1, 2 vs 2) also analyzed",
+  "paper_method": "MAGeCK (gene summaries in Supplementary Data 1-4)",
+  "paper_calls": "6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both",
+  "barcs_calls": "6 genes at FDR 0.10 in the CD86 genome-wide screen (6 against the control null); 0 in PD-L1 genome-wide; 120 and 81 in the CD86 and PD-L1 secondary screens",
+  "named_hits": "Cd86 #2 and March1 #3 (CD86 GW, FDR 0.005); Cebpb FDR 0.036 (CD86 secondary) and #2 (PD-L1 secondary); Med12 #10 (CD86 secondary); Cd274 #2 in PD-L1 GW but not significant",
+  "verdict": "BARCS reproduces the CD86 genome-wide calls (5 of 6 shared) and nearly all secondary-screen calls including Cebpb and Med12, but calls nothing in the noisy single-repeat PD-L1 genome-wide screen, where MAGeCK calls only Cd274.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16"
+}

@@ -1,0 +1,40 @@
+{
+  "gse": "GSE206832",
+  "pmid": "37813864",
+  "counts_file": "counts_cd86_sec.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^INTERGENIC$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD86_Secondary_H",
+      "gsm": "GSM6265487",
+      "bin": "H"
+    },
+    {
+      "column": "CD86_Secondary_L",
+      "gsm": "GSM6265488",
+      "bin": "L"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "H",
+      "L"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD86_secondary_low_vs_high",
+      "columns": [
+        "CD86_Secondary_H",
+        "CD86_Secondary_L"
+      ],
+      "formula": "~ bin",
+      "term": "binL"
+    }
+  ],
+  "rationale": "Secondary CD86 screen: a ~2,280-gene library (10 guides per gene, 197 intergenic controls) built from the genome-wide CD86 and PDL1 screens, sorted top/bottom 10% CD86 in one repeat. One library per bin, so the no-replicate path is used with an overdispersion pooled over the intergenic guides; calls are screening-level. Term is low vs high, the sign of the authors' MAGeCK lfc. The paper takes its CD86 regulators (Cebpb, Med12 and the Mediator complex) from this screen.",
+  "counts_md5": "9d25530f67b0dbf8894a5ca321b5a259"
+}

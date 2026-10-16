@@ -1,0 +1,45 @@
+{
+  "analysis": "hct116_2d_vs_day0",
+  "formula": "~condition",
+  "term": "condition2D",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 1140,
+  "genes": 177,
+  "moderated": true,
+  "prior_df": 3.2793,
+  "guide_correlation": 0,
+  "control_scale": 1.4045,
+  "control_guides": 100,
+  "control_p05_raw": 0.15,
+  "control_p05": 0.05,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 4,
+  "top1pct_read_share": {
+    "sample_31": 0.021,
+    "sample_32": 0.02,
+    "sample_33": 0.035,
+    "sample_34": 0.032
+  },
+  "genes_fdr_0_10_up": 3,
+  "genes_fdr_0_10_down": 34,
+  "genes_fdr_0_05": 35,
+  "genes_fdr_0_10": 37,
+  "genes_empirical_fdr_0_10": 71,
+  "empirical_centre": "targets",
+  "control_shift": -0.901,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

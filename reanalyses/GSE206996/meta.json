@@ -1,0 +1,17 @@
+{
+  "gse": "GSE206996",
+  "pmid": "37707319",
+  "doi": "10.1002/jmv.29087",
+  "title": "Whole genome CRISPR screening strategy to identify genes contributing to SARS-CoV-2 spike and VSV-G mediated entry",
+  "journal": "Journal of Medical Virology",
+  "published": "2023",
+  "model": "ACE2-HEK293T cells, Brunello genome-wide knockout library, pseudovirus reporter FACS sorts",
+  "contrast": "Reporter-low vs high, SARS-CoV-2 spike screen (1 vs 1); VSV-G-mNeonGreen and VSV-G-Cre counter-screens also analyzed",
+  "paper_method": "MAGeCK (differential screen strategy; paper not open access)",
+  "paper_calls": "ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy",
+  "barcs_calls": "30 genes at FDR 0.10 in the spike screen (13 and 28 in the VSV-G screens), screening-level",
+  "named_hits": "ACE2 #1 in the spike screen (FDR 6e-10) and non-significant in VSV-G; LDLR a top-10 enriched gene in both VSV-G screens and non-significant in spike; SLC35B2 top-5 in all three",
+  "verdict": "BARCS reproduces the paper's differential result exactly: ACE2 tops the spike screen only, LDLR the VSV-G screens only, and the shared factor SLC35B2 is a top hit throughout.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16"
+}

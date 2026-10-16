@@ -1,0 +1,13 @@
+{
+  "gse": "GSE251758", "pmid": "38490212", "doi": "10.1016/j.ccell.2024.02.016", "pmcid": "PMC11003465",
+  "title": "Multimodal stimulation screens reveal unique and shared genes limiting T cell fitness",
+  "journal": "Cancer Cell", "published": "2024",
+  "model": "Primary OT-I/Cas9 mouse CD8 T cells, Brie genome-wide knockout library",
+  "contrast": "Intense CD3 stimulation vs pre-reactivation, acute stimulation vs pre-reactivation, chronic tumour co-culture vs resting (1 vs 1 each; replicates summed by the authors)",
+  "paper_method": "MAGeCK 0.5.7 (RRA)",
+  "paper_calls": "54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)",
+  "barcs_calls": "1,187 / 1,643 / 45 genes at FDR 0.10 (232 / 300 / 17 enriched); control null 1,304 / 2,033 / 21",
+  "named_hits": "Trp53, Eif4g2 (Dap5) and Icam1 at FDR 0.10 in intense and acute; Ctbp1 (chronic) FDR 0.47",
+  "verdict": "BARCS reproduces the authors' intense and acute rankings (40-45 of the top 50 shared) and calls Trp53, Dap5 and Icam1 strongly; in the bottlenecked chronic screen it calls Dap5 and Trp53 but, like MAGeCK, not Ctbp1, and its depletion lists are screening-level because replicates were summed before deposit.",
+  "agreement": "partial", "analyzed": "2026-10-16"
+}

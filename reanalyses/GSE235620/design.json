@@ -1,0 +1,92 @@
+{
+  "gse": "GSE235620",
+  "pmid": "38294941",
+  "counts_file": "counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^non_targeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "library_1",
+      "gsm": "GSM7506305",
+      "condition": "library",
+      "replicate": "1"
+    },
+    {
+      "column": "library_2",
+      "gsm": "GSM7506306",
+      "condition": "library",
+      "replicate": "2"
+    },
+    {
+      "column": "library_3",
+      "gsm": "GSM7506307",
+      "condition": "library",
+      "replicate": "3"
+    },
+    {
+      "column": "tyg_1",
+      "gsm": "GSM7506311",
+      "condition": "tyg",
+      "replicate": "1"
+    },
+    {
+      "column": "tyg_2",
+      "gsm": "GSM7506312",
+      "condition": "tyg",
+      "replicate": "2"
+    },
+    {
+      "column": "tyg_3",
+      "gsm": "GSM7506313",
+      "condition": "tyg",
+      "replicate": "3"
+    },
+    {
+      "column": "bile_1",
+      "gsm": "GSM7506308",
+      "condition": "bile",
+      "replicate": "1"
+    },
+    {
+      "column": "bile_2",
+      "gsm": "GSM7506309",
+      "condition": "bile",
+      "replicate": "2"
+    },
+    {
+      "column": "bile_3",
+      "gsm": "GSM7506310",
+      "condition": "bile",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "tyg",
+      "bile",
+      "library"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "bile_vs_tyg",
+      "columns": [
+        "tyg_1",
+        "tyg_2",
+        "tyg_3",
+        "bile_1",
+        "bile_2",
+        "bile_3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionbile"
+    }
+  ],
+  "rationale": "Genome-wide CRISPRi (dPb2Cas12a) knockdown library of the 135 intergenic sRNAs of B. thetaiotaomicron (4 guides/arrays per sRNA, 20 non-targeting guides), Prezza et al. 2024. The input library was subcultured into rich medium (TYG) with IPTG, with (bile) or without (tyg) 0.05 mg/mL bile salts, in three biological replicates each, and grown to stationary phase. The paper's fitness screen compares guide abundance in bile vs no-bile (edgeR per guide, averaged per sRNA, Dataset S4), so the contrast is bile vs tyg. Knockdowns enriched under bile confer resistance; the named hit BatR (BTnc167) is enriched (increased numbers under bile) and BTnc353 is depleted. The library (glycerol-stock) samples are the input reference and are not part of the published comparison. Gene = sRNA (the mature and array guides of one sRNA are grouped, as the paper does); the 20 non_targeting guides form the control group. Three replicates per arm give the full BARCS model.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "cd2cea39bc6d8d652344ebf661837025"
+}

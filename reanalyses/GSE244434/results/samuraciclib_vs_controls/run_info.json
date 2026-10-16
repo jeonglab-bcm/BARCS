@@ -1,0 +1,49 @@
+{
+  "analysis": "samuraciclib_vs_controls",
+  "formula": "~condition",
+  "term": "conditionsamuraciclib",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 2.6945e-07,
+    "rho_source": "control guides",
+    "rho_guides": 2039,
+    "inflation_at_rho0": 4.1907,
+    "haldane_guides": 1404
+  },
+  "guides": 192613,
+  "genes": 19897,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 2041,
+  "control_p05_raw": 0.0069,
+  "control_p05": 0.0069,
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "ICEC0942_0_35uM": 0.043,
+    "Combined_controls": 0.041
+  },
+  "genes_fdr_0_10_up": 27,
+  "genes_fdr_0_10_down": 20,
+  "genes_fdr_0_05": 31,
+  "genes_fdr_0_10": 47,
+  "genes_empirical_fdr_0_10": 372,
+  "empirical_centre": "controls",
+  "control_shift": -0.049,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

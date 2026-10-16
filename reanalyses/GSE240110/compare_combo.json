@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/COMBO_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NF2", "LATS2", "TAOK1"],
+  "top_n": [25, 50, 100],
+  "out": "comparison_combo"
+}

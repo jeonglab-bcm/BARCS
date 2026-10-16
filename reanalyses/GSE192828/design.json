@@ -1,0 +1,55 @@
+{
+  "gse": "GSE192828",
+  "pmid": "37648854",
+  "counts_file": "suppl/GSE192828_Killing_screen_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Pre_kill",
+      "gsm": "GSM5766304",
+      "condition": "prekill",
+      "replicate": "1"
+    },
+    {
+      "column": "Killing_Donor1_E_T_1_4",
+      "gsm": "GSM5766301",
+      "condition": "killing",
+      "replicate": "D1"
+    },
+    {
+      "column": "Killing_Donor2_E_T_1_4",
+      "gsm": "GSM5766302",
+      "condition": "killing",
+      "replicate": "D2"
+    },
+    {
+      "column": "Killing_Donor3_E_T_1_2",
+      "gsm": "GSM5766303",
+      "condition": "killing",
+      "replicate": "D3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "prekill",
+      "killing"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "killing_vs_prekill",
+      "columns": [
+        "Pre_kill",
+        "Killing_Donor1_E_T_1_4",
+        "Killing_Donor2_E_T_1_4",
+        "Killing_Donor3_E_T_1_2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionkilling"
+    }
+  ],
+  "rationale": "Genome-wide knockout screen (TKOv3-style library, 90,709 guides, no non-targeting controls) in Daudi-Cas9 cells co-cultured with primary Vg9Vd2 T cells from three donors (E:T 1:4, 1:4, 1:2). The paper compares surviving cells after killing with the pre-kill population; knockouts that protect from gamma-delta killing (BTN3A1, BTN2A1, mevalonate pathway) are enriched, sensitizers depleted. Each donor co-culture is one replicate of the killing condition against a single pre-kill library, so condition is the only term (2 residual df). The pre-kill library is sampled before co-culture, so fitness effects during the co-culture also contribute to depletion.",
+  "counts_md5": "89f23e0aaa3f3009118d9f9ee528fe22"
+}

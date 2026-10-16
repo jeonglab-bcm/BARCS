@@ -1,0 +1,40 @@
+{
+  "gse": "GSE206832",
+  "pmid": "37813864",
+  "counts_file": "counts_pdl1_gw.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^BRDN$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "PDL1_GW_H",
+      "gsm": "GSM6265489",
+      "bin": "H"
+    },
+    {
+      "column": "PDL1_GW_L",
+      "gsm": "GSM6265490",
+      "bin": "L"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "H",
+      "L"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "PDL1_GW_low_vs_high",
+      "columns": [
+        "PDL1_GW_H",
+        "PDL1_GW_L"
+      ],
+      "formula": "~ bin",
+      "term": "binL"
+    }
+  ],
+  "rationale": "Genome-wide PDL1 (Cd274) sort screen in the same BMDC system: one repeat, top and bottom 10% of PD-L1. One library per bin, so run_barcs.R uses the no-replicate path with an overdispersion pooled over the 986 BRDN non-targeting guides; the calls are screening-level. Term is low vs high, the sign of the authors' MAGeCK lfc. prepare.R removes the byte-order mark from the GEO file's first column name.",
+  "counts_md5": "4f8415e9bbe3b73ab8145ee69d2bf7cd"
+}

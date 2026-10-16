@@ -1,0 +1,471 @@
+{
+  "gse": "GSE298082",
+  "pmid": "42049019",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Moffat_619",
+      "gsm": "GSM9007323",
+      "screen": "GIN043",
+      "query": "PTAR1",
+      "libraries": "Moffat_619",
+      "replicate": "GIN043",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN043_end",
+      "gsm": "GSM9007490,GSM9007656,GSM9007824",
+      "screen": "GIN043",
+      "query": "PTAR1",
+      "libraries": "Moffat_620+Moffat_621+Moffat_622",
+      "replicate": "GIN043",
+      "phase": "end",
+      "gi": "PTAR1_end"
+    },
+    {
+      "column": "Moffat_702",
+      "gsm": "GSM9007332",
+      "screen": "GIN053",
+      "query": "PTAR1",
+      "libraries": "Moffat_702",
+      "replicate": "GIN053",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN053_end",
+      "gsm": "GSM9007499,GSM9007665,GSM9007833",
+      "screen": "GIN053",
+      "query": "PTAR1",
+      "libraries": "Moffat_703+Moffat_704+Moffat_705",
+      "replicate": "GIN053",
+      "phase": "end",
+      "gi": "PTAR1_end"
+    },
+    {
+      "column": "Moffat_994",
+      "gsm": "GSM9007377",
+      "screen": "GIN109",
+      "query": "PTAR1",
+      "libraries": "Moffat_994",
+      "replicate": "GIN109",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN109_end",
+      "gsm": "GSM9007543,GSM9007710,GSM9007877",
+      "screen": "GIN109",
+      "query": "PTAR1",
+      "libraries": "Moffat_995+Moffat_996+Moffat_997",
+      "replicate": "GIN109",
+      "phase": "end",
+      "gi": "PTAR1_end"
+    },
+    {
+      "column": "Moffat_343_814",
+      "gsm": "GSM9007289",
+      "screen": "GIN001",
+      "query": "WT",
+      "libraries": "Moffat_343_814",
+      "replicate": "GIN001",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN001_end",
+      "gsm": "GSM9007456,GSM9007622,GSM9007790",
+      "screen": "GIN001",
+      "query": "WT",
+      "libraries": "Moffat_383+Moffat_384+Moffat_385",
+      "replicate": "GIN001",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_470_803",
+      "gsm": "GSM9007293",
+      "screen": "GIN007",
+      "query": "WT",
+      "libraries": "Moffat_470_803",
+      "replicate": "GIN007",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN007_end",
+      "gsm": "GSM9007460,GSM9007626,GSM9007794",
+      "screen": "GIN007",
+      "query": "WT",
+      "libraries": "Moffat_471+Moffat_472+Moffat_473",
+      "replicate": "GIN007",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_807_438",
+      "gsm": "GSM9007299",
+      "screen": "GIN015",
+      "query": "WT",
+      "libraries": "Moffat_807_438",
+      "replicate": "GIN015",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN015_end",
+      "gsm": "GSM9007466,GSM9007632,GSM9007800",
+      "screen": "GIN015",
+      "query": "WT",
+      "libraries": "Moffat_439+Moffat_440+Moffat_441",
+      "replicate": "GIN015",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_477_657",
+      "gsm": "GSM9007306",
+      "screen": "GIN022",
+      "query": "WT",
+      "libraries": "Moffat_477_657",
+      "replicate": "GIN022",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN022_end",
+      "gsm": "GSM9007473,GSM9007639,GSM9007807",
+      "screen": "GIN022",
+      "query": "WT",
+      "libraries": "Moffat_487+Moffat_488+Moffat_489",
+      "replicate": "GIN022",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_589",
+      "gsm": "GSM9007322",
+      "screen": "GIN042",
+      "query": "WT",
+      "libraries": "Moffat_589",
+      "replicate": "GIN042",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN042_end",
+      "gsm": "GSM9007489,GSM9007655,GSM9007823",
+      "screen": "GIN042",
+      "query": "WT",
+      "libraries": "Moffat_590+Moffat_591+Moffat_592",
+      "replicate": "GIN042",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_642",
+      "gsm": "GSM9007328",
+      "screen": "GIN049",
+      "query": "WT",
+      "libraries": "Moffat_642",
+      "replicate": "GIN049",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN049_end",
+      "gsm": "GSM9007495,GSM9007661,GSM9007829",
+      "screen": "GIN049",
+      "query": "WT",
+      "libraries": "Moffat_643+Moffat_644+Moffat_645",
+      "replicate": "GIN049",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_717",
+      "gsm": "GSM9007331",
+      "screen": "GIN052",
+      "query": "WT",
+      "libraries": "Moffat_717",
+      "replicate": "GIN052",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN052_end",
+      "gsm": "GSM9007498,GSM9007664,GSM9007832",
+      "screen": "GIN052",
+      "query": "WT",
+      "libraries": "Moffat_718+Moffat_719+Moffat_720",
+      "replicate": "GIN052",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_729",
+      "gsm": "GSM9007336",
+      "screen": "GIN057",
+      "query": "WT",
+      "libraries": "Moffat_729",
+      "replicate": "GIN057",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN057_end",
+      "gsm": "GSM9007503,GSM9007669,GSM9007837",
+      "screen": "GIN057",
+      "query": "WT",
+      "libraries": "Moffat_730+Moffat_731+Moffat_732",
+      "replicate": "GIN057",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_847",
+      "gsm": "GSM9007339",
+      "screen": "GIN060",
+      "query": "WT",
+      "libraries": "Moffat_847",
+      "replicate": "GIN060",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN060_end",
+      "gsm": "GSM9007506,GSM9007672,GSM9007840",
+      "screen": "GIN060",
+      "query": "WT",
+      "libraries": "Moffat_848+Moffat_849+Moffat_850",
+      "replicate": "GIN060",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_677",
+      "gsm": "GSM9007347",
+      "screen": "GIN068",
+      "query": "WT",
+      "libraries": "Moffat_677",
+      "replicate": "GIN068",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN068_end",
+      "gsm": "GSM9007514,GSM9007680,GSM9007848",
+      "screen": "GIN068",
+      "query": "WT",
+      "libraries": "Moffat_696+Moffat_697+Moffat_698",
+      "replicate": "GIN068",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_767",
+      "gsm": "GSM9007352",
+      "screen": "GIN074",
+      "query": "WT",
+      "libraries": "Moffat_767",
+      "replicate": "GIN074",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN074_end",
+      "gsm": "GSM9007519,GSM9007685,GSM9007853",
+      "screen": "GIN074",
+      "query": "WT",
+      "libraries": "Moffat_768+Moffat_769+Moffat_770",
+      "replicate": "GIN074",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_855",
+      "gsm": "GSM9007358",
+      "screen": "GIN080",
+      "query": "WT",
+      "libraries": "Moffat_855",
+      "replicate": "GIN080",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN080_end",
+      "gsm": "GSM9007525,GSM9007691,GSM9007859",
+      "screen": "GIN080",
+      "query": "WT",
+      "libraries": "Moffat_856+Moffat_857+Moffat_858",
+      "replicate": "GIN080",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_886",
+      "gsm": "GSM9007365",
+      "screen": "GIN089",
+      "query": "WT",
+      "libraries": "Moffat_886",
+      "replicate": "GIN089",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN089_end",
+      "gsm": "GSM9007698,GSM9007866",
+      "screen": "GIN089",
+      "query": "WT",
+      "libraries": "Moffat_888+Moffat_889",
+      "replicate": "GIN089",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_898",
+      "gsm": "GSM9007368",
+      "screen": "GIN099",
+      "query": "WT",
+      "libraries": "Moffat_898",
+      "replicate": "GIN099",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN099_end",
+      "gsm": "GSM9007534,GSM9007701,GSM9007869",
+      "screen": "GIN099",
+      "query": "WT",
+      "libraries": "Moffat_899+Moffat_900+Moffat_901",
+      "replicate": "GIN099",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_945",
+      "gsm": "GSM9007375",
+      "screen": "GIN107",
+      "query": "WT",
+      "libraries": "Moffat_945",
+      "replicate": "GIN107",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN107_end",
+      "gsm": "GSM9007541,GSM9007708,GSM9007875",
+      "screen": "GIN107",
+      "query": "WT",
+      "libraries": "Moffat_946+Moffat_947+Moffat_948",
+      "replicate": "GIN107",
+      "phase": "end",
+      "gi": "none"
+    },
+    {
+      "column": "Moffat_1394",
+      "gsm": "GSM9007436",
+      "screen": "GIN181",
+      "query": "WT",
+      "libraries": "Moffat_1394",
+      "replicate": "GIN181",
+      "phase": "T0",
+      "gi": "none"
+    },
+    {
+      "column": "GIN181_end",
+      "gsm": "GSM9007770,GSM9007937",
+      "screen": "GIN181",
+      "query": "WT",
+      "libraries": "Moffat_1395+Moffat_1396",
+      "replicate": "GIN181",
+      "phase": "end",
+      "gi": "none"
+    }
+  ],
+  "factor_levels": {
+    "phase": [
+      "T0",
+      "end"
+    ],
+    "gi": [
+      "none",
+      "PTAR1_end"
+    ],
+    "screen": [
+      "GIN043",
+      "GIN053",
+      "GIN109",
+      "GIN001",
+      "GIN007",
+      "GIN015",
+      "GIN022",
+      "GIN042",
+      "GIN049",
+      "GIN052",
+      "GIN057",
+      "GIN060",
+      "GIN068",
+      "GIN074",
+      "GIN080",
+      "GIN089",
+      "GIN099",
+      "GIN107",
+      "GIN181"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "ptar1_vs_wt_gi",
+      "columns": [
+        "Moffat_619",
+        "GIN043_end",
+        "Moffat_702",
+        "GIN053_end",
+        "Moffat_994",
+        "GIN109_end",
+        "Moffat_343_814",
+        "GIN001_end",
+        "Moffat_470_803",
+        "GIN007_end",
+        "Moffat_807_438",
+        "GIN015_end",
+        "Moffat_477_657",
+        "GIN022_end",
+        "Moffat_589",
+        "GIN042_end",
+        "Moffat_642",
+        "GIN049_end",
+        "Moffat_717",
+        "GIN052_end",
+        "Moffat_729",
+        "GIN057_end",
+        "Moffat_847",
+        "GIN060_end",
+        "Moffat_677",
+        "GIN068_end",
+        "Moffat_767",
+        "GIN074_end",
+        "Moffat_855",
+        "GIN080_end",
+        "Moffat_886",
+        "GIN089_end",
+        "Moffat_898",
+        "GIN099_end",
+        "Moffat_945",
+        "GIN107_end",
+        "Moffat_1394",
+        "GIN181_end"
+      ],
+      "formula": "~ screen + phase + gi",
+      "term": "giPTAR1_end"
+    }
+  ],
+  "rationale": "Minimal-medium (DMEM 10 mM glucose/1 mM glutamine) sub-series of the HAP1 genetic-interaction study. The deposited matrix has one raw-count column per sequencing library and no gene column; prepare.R adds Gene (REAGENT_ID prefix), writes blank cells (no reads; the matrix holds no zeros) as 0, and keeps the screens used, summing each screen's endpoint libraries (A/B/C, parallel passages of one infection) into one column <GIN>_end so that the unit of replication is the screen (infection) rather than parallel passages. Library-to-screen mapping (T0 and endpoints A/B/C per GIN screen) comes from the paper's Data S1 and agrees with the GSM titles. Query: PTAR1, the paper's showcase query, screened in minimal medium as GIN043 (14-bp deletion), GIN053 (14-bp deletion) and GIN109 (independent 1-bp insertion allele); GIN108 failed the paper's QC and is excluded. Reference: QC-passing WT/parental minimal-medium screens with all libraries deposited; excluded are the diploid WT clones (GIN035, GIN054), the Houry-lab WT line (GIN175), GIN145 (endpoints not deposited) and GIN030 (its T0 library is titled GIN028_T0 on GEO, contradicting Data S1); GIN089 and GIN181 have two endpoints. Model ~ screen + phase + gi: screen absorbs each infection's T0 representation, phase (T0, end) is the common dropout, and gi marks the PTAR1 endpoints, so giPTAR1_end is the PTAR1-specific change in guide abundance beyond the WT dropout (a differential log fold change, the quantity qGI scores; negative = negative genetic interaction). With one T0 and one summed endpoint per screen, the residual dispersion is the between-screen variation of the dropout across the WT screens, and the PTAR1 effect is estimated across three independent PTAR1 infections. Screens ran to different endpoints; the qGI method adjusts for this with an M-A loess normalization that BARCS does not apply. Controls: 142 EGFP/LacZ/luciferase guides.",
+  "counts_md5": "63c9ff8eeb15b7a2e755b3bfec488666"
+}

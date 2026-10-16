@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/vsvg_low_vs_high/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["LDLR", "SLC35B2"],
+  "top_n": [10, 25, 50],
+  "out": "comparison_vsvg"
+}

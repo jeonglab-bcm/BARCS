@@ -1,0 +1,18 @@
+{
+  "gse": "GSE232340",
+  "pmid": "37709997",
+  "doi": "10.1038/s41593-023-01432-2",
+  "pmcid": "PMC10545543",
+  "title": "A genome-wide in vivo CRISPR screen identifies essential regulators of T cell migration to the CNS in a multiple sclerosis model",
+  "journal": "Nature Neuroscience",
+  "published": "2023",
+  "model": "Encephalitogenic Lewis rat CD4+ T-MBP cells, genome-wide (87,690 guides) and validation (12,000 guides) knockout libraries, in vivo transfer",
+  "contrast": "T cells in spinal-cord parenchyma (and meninges) vs blood, day 3, paired by animal (3 vs 3)",
+  "paper_method": "MAGeCK (Supplementary Tables 1-2)",
+  "paper_calls": "22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top",
+  "barcs_calls": "0 genes at FDR 0.10 in the genome-wide screen (hits top-ranked but not significant with 2 residual df); 22 in the validation screen",
+  "named_hits": "Genome-wide: Itga4 #1, Grk2 #8, Fermt3 #12, Cxcr3 #30, all depleted but not FDR-significant. Validation: all 5 at FDR 0.10 (Itga4 #1 FDR 4e-9, Cxcr3 #3, Fermt3 #4, Grk2 #7, Cbfb #12)",
+  "verdict": "BARCS ranks the paper's validated migration hits (Itga4, Cxcr3, Fermt3, Grk2) at the very top of the noisy genome-wide screen but calls nothing at FDR 0.10 there with 2 residual df; the validation screen confirms all five at FDR 0.10.",
+  "agreement": "partial",
+  "analyzed": "2026-10-16"
+}

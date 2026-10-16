@@ -1,0 +1,17 @@
+{
+  "pmid": "42049019",
+  "doi": "10.1016/j.cell.2026.03.044",
+  "title": "Global genetic interaction network of a human cell maps conserved principles and informs functional interpretation of gene co-essentiality profiles.",
+  "journal": "Cell",
+  "published": "2026",
+  "paper_method": "qGI score (differential LFC vs WT reference screens, M-A loess normalization, moderated t-test), per screen; MCMC consensus across replicate screens",
+  "analyzed": "2026-10-16",
+  "agreement": "partial",
+  "gse": "GSE298081",
+  "model": "HAP1, PTAR1 14-bp-deletion query vs parental WT, TKOv3 genome-wide KO library, rich medium (IMDM)",
+  "contrast": "PTAR1 vs WT genetic interaction in rich medium: endpoint vs T0 dropout difference, 4 PTAR1 screens vs 16 WT screens (one T0 and summed endpoints per screen)",
+  "paper_calls": "626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive",
+  "barcs_calls": "700 genes at FDR 0.10 (245 depleted, 455 enriched); 1177 against the control null",
+  "named_hits": "5/8 at FDR 0.10 (VAMP3, SEC23IP, GOSR1, ABHD16A, ABHD17B; not RAB1A, TRAPPC12, YKT6)",
+  "verdict": "BARCS recovers PTAR1's strongest interactions (VAMP3 negative; ABHD17B and ABHD16A suppressors) with rank correlation 0.53 to the paper's rich-medium qGI, but misses YKT6, RAB1A and TRAPPC12 and ranks more general fitness genes (TAF3, TAF4, CNOT4) among positive calls because it has no qGI-style M-A normalization."
+}

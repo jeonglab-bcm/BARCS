@@ -1,0 +1,60 @@
+{
+  "gse": "GSE206832",
+  "pmid": "37813864",
+  "counts_file": "counts_pdl1_sec.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^INTERGENIC$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD274_Secondary_1_H",
+      "gsm": "GSM6265491",
+      "bin": "H",
+      "repeat": "R1"
+    },
+    {
+      "column": "CD274_Secondary_1_L",
+      "gsm": "GSM6265492",
+      "bin": "L",
+      "repeat": "R1"
+    },
+    {
+      "column": "CD274_Secondary_2_H",
+      "gsm": "GSM6265493",
+      "bin": "H",
+      "repeat": "R2"
+    },
+    {
+      "column": "CD274_Secondary_2_L",
+      "gsm": "GSM6265494",
+      "bin": "L",
+      "repeat": "R2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "H",
+      "L"
+    ],
+    "repeat": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "PDL1_secondary_low_vs_high",
+      "columns": [
+        "CD274_Secondary_1_H",
+        "CD274_Secondary_1_L",
+        "CD274_Secondary_2_H",
+        "CD274_Secondary_2_L"
+      ],
+      "formula": "~ bin",
+      "term": "binL"
+    }
+  ],
+  "rationale": "Secondary PDL1 screen with the same ~2,260-gene library (199 intergenic controls), two repeats sorted top/bottom 10% PD-L1. Column names say CD274_Secondary_<repeat>_<bin> and match the GSM titles (PDL1 = Cd274). The two repeats are paired by sort, but a repeat term would leave 1 residual df and the high bins correlate more with each other (0.76) than with their own low bin, so repeat is left out (2 residual df). Term is low vs high, the sign of the authors' MAGeCK lfc.",
+  "counts_md5": "6a9f7194abdbfdd9334de0e4ffc15765"
+}

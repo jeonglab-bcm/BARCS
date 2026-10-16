@@ -1,0 +1,53 @@
+{
+  "analysis": "both_GC_vs_Saline_d15",
+  "formula": "~cell + condition",
+  "term": "conditionGC",
+  "libraries": 12,
+  "residual_df": 9,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 76404,
+  "genes": 19095,
+  "moderated": true,
+  "prior_df": 11.5916,
+  "guide_correlation": 0.0075,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 6,
+  "top1pct_read_share": {
+    "P7C02_KU1919GC_T15_GC_R2_S37_L002_R1_001": 0.045,
+    "P7B10_KU1919GC_T15_Saline_R1_S33_L002_R1_001": 0.043,
+    "P7C01_KU1919GC_T15_GC_R1_S36_L002_R1_001": 0.046,
+    "P7C03_KU1919GC_T15_GC_R3_S38_L002_R1_001": 0.044,
+    "P7B11_KU1919GC_T15_Saline_R2_S34_L002_R1_001": 0.042,
+    "P7B12_KU1919GC_T15_Saline_R3_S35_L002_R1_001": 0.042,
+    "P7D08_5637GC_T15_GC_R2_S17_L004_R1_001": 0.046,
+    "P7D04_5637GC_T15_Saline_R1_S13_L004_R1_001": 0.046,
+    "P7D09_5637GC_T15_GC_R3_S18_L004_R1_001": 0.046,
+    "P7D07_5637GC_T15_GC_R1_S16_L004_R1_001": 0.047,
+    "P7D06_5637GC_T15_Saline_R3_S15_L004_R1_001": 0.046,
+    "P7D05_5637GC_T15_Saline_R2_S14_L004_R1_001": 0.046
+  },
+  "genes_fdr_0_10_up": 23,
+  "genes_fdr_0_10_down": 178,
+  "genes_fdr_0_05": 156,
+  "genes_fdr_0_10": 201,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

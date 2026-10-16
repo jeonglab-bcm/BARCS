@@ -1,0 +1,49 @@
+{
+  "gse": "GSE232543",
+  "pmid": "37813864",
+  "counts_file": "suppl/GSE232543_CD86_CebpbKO_DCs_GW.csv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD86_CebpbKO_DCs_GW_H",
+      "gsm": "GSM7350018",
+      "condition": "CD86high",
+      "replicate": "1"
+    },
+    {
+      "column": "CD86_CebpbKO_DCs_GW_L",
+      "gsm": "GSM7350019",
+      "condition": "CD86low",
+      "replicate": "1"
+    },
+    {
+      "column": "CD86_CebpbKO_DCs_GW_US",
+      "gsm": "GSM7350020",
+      "condition": "unsorted",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "CD86high",
+      "CD86low",
+      "unsorted"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CebpbKO_GW_CD86low_vs_high",
+      "columns": [
+        "CD86_CebpbKO_DCs_GW_H",
+        "CD86_CebpbKO_DCs_GW_L"
+      ],
+      "formula": "~ condition",
+      "term": "conditionCD86low"
+    }
+  ],
+  "rationale": "Genome-wide screen (Brie-type mouse library, 4 guides per gene, no non-targeting guides) in Cas9 Cd11c-Cre Cebpb(fl/fl) bone-marrow DCs sorted into the top and bottom 10% of CD86, one library per bin, as in Supplementary Data 11. MAGeCK in the paper compares Low with High (Cd86 is the top positive gene), so CD86-low versus CD86-high is the contrast; the unsorted library is not used. One library per bin: no-replicate path with the overdispersion pooled over all guides (no controls), so calls are screening-level and conservative.",
+  "counts_md5": "5d72520ce5e56e0ac1ae1170dd74f295"
+}

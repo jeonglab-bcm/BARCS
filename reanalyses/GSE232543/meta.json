@@ -1,0 +1,18 @@
+{
+  "gse": "GSE232543",
+  "pmid": "37813864",
+  "doi": "10.1038/s41467-023-41792-8",
+  "pmcid": "PMC10562403",
+  "title": "Systematic identification of gene combinations to target in innate immune cells to enhance T cell activation",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "Mouse bone-marrow dendritic cells (Cas9; Cd11c-Cre Cebpb fl/fl or WT), 661-gene Cebpb-DEG secondary library and genome-wide library, CD86 FACS sort",
+  "contrast": "CD86-low vs CD86-high, Cebpb-KO DCs, secondary library (1 vs 1); WT secondary and Cebpb-KO genome-wide screens alongside",
+  "paper_method": "MAGeCK RRA (Supplementary Data 11-12)",
+  "paper_calls": "Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1",
+  "barcs_calls": "Cebpb-KO secondary: 39 genes at FDR 0.10; WT secondary: 43; genome-wide Cebpb-KO: 1 (Cd86); no controls, no control null",
+  "named_hits": "3/5: Nr4a3 #5 (KO), Rxra #13 and Cebpb #2 (WT) at FDR 0.10; Mitf (KO, FDR 0.61) and Stat2 (WT, FDR 0.15) not",
+  "verdict": "BARCS confirms the paper's main Cebpb-arm result: Nr4a3 is a strong positive regulator of CD86 only in Cebpb-KO dendritic cells, and Cebpb and Rxra restrain CD86 in WT cells. Rankings correlate 0.82 with MAGeCK. Mitf and Stat2, which the paper discusses, do not pass FDR 0.10 with one library per bin and no controls.",
+  "agreement": "partial",
+  "analyzed": "2026-10-16"
+}

@@ -1,0 +1,17 @@
+{
+  "gse": "GSE183348",
+  "pmid": "39962238",
+  "doi": "10.1038/s41588-024-02070-5",
+  "title": "Functional analysis of cancer-associated germline risk variants.",
+  "journal": "Nature genetics",
+  "published": "2025",
+  "model": "DLD1, HCT116, SW948 colorectal cancer cells, focused Cas9 KO library (178 colon MPRA putative target genes x 6 guides, 100 safe-targeting), subcutaneous xenografts",
+  "contrast": "Subcutaneous tumour vs day 0 per cell line (DLD1 10 vs 2 main; HCT116 10 vs 2; SW948 9 vs 2), plus 2D vs day 0 (2 vs 2)",
+  "paper_method": "MAGeCK-RRA",
+  "paper_calls": "46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)",
+  "barcs_calls": "26 genes at FDR 0.10 in DLD1 tumours (25 depleted); 29 HCT116, 28 SW948",
+  "named_hits": "5/5 top published ptGene calls at FDR 0.10 in DLD1 tumours",
+  "verdict": "BARCS ranks genes like MAGeCK (Spearman 0.81-0.91) and its depleted tumour calls are all MAGeCK calls, but its lists are shorter (26 vs 46 in DLD1, 34 vs 145 in HCT116 2D), and it adds enrichment of CDH1/CDH3 in tumours.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16"
+}

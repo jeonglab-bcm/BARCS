@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/both_GC_vs_Saline_d15/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["NPEPPS", "XPA", "UBE2T", "MUS81", "FANCA", "RAD18"],
+  "top_n": [50, 100, 200]
+}

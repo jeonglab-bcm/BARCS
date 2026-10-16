@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/hct116_tumor_vs_day0/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["PCBP1", "ATP5SL", "CDC42", "CIRH1A", "CNOT9"],
+  "published": {
+    "file": "paper/SuppTable6_HCT116_Tumor.tsv",
+    "gene_column": "gene", "score_column": "neg|score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [10, 25, 50],
+  "out": "comparison_hct116_tumor"
+}

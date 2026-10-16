@@ -1,0 +1,40 @@
+{
+  "gse": "GSE206996",
+  "pmid": "37707319",
+  "counts_file": "counts_spike.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low",
+      "gsm": "GSM6267741",
+      "sort": "low"
+    },
+    {
+      "column": "High",
+      "gsm": "GSM6267742",
+      "sort": "high"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "spike_low_vs_high",
+      "columns": [
+        "Low",
+        "High"
+      ],
+      "formula": "~ sort",
+      "term": "sortlow"
+    }
+  ],
+  "rationale": "Brunello genome-wide knockout screen (77,441 guides, 1,000 non-targeting) in ACE2-expressing HEK293T cells infected with SARS-CoV-2 spike-pseudotyped mNeonGreen retrovirus, sorted into reporter-low (uninfected) and reporter-high cells. The GEO file puts three screens side by side; prepare.R splits it into one count file per screen (counts unchanged), with columns Pre/Input/Low/High matching the GSM titles. Host factors needed for entry or reporter expression (e.g. ACE2) are enriched in the reporter-low bin, so the contrast is low vs high. One library per bin, so run_barcs.R uses the no-replicate path with an overdispersion pooled over the non-targeting guides; calls are screening-level. The presort and plasmid libraries are not used in the contrast.",
+  "counts_md5": "768cbb38a9f591693f15e099fad90268"
+}

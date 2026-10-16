@@ -1,0 +1,28 @@
+{
+  "barcs_genes": "results/SEM_Cas9_day14_vs_day0/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "RPS19-sgRNA-design_cli",
+    "chr13:28842907-28843340(.)::npk3::pkscore157:PAN3",
+    "chr13:28819406-28820051(.)::npk3::pkscore264:PAN3",
+    "chr7:92384146-92384756(.)::npk3::pkscore178:CDK6",
+    "chr21:36247065-36247353(.)::npk2::pkscore95:RUNX1",
+    "chr14:24583753-24584104(.)::npk3::pkscore221:DCAF11",
+    "chr8:22832812-22833132(.)::npk2::pkscore134:PEBP4",
+    "chr11:67797980-67798220(.)::npk2::pkscore68:NDUFS8",
+    "chr9:37324704-37325208(.)::npk3::pkscore465:ZCCHC7",
+    "chr1:26097697-26098053(.)::npk2::pkscore114:MAN1C1"
+  ],
+  "published": {
+    "file": "paper/SEM_Cas9_day14_mageck.tsv",
+    "gene_column": "id",
+    "score_column": "neg|rank",
+    "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [
+    10,
+    25,
+    50
+  ]
+}

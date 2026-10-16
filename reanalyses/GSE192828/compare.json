@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/killing_vs_prekill/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["BTN3A1", "BTN2A1", "BTN3A2", "IRF1", "SPIB", "NLRC5", "HMGCR"],
+  "published": {
+    "file": "paper/S1.xlsx", "sheet": "Co-culture Screen",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [25, 50, 100, 200]
+}

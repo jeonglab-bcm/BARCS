@@ -1,0 +1,132 @@
+{
+  "gse": "GSE215926",
+  "pmid": "38016946",
+  "counts_file": "suppl/GSE215926_CRISPR.HOXA9.229.xlsx",
+  "sheet": "Raw.Count.tsv",
+  "guide_column": "sgRNAID",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^negative_control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "SEMCas9-Day0_R1-SFM001-2583702",
+      "gsm": "GSM7635437",
+      "condition": "Day0",
+      "arm": "Cas9",
+      "replicate": "1"
+    },
+    {
+      "column": "SEMCas9-Day0_R2-SFM002-2583703",
+      "gsm": "GSM7635438",
+      "condition": "Day0",
+      "arm": "Cas9",
+      "replicate": "2"
+    },
+    {
+      "column": "SEMCas9-Day0_R3-SFM003-2583704",
+      "gsm": "GSM7635439",
+      "condition": "Day0",
+      "arm": "Cas9",
+      "replicate": "3"
+    },
+    {
+      "column": "SEMCas9-Day14_R1-SFM007-2583708",
+      "gsm": "GSM7635440",
+      "condition": "Day14",
+      "arm": "Cas9",
+      "replicate": "1"
+    },
+    {
+      "column": "SEMCas9-Day14_R2-SFM008-2583709",
+      "gsm": "GSM7635441",
+      "condition": "Day14",
+      "arm": "Cas9",
+      "replicate": "2"
+    },
+    {
+      "column": "SEMCas9-Day14_R3-SFM009-2583710",
+      "gsm": "GSM7635442",
+      "condition": "Day14",
+      "arm": "Cas9",
+      "replicate": "3"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day0_R1-SFM010-2583711",
+      "gsm": "GSM7635446",
+      "condition": "Day0",
+      "arm": "dCas9KRAB",
+      "replicate": "1"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day0_R2-SFM011-2583712",
+      "gsm": "GSM7635447",
+      "condition": "Day0",
+      "arm": "dCas9KRAB",
+      "replicate": "2"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day0_R3-SFM012-2583713",
+      "gsm": "GSM7635448",
+      "condition": "Day0",
+      "arm": "dCas9KRAB",
+      "replicate": "3"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day14_R1-SFM016-2583717",
+      "gsm": "GSM7635449",
+      "condition": "Day14",
+      "arm": "dCas9KRAB",
+      "replicate": "1"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day14_R2-SFM017-2583718",
+      "gsm": "GSM7635450",
+      "condition": "Day14",
+      "arm": "dCas9KRAB",
+      "replicate": "2"
+    },
+    {
+      "column": "SEMdCas9-KRAB-Day14_R3-SFM018-2583719",
+      "gsm": "GSM7635451",
+      "condition": "Day14",
+      "arm": "dCas9KRAB",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "Day0",
+      "Day14"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SEM_Cas9_day14_vs_day0",
+      "columns": [
+        "SEMCas9-Day0_R1-SFM001-2583702",
+        "SEMCas9-Day0_R2-SFM002-2583703",
+        "SEMCas9-Day0_R3-SFM003-2583704",
+        "SEMCas9-Day14_R1-SFM007-2583708",
+        "SEMCas9-Day14_R2-SFM008-2583709",
+        "SEMCas9-Day14_R3-SFM009-2583710"
+      ],
+      "formula": "~ condition",
+      "term": "conditionDay14"
+    },
+    {
+      "name": "SEM_dCas9KRAB_day14_vs_day0",
+      "columns": [
+        "SEMdCas9-KRAB-Day0_R1-SFM010-2583711",
+        "SEMdCas9-KRAB-Day0_R2-SFM011-2583712",
+        "SEMdCas9-KRAB-Day0_R3-SFM012-2583713",
+        "SEMdCas9-KRAB-Day14_R1-SFM016-2583717",
+        "SEMdCas9-KRAB-Day14_R2-SFM017-2583718",
+        "SEMdCas9-KRAB-Day14_R3-SFM018-2583719"
+      ],
+      "formula": "~ condition",
+      "term": "conditionDay14"
+    }
+  ],
+  "rationale": "GEO holds the 229-peak secondary (validation) library, 5,718 guides over 249 elements (HOXA9-bound peaks, an RPS19 positive control and 20 negative-control guides), as sheet Raw.Count.tsv of the deposited workbook; the paper's ~1,800-peak primary screen is not deposited. The paper's MAGeCK comparisons (Meta.vs.list, Supplementary Data 2) are each arm's day 14 versus day 0, unpaired, 3 vs 3; we reproduce the SEM Cas9 (knockout) and SEM dCas9-KRAB (CRISPRi) day-14 comparisons, which the paper's FLT3-enhancer and CDK6-intron hits come from. Replicate residuals show no day-0/day-14 pairing, so no replicate term. MOLM13 is not in the paper's supplementary MAGeCK tables and is not analysed.",
+  "counts_md5": "dcd040905ecf330383b111394f435fa4"
+}

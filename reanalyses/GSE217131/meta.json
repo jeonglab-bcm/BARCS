@@ -1,0 +1,13 @@
+{
+  "gse": "GSE217131", "pmid": "38866017", "doi": "10.1016/j.cell.2024.05.030", "pmcid": "PMC11641762",
+  "title": "TNF-NF-κB-p53 axis restricts in vivo survival of hPSC-derived dopamine neurons",
+  "journal": "Cell", "published": "2024",
+  "model": "H9 hPSC-derived dopamine neurons, Dox-inducible Cas9, 538-guide cell-death/survival library",
+  "contrast": "Grafted (in vivo) vs in vitro edited pool, day 25 (1 vs 1; technical re-reads summed)",
+  "paper_method": "Enrichment of guides in graft vs in vitro (focused survival screen)",
+  "paper_calls": "TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated",
+  "barcs_calls": "1 gene at FDR 0.10 (TP53, enriched); 3 against the control null; controls-calibrated",
+  "named_hits": "TP53 #1 of 164 (FDR ~0, empirical 0.003); BBC3, BAX, CASP9 enriched in direction but not significant",
+  "verdict": "BARCS recovers the paper's central hit, TP53, as the single clear gene whose knockout rescues grafted neurons; the downstream apoptosis and TNF-NF-κB genes trend the same way but are not individually significant with one library per condition.",
+  "agreement": "agree", "analyzed": "2026-10-16"
+}

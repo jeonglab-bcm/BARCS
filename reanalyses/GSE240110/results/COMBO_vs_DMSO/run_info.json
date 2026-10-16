@@ -1,0 +1,53 @@
+{
+  "analysis": "COMBO_vs_DMSO",
+  "formula": "~cell_line + treatment",
+  "term": "treatmentCOMBO",
+  "libraries": 12,
+  "residual_df": 8,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 71090,
+  "genes": 18047,
+  "moderated": true,
+  "prior_df": 5.6686,
+  "guide_correlation": 0.0609,
+  "control_scale": 1.5352,
+  "control_guides": 142,
+  "control_p05_raw": 0.2254,
+  "control_p05": 0.0493,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 348,
+  "top1pct_read_share": {
+    "H2030-Ctrl1": 0.031,
+    "H2030-Ctrl2": 0.029,
+    "H2030-COMBO1": 0.032,
+    "H2030-COMBO2": 0.033,
+    "H2122-Ctrl1": 0.027,
+    "H2122-Ctrl2": 0.026,
+    "H2122-COMBO1": 0.174,
+    "H2122-COMBO2": 0.173,
+    "H23-Ctrl1": 0.028,
+    "H23-Ctrl2": 0.029,
+    "H23-COMBO1": 0.046,
+    "H23-COMBO2": 0.045
+  },
+  "genes_fdr_0_10_up": 105,
+  "genes_fdr_0_10_down": 1777,
+  "genes_fdr_0_05": 1346,
+  "genes_fdr_0_10": 1882,
+  "genes_empirical_fdr_0_10": 990,
+  "empirical_centre": "targets",
+  "control_shift": -0.776,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}
