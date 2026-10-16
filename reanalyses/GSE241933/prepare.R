@@ -36,3 +36,9 @@ dir.create(file.path(workdir, "paper"), showWarnings = FALSE)
 utils::write.table(t2f[, c("gene", "gene_p", "gene_padj", "gene_effect")],
                    file.path(workdir, "paper", "T2F_gene_level_CRISPRa.tsv"),
                    sep = "\t", quote = FALSE, row.names = FALSE)
+# The MAGeCK table of the TF knockout screen with BATF3 (sheet T6D), for
+# compare_ko_withBATF3.json.
+t6d <- as.data.frame(readxl::read_excel(xlsx, sheet = "T6D mageckTFkoscreen with BATF3",
+                                        .name_repair = "minimal"))
+utils::write.table(t6d[, 1:14], file.path(workdir, "paper", "T6D_mageck_ko_withBATF3.tsv"),
+                   sep = "\t", quote = FALSE, row.names = FALSE)
