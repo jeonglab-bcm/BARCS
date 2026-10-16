@@ -5,9 +5,10 @@
 #   Rscript tools/screen-reanalysis/archive_run.R work/GSE123456 [--dest reanalyses]
 #
 # Needs in the work directory: meta.json, design.json, compare.json, REPORT.md,
-# and results/<analysis>/ from run_barcs.R; prepare.R and extra design_*.json
-# whose results are kept are copied too, for reproduce.R. Gene tables are trimmed to the
-# columns the site uses and gzipped; guide tables and raw counts stay behind.
+# and results/<analysis>/ from run_barcs.R; prepare.R, extra design_*.json
+# and compare_*.json whose results are kept are copied too, for reproduce.R.
+# Gene tables are trimmed to the columns the site uses and gzipped; guide
+# tables and raw counts stay behind.
 
 suppressPackageStartupMessages(library(jsonlite))
 
@@ -48,6 +49,16 @@ kept_runs <- basename(list.dirs(file.path(src, "results"), recursive = FALSE))
 for (extra in list.files(src, pattern = "^design_.*\\.json$")) {
   analyses <- fromJSON(file.path(src, extra), simplifyVector = TRUE)$analyses$name
   if (length(analyses) && all(analyses %in% kept_runs)) file.copy(file.path(src, extra), dest, overwrite = TRUE)
+}
+# Further comparisons with the paper (compare_<name>.json, each writing its own
+# comparison_<name>.md through "out") are kept when their BARCS table is.
+for (extra in list.files(src, pattern = "^compare_.*\\.json$")) {
+  spec <- fromJSON(file.path(src, extra), simplifyVector = TRUE)
+  if (is.null(spec$out) || identical(spec$out, "comparison")) next
+  if (!basename(dirname(spec$barcs_genes)) %in% kept_runs) next
+  file.copy(file.path(src, extra), dest, overwrite = TRUE)
+  report <- file.path(src, paste0(spec$out, ".md"))
+  if (file.exists(report)) file.copy(report, dest, overwrite = TRUE)
 }
 
 for (run in list.dirs(file.path(src, "results"), recursive = FALSE)) {
