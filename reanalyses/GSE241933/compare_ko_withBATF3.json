@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/KO_withBATF3_IL7R_high_vs_low/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["IL7R", "BATF3", "JUNB", "IRF4", "FOXO1", "DNMT1", "ZNF217", "GATA3", "AHR"],
+  "published": {
+    "file": "paper/T6D_mageck_ko_withBATF3.tsv",
+    "gene_column": "gene", "score_column": "neg|score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [25, 50, 100],
+  "out": "comparison_ko_withBATF3"
+}

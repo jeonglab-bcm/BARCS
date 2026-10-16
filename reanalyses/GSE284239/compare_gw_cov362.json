@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/gw_tng348_vs_dmso/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["PARP1", "RAD18"],
+  "published": {"file": "paper/tableS9.csv", "gene_column": "gene", "score_column": "signed_score",
+                "score_better": "lower", "effect_column": "effect"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_gw_cov362"
+}

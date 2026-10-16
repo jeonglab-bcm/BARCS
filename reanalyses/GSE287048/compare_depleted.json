@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/inx315_vs_dmso/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["CCNB1", "FOXM1", "MTR"],
+  "published": {"file": "paper/SupplementaryData2.xlsx", "sheet": "HCC1806", "gene_column": "GENE",
+                "score_column": "normZ", "score_better": "lower", "effect_column": "normZ"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_depleted"
+}

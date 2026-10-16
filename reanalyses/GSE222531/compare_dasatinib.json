@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/LGR_dasatinib_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NF1", "LZTR1", "GFI1B", "CCNC", "CDK8", "MED12", "MED8", "MED31", "MED23", "MED24", "MED1", "PTPN1"],
+  "top_n": [25, 100],
+  "out": "comparison_dasatinib"
+}
