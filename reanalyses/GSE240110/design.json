@@ -1,4 +1,5 @@
 {
+  "fetch": {"sample_files": true},
   "gse": "GSE240110",
   "pmid": "37729426",
   "counts_file": "counts.tsv.gz",

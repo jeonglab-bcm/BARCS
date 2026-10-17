@@ -58,3 +58,8 @@ d <- as.data.frame(readxl::read_excel(xl, sheet = "Per sRNA"))
 for (j in 2:5) d[[j]] <- signif(as.numeric(d[[j]]), 6)
 d <- d[order(d$sRNA, method = "radix"), ]
 utils::write.table(d, file.path(workdir, "paper", "per_sRNA.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
+# compare.json matches genes by name: the paper calls BTnc167 by its name BatR,
+# while the guide IDs in the count file use BTnc167.
+m <- d
+m$sRNA[m$sRNA == "BatR"] <- "BTnc167"
+utils::write.table(m, file.path(workdir, "paper", "per_sRNA_matched.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
