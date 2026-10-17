@@ -1,0 +1,21 @@
+{
+  "barcs_genes": "results/suppressor_GFPhigh_vs_unsorted/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "OTUD5",
+    "USP45"
+  ],
+  "published": {
+    "file": "paper/EV1_GFP_high.tsv",
+    "gene_column": "id",
+    "score_column": "pos|p-value",
+    "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [
+    5,
+    10,
+    20
+  ],
+  "out": "comparison_suppressor"
+}

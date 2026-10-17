@@ -1,0 +1,19 @@
+{
+  "gse": "GSE244434",
+  "pmid": "37977119",
+  "doi": "10.1016/j.molcel.2023.10.017",
+  "title": "Active growth signaling promotes senescence and cancer cell sensitivity to CDK7 inhibition",
+  "journal": "Molecular Cell",
+  "published": "2023",
+  "model": "NALM-6 cells, EKO genome-wide knockout library (192,613 guides)",
+  "contrast": "Samuraciclib (ICEC0942, 0.35 uM, 8 days) vs sum of 16 control libraries (1 vs 1)",
+  "paper_method": "RANKS (modified) against summed controls",
+  "paper_calls": "Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable",
+  "barcs_calls": "47 genes at FDR 0.10 (27 enriched, 20 depleted); 372 against the control null (model conservative on controls)",
+  "named_hits": "mTOR pathway: MLST8 #1, MAPKAP1 #4, RICTOR #16 enriched; NPRL3, DEPDC5, TSC2 depleted (FDR <= 0.085); MTOR, RPTOR, RHEB essential and untestable",
+  "verdict": "BARCS reproduces the paper's pathway-level result: loss of mTOR complex subunits (MLST8, MAPKAP1, RICTOR) protects from samuraciclib, and loss of the negative regulators GATOR1 (NPRL3, DEPDC5) and TSC2 sensitizes, all at FDR 0.10. The calls are screening-level, with one library per arm and a summed control.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-11-16",
+  "published_issue": "2023 Nov 16"
+}

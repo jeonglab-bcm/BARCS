@@ -1,0 +1,146 @@
+{
+  "gse": "GSE229545",
+  "pmid": "37269286",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_11",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_12",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_13",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_14",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_15",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_16",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_21",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_22",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_23",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_24",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_25",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_26",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_27",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_28",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_31",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_32",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_33",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_34",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_35",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_36",
+      "condition": "WT"
+    },
+    {
+      "column": "P4_1",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_2",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_3",
+      "condition": "P4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "P4",
+      "WT"
+    ]
+  },
+  "totals": "median_ratio",
+  "analyses": [
+    {
+      "name": "P4_vs_WT",
+      "columns": [
+        "P4_1",
+        "P4_2",
+        "P4_3",
+        "WT_11",
+        "WT_12",
+        "WT_13",
+        "WT_14",
+        "WT_15",
+        "WT_16",
+        "WT_21",
+        "WT_22",
+        "WT_23",
+        "WT_24",
+        "WT_25",
+        "WT_26",
+        "WT_27",
+        "WT_28",
+        "WT_31",
+        "WT_32",
+        "WT_33",
+        "WT_34",
+        "WT_35",
+        "WT_36"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT"
+    }
+  ],
+  "rationale": "Secondary contrast: in vivo fitness in WT mice relative to the in vitro passage (P4 reference). Positive/negative estimate = enriched/depleted in WT vs in vitro; depleted-in-WT genes are in vivo fitness factors. median_ratio totals because the WT libraries are bottlenecked.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "457c9a73f1b4d5729f4806786e5fb454"
+}

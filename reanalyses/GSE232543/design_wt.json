@@ -1,0 +1,42 @@
+{
+  "gse": "GSE232543",
+  "pmid": "37813864",
+  "counts_file": "suppl/GSE232543_CD86_WT_DCs_Secondary.csv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Cebpb_lib_WT_DCs_CD86_H",
+      "gsm": "GSM7350021",
+      "condition": "CD86high",
+      "replicate": "1"
+    },
+    {
+      "column": "Cebpb_lib_WT_DCs_CD86_L",
+      "gsm": "GSM7350022",
+      "condition": "CD86low",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "CD86high",
+      "CD86low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "WT_secondary_CD86low_vs_high",
+      "columns": [
+        "Cebpb_lib_WT_DCs_CD86_H",
+        "Cebpb_lib_WT_DCs_CD86_L"
+      ],
+      "formula": "~ condition",
+      "term": "conditionCD86low"
+    }
+  ],
+  "rationale": "Same 661-gene Cebpb-DEG secondary library screened in Cebpb-WT (Cas9) DCs, CD86-low versus CD86-high, one library per bin (Supplementary Data 12, 'WT DCs'). No-replicate path, overdispersion pooled over all guides (no controls).",
+  "counts_md5": "35fc47da8eaeff77599331792fa1aad7"
+}

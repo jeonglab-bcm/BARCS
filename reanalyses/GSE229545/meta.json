@@ -1,0 +1,20 @@
+{
+  "pmid": "37269286",
+  "doi": "10.1016/j.celrep.2023.112592",
+  "pmcid": null,
+  "title": "Host genetics highlights IFN-gamma-dependent Toxoplasma genes encoding secreted and non-secreted virulence factors in in vivo CRISPR screens",
+  "journal": "Cell Reports",
+  "published": "2023",
+  "paper_method": "Per-gene fitness scores, WT-vs-KO and P4-vs-WT t-tests",
+  "analyzed": "2026-10-16",
+  "model": "Toxoplasma RH tachyzoites, ROP/GRA sublibrary (376 genes, 3,757 gRNAs), in vivo mouse passage",
+  "contrast": "WT vs Ifngr1-/- mouse passage (20 vs 7); also in vitro (P4) vs WT (3 vs 20)",
+  "paper_calls": "Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45",
+  "barcs_calls": "WT vs KO: 71 genes at FDR 0.10 (70 depleted in WT); P4 vs WT: 140",
+  "named_hits": "4/4 at FDR<1e-10, top 4: GRA12 #1, ROP18 #2, ROP5 #3, GRA45 #4",
+  "verdict": "BARCS ranks the four validated IFN-gamma-dependent virulence factors (GRA12, ROP18, ROP5, GRA45) as its top four depleted-in-WT genes; effect sizes correlate with the paper (r=0.32, 90% sign agreement on its top genes) but the heavily bottlenecked libraries and the paper's custom per-gene test leave the bulk p-value ranking uncorrelated.",
+  "agreement": "agree",
+  "gse": "GSE229545",
+  "published_date": "2023-06-01",
+  "published_issue": "2023 Jun 27"
+}

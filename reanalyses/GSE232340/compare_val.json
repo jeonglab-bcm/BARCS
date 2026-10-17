@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/VAL_parenchyma_vs_blood/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Itga4", "Cxcr3", "Fermt3", "Grk2", "Cbfb"],
+  "published": {
+    "file": "paper/val_PvsB_mageck.tsv",
+    "gene_column": "gene", "score_column": "neg_score", "score_better": "lower",
+    "effect_column": "lfc_tissue_vs_blood"
+  },
+  "top_n": [10, 25, 50],
+  "out": "comparison_val"
+}

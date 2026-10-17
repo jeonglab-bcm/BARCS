@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/graft_vs_invitro/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TP53", "BBC3", "CASP9", "TNFRSF11B", "BAX"],
+  "top_n": [10, 20, 40]
+}

@@ -1,0 +1,59 @@
+{
+  "gse": "GSE210422",
+  "pmid": "37904237",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_file": "GSE210422_merged_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^N_[0-9]+$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "GSM6430036_A375_day0_rep1",
+      "gsm": "GSM6430036",
+      "condition": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "GSM6430037_A375_day0_rep2",
+      "gsm": "GSM6430037",
+      "condition": "day0",
+      "replicate": "2"
+    },
+    {
+      "column": "GSM6430038_A375_day21_rep1",
+      "gsm": "GSM6430038",
+      "condition": "day21",
+      "replicate": "1"
+    },
+    {
+      "column": "GSM6430039_A375_day21_rep2",
+      "gsm": "GSM6430039",
+      "condition": "day21",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day0",
+      "day21"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "A375_day21_vs_day0",
+      "columns": [
+        "GSM6430036_A375_day0_rep1",
+        "GSM6430037_A375_day0_rep2",
+        "GSM6430038_A375_day21_rep1",
+        "GSM6430039_A375_day21_rep2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday21"
+    }
+  ],
+  "rationale": "The paper's main screen is the A375 dCas9-KRAB CRISPRi screen of melanoma HRR-associated enhancers (9,977 guides over 804 enhancer core regions plus 1,000 non-targeting guides, each its own N_<i> id), day 21 versus day 0 with two replicates each (MAGeCK; Table S7 'A375 day21'). Its 66 positively selected enhancers (silencing speeds growth, tumour-suppressive candidates such as E_349, E_156 near PTEN, E_409 near NF1) are the headline, so enrichment is the direction compared. Replicate 1/2 labels carry no evidence of pairing, so no replicate term. The A375 day-7 and SK-MEL-2 libraries added in 2023 are bottlenecked (55-76% of guides at zero, top 1% of guides holding 11-19% of reads) and are not analysed; they are kept in the merged count file only.",
+  "counts_md5": "b34d095bf88495b48d55215820a4ef14"
+}

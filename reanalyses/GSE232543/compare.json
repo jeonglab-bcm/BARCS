@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/CebpbKO_secondary_CD86low_vs_high/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["Cd86", "Nr4a3", "Stat2", "Mitf"],
+  "published": {"file": "paper/CebpbKO_secondary_mageck.tsv", "gene_column": "id", "score_column": "pos|rank",
+                "score_better": "lower", "effect_column": "pos|lfc"},
+  "top_n": [10, 25, 50]
+}

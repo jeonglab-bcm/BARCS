@@ -1,0 +1,142 @@
+{
+  "gse": "GSE179799",
+  "pmid": "38535994",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "P7C02_KU1919GC_T15_GC_R2_S37_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "GC",
+      "replicate": "2"
+    },
+    {
+      "column": "P7B10_KU1919GC_T15_Saline_R1_S33_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "Saline",
+      "replicate": "1"
+    },
+    {
+      "column": "P7C01_KU1919GC_T15_GC_R1_S36_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "GC",
+      "replicate": "1"
+    },
+    {
+      "column": "P7C03_KU1919GC_T15_GC_R3_S38_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "GC",
+      "replicate": "3"
+    },
+    {
+      "column": "P7B11_KU1919GC_T15_Saline_R2_S34_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "Saline",
+      "replicate": "2"
+    },
+    {
+      "column": "P7B12_KU1919GC_T15_Saline_R3_S35_L002_R1_001",
+      "cell": "KU1919",
+      "condition": "Saline",
+      "replicate": "3"
+    },
+    {
+      "column": "P7D08_5637GC_T15_GC_R2_S17_L004_R1_001",
+      "cell": "5637",
+      "condition": "GC",
+      "replicate": "2"
+    },
+    {
+      "column": "P7D04_5637GC_T15_Saline_R1_S13_L004_R1_001",
+      "cell": "5637",
+      "condition": "Saline",
+      "replicate": "1"
+    },
+    {
+      "column": "P7D09_5637GC_T15_GC_R3_S18_L004_R1_001",
+      "cell": "5637",
+      "condition": "GC",
+      "replicate": "3"
+    },
+    {
+      "column": "P7D07_5637GC_T15_GC_R1_S16_L004_R1_001",
+      "cell": "5637",
+      "condition": "GC",
+      "replicate": "1"
+    },
+    {
+      "column": "P7D06_5637GC_T15_Saline_R3_S15_L004_R1_001",
+      "cell": "5637",
+      "condition": "Saline",
+      "replicate": "3"
+    },
+    {
+      "column": "P7D05_5637GC_T15_Saline_R2_S14_L004_R1_001",
+      "cell": "5637",
+      "condition": "Saline",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "Saline",
+      "GC"
+    ],
+    "cell": [
+      "KU1919",
+      "5637"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KU1919_GC_vs_Saline_d15",
+      "columns": [
+        "P7C02_KU1919GC_T15_GC_R2_S37_L002_R1_001",
+        "P7B10_KU1919GC_T15_Saline_R1_S33_L002_R1_001",
+        "P7C01_KU1919GC_T15_GC_R1_S36_L002_R1_001",
+        "P7C03_KU1919GC_T15_GC_R3_S38_L002_R1_001",
+        "P7B11_KU1919GC_T15_Saline_R2_S34_L002_R1_001",
+        "P7B12_KU1919GC_T15_Saline_R3_S35_L002_R1_001"
+      ],
+      "formula": "~ condition",
+      "term": "conditionGC"
+    },
+    {
+      "name": "5637_GC_vs_Saline_d15",
+      "columns": [
+        "P7D08_5637GC_T15_GC_R2_S17_L004_R1_001",
+        "P7D04_5637GC_T15_Saline_R1_S13_L004_R1_001",
+        "P7D09_5637GC_T15_GC_R3_S18_L004_R1_001",
+        "P7D07_5637GC_T15_GC_R1_S16_L004_R1_001",
+        "P7D06_5637GC_T15_Saline_R3_S15_L004_R1_001",
+        "P7D05_5637GC_T15_Saline_R2_S14_L004_R1_001"
+      ],
+      "formula": "~ condition",
+      "term": "conditionGC"
+    },
+    {
+      "name": "both_GC_vs_Saline_d15",
+      "columns": [
+        "P7C02_KU1919GC_T15_GC_R2_S37_L002_R1_001",
+        "P7B10_KU1919GC_T15_Saline_R1_S33_L002_R1_001",
+        "P7C01_KU1919GC_T15_GC_R1_S36_L002_R1_001",
+        "P7C03_KU1919GC_T15_GC_R3_S38_L002_R1_001",
+        "P7B11_KU1919GC_T15_Saline_R2_S34_L002_R1_001",
+        "P7B12_KU1919GC_T15_Saline_R3_S35_L002_R1_001",
+        "P7D08_5637GC_T15_GC_R2_S17_L004_R1_001",
+        "P7D04_5637GC_T15_Saline_R1_S13_L004_R1_001",
+        "P7D09_5637GC_T15_GC_R3_S18_L004_R1_001",
+        "P7D07_5637GC_T15_GC_R1_S16_L004_R1_001",
+        "P7D06_5637GC_T15_Saline_R3_S15_L004_R1_001",
+        "P7D05_5637GC_T15_Saline_R2_S14_L004_R1_001"
+      ],
+      "formula": "~ cell + condition",
+      "term": "conditionGC"
+    }
+  ],
+  "rationale": "Whole-genome CRISPR knockout screen (custom library, GENE_position_sense guide names, ~4 guides/gene, no non-targeting guides) in bladder cancer cell lines, Jones et al. 2024. Cells were treated with gemcitabine+cisplatin (GC) or saline and sequenced at matched timepoints; genes whose knockout sensitises cells to GC drop out of the GC arm (depleted). The cleanest arms are KU1919 and 5637 with three replicates each of GC and Saline at the day-15 endpoint. The primary analysis pools both lines with a cell-line term (both_GC_vs_Saline_d15); per-line analyses are also run. The 253J/T24/TCCSUP columns (combined-run files, mixed replicate structure) are not used. No controls were deposited, so calibration and the control null cannot be checked.",
+  "fetch": {},
+  "counts_md5": "b7f8b54356e7788870b1e882a0e54e28"
+}

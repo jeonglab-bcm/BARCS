@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/MRTX_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["NF2", "LATS2", "TAOK1", "KIRREL", "AMOTL2", "NRP1"],
+  "top_n": [10, 25, 50]
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/calB_GFPneg_vs_GFPpos/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["PPID", "PI16", "SHISA3", "ITM2A"],
+  "published": {
+    "file": "suppl/GSE318876_All_screens_MAGeCK_gene_summaries.xlsx", "sheet": "GW-CRISPRa-HIV",
+    "gene_column": "id", "score_column": "neg|score", "score_better": "lower"
+  },
+  "out": "comparison_calB",
+  "top_n": [50, 100, 200]
+}

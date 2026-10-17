@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/low_vs_high/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["BTN3A1", "BTN3A2", "IRF1", "SPIB", "ECSIT", "NLRC5", "FBXW7", "IRF8"],
+  "published": {
+    "file": "paper/MOESM8.xlsx", "sheet": "BTN3A Screen",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [25, 50, 100, 200, 500]
+}

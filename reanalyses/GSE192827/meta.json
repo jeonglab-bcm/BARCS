@@ -1,0 +1,20 @@
+{
+  "gse": "GSE192827",
+  "pmid": "37648854",
+  "doi": "10.1038/s41586-023-06482-x",
+  "pmcid": "PMC11003766",
+  "title": "CRISPR screens decode cancer cell pathways that trigger γδ T cell detection",
+  "journal": "Nature",
+  "published": "2023",
+  "model": "Daudi-Cas9 Burkitt lymphoma cells, genome-wide knockout library (90,709 guides, no non-targeting controls)",
+  "contrast": "BTN3A-low vs BTN3A-high FACS sort, paired across 3 replicate infections (3 vs 3)",
+  "paper_method": "MAGeCK RRA (Supplementary Table, MOESM8)",
+  "paper_calls": "497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative",
+  "barcs_calls": "3,244 genes at FDR 0.10 on the paired low-vs-high term (1,350 up in low, 1,894 up in high); no control guides for a control null",
+  "named_hits": "8/8 positive regulators at FDR 0.10 (BTN3A1 #1, IRF1 #2, NLRC5 #3, SPIB #4, IRF8 #6, BTN3A2 #7, FBXW7 #8, ECSIT #9); negative regulators CTBP1 #1, RING1 #4, ZNF217 #3, RUNX1 #13 all recovered",
+  "verdict": "BARCS reproduces the paper's BTN3A regulators almost exactly (top positive and negative hits match, rank correlation 0.76/0.75, ~494/497 and ~748/754 of the paper's calls recovered) on the companion FACS screen to GSE192828; calibration could not be checked because the library has no control guides.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-08-30",
+  "published_issue": "2023 Sep"
+}

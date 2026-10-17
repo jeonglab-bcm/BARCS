@@ -1,0 +1,57 @@
+{
+  "gse": "GSE217131",
+  "pmid": "38866017",
+  "counts_file": "counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^(NonTargeting|SafeHarbor)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "D16_Dox_neg",
+      "gsm": "GSM6705502",
+      "condition": "D16",
+      "replicate": "sum"
+    },
+    {
+      "column": "D25_Dox_neg",
+      "gsm": "GSM6705503",
+      "condition": "D25_Doxneg",
+      "replicate": "sum"
+    },
+    {
+      "column": "D25_Dox_pos",
+      "gsm": "GSM6705504",
+      "condition": "D25_invitro",
+      "replicate": "sum"
+    },
+    {
+      "column": "D25_Graft",
+      "gsm": "GSM6705505",
+      "condition": "D25_graft",
+      "replicate": "sum"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "D25_invitro",
+      "D25_graft",
+      "D16",
+      "D25_Doxneg"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "graft_vs_invitro",
+      "columns": [
+        "D25_Dox_pos",
+        "D25_Graft"
+      ],
+      "formula": "~ condition",
+      "term": "conditionD25_graft"
+    }
+  ],
+  "rationale": "Focused in vivo survival CRISPR screen (Kim et al. 2024, Cell): H9 hPSC-derived dopamine neurons carrying a doxycycline-inducible Cas9 and a 538-guide 'large pool' library (about 160 cell-death / survival genes with 3 guides each, 50 non-targeting and 50 safe-harbor controls). After Dox-induced editing, the day-25 edited pool was kept in vitro (D25 Dox+) or grafted into mouse striatum (D25 Graft Dox+). Guides enriched in the graft mark genes whose knockout improves neuron survival in vivo (the paper's finding: loss of TP53-mediated apoptosis and TNF-NF-kB signalling, e.g. TP53, BBC3/PUMA). Each GEO sheet has two count columns that are technical re-reads of one library (correlation > 0.998, constant ratio), summed by prepare.R, so there is one library per condition and run_barcs.R uses the no-replicate path (screening-level calls) pooling overdispersion over the 100 control guides.",
+  "fetch": {},
+  "counts_md5": "c13212be23d40d1b8cffa40bf782676c"
+}

@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/mda_tng348_vs_dmso/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["RAD18", "UBE2K", "UBE2A", "RFWD3", "PARP1"],
+  "published": {"file": "paper/tableS6.csv", "gene_column": "gene", "score_column": "signed_score",
+                "score_better": "higher", "effect_column": "effect"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_mda"
+}

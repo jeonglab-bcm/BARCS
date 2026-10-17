@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/noninvading_vs_before/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["LH02236", "LH02727"],
+  "top_n": [10, 25, 50]
+}

@@ -1,0 +1,45 @@
+{
+  "analysis": "A375_day21_vs_day0",
+  "formula": "~condition",
+  "term": "conditionday21",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 9977,
+  "genes": 805,
+  "moderated": true,
+  "prior_df": 23.0212,
+  "guide_correlation": 0.0115,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0073,
+  "control_p05": 0.0073,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 184,
+  "top1pct_read_share": {
+    "GSM6430036_A375_day0_rep1": 0.056,
+    "GSM6430037_A375_day0_rep2": 0.058,
+    "GSM6430038_A375_day21_rep1": 0.078,
+    "GSM6430039_A375_day21_rep2": 0.081
+  },
+  "genes_fdr_0_10_up": 21,
+  "genes_fdr_0_10_down": 205,
+  "genes_fdr_0_05": 150,
+  "genes_fdr_0_10": 226,
+  "genes_empirical_fdr_0_10": 259,
+  "empirical_centre": "controls",
+  "control_shift": -0.114,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

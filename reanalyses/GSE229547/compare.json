@@ -1,0 +1,19 @@
+{
+  "barcs_genes": "results/WT_vs_KO/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "TGGT1_205250"
+  ],
+  "published": {
+    "file": "paper/wt_vs_ko.tsv",
+    "gene_column": "gene",
+    "score_column": "p",
+    "score_better": "lower",
+    "effect_column": "score_diff"
+  },
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

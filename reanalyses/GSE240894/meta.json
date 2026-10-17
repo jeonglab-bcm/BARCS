@@ -1,0 +1,20 @@
+{
+  "gse": "GSE240894",
+  "pmid": "37546973",
+  "doi": "10.1101/2023.07.28.551016",
+  "pmcid": "PMC10402164",
+  "title": "A CRISPR screen of HIV dependency factors reveals CCNT1 is non-essential in T cells but required for HIV-1 reactivation from latency",
+  "journal": "bioRxiv",
+  "published": "2023",
+  "model": "Latently infected Jurkat T cells (J-Lat 10.6 and 5A8), 526-gene HIV-dependency-factor knockout library (8 guides/gene, 210 non-targeting controls)",
+  "contrast": "Latency HIV-CRISPR: combination (AZD5582 + I-BET151) viral-RNA sort vs genomic-DNA pool, per cell line (2 vs 2)",
+  "paper_method": "MAGeCK (Supplementary Data 10 / File S1)",
+  "paper_calls": "J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)",
+  "barcs_calls": "J-Lat 10.6: 92 genes at FDR 0.10 (65 depleted; control null 131, centred on targets after a -0.26 z control offset); J-Lat 5A8: 49 (46 depleted; control null 21). Both calibrated to the 210 controls (raw p05 0.25/0.17)",
+  "named_hits": "10/10 recovered in J-Lat 10.6 (CCNT1 #1, OGT #5, NFKB1 #6, ELL #4, UBE2M #3) and 9/9 in J-Lat 5A8 (CCNT1 #1, ELL #2, OTUD5 #4, MED7 #5); all at FDR 0.10",
+  "verdict": "BARCS reproduces CCNT1 as the top latency-reactivation factor in both J-Lat lines and recovers the paper's full depleted hit set (ELL, UBE2M, OTUD5, MED7, NFKB1, TBL1XR1, HDAC3, AMBRA1), with rank correlation 0.83/0.77 after calibrating to the non-targeting controls.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-07-28",
+  "published_issue": "2023 Jul 28"
+}

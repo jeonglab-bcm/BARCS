@@ -1,0 +1,111 @@
+{
+  "gse": "GSE229548",
+  "pmid": "37269286",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_01",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_02",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_03",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_04",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_05",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_06",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_07",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_08",
+      "condition": "WT"
+    },
+    {
+      "column": "KO_01",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_02",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_03",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_04",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_05",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_06",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_07",
+      "condition": "KO"
+    },
+    {
+      "column": "P4",
+      "condition": "P4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "KO",
+      "WT",
+      "P4"
+    ]
+  },
+  "totals": "median_ratio",
+  "analyses": [
+    {
+      "name": "WT_vs_KO",
+      "columns": [
+        "WT_01",
+        "WT_02",
+        "WT_03",
+        "WT_04",
+        "WT_05",
+        "WT_06",
+        "WT_07",
+        "WT_08",
+        "KO_01",
+        "KO_02",
+        "KO_03",
+        "KO_04",
+        "KO_05",
+        "KO_06",
+        "KO_07"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT"
+    }
+  ],
+  "rationale": "Metabolism sublibrary (361 genes, 3,610 guides; no non-targeting guides) of the in vivo Toxoplasma CRISPR study. RH tachyzoites passaged in vitro (P4, 1 library) and in vivo through WT mice (WT_*, 8 libraries) and Ifngr1-/- mice (KO_*, 7 libraries). In vivo libraries are bottlenecked (top 1% 19-41%), so median_ratio totals and only between-arm comparisons are interpretable. Primary WT vs KO (Table S3A p.value_WTvsKO) finds IFN-gamma-dependent fitness genes; secondary P4 vs WT (one in vitro library vs 8 WT) gives in vivo fitness. No neutral controls, so no calibration/control null.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "b04226406328ab468f7b8de93e57be8a"
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE179799",
+  "pmid": "38535994",
+  "doi": "10.1158/0008-5472.CAN-23-1976",
+  "pmcid": "PMC11094426",
+  "title": "NPEPPS Is a Druggable Driver of Platinum Resistance",
+  "journal": "Cancer Research",
+  "published": "2024",
+  "model": "Bladder cancer cell lines (KU1919, 5637), whole-genome CRISPR knockout library",
+  "contrast": "Gemcitabine+cisplatin vs saline, day 15 (3 vs 3 per line; both lines pooled with a cell-line term)",
+  "paper_method": "MAGeCK (per-line, cross-line meta-analysis)",
+  "paper_calls": "46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes",
+  "barcs_calls": "201 genes at FDR 0.10 pooled (178 depleted); no controls, no control null",
+  "named_hits": "NPEPPS a top-5 sensitiser in every contrast (#4 pooled); UBE2T, RAD18, MUS81, XPA, FANCA all top 6",
+  "verdict": "BARCS independently ranks NPEPPS among the top five sensitisers in both cell lines and recovers the Fanconi/DNA-repair signal the paper describes; a full table overlap is not possible because the paper's gene list is paywalled.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2024-05-15",
+  "published_issue": "2024 May 15"
+}

@@ -1,0 +1,405 @@
+{
+  "gse": "GSE183348",
+  "pmid": "39962238",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^safe$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "sample_1",
+      "gsm": "GSM5555915",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_2",
+      "gsm": "GSM5555916",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_3",
+      "gsm": "GSM5555917",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "3"
+    },
+    {
+      "column": "sample_4",
+      "gsm": "GSM5555918",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "4"
+    },
+    {
+      "column": "sample_5",
+      "gsm": "GSM5555919",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "5"
+    },
+    {
+      "column": "sample_6",
+      "gsm": "GSM5555920",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "6"
+    },
+    {
+      "column": "sample_7",
+      "gsm": "GSM5555921",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "7"
+    },
+    {
+      "column": "sample_8",
+      "gsm": "GSM5555922",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "8"
+    },
+    {
+      "column": "sample_9",
+      "gsm": "GSM5555923",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "9"
+    },
+    {
+      "column": "sample_10",
+      "gsm": "GSM5555924",
+      "cell_line": "DLD1",
+      "condition": "tumor",
+      "replicate": "10"
+    },
+    {
+      "column": "sample_11",
+      "gsm": "GSM5555925",
+      "cell_line": "DLD1",
+      "condition": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_12",
+      "gsm": "GSM5555926",
+      "cell_line": "DLD1",
+      "condition": "day0",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_13",
+      "gsm": "GSM5555927",
+      "cell_line": "DLD1",
+      "condition": "2D",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_14",
+      "gsm": "GSM5555928",
+      "cell_line": "DLD1",
+      "condition": "2D",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_21",
+      "gsm": "GSM5555929",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_22",
+      "gsm": "GSM5555930",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_23",
+      "gsm": "GSM5555931",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "3"
+    },
+    {
+      "column": "sample_24",
+      "gsm": "GSM5555932",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "4"
+    },
+    {
+      "column": "sample_25",
+      "gsm": "GSM5555933",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "5"
+    },
+    {
+      "column": "sample_26",
+      "gsm": "GSM5555934",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "6"
+    },
+    {
+      "column": "sample_27",
+      "gsm": "GSM5555935",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "7"
+    },
+    {
+      "column": "sample_28",
+      "gsm": "GSM5555936",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "8"
+    },
+    {
+      "column": "sample_29",
+      "gsm": "GSM5555937",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "9"
+    },
+    {
+      "column": "sample_30",
+      "gsm": "GSM5555938",
+      "cell_line": "HCT116",
+      "condition": "tumor",
+      "replicate": "10"
+    },
+    {
+      "column": "sample_31",
+      "gsm": "GSM5555939",
+      "cell_line": "HCT116",
+      "condition": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_32",
+      "gsm": "GSM5555940",
+      "cell_line": "HCT116",
+      "condition": "day0",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_33",
+      "gsm": "GSM5555941",
+      "cell_line": "HCT116",
+      "condition": "2D",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_34",
+      "gsm": "GSM5555942",
+      "cell_line": "HCT116",
+      "condition": "2D",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_41",
+      "gsm": "GSM5555943",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_42",
+      "gsm": "GSM5555944",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_43",
+      "gsm": "GSM5555945",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "3"
+    },
+    {
+      "column": "sample_44",
+      "gsm": "GSM5555946",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "4"
+    },
+    {
+      "column": "sample_45",
+      "gsm": "GSM5555947",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "5"
+    },
+    {
+      "column": "sample_46",
+      "gsm": "GSM5555948",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "6"
+    },
+    {
+      "column": "sample_47",
+      "gsm": "GSM5555949",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "7"
+    },
+    {
+      "column": "sample_48",
+      "gsm": "GSM5555950",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "8"
+    },
+    {
+      "column": "sample_49",
+      "gsm": "GSM5555951",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "9"
+    },
+    {
+      "column": "sample_50",
+      "gsm": "GSM5555952",
+      "cell_line": "SW948",
+      "condition": "tumor",
+      "replicate": "10"
+    },
+    {
+      "column": "sample_51",
+      "gsm": "GSM5555953",
+      "cell_line": "SW948",
+      "condition": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_52",
+      "gsm": "GSM5555954",
+      "cell_line": "SW948",
+      "condition": "day0",
+      "replicate": "2"
+    },
+    {
+      "column": "sample_53",
+      "gsm": "GSM5555955",
+      "cell_line": "SW948",
+      "condition": "2D",
+      "replicate": "1"
+    },
+    {
+      "column": "sample_54",
+      "gsm": "GSM5555956",
+      "cell_line": "SW948",
+      "condition": "2D",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day0",
+      "2D",
+      "tumor"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "dld1_tumor_vs_day0",
+      "columns": [
+        "sample_1",
+        "sample_2",
+        "sample_3",
+        "sample_4",
+        "sample_5",
+        "sample_6",
+        "sample_7",
+        "sample_8",
+        "sample_9",
+        "sample_10",
+        "sample_11",
+        "sample_12"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontumor"
+    },
+    {
+      "name": "hct116_tumor_vs_day0",
+      "columns": [
+        "sample_21",
+        "sample_22",
+        "sample_23",
+        "sample_24",
+        "sample_25",
+        "sample_26",
+        "sample_27",
+        "sample_28",
+        "sample_29",
+        "sample_30",
+        "sample_31",
+        "sample_32"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontumor"
+    },
+    {
+      "name": "sw948_tumor_vs_day0",
+      "columns": [
+        "sample_41",
+        "sample_43",
+        "sample_44",
+        "sample_45",
+        "sample_46",
+        "sample_47",
+        "sample_48",
+        "sample_49",
+        "sample_50",
+        "sample_51",
+        "sample_52"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontumor"
+    },
+    {
+      "name": "dld1_2d_vs_day0",
+      "columns": [
+        "sample_11",
+        "sample_12",
+        "sample_13",
+        "sample_14"
+      ],
+      "formula": "~ condition",
+      "term": "condition2D"
+    },
+    {
+      "name": "hct116_2d_vs_day0",
+      "columns": [
+        "sample_31",
+        "sample_32",
+        "sample_33",
+        "sample_34"
+      ],
+      "formula": "~ condition",
+      "term": "condition2D"
+    },
+    {
+      "name": "sw948_2d_vs_day0",
+      "columns": [
+        "sample_51",
+        "sample_52",
+        "sample_53",
+        "sample_54"
+      ],
+      "formula": "~ condition",
+      "term": "condition2D"
+    }
+  ],
+  "rationale": "Focused knockout library (178 colon-cancer MPRA putative target genes plus common-essential controls, 6 guides each, 100 safe-targeting guides) screened in DLD1, HCT116 and SW948. The three deposited per-line count files (guide IDs sgNNN-<gene>, columns sample_N) are merged by guide ID in prepare.R, which adds the Gene column; sample_N maps to GSMs through the GSM titles ('DLD1 tumor rep 1 (sample_1)', 'DLD1 Day 0 (sample_11)', ...). The paper's Supplementary Table 6 gives MAGeCK results per line for subcutaneous tumours (DLD1, HCT116, SW948) and 2D culture (DLD1, HCT116); the comparison reference is not stated in the accessible text, and day 0 is assumed (10 tumours vs 2 day-0 libraries; 2 2D vs 2 day-0). Tumours are independent xenografts, not paired with day-0 replicates, so no replicate term. SW948 2D is analysed for completeness (no published table). Controls: 100 safe-targeting guides (cutting controls). SW948 tumour rep 2 (sample_42) is left out: 27% of its guides have zero reads (a bottlenecked tumour; Spearman 0.26 with day 0 versus 0.38-0.55 for the other tumours), and the published SW948 log fold changes match a median-normalized tumour-vs-day-0 LFC without it (r = 0.96) but not with it (r = 0.74), so the paper evidently excluded it too. For DLD1 and HCT116 the published MAGeCK LFCs correlate 0.98 with tumour-vs-day-0 LFCs and ~0 with tumour-vs-2D, confirming day 0 as the reference.",
+  "counts_md5": "761c4c1398aec5fb208bde0ec66c237a"
+}

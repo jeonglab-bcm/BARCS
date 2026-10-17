@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/bile_vs_tyg/genes.csv",
+  "direction": "both",
+  "named_hits": ["BTnc167", "BTnc353"],
+  "published": {
+    "file": "paper/per_sRNA_matched.tsv",
+    "gene_column": "sRNA", "score_column": "pvalue", "score_better": "lower",
+    "effect_column": "logFC"
+  },
+  "top_n": [5, 10, 20]
+}

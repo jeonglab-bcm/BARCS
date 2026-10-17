@@ -1,0 +1,42 @@
+{
+  "gse": "GSE232543",
+  "pmid": "37813864",
+  "counts_file": "suppl/GSE232543_CD86_CebpbKO_DCs_Secondary.csv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Cebpb_lib_Cebpb_DCs_CD86_H",
+      "gsm": "GSM7350023",
+      "condition": "CD86high",
+      "replicate": "1"
+    },
+    {
+      "column": "Cebpb_lib_Cebpb_DCs_CD86_L",
+      "gsm": "GSM7350024",
+      "condition": "CD86low",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "CD86high",
+      "CD86low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CebpbKO_secondary_CD86low_vs_high",
+      "columns": [
+        "Cebpb_lib_Cebpb_DCs_CD86_H",
+        "Cebpb_lib_Cebpb_DCs_CD86_L"
+      ],
+      "formula": "~ condition",
+      "term": "conditionCD86low"
+    }
+  ],
+  "rationale": "GEO holds three screens from the paper's Cebpb arm (Supplementary Data 11-12): a genome-wide screen in Cebpb-KO DCs and a 661-gene secondary library (Cebpb-regulated genes, 10 guides per gene, 6,513 guides, no non-targeting guides) screened in Cebpb-KO and in Cebpb-WT DCs, each sorted into the top and bottom 10% of CD86 with one library per bin. The paper's MAGeCK compares Low with High (Cd86 is the top positive gene), so every analysis is CD86-low versus CD86-high; a gene enriched in the low bin is a positive regulator of CD86. The record's primary analysis is the Cebpb-KO secondary screen, the one the paper uses to show that Nr4a3 mediates the CD86 increase of Cebpb-targeted cells; the WT secondary (design_wt.json) and the genome-wide Cebpb-KO screen (design_gw.json) are run alongside. One library per bin: no-replicate path with overdispersion pooled over all guides (no controls), so calls are screening-level and calibration could not be checked. The paper's main WT genome-wide and secondary CD86/PD-L1 screens (Chd4, Stat5b, Egr2, Med12) are deposited in other series, not here.",
+  "counts_md5": "57240d8fd296f0e060e1089cf951c1c6"
+}

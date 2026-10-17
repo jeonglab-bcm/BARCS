@@ -14,7 +14,7 @@
 #      published table for the comparison);
 #   4. checks the count file against design.json "counts_md5";
 #   5. runs run_barcs.R on design.json and every recorded design_*.json, and
-#      compare_results.R on compare.json;
+#      compare_results.R on compare.json and every compare_*.json;
 #   6. compares every archived results/<analysis>/genes.csv.gz and the call
 #      counts in run_info.json with the new run.
 #
@@ -106,7 +106,8 @@ reproduce_one <- function(gse) {
   if (!keep) unlink(out, recursive = TRUE)
   dir.create(out, recursive = TRUE, showWarnings = FALSE)
   design_files <- list.files(record, pattern = "^design.*\\.json$")
-  file.copy(file.path(record, c(design_files, "compare.json")), out, overwrite = TRUE)
+  compare_files <- list.files(record, pattern = "^compare(_.*)?\\.json$")
+  file.copy(file.path(record, c(design_files, compare_files)), out, overwrite = TRUE)
   design <- fromJSON(file.path(record, "design.json"), simplifyVector = TRUE)
 
   fetch <- design$fetch %||% list()
@@ -134,8 +135,10 @@ reproduce_one <- function(gse) {
     step <- run(file.path(tools_dir, "run_barcs.R"), file.path(out, file))
     if (!step$ok) return(c(gse, "FAIL", paste("run_barcs.R failed on", file)))
   }
-  step <- run(file.path(tools_dir, "compare_results.R"), file.path(out, "compare.json"))
-  if (!step$ok) return(c(gse, "FAIL", "compare_results.R failed"))
+  for (file in compare_files) {
+    step <- run(file.path(tools_dir, "compare_results.R"), file.path(out, file))
+    if (!step$ok) return(c(gse, "FAIL", paste("compare_results.R failed on", file)))
+  }
 
   problems <- character()
   for (run_dir in list.dirs(file.path(record, "results"), recursive = FALSE)) {

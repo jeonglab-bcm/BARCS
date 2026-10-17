@@ -1,0 +1,32 @@
+{
+  "barcs_genes": "results/D4_CD200high_vs_low/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "Cd200",
+    "Sufu",
+    "Eed",
+    "Ptch1",
+    "Ezh2",
+    "Dot1l",
+    "Strap",
+    "Arrb2",
+    "Gnas",
+    "Runx2",
+    "Sox9",
+    "Prkar1a",
+    "Ptpn11"
+  ],
+  "published": {
+    "file": "paper/primary_d4.tsv",
+    "gene_column": "gene",
+    "score_column": "avg_neglog10p",
+    "score_better": "higher",
+    "effect_column": "avg_lfc"
+  },
+  "top_n": [
+    25,
+    50,
+    100,
+    200
+  ]
+}

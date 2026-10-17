@@ -1,0 +1,47 @@
+{
+  "analysis": "SEM_dCas9KRAB_day14_vs_day0",
+  "formula": "~condition",
+  "term": "conditionDay14",
+  "libraries": 6,
+  "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 5718,
+  "genes": 248,
+  "moderated": true,
+  "prior_df": 34.0403,
+  "guide_correlation": 0.0076,
+  "control_scale": null,
+  "control_guides": 20,
+  "control_p05_raw": 0.15,
+  "control_p05": 0.15,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "SEMdCas9-KRAB-Day0_R1-SFM010-2583711": 0.048,
+    "SEMdCas9-KRAB-Day0_R2-SFM011-2583712": 0.048,
+    "SEMdCas9-KRAB-Day0_R3-SFM012-2583713": 0.049,
+    "SEMdCas9-KRAB-Day14_R1-SFM016-2583717": 0.046,
+    "SEMdCas9-KRAB-Day14_R2-SFM017-2583718": 0.046,
+    "SEMdCas9-KRAB-Day14_R3-SFM018-2583719": 0.046
+  },
+  "genes_fdr_0_10_up": 40,
+  "genes_fdr_0_10_down": 8,
+  "genes_fdr_0_05": 27,
+  "genes_fdr_0_10": 48,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

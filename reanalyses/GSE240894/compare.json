@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/jlat106_combo/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["CCNT1", "ELL", "UBE2M", "TBL1XR1", "HDAC3", "AMBRA1", "ALYREF", "NFKB1", "MBNL1", "OGT"],
+  "published": {
+    "file": "paper/SuppFileS1_v1.xlsx", "sheet": "JLat106_GeneSummary",
+    "gene_column": "id", "score_column": "neg|MAGeCK score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [10, 25, 50, 100]
+}

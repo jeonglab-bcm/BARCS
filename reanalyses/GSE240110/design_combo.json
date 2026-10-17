@@ -1,0 +1,117 @@
+{
+  "gse": "GSE240110",
+  "pmid": "37729426",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(LacZ|luciferase|EGFP)$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "H2030-Ctrl1",
+      "cell_line": "H2030",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "H2030-Ctrl2",
+      "cell_line": "H2030",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "H2030-COMBO1",
+      "cell_line": "H2030",
+      "treatment": "COMBO",
+      "replicate": "1"
+    },
+    {
+      "column": "H2030-COMBO2",
+      "cell_line": "H2030",
+      "treatment": "COMBO",
+      "replicate": "2"
+    },
+    {
+      "column": "H2122-Ctrl1",
+      "cell_line": "H2122",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "H2122-Ctrl2",
+      "cell_line": "H2122",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "H2122-COMBO1",
+      "cell_line": "H2122",
+      "treatment": "COMBO",
+      "replicate": "1"
+    },
+    {
+      "column": "H2122-COMBO2",
+      "cell_line": "H2122",
+      "treatment": "COMBO",
+      "replicate": "2"
+    },
+    {
+      "column": "H23-Ctrl1",
+      "cell_line": "H23",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "H23-Ctrl2",
+      "cell_line": "H23",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "H23-COMBO1",
+      "cell_line": "H23",
+      "treatment": "COMBO",
+      "replicate": "1"
+    },
+    {
+      "column": "H23-COMBO2",
+      "cell_line": "H23",
+      "treatment": "COMBO",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "COMBO"
+    ],
+    "cell_line": [
+      "H2030",
+      "H2122",
+      "H23"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "COMBO_vs_DMSO",
+      "columns": [
+        "H2030-Ctrl1",
+        "H2030-Ctrl2",
+        "H2122-Ctrl1",
+        "H2122-Ctrl2",
+        "H23-Ctrl1",
+        "H23-Ctrl2",
+        "H2030-COMBO1",
+        "H2030-COMBO2",
+        "H2122-COMBO1",
+        "H2122-COMBO2",
+        "H23-COMBO1",
+        "H23-COMBO2"
+      ],
+      "formula": "~ cell_line + treatment",
+      "term": "treatmentCOMBO"
+    }
+  ],
+  "rationale": "Secondary contrast: MRTX849 + the SHP2 inhibitor TNO155 (COMBO) vs DMSO, pooled over the three lines with a COMBO arm (H2030, H2122, H23; HCC44 has no COMBO sample). Same paired cell_line model. Genes synthetic-lethal with the combination are depleted.",
+  "counts_md5": "97563650bff11ece5fdabb001db17200"
+}

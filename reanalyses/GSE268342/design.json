@@ -1,0 +1,56 @@
+{
+  "gse": "GSE268342",
+  "pmid": "38857306",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgId",
+  "gene_column": "gene",
+  "control_gene_pattern": "^negative_control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Before_Rep_5",
+      "gsm": "GSM8289871",
+      "condition": "before",
+      "replicate": "5"
+    },
+    {
+      "column": "Before_Rep_6",
+      "gsm": "GSM8289872",
+      "condition": "before",
+      "replicate": "6"
+    },
+    {
+      "column": "After_Rep_5",
+      "gsm": "GSM8289873",
+      "condition": "after",
+      "replicate": "5"
+    },
+    {
+      "column": "After_Rep_6",
+      "gsm": "GSM8289874",
+      "condition": "after",
+      "replicate": "6"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "before",
+      "after"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "noninvading_vs_before",
+      "columns": [
+        "Before_Rep_5",
+        "Before_Rep_6",
+        "After_Rep_5",
+        "After_Rep_6"
+      ],
+      "formula": "~ condition",
+      "term": "conditionafter"
+    }
+  ],
+  "rationale": "CRISPRi lncRNA screen (CRiNCL U87 sublibrary, 10 guides per lncRNA, 450 non-targeting guides) in U87 dCas9-KRAB cells seeded in Matrigel Boyden chambers for 24 h (Tsung et al. 2024). The cells that stayed in the top chamber (non-invading, 'After') are compared with the cells before seeding ('Before'); knockdowns that reduce invasion are enriched in the top chamber, which is how the paper defines hits (LINC03045 = LH02236, ZNF215-AS1 = LH02727). Gene labels come from the CRiNCL library table (prepare.R). Two screen replicates per arm; the replicate numbers match across arms but the correlations show no pairing (After_Rep_5 correlates more with Before_Rep_6 than with Before_Rep_5), so no replicate term is used, leaving 2 residual degrees of freedom.",
+  "counts_md5": "7aa1d1b6c2df1bd4823e4f8caea0617d"
+}

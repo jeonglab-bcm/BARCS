@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/tumor_vs_bone_marrow/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Cd300ld"],
+  "published": {
+    "file": "paper/cd300ld_screen.tsv",
+    "gene_column": "gene", "score_column": "pos_score", "score_better": "lower",
+    "effect_column": "lfc_tumor_vs_bm"
+  },
+  "top_n": [10, 25, 50]
+}

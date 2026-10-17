@@ -1,0 +1,53 @@
+{
+  "analysis": "GFPlow_vs_high",
+  "formula": "~pair + gfp",
+  "term": "gfplow",
+  "libraries": 12,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 91537,
+  "genes": 18466,
+  "moderated": true,
+  "prior_df": 69.3871,
+  "guide_correlation": 0.0001,
+  "control_scale": 1.1053,
+  "control_guides": 399,
+  "control_p05_raw": 0.0804,
+  "control_p05": 0.0503,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 388,
+  "top1pct_read_share": {
+    "N8_1_high": 0.032,
+    "N8_1_low": 0.036,
+    "N8_2_high": 0.033,
+    "N8_2_low": 0.038,
+    "N8_3_high": 0.034,
+    "N8_3_low": 0.037,
+    "N9_1_high": 0.033,
+    "N9_1_low": 0.034,
+    "N9_2_high": 0.035,
+    "N9_2_low": 0.038,
+    "N9_3_high": 0.034,
+    "N9_3_low": 0.035
+  },
+  "genes_fdr_0_10_up": 26,
+  "genes_fdr_0_10_down": 31,
+  "genes_fdr_0_05": 36,
+  "genes_fdr_0_10": 57,
+  "genes_empirical_fdr_0_10": 93,
+  "empirical_centre": "targets",
+  "control_shift": -0.269,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

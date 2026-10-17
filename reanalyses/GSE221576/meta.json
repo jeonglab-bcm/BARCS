@@ -1,0 +1,20 @@
+{
+  "gse": "GSE221576",
+  "pmid": "37358480",
+  "doi": "10.1182/bloodadvances.2023010380",
+  "pmcid": "PMC10589794",
+  "title": "Resistance mechanism to Notch inhibition and combination therapy in human T-cell acute lymphoblastic leukemia",
+  "journal": "Blood Advances",
+  "published": "2023",
+  "model": "DND-41 T-ALL cells, GeCKO v2 genome-wide knockout library (119,461 guides, 1,000 non-targeting), 21-day drug treatment",
+  "contrast": "GSI (DAPT) vs DMSO, day 21 (3 vs 3); also CB-103 vs DMSO (3 vs 3)",
+  "paper_method": "MAGeCK-RRA (Supplementary Table 1)",
+  "paper_calls": "48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO",
+  "barcs_calls": "313 genes at FDR 0.10 for GSI vs DMSO (85 up, 228 down); 88 for CB-103 vs DMSO",
+  "named_hits": "6/7 at FDR 0.10 in GSI vs DMSO: PIK3R1 #1, DCAF7 #4, PCGF1 #6, BCL11B #7, CDK6 #8, NOTCH1 #19; PTEN not called (neither in the paper)",
+  "verdict": "BARCS ranks the paper's resistance gene PIK3R1 first under GSI and recovers 41 of the 48 MAGeCK calls, including CDK6 and NOTCH1; it calls a longer list, and under CB-103 it also calls PIK3R1 (#1), which MAGeCK left at FDR 0.96.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-10-24",
+  "published_issue": "2023 Oct 24"
+}

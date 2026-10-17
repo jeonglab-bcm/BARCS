@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/miapaca_inx315_vs_control/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["CDK2"],
+  "published": {"file": "paper/SupplementaryData2.xlsx", "sheet": "MiaPaCa-2", "gene_column": "GENE",
+                "score_column": "normZ", "score_better": "higher", "effect_column": "normZ"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_miapaca"
+}

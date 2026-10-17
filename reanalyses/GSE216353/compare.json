@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/CD80_high_vs_low/genes.csv",
+  "direction": "both",
+  "named_hits": ["KEAP1", "NFKB1", "NDUFS6", "MPST", "NDST1", "B3GNT8", "ST3GAL6", "NANS", "ULK1", "GCLM"],
+  "top_n": [20, 50, 100]
+}

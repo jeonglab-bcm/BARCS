@@ -1,0 +1,20 @@
+{
+  "gse": "GSE217789",
+  "pmid": "37248947",
+  "doi": "10.15252/embj.2022113168",
+  "pmcid": "PMC10350819",
+  "title": "HNRNPH1 regulates the neuroprotective cold-shock protein RBM3 expression through poison exon exclusion",
+  "journal": "The EMBO Journal",
+  "published": "2023",
+  "model": "GFP-RBM3 reporter human iPSC-derived i-neurons (2 Cas9 clones), custom genome-wide knockout library (91,536 guides, 399 non-targeting), 32 C for 72 h, GFP quartile sort",
+  "contrast": "Low-GFP vs high-GFP bin, paired by sort (6 vs 6: 2 clones x 3 sorts)",
+  "paper_method": "MAGeCK-RRA, paired (Appendix Table S2)",
+  "paper_calls": "110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators",
+  "barcs_calls": "57 genes at FDR 0.10 (26 positive, 31 negative regulators) after calibration to the controls; 93 against the control null centred on the targeting guides",
+  "named_hits": "9/10 at FDR 0.10: HNRNPH1 #1, YPEL5 #2, HTATSF1 #3, PNISR #5, RBM3 #6, TNPO3 #7, WTAP #9, WDR26 #10, SNRNP70 #13; UBE2H #159 (FDR 0.54)",
+  "verdict": "BARCS ranks HNRNPH1 first and calls 14 of the paper's 15 positive regulators and nine of ten arrayed-validated genes; it confirms only 28 of the 95 negative regulators, keeping the strongest splicing factors but not the long MAGeCK tail.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-05-30",
+  "published_issue": "2023 Jul 17"
+}

@@ -1,0 +1,45 @@
+{
+  "analysis": "sgUHRF1_T1_vs_T0",
+  "formula": "~time",
+  "term": "timeT1",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 483,
+  "genes": 92,
+  "moderated": true,
+  "prior_df": 11.9848,
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 26,
+  "control_p05_raw": 0.1923,
+  "control_p05": 0.1923,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "A549sgUHRF1TSGT0_1": 0.023,
+    "A549sgUHRF1TSGT0_2": 0.023,
+    "A549sgUHRF1TSGT1_1": 0.023,
+    "A549sgUHRF1TSGT1_2": 0.024
+  },
+  "genes_fdr_0_10_up": 4,
+  "genes_fdr_0_10_down": 1,
+  "genes_fdr_0_05": 5,
+  "genes_fdr_0_10": 5,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "barcs_genes": "results/P4_vs_WT/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "TGGT1_205250"
+  ],
+  "published": {
+    "file": "paper/p4_vs_wt.tsv",
+    "gene_column": "gene",
+    "score_column": "p",
+    "score_better": "lower"
+  },
+  "top_n": [
+    25,
+    50,
+    100
+  ],
+  "out": "comparison_p4wt"
+}

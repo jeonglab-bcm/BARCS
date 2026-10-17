@@ -1,0 +1,40 @@
+{
+  "gse": "GSE206996",
+  "pmid": "37707319",
+  "counts_file": "counts_vsvgcre.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low",
+      "gsm": "GSM6267748",
+      "sort": "low"
+    },
+    {
+      "column": "High",
+      "gsm": "GSM6267749",
+      "sort": "high"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "vsvgcre_low_vs_high",
+      "columns": [
+        "Low",
+        "High"
+      ],
+      "formula": "~ sort",
+      "term": "sortlow"
+    }
+  ],
+  "rationale": "Second counter-screen: ACE2-HEK293T cells with a floxed GFP reporter infected with VSV-G-Cre pseudovirus, which activates the reporter directly on entry, bypassing retro-transcription and integration. Reporter-low vs high, no-replicate path. Genes enriched here report on VSV-G entry alone.",
+  "counts_md5": "d56e98db3c6ffe2a4743bcc7aeda42a4"
+}
