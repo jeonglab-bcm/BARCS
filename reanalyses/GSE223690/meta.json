@@ -1,0 +1,19 @@
+{
+  "gse": "GSE223690",
+  "pmid": "37581984",
+  "doi": "10.1016/j.celrep.2023.112987",
+  "title": "Genome-wide CRISPR screens identify noncanonical translation factor eIF2A as an enhancer of SARS-CoV-2 programmed -1 ribosomal frameshifting",
+  "journal": "Cell Reports",
+  "published": "2023",
+  "model": "HEK293T with a SARS-CoV-2 -1 PRF dual-fluorescence reporter, genome-wide GeCKOv2 knockout library (123,411 guides, 1,000 non-targeting controls)",
+  "contrast": "GFP/mCherry-low vs -high (reduced frameshifting) FACS sort, day 14 and day 7, paired across 2 replicates (2 vs 2)",
+  "paper_method": "MAGeCK RRA (Table S1, mmc2)",
+  "paper_calls": "day 14: 5 enriched + 4 depleted genes at FDR 0.10 (EIF2A top enriched); day 7: 4 enriched + 12 depleted (EIF2A #15)",
+  "barcs_calls": "day 14: 35 genes at FDR 0.10 (15 against the control null, controls well-calibrated at p05 0.048); day 7: 43 genes (13 against the control null)",
+  "named_hits": "EIF2A recovered as the top enhancer at day 14 (BARCS enriched rank 1, FDR 3.7e-11) and at day 7 (enriched rank 6, FDR 0.018)",
+  "verdict": "BARCS confirms the paper's headline hit EIF2A as the strongest frameshift enhancer at day 14 and recovers the paper's suppressor set (GET4/BAG6/DNAJC24), with a well-calibrated non-targeting control null; it calls a somewhat longer list than the paper's sparse RRA hits.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-08-14",
+  "published_issue": "2023 Aug 29"
+}

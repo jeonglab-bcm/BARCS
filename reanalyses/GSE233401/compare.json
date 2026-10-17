@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/sgNeg_T1_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["PTEN", "TSC1", "MAP3K4", "MAP2K4"],
+  "published": {
+    "file": "paper/minipool_screen.tsv",
+    "gene_column": "Gene", "score_column": "sgNeg_z", "score_better": "higher",
+    "effect_column": "sgNeg_z"
+  },
+  "top_n": [10, 25, 50]
+}

@@ -14,5 +14,7 @@
   "named_hits": "Cd86 #2 and March1 #3 (CD86 GW, FDR 0.005); Cebpb FDR 0.036 (CD86 secondary) and #2 (PD-L1 secondary); Med12 #10 (CD86 secondary); Cd274 #2 in PD-L1 GW but not significant",
   "verdict": "BARCS reproduces the CD86 genome-wide calls (5 of 6 shared) and nearly all secondary-screen calls including Cebpb and Med12, but calls nothing in the noisy single-repeat PD-L1 genome-wide screen, where MAGeCK calls only Cd274.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-10-09",
+  "published_issue": "2023 Oct 9"
 }

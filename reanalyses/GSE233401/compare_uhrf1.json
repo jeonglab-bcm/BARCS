@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/sgUHRF1_T1_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TSC1", "PTEN"],
+  "published": {
+    "file": "paper/minipool_screen.tsv",
+    "gene_column": "Gene", "score_column": "sgUHRF1_z", "score_better": "higher",
+    "effect_column": "sgUHRF1_z"
+  },
+  "top_n": [10, 25, 50],
+  "out": "comparison_uhrf1"
+}

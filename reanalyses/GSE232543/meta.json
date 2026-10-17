@@ -14,5 +14,7 @@
   "named_hits": "3/5: Nr4a3 #5 (KO), Rxra #13 and Cebpb #2 (WT) at FDR 0.10; Mitf (KO, FDR 0.61) and Stat2 (WT, FDR 0.15) not",
   "verdict": "BARCS confirms the paper's main Cebpb-arm result: Nr4a3 is a strong positive regulator of CD86 only in Cebpb-KO dendritic cells, and Cebpb and Rxra restrain CD86 in WT cells. Rankings correlate 0.82 with MAGeCK. Mitf and Stat2, which the paper discusses, do not pass FDR 0.10 with one library per bin and no controls.",
   "agreement": "partial",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-10-09",
+  "published_issue": "2023 Oct 9"
 }

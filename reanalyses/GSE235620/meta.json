@@ -1,7 +1,11 @@
 {
-  "gse": "GSE235620", "pmid": "38294941", "doi": "10.1073/pnas.2311323121", "pmcid": "PMC10861873",
+  "gse": "GSE235620",
+  "pmid": "38294941",
+  "doi": "10.1073/pnas.2311323121",
+  "pmcid": "PMC10861873",
   "title": "CRISPR-based screening of small RNA modulators of bile susceptibility in Bacteroides thetaiotaomicron",
-  "journal": "PNAS", "published": "2024",
+  "journal": "PNAS",
+  "published": "2024",
   "model": "Bacteroides thetaiotaomicron VPI-5482, CRISPRi (dPb2Cas12a) library of 135 intergenic sRNAs",
   "contrast": "Bile salts vs no bile, rich medium at stationary phase (3 vs 3)",
   "paper_method": "edgeR per guide, averaged per sRNA (|log2FC|>0.5, FDR<0.05)",
@@ -9,5 +13,8 @@
   "barcs_calls": "3 sRNAs at FDR 0.10 (BTnc353, BatR, BTnc242); 20 controls, no control null",
   "named_hits": "2/2 at FDR 0.10: BTnc353 #1, BatR (BTnc167) #2 of 166",
   "verdict": "BARCS calls the paper's two sRNA hits as its top two, with matching directions (BatR enriched under bile, BTnc353 depleted), and adds one borderline call; effect sizes are smaller than edgeR's averaged per-guide logFC.",
-  "agreement": "agree", "analyzed": "2026-10-16"
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2024-01-31",
+  "published_issue": "2024 Feb 6"
 }

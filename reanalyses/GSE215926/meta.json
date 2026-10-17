@@ -14,5 +14,7 @@
   "named_hits": "7/8 at FDR 0.10: FLT3 enhancer #2 (both screens), CDK6 #1 (CRISPRi), RUNX1, DCAF11, NDUFS8, PEBP4, ZCCHC7 depleted; MAN1C1 not called",
   "verdict": "BARCS reproduces the paper's noncoding dropout hits: the FLT3 distal enhancer ranks right after the RPS19 control in both Cas9 and CRISPRi screens, the CDK6 intronic site tops the CRISPRi screen, and rank correlation with MAGeCK is 0.76. BARCS also calls dozens of weakly enriched elements, which the 20 controls cannot validate.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-11-28",
+  "published_issue": "2023 Nov 28"
 }

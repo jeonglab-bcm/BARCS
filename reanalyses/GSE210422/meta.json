@@ -14,5 +14,7 @@
   "named_hits": "3/3 at FDR 0.10: E_349 #3, E_409 #5, E_156 (PTEN) #17 enriched",
   "verdict": "BARCS confirms the paper's three validated tumour-suppressive enhancers (E_349, E_409 and E_156 near PTEN) at FDR 0.10. It keeps only 20 of the 66 positively selected enhancers by model FDR (71 enriched against the control null), and it calls many more depleted enhancers than the paper reports.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-10-30",
+  "published_issue": "2023 Oct 30"
 }

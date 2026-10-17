@@ -14,5 +14,7 @@
   "named_hits": "NF2 #1, KIRREL #2, LATS2 #3, NRP1 #4, TAOK1 #5, AMOTL2 #7 (all resistance, FDR 0.10); WWTR1/TAZ depleted #11",
   "verdict": "BARCS places the paper's Hippo-pathway resistance genes (NF2, KIRREL, LATS2, TAOK1) at the very top of the MRTX screen, all FDR-significant, reproducing the finding that motivates the G12C + TEAD inhibitor combination.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-12-15",
+  "published_issue": "2023 Dec 15"
 }

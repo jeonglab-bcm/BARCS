@@ -13,5 +13,7 @@
   "paper_calls": "413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109",
   "barcs_calls": "1035 genes at FDR 0.10 (518 depleted, 517 enriched); 759 against the control null",
   "named_hits": "7/8 at FDR 0.10 (VAMP3, RAB1A, SEC23IP, GOSR1, TRAPPC12, ABHD16A, ABHD17B; not YKT6)",
-  "verdict": "BARCS recovers the paper's PTAR1 vesicle-trafficking negative interactions and the ABHD16A/ABHD17B suppressors (rank correlation 0.58 with the minimal-medium qGI) but not YKT6, and adds strong positive calls in p53-apoptosis and variable-fitness genes (BAX, PMAIP1, BBC3, NF2, TADA1) that the paper's network excludes."
+  "verdict": "BARCS recovers the paper's PTAR1 vesicle-trafficking negative interactions and the ABHD16A/ABHD17B suppressors (rank correlation 0.58 with the minimal-medium qGI) but not YKT6, and adds strong positive calls in p53-apoptosis and variable-fitness genes (BAX, PMAIP1, BBC3, NF2, TADA1) that the paper's network excludes.",
+  "published_date": "2026-04-27",
+  "published_issue": "2026 Jun 11"
 }

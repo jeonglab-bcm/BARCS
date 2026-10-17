@@ -1,0 +1,20 @@
+{
+  "gse": "GSE225878",
+  "pmid": "37228756",
+  "doi": "10.1016/j.xgen.2023.100299",
+  "pmcid": "PMC10203046",
+  "title": "Genome-wide CRISPR screening of chondrocyte maturation newly implicates genes in skeletal growth and height-associated GWAS loci",
+  "journal": "Cell Genomics",
+  "published": "2023",
+  "model": "Mouse growth-plate-like chondrocytes (GPLC), Brie genome-wide knockout library (78,633 guides + 1,000 non-targeting), CD200 FACS sort",
+  "contrast": "CD200-high (mature) vs CD200-low (immature), day 4, paired by replicate (3 vs 3); day 15 not reported (bottlenecked)",
+  "paper_method": "Broad GPP hypergeometric tool per replicate, averaged (p < 0.001 and |LFC| threshold)",
+  "paper_calls": "110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall",
+  "barcs_calls": "359 genes at FDR 0.10 at day 4 after calibration to the controls (681 against the centred control null); day 15 not reported (bottlenecked)",
+  "named_hits": "13/13 at FDR 0.10 at day 4: Sufu #1, Eed #2, Ptch1 #3, Cd200 #4, Ezh2 #5, Strap #6, Dot1l #7, Arrb2 #8, Gnas #23, Prkar1a #27, Runx2 #31, Sox9 #62, Ptpn11 #140",
+  "verdict": "At day 4 BARCS reproduces the authors' ranking closely (rank correlation 0.88), with Sufu, Eed, Ptch1 and the Cd200 positive control in its top four, and calls 130 of the 142 testable genes the authors' threshold selects; the day-15 sorts are bottlenecked and the model's long list there is not supported by the controls.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-04-14",
+  "published_issue": "2023 May 10"
+}

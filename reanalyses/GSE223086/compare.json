@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/K562_day24_vs_day0/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["RPTOR", "POLR3B", "POLR2A", "POLR2B", "PSMA1", "RPS19", "RPL3", "CDK1", "MYC", "NOP58", "CCT7"],
+  "top_n": [50, 100, 500, 1000]
+}

@@ -1,0 +1,132 @@
+{
+  "gse": "GSE225878",
+  "pmid": "37228756",
+  "counts_file": "counts_primary.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargeting_",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "D4_R1_High",
+      "gsm": "GSM7059705",
+      "day": "D4",
+      "rep": "R1",
+      "bin": "High"
+    },
+    {
+      "column": "D4_R1_Low",
+      "gsm": "GSM7059705",
+      "day": "D4",
+      "rep": "R1",
+      "bin": "Low"
+    },
+    {
+      "column": "D4_R2_High",
+      "gsm": "GSM7059706",
+      "day": "D4",
+      "rep": "R2",
+      "bin": "High"
+    },
+    {
+      "column": "D4_R2_Low",
+      "gsm": "GSM7059706",
+      "day": "D4",
+      "rep": "R2",
+      "bin": "Low"
+    },
+    {
+      "column": "D4_R3_High",
+      "gsm": "GSM7059707",
+      "day": "D4",
+      "rep": "R3",
+      "bin": "High"
+    },
+    {
+      "column": "D4_R3_Low",
+      "gsm": "GSM7059707",
+      "day": "D4",
+      "rep": "R3",
+      "bin": "Low"
+    },
+    {
+      "column": "D15_R1_High",
+      "gsm": "GSM7059708",
+      "day": "D15",
+      "rep": "R1",
+      "bin": "High"
+    },
+    {
+      "column": "D15_R1_Low",
+      "gsm": "GSM7059708",
+      "day": "D15",
+      "rep": "R1",
+      "bin": "Low"
+    },
+    {
+      "column": "D15_R2_High",
+      "gsm": "GSM7059709",
+      "day": "D15",
+      "rep": "R2",
+      "bin": "High"
+    },
+    {
+      "column": "D15_R2_Low",
+      "gsm": "GSM7059709",
+      "day": "D15",
+      "rep": "R2",
+      "bin": "Low"
+    },
+    {
+      "column": "D15_R3_High",
+      "gsm": "GSM7059710",
+      "day": "D15",
+      "rep": "R3",
+      "bin": "High"
+    },
+    {
+      "column": "D15_R3_Low",
+      "gsm": "GSM7059710",
+      "day": "D15",
+      "rep": "R3",
+      "bin": "Low"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "Low",
+      "High"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "D4_CD200high_vs_low",
+      "columns": [
+        "D4_R1_High",
+        "D4_R1_Low",
+        "D4_R2_High",
+        "D4_R2_Low",
+        "D4_R3_High",
+        "D4_R3_Low"
+      ],
+      "formula": "~ rep + bin",
+      "term": "binHigh"
+    },
+    {
+      "name": "D15_CD200high_vs_low",
+      "columns": [
+        "D15_R1_High",
+        "D15_R1_Low",
+        "D15_R2_High",
+        "D15_R2_Low",
+        "D15_R3_High",
+        "D15_R3_Low"
+      ],
+      "formula": "~ rep + bin",
+      "term": "binHigh"
+    }
+  ],
+  "rationale": "Primary genome-wide screen (mouse Brie library, 78,633 targeting guides + 1,000 non-targeting) in growth-plate-like chondrocytes (GPLC), sorted at day 4 and day 15 into the top 10% (CD200-high, mature) and bottom 10% (CD200-low, immature). Each GSM is one biological replicate at one day, with both sorts split over many PCR/sequencing barcodes; prepare.R sums them per sort and maps barcodes to genes with the Brie library annotation. The authors compared high vs low per replicate (GPP hypergeometric tool, averaged over three replicates), so each day is analysed as CD200-high vs CD200-low paired by replicate (both bins of a replicate come from the same culture). Positive estimates mean knockout drives maturation (e.g. Sufu, Ptch1); Cd200 itself is the built-in positive control (negative). The secondary screen (GSM7059711-14, sub-library, replicates 1 and 2 pooled in one GSM) is not analysed.",
+  "fetch": {},
+  "counts_md5": "455da7a273fce56b53e134a93d5f7447"
+}

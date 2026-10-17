@@ -13,5 +13,7 @@
   "named_hits": "5/5 top published ptGene calls at FDR 0.10 in DLD1 tumours",
   "verdict": "BARCS ranks genes like MAGeCK (Spearman 0.81-0.91) and its depleted tumour calls are all MAGeCK calls, but its lists are shorter (26 vs 46 in DLD1, 34 vs 145 in HCT116 2D), and it adds enrichment of CDH1/CDH3 in tumours.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2025-02-17",
+  "published_issue": "2025 Mar"
 }

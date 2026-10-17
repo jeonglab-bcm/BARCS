@@ -1,0 +1,110 @@
+{
+  "gse": "GSE221576",
+  "pmid": "37358480",
+  "counts_file": "suppl/GSE221576_DND41.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "TZ",
+      "gsm": "GSM6886541",
+      "condition": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO.1",
+      "gsm": "GSM6886542",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO.2",
+      "gsm": "GSM6886543",
+      "condition": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "DMSO.3",
+      "gsm": "GSM6886544",
+      "condition": "DMSO",
+      "replicate": "3"
+    },
+    {
+      "column": "CB103.1",
+      "gsm": "GSM6886545",
+      "condition": "CB103",
+      "replicate": "1"
+    },
+    {
+      "column": "CB103.2",
+      "gsm": "GSM6886546",
+      "condition": "CB103",
+      "replicate": "2"
+    },
+    {
+      "column": "CB103.3",
+      "gsm": "GSM6886547",
+      "condition": "CB103",
+      "replicate": "3"
+    },
+    {
+      "column": "DAPT.1",
+      "gsm": "GSM6886548",
+      "condition": "GSI",
+      "replicate": "1"
+    },
+    {
+      "column": "DAPT.2",
+      "gsm": "GSM6886549",
+      "condition": "GSI",
+      "replicate": "2"
+    },
+    {
+      "column": "DAPT.3",
+      "gsm": "GSM6886550",
+      "condition": "GSI",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "T0",
+      "CB103",
+      "GSI"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "GSI_vs_DMSO",
+      "columns": [
+        "DMSO.1",
+        "DMSO.2",
+        "DMSO.3",
+        "DAPT.1",
+        "DAPT.2",
+        "DAPT.3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionGSI"
+    },
+    {
+      "name": "CB103_vs_DMSO",
+      "columns": [
+        "DMSO.1",
+        "DMSO.2",
+        "DMSO.3",
+        "CB103.1",
+        "CB103.2",
+        "CB103.3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionCB103"
+    }
+  ],
+  "rationale": "DND-41 T-ALL cells with GeCKO v2 (A+B, 123k guides; the deposited table has 119,461 guides including 1,000 non-targeting controls) treated 21 days with DMSO, CB-103 or the gamma-secretase inhibitor DAPT, three replicate cultures each. The paper's MAGeCK comparisons are each drug versus DMSO (Supplementary Table S1 sheets 'CB103vsDMSO' and 'GSIvsDMSO'), so each drug arm is tested against the three DMSO cultures; the T0 library is only a library check and is not used. Column names map one-to-one to the GSM titles (TimeZero, DMSO_1..3, CB-103_1..3, DAPT_1..3). Replicate numbers are not stated to be paired across arms, so no replicate term. The main finding (PIK3R1 loss gives resistance) is GSI enrichment; combination targets such as CDK6 are drug-specific depletion.",
+  "fetch": {},
+  "counts_md5": "9e6102b5e0be6f9990eb0d58950da00a"
+}

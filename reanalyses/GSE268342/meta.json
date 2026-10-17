@@ -1,7 +1,11 @@
 {
-  "gse": "GSE268342", "pmid": "38857306", "doi": "10.1371/journal.pgen.1011314", "pmcid": "PMC11192328",
+  "gse": "GSE268342",
+  "pmid": "38857306",
+  "doi": "10.1371/journal.pgen.1011314",
+  "pmcid": "PMC11192328",
   "title": "CRISPRi screen of long non-coding RNAs identifies LINC03045 regulating glioblastoma invasion",
-  "journal": "PLoS Genetics", "published": "2024",
+  "journal": "PLoS Genetics",
+  "published": "2024",
   "model": "U87 dCas9-KRAB glioblastoma cells, CRiNCL U87 lncRNA CRISPRi sublibrary (2,307 lncRNAs, 10 guides each)",
   "contrast": "Non-invading cells (top of Matrigel Boyden chamber, 24 h) vs input (2 vs 2)",
   "paper_method": "Top-3-guide phenotype x Mann-Whitney p vs non-targeting guides",
@@ -9,5 +13,8 @@
   "barcs_calls": "5 genes at FDR 0.10 (calibrated to controls); 1 against the control null",
   "named_hits": "2/2 at FDR 0.10: LINC03045 (LH02236) #2, FDR 0.083; ZNF215-AS1 (LH02727) #4, FDR 0.086",
   "verdict": "BARCS ranks LINC03045 and ZNF215-AS1 second and fourth of 2,307 lncRNAs and calls both at FDR 0.10, but its list is much shorter than the paper's (5 vs about 45 genes) because the invasion effects are small and the test is corrected for all lncRNAs.",
-  "agreement": "agree", "analyzed": "2026-10-16"
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2024-06",
+  "published_issue": "2024 Jun"
 }

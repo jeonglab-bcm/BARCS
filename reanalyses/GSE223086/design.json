@@ -1,0 +1,59 @@
+{
+  "gse": "GSE223086",
+  "pmid": "37464007",
+  "counts_file": "GSE223086_K562_Brunello_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NO_CURRENT",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "day0_1",
+      "gsm": "GSM6939410",
+      "condition": "day0",
+      "replicate": "1"
+    },
+    {
+      "column": "day0_2",
+      "gsm": "GSM6939411",
+      "condition": "day0",
+      "replicate": "2"
+    },
+    {
+      "column": "day24_1",
+      "gsm": "GSM6939418",
+      "condition": "day24",
+      "replicate": "1"
+    },
+    {
+      "column": "day24_2",
+      "gsm": "GSM6939419",
+      "condition": "day24",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "day0",
+      "day24"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "K562_day24_vs_day0",
+      "columns": [
+        "day0_1",
+        "day0_2",
+        "day24_1",
+        "day24_2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionday24"
+    }
+  ],
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "9aa458918e12075213906e931518923e",
+  "rationale": "Proliferation (dropout) CRISPR knockout screen in K562 cells with the genome-wide Brunello library, run as the benchmark arm of a minimal-library methods paper. Guides depleted from day 0 to day 24 mark essential genes. Two replicate cultures per timepoint give the full BARCS model (2 residual df). The library's NO_CURRENT_* non-targeting guides are nominally present but were cloned at near-zero depth in this deposit (about 90 total reads across all 1000 at day 0), so they drop out at min_total_count and cannot serve as a control null; essentiality is validated instead by the strong depletion of core-essential genes. The deposited per-sample files were merged into one count matrix (prepare.R); counts are unchanged."
+}

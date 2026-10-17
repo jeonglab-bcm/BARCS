@@ -1,0 +1,49 @@
+{
+  "analysis": "CD58low_vs_mid_techsorts",
+  "formula": "~rep + sort",
+  "term": "sortlow",
+  "libraries": 8,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 76441,
+  "genes": 19113,
+  "moderated": true,
+  "prior_df": 21.9392,
+  "guide_correlation": 0.0009,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 503,
+  "top1pct_read_share": {
+    "CD58_lo_1A": 0.044,
+    "CD58_lo_1B": 0.043,
+    "CD58_lo_2A": 0.049,
+    "CD58_lo_2B": 0.047,
+    "CD58_mi_1A": 0.036,
+    "CD58_mi_1B": 0.036,
+    "CD58_mi_2A": 0.036,
+    "CD58_mi_2B": 0.036
+  },
+  "genes_fdr_0_10_up": 91,
+  "genes_fdr_0_10_down": 37,
+  "genes_fdr_0_05": 97,
+  "genes_fdr_0_10": 128,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

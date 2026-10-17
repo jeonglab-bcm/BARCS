@@ -1,0 +1,187 @@
+{
+  "gse": "GSE240894",
+  "pmid": "37546973",
+  "counts_file": "suppl/GSE240894_raw_counts.fin.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NTC_",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Blaziken_1_gDNA_106_DMSO1",
+      "gsm": "GSM7711612",
+      "condition": "gDNA",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_2_gDNA_106_AZD1",
+      "gsm": "GSM7711613",
+      "condition": "gDNA",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_3_gDNA_5A8_DMSO1",
+      "gsm": "GSM7711614",
+      "condition": "gDNA",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_4_gDNA_5A8_AZD1",
+      "gsm": "GSM7711615",
+      "condition": "gDNA",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_5_vRNA_106_DMSO1",
+      "gsm": "GSM7711616",
+      "condition": "vRNA_DMSO",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_6_vRNA_106_AZD1",
+      "gsm": "GSM7711617",
+      "condition": "vRNA_AZD",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_7_vRNA_106_IBET1",
+      "gsm": "GSM7711618",
+      "condition": "vRNA_IBET",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_8_vRNA_106_COMBO1",
+      "gsm": "GSM7711619",
+      "condition": "vRNA_COMBO",
+      "replicate": "1",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_9_vRNA_5A8_DMSO1",
+      "gsm": "GSM7711620",
+      "condition": "vRNA_DMSO",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_10_vRNA_5A8_AZD1",
+      "gsm": "GSM7711621",
+      "condition": "vRNA_AZD",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_11_vRNA_5A8_IBET1",
+      "gsm": "GSM7711622",
+      "condition": "vRNA_IBET",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_12_vRNA_5A8_COMBO1",
+      "gsm": "GSM7711623",
+      "condition": "vRNA_COMBO",
+      "replicate": "1",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_13_vRNA_106_DMSO2",
+      "gsm": "GSM7711624",
+      "condition": "vRNA_DMSO",
+      "replicate": "2",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_14_vRNA_106_AZD2",
+      "gsm": "GSM7711625",
+      "condition": "vRNA_AZD",
+      "replicate": "2",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_15_vRNA_106_IBET2",
+      "gsm": "GSM7711626",
+      "condition": "vRNA_IBET",
+      "replicate": "2",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_16_vRNA_106_COMBO2",
+      "gsm": "GSM7711627",
+      "condition": "vRNA_COMBO",
+      "replicate": "2",
+      "cell_line": "JLat106"
+    },
+    {
+      "column": "Blaziken_17_vRNA_5A8_DMSO2",
+      "gsm": "GSM7711628",
+      "condition": "vRNA_DMSO",
+      "replicate": "2",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_18_vRNA_5A8_AZD2",
+      "gsm": "GSM7711629",
+      "condition": "vRNA_AZD",
+      "replicate": "2",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_19_vRNA_5A8_IBET2",
+      "gsm": "GSM7711630",
+      "condition": "vRNA_IBET",
+      "replicate": "2",
+      "cell_line": "JLat5A8"
+    },
+    {
+      "column": "Blaziken_20_vRNA_5A8_COMBO2",
+      "gsm": "GSM7711631",
+      "condition": "vRNA_COMBO",
+      "replicate": "2",
+      "cell_line": "JLat5A8"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "gDNA",
+      "vRNA_DMSO",
+      "vRNA_AZD",
+      "vRNA_IBET",
+      "vRNA_COMBO"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "jlat106_combo",
+      "columns": [
+        "Blaziken_1_gDNA_106_DMSO1",
+        "Blaziken_2_gDNA_106_AZD1",
+        "Blaziken_8_vRNA_106_COMBO1",
+        "Blaziken_16_vRNA_106_COMBO2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionvRNA_COMBO"
+    },
+    {
+      "name": "jlat5a8_combo",
+      "columns": [
+        "Blaziken_3_gDNA_5A8_DMSO1",
+        "Blaziken_4_gDNA_5A8_AZD1",
+        "Blaziken_12_vRNA_5A8_COMBO1",
+        "Blaziken_20_vRNA_5A8_COMBO2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionvRNA_COMBO"
+    }
+  ],
+  "rationale": "Targeted Latency HIV-CRISPR screen in two latently infected Jurkat (J-Lat 10.6 and 5A8) lines with an 8-guide-per-gene library of 526 putative HIV dependency factors plus 210 non-targeting controls. After library transduction the cells were treated with latency reversal agents; guides captured in the viral-particle RNA (vRNA) in the supernatant are compared against the genomic-DNA knockout pool (gDNA). A gene whose knockout blocks reactivation is depleted in the vRNA relative to the gDNA pool. The authors' MAGeCK gene tables are the combination (AZD5582 + I-BET151, COMBO) sort against the gDNA pool, analysed per cell line. Each line has one DMSO and one AZD gDNA library (two libraries of the knockout pool) and two COMBO vRNA replicates, so condition is the only term (2 residual df). Two exploratory analyses pool both lines' COMBO vRNA against both lines' gDNA with a cell_line term.",
+  "counts_md5": "88e70a8038e821766cf03ebbee8d54ed",
+  "fetch": {}
+}

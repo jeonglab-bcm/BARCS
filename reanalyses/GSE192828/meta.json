@@ -14,5 +14,7 @@
   "named_hits": "7/7 at FDR 0.10; enriched ranks BTN3A1 #1, SPIB #2, IRF1 #3, BTN2A1 #5, BTN3A2 #7, NLRC5 #9, HMGCR #64",
   "verdict": "BARCS reproduces the paper's resistance hits almost exactly (same top four, 60 of 71 enriched calls, rank correlation 0.80) and adds 60 modest interferon, MHC and sterol genes; calibration could not be checked because the library has no control guides.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-08-30",
+  "published_issue": "2023 Sep"
 }

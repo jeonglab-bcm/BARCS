@@ -1,0 +1,179 @@
+{
+  "gse": "GSE229547",
+  "pmid": "37269286",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_11",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_12",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_13",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_14",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_15",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_16",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_17",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_18",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_21",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_22",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_23",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_24",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_25",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_26",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_27",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_28",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_29",
+      "condition": "WT"
+    },
+    {
+      "column": "KO_01",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_02",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_03",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_04",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_05",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_06",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_07",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_08",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_09",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_10",
+      "condition": "KO"
+    },
+    {
+      "column": "P4_1",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_2",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_3",
+      "condition": "P4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "KO",
+      "WT",
+      "P4"
+    ]
+  },
+  "totals": "median_ratio",
+  "analyses": [
+    {
+      "name": "WT_vs_KO",
+      "columns": [
+        "WT_11",
+        "WT_12",
+        "WT_13",
+        "WT_14",
+        "WT_15",
+        "WT_16",
+        "WT_17",
+        "WT_18",
+        "WT_21",
+        "WT_22",
+        "WT_23",
+        "WT_24",
+        "WT_25",
+        "WT_26",
+        "WT_27",
+        "WT_28",
+        "WT_29",
+        "KO_01",
+        "KO_02",
+        "KO_03",
+        "KO_04",
+        "KO_05",
+        "KO_06",
+        "KO_07",
+        "KO_08",
+        "KO_09",
+        "KO_10"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT"
+    }
+  ],
+  "rationale": "Endomembrane/nucleus sublibrary (395 genes, 3,945 guides; no non-targeting guides) of the in vivo Toxoplasma CRISPR study. RH tachyzoites passaged in vitro (P4, 3 libraries) and in vivo through WT mice (WT_*, 17 libraries) and Ifngr1-/- mice (KO_*, 10 libraries). In vivo libraries are bottlenecked (top 1% 24-35%), so median_ratio totals and only between-arm comparisons are interpretable. Primary WT vs KO (Table S2A p.value_WTvsKO) finds IFN-gamma-dependent fitness genes; secondary P4 vs WT (p.value_P4vsWT) gives in vivo fitness. ROP18/GRA12/GRA45 are present as shared control-panel genes. No neutral controls, so no calibration/control null.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "7f4e6294ef062142651f3331fd5af6a0"
+}

@@ -13,5 +13,7 @@
   "named_hits": "1/1: Cd300ld #1, FDR 0.006",
   "verdict": "Both methods single out Cd300ld as the only standout gene, and BARCS calls it at FDR 0.006. The screen has one library per tissue and no controls, so the call is screening-level.",
   "agreement": "agree",
-  "analyzed": "2026-10-16"
+  "analyzed": "2026-10-16",
+  "published_date": "2023-09",
+  "published_issue": "2023 Sep"
 }

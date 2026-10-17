@@ -1,0 +1,20 @@
+{
+  "gse": "GSE223086",
+  "pmid": "37464007",
+  "doi": "10.1038/s41598-023-38810-6",
+  "pmcid": "PMC10354020",
+  "title": "Optimized minimal genome-wide human sgRNA library",
+  "journal": "Scientific Reports",
+  "published": "2023",
+  "model": "K562 cells, genome-wide Brunello knockout library (77,441 guides) — benchmark arm of a minimal-library methods paper",
+  "contrast": "Day 24 vs day 0 proliferation dropout (2 vs 2)",
+  "paper_method": "Library benchmarking against reference essential-gene sets (no per-gene hit table)",
+  "paper_calls": "No biological hit table; the paper reports core-essential-gene recovery as a performance metric",
+  "barcs_calls": "968 genes at FDR 0.10 (842 depleted); no usable control null (the Brunello NO_CURRENT non-targeting guides were cloned at near-zero depth here, ~90 total reads at day 0)",
+  "named_hits": "Core-essential positive controls all strongly depleted at FDR 0.10 (NOP58 #2, RPTOR #3, POLR3B #5, CCT7 #10, RPL3, RPS19, POLR2A, POLR2B, PSMA1, CDK1, MYC)",
+  "verdict": "A proliferation benchmark screen; BARCS recovers essential-gene dropout correctly (phosphatase, nucleolar, chaperonin, RNA-pol and ribosome genes dominate the depleted list), but the deposited library has no usable non-targeting controls so the hit list cannot be calibrated.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-07-18",
+  "published_issue": "2023 Jul 18"
+}

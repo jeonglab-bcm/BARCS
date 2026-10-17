@@ -1,0 +1,125 @@
+{
+  "gse": "GSE217789",
+  "pmid": "37248947",
+  "counts_file": "counts_symbols.tsv.gz",
+  "guide_column": "libID",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargetingGuide",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "N8_1_high",
+      "gsm": "GSM6726715",
+      "gfp": "high",
+      "pair": "N8_1",
+      "clone": "N8"
+    },
+    {
+      "column": "N8_1_low",
+      "gsm": "GSM6726716",
+      "gfp": "low",
+      "pair": "N8_1",
+      "clone": "N8"
+    },
+    {
+      "column": "N8_2_high",
+      "gsm": "GSM6726717",
+      "gfp": "high",
+      "pair": "N8_2",
+      "clone": "N8"
+    },
+    {
+      "column": "N8_2_low",
+      "gsm": "GSM6726718",
+      "gfp": "low",
+      "pair": "N8_2",
+      "clone": "N8"
+    },
+    {
+      "column": "N8_3_high",
+      "gsm": "GSM6726719",
+      "gfp": "high",
+      "pair": "N8_3",
+      "clone": "N8"
+    },
+    {
+      "column": "N8_3_low",
+      "gsm": "GSM6726720",
+      "gfp": "low",
+      "pair": "N8_3",
+      "clone": "N8"
+    },
+    {
+      "column": "N9_1_high",
+      "gsm": "GSM6726721",
+      "gfp": "high",
+      "pair": "N9_1",
+      "clone": "N9"
+    },
+    {
+      "column": "N9_1_low",
+      "gsm": "GSM6726722",
+      "gfp": "low",
+      "pair": "N9_1",
+      "clone": "N9"
+    },
+    {
+      "column": "N9_2_high",
+      "gsm": "GSM6726723",
+      "gfp": "high",
+      "pair": "N9_2",
+      "clone": "N9"
+    },
+    {
+      "column": "N9_2_low",
+      "gsm": "GSM6726724",
+      "gfp": "low",
+      "pair": "N9_2",
+      "clone": "N9"
+    },
+    {
+      "column": "N9_3_high",
+      "gsm": "GSM6726725",
+      "gfp": "high",
+      "pair": "N9_3",
+      "clone": "N9"
+    },
+    {
+      "column": "N9_3_low",
+      "gsm": "GSM6726726",
+      "gfp": "low",
+      "pair": "N9_3",
+      "clone": "N9"
+    }
+  ],
+  "factor_levels": {
+    "gfp": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "GFPlow_vs_high",
+      "columns": [
+        "N8_1_high",
+        "N8_1_low",
+        "N8_2_high",
+        "N8_2_low",
+        "N8_3_high",
+        "N8_3_low",
+        "N9_1_high",
+        "N9_1_low",
+        "N9_2_high",
+        "N9_2_low",
+        "N9_3_high",
+        "N9_3_low"
+      ],
+      "formula": "~ pair + gfp",
+      "term": "gfplow"
+    }
+  ],
+  "rationale": "GFP-RBM3 reporter iPSC-derived neurons (two Cas9 clones N8 and N9, three differentiation/sort days each) with a custom genome-wide library (91,536 guides, 5 per gene, 399 non-targeting), cooled to 32 C for 72 h and sorted into the top and bottom GFP quartiles. Column names equal the bracketed GSM-title labels. The authors ran paired MAGeCK (low as control, high as treatment); here the 6 high/low pairs are paired with a pair term, and the coefficient is low vs high so that positive regulators of RBM3 (e.g. HNRNPH1, RBM3 itself) have positive estimates and negative regulators (HTATSF1, WTAP) negative ones. GEO lists 'treatment: Tunicamycin' for every sample, which contradicts the series design and paper (cooling at 32 C); the file name 'rbm3-tun-library' suggests a shared pipeline with the same group's tunicamycin screen. RBM3's own guides are among the strongest low-GFP enrichments (#6), confirming that this is the RBM3 reporter sort.",
+  "fetch": {},
+  "counts_md5": "dcaea4597eebdb7ea7e219910bab999a"
+}

@@ -1,0 +1,76 @@
+{
+  "gse": "GSE229548",
+  "pmid": "37269286",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_01",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_02",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_03",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_04",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_05",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_06",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_07",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_08",
+      "condition": "WT"
+    },
+    {
+      "column": "P4",
+      "condition": "P4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "P4",
+      "WT"
+    ]
+  },
+  "totals": "median_ratio",
+  "analyses": [
+    {
+      "name": "P4_vs_WT",
+      "columns": [
+        "P4",
+        "WT_01",
+        "WT_02",
+        "WT_03",
+        "WT_04",
+        "WT_05",
+        "WT_06",
+        "WT_07",
+        "WT_08"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT"
+    }
+  ],
+  "rationale": "Secondary contrast: in vivo fitness in WT mice relative to the in vitro passage (P4 reference). Positive/negative estimate = enriched/depleted in WT vs in vitro; depleted-in-WT genes are in vivo fitness factors. median_ratio totals because the WT libraries are bottlenecked.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "b04226406328ab468f7b8de93e57be8a"
+}
