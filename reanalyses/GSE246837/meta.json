@@ -1,0 +1,19 @@
+{
+  "gse": "GSE246837",
+  "pmid": "37548590",
+  "doi": "10.1158/2159-8290.CD-23-0007",
+  "title": "Inhibition of METTL3 Results in a Cell-Intrinsic Interferon Response That Enhances Antitumor Immunity",
+  "journal": "Cancer Discovery",
+  "published": "2023",
+  "model": "B16-Ova-Cas9 mouse melanoma co-cultured with OT-I T cells, Brie genome-wide library",
+  "contrast": "Mettl3 inhibitor (STM2457) vs DMSO in OT-I co-culture, blocked by E:T ratio (4 vs 3 libraries, one per condition)",
+  "paper_method": "Not available (supplement not accessible)",
+  "paper_calls": "Abstract names dsRNA sensing and interferon signalling as mediators",
+  "barcs_calls": "4 genes at FDR 0.10 (6 against the control null)",
+  "named_hits": "3/6 recovered (Jak1, Stat1, Ifngr1; not Ifih1, Mavs, Ifnar1)",
+  "verdict": "BARCS finds interferon-gamma signalling (Jak1, Stat1, Ifngr1, Ifngr2) as the only genes whose loss protects B16 cells from T-cell killing specifically under Mettl3 inhibition, supporting the paper's interferon-signalling claim, but finds no enrichment for the dsRNA sensors Ifih1 and Mavs or for Ifnar1.",
+  "agreement": "partial",
+  "analyzed": "2026-10-18",
+  "published_date": "2023-10-05",
+  "published_issue": "2023 Oct 5"
+}

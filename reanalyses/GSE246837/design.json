@@ -1,0 +1,143 @@
+{
+  "fetch": {
+    "sample_files": true
+  },
+  "gse": "GSE246837",
+  "pmid": "37548590",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "ETP",
+      "gsm": "GSM7879976",
+      "ratio": "none",
+      "drug": "none",
+      "tcells": "no"
+    },
+    {
+      "column": "Ctrl_DMSO",
+      "gsm": "GSM7879975",
+      "ratio": "none",
+      "drug": "DMSO",
+      "tcells": "no"
+    },
+    {
+      "column": "Ctrl_M3iL",
+      "gsm": "GSM7879974",
+      "ratio": "none",
+      "drug": "M3i",
+      "tcells": "no"
+    },
+    {
+      "column": "Ctrl_M3iH",
+      "gsm": "GSM7879973",
+      "ratio": "none",
+      "drug": "M3i",
+      "tcells": "no"
+    },
+    {
+      "column": "ET1_5_DMSO",
+      "gsm": "GSM7879972",
+      "ratio": "1to5",
+      "drug": "DMSO",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_5_M3iL",
+      "gsm": "GSM7879971",
+      "ratio": "1to5",
+      "drug": "M3i",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_5_M3iH",
+      "gsm": "GSM7879970",
+      "ratio": "1to5",
+      "drug": "M3i",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_20_DMSO",
+      "gsm": "GSM7879969",
+      "ratio": "1to20",
+      "drug": "DMSO",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_20_M3iL",
+      "gsm": "GSM7879968",
+      "ratio": "1to20",
+      "drug": "M3i",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_1_DMSO",
+      "gsm": "GSM7879967",
+      "ratio": "1to1",
+      "drug": "DMSO",
+      "tcells": "yes"
+    },
+    {
+      "column": "ET1_1_M3iH",
+      "gsm": "GSM7879966",
+      "ratio": "1to1",
+      "drug": "M3i",
+      "tcells": "yes"
+    }
+  ],
+  "factor_levels": {
+    "ratio": [
+      "none",
+      "1to20",
+      "1to5",
+      "1to1"
+    ],
+    "drug": [
+      "DMSO",
+      "M3i",
+      "none"
+    ],
+    "tcells": [
+      "no",
+      "yes"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "Mettl3i_vs_DMSO_coculture",
+      "columns": [
+        "ET1_20_DMSO",
+        "ET1_20_M3iL",
+        "ET1_5_DMSO",
+        "ET1_5_M3iL",
+        "ET1_5_M3iH",
+        "ET1_1_DMSO",
+        "ET1_1_M3iH"
+      ],
+      "formula": "~ ratio + drug",
+      "term": "drugM3i"
+    },
+    {
+      "name": "Tcells_1to5_vs_none",
+      "columns": [
+        "Ctrl_DMSO",
+        "Ctrl_M3iL",
+        "Ctrl_M3iH",
+        "ET1_20_DMSO",
+        "ET1_20_M3iL",
+        "ET1_5_DMSO",
+        "ET1_5_M3iL",
+        "ET1_5_M3iH",
+        "ET1_1_DMSO",
+        "ET1_1_M3iH"
+      ],
+      "formula": "~ drug + ratio",
+      "term": "ratio1to5"
+    }
+  ],
+  "rationale": "Genome-wide Brie knockout screen (79,525 guides seen, 1,000 'Control' non-targeting) in B16-Ova-Cas9 cells, deposited as one guideCounts file per library (merged by prepare.R; guides absent from a file set to 0). Libraries: early time point; no T cells with DMSO, 5 uM (2457L) or 20 uM (2457H) Mettl3i (STM2457); OT-I co-culture at E:T 1:20 (DMSO, 5 uM), 1:5 (DMSO, 5 uM, 20 uM) and 1:1 (DMSO, 20 uM). GSM7879968's title says 20 uM but its treatment field and file name (2457L) say 5 uM; the file name is used. One library per condition. Main analysis: Mettl3i versus DMSO within co-culture, blocked by E:T ratio (each ratio has its own DMSO arm; 1:20 libraries correlate 0.90 with the matching no-T-cell library, consistent with drug-pretreated cultures split into co-culture), both doses pooled as 'M3i'; genes whose loss protects cells from T-cell killing only under Mettl3i are enriched. The paper's claim is that dsRNA sensing and interferon signalling mediate the Mettl3i-potentiated killing. Second analysis (positive-control check that T cells selected): E:T 1:5 co-culture versus no T cells, from an additive model over all ten treated libraries (~ drug + ratio, drug = DMSO or Mettl3i), so each ratio is compared with the no-T-cell libraries after adjusting for drug; Jak1, Stat1, Ifngr1/2, B2m and Tap1 are expected enriched. The 1:1 libraries are strongly bottlenecked (Spearman 0.28 between the two 1:1 arms; top 1% of guides hold 6-11% of reads).",
+  "counts_md5": "ba90ab22b17b46f8f879e0b9db340fc8"
+}

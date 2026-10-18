@@ -1,0 +1,51 @@
+{
+  "analysis": "Tcells_1to5_vs_none",
+  "formula": "~drug + ratio",
+  "term": "ratio1to5",
+  "libraries": 10,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 79525,
+  "genes": 19671,
+  "moderated": true,
+  "prior_df": 8.3184,
+  "guide_correlation": 0.0017,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.005,
+  "control_p05": 0.005,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 121,
+  "top1pct_read_share": {
+    "Ctrl_DMSO": 0.025,
+    "Ctrl_M3iL": 0.025,
+    "Ctrl_M3iH": 0.028,
+    "ET1_5_DMSO": 0.029,
+    "ET1_5_M3iL": 0.036,
+    "ET1_5_M3iH": 0.036,
+    "ET1_20_DMSO": 0.026,
+    "ET1_20_M3iL": 0.026,
+    "ET1_1_DMSO": 0.059,
+    "ET1_1_M3iH": 0.109
+  },
+  "genes_fdr_0_10_up": 9,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 8,
+  "genes_fdr_0_10": 9,
+  "genes_empirical_fdr_0_10": 45,
+  "empirical_centre": "controls",
+  "control_shift": 0.093,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}
