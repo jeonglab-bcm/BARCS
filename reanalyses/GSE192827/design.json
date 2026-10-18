@@ -1,0 +1,70 @@
+{
+  "gse": "GSE192827",
+  "pmid": "37648854",
+  "counts_file": "suppl/GSE192827_BTN3A_screen_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Rep1_Low",
+      "gsm": "GSM5766295",
+      "condition": "low",
+      "replicate": "Rep1"
+    },
+    {
+      "column": "Rep1_High",
+      "gsm": "GSM5766296",
+      "condition": "high",
+      "replicate": "Rep1"
+    },
+    {
+      "column": "Rep2_Low",
+      "gsm": "GSM5766297",
+      "condition": "low",
+      "replicate": "Rep2"
+    },
+    {
+      "column": "Rep2_High",
+      "gsm": "GSM5766298",
+      "condition": "high",
+      "replicate": "Rep2"
+    },
+    {
+      "column": "Rep3_Low",
+      "gsm": "GSM5766299",
+      "condition": "low",
+      "replicate": "Rep3"
+    },
+    {
+      "column": "Rep3_High",
+      "gsm": "GSM5766300",
+      "condition": "high",
+      "replicate": "Rep3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "low_vs_high",
+      "columns": [
+        "Rep1_Low",
+        "Rep1_High",
+        "Rep2_Low",
+        "Rep2_High",
+        "Rep3_Low",
+        "Rep3_High"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionlow"
+    }
+  ],
+  "rationale": "Companion of GSE192828 (same paper, same Daudi-Cas9 genome-wide knockout library) but a different screen: cells were FACS-sorted into the top and bottom 25% of surface BTN3A. Each of three replicate infections was sorted into both bins, so the replicate term pairs Low with High from the same culture (2 residual df). Knockouts of positive regulators of BTN3A (BTN3A1 itself, IRF1, SPIB, ECSIT, NLRC5, OXPHOS genes) are enriched in BTN3A-low cells; knockouts of negative regulators (ZNF217, CTBP1, RUNX1, CBFB) are enriched in BTN3A-high cells, i.e. depleted on this term. The library has no non-targeting controls.",
+  "fetch": {},
+  "counts_md5": "f9fd5dafac61fded2c2387eb2ad76466"
+}

@@ -1,0 +1,153 @@
+{
+  "gse": "GSE225235",
+  "pmid": "37327789",
+  "counts_file": "counts_summed.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD58_lo_1",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1"
+    },
+    {
+      "column": "CD58_lo_1A",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_lo_1B",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_lo_2",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2"
+    },
+    {
+      "column": "CD58_lo_2A",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_lo_2B",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_mi_1",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1"
+    },
+    {
+      "column": "CD58_mi_1A",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_mi_1B",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_mi_2",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2"
+    },
+    {
+      "column": "CD58_mi_2A",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_mi_2B",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2",
+      "techsort": "B"
+    },
+    {
+      "column": "D0_2",
+      "gsm": "GSM7042310",
+      "sort": "presort_virus",
+      "rep": "R2"
+    },
+    {
+      "column": "D6_1",
+      "gsm": "GSM7042311",
+      "sort": "presort_D6",
+      "rep": "R1"
+    },
+    {
+      "column": "D6_2",
+      "gsm": "GSM7042312",
+      "sort": "presort_D6",
+      "rep": "R2"
+    },
+    {
+      "column": "D10_1",
+      "gsm": "GSM7042313",
+      "sort": "presort_D10",
+      "rep": "R1"
+    },
+    {
+      "column": "D10_2",
+      "gsm": "GSM7042314",
+      "sort": "presort_D10",
+      "rep": "R2"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "mid",
+      "low",
+      "presort_virus",
+      "presort_D6",
+      "presort_D10"
+    ],
+    "rep": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD58low_vs_mid_techsorts",
+      "columns": [
+        "CD58_lo_1A",
+        "CD58_lo_1B",
+        "CD58_lo_2A",
+        "CD58_lo_2B",
+        "CD58_mi_1A",
+        "CD58_mi_1B",
+        "CD58_mi_2A",
+        "CD58_mi_2B"
+      ],
+      "formula": "~ rep + sort",
+      "term": "sortlow"
+    }
+  ],
+  "rationale": "Sensitivity analysis: the 8 technical sorts (lane-summed) as separate libraries, ~ rep + sort, 5 residual df. Technical sorts of one biological replicate share the transduction and culture, so this treats sort-to-sort noise as replicate noise and is expected to be anti-conservative.",
+  "fetch": {},
+  "counts_md5": "1ba0abbc8555ef8cbbc7a2aa4a0779c8"
+}

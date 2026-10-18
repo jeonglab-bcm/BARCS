@@ -1,0 +1,47 @@
+{
+  "analysis": "SEM_Cas9_day14_vs_day0",
+  "formula": "~condition",
+  "term": "conditionDay14",
+  "libraries": 6,
+  "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 5718,
+  "genes": 248,
+  "moderated": true,
+  "prior_df": 70.2777,
+  "guide_correlation": 0.0023,
+  "control_scale": null,
+  "control_guides": 20,
+  "control_p05_raw": 0.2,
+  "control_p05": 0.2,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "SEMCas9-Day0_R1-SFM001-2583702": 0.048,
+    "SEMCas9-Day0_R2-SFM002-2583703": 0.049,
+    "SEMCas9-Day0_R3-SFM003-2583704": 0.046,
+    "SEMCas9-Day14_R1-SFM007-2583708": 0.049,
+    "SEMCas9-Day14_R2-SFM008-2583709": 0.048,
+    "SEMCas9-Day14_R3-SFM009-2583710": 0.047
+  },
+  "genes_fdr_0_10_up": 65,
+  "genes_fdr_0_10_down": 35,
+  "genes_fdr_0_05": 84,
+  "genes_fdr_0_10": 100,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

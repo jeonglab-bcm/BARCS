@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/GFPlow_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": ["HNRNPH1", "RBM3", "TNPO3", "PNISR", "SNRNP70", "HTATSF1", "WTAP", "YPEL5", "WDR26", "UBE2H"],
+  "top_n": [25, 50, 100, 200]
+}

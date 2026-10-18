@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/PDL1_secondary_low_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": ["Cd274", "Cebpb"],
+  "published": {
+    "file": "paper/pdl1_sec_mageck.tsv",
+    "gene_column": "gene", "score_column": "min_p", "score_better": "lower",
+    "effect_column": "lfc_low_vs_high"
+  },
+  "top_n": [25, 50, 100],
+  "out": "comparison_pdl1sec"
+}

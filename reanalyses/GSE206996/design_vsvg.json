@@ -1,0 +1,40 @@
+{
+  "gse": "GSE206996",
+  "pmid": "37707319",
+  "counts_file": "counts_vsvg.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Low",
+      "gsm": "GSM6267744",
+      "sort": "low"
+    },
+    {
+      "column": "High",
+      "gsm": "GSM6267745",
+      "sort": "high"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "vsvg_low_vs_high",
+      "columns": [
+        "Low",
+        "High"
+      ],
+      "formula": "~ sort",
+      "term": "sortlow"
+    }
+  ],
+  "rationale": "Counter-screen with the same Brunello library and ACE2-HEK293T cells infected with VSV-G-pseudotyped mNeonGreen retrovirus: reporter-low vs high, no-replicate path. Genes enriched here (e.g. LDLR, the VSV-G receptor) act on retroviral entry/reporter steps shared with the spike screen, and subtracting them isolates spike-specific entry factors.",
+  "counts_md5": "6a3e1f83d25c6525412f9218e6b55dd0"
+}

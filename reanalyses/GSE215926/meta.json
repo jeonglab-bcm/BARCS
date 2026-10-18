@@ -1,0 +1,20 @@
+{
+  "gse": "GSE215926",
+  "pmid": "38016946",
+  "doi": "10.1038/s41467-023-43264-5",
+  "pmcid": "PMC10684515",
+  "title": "Systematic characterization of the HOXA9 downstream targets in MLL-r leukemia by noncoding CRISPR screens",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "SEM (MLL-r B-ALL) cells, Cas9 and dCas9-KRAB, tiling library over 229 HOXA9-bound peaks (5,718 guides)",
+  "contrast": "Day 14 vs day 0, SEM-Cas9 (3 vs 3); SEM-dCas9-KRAB run alongside",
+  "paper_method": "MAGeCK RRA (unpaired, Supplementary Data 2)",
+  "paper_calls": "15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi",
+  "barcs_calls": "Cas9: 100 elements at FDR 0.10 (35 depleted); dCas9-KRAB: 48 (8 depleted); enriched calls small and likely inflated; no control null (20 controls)",
+  "named_hits": "7/8 at FDR 0.10: FLT3 enhancer #2 (both screens), CDK6 #1 (CRISPRi), RUNX1, DCAF11, NDUFS8, PEBP4, ZCCHC7 depleted; MAN1C1 not called",
+  "verdict": "BARCS reproduces the paper's noncoding dropout hits: the FLT3 distal enhancer ranks right after the RPS19 control in both Cas9 and CRISPRi screens, the CDK6 intronic site tops the CRISPRi screen, and rank correlation with MAGeCK is 0.76. BARCS also calls dozens of weakly enriched elements, which the 20 controls cannot validate.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-11-28",
+  "published_issue": "2023 Nov 28"
+}

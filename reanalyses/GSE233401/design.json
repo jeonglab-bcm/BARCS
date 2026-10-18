@@ -1,0 +1,107 @@
+{
+  "gse": "GSE233401",
+  "pmid": "37407562",
+  "counts_file": "suppl/GSE233401_TSGlibA549raw.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^safe$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "A549TSGlibT0",
+      "gsm": "GSM7426859",
+      "background": "lib",
+      "time": "T0",
+      "replicate": "lib"
+    },
+    {
+      "column": "A549sgNegTSGT0_1",
+      "gsm": "GSM7426851",
+      "background": "sgNeg",
+      "time": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "A549sgNegTSGT0_2",
+      "gsm": "GSM7426852",
+      "background": "sgNeg",
+      "time": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "A549sgNegTSGT1_1",
+      "gsm": "GSM7426853",
+      "background": "sgNeg",
+      "time": "T1",
+      "replicate": "1"
+    },
+    {
+      "column": "A549sgNegTSGT1_2",
+      "gsm": "GSM7426854",
+      "background": "sgNeg",
+      "time": "T1",
+      "replicate": "2"
+    },
+    {
+      "column": "A549sgUHRF1TSGT0_1",
+      "gsm": "GSM7426855",
+      "background": "sgUHRF1",
+      "time": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "A549sgUHRF1TSGT0_2",
+      "gsm": "GSM7426856",
+      "background": "sgUHRF1",
+      "time": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "A549sgUHRF1TSGT1_1",
+      "gsm": "GSM7426857",
+      "background": "sgUHRF1",
+      "time": "T1",
+      "replicate": "1"
+    },
+    {
+      "column": "A549sgUHRF1TSGT1_2",
+      "gsm": "GSM7426858",
+      "background": "sgUHRF1",
+      "time": "T1",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "time": [
+      "T0",
+      "T1"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "sgNeg_T1_vs_T0",
+      "columns": [
+        "A549sgNegTSGT0_1",
+        "A549sgNegTSGT0_2",
+        "A549sgNegTSGT1_1",
+        "A549sgNegTSGT1_2"
+      ],
+      "formula": "~ time",
+      "term": "timeT1"
+    },
+    {
+      "name": "sgUHRF1_T1_vs_T0",
+      "columns": [
+        "A549sgUHRF1TSGT0_1",
+        "A549sgUHRF1TSGT0_2",
+        "A549sgUHRF1TSGT1_1",
+        "A549sgUHRF1TSGT1_2"
+      ],
+      "formula": "~ time",
+      "term": "timeT1"
+    }
+  ],
+  "rationale": "Focused CRISPR knockout screen in KRAS-mutant A549-Cas9 cells with a minipool of 483 sgRNAs targeting 80 lung-cancer tumour-suppressor genes plus 12 positive-control essential genes and 26 negative 'safe' sgRNAs. Cells carrying the library were given either a non-targeting guide (sgNeg) or a guide against UHRF1 (sgUHRF1), then passaged; DNA was collected at T0 (split) and T1 (18 days). The paper (Supplementary Data 10) reports a depletion z-score for each gene separately in the sgNeg and the sgUHRF1 background, to find tumour-suppressor knockouts whose fitness effect depends on UHRF1. Each background is reproduced as its own T1-vs-T0 contrast with two replicates per timepoint (2 residual df). The A549TSGlibT0 plasmid library column is not part of either contrast. 'safe' sgRNAs are the negative controls.",
+  "counts_md5": "f9f4853ebf89672bd7ce79c83678f85b",
+  "fetch": {}
+}

@@ -1,0 +1,39 @@
+{
+  "gse": "GSE199603",
+  "pmid": "37674079",
+  "counts_file": "suppl/GSE199603_sgRNA_Reads.xlsx",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "BM",
+      "gsm": "GSM5975981",
+      "tissue": "bone_marrow"
+    },
+    {
+      "column": "Tumor",
+      "gsm": "GSM5975982",
+      "tissue": "tumor"
+    }
+  ],
+  "factor_levels": {
+    "tissue": [
+      "bone_marrow",
+      "tumor"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "tumor_vs_bone_marrow",
+      "columns": [
+        "BM",
+        "Tumor"
+      ],
+      "formula": "~ tissue",
+      "term": "tissuetumor"
+    }
+  ],
+  "rationale": "In vivo screen of 355 myeloid-biased transmembrane-protein genes (3,547 guides, about 10 per gene, no non-targeting controls) in Cas9 haematopoietic progenitors transplanted into irradiated mice; CD45+ cells from B16-F10 tumours were compared with bone marrow of the same mice. One pooled library per tissue, so run_barcs.R uses the no-replicate path; without control guides the overdispersion is pooled over all guides (conservative), and the calls are screening-level. Knockouts that prevent accumulation of the cells in the tumour (Cd300ld in the paper) are depleted in tumour vs bone marrow.",
+  "counts_md5": "7a44195361adf91171483e6fb3b9d5d6"
+}

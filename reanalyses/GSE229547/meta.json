@@ -1,0 +1,20 @@
+{
+  "pmid": "37269286",
+  "doi": "10.1016/j.celrep.2023.112592",
+  "pmcid": null,
+  "title": "Host genetics highlights IFN-gamma-dependent Toxoplasma genes encoding secreted and non-secreted virulence factors in in vivo CRISPR screens",
+  "journal": "Cell Reports",
+  "published": "2023",
+  "paper_method": "Per-gene fitness scores, WT-vs-KO and P4-vs-WT t-tests",
+  "analyzed": "2026-10-16",
+  "model": "Toxoplasma RH tachyzoites, endomembrane/nucleus sublibrary (395 genes, 3,945 gRNAs), in vivo mouse passage",
+  "contrast": "WT vs Ifngr1-/- mouse passage (17 vs 10); also in vitro (P4) vs WT (3 vs 17)",
+  "paper_calls": "Table S2A: WT-vs-KO and P4-vs-WT per-gene fitness; ROP18 the shared IFN-gamma control",
+  "barcs_calls": "WT vs KO: 160 genes at FDR 0.10 (90 depleted in WT); P4 vs WT: 229",
+  "named_hits": "ROP18 #1 (FDR 3e-30); GRA12/GRA45 are not in this sublibrary",
+  "verdict": "BARCS puts the shared positive control ROP18 first and agrees with the paper's WT-vs-KO and P4-vs-WT rankings (Spearman 0.28 and 0.43, top-100 overlap 58/100), adding sublibrary-specific candidates such as a YggS pyridoxal-phosphate enzyme and a glutathione S-transferase.",
+  "agreement": "agree",
+  "gse": "GSE229547",
+  "published_date": "2023-06-01",
+  "published_issue": "2023 Jun 27"
+}

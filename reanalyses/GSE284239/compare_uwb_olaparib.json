@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/uwb_olaparib_vs_dmso/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["PARP1"],
+  "published": {"file": "paper/tableS7.csv", "gene_column": "gene", "score_column": "signed_score",
+                "score_better": "higher", "effect_column": "effect"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_uwb_olaparib"
+}

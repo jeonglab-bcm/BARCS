@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/panc1_tumor_vs_culture/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["AP2A1", "AP2A2", "AP2B1", "AP2M1", "AP2S1", "PTEN"],
+  "published": {
+    "file": "paper/fig1b_PANC1.csv",
+    "gene_column": "gene", "score_column": "signed_log10p", "score_better": "higher",
+    "effect_column": "vivo_minus_vitro"
+  },
+  "top_n": [5, 10, 25],
+  "out": "comparison_panc1"
+}

@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/CRISPRa_doxo_vs_vehicle/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["CLK2", "ATP4A", "TWF2", "FLT4", "MAP3K4", "CA12"],
+  "top_n": [10, 25, 50],
+  "out": "comparison_crispra"
+}

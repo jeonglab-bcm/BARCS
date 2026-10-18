@@ -1,0 +1,53 @@
+{
+  "analysis": "hct116_tumor_vs_day0",
+  "formula": "~condition",
+  "term": "conditiontumor",
+  "libraries": 12,
+  "residual_df": 10,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 1140,
+  "genes": 177,
+  "moderated": true,
+  "prior_df": 9.2556,
+  "guide_correlation": 0.0055,
+  "control_scale": null,
+  "control_guides": 100,
+  "control_p05_raw": 0,
+  "control_p05": 0,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "sample_21": 0.055,
+    "sample_22": 0.042,
+    "sample_23": 0.033,
+    "sample_24": 0.052,
+    "sample_25": 0.041,
+    "sample_26": 0.052,
+    "sample_27": 0.062,
+    "sample_28": 0.054,
+    "sample_29": 0.051,
+    "sample_30": 0.053,
+    "sample_31": 0.021,
+    "sample_32": 0.02
+  },
+  "genes_fdr_0_10_up": 1,
+  "genes_fdr_0_10_down": 28,
+  "genes_fdr_0_05": 27,
+  "genes_fdr_0_10": 29,
+  "genes_empirical_fdr_0_10": 71,
+  "empirical_centre": "targets",
+  "control_shift": -0.371,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

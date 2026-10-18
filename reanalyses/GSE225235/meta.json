@@ -1,0 +1,20 @@
+{
+  "gse": "GSE225235",
+  "pmid": "37327789",
+  "doi": "10.1016/j.ccell.2023.05.014",
+  "pmcid": "PMC10524902",
+  "title": "The CD58-CD2 axis is co-regulated with PD-L1 via CMTM6 and shapes anti-tumor immunity",
+  "journal": "Cancer Cell",
+  "published": "2023",
+  "model": "A375 melanoma cells, genome-wide Brunello knockout library (76,441 guides, no non-targeting controls), CD58 FACS sort",
+  "contrast": "CD58-low vs CD58-mid sort, day 10 (2 vs 2 biological replicates; technical sorts and sequencing lanes summed)",
+  "paper_method": "MAGeCK, run separately on each of four technical sort pairs (Supplemental Table 2)",
+  "paper_calls": "9 genes enriched at FDR 0.10 in all four MAGeCK comparisons, 21 in at least two, 60 in at least one; CD58 and CMTM6 highlighted",
+  "barcs_calls": "69 genes at FDR 0.10 (66 enriched in CD58-low); 128 when the 8 technical sorts are kept as libraries",
+  "named_hits": "2/2 at FDR 0.10: CD58 #1, CMTM6 #13",
+  "verdict": "BARCS ranks CD58 first and calls CMTM6 (#13), and every gene the authors' four MAGeCK runs call in at least two runs, with a rank correlation of 0.82; BARCS adds about 45 further consistent regulators, chiefly more GPI-anchor synthesis genes.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-06-15",
+  "published_issue": "2023 Jul 10"
+}

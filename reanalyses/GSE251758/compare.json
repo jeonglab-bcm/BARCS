@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/intense_vs_pre/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["Trp53", "Eif4g2", "Icam1"],
+  "published": {
+    "file": "sample_suppl/GSM7987449_Alphamean_AICD_pre_vs_Act.gene_summary.rev.txt.gz",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [50, 100, 200]
+}

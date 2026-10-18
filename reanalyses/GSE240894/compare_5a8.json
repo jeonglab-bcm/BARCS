@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/jlat5a8_combo/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["CCNT1", "ELL", "OTUD5", "MED7", "UBE2M", "TBL1XR1", "NFKB1", "HDAC3", "AMBRA1"],
+  "published": {
+    "file": "paper/SuppFileS1_v1.xlsx", "sheet": "JLat5A8_GeneSummary",
+    "gene_column": "id", "score_column": "neg|MAGeCK score", "score_better": "lower",
+    "effect_column": "neg|lfc (log fold change)"
+  },
+  "top_n": [10, 25, 50, 100],
+  "out": "comparison_5a8"
+}

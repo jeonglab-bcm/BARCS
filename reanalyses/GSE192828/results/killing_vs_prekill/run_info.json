@@ -1,0 +1,45 @@
+{
+  "analysis": "killing_vs_prekill",
+  "formula": "~condition",
+  "term": "conditionkilling",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 90709,
+  "genes": 17999,
+  "moderated": true,
+  "prior_df": 19.5943,
+  "guide_correlation": 0.0038,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 1013,
+  "top1pct_read_share": {
+    "Pre_kill": 0.034,
+    "Killing_Donor1_E_T_1_4": 0.041,
+    "Killing_Donor2_E_T_1_4": 0.043,
+    "Killing_Donor3_E_T_1_2": 0.041
+  },
+  "genes_fdr_0_10_up": 120,
+  "genes_fdr_0_10_down": 2335,
+  "genes_fdr_0_05": 2279,
+  "genes_fdr_0_10": 2455,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

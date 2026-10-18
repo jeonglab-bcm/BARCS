@@ -1,0 +1,149 @@
+{
+  "gse": "GSE225235",
+  "pmid": "37327789",
+  "counts_file": "counts_summed.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD58_lo_1",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1"
+    },
+    {
+      "column": "CD58_lo_1A",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_lo_1B",
+      "gsm": "GSM7042315",
+      "sort": "low",
+      "rep": "R1",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_lo_2",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2"
+    },
+    {
+      "column": "CD58_lo_2A",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_lo_2B",
+      "gsm": "GSM7042316",
+      "sort": "low",
+      "rep": "R2",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_mi_1",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1"
+    },
+    {
+      "column": "CD58_mi_1A",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_mi_1B",
+      "gsm": "GSM7042317",
+      "sort": "mid",
+      "rep": "R1",
+      "techsort": "B"
+    },
+    {
+      "column": "CD58_mi_2",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2"
+    },
+    {
+      "column": "CD58_mi_2A",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2",
+      "techsort": "A"
+    },
+    {
+      "column": "CD58_mi_2B",
+      "gsm": "GSM7042318",
+      "sort": "mid",
+      "rep": "R2",
+      "techsort": "B"
+    },
+    {
+      "column": "D0_2",
+      "gsm": "GSM7042310",
+      "sort": "presort_virus",
+      "rep": "R2"
+    },
+    {
+      "column": "D6_1",
+      "gsm": "GSM7042311",
+      "sort": "presort_D6",
+      "rep": "R1"
+    },
+    {
+      "column": "D6_2",
+      "gsm": "GSM7042312",
+      "sort": "presort_D6",
+      "rep": "R2"
+    },
+    {
+      "column": "D10_1",
+      "gsm": "GSM7042313",
+      "sort": "presort_D10",
+      "rep": "R1"
+    },
+    {
+      "column": "D10_2",
+      "gsm": "GSM7042314",
+      "sort": "presort_D10",
+      "rep": "R2"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "mid",
+      "low",
+      "presort_virus",
+      "presort_D6",
+      "presort_D10"
+    ],
+    "rep": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD58low_vs_mid",
+      "columns": [
+        "CD58_lo_1",
+        "CD58_lo_2",
+        "CD58_mi_1",
+        "CD58_mi_2"
+      ],
+      "formula": "~ sort",
+      "term": "sortlow"
+    }
+  ],
+  "rationale": "A375 Cas9 cells with a genome-wide Brunello library (76,441 guides, no non-targeting controls), sorted at day 10 into CD58-low and CD58-mid (control) populations; two biological replicates, each sorted twice (technical sorts A and B), each library read in four sequencing lanes (_A.._D, Poisson re-reads). prepare.R sums the lanes and then the two technical sorts per biological replicate, giving 2 CD58-low vs 2 CD58-mid libraries (GSM7042315-18 are per biological replicate). The paper's screen question is which knockouts lower surface CD58 (CD58 itself, CMTM6), i.e. enrichment in CD58-low vs CD58-mid. Biological replicates come from the same transduction per replicate, but a replicate term would leave 1 residual df, so it is omitted (2 residual df). design_techsorts.json is a sensitivity analysis keeping the 8 technical sorts as libraries with a replicate term. The virus, day 6 and day 10 pre-sort libraries are dropout references and are not used.",
+  "fetch": {},
+  "counts_md5": "1ba0abbc8555ef8cbbc7a2aa4a0779c8"
+}

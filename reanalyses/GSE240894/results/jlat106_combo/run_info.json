@@ -1,0 +1,45 @@
+{
+  "analysis": "jlat106_combo",
+  "formula": "~condition",
+  "term": "conditionvRNA_COMBO",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 4229,
+  "genes": 526,
+  "moderated": true,
+  "prior_df": 34.3904,
+  "guide_correlation": 0.0047,
+  "control_scale": 2.2215,
+  "control_guides": 210,
+  "control_p05_raw": 0.2488,
+  "control_p05": 0.0478,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Blaziken_1_gDNA_106_DMSO1": 0.151,
+    "Blaziken_2_gDNA_106_AZD1": 0.151,
+    "Blaziken_8_vRNA_106_COMBO1": 0.154,
+    "Blaziken_16_vRNA_106_COMBO2": 0.155
+  },
+  "genes_fdr_0_10_up": 27,
+  "genes_fdr_0_10_down": 65,
+  "genes_fdr_0_05": 73,
+  "genes_fdr_0_10": 92,
+  "genes_empirical_fdr_0_10": 131,
+  "empirical_centre": "targets",
+  "control_shift": -0.258,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

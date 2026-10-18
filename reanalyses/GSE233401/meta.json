@@ -1,0 +1,20 @@
+{
+  "gse": "GSE233401",
+  "pmid": "37407562",
+  "doi": "10.1038/s41467-023-39591-2",
+  "pmcid": "PMC10322837",
+  "title": "UHRF1 is a mediator of KRAS driven oncogenesis in lung adenocarcinoma",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "KRAS-mutant A549-Cas9 lung cancer cells, minipool of 483 sgRNAs (80 tumour-suppressor genes, 12 positive controls, 26 safe controls)",
+  "contrast": "T1 (day 18) vs T0 depletion, separately in sgNeg and sgUHRF1 backgrounds (2 vs 2 each)",
+  "paper_method": "Depletion z-score per gene (Supplementary Data 10)",
+  "paper_calls": "sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)",
+  "barcs_calls": "sgNeg: 66 genes at FDR 0.10 (58 enriched); sgUHRF1: 5 (4 enriched); only 26 safe controls, below the threshold for a control null or calibration",
+  "named_hits": "PTEN (#1), TSC1 (#2), MAP3K4 (#3), MAP2K4 (#10) all enriched at FDR 0.10 in the sgNeg background; TSC1 (#1) and PTEN (FDR 0.11) top the sgUHRF1 background",
+  "verdict": "BARCS reproduces the minipool TSG screen almost exactly in both backgrounds (rank correlation 0.96 sgNeg, 0.90 sgUHRF1; PTEN/TSC1/MAP3K4 the top enriched knockouts), calling a somewhat longer list than the authors' z-score cutoff.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-07-05",
+  "published_issue": "2023 Jul 5"
+}

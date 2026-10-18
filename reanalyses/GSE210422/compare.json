@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/A375_day21_vs_day0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["15:99982353-99983277", "10:89986509-89987396", "17:29645182-29645793"],
+  "published": {
+    "file": "paper/A375_day21_mageck_positive.tsv",
+    "gene_column": "Enhancer core region", "score_column": "Score", "score_better": "lower",
+    "effect_column": "LFC"
+  },
+  "top_n": [10, 25, 66]
+}

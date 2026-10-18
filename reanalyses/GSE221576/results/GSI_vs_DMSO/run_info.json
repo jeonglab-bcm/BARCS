@@ -1,0 +1,47 @@
+{
+  "analysis": "GSI_vs_DMSO",
+  "formula": "~condition",
+  "term": "conditionGSI",
+  "libraries": 6,
+  "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 119461,
+  "genes": 20708,
+  "moderated": true,
+  "prior_df": 24.0673,
+  "guide_correlation": 0.001,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.052,
+  "control_p05": 0.052,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 60,
+  "top1pct_read_share": {
+    "DMSO.1": 0.063,
+    "DMSO.2": 0.065,
+    "DMSO.3": 0.075,
+    "DAPT.1": 0.055,
+    "DAPT.2": 0.053,
+    "DAPT.3": 0.059
+  },
+  "genes_fdr_0_10_up": 85,
+  "genes_fdr_0_10_down": 228,
+  "genes_fdr_0_05": 208,
+  "genes_fdr_0_10": 313,
+  "genes_empirical_fdr_0_10": 508,
+  "empirical_centre": "controls",
+  "control_shift": -0.175,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

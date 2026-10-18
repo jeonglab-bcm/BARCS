@@ -1,0 +1,179 @@
+{
+  "gse": "GSE229545",
+  "pmid": "37269286",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT_11",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_12",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_13",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_14",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_15",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_16",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_21",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_22",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_23",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_24",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_25",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_26",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_27",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_28",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_31",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_32",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_33",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_34",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_35",
+      "condition": "WT"
+    },
+    {
+      "column": "WT_36",
+      "condition": "WT"
+    },
+    {
+      "column": "KO_01",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_02",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_03",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_04",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_05",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_06",
+      "condition": "KO"
+    },
+    {
+      "column": "KO_07",
+      "condition": "KO"
+    },
+    {
+      "column": "P4_1",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_2",
+      "condition": "P4"
+    },
+    {
+      "column": "P4_3",
+      "condition": "P4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "KO",
+      "WT",
+      "P4"
+    ]
+  },
+  "totals": "median_ratio",
+  "analyses": [
+    {
+      "name": "WT_vs_KO",
+      "columns": [
+        "WT_11",
+        "WT_12",
+        "WT_13",
+        "WT_14",
+        "WT_15",
+        "WT_16",
+        "WT_21",
+        "WT_22",
+        "WT_23",
+        "WT_24",
+        "WT_25",
+        "WT_26",
+        "WT_27",
+        "WT_28",
+        "WT_31",
+        "WT_32",
+        "WT_33",
+        "WT_34",
+        "WT_35",
+        "WT_36",
+        "KO_01",
+        "KO_02",
+        "KO_03",
+        "KO_04",
+        "KO_05",
+        "KO_06",
+        "KO_07"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT"
+    }
+  ],
+  "rationale": "ROP/GRA sublibrary (376 genes, ~10 gRNAs each, 3,757 guides; no non-targeting guides) of the in vivo Toxoplasma CRISPR study. Virulent RH tachyzoites carrying the sublibrary were passaged in vitro (P3, P4) and in vivo through WT C57BL/6 mice (WT_* ; three independent screens, 20 libraries) and through Ifngr1-/- mice (KO_* ; 7 libraries). In vivo libraries are heavily bottlenecked (top 1% of guides hold 20-40% of reads, ~1,100-1,800 of 3,757 guides zero), so totals use median_ratio and only between-arm comparisons are interpretable. Primary analysis WT vs KO (KO reference) reproduces the paper's Fig 3 / Table S1E: genes depleted in WT but not in Ifngr1-/- mice are IFN-gamma-dependent virulence factors (ROP5, ROP18, GRA12, GRA45). Secondary P4 vs WT (Fig 2 / S1A) gives in vivo fitness in WT mice. No neutral controls (the shared gene panel mixes essential and dispensable genes), so calibration and the control null are not used.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "457c9a73f1b4d5729f4806786e5fb454"
+}

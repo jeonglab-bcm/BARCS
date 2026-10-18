@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/samuraciclib_vs_controls/genes.csv",
+  "direction": "both",
+  "named_hits": ["MTOR", "RPTOR", "MLST8", "RICTOR", "MAPKAP1", "RHEB", "TSC1", "TSC2", "NPRL2", "NPRL3", "DEPDC5"],
+  "top_n": [50, 100, 200]
+}

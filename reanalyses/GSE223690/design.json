@@ -1,0 +1,57 @@
+{
+  "gse": "GSE223690",
+  "pmid": "37581984",
+  "counts_file": "suppl/GSE223690_screen_d14_reads.txt.gz",
+  "guide_column": "sgRNA_ID",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "D14_GFP_high_1",
+      "gsm": "GSM6974011+GSM6974016",
+      "condition": "high",
+      "replicate": "R1"
+    },
+    {
+      "column": "D14_GFP_high_2",
+      "gsm": "GSM6974012+GSM6974017",
+      "condition": "high",
+      "replicate": "R2"
+    },
+    {
+      "column": "D14_GFP_low_1",
+      "gsm": "GSM6974013+GSM6974018",
+      "condition": "low",
+      "replicate": "R1"
+    },
+    {
+      "column": "D14_GFP_low_2",
+      "gsm": "GSM6974015+GSM6974019",
+      "condition": "low",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "d14_low_vs_high",
+      "columns": [
+        "D14_GFP_high_1",
+        "D14_GFP_high_2",
+        "D14_GFP_low_1",
+        "D14_GFP_low_2"
+      ],
+      "formula": "~ replicate + condition",
+      "term": "conditionlow"
+    }
+  ],
+  "rationale": "HEK293T cells carrying a SARS-CoV-2 -1 PRF dual-fluorescence reporter were transduced with the two halves of a genome-wide knockout library (HGLibA and HGLibB, 3 guides per gene in each, 1,000 non-targeting guides) and FACS-sorted into high and low GFP/mCherry (frameshifting) bins at day 7 and day 14, two biological replicates each. The deposited table stacks the HGLibA rows (from the libraryA GSM) and HGLibB rows (from the libraryB GSM) of the same bin and replicate into one column, so each column is the sum of two sequencing libraries; each gene has guides in both halves. The paper's MAGeCK 'pos' direction (EIF2A first at day 14) is higher abundance in the GFP/mCherry-low bin, i.e. knockouts that reduce frameshifting, so the term is low versus high. Each replicate culture was sorted into both bins, so replicate is a paired term (1 residual df... see run_info). The two sub-libraries' depth ratio differs by up to 12% between columns, a small offset per sub-library that largely cancels at the gene level.",
+  "fetch": {},
+  "counts_md5": "9869476ea2d57e4781717b752ecd7cb3"
+}

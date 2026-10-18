@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/CD58low_vs_mid/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["CD58", "CMTM6"],
+  "published": {
+    "file": "paper/cd58_mageck_combined.tsv",
+    "gene_column": "gene", "score_column": "mean_pos_rank", "score_better": "lower",
+    "effect_column": "mean_lfc"
+  },
+  "top_n": [10, 25, 50, 100]
+}

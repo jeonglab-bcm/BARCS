@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/CD86_GW_low_vs_high/genes.csv",
+  "direction": "both",
+  "named_hits": ["Cd86", "March1.", "Cebpb", "Med12"],
+  "published": {
+    "file": "paper/cd86_gw_mageck.tsv",
+    "gene_column": "gene", "score_column": "min_p", "score_better": "lower",
+    "effect_column": "lfc_low_vs_high"
+  },
+  "top_n": [10, 25, 50, 100]
+}

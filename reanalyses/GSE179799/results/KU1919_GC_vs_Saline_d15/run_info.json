@@ -1,0 +1,47 @@
+{
+  "analysis": "KU1919_GC_vs_Saline_d15",
+  "formula": "~condition",
+  "term": "conditionGC",
+  "libraries": 6,
+  "residual_df": 4,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 76404,
+  "genes": 19095,
+  "moderated": true,
+  "prior_df": 7.5822,
+  "guide_correlation": 0.0007,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "P7C02_KU1919GC_T15_GC_R2_S37_L002_R1_001": 0.045,
+    "P7B10_KU1919GC_T15_Saline_R1_S33_L002_R1_001": 0.043,
+    "P7C01_KU1919GC_T15_GC_R1_S36_L002_R1_001": 0.046,
+    "P7C03_KU1919GC_T15_GC_R3_S38_L002_R1_001": 0.044,
+    "P7B11_KU1919GC_T15_Saline_R2_S34_L002_R1_001": 0.042,
+    "P7B12_KU1919GC_T15_Saline_R3_S35_L002_R1_001": 0.042
+  },
+  "genes_fdr_0_10_up": 6,
+  "genes_fdr_0_10_down": 55,
+  "genes_fdr_0_05": 50,
+  "genes_fdr_0_10": 61,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.6.1",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.1.2",
+      "RcppArmadillo": "15.6.0.1",
+      "jsonlite": "2.0.0"
+    }
+  }
+}

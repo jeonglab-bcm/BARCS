@@ -1,0 +1,41 @@
+{
+  "fetch": {"sample_files": true},
+  "gse": "GSE216353",
+  "pmid": "37723178",
+  "counts_file": "counts_thp1.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^INTERGENIC",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD80_low",
+      "gsm": "GSM6670884",
+      "bin": "low"
+    },
+    {
+      "column": "CD80_high",
+      "gsm": "GSM6670885",
+      "bin": "high"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "low",
+      "high"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD80_high_vs_low",
+      "columns": [
+        "CD80_low",
+        "CD80_high"
+      ],
+      "formula": "~ bin",
+      "term": "binhigh"
+    }
+  ],
+  "rationale": "Human metabolic-gene knockout screen (~2,980 genes, 30,198 guides, 499 INTERGENIC non-targeting) in Cas9 THP-1-derived macrophages (tMAC) stimulated with LPS+IFN-gamma and sorted into CD80-high and CD80-low pro-inflammatory bins. Per-sample files merged by sgRNA (prepare.R). One library per bin, so run_barcs.R uses the no-replicate path with an overdispersion pooled over the intergenic guides; calls are screening-level. Coefficient is CD80-high vs CD80-low: knockouts that raise CD80 (the paper's CD80-high enriched list: B3GNT8, ST3GAL6, NANS) are enriched, knockouts that lower CD80 (CD80-low enriched: NDUFS6, KEAP1, respiratory-chain and ROS genes) are depleted. The iMAC arm is not analyzed: its deposited bin labels are internally inconsistent (GSM titles swap high/low relative to filenames, both file headers read 'high').",
+  "counts_md5": "7487405dc4e6db359703d18adea92b8c"
+}

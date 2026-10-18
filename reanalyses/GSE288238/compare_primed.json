@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/primed_GFPneg_vs_GFPhigh/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TBL1XR1", "HDAC3", "TMEM173", "TBK1"],
+  "out": "comparison_primed",
+  "top_n": [25, 50, 100]
+}

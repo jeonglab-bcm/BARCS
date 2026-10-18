@@ -1,0 +1,20 @@
+{
+  "gse": "GSE216353",
+  "pmid": "37723178",
+  "doi": "10.1038/s41467-023-41470-9",
+  "pmcid": "PMC10507032",
+  "title": "Metabolic Reprogramming via ACOD1 depletion enhances function of human induced pluripotent stem cell-derived CAR-macrophages in solid tumors",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "Cas9 THP-1-derived macrophages, human metabolic-gene knockout library (~2,980 genes), CD80 FACS sort",
+  "contrast": "CD80-high vs CD80-low macrophages, LPS+IFN-gamma (1 vs 1, no replicates)",
+  "paper_method": "sgRNA enrichment ranking per bin (Supplementary Fig. 1f; no gene-level table)",
+  "paper_calls": "Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated",
+  "barcs_calls": "0 genes at FDR 0.10 (screening-level, one library per bin, overdispersion inflation 510)",
+  "named_hits": "Directions all correct (KEAP1, NFKB1, NDUFS6 depleted in CD80-high; B3GNT8, NANS, ST3GAL6 enriched) but none significant; KEAP1 #960, NFKB1 #1504 of 2,966",
+  "verdict": "BARCS recovers the correct direction for every named gene but, with one library per bin and very high overdispersion, calls nothing at FDR 0.10 where the paper ranked sgRNAs; the reanalysis is screening-level only.",
+  "agreement": "differ",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-09-18",
+  "published_issue": "2023 Sep 18"
+}

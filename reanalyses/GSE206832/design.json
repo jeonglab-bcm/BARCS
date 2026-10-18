@@ -1,0 +1,60 @@
+{
+  "gse": "GSE206832",
+  "pmid": "37813864",
+  "counts_file": "counts_cd86_gw.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^BRDN$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CD86_GW_1_H",
+      "gsm": "GSM6265483",
+      "bin": "H",
+      "repeat": "R1"
+    },
+    {
+      "column": "CD86_GW_1_L",
+      "gsm": "GSM6265484",
+      "bin": "L",
+      "repeat": "R1"
+    },
+    {
+      "column": "CD86_GW_2_H",
+      "gsm": "GSM6265485",
+      "bin": "H",
+      "repeat": "R2"
+    },
+    {
+      "column": "CD86_GW_2_L",
+      "gsm": "GSM6265486",
+      "bin": "L",
+      "repeat": "R2"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "H",
+      "L"
+    ],
+    "repeat": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CD86_GW_low_vs_high",
+      "columns": [
+        "CD86_GW_1_H",
+        "CD86_GW_1_L",
+        "CD86_GW_2_H",
+        "CD86_GW_2_L"
+      ],
+      "formula": "~ bin",
+      "term": "binL"
+    }
+  ],
+  "rationale": "Genome-wide Brie knockout screen in Cas9 mouse bone-marrow-derived dendritic cells stimulated with LPS and sorted into the top and bottom 10% of surface CD86 (two independent repeats). Columns are self-named and match the GSM titles. The term is low vs high bin, the same sign as the authors' MAGeCK lfc (treatment = low, control = high), so positive regulators of CD86 (Cd86 itself) are positive and negative regulators (March1, Cebpb) negative. The two repeats were sorted into both bins and so are paired, but a repeat term would leave 1 residual df; the libraries correlate about as weakly within as across repeats (Spearman 0.25-0.41), so the unpaired model (2 residual df) is used. The 986 BRDN guides are Brie non-targeting controls. The GEO file carries a UTF-8 byte-order mark in its first column name; prepare.R rewrites it without one (counts unchanged).",
+  "counts_md5": "3512b7f8d6465f756bb53267ca95c1c2"
+}

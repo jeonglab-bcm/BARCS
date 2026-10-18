@@ -1,0 +1,91 @@
+{
+  "gse": "GSE251758",
+  "pmid": "38490212",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargeting$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0",
+      "gsm": "GSM7987449",
+      "condition": "T0",
+      "replicate": "sum"
+    },
+    {
+      "column": "preA",
+      "gsm": "GSM7987449",
+      "condition": "pre",
+      "replicate": "sum"
+    },
+    {
+      "column": "Intense",
+      "gsm": "GSM7987449",
+      "condition": "intense",
+      "replicate": "sum"
+    },
+    {
+      "column": "Acute",
+      "gsm": "GSM7987449",
+      "condition": "acute",
+      "replicate": "sum"
+    },
+    {
+      "column": "Resting",
+      "gsm": "GSM7987450",
+      "condition": "resting",
+      "replicate": "1"
+    },
+    {
+      "column": "Chronic",
+      "gsm": "GSM7987450",
+      "condition": "chronic",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "pre",
+      "intense",
+      "acute",
+      "resting",
+      "chronic",
+      "T0"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "intense_vs_pre",
+      "columns": [
+        "preA",
+        "Intense"
+      ],
+      "formula": "~ condition",
+      "term": "conditionintense"
+    },
+    {
+      "name": "acute_vs_pre",
+      "columns": [
+        "preA",
+        "Acute"
+      ],
+      "formula": "~ condition",
+      "term": "conditionacute"
+    },
+    {
+      "name": "chronic_vs_resting",
+      "columns": [
+        "Resting",
+        "Chronic"
+      ],
+      "formula": "~ condition",
+      "term": "conditionchronic"
+    }
+  ],
+  "rationale": "Genome-wide Brie knockout screens in primary OT-I/Cas9 CD8 T cells (Lin et al. 2024, Cancer Cell). The authors' MAGeCK comparisons, named in the GEO gene-summary files and Table S1, are intense stimulation vs the pre-reactivation sample (AICD_pre_vs_Act), acute stimulation vs pre-reactivation (pre_vs_Acute) and chronic tumour co-culture vs resting cells (Chronic_Rest_vs_Act); hits are guides enriched after stimulation. GEO deposits the count tables only as additional sample files: one with Intense, Acute, preA-Bulk and T0 in which the two replicate libraries per condition were already summed by the authors ('sum_rep'), and one with Chronic and Resting (one library each). prepare.R merges them by sgRNA. Each comparison is one library against one, so run_barcs.R uses the no-replicate path and calls are screening-level. 1,000 non-targeting guides serve as controls; library totals are used.",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_md5": "c5e257b08b7feb8d022453a32bcef4dc"
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE192828",
+  "pmid": "37648854",
+  "doi": "10.1038/s41586-023-06482-x",
+  "pmcid": "PMC11003766",
+  "title": "CRISPR screens decode cancer cell pathways that trigger γδ T cell detection",
+  "journal": "Nature",
+  "published": "2023",
+  "model": "Daudi-Cas9 Burkitt lymphoma cells, genome-wide knockout library (90,709 guides), co-culture with Vγ9Vδ2 T cells",
+  "contrast": "Survivors of γδ T cell co-culture (3 donors) vs pre-kill library (3 vs 1)",
+  "paper_method": "MAGeCK RRA (Supplementary Table 1)",
+  "paper_calls": "71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes",
+  "barcs_calls": "120 enriched genes at FDR 0.10 (2,335 depleted, mostly fitness genes); no control guides for a control null",
+  "named_hits": "7/7 at FDR 0.10; enriched ranks BTN3A1 #1, SPIB #2, IRF1 #3, BTN2A1 #5, BTN3A2 #7, NLRC5 #9, HMGCR #64",
+  "verdict": "BARCS reproduces the paper's resistance hits almost exactly (same top four, 60 of 71 enriched calls, rank correlation 0.80) and adds 60 modest interferon, MHC and sterol genes; calibration could not be checked because the library has no control guides.",
+  "agreement": "agree",
+  "analyzed": "2026-10-16",
+  "published_date": "2023-08-30",
+  "published_issue": "2023 Sep"
+}

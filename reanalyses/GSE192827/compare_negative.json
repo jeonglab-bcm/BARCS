@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/low_vs_high/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ZNF217", "CTBP1", "RUNX1", "CBFB", "HDAC8", "RING1"],
+  "published": {
+    "file": "paper/MOESM8.xlsx", "sheet": "BTN3A Screen",
+    "gene_column": "id", "score_column": "neg|score", "score_better": "lower",
+    "effect_column": "neg|lfc"
+  },
+  "top_n": [25, 50, 100, 200, 500],
+  "out": "comparison_negative"
+}

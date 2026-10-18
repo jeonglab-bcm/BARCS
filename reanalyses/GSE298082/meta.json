@@ -1,0 +1,19 @@
+{
+  "pmid": "42049019",
+  "doi": "10.1016/j.cell.2026.03.044",
+  "title": "Global genetic interaction network of a human cell maps conserved principles and informs functional interpretation of gene co-essentiality profiles.",
+  "journal": "Cell",
+  "published": "2026",
+  "paper_method": "qGI score (differential LFC vs WT reference screens, M-A loess normalization, moderated t-test), per screen; MCMC consensus across replicate screens",
+  "analyzed": "2026-10-16",
+  "agreement": "partial",
+  "gse": "GSE298082",
+  "model": "HAP1, PTAR1 query (14-bp deletion x2, 1-bp insertion) vs parental WT, TKOv3 genome-wide KO library, minimal medium (DMEM 10 mM glucose)",
+  "contrast": "PTAR1 vs WT genetic interaction in minimal medium: endpoint vs T0 dropout difference, 3 PTAR1 screens vs 16 WT screens (one T0 and summed endpoints per screen)",
+  "paper_calls": "413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109",
+  "barcs_calls": "1035 genes at FDR 0.10 (518 depleted, 517 enriched); 759 against the control null",
+  "named_hits": "7/8 at FDR 0.10 (VAMP3, RAB1A, SEC23IP, GOSR1, TRAPPC12, ABHD16A, ABHD17B; not YKT6)",
+  "verdict": "BARCS recovers the paper's PTAR1 vesicle-trafficking negative interactions and the ABHD16A/ABHD17B suppressors (rank correlation 0.58 with the minimal-medium qGI) but not YKT6, and adds strong positive calls in p53-apoptosis and variable-fitness genes (BAX, PMAIP1, BBC3, NF2, TADA1) that the paper's network excludes.",
+  "published_date": "2026-04-27",
+  "published_issue": "2026 Jun 11"
+}

@@ -1,0 +1,113 @@
+{
+  "gse": "GSE232340",
+  "pmid": "37709997",
+  "counts_file": "suppl/GSE232340_ValidationScreen_RawCounts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeted$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "R1Blood",
+      "gsm": "GSM7328888",
+      "tissue": "blood",
+      "rat": "R1"
+    },
+    {
+      "column": "R2Blood",
+      "gsm": "GSM7328889",
+      "tissue": "blood",
+      "rat": "R2"
+    },
+    {
+      "column": "R3Blood",
+      "gsm": "GSM7328890",
+      "tissue": "blood",
+      "rat": "R3"
+    },
+    {
+      "column": "R1Spleen",
+      "gsm": "GSM7328891",
+      "tissue": "spleen",
+      "rat": "R1"
+    },
+    {
+      "column": "R2Spleen",
+      "gsm": "GSM7328892",
+      "tissue": "spleen",
+      "rat": "R2"
+    },
+    {
+      "column": "R3Spleen",
+      "gsm": "GSM7328893",
+      "tissue": "spleen",
+      "rat": "R3"
+    },
+    {
+      "column": "R1Meninges",
+      "gsm": "GSM7328894",
+      "tissue": "meninges",
+      "rat": "R1"
+    },
+    {
+      "column": "R2Meninges",
+      "gsm": "GSM7328895",
+      "tissue": "meninges",
+      "rat": "R2"
+    },
+    {
+      "column": "R3Meninges",
+      "gsm": "GSM7328896",
+      "tissue": "meninges",
+      "rat": "R3"
+    },
+    {
+      "column": "R1Parenchyma",
+      "gsm": "GSM7328897",
+      "tissue": "parenchyma",
+      "rat": "R1"
+    },
+    {
+      "column": "R2Parenchyma",
+      "gsm": "GSM7328898",
+      "tissue": "parenchyma",
+      "rat": "R2"
+    },
+    {
+      "column": "R3Parenchyma",
+      "gsm": "GSM7328899",
+      "tissue": "parenchyma",
+      "rat": "R3"
+    }
+  ],
+  "factor_levels": {
+    "tissue": [
+      "blood",
+      "spleen",
+      "meninges",
+      "parenchyma"
+    ],
+    "rat": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "VAL_parenchyma_vs_blood",
+      "columns": [
+        "R1Blood",
+        "R2Blood",
+        "R3Blood",
+        "R1Parenchyma",
+        "R2Parenchyma",
+        "R3Parenchyma"
+      ],
+      "formula": "~ rat + tissue",
+      "term": "tissueparenchyma"
+    }
+  ],
+  "rationale": "Validation screen: 12,000 guides (up to 6 per gene, 241 non-targeting) against the genome-wide candidates, same in vivo design with three animals. Parenchyma vs blood, paired by animal (the R1 libraries correlate 0.88-0.93 with each other and only about 0.5 with R2/R3, so pairing is essential).",
+  "counts_md5": "03ed19f94ff3655419b6930b4ee7aac9"
+}
