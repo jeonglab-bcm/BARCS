@@ -43,7 +43,7 @@ badge <- function(agreement) {
           agreement, s[["icon"]], s[["label"]])
 }
 
-page <- function(title, body, description = "") {
+page <- function(title, body, description = "", main_class = "") {
   sprintf('<!doctype html>
 <html lang="en">
 <head>
@@ -53,16 +53,18 @@ page <- function(title, body, description = "") {
 <meta name="description" content="%s">
 <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body%s>
 <header class="top"><a class="brand" href="index.html">BARCS reanalyses</a>
 <a class="ext" href="https://github.com/jeonglab-bcm/barcs">Package</a></header>
-<main>
+<main%s>
 %s
 </main>
 <footer>Built %s with BARCS screen-reanalysis tools. Reanalyses are independent and may differ from the original authors&rsquo; intent; each page states its assumptions.</footer>
 </body>
 </html>
-', esc(title), esc(description), body, format(Sys.Date()))
+', esc(title), esc(description),
+  if (nzchar(main_class)) sprintf(' class="%s-page"', main_class) else "",
+  if (nzchar(main_class)) sprintf(' class="%s"', main_class) else "", body, format(Sys.Date()))
 }
 
 # ---- volcano of the primary contrast -----------------------------------------
@@ -268,8 +270,14 @@ for (rec in records) {
 counts <- table(factor(vapply(records, function(r) r$meta$agreement, character(1)), levels = names(status)))
 rows <- vapply(records, function(rec) {
   m <- rec$meta
-  sprintf('<tr><td class="nowrap">%s</td><td><a href="%s.html">%s</a></td><td><span class="paper">%s</span><span class="muted">%s</span></td><td>%s</td><td>%s</td><td>%s</td><td class="num">%s</td><td>%s</td></tr>',
-          esc(format_date(m$published_date %||% m$published)), m$gse, m$gse, esc(m$title), esc(m$journal),
+  sprintf(paste0('<tr><td data-label="Published">%s</td><td data-label="Analyzed">%s</td>',
+                 '<td data-label="Series"><a href="%s.html">%s</a>',
+                 '<a class="sub" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s">Design, comparison spec and report on GitHub</a></td>',
+                 '<td data-label="Paper">%s<span class="muted">%s</span></td><td data-label="Contrast">%s</td>',
+                 '<td data-label="Paper calls">%s</td><td data-label="BARCS calls">%s</td>',
+                 '<td data-label="Control null" class="num">%s</td><td data-label="Verdict">%s</td></tr>'),
+          esc(format_date(m$published_date %||% m$published)), esc(format_date(m$analyzed %||% "")),
+          m$gse, m$gse, m$gse, esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
@@ -295,15 +303,21 @@ excluded_link <- ifelse(on_geo,
   sprintf('<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s">%s</a>', excluded$gse, excluded$gse),
   sprintf('<a href="https://pubmed.ncbi.nlm.nih.gov/%s/">PMID %s</a>', excluded$pmid, excluded$pmid))
 excluded_rows <- if (nrow(excluded)) sprintf(
-  '<tr><td class="nowrap">%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
+  '<tr><td class="nowrap" data-label="Published">%s</td><td data-label="Series">%s</td><td data-label="Title">%s</td><td data-label="Reason">%s</td></tr>',
   vapply(excluded$published_date, function(d) esc(format_date(d)), character(1)),
   excluded_link, esc(excluded$title), esc(excluded$reason)) else character()
 search_note <- if (file.exists(file.path(src, "search.json"))) {
   search <- fromJSON(file.path(src, "search.json"))
-  note <- sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',
-          esc(search$date), esc(search$papers), esc(search$days), esc(search$candidates), length(records), nrow(excluded))
+  note <- if (!is.null(search$checked_since)) {
+    sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO over the previous %s gave %s candidate series. Every candidate published since %s has been checked; in all, %d series are reanalyzed and %d screened out below.</p>',
+            esc(search$date), esc(search$papers), esc(search$window), esc(search$candidates),
+            esc(search$checked_since), length(records), nrow(excluded))
+  } else {
+    sprintf('<p class="muted">Last search %s: %s PubMed papers linked to GEO in the previous %s days gave %s candidate series; %d reanalyzed and %d screened out below.</p>',
+            esc(search$date), esc(search$papers), esc(search$days), esc(search$candidates), length(records), nrow(excluded))
+  }
   if (!is.null(search$pending) && nzchar(search$pending)) {
-    note <- sub("</p>$", sprintf(" Usable but not reanalyzed yet: %s.</p>", esc(search$pending)), note)
+    note <- sub("</p>$", sprintf(" %s</p>", esc(search$pending)), note)
   }
   note
 } else ""
@@ -312,17 +326,18 @@ index <- paste(c(
   '<h1>Published CRISPR screens, reanalyzed with BARCS</h1>',
   '<p class="lede">Recent pooled screens with raw counts in GEO, rerun with replicate-aware beta-binomial models and compared with what each paper reported. Each page states the design, the assumptions it rests on, and where BARCS and the paper differ.</p>',
   '<div class="tiles">', tiles, '</div>',
-  '<div class="table-wrap"><table class="index"><thead><tr><th>Published</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th class="num">Control null</th><th>Verdict</th></tr></thead><tbody>',
+  '<div class="table-wrap index-wrap"><table class="index"><colgroup><col class="c-date"><col class="c-date"><col class="c-series"><col class="c-paper"><col class="c-text"><col class="c-text"><col class="c-text"><col class="c-null"><col class="c-verdict"></colgroup>',
+  '<thead><tr><th>Published</th><th>Analyzed</th><th>Series</th><th>Paper</th><th>Contrast</th><th>Paper calls</th><th>BARCS calls</th><th class="num">Control null</th><th>Verdict</th></tr></thead><tbody>',
   rows, '</tbody></table></div>',
   '<p class="muted">Agreement labels: <strong>Agrees</strong>, the paper&rsquo;s main hits are recovered at FDR 0.10; <strong>Partly agrees</strong>, some are; <strong>Differs</strong>, BARCS does not support the paper&rsquo;s main calls. A difference is a statement about what the deposited counts support, not a judgment of the follow-up biology. <strong>Control null</strong>: genes in the primary contrast at FDR 0.10 against pseudo-genes built from the non-targeting guides (&mdash; when there are fewer than 100 usable controls).</p>',
   search_note,
   if (length(excluded_rows)) c(
     sprintf('<h2>Screened out (%d)</h2>', length(excluded_rows)),
     '<p class="muted">Series the search returned that cannot be reanalyzed faithfully from what was deposited.</p>',
-    '<div class="table-wrap"><table><thead><tr><th>Published</th><th>Series</th><th>Title</th><th>Reason</th></tr></thead><tbody>',
+    '<div class="table-wrap stack-wrap"><table class="stack"><thead><tr><th>Published</th><th>Series</th><th>Title</th><th>Reason</th></tr></thead><tbody>',
     excluded_rows, '</tbody></table></div>')
 ), collapse = "\n")
-write_utf8(page("BARCS reanalyses", index, "Published CRISPR screens reanalyzed with BARCS"), file.path(out, "index.html"))
+write_utf8(page("BARCS reanalyses", index, "Published CRISPR screens reanalyzed with BARCS", main_class = "wide"), file.path(out, "index.html"))
 
 write_utf8('
 :root {
@@ -356,6 +371,7 @@ a { color: var(--accent); }
 .brand { font-weight: 650; color: var(--ink); text-decoration: none; }
 .ext { color: var(--ink-2); font-size: 14px; }
 main { max-width: 1080px; margin: 0 auto; padding: 8px 16px 48px; }
+main.wide, .wide-page .top, .wide-page footer { max-width: 1480px; }
 footer { max-width: 1080px; margin: 0 auto; padding: 24px 16px 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
 h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.2; margin: 8px 0 12px; letter-spacing: -0.01em; }
 h2 { font-size: 21px; margin: 40px 0 12px; }
@@ -374,7 +390,33 @@ tr:last-child td { border-bottom: 0; }
 .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .nowrap { white-space: nowrap; }
 .paper { display: block; max-width: 42ch; }
-table.index td:first-child { white-space: nowrap; }
+table.index { table-layout: fixed; }
+table.index th { white-space: normal; }
+table.index th, table.index td { padding: 9px 8px; }
+table.index td { overflow-wrap: break-word; }
+table.index td > a:first-child { white-space: nowrap; }
+table.index col.c-date { width: 7.5%; } table.index col.c-series { width: 10%; }
+table.index col.c-paper { width: 17%; } table.index col.c-text { width: 14%; }
+table.index col.c-null { width: 6.5%; } table.index col.c-verdict { width: 9.5%; }
+table.index .muted { display: block; margin-top: 2px; }
+table.index .badge { white-space: normal; }
+a.sub { display: block; margin-top: 4px; font-size: 12px; line-height: 1.35; color: var(--ink-2); }
+@media (max-width: 640px) {
+  .stack-wrap { background: none; border: 0; }
+  table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: auto; }
+  table.stack thead { display: none; }
+  table.stack tr { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin: 0 0 12px; padding: 6px 0; }
+  table.stack td { border: 0; padding: 4px 14px; white-space: normal; }
+  table.stack td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 12px; font-weight: 600; }
+}
+@media (max-width: 1100px) {
+  .index-wrap { background: none; border: 0; }
+  table.index, table.index tbody, table.index tr, table.index td { display: block; width: auto; }
+  table.index colgroup, table.index thead { display: none; }
+  table.index tr { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin: 0 0 12px; padding: 6px 0; }
+  table.index td { border: 0; padding: 4px 14px; text-align: left; white-space: normal; }
+  table.index td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 12px; font-weight: 600; }
+}
 .badge { display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; font-size: 13px; font-weight: 600;
   border-radius: 999px; padding: 2px 10px; border: 1px solid currentColor; }
 .badge-agree { color: var(--good-ink); } .badge-partial { color: var(--warning-ink); } .badge-differ { color: var(--serious-ink); }
