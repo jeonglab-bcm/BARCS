@@ -1,0 +1,58 @@
+{
+  "gse": "GSE260469",
+  "pmid": "39674088",
+  "counts_file": "counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^(Intergenic|Offtarget)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "cell",
+      "gsm": "GSM8117826",
+      "condition": "cell",
+      "replicate": "1"
+    },
+    {
+      "column": "IgG",
+      "gsm": "GSM8117827",
+      "condition": "IgG",
+      "replicate": "1"
+    },
+    {
+      "column": "csf1r",
+      "gsm": "GSM8117828",
+      "condition": "csf1r",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "cell",
+      "IgG",
+      "csf1r"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "csf1r_vs_IgG",
+      "columns": [
+        "IgG",
+        "csf1r"
+      ],
+      "formula": "~ condition",
+      "term": "conditioncsf1r"
+    },
+    {
+      "name": "IgG_vs_cell",
+      "columns": [
+        "cell",
+        "IgG"
+      ],
+      "formula": "~ condition",
+      "term": "conditionIgG"
+    }
+  ],
+  "rationale": "Single series count file with paired technical re-reads per library (columns 1.X/2.X, constant ~3-fold ratio, r=0.995); prepare.R sums each pair into one count per library: cell (in vitro input), IgG (lung metastases, control antibody) and csf1r (lung metastases, anti-Csf1R, Mo-macs depleted). guide=Oligo_Name, gene=Gene_Symbol. The library carries 100 Intergenic and 100 Offtarget control guides (control_gene_pattern ^(Intergenic|Offtarget)), giving 200 controls for calibration. Primary analysis csf1r_vs_IgG reproduces the paper's key MAGeCK comparison (anti-Csf1R vs IgG, paper table mmc5), where the headline hit OPG (Tnfrsf11b) is a top positively selected gene: one library per condition, zero residual df, so rho is pooled across the control guides (no_replicates path) and calls are screening-level. Enrichment is the direction of interest (OPG knockout cells metastasize better when Mo-macs are depleted). A secondary IgG_vs_cell fit gives the metastasis-vs-input axis. Composition is mild (top 1% of guides hold 8-15% of reads), so library totals are kept.",
+  "counts_md5": "feec13bb75a59f3f368b671366a8dba2"
+}

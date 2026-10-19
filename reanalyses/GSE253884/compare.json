@@ -1,0 +1,16 @@
+{
+  "barcs_genes": "results/in_vivo_vs_in_vitro/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["TGGT1_211850", "TGGT1_224060", "TGGT1_282190", "TGGT1_221170",
+                 "TGGT1_266800", "TGGT1_304680", "TGGT1_277840", "TGGT1_239752",
+                 "TGGT1_310070", "TGGT1_221190"],
+  "published": {
+    "file": "suppl/GSE253884_unassigned_1_summary.xlsx",
+    "sheet": "Summary",
+    "gene_column": "GT1_ID",
+    "score_column": "adj.p.value (in vitro vs. in vivo)",
+    "score_better": "lower",
+    "effect_column": "In vivo fitness score"
+  },
+  "top_n": [15, 30, 50]
+}

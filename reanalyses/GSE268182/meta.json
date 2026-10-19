@@ -1,0 +1,19 @@
+{
+  "gse": "GSE268182",
+  "pmid": "39048823",
+  "doi": "10.1038/s41586-024-07898-9",
+  "title": "TMEFF1 is a neuron-specific restriction factor for herpes simplex virus",
+  "journal": "Nature",
+  "published": "2024",
+  "model": "SK-N-SH Cas9+ neuroblastoma, GeCKO v2 genome-wide library (two half-libraries A and B)",
+  "contrast": "GFP-high vs unsorted control after HSV-1-GFP, enrichment; each half-library 1 vs 1",
+  "paper_method": "Genome-wide CRISPR screen (GFP-high sort), authors' pipeline plus extensive validation",
+  "paper_calls": "TMEFF1 nominated and validated as the restriction factor",
+  "barcs_calls": "0 genes at empirical FDR 0.10 in either half; TMEFF1 ranks mid-pack (13,497/A, 17,405/B)",
+  "named_hits": "TMEFF1 not recovered (readthrough MSANTD3-TMEFF1 only weakly enriched, p 0.03-0.10)",
+  "verdict": "BARCS does not recover the validated hit TMEFF1 from the deposited single-replicate half-library counts: no gene passes the clean 1,000-control empirical null, and TMEFF1 ranks mid-pack with the model-FDR 'hits' being sparse-count artifacts; the genome-wide screen with one library per condition is underpowered, so these are screening-level calls and the paper's hit rested on its own pipeline plus validation.",
+  "agreement": "differ",
+  "analyzed": "2026-10-19",
+  "published_date": "2024-07-24",
+  "published_issue": "2024 Aug"
+}

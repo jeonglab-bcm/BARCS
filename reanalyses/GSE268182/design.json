@@ -1,0 +1,21 @@
+{
+  "gse": "GSE268182",
+  "pmid": "39048823",
+  "fetch": {"sample_files": true},
+  "counts_file": "countsA.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "USC", "gsm": "GSM8287462", "condition": "USC", "replicate": "1"},
+    {"column": "High", "gsm": "GSM8287462", "condition": "High", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["USC", "High"]},
+  "analyses": [
+    {"name": "libraryA_High_vs_USC", "columns": ["USC", "High"],
+     "formula": "~ condition", "term": "conditionHigh"}
+  ],
+  "rationale": "GeCKO v2 half-library A (Screen_1). Guide=sgRNA, gene=Gene; High = GFP-high sorted cells after HSV-1-GFP infection, USC = unsorted control. Restriction-factor knockouts raise HSV-1 replication and GFP, so their guides are enriched in the GFP-high fraction; direction of interest is enrichment and the headline hit is TMEFF1. One library per condition (High vs USC), zero residual df, so rho is pooled across the 1,000 NonTargetingControl guides (no_replicates path) and calls are screening-level. The 1,000 controls (control_gene_pattern ^NonTargetingControl) give an empirical null. Library B (GSE268182 Screen_2, different guides) is analysed separately in design_libraryB.json.",
+  "counts_md5": "49b224e6b95a049eeea24ea2c659ea94"
+}

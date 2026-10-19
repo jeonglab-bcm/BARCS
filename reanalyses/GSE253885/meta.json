@@ -1,0 +1,20 @@
+{
+  "gse": "GSE253885",
+  "pmid": "39082802",
+  "doi": "10.1128/mbio.01728-24",
+  "pmcid": "PMC11389413",
+  "title": "CRISPR screens identify genes essential for in vivo virulence among proteins of hyperLOPIT-unassigned subcellular localization in Toxoplasma (Unassigned_2)",
+  "journal": "mBio",
+  "published": "2024",
+  "model": "Toxoplasma gondii RH, Unassigned_2 gRNA library (295 genes, 2,949 guides)",
+  "contrast": "In vivo (9 mice) vs in vitro P4 reference, depletion; median-ratio totals",
+  "paper_method": "Median log2FC fitness score, Wilcoxon rank-sum per gene, ranked by distance from regression line",
+  "paper_calls": "Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)",
+  "barcs_calls": "157 genes at FDR 0.10; no control null (no non-targeting guides)",
+  "named_hits": "11/11 at FDR 0.10, most in the top 22",
+  "verdict": "BARCS recovers all eleven in vivo virulence genes the paper names or validated at FDR 0.10 (TgRimM #2, most within the top 22); the nine mice give 8 residual df so the standard model applies, though the single in vitro reference is unreplicated and the bottlenecked libraries require median-ratio totals.",
+  "agreement": "agree",
+  "analyzed": "2026-10-19",
+  "published_date": "2024-07-31",
+  "published_issue": "2024 Sep 11"
+}

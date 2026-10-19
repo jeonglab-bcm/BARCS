@@ -1,0 +1,21 @@
+{
+  "gse": "GSE268182",
+  "pmid": "39048823",
+  "fetch": {"sample_files": true},
+  "counts_file": "countsB.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "USC", "gsm": "GSM8287464", "condition": "USC", "replicate": "1"},
+    {"column": "High", "gsm": "GSM8287464", "condition": "High", "replicate": "1"}
+  ],
+  "factor_levels": {"condition": ["USC", "High"]},
+  "analyses": [
+    {"name": "libraryB_High_vs_USC", "columns": ["USC", "High"],
+     "formula": "~ condition", "term": "conditionHigh"}
+  ],
+  "rationale": "GeCKO v2 half-library B (Screen_2), the companion half to design.json; different guides, analysed separately. Same setup: High (GFP-high) vs USC (unsorted), enrichment, one library per condition (zero residual df, no_replicates path, rho pooled across the 1,000 NonTargetingControl guides), screening-level calls.",
+  "counts_md5": "76541eb69f5aebdb57b2e338faea1c93"
+}
