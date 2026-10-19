@@ -1,0 +1,49 @@
+{
+  "analysis": "combo_vs_DMSO",
+  "formula": "~condition",
+  "term": "conditioncombo",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 2.9495e-07,
+    "rho_source": "all guides (no or too few controls; conservative)",
+    "rho_guides": 198959,
+    "inflation_at_rho0": 37.3789,
+    "haldane_guides": 251
+  },
+  "guides": 199205,
+  "genes": 18907,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 10,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "DMSO": 0.044,
+    "combo": 0.047
+  },
+  "genes_fdr_0_10_up": 3941,
+  "genes_fdr_0_10_down": 4665,
+  "genes_fdr_0_05": 6791,
+  "genes_fdr_0_10": 8606,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/combo_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["PTEN", "NF1", "KEAP1", "CUL5", "ARIH2", "PLCG1"],
+  "published": {
+    "file": "paper/rsa_NCI-H23.tsv",
+    "gene_column": "gene", "score_column": "rsa_activator_logp", "score_better": "lower",
+    "effect_column": "logfc_med"
+  },
+  "top_n": [25, 50, 100, 200]
+}

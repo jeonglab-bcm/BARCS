@@ -1,0 +1,19 @@
+{
+  "gse": "GSE230735",
+  "pmid": "39116875",
+  "doi": "10.1016/j.devcel.2024.07.011",
+  "title": "Itaconate uptake via SLC13A3 improves hepatic antibacterial innate immunity",
+  "journal": "Developmental Cell",
+  "published": "2024",
+  "model": "293T cells with cBioITA itaconate biosensor, custom CRISPRi membrane-transporter library (7,441 sgRNAs, 1,241 genes)",
+  "contrast": "cBioITA top 25% vs bottom 25% sort (1 vs 1 after summing technical re-reads)",
+  "paper_method": "FACS enrichment screen; SLC13A3 identified as itaconate importer (no gene table deposited)",
+  "paper_calls": "SLC13A3 as the dicarboxylate-transporter itaconate importer; validated functionally in hepatocytes and in vivo",
+  "barcs_calls": "SLC13A3 #1 of 1,241, depleted in top (enriched in bottom), FDR 1.4e-85; only ABCG2 and RACK1 also at FDR 0.10",
+  "named_hits": "SLC13A3 recovered as the #1 gene at FDR 1e-85",
+  "verdict": "BARCS recovers the paper's sole screen hit, the itaconate importer SLC13A3, as the #1 gene by a wide margin (FDR ~1e-85), depleted in the high-cBioITA bin exactly as expected; agreement is complete for the one gene the screen reported.",
+  "agreement": "agree",
+  "analyzed": "2026-10-19",
+  "published_date": "2024-08-07",
+  "published_issue": "2024 Nov 4"
+}

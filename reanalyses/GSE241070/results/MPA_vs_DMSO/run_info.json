@@ -1,0 +1,49 @@
+{
+  "analysis": "MPA_vs_DMSO",
+  "formula": "~condition",
+  "term": "conditionMPA",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 1.4558e-07,
+    "rho_source": "control guides",
+    "rho_guides": 1000,
+    "inflation_at_rho0": 4.3267,
+    "haldane_guides": 0
+  },
+  "guides": 56869,
+  "genes": 18833,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.064,
+  "control_p05": 0.064,
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "ishi-crispr-control": 0.036,
+    "ishi-crispr-mpa": 0.036
+  },
+  "genes_fdr_0_10_up": 105,
+  "genes_fdr_0_10_down": 9,
+  "genes_fdr_0_05": 74,
+  "genes_fdr_0_10": 114,
+  "genes_empirical_fdr_0_10": 123,
+  "empirical_centre": "targets",
+  "control_shift": 0.387,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

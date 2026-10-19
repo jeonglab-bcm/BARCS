@@ -1,0 +1,20 @@
+{
+  "gse": "GSE246804",
+  "pmid": "37934115",
+  "doi": "10.1158/0008-5472.can-23-1127",
+  "pmcid": "PMC10722132",
+  "title": "CRISPR Screening Identifies Mechanisms of Resistance to KRASG12C and SHP2 Inhibitor Combinations in Non-Small Cell Lung Cancer",
+  "journal": "Cancer Research",
+  "published": "2023",
+  "model": "KRAS-G12C-mutant NSCLC lines (NCI-H23 analyzed), genome-wide knockout library (18,360 genes, 3 EPIC pools)",
+  "contrast": "KRASG12C+SHP2 inhibitor combination vs DMSO, NCI-H23 (1 vs 1, no replicates)",
+  "paper_method": "RSA (Dafflon procedure) per cell line; gene scores in geneData.txt.gz",
+  "paper_calls": "FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence",
+  "barcs_calls": "Rescuers (enriched): PTEN #1, PLCG1 #2, NF1 #3, ARIH2 #4, CUL5 #6, KEAP1 #63 of 18,907; sensitizers (depleted): EXTL3 #235, ITGB1 #303, EXT1/EXT2/B4GALT7 significant, FGFR1 #4399 (panel-wide hit, mid-pack in this line); ranking reliable, FDR count uncalibrated (n=1, 10 controls)",
+  "named_hits": "rescuers recovered at top (PTEN #1, NF1 #3, CUL5 #6, ARIH2 #4, matching the paper's own NCI-H23 RSA); heparan-sulfate sensitizers recovered; FGFR1 mid-pack in NCI-H23",
+  "verdict": "Raw per-library counts recovered from the long-format deposit; in NCI-H23 BARCS reproduces the paper's own RSA rescuer ranking almost exactly (PTEN #1, plus PLCG1/NF1/ARIH2/CUL5) and recovers the heparan-sulfate sensitizers, while FGFR1 ranks mid-pack because it is a panel-wide not per-line hit; rescuer agreement strong, sensitizer agreement partial, FDR count uncalibrated at n=1.",
+  "agreement": "partial",
+  "analyzed": "2026-10-19",
+  "published_date": "2023-12-15",
+  "published_issue": "2023 Dec 15"
+}

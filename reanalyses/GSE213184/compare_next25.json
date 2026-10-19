@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/top10_vs_next25/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["SPTAN1", "RAF1", "STIM2", "MYL2", "ACTA1", "KRAS"],
+  "published": {
+    "file": "paper/mageck_mle.tsv",
+    "gene_column": "gene", "score_column": "wald_p", "score_better": "lower",
+    "effect_column": "beta"
+  },
+  "top_n": [50, 100, 200],
+  "out": "comparison_next25"
+}

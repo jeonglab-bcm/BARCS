@@ -1,0 +1,49 @@
+{
+  "gse": "GSE241070",
+  "pmid": "41775739",
+  "counts_file": "suppl/GSE241070_N2305307.count_allinfo.txt.gz",
+  "guide_column": "gRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "ishi-crispr-baseline",
+      "gsm": "GSM7714788",
+      "condition": "baseline",
+      "replicate": "1"
+    },
+    {
+      "column": "ishi-crispr-control",
+      "gsm": "GSM7714787",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "ishi-crispr-mpa",
+      "gsm": "GSM7714789",
+      "condition": "MPA",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "MPA",
+      "baseline"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "MPA_vs_DMSO",
+      "columns": [
+        "ishi-crispr-control",
+        "ishi-crispr-mpa"
+      ],
+      "formula": "~ condition",
+      "term": "conditionMPA"
+    }
+  ],
+  "rationale": "Genome-wide GeCKOv2 library B knockout screen (56,869 guides, 3 per gene, 1,000 non-targeting) in Ishikawa endometrial cancer cells: baseline after puromycin selection, then 10 days of DMSO (control) or 15 uM medroxyprogesterone acetate (MPA). One library per condition. The GEO count_allinfo table holds integer MAGeCK counts; columns are self-named and match the GSM titles. The paper's RRA hit lists (Supplementary Material 5) compare MPA with the DMSO control, so that is the analysis here (1 vs 1, no residual df: pooled overdispersion across non-targeting guides). Depleted genes under MPA are what the paper calls pro-resistance genes, enriched genes anti-resistance (sensitivity) genes.",
+  "counts_md5": "970721f67542cdb31662a93e6e068b5e"
+}

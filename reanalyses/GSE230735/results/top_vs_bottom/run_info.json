@@ -1,0 +1,49 @@
+{
+  "analysis": "top_vs_bottom",
+  "formula": "~condition",
+  "term": "conditiontop",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 4.2238e-06,
+    "rho_source": "all guides (no or too few controls; conservative)",
+    "rho_guides": 7417,
+    "inflation_at_rho0": 76.5226,
+    "haldane_guides": 3
+  },
+  "guides": 7441,
+  "genes": 1241,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "Bottom": 0.035,
+    "Top": 0.03
+  },
+  "genes_fdr_0_10_up": 2,
+  "genes_fdr_0_10_down": 1,
+  "genes_fdr_0_05": 3,
+  "genes_fdr_0_10": 3,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

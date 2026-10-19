@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/top_vs_bottom/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["SLC13A3"],
+  "top_n": [10, 25, 50]
+}

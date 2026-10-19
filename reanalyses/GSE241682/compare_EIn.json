@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/EIn_high_vs_input/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["SRSF1", "SRSF2", "HNRNPK", "SNRNP70"],
+  "top_n": [50, 100, 200],
+  "out": "comparison_EIn"
+}

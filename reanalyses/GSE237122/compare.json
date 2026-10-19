@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/SARS2_vs_uninfected/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ACE2", "AHR"],
+  "published": {
+    "file": "paper/mageck_SARS2.tsv",
+    "gene_column": "id", "score_column": "pos_score", "score_better": "lower",
+    "effect_column": "pos_lfc"
+  },
+  "top_n": [25, 50, 100, 200]
+}

@@ -1,0 +1,48 @@
+{
+  "gse": "GSE246804",
+  "pmid": "37934115",
+  "counts_file": "counts_NCI-H23.tsv.gz",
+  "guide_column": "guide",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^CTRL$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "DMSO",
+      "condition": "DMSO"
+    },
+    {
+      "column": "KRASG12Ci",
+      "condition": "KRASG12Ci"
+    },
+    {
+      "column": "SHP2i",
+      "condition": "SHP2i"
+    },
+    {
+      "column": "combo",
+      "condition": "combo"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "KRASG12Ci",
+      "SHP2i",
+      "combo"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "combo_vs_DMSO",
+      "columns": [
+        "DMSO",
+        "combo"
+      ],
+      "formula": "~ condition",
+      "term": "conditioncombo"
+    }
+  ],
+  "rationale": "Genome-wide CRISPR knockout screen (Weiss/Dafflon et al. 2023, Cancer Res) in a panel of five KRAS-G12C-mutant NSCLC lines under KRAS-G12C inhibitor (AGENT_NAME FVH342), SHP2 inhibitor (LMD099) or the combination, each versus a matched DMSO library. The series was deposited as long-format pairwise comparisons (sgRNAData.txt.gz): each row carries the raw integer read count of a treatment library (SAMPLE_COUNT) and of its DMSO control (CONTROL_SAMPLE_COUNT, identical across the three drug arms of a cell line and pool). prepare.R reconstructs, for NCI-H23 (the line the paper features in validation), one genome-wide count matrix by stacking the three EPIC sub-pools (each gene is in one pool; guide ids are suffixed with the pool to stay unique) with columns DMSO, KRASG12Ci, SHP2i and combo. One library per condition, so the no-replicate path pools the overdispersion; only 10 CTRL guides exist (all in pool 1), below the thresholds for control calibration and the control null, so overdispersion is pooled over all guides (conservative) and the FDR is uncalibrated. The paper's main comparison is the combination versus DMSO: knockouts that rescue growth are enriched (rescuers, strongest PTEN), knockouts that sensitize are depleted (sensitizers, strongest panel-wide FGFR1). The per-line comparison uses the paper's own RSA gene scores for NCI-H23 (geneData.txt.gz).",
+  "counts_md5": "314a5bcd1f466f017bd670eaa3e49a0b"
+}

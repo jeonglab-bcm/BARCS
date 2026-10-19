@@ -1,0 +1,42 @@
+{
+  "gse": "GSE245845",
+  "pmid": "41974708",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForMouse",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Proins_Hi",
+      "gsm": "GSM7849905",
+      "bin": "Hi",
+      "replicate": "1"
+    },
+    {
+      "column": "Proins_Lo",
+      "gsm": "GSM7849906",
+      "bin": "Lo",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "Lo",
+      "Hi"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "proinsulin_hi_vs_lo",
+      "columns": [
+        "Proins_Hi",
+        "Proins_Lo"
+      ],
+      "formula": "~ bin",
+      "term": "binHi"
+    }
+  ],
+  "rationale": "Genome-wide mouse GeCKOv2 (A + B) knockout screen in MIN6 beta cells stained for proinsulin and insulin and sorted into relative proinsulin-high and proinsulin-low populations; one library per bin (GSM7849905 F5.ProinsHi, GSM7849906 F6.ProinsLo). The GEO count file has no field separators (the two counts are run together), so prepare.R takes the identical raw counts from the paper's Supplementary Data 1 after checking them row by row against the GEO file, writes zero for the 'NA' entries (zero reads) and takes gene names from the MAGeCK GeCKOv2 library file (the supplement lost names for guides with no Hi reads and turned March/Sept genes into dates). Coefficient Hi vs Lo, the same sign as the paper's log2FC.HitoLo: negative proinsulin regulators (Pcsk1, Cpe) are positive, positive regulators (Pdia6) negative. 1 vs 1, no residual df: overdispersion pooled across the ~2,000 non-targeting guides.",
+  "counts_md5": "d4165e30d98214603fb1aeb3b1564e73"
+}
