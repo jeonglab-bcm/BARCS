@@ -1,0 +1,63 @@
+{
+  "gse": "GSE213184",
+  "pmid": "41579376",
+  "counts_file": "suppl/GSE213184_S6612_summary.xlsx",
+  "guide_column": "#seq.ID/s",
+  "gene_column": "Target Gene Symbol",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "LH1 (static)",
+      "gsm": "GSM6574138",
+      "group": "reference",
+      "sample": "static"
+    },
+    {
+      "column": "LH2 (top 10% sorted)",
+      "gsm": "GSM6574139",
+      "group": "top10",
+      "sample": "top10"
+    },
+    {
+      "column": "LH3 (subsequent 25% sorted)",
+      "gsm": "GSM6574140",
+      "group": "reference",
+      "sample": "next25"
+    }
+  ],
+  "factor_levels": {
+    "group": [
+      "reference",
+      "top10"
+    ],
+    "sample": [
+      "next25",
+      "static",
+      "top10"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "top10_vs_next25",
+      "columns": [
+        "LH2 (top 10% sorted)",
+        "LH3 (subsequent 25% sorted)"
+      ],
+      "formula": "~ sample",
+      "term": "sampletop10"
+    },
+    {
+      "name": "top10_vs_static_and_next25",
+      "columns": [
+        "LH1 (static)",
+        "LH2 (top 10% sorted)",
+        "LH3 (subsequent 25% sorted)"
+      ],
+      "formula": "~ group",
+      "term": "grouptop10"
+    }
+  ],
+  "rationale": "Genome-wide Brunello screen (77,441 guides incl. 1,000 non-targeting) in IL8-GFP THP-1 cells sheared for 2 h and FACS-sorted on GFP: LH2 = top 10% brightest, LH3 = next 25%, LH1 = transduced static (unsheared, unsorted) cells. One library per population, no replicate cultures. The GEO xlsx holds integer guide counts for the three libraries (its 'Input' column is the Entrez gene ID, not counts). The paper ran MAGeCK MLE (Data S1) with a single beta for the top-10% bin against a baseline made of both the next-25% and the static libraries, and called genes whose guides are depleted from the brightest bin. Analysis 1 (headline) is the cleanest sort contrast, top 10% vs next 25% from the same sheared population (1 vs 1, no residual df: pooled overdispersion across non-targeting guides). Analysis 2 reproduces the paper's design, top 10% vs the static and next-25% libraries together (1 residual df, which comes only from the difference between two biologically different reference libraries).",
+  "counts_md5": "ed9021656160fe29a2fc0ae09990228e"
+}

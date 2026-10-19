@@ -1,0 +1,76 @@
+{
+  "gse": "GSE241682",
+  "pmid": "38609186",
+  "counts_file": "suppl/GSE241682_CRISPR_sgRNA_counts.txt.gz",
+  "guide_column": "sgRNA_name",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "input_P-In",
+      "gsm": "GSM7733694",
+      "reporter": "PIn",
+      "sort": "input"
+    },
+    {
+      "column": "high_P-In",
+      "gsm": "GSM7733695",
+      "reporter": "PIn",
+      "sort": "high"
+    },
+    {
+      "column": "low_P-In",
+      "gsm": "GSM7733696",
+      "reporter": "PIn",
+      "sort": "low"
+    },
+    {
+      "column": "input_E-In",
+      "gsm": "GSM7733697",
+      "reporter": "EIn",
+      "sort": "input"
+    },
+    {
+      "column": "high_E-In",
+      "gsm": "GSM7733698",
+      "reporter": "EIn",
+      "sort": "high"
+    },
+    {
+      "column": "low_E-In",
+      "gsm": "GSM7733699",
+      "reporter": "EIn",
+      "sort": "low"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "input",
+      "low",
+      "high"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "PIn_high_vs_input",
+      "columns": [
+        "input_P-In",
+        "high_P-In"
+      ],
+      "formula": "~ sort",
+      "term": "sorthigh"
+    },
+    {
+      "name": "EIn_high_vs_input",
+      "columns": [
+        "input_E-In",
+        "high_E-In"
+      ],
+      "formula": "~ sort",
+      "term": "sorthigh"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in two HEK293 EIciGFP reporter lines (Yan et al. 2024, Genome Res): P-In reports the EIciPAIP2 circRNA, E-In the EIciEIF3J circRNA; GFP intensity tracks EIciRNA level. Cells were sorted into input (bulk), high-GFP (top 10%) and low-GFP (bottom 10%); one library per sort per reporter, no replicates, so the no-replicate path pools overdispersion over the non-targeting guides. The paper's main finding comes from the high-GFP group: knockouts that raise EIciRNA (hence GFP) are enriched in high-GFP versus input, identifying negative regulators of EIciRNA biogenesis (854 genes in P-In, 709 in E-In; 80 shared), among them eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named). SRSF1 was validated by shRNA knockdown. The enriched term of high-GFP vs input is read for each reporter.",
+  "counts_md5": "2c971f25aafa28d9b897eba30bc117bc"
+}

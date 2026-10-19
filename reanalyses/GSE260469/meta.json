@@ -1,0 +1,20 @@
+{
+  "gse": "GSE260469",
+  "pmid": "39674088",
+  "doi": "10.1016/j.ebiom.2024.105487",
+  "pmcid": "PMC11700254",
+  "title": "OPG promotes lung metastasis by reducing CXCL10 production of monocyte-derived macrophages and decreasing NK cell recruitment",
+  "journal": "eBioMedicine",
+  "published": "2025",
+  "model": "B16F10 melanoma, druggable sgRNA library (1,417 genes, 5,053 guides), in vivo lung metastasis",
+  "contrast": "Anti-Csf1R vs IgG metastases, enrichment (1 vs 1); technical re-reads summed",
+  "paper_method": "MAGeCK (gene_summary, mmc5)",
+  "paper_calls": "OPG/Tnfrsf11b nominated as top positively selected candidate (not FDR-significant), then validated",
+  "barcs_calls": "0 genes at FDR 0.10; OPG ranks #10 of 1,212 enriched",
+  "named_hits": "OPG/Tnfrsf11b #10 enriched (paper MAGeCK #8)",
+  "verdict": "BARCS reproduces the paper's candidate ranking (Spearman 0.73, 96% direction agreement) and places the headline hit OPG at enrichment rank 10, matching MAGeCK's rank 8; like the paper's own MAGeCK neither method reaches FDR significance because there is one library per condition, so these are screening-level calls.",
+  "agreement": "partial",
+  "analyzed": "2026-10-19",
+  "published_date": "2024-12-13",
+  "published_issue": "2025 Jan"
+}

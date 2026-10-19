@@ -1,0 +1,20 @@
+{
+  "gse": "GSE241682",
+  "pmid": "38609186",
+  "doi": "10.1101/gr.278590.123",
+  "pmcid": "PMC11067877",
+  "title": "Systematic identification and characterization of exon-intron circRNAs",
+  "journal": "Genome Research",
+  "published": "2024",
+  "model": "HEK293 EIciGFP reporter lines (P-In/EIciPAIP2, E-In/EIciEIF3J), genome-wide Brunello knockout library",
+  "contrast": "High-GFP vs input, each reporter (1 vs 1, no replicates)",
+  "paper_method": "MAGeCK RRA (positive selection; no gene_summary table deposited)",
+  "paper_calls": "854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown",
+  "barcs_calls": "0 genes at FDR 0.10 (P-In), 25 (E-In); SRSF1 enriched in both but not significant, ranked #239/19,112 (E-In) and #2911/19,111 (P-In)",
+  "named_hits": "SRSF1 recovered as enriched in both reporters, top 1.3% in E-In but mid-pack in P-In; SRSF2/HNRNPK/SNRNP70 rank low",
+  "verdict": "BARCS recovers the paper's only validated hit SRSF1 as enriched in both reporters (and near the top 1% in E-In) but, with one library per sort and a large overdispersion, calls it at neither FDR 0.10 and does not support MAGeCK's 700-850-gene candidate lists; directions agree, significance does not.",
+  "agreement": "differ",
+  "analyzed": "2026-10-19",
+  "published_date": "2024-04-25",
+  "published_issue": "2024 Apr 25"
+}

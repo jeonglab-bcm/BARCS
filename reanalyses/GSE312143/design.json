@@ -1,0 +1,283 @@
+{
+  "gse": "GSE312143",
+  "pmid": "41577693",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(NonTargeting|SafeTargeting)$",
+  "min_total_count": 30,
+  "fetch": {
+    "sample_files": true
+  },
+  "samples": [
+    {
+      "column": "HSPC_ACOC",
+      "gsm": "GSM9338980",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "ACOC"
+    },
+    {
+      "column": "AllLineage_ACOC",
+      "gsm": "GSM9338977",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "ACOC"
+    },
+    {
+      "column": "HSPC_DTKP",
+      "gsm": "GSM9338986",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "DTKP"
+    },
+    {
+      "column": "AllLineage_DTKP",
+      "gsm": "GSM9338983",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "DTKP"
+    },
+    {
+      "column": "HSPC_GE",
+      "gsm": "GSM9338992",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "GE"
+    },
+    {
+      "column": "AllLineage_GE",
+      "gsm": "GSM9338989",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "GE"
+    },
+    {
+      "column": "HSPC_MP",
+      "gsm": "GSM9338998",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "MP"
+    },
+    {
+      "column": "AllLineage_MP",
+      "gsm": "GSM9338995",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "MP"
+    },
+    {
+      "column": "HSPC_MU1",
+      "gsm": "GSM9339004",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "MU1"
+    },
+    {
+      "column": "AllLineage_MU1",
+      "gsm": "GSM9339001",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "MU1"
+    },
+    {
+      "column": "HSPC_MU2",
+      "gsm": "GSM9339010",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "MU2"
+    },
+    {
+      "column": "AllLineage_MU2",
+      "gsm": "GSM9339007",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "MU2"
+    },
+    {
+      "column": "HSPC_SP",
+      "gsm": "GSM9339016",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "SP"
+    },
+    {
+      "column": "AllLineage_SP",
+      "gsm": "GSM9339013",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "SP"
+    },
+    {
+      "column": "HSPC_TMM",
+      "gsm": "GSM9339022",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "TMM"
+    },
+    {
+      "column": "AllLineage_TMM",
+      "gsm": "GSM9339019",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "TMM"
+    },
+    {
+      "column": "HSPC_U1",
+      "gsm": "GSM9339028",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "U1"
+    },
+    {
+      "column": "AllLineage_U1",
+      "gsm": "GSM9339025",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "U1"
+    },
+    {
+      "column": "HSPC_U2",
+      "gsm": "GSM9339034",
+      "population": "HSPC",
+      "screen": "GW",
+      "sublibrary": "U2"
+    },
+    {
+      "column": "AllLineage_U2",
+      "gsm": "GSM9339031",
+      "population": "AllLineage",
+      "screen": "GW",
+      "sublibrary": "U2"
+    },
+    {
+      "column": "HSPC_GEscreen",
+      "gsm": "GSM9339040",
+      "population": "HSPC",
+      "screen": "GEscreen",
+      "sublibrary": "GE"
+    },
+    {
+      "column": "AllLineage_GEscreen",
+      "gsm": "GSM9339037",
+      "population": "AllLineage",
+      "screen": "GEscreen",
+      "sublibrary": "GE"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "HSPC",
+      "AllLineage"
+    ],
+    "screen": [
+      "GW",
+      "GEscreen"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "GE_two_screens_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_GE",
+        "AllLineage_GE",
+        "HSPC_GEscreen",
+        "AllLineage_GEscreen"
+      ],
+      "formula": "~ screen + population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_ACOC_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_ACOC",
+        "AllLineage_ACOC"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_DTKP_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_DTKP",
+        "AllLineage_DTKP"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_GE_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_GE",
+        "AllLineage_GE"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_MP_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_MP",
+        "AllLineage_MP"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_MU1_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_MU1",
+        "AllLineage_MU1"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_MU2_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_MU2",
+        "AllLineage_MU2"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_SP_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_SP",
+        "AllLineage_SP"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_TMM_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_TMM",
+        "AllLineage_TMM"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_U1_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_U1",
+        "AllLineage_U1"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    },
+    {
+      "name": "GW_U2_lineage_vs_HSPC",
+      "columns": [
+        "HSPC_U2",
+        "AllLineage_U2"
+      ],
+      "formula": "~ population",
+      "term": "populationAllLineage"
+    }
+  ],
+  "rationale": "In vivo knockout screen: expanded mouse HSPCs transduced with one of the 10 Bassik mouse sub-libraries (~20,000 elements, 10 guides per gene, non-targeting and safe-targeting controls), transplanted into lethally irradiated recipients (pooled per sub-library), and after 10-12 weeks c-Kit+ Lin- HSPCs and mature lineages (all lineages, B, T, myeloid, erythroid) were sorted. The paper's main comparison (casTLE, Supplementary Data 1) is HSPCs vs all mature lineages; no plasmid or pre-transplant library was deposited, so that is the comparison here. Every guide belongs to one sub-library and each sub-library was transplanted once, so the genome-wide screen has one library per population for every guide; prepare.R splits the combined GEO files into one column per sub-library so that each analysis uses that sub-library's own library sizes (the HSPC/lineage depth ratio ranges from 0.12 for GE to 0.97 for ACOC). The GW_<sub-library> analyses are 1 vs 1 (no residual df: overdispersion pooled over that sub-library's control guides). The gene-expression (GE) sub-library was also screened a second time in an independent transplant (24 recipients, Supplementary Data 2; GSM9339037-42), which gives the one replicated comparison: GE_two_screens uses both GE screens with a screen term, because HSPC and lineage libraries of the same transplant share clones (Spearman 0.33 and 0.54 within a screen versus 0.05-0.26 across), leaving 1 residual df. The coefficient is all lineages vs HSPC, the sign of the casTLE effect: negative means knockouts enriched in HSPCs (the SAGA members Tada2b, Taf5l, Taf6l, Tada1 and Runx1), positive enriched in mature cells. Non-targeting (0None) and safe-targeting (0Safe) guides are the controls. Library composition is extreme (the top 1% of each sub-library's guides hold 82-99% of HSPC reads and 48-81% of lineage reads: oligoclonal engraftment). Median-ratio totals were tried as a sensitivity check but are capped at the largest single count in three HSPC libraries (GE screen, ACOC, U2) and rest on the few guides detected in HSPCs, so library-size totals are kept; neither makes depletion interpretable.",
+  "counts_md5": "c4ce2f7bbb3a3125f6f3d5d310cb3dd1"
+}

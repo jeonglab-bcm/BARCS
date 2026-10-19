@@ -1,0 +1,12 @@
+{
+  "barcs_genes": "results/combo_vs_DMSO/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["FGFR1", "B4GALT7", "EXT2", "EXT1", "EXTL3", "ITGB1"],
+  "published": {
+    "file": "paper/rsa_NCI-H23.tsv",
+    "gene_column": "gene", "score_column": "rsa_sensitizer_logp", "score_better": "lower",
+    "effect_column": "logfc_med"
+  },
+  "top_n": [25, 50, 100, 200],
+  "out": "comparison_sensitizers"
+}

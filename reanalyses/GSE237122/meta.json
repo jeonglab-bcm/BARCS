@@ -1,0 +1,20 @@
+{
+  "gse": "GSE237122",
+  "pmid": "37672505",
+  "doi": "10.1080/22221751.2023.2256416",
+  "pmcid": "PMC10512916",
+  "title": "Betacoronaviruses SARS-CoV-2 and HCoV-OC43 infections in IGROV-1 cell line require aryl hydrocarbon receptor",
+  "journal": "Emerging Microbes & Infections",
+  "published": "2023",
+  "model": "IGROV-1 ovarian carcinoma cells, genome-wide Brunello knockout library (77,441 guides)",
+  "contrast": "Infection survivors vs unselected pool, SARS-CoV-2 and HCoV-OC43 (1 vs 1, no replicates)",
+  "paper_method": "MAGeCK RRA (positive selection; gene_summary in Supplementary Table 4)",
+  "paper_calls": "ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue",
+  "barcs_calls": "SARS-CoV-2: 1 gene at FDR 0.10 (ACE2), ACE2 #1 and AHR #2 of 19,049; HCoV-OC43: 0 at FDR 0.10, AHR #1, EXT1 #2, EXT2 #6, SLC35B2 #8 of 19,040 (screening-level, one library per condition)",
+  "named_hits": "all top-ranked: ACE2 #1, AHR #2 (SARS-CoV-2); AHR #1, EXT1 #2, EXT2 #6, SLC35B2 #8 (OC43)",
+  "verdict": "BARCS ranks every named hit at the very top (ACE2 #1 and AHR #2 for SARS-CoV-2, AHR #1 and the EXT1/EXT2/SLC35B2 entry genes for OC43; score correlation ~0.70), but with one library per condition and a strong survival bottleneck it clears only ACE2 at FDR 0.10 where MAGeCK's four-guide permutation test also called AHR; calls are screening-level.",
+  "agreement": "partial",
+  "analyzed": "2026-10-19",
+  "published_date": "2023-09-06",
+  "published_issue": "2023 Dec"
+}

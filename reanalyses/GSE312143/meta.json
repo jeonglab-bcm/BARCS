@@ -1,0 +1,20 @@
+{
+  "gse": "GSE312143",
+  "pmid": "41577693",
+  "doi": "10.1038/s41467-026-68465-6",
+  "pmcid": "PMC12914052",
+  "title": "In vivo CRISPR screening identifies SAGA complex members as key regulators of hematopoiesis",
+  "journal": "Nature Communications",
+  "published": "2026",
+  "model": "Mouse HSPCs, 10 Bassik knockout sub-libraries transplanted in vivo (one pool per sub-library), plus a second GE sub-library transplant",
+  "contrast": "All mature lineages vs c-Kit+ Lin- HSPCs: per sub-library 1 vs 1 (no replicates), and GE sub-library 2 vs 2 across two transplants; screening-level",
+  "paper_method": "casTLE (Supplementary Data 1-2)",
+  "paper_calls": "33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)",
+  "barcs_calls": "109 genes at FDR 0.10 over the 10 genome-wide sub-libraries (89 enriched in lineage, mostly HSPC dropout); 5 in the GE two-screen analysis; screening-level, oligoclonal libraries",
+  "named_hits": "1/5: Runx1 #1 (FDR 2e-104); Tada2b top HSPC-enriched GE gene but FDR 0.19; Taf5l, Taf6l, Tada1 not called",
+  "verdict": "BARCS recovers Runx1 as the dominant HSPC-enriched knockout but not the SAGA subunits: the HSPC libraries are oligoclonal (top 1% of guides hold 82-99% of reads), and Tada2b's support comes from different expanded guides in each GE transplant.",
+  "agreement": "partial",
+  "analyzed": "2026-10-19",
+  "published_date": "2026-01-23",
+  "published_issue": "2026 Jan 23"
+}

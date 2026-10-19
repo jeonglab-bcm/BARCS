@@ -1,0 +1,20 @@
+{
+  "gse": "GSE213184",
+  "pmid": "41579376",
+  "doi": "10.1016/j.celrep.2025.116903",
+  "pmcid": "PMC13034653",
+  "title": "A shear stress-responsive pathway in monocytes drives cardiopulmonary bypass-induced inflammation via spectrin/RAF1/store-operated calcium entry",
+  "journal": "Cell Reports",
+  "published": "2026",
+  "model": "IL8-GFP THP-1 monocytic cells, Brunello genome-wide library, sheared 2 h and FACS-sorted on GFP",
+  "contrast": "Top 10% GFP vs next 25% after shear (1 vs 1, no replicates; screening-level); paper's design top 10% vs static + next 25% also run",
+  "paper_method": "MAGeCK MLE (Data S1); candidates at Wald p < 0.05",
+  "paper_calls": "1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)",
+  "barcs_calls": "0 genes at FDR 0.10 for top 10% vs next 25%; 91 in the paper's design after control calibration, 0 against the control null; screening-level, no replicates",
+  "named_hits": "0/2 in the headline analysis (SPTAN1 p 0.32, RAF1 p 0.68); in the paper's design SPTAN1 FDR 0.047 but unconfirmed by the control null, RAF1 untestable (all guides 0 reads in the top-10% bin)",
+  "verdict": "BARCS finds no hits: the top-10% bin lost 13% of guides to sampling dropout, about 12 genes are expected to lose all four guides by chance (12 did, RAF1 and MAGeCK's #1 OR4D9 among them), and the paper's SPTAN1/RAF1 calls rest on that dropout.",
+  "agreement": "differ",
+  "analyzed": "2026-10-19",
+  "published_date": "2026-01-23",
+  "published_issue": "2026 Feb 24"
+}

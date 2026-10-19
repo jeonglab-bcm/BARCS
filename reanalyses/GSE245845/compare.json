@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/proinsulin_hi_vs_lo/genes.csv",
+  "direction": "both",
+  "named_hits": ["Pcsk1", "Cpe", "Pdia6", "Furin", "Madd", "Yipf5", "Hid1"],
+  "published": {
+    "file": "paper/significant_genes.tsv",
+    "gene_column": "gene", "score_column": "abs_log2fc", "score_better": "higher",
+    "effect_column": "log2fc_hi_vs_lo"
+  },
+  "top_n": [25, 50]
+}

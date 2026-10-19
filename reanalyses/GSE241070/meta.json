@@ -1,0 +1,20 @@
+{
+  "gse": "GSE241070",
+  "pmid": "41775739",
+  "doi": "10.1038/s41598-026-36534-x",
+  "pmcid": "PMC12957397",
+  "title": "Construction and initial validation of key gene network for progesterone resistance in endometrial cancer based on genome-wide CRISPR screening",
+  "journal": "Scientific Reports",
+  "published": "2026",
+  "model": "Ishikawa endometrial cancer cells, GeCKOv2 library B (3 guides per gene), 10 days DMSO or 15 uM medroxyprogesterone acetate",
+  "contrast": "MPA vs DMSO, day 10 (1 vs 1, no replicates; screening-level)",
+  "paper_method": "MAGeCK RRA and MLE (RRA tables in Supplementary Material 5)",
+  "paper_calls": "RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated",
+  "barcs_calls": "114 genes at FDR 0.10 (105 enriched under MPA, 9 depleted); 123 against the control null; screening-level, no replicate cultures",
+  "named_hits": "2/10 at FDR 0.10 (NNMT, ZIC2); all 10 in the paper's direction; SOX17 FDR 0.16",
+  "verdict": "BARCS and RRA agree on the strongest signal (Spearman 0.52; ATP6V0C, SIN3A, ATP6V1G1, GINS1 at the top), but that signal is mostly essential genes depleted less under slower MPA growth; of the ten validated genes only NNMT and ZIC2 pass FDR 0.10.",
+  "agreement": "partial",
+  "analyzed": "2026-10-19",
+  "published_date": "2026-03-03",
+  "published_issue": "2026 Mar 3"
+}

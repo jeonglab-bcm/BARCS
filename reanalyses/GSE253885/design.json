@@ -1,0 +1,38 @@
+{
+  "gse": "GSE253885",
+  "pmid": "39082802",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_file": "counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "Lib", "gsm": "GSM8029801", "condition": "plasmid", "replicate": "1"},
+    {"column": "P4", "gsm": "GSM8029802", "condition": "in_vitro", "replicate": "1"},
+    {"column": "WT_01", "gsm": "GSM8029803", "condition": "in_vivo", "replicate": "1"},
+    {"column": "WT_02", "gsm": "GSM8029804", "condition": "in_vivo", "replicate": "2"},
+    {"column": "WT_03", "gsm": "GSM8029805", "condition": "in_vivo", "replicate": "3"},
+    {"column": "WT_04", "gsm": "GSM8029806", "condition": "in_vivo", "replicate": "4"},
+    {"column": "WT_05", "gsm": "GSM8029807", "condition": "in_vivo", "replicate": "5"},
+    {"column": "WT_06", "gsm": "GSM8029808", "condition": "in_vivo", "replicate": "6"},
+    {"column": "WT_07", "gsm": "GSM8029809", "condition": "in_vivo", "replicate": "7"},
+    {"column": "WT_08", "gsm": "GSM8029810", "condition": "in_vivo", "replicate": "8"},
+    {"column": "WT_09", "gsm": "GSM8029811", "condition": "in_vivo", "replicate": "9"}
+  ],
+  "factor_levels": {"condition": ["plasmid", "in_vitro", "in_vivo"]},
+  "analyses": [
+    {"name": "in_vivo_vs_in_vitro",
+     "columns": ["P4","WT_01","WT_02","WT_03","WT_04","WT_05","WT_06","WT_07","WT_08","WT_09"],
+     "formula": "~ condition", "term": "conditionin_vivo", "totals": "median_ratio"},
+    {"name": "in_vivo_vs_in_vitro_library_totals",
+     "columns": ["P4","WT_01","WT_02","WT_03","WT_04","WT_05","WT_06","WT_07","WT_08","WT_09"],
+     "formula": "~ condition", "term": "conditionin_vivo"},
+    {"name": "in_vitro_P4_vs_plasmid",
+     "columns": ["Lib","P4"],
+     "formula": "~ condition", "term": "conditionin_vitro"}
+  ],
+  "rationale": "Per-sample GEO files combined into counts.tsv by prepare.R; gene id is the gRNA id with trailing _<n> stripped (identical to the Un2_gRNA sheet). Columns: Lib = plasmid input, P4 = in vitro passage 4, WT_01..WT_09 = parasites recovered from nine infected mouse spleens at day 7. Primary analysis reproduces the paper's in vivo test (Wilcoxon of guide log2 fold changes, WT mice vs P4): nine mice against the single P4 reference, ~ condition, 8 residual df, so the standard BARCS model applies and between-mouse variation sets the dispersion. Secondary: P4 vs plasmid (in vitro fitness), one library each, zero residual df, so rho is pooled across all guides. The library has no non-targeting guides; its controls are in vitro essential/dispensable and the in vivo virulence genes ROP18 and GRA23, none a null, so control_gene_pattern is unset and calibration cannot be checked. In vivo libraries are bottlenecked, so library totals shift almost every gene to depletion; the primary analysis uses median-ratio totals and the library-total fit is a sensitivity analysis.",
+  "counts_md5": "d435be088402efc40c0c972aad304941"
+}

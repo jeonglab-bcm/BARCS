@@ -1,0 +1,49 @@
+{
+  "analysis": "GW_GE_lineage_vs_HSPC",
+  "formula": "~population",
+  "term": "populationAllLineage",
+  "libraries": 2,
+  "residual_df": 0,
+  "replicates": "none: one library per condition",
+  "no_replicates": {
+    "rho": 0.0007,
+    "rho_source": "control guides",
+    "rho_guides": 1179,
+    "inflation_at_rho0": 4058.1919,
+    "haldane_guides": 10260
+  },
+  "guides": 132396,
+  "genes": 1886,
+  "moderated": false,
+  "prior_df": "NA",
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 9845,
+  "control_p05_raw": 0,
+  "control_p05": 0,
+  "totals_method": "library",
+  "test": "wald (pooled rho, no replicates)",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "HSPC_GE": 0.996,
+    "AllLineage_GE": 0.859
+  },
+  "genes_fdr_0_10_up": 1,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 1,
+  "genes_fdr_0_10": 1,
+  "genes_empirical_fdr_0_10": 25,
+  "empirical_centre": "controls",
+  "control_shift": -0.002,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

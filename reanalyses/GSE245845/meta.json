@@ -1,0 +1,20 @@
+{
+  "gse": "GSE245845",
+  "pmid": "41974708",
+  "doi": "10.1038/s41467-026-71726-z",
+  "pmcid": "PMC13249969",
+  "title": "Proinsulin regulators identified with CRISPR screen and in vivo mouse QTL mapping",
+  "journal": "Nature Communications",
+  "published": "2026",
+  "model": "MIN6 mouse beta cells, mouse GeCKOv2 A+B knockout library, sorted on intracellular proinsulin/insulin",
+  "contrast": "Proinsulin-high vs proinsulin-low sort (1 vs 1, no replicates; screening-level)",
+  "paper_method": "Per-guide binomial test (FDR < 0.01), genes with at least two significant guides",
+  "paper_calls": "84 proinsulin regulators (60 negative, 24 positive)",
+  "barcs_calls": "356 genes at FDR 0.10 (422 against the control null; 151 with guides of at least 100 reads); screening-level, no replicate sorts",
+  "named_hits": "7/7 at FDR 0.10 (Pcsk1 #1, Cpe #2, Furin #3, Yipf5 #8, Pdia6 #13, Hid1 #17, Madd #21); 63 of the paper's 84 calls pass",
+  "verdict": "BARCS reproduces the paper's proinsulin regulators (Pcsk1, Cpe, Furin, Pdia6, Yipf5 all top-15; 63 of 84 calls at FDR 0.10), drops paper hits resting on low-count guides such as Rpl7, and adds consistent multi-guide genes such as Rbm18 and Sec24c.",
+  "agreement": "agree",
+  "analyzed": "2026-10-19",
+  "published_date": "2026-04-13",
+  "published_issue": "2026 Apr 13"
+}

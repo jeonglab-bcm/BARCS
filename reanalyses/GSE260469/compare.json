@@ -1,0 +1,14 @@
+{
+  "barcs_genes": "results/csf1r_vs_IgG/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["Tnfrsf11b"],
+  "published": {
+    "file": "paper/mmc5.xlsx",
+    "sheet": "Sheet1",
+    "gene_column": "id",
+    "score_column": "pos|score",
+    "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [20, 50, 100]
+}

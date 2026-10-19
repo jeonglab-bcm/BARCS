@@ -1,0 +1,21 @@
+{
+  "barcs_genes": "results/GE_two_screens_lineage_vs_HSPC/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "Tada2b",
+    "Taf5l",
+    "Taf6l"
+  ],
+  "published": {
+    "file": "paper/castle_gescreen.tsv",
+    "gene_column": "gene",
+    "score_column": "score",
+    "score_better": "higher",
+    "effect_column": "effect"
+  },
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

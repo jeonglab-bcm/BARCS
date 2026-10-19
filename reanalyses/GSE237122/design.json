@@ -1,0 +1,55 @@
+{
+  "gse": "GSE237122",
+  "pmid": "37672505",
+  "counts_file": "suppl/GSE237122_IGROV1-Brunello-CRISPR.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Unselected IGROV-1 Brunello",
+      "gsm": "GSM7595816",
+      "condition": "uninfected"
+    },
+    {
+      "column": "HCoV-OC43",
+      "gsm": "GSM7595817",
+      "condition": "OC43"
+    },
+    {
+      "column": "SARS-CoV-2",
+      "gsm": "GSM7595818",
+      "condition": "SARS2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "uninfected",
+      "SARS2",
+      "OC43"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SARS2_vs_uninfected",
+      "columns": [
+        "Unselected IGROV-1 Brunello",
+        "SARS-CoV-2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionSARS2"
+    },
+    {
+      "name": "OC43_vs_uninfected",
+      "columns": [
+        "Unselected IGROV-1 Brunello",
+        "HCoV-OC43"
+      ],
+      "formula": "~ condition",
+      "term": "conditionOC43"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in IGROV-1 cells (Yousefi et al. 2023). One library per condition: unselected pool, then survivors of HCoV-OC43 or SARS-CoV-2 infection; no replicates, so run_barcs.R pools overdispersion over the 1000 non-targeting guides and tests each guide against the normal. Columns are self-named and match the three GSM titles. The screen is positive-selection for host dependency factors: a knockout that protects cells is enriched among infection survivors, so each infection is compared to the unselected pool and the enriched term is read. The paper used MAGeCK (pos selection) and highlights ACE2 (SARS-CoV-2 entry control), the heparan-sulphate entry genes EXT1/EXT2/SLC35B2 (OC43), and AHR as the shared pro-viral factor.",
+  "counts_md5": "44d33814b7831111198eb14569a13019"
+}

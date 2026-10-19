@@ -1,0 +1,38 @@
+{
+  "gse": "GSE230735",
+  "pmid": "39116875",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Bottom",
+      "condition": "bottom"
+    },
+    {
+      "column": "Top",
+      "condition": "top"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "bottom",
+      "top"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "top_vs_bottom",
+      "columns": [
+        "Bottom",
+        "Top"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontop"
+    }
+  ],
+  "rationale": "Custom CRISPRi membrane-transporter screen (7,441 sgRNAs, 1,241 genes; Zhang et al. 2024, Dev Cell) in 293T cells expressing the cBioITA itaconate biosensor. Cells were sorted by cBioITA fluorescence into a bottom (lowest 25%) and a top (highest 25%) bin. Each bin was sequenced twice; the two reads of a bin are technical re-sequencing of one sort (log-count correlation 0.995-0.998, near-constant depth ratio), so prepare.R sums them into one library per bin, leaving one library per condition (no-replicate path). The library has no non-targeting controls, so overdispersion is pooled over all guides (conservative) and the FDR is uncalibrated. An itaconate importer knockdown lowers uptake and fluorescence, enriching its guides in the bottom bin, so the itaconate importer is depleted in the top-vs-bottom contrast. The paper's screen identified SLC13A3 as that importer.",
+  "counts_md5": "f2fdb1c63bf2b6e7e8f7abe7482e01d9"
+}
