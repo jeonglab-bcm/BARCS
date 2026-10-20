@@ -282,7 +282,7 @@ icon_geo <- '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><pa
 rows <- vapply(records, function(rec) {
   m <- rec$meta
   sprintf(paste0('<tr><td data-label="Published">%s</td><td data-label="Analyzed">%s</td>',
-                 '<td data-label="Series"><a href="%s.html">%s</a>',
+                 '<td data-label="Series"><span class="acc">%s</span>',
                  '<span class="chips"><a class="chip" href="%s.html" title="Reanalysis page: design, BARCS results and comparison with the paper" aria-label="Reanalysis page for %s">', icon_chart, 'Results</a>',
                  '<a class="chip" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s" title="Design, comparison spec and report on GitHub" aria-label="Design, comparison spec and report on GitHub">', icon_github, 'GitHub</a>',
                  '<a class="chip" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s" title="GEO series %s (deposited counts)" aria-label="GEO series %s">', icon_geo, 'GEO</a></span></td>',
@@ -290,7 +290,7 @@ rows <- vapply(records, function(rec) {
                  '<td data-label="Paper calls">%s</td><td data-label="BARCS calls">%s</td>',
                  '<td data-label="Control null" class="num">%s</td><td data-label="Verdict">%s</td></tr>'),
           esc(format_date(m$published_date %||% m$published)), esc(format_date(m$analyzed %||% "")),
-          m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
+          m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
@@ -407,7 +407,7 @@ table.index { table-layout: fixed; }
 table.index th { white-space: normal; }
 table.index th, table.index td { padding: 9px 8px; }
 table.index td { overflow-wrap: break-word; }
-table.index td[data-label="Series"] > a:first-child { white-space: nowrap; }
+table.index .acc { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
 table.index col.c-date { width: 7.5%; } table.index col.c-series { width: 10%; }
 table.index col.c-paper { width: 17%; } table.index col.c-text { width: 14%; }
 table.index col.c-null { width: 6.5%; } table.index col.c-verdict { width: 9.5%; }
