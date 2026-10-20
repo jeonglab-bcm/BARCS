@@ -273,22 +273,24 @@ paper_url <- function(m) {
   if (!is.null(m$doi) && nzchar(m$doi)) paste0("https://doi.org/", m$doi)
   else sprintf("https://pubmed.ncbi.nlm.nih.gov/%s/", m$pmid)
 }
-# Icons for the Series chips: mark-github-16 and database-16 from GitHub
+# Icons for the Series chips: graph-16, mark-github-16 and database-16 from GitHub
 # Primer Octicons 19.38.0 (MIT licence; the GitHub mark is GitHub's trademark,
 # used here only to link to the record on GitHub).
+icon_chart <- '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 1.75V13.5h13.75a.75.75 0 0 1 0 1.5H.75a.75.75 0 0 1-.75-.75V1.75a.75.75 0 0 1 1.5 0Zm14.28 2.53-5.25 5.25a.75.75 0 0 1-1.06 0L7 7.06 4.28 9.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.25-3.25a.75.75 0 0 1 1.06 0L10 7.94l4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"/></svg>'
 icon_github <- '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>'
 icon_geo <- '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 3.5c0-.626.292-1.165.7-1.59.406-.422.956-.767 1.579-1.041C4.525.32 6.195 0 8 0c1.805 0 3.475.32 4.722.869.622.274 1.172.62 1.578 1.04.408.426.7.965.7 1.591v9c0 .626-.292 1.165-.7 1.59-.406.422-.956.767-1.579 1.041C11.476 15.68 9.806 16 8 16c-1.805 0-3.475-.32-4.721-.869-.623-.274-1.173-.62-1.579-1.04-.408-.426-.7-.965-.7-1.591Zm1.5 0c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 5.205 6.353 5.5 8 5.5c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55 0-.133-.058-.318-.282-.551-.227-.237-.591-.483-1.101-.707C11.102 1.795 9.647 1.5 8 1.5c-1.646 0-3.101.295-4.118.742-.508.224-.873.471-1.1.708-.224.232-.282.417-.282.55Zm0 4.5c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 9.705 6.353 10 8 10c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55V5.724c-.241.15-.503.286-.778.407C11.475 6.68 9.805 7 8 7c-1.805 0-3.475-.32-4.721-.869a6.15 6.15 0 0 1-.779-.407Zm0 2.225V12.5c0 .133.058.318.282.55.227.237.592.484 1.1.708 1.016.447 2.471.742 4.118.742 1.647 0 3.102-.295 4.117-.742.51-.224.874-.47 1.101-.707.224-.233.282-.418.282-.551v-2.275c-.241.15-.503.285-.778.406-1.247.549-2.917.869-4.722.869-1.805 0-3.475-.32-4.721-.869a6.327 6.327 0 0 1-.779-.406Z"/></svg>'
 rows <- vapply(records, function(rec) {
   m <- rec$meta
   sprintf(paste0('<tr><td data-label="Published">%s</td><td data-label="Analyzed">%s</td>',
                  '<td data-label="Series"><a href="%s.html">%s</a>',
-                 '<span class="chips"><a class="chip" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s" title="Design, comparison spec and report on GitHub" aria-label="Design, comparison spec and report on GitHub">', icon_github, 'GitHub</a>',
+                 '<span class="chips"><a class="chip" href="%s.html" title="Reanalysis page: design, BARCS results and comparison with the paper" aria-label="Reanalysis page for %s">', icon_chart, 'Results</a>',
+                 '<a class="chip" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s" title="Design, comparison spec and report on GitHub" aria-label="Design, comparison spec and report on GitHub">', icon_github, 'GitHub</a>',
                  '<a class="chip" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s" title="GEO series %s (deposited counts)" aria-label="GEO series %s">', icon_geo, 'GEO</a></span></td>',
                  '<td data-label="Paper"><a class="paper-link" href="%s">%s</a><span class="muted">%s</span></td><td data-label="Contrast">%s</td>',
                  '<td data-label="Paper calls">%s</td><td data-label="BARCS calls">%s</td>',
                  '<td data-label="Control null" class="num">%s</td><td data-label="Verdict">%s</td></tr>'),
           esc(format_date(m$published_date %||% m$published)), esc(format_date(m$analyzed %||% "")),
-          m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
+          m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
