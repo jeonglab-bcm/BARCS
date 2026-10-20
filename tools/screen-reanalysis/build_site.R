@@ -268,16 +268,21 @@ for (rec in records) {
 
 # ---- index ----------------------------------------------------------------
 counts <- table(factor(vapply(records, function(r) r$meta$agreement, character(1)), levels = names(status)))
+# The paper itself: its DOI when the record has one, otherwise PubMed.
+paper_url <- function(m) {
+  if (!is.null(m$doi) && nzchar(m$doi)) paste0("https://doi.org/", m$doi)
+  else sprintf("https://pubmed.ncbi.nlm.nih.gov/%s/", m$pmid)
+}
 rows <- vapply(records, function(rec) {
   m <- rec$meta
   sprintf(paste0('<tr><td data-label="Published">%s</td><td data-label="Analyzed">%s</td>',
                  '<td data-label="Series"><a href="%s.html">%s</a>',
                  '<a class="sub" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s">Design, comparison spec and report on GitHub</a></td>',
-                 '<td data-label="Paper">%s<span class="muted">%s</span></td><td data-label="Contrast">%s</td>',
+                 '<td data-label="Paper"><a class="paper-link" href="%s">%s</a><span class="muted">%s</span></td><td data-label="Contrast">%s</td>',
                  '<td data-label="Paper calls">%s</td><td data-label="BARCS calls">%s</td>',
                  '<td data-label="Control null" class="num">%s</td><td data-label="Verdict">%s</td></tr>'),
           esc(format_date(m$published_date %||% m$published)), esc(format_date(m$analyzed %||% "")),
-          m$gse, m$gse, m$gse, esc(m$title), esc(m$journal),
+          m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
@@ -400,6 +405,8 @@ table.index col.c-paper { width: 17%; } table.index col.c-text { width: 14%; }
 table.index col.c-null { width: 6.5%; } table.index col.c-verdict { width: 9.5%; }
 table.index .muted { display: block; margin-top: 2px; }
 table.index .badge { white-space: normal; }
+table.index a.paper-link { color: var(--ink); text-decoration-color: var(--axis); }
+table.index a.paper-link:hover { color: var(--accent); }
 a.sub { display: block; margin-top: 4px; font-size: 12px; line-height: 1.35; color: var(--ink-2); }
 @media (max-width: 640px) {
   .stack-wrap { background: none; border: 0; }
