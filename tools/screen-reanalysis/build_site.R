@@ -277,12 +277,13 @@ rows <- vapply(records, function(rec) {
   m <- rec$meta
   sprintf(paste0('<tr><td data-label="Published">%s</td><td data-label="Analyzed">%s</td>',
                  '<td data-label="Series"><a href="%s.html">%s</a>',
-                 '<a class="sub" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s">Design, comparison spec and report on GitHub</a></td>',
+                 '<span class="chips"><a class="chip" href="https://github.com/jeonglab-bcm/barcs/tree/main/reanalyses/%s" title="Design, comparison spec and report on GitHub" aria-label="Design, comparison spec and report on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>',
+                 '<a class="chip" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=%s" title="GEO series %s (deposited counts)" aria-label="GEO series %s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>GEO</a></span></td>',
                  '<td data-label="Paper"><a class="paper-link" href="%s">%s</a><span class="muted">%s</span></td><td data-label="Contrast">%s</td>',
                  '<td data-label="Paper calls">%s</td><td data-label="BARCS calls">%s</td>',
                  '<td data-label="Control null" class="num">%s</td><td data-label="Verdict">%s</td></tr>'),
           esc(format_date(m$published_date %||% m$published)), esc(format_date(m$analyzed %||% "")),
-          m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
+          m$gse, m$gse, m$gse, m$gse, m$gse, m$gse, paper_url(m), esc(m$title), esc(m$journal),
           esc(m$contrast), esc(m$paper_calls %||% ""), esc(m$barcs_calls %||% ""),
           if (is.null(rec$control_calls)) "&mdash;" else format(rec$control_calls, big.mark = ","),
           badge(m$agreement))
@@ -399,7 +400,7 @@ table.index { table-layout: fixed; }
 table.index th { white-space: normal; }
 table.index th, table.index td { padding: 9px 8px; }
 table.index td { overflow-wrap: break-word; }
-table.index td > a:first-child { white-space: nowrap; }
+table.index td[data-label="Series"] > a:first-child { white-space: nowrap; }
 table.index col.c-date { width: 7.5%; } table.index col.c-series { width: 10%; }
 table.index col.c-paper { width: 17%; } table.index col.c-text { width: 14%; }
 table.index col.c-null { width: 6.5%; } table.index col.c-verdict { width: 9.5%; }
@@ -407,7 +408,11 @@ table.index .muted { display: block; margin-top: 2px; }
 table.index .badge { white-space: normal; }
 table.index a.paper-link { color: var(--ink); text-decoration-color: var(--axis); }
 table.index a.paper-link:hover { color: var(--accent); }
-a.sub { display: block; margin-top: 4px; font-size: 12px; line-height: 1.35; color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+a.chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; line-height: 1.5; color: var(--ink-2);
+  border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; text-decoration: none; white-space: nowrap; }
+a.chip svg { width: 13px; height: 13px; flex: none; }
+a.chip:hover, a.chip:focus-visible { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 640px) {
   .stack-wrap { background: none; border: 0; }
   table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: auto; }
