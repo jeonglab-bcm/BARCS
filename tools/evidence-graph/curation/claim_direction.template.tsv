@@ -1,0 +1,931 @@
+compare_id	gene	paper_calls_text	barcs_estimate	claimed_direction	source
+GSE171674/compare	ATXN7L3	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.227		
+GSE171674/compare	CBFB	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	2.006		
+GSE171674/compare	FOXK1	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.9391		
+GSE171674/compare	HIVEP2	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	1.469		
+GSE171674/compare	IL2RA	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-1.704		
+GSE171674/compare	IRF4	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-0.3824		
+GSE171674/compare	JAK3	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-0.8476		
+GSE171674/compare	KLF2	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	1.527		
+GSE171674/compare	MED12	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	2.222		
+GSE171674/compare	STAT5A	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-0.7267		
+GSE171674/compare	STAT5B	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-1.69		
+GSE171674/compare	TNFAIP3	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.7325		
+GSE171674/compare	ZNF217	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.9493		
+GSE179799/compare	FANCA	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-0.9604		
+GSE179799/compare	MUS81	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.096		
+GSE179799/compare	NPEPPS	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.542		
+GSE179799/compare	RAD18	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-0.7325		
+GSE179799/compare	UBE2T	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.014		
+GSE179799/compare	XPA	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.196		
+GSE183348/compare	ATP5SL	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.6798		
+GSE183348/compare	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.5245		
+GSE183348/compare	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.8024		
+GSE183348/compare	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.6827		
+GSE183348/compare	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.115		
+GSE183348/compare_dld1_2d	ATP5SL	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.005524		
+GSE183348/compare_dld1_2d	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	0.8062		
+GSE183348/compare_dld1_2d	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.3938		
+GSE183348/compare_dld1_2d	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.72		
+GSE183348/compare_dld1_2d	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.085		
+GSE183348/compare_hct116_2d	ATP5SL	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.972		
+GSE183348/compare_hct116_2d	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.343		
+GSE183348/compare_hct116_2d	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.257		
+GSE183348/compare_hct116_2d	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.501		
+GSE183348/compare_hct116_2d	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-2.443		
+GSE183348/compare_hct116_tumor	ATP5SL	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.556		
+GSE183348/compare_hct116_tumor	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	0.5706		
+GSE183348/compare_hct116_tumor	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.8785		
+GSE183348/compare_hct116_tumor	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.4305		
+GSE183348/compare_hct116_tumor	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-1.791		
+GSE183348/compare_sw948_tumor	ATP5SL	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.1855		
+GSE183348/compare_sw948_tumor	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	0.4943		
+GSE183348/compare_sw948_tumor	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.7192		
+GSE183348/compare_sw948_tumor	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.3631		
+GSE183348/compare_sw948_tumor	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.9787		
+GSE192827/compare	BTN3A1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.159		
+GSE192827/compare	BTN3A2	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.623		
+GSE192827/compare	ECSIT	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	1.216		
+GSE192827/compare	FBXW7	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	0.8764		
+GSE192827/compare	IRF1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.518		
+GSE192827/compare	IRF8	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	1.538		
+GSE192827/compare	NLRC5	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.042		
+GSE192827/compare	SPIB	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	1.019		
+GSE192827/compare_negative	CBFB	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-2.387		
+GSE192827/compare_negative	CTBP1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-3.559		
+GSE192827/compare_negative	HDAC8	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-0.9898		
+GSE192827/compare_negative	RING1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-1.274		
+GSE192827/compare_negative	RUNX1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-2.786		
+GSE192827/compare_negative	ZNF217	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	-2.251		
+GSE192828/compare	BTN2A1	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	1.193		
+GSE192828/compare	BTN3A1	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	1.363		
+GSE192828/compare	BTN3A2	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	1.038		
+GSE192828/compare	HMGCR	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	0.4012		
+GSE192828/compare	IRF1	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	1.085		
+GSE192828/compare	NLRC5	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	0.617		
+GSE192828/compare	SPIB	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	0.9571		
+GSE199603/compare	Cd300ld	No gene at FDR 0.10; Cd300ld ranked first (FDR 0.069) and followed up	-0.5703		
+GSE203240/compare	ACVR1B	15 genes at p < 0.05; IGF2BP2 #6	-0.6766		
+GSE203240/compare	ATP4A	15 genes at p < 0.05; IGF2BP2 #6	-2.955		
+GSE203240/compare	C19orf35	15 genes at p < 0.05; IGF2BP2 #6	-3.057		
+GSE203240/compare	CALM2	15 genes at p < 0.05; IGF2BP2 #6	-0.6204		
+GSE203240/compare	CLK2	15 genes at p < 0.05; IGF2BP2 #6	-0.1636		
+GSE203240/compare	DCTN3	15 genes at p < 0.05; IGF2BP2 #6	-0.7998		
+GSE203240/compare	DENR	15 genes at p < 0.05; IGF2BP2 #6	-0.6837		
+GSE203240/compare	FDPS	15 genes at p < 0.05; IGF2BP2 #6	-0.8748		
+GSE203240/compare	IGF2BP2	15 genes at p < 0.05; IGF2BP2 #6	-1.566		
+GSE203240/compare	KIF5B	15 genes at p < 0.05; IGF2BP2 #6	0.01657		
+GSE203240/compare	LPL	15 genes at p < 0.05; IGF2BP2 #6	0.0002485		
+GSE203240/compare	SASS6	15 genes at p < 0.05; IGF2BP2 #6	-1.027		
+GSE203240/compare	TAF5L	15 genes at p < 0.05; IGF2BP2 #6	-0.8003		
+GSE203240/compare	TLE2	15 genes at p < 0.05; IGF2BP2 #6	-0.8614		
+GSE203240/compare	TNFAIP8L1	15 genes at p < 0.05; IGF2BP2 #6	-0.1427		
+GSE206832/compare	Cd86	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	1.349		
+GSE206832/compare	Cebpb	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-0.5175		
+GSE206832/compare	March1.	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-2.252		
+GSE206832/compare	Med12	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-0.9937		
+GSE206832/compare_cd86sec	Cd86	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	0.9651		
+GSE206832/compare_cd86sec	Cebpb	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-0.3458		
+GSE206832/compare_cd86sec	March1.	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-1.763		
+GSE206832/compare_cd86sec	Med12	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-0.9541		
+GSE206832/compare_pdl1gw	Cd274	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	2.279		
+GSE206832/compare_pdl1gw	Cebpb	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	1.645		
+GSE206832/compare_pdl1sec	Cd274	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	2.143		
+GSE206832/compare_pdl1sec	Cebpb	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	1.768		
+GSE206996/compare	ACE2	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	1.724		
+GSE206996/compare	SLC35B2	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	1.02		
+GSE206996/compare_vsvg	LDLR	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	0.5771		
+GSE206996/compare_vsvg	SLC35B2	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	1.245		
+GSE206996/compare_vsvgcre	LDLR	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	0.895		
+GSE206996/compare_vsvgcre	SLC35B2	ACE2 and LDLR identified as the spike and VSV-G receptors by the counter-screen strategy	1.723		
+GSE209750/compare	DAZAP2	Anti-viral factors depleted: V-ATPase, ESCRT, N-glycosylation, cohesin, KLF5; DAZAP2, VTA1, KLF5 validated	-0.8564		
+GSE209750/compare	KLF5	Anti-viral factors depleted: V-ATPase, ESCRT, N-glycosylation, cohesin, KLF5; DAZAP2, VTA1, KLF5 validated	-0.3424		
+GSE209750/compare	VTA1	Anti-viral factors depleted: V-ATPase, ESCRT, N-glycosylation, cohesin, KLF5; DAZAP2, VTA1, KLF5 validated	-0.03757		
+GSE210422/compare	10:89986509-89987396	66 positively and 17 negatively selected enhancers at FDR 0.05	0.2823		
+GSE210422/compare	15:99982353-99983277	66 positively and 17 negatively selected enhancers at FDR 0.05	0.4685		
+GSE210422/compare	17:29645182-29645793	66 positively and 17 negatively selected enhancers at FDR 0.05	0.1941		
+GSE211073/compare	CALCOCO2	OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival	0.08499		
+GSE211073/compare	FKBP8	OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival	-0.2729		
+GSE211073/compare	OPTN	OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival	0.05615		
+GSE211073/compare	PHB2	OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival	-0.9827		
+GSE211073/compare	SQSTM1	OPTN identified as the sole non-redundant mitophagy receptor (fewest genetic interactions); validated for AML proliferation and survival	0.1589		
+GSE211312/compare	FTSJ3	FTSJ3 as the top synthetic dosage lethal target of hTERT	0.3156		
+GSE212152/compare	Dhx9	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-1.315		
+GSE212152/compare	Dnmt1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.986		
+GSE212152/compare	Dnmt3a	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.411		
+GSE212152/compare	Dnmt3b	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.301		
+GSE212152/compare	Ehmt2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.556		
+GSE212152/compare	Hdac1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-0.8491		
+GSE212152/compare	Hdac2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.1206		
+GSE212152/compare	Setdb1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	2.003		
+GSE212152/compare	Suv39h1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.276		
+GSE212152/compare_establishment	Dhx9	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-1.315		
+GSE212152/compare_establishment	Dnmt1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.986		
+GSE212152/compare_establishment	Dnmt3a	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.411		
+GSE212152/compare_establishment	Dnmt3b	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.301		
+GSE212152/compare_establishment	Ehmt2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.556		
+GSE212152/compare_establishment	Hdac1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-0.8491		
+GSE212152/compare_establishment	Hdac2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.1206		
+GSE212152/compare_establishment	Setdb1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	2.003		
+GSE212152/compare_establishment	Suv39h1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.276		
+GSE212152/compare_maintenance	Dhx9	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.3322		
+GSE212152/compare_maintenance	Dnmt1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.508		
+GSE212152/compare_maintenance	Dnmt3a	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.191		
+GSE212152/compare_maintenance	Dnmt3b	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.4037		
+GSE212152/compare_maintenance	Ehmt2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.2809		
+GSE212152/compare_maintenance	Hdac1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-0.4281		
+GSE212152/compare_maintenance	Hdac2	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	-0.211		
+GSE212152/compare_maintenance	Setdb1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	1.03		
+GSE212152/compare_maintenance	Suv39h1	H3K9 and DNA methyltransferases, HDACs, remodelers and RNA-processing factors establish and maintain silencing; DHX9 required for maintenance via R-loops	0.1006		
+GSE213184/compare	ACTA1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-2.941		
+GSE213184/compare	KRAS	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-0.7416		
+GSE213184/compare	MYL2	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.245		
+GSE213184/compare	RAF1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)			
+GSE213184/compare	SPTAN1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.219		
+GSE213184/compare	STIM2	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-2.111		
+GSE213184/compare_next25	ACTA1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.447		
+GSE213184/compare_next25	KRAS	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-0.7302		
+GSE213184/compare_next25	MYL2	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.332		
+GSE213184/compare_next25	RAF1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.502		
+GSE213184/compare_next25	SPTAN1	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-6.327		
+GSE213184/compare_next25	STIM2	1,628 depleted candidate genes at Wald p < 0.05 (150 at Wald FDR 0.05; none at MAGeCK permutation FDR 0.72)	-2.143		
+GSE215926/compare	RPS19-sgRNA-design_cli	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-2.374		
+GSE215926/compare	chr11:67797980-67798220(.)::npk2::pkscore68:NDUFS8	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.09357		
+GSE215926/compare	chr13:28819406-28820051(.)::npk3::pkscore264:PAN3	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.4		
+GSE215926/compare	chr13:28842907-28843340(.)::npk3::pkscore157:PAN3	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.8224		
+GSE215926/compare	chr14:24583753-24584104(.)::npk3::pkscore221:DCAF11	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.01833		
+GSE215926/compare	chr1:26097697-26098053(.)::npk2::pkscore114:MAN1C1	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	0.02519		
+GSE215926/compare	chr21:36247065-36247353(.)::npk2::pkscore95:RUNX1	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.08392		
+GSE215926/compare	chr7:92384146-92384756(.)::npk3::pkscore178:CDK6	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	0.0454		
+GSE215926/compare	chr8:22832812-22833132(.)::npk2::pkscore134:PEBP4	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.1234		
+GSE215926/compare	chr9:37324704-37325208(.)::npk3::pkscore465:ZCCHC7	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.1135		
+GSE215926/compare_dcas9	RPS19-sgRNA-design_cli	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.02752		
+GSE215926/compare_dcas9	chr11:67797980-67798220(.)::npk2::pkscore68:NDUFS8	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.1726		
+GSE215926/compare_dcas9	chr13:28819406-28820051(.)::npk3::pkscore264:PAN3	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	0.1055		
+GSE215926/compare_dcas9	chr13:28842907-28843340(.)::npk3::pkscore157:PAN3	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.488		
+GSE215926/compare_dcas9	chr14:24583753-24584104(.)::npk3::pkscore221:DCAF11	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.02414		
+GSE215926/compare_dcas9	chr1:26097697-26098053(.)::npk2::pkscore114:MAN1C1	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.01432		
+GSE215926/compare_dcas9	chr21:36247065-36247353(.)::npk2::pkscore95:RUNX1	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.1142		
+GSE215926/compare_dcas9	chr7:92384146-92384756(.)::npk3::pkscore178:CDK6	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	-0.2134		
+GSE215926/compare_dcas9	chr8:22832812-22833132(.)::npk2::pkscore134:PEBP4	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	0.02476		
+GSE215926/compare_dcas9	chr9:37324704-37325208(.)::npk3::pkscore465:ZCCHC7	15 (Cas9) and 9 (dCas9-KRAB) depleted elements at FDR 0.10; FLT3 distal enhancer top in both, CDK6 intron top in CRISPRi	0.05041		
+GSE216353/compare	B3GNT8	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	7.225		
+GSE216353/compare	GCLM	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	3.636		
+GSE216353/compare	KEAP1	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	-6.945		
+GSE216353/compare	MPST	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	-7.321		
+GSE216353/compare	NANS	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	6.792		
+GSE216353/compare	NDST1	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	0.7605		
+GSE216353/compare	NDUFS6	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	-3.998		
+GSE216353/compare	NFKB1	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	-7.205		
+GSE216353/compare	ST3GAL6	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	7.42		
+GSE216353/compare	ULK1	Top-20 enriched genes per bin: KEAP1, NDUFS6, MPST, respiratory-chain/ROS genes lowering CD80; B3GNT8, ST3GAL6, NANS raising it; NFKB1 validated	7.27		
+GSE217131/compare	BAX	TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated	0.04884		
+GSE217131/compare	BBC3	TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated	0.09386		
+GSE217131/compare	CASP9	TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated	0.1709		
+GSE217131/compare	TNFRSF11B	TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated	0.1421		
+GSE217131/compare	TP53	TP53-mediated apoptosis and TNF-NF-κB signalling limit graft survival; TP53, BBC3 validated	0.3315		
+GSE217789/compare	HNRNPH1	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	1.454		
+GSE217789/compare	HTATSF1	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	-1.156		
+GSE217789/compare	PNISR	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	0.8756		
+GSE217789/compare	RBM3	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	0.9508		
+GSE217789/compare	SNRNP70	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	0.7841		
+GSE217789/compare	TNPO3	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	1.111		
+GSE217789/compare	UBE2H	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	-0.4152		
+GSE217789/compare	WDR26	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	-0.7142		
+GSE217789/compare	WTAP	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	-0.6477		
+GSE217789/compare	YPEL5	110 genes at FDR 0.05: 15 positive regulators (enriched in low GFP, incl. RBM3) and 95 negative regulators	-0.9373		
+GSE219136/compare	ACSL3	ACSL3 and G6PD as synthetic-lethal partners of NF2	-1.303		
+GSE219136/compare	G6PD	ACSL3 and G6PD as synthetic-lethal partners of NF2	-1.569		
+GSE220831/compare	Hdac1	Class I HDACs (Hdac1, Hdac2, Hdac3) preferentially required in KPK cells	-0.3069		
+GSE220831/compare	Hdac2	Class I HDACs (Hdac1, Hdac2, Hdac3) preferentially required in KPK cells	-0.3091		
+GSE220831/compare	Hdac3	Class I HDACs (Hdac1, Hdac2, Hdac3) preferentially required in KPK cells	-0.5445		
+GSE221576/compare	BCL11B	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	1.499		
+GSE221576/compare	CDK6	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-1.707		
+GSE221576/compare	DCAF7	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-1.579		
+GSE221576/compare	NOTCH1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-1.236		
+GSE221576/compare	PCGF1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	1.86		
+GSE221576/compare	PIK3R1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	1.379		
+GSE221576/compare	PTEN	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	0.505		
+GSE221576/compare_cb103	CDK6	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-0.2527		
+GSE221576/compare_cb103	IL7R	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-1.302		
+GSE221576/compare_cb103	JAK1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-2.326		
+GSE221576/compare_cb103	NOTCH1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-0.7886		
+GSE221576/compare_cb103	PIK3R1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	0.6453		
+GSE222531/compare	BCR	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-2.255		
+GSE222531/compare	GATA1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-2.292		
+GSE222531/compare	LMO2	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-0.5571		
+GSE222531/compare	MCM2	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-4.394		
+GSE222531/compare	MYB	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-0.643		
+GSE222531/compare	PCNA	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-0.07534		
+GSE222531/compare	POLR2A	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-1.126		
+GSE222531/compare	RPL3	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-1.126		
+GSE222531/compare	TAL1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-0.301		
+GSE222531/compare_dasatinib	CCNC	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	3.088		
+GSE222531/compare_dasatinib	CDK8	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	1.488		
+GSE222531/compare_dasatinib	GFI1B	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	3.918		
+GSE222531/compare_dasatinib	LZTR1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	3.534		
+GSE222531/compare_dasatinib	MED1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	1.996		
+GSE222531/compare_dasatinib	MED12	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	1.731		
+GSE222531/compare_dasatinib	MED23	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	2.414		
+GSE222531/compare_dasatinib	MED24	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	2.413		
+GSE222531/compare_dasatinib	MED31	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	2.017		
+GSE222531/compare_dasatinib	MED8	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	2.032		
+GSE222531/compare_dasatinib	NF1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	3.435		
+GSE222531/compare_dasatinib	PTPN1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	2.207		
+GSE223086/compare	CCT7	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-5.318		
+GSE223086/compare	CDK1	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-2.528		
+GSE223086/compare	MYC	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-2.501		
+GSE223086/compare	NOP58	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-6.704		
+GSE223086/compare	POLR2A	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-2.462		
+GSE223086/compare	POLR2B	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-2.43		
+GSE223086/compare	POLR3B	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-5.47		
+GSE223086/compare	PSMA1	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-2.856		
+GSE223086/compare	RPL3	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-1.68		
+GSE223086/compare	RPS19	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-3.915		
+GSE223086/compare	RPTOR	No biological hit table; the paper reports core-essential-gene recovery as a performance metric	-5.379		
+GSE223690/compare	EIF2A	day 14: 5 enriched + 4 depleted genes at FDR 0.10 (EIF2A top enriched); day 7: 4 enriched + 12 depleted (EIF2A #15)	0.424		
+GSE223690/compare_d7	EIF2A	day 14: 5 enriched + 4 depleted genes at FDR 0.10 (EIF2A top enriched); day 7: 4 enriched + 12 depleted (EIF2A #15)	0.3399		
+GSE223716/compare	FTSJ3	Top SDL hits named: FTSJ3, MED14, RRM2, GNB1L, PRMT1 (HTelo); FTSJ3, MED14, PRMT1, GNB1L, PRPF19, LMNB1 across models	-3.953		
+GSE223716/compare	GNB1L	Top SDL hits named: FTSJ3, MED14, RRM2, GNB1L, PRMT1 (HTelo); FTSJ3, MED14, PRMT1, GNB1L, PRPF19, LMNB1 across models	-7.65		
+GSE223716/compare	MED14	Top SDL hits named: FTSJ3, MED14, RRM2, GNB1L, PRMT1 (HTelo); FTSJ3, MED14, PRMT1, GNB1L, PRPF19, LMNB1 across models	-3.85		
+GSE223716/compare	PRMT1	Top SDL hits named: FTSJ3, MED14, RRM2, GNB1L, PRMT1 (HTelo); FTSJ3, MED14, PRMT1, GNB1L, PRPF19, LMNB1 across models	-2.28		
+GSE223716/compare	RRM2	Top SDL hits named: FTSJ3, MED14, RRM2, GNB1L, PRMT1 (HTelo); FTSJ3, MED14, PRMT1, GNB1L, PRPF19, LMNB1 across models	-6.47		
+GSE225235/compare	CD58	9 genes enriched at FDR 0.10 in all four MAGeCK comparisons, 21 in at least two, 60 in at least one; CD58 and CMTM6 highlighted	4.794		
+GSE225235/compare	CMTM6	9 genes enriched at FDR 0.10 in all four MAGeCK comparisons, 21 in at least two, 60 in at least one; CD58 and CMTM6 highlighted	1.407		
+GSE225878/compare	Arrb2	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	0.8127		
+GSE225878/compare	Cd200	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-1.72		
+GSE225878/compare	Dot1l	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	1.369		
+GSE225878/compare	Eed	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	1.869		
+GSE225878/compare	Ezh2	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	1.246		
+GSE225878/compare	Gnas	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	0.7433		
+GSE225878/compare	Prkar1a	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-0.8358		
+GSE225878/compare	Ptch1	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	1.394		
+GSE225878/compare	Ptpn11	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-0.6278		
+GSE225878/compare	Runx2	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-0.7085		
+GSE225878/compare	Sox9	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-0.554		
+GSE225878/compare	Strap	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	0.9818		
+GSE225878/compare	Sufu	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	2.573		
+GSE226977/compare	HOXA9	HOXA9 validated as an enzalutamide-sensitizer (loss sensitizes)	-1.027		
+GSE229545/compare	TGGT1_205250	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.603		
+GSE229545/compare	TGGT1_288650	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-2.681		
+GSE229545/compare	TGGT1_308090	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.44		
+GSE229545/compare	TGGT1_316250	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-2.135		
+GSE229545/compare_p4wt	TGGT1_205250	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.206		
+GSE229545/compare_p4wt	TGGT1_288650	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.036		
+GSE229545/compare_p4wt	TGGT1_308090	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-4.733		
+GSE229545/compare_p4wt	TGGT1_316250	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.112		
+GSE229547/compare	TGGT1_205250	Table S2A: WT-vs-KO and P4-vs-WT per-gene fitness; ROP18 the shared IFN-gamma control	-3.589		
+GSE229547/compare_p4wt	TGGT1_205250	Table S2A: WT-vs-KO and P4-vs-WT per-gene fitness; ROP18 the shared IFN-gamma control	-3.64		
+GSE229548/compare	TGGT1_205250	Table S3A: WT-vs-KO and P4-vs-WT per-gene fitness; ROP18 the shared IFN-gamma control	-2.807		
+GSE229548/compare_p4wt	TGGT1_205250	Table S3A: WT-vs-KO and P4-vs-WT per-gene fitness; ROP18 the shared IFN-gamma control	-2.261		
+GSE229584/compare	INSM1	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-0.2409		
+GSE229584/compare	NEUROG3	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-0.9619		
+GSE229584/compare	NFIC	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-0.605		
+GSE229584/compare	SOX4	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-1.394		
+GSE229584/compare	TEF	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-0.3568		
+GSE229584/compare	ZHX2	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	-0.5791		
+GSE229584/compare	ZNF800	ZNF800 represses enteroendocrine fate; NEUROG3, SOX4, INSM1 required; NFIC, TEF, ZHX2 new modulators	1.213		
+GSE230735/compare	SLC13A3	SLC13A3 as the dicarboxylate-transporter itaconate importer; validated functionally in hepatocytes and in vivo	-1.746		
+GSE232340/compare	Cbfb	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.3235		
+GSE232340/compare	Cxcr3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.5133		
+GSE232340/compare	Fermt3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.7991		
+GSE232340/compare	Grk2	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.239		
+GSE232340/compare	Itga4	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.318		
+GSE232340/compare_gwmvb	Cbfb	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.7329		
+GSE232340/compare_gwmvb	Cxcr3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.8461		
+GSE232340/compare_gwmvb	Fermt3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.9989		
+GSE232340/compare_gwmvb	Grk2	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.339		
+GSE232340/compare_gwmvb	Itga4	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.217		
+GSE232340/compare_val	Cbfb	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.493		
+GSE232340/compare_val	Cxcr3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.9936		
+GSE232340/compare_val	Fermt3	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.37		
+GSE232340/compare_val	Grk2	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-0.6345		
+GSE232340/compare_val	Itga4	22 (parenchyma) and 9 (meninges) genes at FDR 0.10 in the genome-wide screen; 20 in the validation screen; Itga4, Cxcr3, Fermt3, Grk2, Cbfb among the top	-1.42		
+GSE232543/compare	Cd86	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	1.494		
+GSE232543/compare	Mitf	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.1439		
+GSE232543/compare	Nr4a3	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.4002		
+GSE232543/compare	Stat2	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.05589		
+GSE232543/compare_gw	Cd86	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	2.165		
+GSE232543/compare_gw	Mitf	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.04107		
+GSE232543/compare_gw	Nr4a3	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.6885		
+GSE232543/compare_gw	Stat2	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1			
+GSE232543/compare_wt	Cd86	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	1.551		
+GSE232543/compare_wt	Mitf	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.02957		
+GSE232543/compare_wt	Nr4a3	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.07124		
+GSE232543/compare_wt	Stat2	Cebpb-KO secondary: 22 positive and 27 negative regulators at FDR 0.10; WT secondary: 24 and 35; genome-wide Cebpb-KO: Cd86, Matn1	0.1081		
+GSE232856/compare	LH06194	EPB41L4A-AS1 (host of SNORA13) required for oncogene-induced senescence	1.946		
+GSE232856/compare	LH12673	EPB41L4A-AS1 (host of SNORA13) required for oncogene-induced senescence	2.295		
+GSE233401/compare	MAP2K4	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.1957		
+GSE233401/compare	MAP3K4	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.2479		
+GSE233401/compare	PTEN	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.4053		
+GSE233401/compare	TSC1	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.3878		
+GSE233401/compare_uhrf1	PTEN	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.1262		
+GSE233401/compare_uhrf1	TSC1	sgNeg: 37 genes at FDR 0.10; sgUHRF1: 16 (PTEN and TSC1 top enriched in both)	0.1552		
+GSE235620/compare	BTnc167	2 sRNAs: BatR (BTnc167, enriched) and BTnc353 (depleted)	0.375		
+GSE235620/compare	BTnc353	2 sRNAs: BatR (BTnc167, enriched) and BTnc353 (depleted)	-0.505		
+GSE236244/compare	Fut9	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-3.036		
+GSE236244/compare	Hes1	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-0.8182		
+GSE236244/compare	Pou5f1	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-1.835		
+GSE236244/compare	Smad2	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-0.9893		
+GSE236244/compare	Smad4	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-1.72		
+GSE236244/compare	Smarca4	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-1.216		
+GSE236244/compare	Smarcc2	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	0.06038		
+GSE236244/compare	Sox2	Named activators: Fut9, Smad2/4, Pou5f1, Sox2, Smarca4, Hes1 (early); Nanog, Il6st, Dazl, Hes6/7, IFNg pathway Stat1/Jak1/Irf2/Ifngr2 (late)	-1.576		
+GSE236257/compare	AEBP2	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2013		
+GSE236257/compare	DNMT3B	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2645		
+GSE236257/compare	HDAC3	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.3448		
+GSE236257/compare	RBBP4	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.3197		
+GSE236257/compare	SET	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2704		
+GSE236257/compare	SETD1A	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2698		
+GSE236257/compare	SETD1B	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2813		
+GSE236257/compare	SMARCB1	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.2254		
+GSE236257/compare	SOX9	SMARCB1 (lead) negative regulator of differentiation; HDAC3, SET, RBBP4, DNMT3B, SETD1A/B inducers; SUZ12, SMARCD2, DNMT1, KMT2A SOX9 suppressors	0.5448		
+GSE237122/compare	ACE2	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	4.197		
+GSE237122/compare	AHR	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	1.899		
+GSE237122/compare_OC43	AHR	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	1.475		
+GSE237122/compare_OC43	EXT1	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	3.128		
+GSE237122/compare_OC43	EXT2	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	2.141		
+GSE237122/compare_OC43	SLC35B2	ACE2 (top SARS-CoV-2 hit) and AHR (FDR 0.09) for SARS-CoV-2; EXT1/EXT2/SLC35B2 heparan-sulphate entry genes and AHR (~rank 50) for HCoV-OC43; AHR validated by KO and cDNA rescue	2.553		
+GSE237953/compare	FKBP5	10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3	5.098		
+GSE237953/compare	MAU2	10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3	3.504		
+GSE237953/compare	NR3C1	10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3	5.721		
+GSE237953/compare	PAXIP1	10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3	5.055		
+GSE237953/compare	STAG2	10 putative hits (FDR < 0.15, LFC > 2.5); NR3C1, STAG2, PAXIP1 top 3	4.671		
+GSE238225/compare	ADAR	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-0.846		
+GSE238225/compare	CSF2RA	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-3.981		
+GSE238225/compare	KDM1A	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-0.947		
+GSE238225/compare	MYC	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-0.7464		
+GSE238225/compare	RPA3	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-0.8124		
+GSE238225/compare	SETD8	Positive controls (RPA3, MYC, CSF2RA) and essential genes drop out	-0.3405		
+GSE240110/compare	AMOTL2	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	1.365		
+GSE240110/compare	KIRREL	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	1.134		
+GSE240110/compare	LATS2	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	0.7593		
+GSE240110/compare	NF2	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	2.913		
+GSE240110/compare	NRP1	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	0.3808		
+GSE240110/compare	TAOK1	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	0.4577		
+GSE240110/compare_combo	LATS2	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	0.57		
+GSE240110/compare_combo	NF2	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	1.35		
+GSE240110/compare_combo	TAOK1	Hippo-pathway genes enriched among MRTX hits, motivating a KRAS-G12C + TEAD inhibitor combination	0.5341		
+GSE240870/compare	ELMSAN1	ELMSAN1 (MIDEAS) activation blunts ISX9; no gene table accessible	0.5022		
+GSE240894/compare	ALYREF	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.5929		
+GSE240894/compare	AMBRA1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.2502		
+GSE240894/compare	CCNT1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.9229		
+GSE240894/compare	ELL	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.9538		
+GSE240894/compare	HDAC3	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.3985		
+GSE240894/compare	MBNL1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.4648		
+GSE240894/compare	NFKB1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.9092		
+GSE240894/compare	OGT	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.578		
+GSE240894/compare	TBL1XR1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.4713		
+GSE240894/compare	UBE2M	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.5477		
+GSE240894/compare_5a8	AMBRA1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.5797		
+GSE240894/compare_5a8	CCNT1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.8633		
+GSE240894/compare_5a8	ELL	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-1.06		
+GSE240894/compare_5a8	HDAC3	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.6712		
+GSE240894/compare_5a8	MED7	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.7921		
+GSE240894/compare_5a8	NFKB1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.8366		
+GSE240894/compare_5a8	OTUD5	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.8072		
+GSE240894/compare_5a8	TBL1XR1	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.5698		
+GSE240894/compare_5a8	UBE2M	J-Lat 10.6: 63 depleted genes at neg FDR 0.10 (CCNT1 #1); J-Lat 5A8: 13 (CCNT1 #1)	-0.465		
+GSE241070/compare	ABCC2	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	-0.2439		
+GSE241070/compare	AMPD3	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	-0.1675		
+GSE241070/compare	DTX3L	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	-0.2257		
+GSE241070/compare	HHIPL1	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	0.1735		
+GSE241070/compare	KCNRG	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	0.3303		
+GSE241070/compare	NNMT	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	-0.3413		
+GSE241070/compare	PDE1A	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	-0.2385		
+GSE241070/compare	RPL22L1	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	0.2196		
+GSE241070/compare	SOX17	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	0.4154		
+GSE241070/compare	ZIC2	RRA p < 0.05: 332 depleted and 3,438 enriched genes (RRA FDR 0.10: 1,228 enriched, 0 depleted); 10 genes picked by intersection with an external expression data set and validated	0.4593		
+GSE241682/compare	HNRNPK	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	1.315		
+GSE241682/compare	SNRNP70	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	-0.09618		
+GSE241682/compare	SRSF1	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	4.143		
+GSE241682/compare	SRSF2	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	-0.08035		
+GSE241682/compare_EIn	HNRNPK	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	0.08176		
+GSE241682/compare_EIn	SNRNP70	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	0.2774		
+GSE241682/compare_EIn	SRSF1	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	0.6242		
+GSE241682/compare_EIn	SRSF2	854 (P-In) and 709 (E-In) high-GFP candidate genes, 80 shared; eight RNA-splicing RBPs (SRSF1, SRSF2, HNRNPK, SNRNP70 named); SRSF1 validated by shRNA knockdown	0.292		
+GSE241933/compare	BATF	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.04957		
+GSE241933/compare	BATF3	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.02476		
+GSE241933/compare	BHLHE40	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.1501		
+GSE241933/compare	EOMES	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.1352		
+GSE241933/compare	JUN	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-0.02548		
+GSE241933/compare	ZFP1	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.1135		
+GSE241933/compare_ko_withBATF3	AHR	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	1.068		
+GSE241933/compare_ko_withBATF3	BATF3	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-1.463		
+GSE241933/compare_ko_withBATF3	DNMT1	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-1.573		
+GSE241933/compare_ko_withBATF3	FOXO1	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-1.679		
+GSE241933/compare_ko_withBATF3	GATA3	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	0.9323		
+GSE241933/compare_ko_withBATF3	IL7R	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-2.592		
+GSE241933/compare_ko_withBATF3	IRF4	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-0.7353		
+GSE241933/compare_ko_withBATF3	JUNB	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	-0.703		
+GSE241933/compare_ko_withBATF3	ZNF217	CRISPRa: 14 genes at adjusted p < 0.10, led by BATF, BATF3, EOMES (all CCR7-low); KO + BATF3: 276 IL7R-low genes at MAGeCK FDR 0.10, BATF3/JUNB/IRF4 named as cofactors	1.017		
+GSE242880/compare	ATXN7L3	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	0.5493		
+GSE242880/compare	CBFB	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	1.757		
+GSE242880/compare	FOXK1	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	0.8129		
+GSE242880/compare	HIVEP2	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	1.223		
+GSE242880/compare	IL2RA	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	-2.483		
+GSE242880/compare	IRF4	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	-0.343		
+GSE242880/compare	JAK3	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	-0.9464		
+GSE242880/compare	KLF2	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	1.369		
+GSE242880/compare	MED12	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	1.928		
+GSE242880/compare	MYB	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	1.789		
+GSE242880/compare	STAT5A	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	-0.8507		
+GSE242880/compare	STAT5B	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	-2.166		
+GSE242880/compare	TNFAIP3	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	0.7102		
+GSE242880/compare	ZNF217	Low-coverage high-MOI screen: Waterbear 79/1,350 genes (24 of 26 previously validated IL2RA regulators), MAGeCK 31 (17/26), MAUDE 406 (25/26); no gene table published	0.8182		
+GSE243760/compare	ACTG1	ITGAV, ACTG1, CDC42 and TPM3 knockdown reduces migration	-1.037		
+GSE243760/compare	CDC42	ITGAV, ACTG1, CDC42 and TPM3 knockdown reduces migration	-0.9787		
+GSE243760/compare	ITGAV	ITGAV, ACTG1, CDC42 and TPM3 knockdown reduces migration	-1.017		
+GSE243760/compare	TPM3	ITGAV, ACTG1, CDC42 and TPM3 knockdown reduces migration	0.03657		
+GSE243761/compare	DHS_45	Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9	1.072		
+GSE243761/compare	DHS_46	Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9	0.5893		
+GSE243761/compare	DHS_47	Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9	0.9399		
+GSE243761/compare	DHS_71	Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9	0.2615		
+GSE243761/compare	DHS_72	Promoter (DHS 71, 72) and intron-3 mechanoenhancers (DHS 45-47) regulate MYH9	0.543		
+GSE243882/compare	ARHGAP17	MCF-7: 235 protein-coding genes depleted and 17 enriched (plus miRNAs); HCC1395: 320 depleted and 24 enriched; no FDR on the 3D-2D difference itself	0.4205		
+GSE243882/compare	FOXO3	MCF-7: 235 protein-coding genes depleted and 17 enriched (plus miRNAs); HCC1395: 320 depleted and 24 enriched; no FDR on the 3D-2D difference itself	-0.9414		
+GSE243882/compare	PDCD4	MCF-7: 235 protein-coding genes depleted and 17 enriched (plus miRNAs); HCC1395: 320 depleted and 24 enriched; no FDR on the 3D-2D difference itself	0.05372		
+GSE243882/compare	hsa-mir-4787	MCF-7: 235 protein-coding genes depleted and 17 enriched (plus miRNAs); HCC1395: 320 depleted and 24 enriched; no FDR on the 3D-2D difference itself	-0.8947		
+GSE244434/compare	DEPDC5	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.6186		
+GSE244434/compare	MAPKAP1	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	0.5514		
+GSE244434/compare	MLST8	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	0.7055		
+GSE244434/compare	MTOR	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	0.09314		
+GSE244434/compare	NPRL2	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.7683		
+GSE244434/compare	NPRL3	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.7364		
+GSE244434/compare	RHEB	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.01034		
+GSE244434/compare	RICTOR	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	0.5008		
+GSE244434/compare	RPTOR	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	0.09436		
+GSE244434/compare	TSC1	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.3697		
+GSE244434/compare	TSC2	Top 20 positive and top 20 negative interactors; positives enriched for (positive regulation of) TOR signalling, negatives for negative regulation of TOR signalling; no gene table retrievable	-0.5615		
+GSE245526/compare	CC2D1B	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	2.105		
+GSE245526/compare	CEACAM3	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	2.184		
+GSE245526/compare	CIITA	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	1.945		
+GSE245526/compare	EHMT2	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	2.588		
+GSE245526/compare	GRN	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	1.989		
+GSE245526/compare	RHOA	GRN, CIITA, EHMT2, CEACAM3, CC2D1B, RHOA enriched >50-fold over passaging	0.5511		
+GSE245845/compare	Cpe	84 proinsulin regulators (60 negative, 24 positive)	1.355		
+GSE245845/compare	Furin	84 proinsulin regulators (60 negative, 24 positive)	1.506		
+GSE245845/compare	Hid1	84 proinsulin regulators (60 negative, 24 positive)	0.7761		
+GSE245845/compare	Madd	84 proinsulin regulators (60 negative, 24 positive)	0.7482		
+GSE245845/compare	Pcsk1	84 proinsulin regulators (60 negative, 24 positive)	3.095		
+GSE245845/compare	Pdia6	84 proinsulin regulators (60 negative, 24 positive)	-1.824		
+GSE245845/compare	Yipf5	84 proinsulin regulators (60 negative, 24 positive)	-1.619		
+GSE246804/compare	ARIH2	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	1.632		
+GSE246804/compare	CUL5	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	0.9347		
+GSE246804/compare	KEAP1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	0.8203		
+GSE246804/compare	NF1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	0.7695		
+GSE246804/compare	PLCG1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	1.309		
+GSE246804/compare	PTEN	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	1.446		
+GSE246804/compare_sensitizers	B4GALT7	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.6676		
+GSE246804/compare_sensitizers	EXT1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.5631		
+GSE246804/compare_sensitizers	EXT2	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.6035		
+GSE246804/compare_sensitizers	EXTL3	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.5223		
+GSE246804/compare_sensitizers	FGFR1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.2904		
+GSE246804/compare_sensitizers	ITGB1	FGFR1 strongest sensitizer and PTEN strongest rescuer (panel-wide); heparan-sulfate genes (B4GALT7, EXT1/2, EXTL3) sensitize; NF1, YAP1, KEAP1, MED12, CIC rescue; validated FGFR dependence	-0.486		
+GSE246837/compare	Ifih1	Abstract names dsRNA sensing and interferon signalling as mediators	0.05251		
+GSE246837/compare	Ifnar1	Abstract names dsRNA sensing and interferon signalling as mediators	-0.3189		
+GSE246837/compare	Ifngr1	Abstract names dsRNA sensing and interferon signalling as mediators	0.8991		
+GSE246837/compare	Jak1	Abstract names dsRNA sensing and interferon signalling as mediators	1.132		
+GSE246837/compare	Mavs	Abstract names dsRNA sensing and interferon signalling as mediators	0.116		
+GSE246837/compare	Stat1	Abstract names dsRNA sensing and interferon signalling as mediators	1.049		
+GSE251758/compare	Eif4g2	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.3486		
+GSE251758/compare	Icam1	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.2348		
+GSE251758/compare	Trp53	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.68		
+GSE251758/compare_acute	Eif4g2	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.7322		
+GSE251758/compare_acute	Icam1	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.5059		
+GSE251758/compare_acute	Trp53	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	1.218		
+GSE251758/compare_chronic	Ctbp1	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	1.449		
+GSE251758/compare_chronic	Eif4g2	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	1.043		
+GSE251758/compare_chronic	Trp53	54 / 64 / 9 enriched genes at FDR 0.10 (intense / acute / chronic)	0.5711		
+GSE252651/compare	JOSD1	Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45	0.3013		
+GSE252651/compare	USP43	Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45	0.3489		
+GSE252651/compare	USP52	Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45	0.612		
+GSE252651/compare_suppressor	OTUD5	Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45	0.6724		
+GSE252651/compare_suppressor	USP45	Activator: USP52, USP43, JOSD1 at FDR 0.10; suppressor: OTUD5, USP45	0.5011		
+GSE253290/compare	ENSG00000177822	685 genes at treatment Wald FDR 0.10 genome-wide (494 sensitizing); 49 in the focused screen; TENM3-AS1, LINC01117, ENSG00000226706 validated	-0.3014		
+GSE253290/compare	ENSG00000224577	685 genes at treatment Wald FDR 0.10 genome-wide (494 sensitizing); 49 in the focused screen; TENM3-AS1, LINC01117, ENSG00000226706 validated	0.2174		
+GSE253290/compare	ENSG00000226706	685 genes at treatment Wald FDR 0.10 genome-wide (494 sensitizing); 49 in the focused screen; TENM3-AS1, LINC01117, ENSG00000226706 validated	0.1172		
+GSE253884/compare	TGGT1_211850	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-6.776		
+GSE253884/compare	TGGT1_221170	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-2.934		
+GSE253884/compare	TGGT1_221190	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-4.389		
+GSE253884/compare	TGGT1_224060	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-5.4		
+GSE253884/compare	TGGT1_239752	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-7.457		
+GSE253884/compare	TGGT1_266800	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-4.122		
+GSE253884/compare	TGGT1_277840	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-7.833		
+GSE253884/compare	TGGT1_282190	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-5.061		
+GSE253884/compare	TGGT1_304680	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-6.542		
+GSE253884/compare	TGGT1_310070	Named/validated in vivo virulence genes (TgGTPase, GLT2, VIT, DDI1, Trx4, Nudix, Caax, AAMT, mRNACF, TGGT1_211850)	-3.521		
+GSE253885/compare	TGGT1_203380	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-3.619		
+GSE253885/compare	TGGT1_221640	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-3.385		
+GSE253885/compare	TGGT1_237280	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-3.725		
+GSE253885/compare	TGGT1_240660	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-2.016		
+GSE253885/compare	TGGT1_250790	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-2.614		
+GSE253885/compare	TGGT1_267710	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-2.649		
+GSE253885/compare	TGGT1_273905	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-2.074		
+GSE253885/compare	TGGT1_277870	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-4.521		
+GSE253885/compare	TGGT1_300220	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-4.153		
+GSE253885/compare	TGGT1_312840	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-3.677		
+GSE253885/compare	TGGT1_321310	Named/validated in vivo virulence genes (TgRimM, TBC6, DnaJ, CPSF, EFG1, and hypotheticals 300220/312840/277870/250790/221640/273905)	-5.601		
+GSE255515/compare	Cd80	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-0.9333		
+GSE255515/compare	Cxcl10	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-0.2578		
+GSE255515/compare	Ifng	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-0.001647		
+GSE255515/compare	Tnfsf14	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-1.325		
+GSE255515/compare	Tnfsf18	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-0.5035		
+GSE255515/compare	Tnfsf9	Top immunostimulatory candidates Cd80, Tnfsf14, Cxcl10, Tnfsf18, Tnfsf9 and Ifng	-0.5447		
+GSE255579/compare	CDC6	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.196		
+GSE255579/compare	GINS2	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.29		
+GSE255579/compare	RRM1	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.664		
+GSE255579/compare	SMC5	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.069		
+GSE255579/compare	TYMS	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.17		
+GSE255579/compare_zrsr2	CDC6	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	0.698		
+GSE255579/compare_zrsr2	GINS2	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	0.5733		
+GSE255579/compare_zrsr2	RRM1	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	1.24		
+GSE255579/compare_zrsr2	SMC5	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	0.8484		
+GSE255579/compare_zrsr2	TYMS	18 genes at FDR 0.10 for FANCG, 0 for ZRSR2; GINS2, CDC6, SMC5, RRM1, TYMS named as rescue genes in both	0.7471		
+GSE255664/compare	APITD1	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.8284		
+GSE255664/compare	BABAM1	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.07436		
+GSE255664/compare	BRCC3	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.6159		
+GSE255664/compare	C19orf40	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.7553		
+GSE255664/compare	CDK11B	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.4723		
+GSE255664/compare	FAM175A	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.829		
+GSE255664/compare	FANCB	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.2617		
+GSE255664/compare	FANCC	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.544		
+GSE255664/compare	FANCD2	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.1626		
+GSE255664/compare	FANCE	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.453		
+GSE255664/compare	FANCF	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.6478		
+GSE255664/compare	FANCG	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.6426		
+GSE255664/compare	FANCL	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.4471		
+GSE255664/compare	FANCM	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.04217		
+GSE255664/compare	STRA13	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.8237		
+GSE255664/compare	ZRSR2	2 KO-depleted genes at FDR 0.10 (ACAD10, RMI2); synthetic lethality with FA pathway, BRCA1-A complex and ZRSR2 claimed from top ranks plus validation	-0.4934		
+GSE260469/compare	Tnfrsf11b	OPG/Tnfrsf11b nominated as top positively selected candidate (not FDR-significant), then validated	3.241		
+GSE261338/compare	TOPORS	50 AZA-specific depleted and 11 enriched genes (nine-square groups); UBE2K, UBXN7 and TOPORS top-ranked and validated	-1.139		
+GSE261338/compare	UBE2K	50 AZA-specific depleted and 11 enriched genes (nine-square groups); UBE2K, UBXN7 and TOPORS top-ranked and validated	-1.438		
+GSE261338/compare	UBXN7	50 AZA-specific depleted and 11 enriched genes (nine-square groups); UBE2K, UBXN7 and TOPORS top-ranked and validated	-1.237		
+GSE262028/compare	Fli1	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	0.7468		
+GSE262028/compare	Gfi1b	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	-0.5732		
+GSE262028/compare	Mef2d	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	-0.7255		
+GSE262028/compare	Nfe2	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	-0.7584		
+GSE262028/compare	Nfil3	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	0.5204		
+GSE262028/compare	Nfkb2	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	-0.6468		
+GSE262028/compare	Runx3	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	0.8172		
+GSE262028/compare	Tcf12	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	1.377		
+GSE262028/compare	Zbtb7a	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	0.3063		
+GSE262028/compare	Zfp871	Named IL-13 regulators: Mef2d, Zfp871, Nfkb2, Nfe2, Gfi1b (positive), Runx3, Tcf12, Nfil3, Fli1, Zbtb7a (negative); 13 candidate GATA3 regulators including Mef2d, Maf, Myb, Runx1	-0.7027		
+GSE263580/compare	Bcl2l13	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	1.736		
+GSE263580/compare	Ctnna1	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	1.605		
+GSE263581/compare	Bcl2l13	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	-1.89		
+GSE263581/compare	Ctnna1	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	-1.693		
+GSE263582/compare	Bcl2l13	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	1.462		
+GSE263582/compare	Ctnna1	Ctnna1 and Bcl2l13 validated as metastasis suppressors (loss promotes dissemination)	-0.3804		
+GSE264535/compare	KHNYN	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.06469		
+GSE264535/compare	N4BP1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.8169		
+GSE264535/compare	TRIM25	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	1.571		
+GSE264535/compare	ZC3HAV1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.3762		
+GSE264535/compare_gfplow	ATP6AP1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	2.332		
+GSE264535/compare_gfplow	ATP6V0C	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	1.594		
+GSE264535/compare_gfplow	ATP6V0D1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	2.1		
+GSE264535/compare_gfplow	ATP6V1A	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	1.769		
+GSE264535/compare_gfplow	B4GALT7	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.9518		
+GSE264535/compare_gfplow	EXT1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.9867		
+GSE264535/compare_gfplow	EXT2	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.7148		
+GSE264535/compare_gfplow	EXTL3	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.972		
+GSE264535/compare_gfplow	NDST1	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	0.6949		
+GSE264535/compare_gfplow	SLC35B2	HSPGs and V-ATPase mediate uptake and escape; TRIM25 (with N4BP1, KHNYN, ZAP) suppresses exogenous mRNA	1.435		
+GSE266057/compare	SMG1	NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components	0.05266		
+GSE266057/compare	SMG8	NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components	1.821		
+GSE266057/compare	UPF1	NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components	1.945		
+GSE266057/compare	UPF2	NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components	2.457		
+GSE266057/compare	UPF3B	NMD pathway; top hits SMG8, UPF1, UPF2, UPF3B; SURF but not EJC components	2.329		
+GSE267517/compare	B2m	Mettl5 chosen by integrating screens with clinical data	0.8156		
+GSE267517/compare	Jak1	Mettl5 chosen by integrating screens with clinical data	0.5213		
+GSE267517/compare	Mettl5	Mettl5 chosen by integrating screens with clinical data	-0.1714		
+GSE267517/compare	Rnf31	Mettl5 chosen by integrating screens with clinical data	-0.7039		
+GSE268182/compare	MSANTD3-TMEFF1	TMEFF1 nominated and validated as the restriction factor	0.7398		
+GSE268182/compare	TMEFF1	TMEFF1 nominated and validated as the restriction factor	-0.3755		
+GSE268182/compare_libraryB	MSANTD3-TMEFF1	TMEFF1 nominated and validated as the restriction factor	0.8858		
+GSE268182/compare_libraryB	TMEFF1	TMEFF1 nominated and validated as the restriction factor	-0.2217		
+GSE268342/compare	LH02236	45-48 lncRNAs past the screen threshold; LINC03045 (LH02236) top candidate	0.2488		
+GSE268342/compare	LH02727	45-48 lncRNAs past the screen threshold; LINC03045 (LH02236) top candidate	0.2505		
+GSE270368/compare	SOX2	0 genes at FDR 0.10; 5 negative hits by p < 0.001 and LFC < -1, SOX2 among them (neg rank 11)	-0.1834		
+GSE273069/compare	Pou5f1_p1	ZIC3 and OCT4 (Pou5f1) activate promoter-proximal Xist elements	2.402		
+GSE273069/compare	Zic3_p1	ZIC3 and OCT4 (Pou5f1) activate promoter-proximal Xist elements	1.261		
+GSE273070/compare	Rlim_p1	ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10	-0.5572		
+GSE273070/compare	Tsix_p2	ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10	1.17		
+GSE273070/compare	Xist_p1	ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10	-1.644		
+GSE273070/compare	Zic3_p1	ZIC3 and other X-linked factors activate Xist; 13 promoters at MLE FDR 0.10	-0.6912		
+GSE273299/compare	CSF2	CSF2, SOCS1, PTPN2 top positively selected; 2 of 3 IL4 guides enriched	0.1823		
+GSE273299/compare	IL4	CSF2, SOCS1, PTPN2 top positively selected; 2 of 3 IL4 guides enriched	0.357		
+GSE273299/compare	PTPN2	CSF2, SOCS1, PTPN2 top positively selected; 2 of 3 IL4 guides enriched	0.7233		
+GSE273299/compare	SOCS1	CSF2, SOCS1, PTPN2 top positively selected; 2 of 3 IL4 guides enriched	0.9352		
+GSE275043/compare	ADD1	41 low-bin genes at FDR < 0.15 in both replicates; IRF1, TFAP4 and ADD1 validated	-0.8444		
+GSE275043/compare	IRF1	41 low-bin genes at FDR < 0.15 in both replicates; IRF1, TFAP4 and ADD1 validated	-1.569		
+GSE275043/compare	LGALS9	41 low-bin genes at FDR < 0.15 in both replicates; IRF1, TFAP4 and ADD1 validated	-1.717		
+GSE275043/compare	TFAP4	41 low-bin genes at FDR < 0.15 in both replicates; IRF1, TFAP4 and ADD1 validated	-0.8855		
+GSE275314/compare	ATR	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	0.3158		
+GSE275314/compare	CDK1	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	0.897		
+GSE275314/compare	CDK15	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.7034		
+GSE275314/compare	CHEK1	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.003818		
+GSE275314/compare	EGFR	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	1.732		
+GSE275314/compare	FASTKD3	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.6367		
+GSE275314/compare	ILK	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.8193		
+GSE275314/compare	MAPK1	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	1.633		
+GSE275314/compare	PLK1	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	0.6585		
+GSE275314/compare	PTK2	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.7281		
+GSE275314/compare	RAB11FIP5	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.8053		
+GSE275314/compare	ROCK2	Cell-cycle kinases PLK1, ATR, CHEK1, CDK1 and ILK, PTK2, ROCK2, FASTKD3, CDK15, RAB11FIP5 depleted in resistant cells; EGFR and MAPK1 more essential in parental cells	-0.8431		
+GSE276161/compare	CA12	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.4799		
+GSE276161/compare	DGKH	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.1273		
+GSE276161/compare	ERBB2	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.2333		
+GSE276161/compare	HPGDS	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.5407		
+GSE276161/compare	SCMH1	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	-0.06937		
+GSE276161/compare_crispra	ATP4A	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.1989		
+GSE276161/compare_crispra	CA12	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.02869		
+GSE276161/compare_crispra	CLK2	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.4555		
+GSE276161/compare_crispra	FLT4	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.3101		
+GSE276161/compare_crispra	MAP3K4	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.4041		
+GSE276161/compare_crispra	TWF2	21 CRISPRi and 43 CRISPRa protective genes; CRISPRi top 5 HPGDS, SCMH1, CA12, ERBB2, DGKH; CA12 validated	0.5703		
+GSE277690/compare	BID	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.5194		
+GSE277690/compare	CASP8	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.9292		
+GSE277690/compare	FADD	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.8779		
+GSE277690/compare	FAF1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.6763		
+GSE277690/compare	FAS	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.4951		
+GSE277690/compare	ICAM1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.1234		
+GSE277690/compare	IFNGR1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.5932		
+GSE277690/compare	IFNGR2	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.4288		
+GSE277690/compare	JAK1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.459		
+GSE277690/compare	JAK2	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.4573		
+GSE277690/compare	STAT1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.2642		
+GSE277690/compare_round2	BID	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.41		
+GSE277690/compare_round2	CASP8	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	2.683		
+GSE277690/compare_round2	FADD	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	2.492		
+GSE277690/compare_round2	FAF1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.524		
+GSE277690/compare_round2	FAS	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.9758		
+GSE277690/compare_round2	ICAM1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	0.4422		
+GSE277690/compare_round2	IFNGR1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.682		
+GSE277690/compare_round2	IFNGR2	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.27		
+GSE277690/compare_round2	JAK1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.453		
+GSE277690/compare_round2	JAK2	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.586		
+GSE277690/compare_round2	STAT1	119 NKp44-dependent hits at FDR 0.5; ICAM1, apoptosis and IFN-gamma genes highlighted	1.227		
+GSE277987/compare	ENSG00000072062	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-1.159		
+GSE277987/compare	ENSG00000087460	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-0.9812		
+GSE277987/compare	ENSG00000100029	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-1.135		
+GSE277987/compare	ENSG00000105325	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	2.873		
+GSE277987/compare	ENSG00000111641	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-1.256		
+GSE277987/compare	ENSG00000121281	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-0.7493		
+GSE277987/compare	ENSG00000145041	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	-1.095		
+GSE277987/compare	ENSG00000197323	1,711 genes at FDR 0.05 (2,310 at FDR 0.10); 340 highlighted (FDR 0.05 and |log2 FC| > ~1.1); PRKACA, GNAS, ADCY7 and validated PES1, NOP2, VPRBP, TRIM33, FZR1	1.658		
+GSE278336/compare	MDM4	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-0.868		
+GSE278336/compare	RPL34	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-1.18		
+GSE278336/compare	RPS20	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-0.7374		
+GSE278336/compare	SMC2	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-0.7335		
+GSE278336/compare	SNRPE	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-0.6943		
+GSE278336/compare	XPO1	31 depleted genes (dHyperLbCas12a-KRAB), 5, 1 and 0 for the other repressors (MAGeCK MLE Wald FDR 0.05)	-0.9248		
+GSE280666/compare	OSR2	TP53 the dominant long-term proliferation-enhancer; OSR2 and non-cutting nc_guide2480 enrichment attributed to high-MOI co-inheritance	0.8689		
+GSE280666/compare	PTEN	TP53 the dominant long-term proliferation-enhancer; OSR2 and non-cutting nc_guide2480 enrichment attributed to high-MOI co-inheritance	1.305		
+GSE280666/compare	TP53	TP53 the dominant long-term proliferation-enhancer; OSR2 and non-cutting nc_guide2480 enrichment attributed to high-MOI co-inheritance	3.12		
+GSE280676/compare	MPC1	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.1693		
+GSE280676/compare	MPC2	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.331		
+GSE280676/compare	PTEN	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.8201		
+GSE280676/compare	RUNX1	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.04313		
+GSE280676/compare	SMAD3	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.2547		
+GSE280676/compare	SMAD4	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	1.071		
+GSE280676/compare	SMAD5	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.4546		
+GSE280676/compare	TP53	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	2.196		
+GSE280676/compare	VGLL4	Day 16: 5 enriched and 78 depleted genes at MAGeCK FDR 0.10 (day 30: 11 enriched, 98 depleted); TP53, PTEN and VGLL4 highlighted as proliferation inhibitors	0.6975		
+GSE282260/compare	APEX1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-2.511		
+GSE282260/compare	LIG1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.4854		
+GSE282260/compare	METTL14	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.4111		
+GSE282260/compare	METTL3	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.8721		
+GSE282260/compare	METTL4	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.4096		
+GSE282260/compare	UNG	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-3.199		
+GSE282260/compare_poolB	EXO1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.7189		
+GSE282260/compare_poolB	LIG1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolB	MSH2	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolC	EXO1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolC	LIG1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolC	MSH2	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolD	EXO1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named			
+GSE282260/compare_poolD	LIG1	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.4386		
+GSE282260/compare_poolD	MSH2	873 genes at p < 0.01 and |log2 FC| > 0.5 across pools (542 depleted, 331 enriched); UNG top hit, APEX1, LIG1, MSH2, EXO1, METTL3, METTL14, METTL4 named	-0.4699		
+GSE284239/compare	PARP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	-1.261		
+GSE284239/compare	RAD18	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.478		
+GSE284239/compare	RFWD3	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	2.071		
+GSE284239/compare	UBE2A	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	0.8813		
+GSE284239/compare	UBE2K	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	0.4541		
+GSE284239/compare	USP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	2.615		
+GSE284239/compare_gw_cov362	PARP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	-2.107		
+GSE284239/compare_gw_cov362	RAD18	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.993		
+GSE284239/compare_gw_hcc1395	PARP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	-2.107		
+GSE284239/compare_gw_hcc1395	RAD18	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.993		
+GSE284239/compare_mda	PARP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	-1.064		
+GSE284239/compare_mda	RAD18	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.66		
+GSE284239/compare_mda	RFWD3	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	0.9961		
+GSE284239/compare_mda	UBE2A	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	2.454		
+GSE284239/compare_mda	UBE2K	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.698		
+GSE284239/compare_uwb_olaparib	PARP1	RAD18, UBE2K, UBE2A, RFWD3 resistance; PARP1 sensitizer (90-360 genes per direction at p < 0.05)	1.416		
+GSE287048/compare	CDK2	HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched	1.73		
+GSE287048/compare_depleted	CCNB1	HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched	-3.475		
+GSE287048/compare_depleted	FOXM1	HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched	-2.115		
+GSE287048/compare_depleted	MTR	HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched	-2.766		
+GSE287048/compare_miapaca	CDK2	HCC1806: CDK2, DYRK1A enriched, 55 depleted at FDR 0.10; MIA PaCa-2: 6 enriched	3.133		
+GSE287053/compare	Cdk10	CDK10 as key immune-evasion kinase	-0.9993		
+GSE288230/compare	ALAS2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-1.125		
+GSE288230/compare	GATA1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.2738		
+GSE288230/compare	KLF1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.9293		
+GSE288230/compare	NHLRC2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-1.295		
+GSE288230/compare	VAC14	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.278		
+GSE288230/compare_genome_scale	ALAS2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-1.125		
+GSE288230/compare_genome_scale	GATA1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.2738		
+GSE288230/compare_genome_scale	KLF1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.9293		
+GSE288230/compare_genome_scale	NHLRC2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-1.295		
+GSE288230/compare_genome_scale	VAC14	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.278		
+GSE288230/compare_secondary	ALAS2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-1.357		
+GSE288230/compare_secondary	GATA1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.5222		
+GSE288230/compare_secondary	KLF1	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.04079		
+GSE288230/compare_secondary	NHLRC2	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo			
+GSE288230/compare_secondary	VAC14	277 genes required for terminal erythroid differentiation; NHLRC2 and VAC14 named, VAC14 validated in vivo	-0.4313		
+GSE288238/compare	HDAC3	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	0.9594		
+GSE288238/compare	TBK1	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	2.355		
+GSE288238/compare	TBL1XR1	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	1.793		
+GSE288238/compare	TMEM173	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	3.003		
+GSE288238/compare_primed	HDAC3	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	2.071		
+GSE288238/compare_primed	TBK1	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	1.633		
+GSE288238/compare_primed	TBL1XR1	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	1.902		
+GSE288238/compare_primed	TMEM173	Genome-wide positive and negative regulators of cGAS-STING-induced IFNB1 in unprimed and primed cells; TBL1XR1 and HDAC3 highlighted	4.564		
+GSE289756/compare	AP2A1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	1.291		
+GSE289756/compare	AP2A2	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.9066		
+GSE289756/compare	AP2B1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.8687		
+GSE289756/compare	AP2M1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	2.187		
+GSE289756/compare	AP2S1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	2.22		
+GSE289756/compare	PTEN	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	3.358		
+GSE289756/compare_cfpac1	AP2A1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.7714		
+GSE289756/compare_cfpac1	AP2A2	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.3019		
+GSE289756/compare_cfpac1	AP2B1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.4753		
+GSE289756/compare_cfpac1	AP2M1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.4074		
+GSE289756/compare_cfpac1	AP2S1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.58		
+GSE289756/compare_cfpac1	PTEN	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.2073		
+GSE289756/compare_hpafii	AP2A1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	1.046		
+GSE289756/compare_hpafii	AP2A2	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.4634		
+GSE289756/compare_hpafii	AP2B1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.5365		
+GSE289756/compare_hpafii	AP2M1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.8738		
+GSE289756/compare_hpafii	AP2S1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	1.18		
+GSE289756/compare_hpafii	PTEN	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.6614		
+GSE289756/compare_miapaca2	AP2A1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	-0.2448		
+GSE289756/compare_miapaca2	AP2A2	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.4919		
+GSE289756/compare_miapaca2	AP2B1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	-0.1934		
+GSE289756/compare_miapaca2	AP2M1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	3.639		
+GSE289756/compare_miapaca2	AP2S1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	2.864		
+GSE289756/compare_miapaca2	PTEN	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	1.954		
+GSE289756/compare_panc1	AP2A1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.3305		
+GSE289756/compare_panc1	AP2A2	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	0.3828		
+GSE289756/compare_panc1	AP2B1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	1.086		
+GSE289756/compare_panc1	AP2M1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	2.258		
+GSE289756/compare_panc1	AP2S1	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	3.001		
+GSE289756/compare_panc1	PTEN	14-39 genes per line at FDR 0.10; AP2 subunits and PTEN enriched in vivo	4.985		
+GSE290153/compare	Atm	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	-0.03267		
+GSE290153/compare	Brca1	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.07265		
+GSE290153/compare	Brca2	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.07281		
+GSE290153/compare	Lig4	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.09798		
+GSE290153/compare	Mre11a	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.04737		
+GSE290153/compare	Palb2	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.04387		
+GSE290153/compare	Parp1	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	-0.06352		
+GSE290153/compare	Trp53bp1	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	-0.0832		
+GSE290153/compare	Ubr5	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.2061		
+GSE290153/compare	Xrcc5	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.06447		
+GSE290153/compare	Xrcc6	Genetic-interaction map (e.g. BRCA1 x PARP10, UBR5 x MRE11, PARP1 x PARP2); no short single-gene hit list	0.02508		
+GSE290358/compare	F11R	ZEB1 and FGFR1 the strongest negative regulators of JAM-A (both validated); F11R (the JAM-A gene) the top positive control	-2.386		
+GSE290358/compare	FGFR1	ZEB1 and FGFR1 the strongest negative regulators of JAM-A (both validated); F11R (the JAM-A gene) the top positive control	1.854		
+GSE290358/compare	ZEB1	ZEB1 and FGFR1 the strongest negative regulators of JAM-A (both validated); F11R (the JAM-A gene) the top positive control	2.003		
+GSE291338/compare	BAX	Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1	0.03332		
+GSE291338/compare	CEBPE	Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1	2.724		
+GSE291338/compare	HNRNPU	Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1	2.791		
+GSE291338/compare	IKZF1	Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1	2.966		
+GSE291338/compare	RB1	Ven: BAX, PMAIP1; palbo: RB1, HNRNPU, CEBPE; combo: IKZF1	1.896		
+GSE291529/compare	CPSF2	340 candidate genes (189 sensitizers, 151 resistance); SLC6A9 and CPSF2 validated	1.737		
+GSE291529/compare	SLC6A9	340 candidate genes (189 sensitizers, 151 resistance); SLC6A9 and CPSF2 validated	0.9099		
+GSE293842/compare	ILK	44 genes at fold change < -0.3; ILK, PTK2, PIKFYVE, PIK3C3 highlighted	-0.5115		
+GSE293842/compare	PIK3C3	44 genes at fold change < -0.3; ILK, PTK2, PIKFYVE, PIK3C3 highlighted	-0.3051		
+GSE293842/compare	PIKFYVE	44 genes at fold change < -0.3; ILK, PTK2, PIKFYVE, PIK3C3 highlighted	-0.4868		
+GSE293842/compare	PTK2	44 genes at fold change < -0.3; ILK, PTK2, PIKFYVE, PIK3C3 highlighted	-0.5175		
+GSE294894/compare	SLC43A1	SLC43A1 most enriched in both KO screens and depleted in both activation screens	8.843		
+GSE298081/compare	GOSR1	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	-0.2958		
+GSE298081/compare	RAB1A	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	-0.2559		
+GSE298081/compare	SEC23IP	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	-0.4493		
+GSE298081/compare	TRAPPC12	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	-0.3596		
+GSE298081/compare	VAMP3	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	-0.6188		
+GSE298081/compare	YKT6	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	0.05223		
+GSE298081/compare_positive	ABHD16A	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	0.4454		
+GSE298081/compare_positive	ABHD17B	626 negative and 564 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either rich-medium screen GIN003/GIN044; MCMC consensus 316 negative, 416 positive	0.589		
+GSE298082/compare	GOSR1	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.3213		
+GSE298082/compare	RAB1A	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.6818		
+GSE298082/compare	SEC23IP	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.6252		
+GSE298082/compare	TRAPPC12	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.5527		
+GSE298082/compare	VAMP3	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.5755		
+GSE298082/compare	YKT6	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	-0.01387		
+GSE298082/compare_positive	ABHD16A	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	0.5557		
+GSE298082/compare_positive	ABHD17B	413 negative and 405 positive PTAR1 interactions (|qGI| > 0.3, FDR < 0.1) in either minimal-medium screen GIN043/GIN109	0.8424		
+GSE299588/compare	PROM1	SOX2 as the key regulator of PROM1 (CD133)	-1.725		
+GSE299588/compare	SOX2	SOX2 as the key regulator of PROM1 (CD133)	-1.98		
+GSE302335/compare	ICAM1_P1P2	ICAM1 (positive control) and new ICAM-1 regulators	3.096		
+GSE302335/compare	TRAF6_P1P2	ICAM1 (positive control) and new ICAM-1 regulators	2.978		
+GSE302546/compare	GINS4	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.6529		
+GSE302546/compare	LONP1	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.6647		
+GSE302546/compare	LSM11	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.5707		
+GSE302546/compare	POLR3H	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.8197		
+GSE302546/compare	PSMG4	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.6307		
+GSE302546/compare	TPI1	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.368		
+GSE302546/compare	TRAPPC4	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.7977		
+GSE302546/compare	USP5	2,046 depleted genes at FDR 0.10; top five POLR3H, TRAPPC4, PSMG4, LSM11, LONP1 prioritized	-0.5611		
+GSE306142/compare	AKT1	Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways	-0.0838		
+GSE306142/compare	EED	Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways	0.7646		
+GSE306142/compare	MTOR	Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways	0.09576		
+GSE306142/compare	PIK3CA	Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways	0.1853		
+GSE306142/compare	PLK1	Sensitizers intersected with phosphoproteomics point to mTOR, AKT, PLK1 and PI3K pathways	0.8375		
+GSE307513/compare	LAMP1	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.512		
+GSE307513/compare	RAB27A	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.167		
+GSE307513/compare	SNAP23	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.495		
+GSE307513/compare	SPTLC1	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.13		
+GSE307513/compare	SPTLC2	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.468		
+GSE307513/compare	STXBP2	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.108		
+GSE307513/compare	UNC13D	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-0.7301		
+GSE307513/compare	ZDHHC17	ZDHHC17, SNAP23 and serine palmitoyltransferase (SPTLC1/SPTLC2) named as degranulation regulators	-1.822		
+GSE312143/compare	Tada2b	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-3.16		
+GSE312143/compare	Taf5l	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-0.8461		
+GSE312143/compare	Taf6l	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-1.766		
+GSE312143/compare_gwACOC	Cic	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	8.169		
+GSE312143/compare_gwACOC	Gata3	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	6.704		
+GSE312143/compare_gwACOC	Runx1	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-3.579		
+GSE312143/compare_gwDTKP	Tada1	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-1.678		
+GSE312143/compare_gwGE	Tada2b	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-0.332		
+GSE312143/compare_gwGE	Taf5l	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	2.729		
+GSE312143/compare_gwGE	Taf6l	33 genes at casTLE BH 0.10 genome-wide (HSPC vs all lineages); 4 in the GE screen (Tada2b, Taf5l, Taf6l, Nop2)	-1.555		
+GSE316868/compare	CCNC	CCNC (Cyclin C) required for PRCC-TFE3 senescence	5.703		
+GSE316868/compare	CDK8	CCNC (Cyclin C) required for PRCC-TFE3 senescence			
+GSE316868/compare	CDKN1A	CCNC (Cyclin C) required for PRCC-TFE3 senescence	1.394		
+GSE316868/compare	MED12	CCNC (Cyclin C) required for PRCC-TFE3 senescence	1.382		
+GSE316868/compare	MED13	CCNC (Cyclin C) required for PRCC-TFE3 senescence	0.7926		
+GSE316868/compare	TP53	CCNC (Cyclin C) required for PRCC-TFE3 senescence	0.6683		
+GSE316985/compare	ATF7IP	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.05014		
+GSE316985/compare	CASP8	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.2765		
+GSE316985/compare	CD58	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.2931		
+GSE316985/compare	CFLAR	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.3511		
+GSE316985/compare	CREBBP	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.3196		
+GSE316985/compare	HLA-A	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.2321		
+GSE316985/compare	IFNGR1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.4381		
+GSE316985/compare	IFNGR2	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.5011		
+GSE316985/compare	IRF1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1775		
+GSE316985/compare	JAK1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1916		
+GSE316985/compare	JAK2	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1941		
+GSE316985/compare	PRMT7	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.0538		
+GSE316985/compare	TAP1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.2313		
+GSE316985/compare_crispri	ATF7IP	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.2034		
+GSE316985/compare_crispri	CASP8	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.04598		
+GSE316985/compare_crispri	CD58	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.4346		
+GSE316985/compare_crispri	CFLAR	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.1321		
+GSE316985/compare_crispri	CREBBP	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.01032		
+GSE316985/compare_crispri	HLA-A	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.06627		
+GSE316985/compare_crispri	IFNGR1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.5304		
+GSE316985/compare_crispri	IFNGR2	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.5184		
+GSE316985/compare_crispri	IRF1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.3582		
+GSE316985/compare_crispri	JAK1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1233		
+GSE316985/compare_crispri	JAK2	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1909		
+GSE316985/compare_crispri	NLRC5	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.159		
+GSE316985/compare_crispri	PRMT7	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	-0.22		
+GSE316985/compare_crispri	TAP1	33 modulators; validated IRF1, ATF7IP, CASP8 (resistors) and CFLAR, CREBBP, PRMT7 (sensitizers); PRMT7 lead target	0.1383		
+GSE318501/compare	mir-18a	miR-18a loss drives vemurafenib resistance	0.5145		
+GSE318876/compare	ITM2A	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.6889		
+GSE318876/compare	PI16	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.5619		
+GSE318876/compare	PPID	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	1.013		
+GSE318876/compare	SHISA3	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.8138		
+GSE318876/compare_calB	ITM2A	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.7171		
+GSE318876/compare_calB	PI16	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	1.124		
+GSE318876/compare_calB	PPID	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	1.077		
+GSE318876/compare_calB	SHISA3	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	1.175		
+GSE318876/compare_crisprn	CD4	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.7596		
+GSE318876/compare_crisprn	CXCR4	226 CRISPRa and 112 CRISPRn genes negative-selected at FDR 0.10; antiviral factors PI16, PPID, SHISA3 and ITM2A highlighted	0.957		
+GSE325129/compare	NBR1	NFXL1 named as the screen hit; no gene table published	0.2171		
+GSE325129/compare	NFXL1	NFXL1 named as the screen hit; no gene table published	0.2552		
+GSE325129/compare	TEX264	NFXL1 named as the screen hit; no gene table published	0.02823		
+GSE327124/compare	TNFAIP3	TNFAIP3 as central regulator of inflammatory polarization	0.2251		
+GSE328107/compare	NF1	NF1/RASA2 enriched in KRAS-KO; KRAS and RAS/MAPK effectors depleted in KRAS-intact	4.657		
+GSE328107/compare	RASA2	NF1/RASA2 enriched in KRAS-KO; KRAS and RAS/MAPK effectors depleted in KRAS-intact	3.425		
+GSE328470/compare	BOLA3	1,187 YFP-low genes enriched in both experiments (no gene at MAGeCK FDR 0.10); eIF5A the only strongly enriched gene; mitochondrial genes enriched	0.8473		
+GSE328470/compare	COMMD10	1,187 YFP-low genes enriched in both experiments (no gene at MAGeCK FDR 0.10); eIF5A the only strongly enriched gene; mitochondrial genes enriched	1.017		
+GSE328470/compare	EIF5A	1,187 YFP-low genes enriched in both experiments (no gene at MAGeCK FDR 0.10); eIF5A the only strongly enriched gene; mitochondrial genes enriched	1.849		
+GSE328830/compare	KIF11	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	-1.635		
+GSE328830/compare	KMT2C	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	1.994		
+GSE328830/compare	KMT2D	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	-1.605		
+GSE328830/compare	MYC	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	-1.855		
+GSE328830/compare	PLK1	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	-0.9224		
+GSE328830/compare	PTEN	Essential-gene dropout (e.g. PLK1) reproducible with ~30 tumors; KMT2C and KMT2D opposite in vivo phenotypes; 173 in-vivo-specific hits	1.949		
+GSE333513/compare	AMBRA1	1,812 candidates at nominal p < 0.05; 10 selected	-1.427		
+GSE333513/compare	CDK8	1,812 candidates at nominal p < 0.05; 10 selected	1.053		
+GSE333513/compare	FAT2	1,812 candidates at nominal p < 0.05; 10 selected	0.9929		
+GSE333513/compare	GSK3B	1,812 candidates at nominal p < 0.05; 10 selected	0.8795		
+GSE333513/compare	KEAP1	1,812 candidates at nominal p < 0.05; 10 selected	-1.574		
+GSE333513/compare	MED17	1,812 candidates at nominal p < 0.05; 10 selected	0.9076		
+GSE333513/compare	MORF4L1	1,812 candidates at nominal p < 0.05; 10 selected	1.772		
+GSE333513/compare	MRFAP1	1,812 candidates at nominal p < 0.05; 10 selected	-6.237		
+GSE333513/compare	PDGFD	1,812 candidates at nominal p < 0.05; 10 selected	-1.223		
+GSE333513/compare	TGFBR2	1,812 candidates at nominal p < 0.05; 10 selected	-3.077		

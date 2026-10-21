@@ -55,7 +55,8 @@ page <- function(title, body, description = "", main_class = "") {
 </head>
 <body%s>
 <header class="top"><a class="brand" href="index.html">BARCS reanalyses</a>
-<a class="ext" href="https://github.com/jeonglab-bcm/barcs">Package</a></header>
+<nav class="links"><a class="ext" href="evidence-graph/">Evidence graph</a>
+<a class="ext" href="https://github.com/jeonglab-bcm/barcs">Package</a></nav></header>
 <main%s>
 %s
 </main>
@@ -383,6 +384,7 @@ a { color: var(--accent); }
 .top { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; padding: 16px; }
 .brand { font-weight: 650; color: var(--ink); text-decoration: none; }
 .ext { color: var(--ink-2); font-size: 14px; }
+.links { display: flex; gap: 16px; }
 main { max-width: 1080px; margin: 0 auto; padding: 8px 16px 48px; }
 main.wide, .wide-page .top, .wide-page footer { max-width: 1480px; }
 footer { max-width: 1080px; margin: 0 auto; padding: 24px 16px 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }

@@ -1,0 +1,23 @@
+anchor_genes	name	theme
+IFNGR1,JAK1	IFN-γ / IL-2 JAK–STAT	immune signalling
+TAP1,B2M	MHC-I antigen presentation	immune signalling
+CASP8,FADD	Death receptor: FADD–CASP8	immune signalling
+TNFRSF1A	TNF receptor / LUBAC	immune signalling
+HIF1A,ARNT	HIF-1 hypoxia response	signalling
+WDR24	GATOR2 (mTORC1 nutrient sensing)	signalling
+TP53,SP1	TP53 / E2F1 / SP1	signalling
+EMC1	ER membrane complex (EMC)	membrane & trafficking
+COMMD5	Commander (CCC) complex	membrane & trafficking
+TSG101	ESCRT-I / II	membrane & trafficking
+VPS39,RAB7A	HOPS / late endosome fusion	membrane & trafficking
+SUPT7L	SAGA + TFIIA	transcription machinery
+MED4	Mediator	transcription machinery
+MEAF6	NuA4 / MSL acetyltransferases	transcription machinery
+SIN3B	SIN3B complex	transcription machinery
+LIN37,E2F4	DREAM (cell-cycle genes)	transcription machinery
+MRPS7	Mitochondrial ribosome	mitochondria
+MRPL32	Mitochondrial ribosome (large)	mitochondria
+NDUFV2	Respiratory chain	mitochondria
+FANCA	Fanconi anaemia core	DNA & RNA
+ELP1	Elongator (tRNA modification)	DNA & RNA
+G3BP2,ATXN2L	Stress granule: G3BP2–ATXN2L	DNA & RNA

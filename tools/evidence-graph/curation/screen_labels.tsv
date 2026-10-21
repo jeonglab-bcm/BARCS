@@ -1,0 +1,49 @@
+contrast_id	label
+GSE171674:CD25_high_vs_low	CD25 level, primary T cells
+GSE179799:5637_GC_vs_Saline_d15	Gemcitabine + cisplatin, 5637 bladder
+GSE179799:KU1919_GC_vs_Saline_d15	Gemcitabine + cisplatin, KU1919 bladder
+GSE179799:both_GC_vs_Saline_d15	Gemcitabine + cisplatin, both lines
+GSE206832:CD86_secondary_low_vs_high	CD86 level, mouse myeloid cells
+GSE209750:infected_vs_mock	SARS-CoV-2 infection
+GSE212152:establishment_GFP_vs_unsorted	Heterochromatin reporter, mouse
+GSE219136:nf2ko_vs_wt_t7	NF2 loss, Schwann cells
+GSE221576:GSI_vs_DMSO	Notch inhibitor (GSI), T-ALL
+GSE222531:LGR_dasatinib_vs_DMSO	Dasatinib (CRISPRi)
+GSE225235:CD58low_vs_mid	CD58 level, tumour cells
+GSE225878:D4_CD200high_vs_low	Chondrocyte maturation (CD200), mouse
+GSE237953:FKBP5low_vs_high	FKBP5 induction reporter
+GSE240110:MRTX_vs_DMSO	KRAS G12C inhibitor (MRTX849)
+GSE240870:ISX9_vs_DMSO	ISX9 reprogramming drug (CRISPRa)
+GSE241933:KO_noBATF3_IL7R_high_vs_low	IL7R level, CD8 T cells
+GSE241933:KO_withBATF3_IL7R_high_vs_low	IL7R level, CD8 T cells + BATF3
+GSE242880:HighCov_LowMOI_Q4_vs_Q1	CD25 level, T cells (high coverage)
+GSE242880:LowCov_HighMOI_Q4_vs_Q1	CD25 level, T cells (low coverage)
+GSE245845:proinsulin_hi_vs_lo	Proinsulin level, mouse beta cells
+GSE246837:Mettl3i_vs_DMSO_coculture	METTL3 inhibitor + T cells, mouse tumour
+GSE246837:Tcells_1to5_vs_none	Tumour cells vs T cells, mouse
+GSE251758:acute_vs_pre	T-cell acute stimulation, mouse
+GSE251758:intense_vs_pre	T-cell intense stimulation, mouse
+GSE261338:AZA_vs_DMSO	Azacitidine, AML
+GSE266057:high_vs_low	RNA structural-switch reporter (CRISPRi)
+GSE267517:tcell_et02_vs_ctrl	Ovarian tumour vs T cells (E:T 0.2), mouse
+GSE267517:tcell_et1_vs_ctrl	Ovarian tumour vs T cells (E:T 1), mouse
+GSE275043:gal9_high_vs_low	Galectin-9 level
+GSE277690:khyg1_r2_vs_collection	Tumour cells vs NK cells (KHYG-1)
+GSE277690:khyg1_vs_nkp44ko_r1	NK killing, WT vs NKp44-KO NK cells
+GSE277987:high_vs_basal	Kinase-activity recorder, high
+GSE277987:low_vs_basal	Kinase-activity recorder, low
+GSE282260:poolB_FdU_vs_DMSO_E	Floxuridine (FdU), pool B
+GSE282260:poolB_FdU_vs_DMSO_EU	Floxuridine (FdU), pool B, EU
+GSE282260:poolD_FdU_vs_DMSO_EU	Floxuridine (FdU), pool D, EU
+GSE288238:primed_GFPneg_vs_GFPhigh	Type I IFN reporter, monocytes
+GSE291338:palbo_vs_dmso	Palbociclib (CDK4/6i), AML
+GSE298081:ptar1_vs_wt_gi	PTAR1 genetic interaction (1)
+GSE298082:ptar1_vs_wt_gi	PTAR1 genetic interaction (2)
+GSE302335:cd54_low_vs_high	CD54 (ICAM-1) level (CRISPRi)
+GSE307513:CD107a_hi_vs_neg	Cytotoxic granule release (CD107a)
+GSE316868:tfe3_on_vs_off	PRCC-TFE3 induction, renal cells
+GSE316985:CRISPRi_T_vs_noT_D11	Breast tumour vs T cells (CRISPRi)
+GSE316985:KO_T_vs_noT_D11	Breast tumour vs T cells (KO)
+GSE318876:calA_GFPneg_vs_GFPpos	HIV infection, CD4 T cells (CRISPRa)
+GSE318876:crisprn_GFPneg_vs_GFPpos	HIV infection, CD4 T cells (KO)
+GSE325129:MHChigh_vs_MHClow	MHC-I surface level (CRISPRi)

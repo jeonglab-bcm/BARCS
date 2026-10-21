@@ -1,0 +1,10 @@
+{
+  "name": "barcs-kg-layout",
+  "private": true,
+  "type": "module",
+  "description": "Offline ForceAtlas2 layout for the unified graph",
+  "dependencies": {
+    "graphology": "0.25.4",
+    "graphology-layout-forceatlas2": "0.10.1"
+  }
+}
