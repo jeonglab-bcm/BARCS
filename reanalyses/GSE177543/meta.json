@@ -1,0 +1,18 @@
+{
+  "gse": "GSE177543",
+  "pmid": "35086559",
+  "doi": "10.1186/s13073-022-01013-1",
+  "pmcid": "PMC8792531",
+  "title": "Genome-wide knockout screen of OC43/SARS-CoV2-infected HEK293-hACE2 cells II",
+  "journal": "Genome Medicine",
+  "published": "2022",
+  "model": "HEK293T-hACE2 cells, Brunello genome-wide knockout library, SARS-CoV-2 MOI 0.3 survival selection",
+  "contrast": "SARS-CoV-2 vs uninfected day-10 control library (3 vs 3)",
+  "paper_method": "MAGeCK RRA, positively selected genes (Additional file 7)",
+  "paper_calls": "CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)",
+  "barcs_calls": "41 genes at FDR 0.10 (31 enriched) after control calibration; 63 against the control null",
+  "named_hits": "7/7 at FDR 0.10: TMEM251 #1, CTSL #2, CCZ1B #3, CCZ1 #4, CDH2 #8, ACE2 #17, C18orf8 #25",
+  "verdict": "BARCS recovers all seven named endolysosomal entry factors at FDR 0.10, with TMEM251, CTSL and the CCZ1 complex at the very top (rank correlation 0.62, 16 of 20 shared).",
+  "agreement": "agree",
+  "analyzed": "2026-10-23"
+}
