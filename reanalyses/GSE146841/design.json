@@ -1,0 +1,126 @@
+{
+  "gse": "GSE146841",
+  "pmid": "33384352",
+  "counts_file": "sample_suppl/GSM4407718_count.tsv.gz",
+  "guide_column": "barcode",
+  "gene_column": "gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "fetch": {
+    "sample_files": true
+  },
+  "samples": [
+    {
+      "column": "Tm_H_1",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "high",
+      "rep": "A"
+    },
+    {
+      "column": "Tm_H_2",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "high",
+      "rep": "B"
+    },
+    {
+      "column": "Tm_H_3",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "high",
+      "rep": "C"
+    },
+    {
+      "column": "Tm_L_1",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "low",
+      "rep": "A"
+    },
+    {
+      "column": "Tm_L_2",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "low",
+      "rep": "B"
+    },
+    {
+      "column": "Tm_L_3",
+      "gsm": "GSM4407718",
+      "treatment": "Tm",
+      "sort": "low",
+      "rep": "C"
+    },
+    {
+      "column": "DMSO_H_1",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "high",
+      "rep": "A"
+    },
+    {
+      "column": "DMSO_H_2",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "high",
+      "rep": "B"
+    },
+    {
+      "column": "DMSO_H_3",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "high",
+      "rep": "C"
+    },
+    {
+      "column": "DMSO_L_1",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "low",
+      "rep": "A"
+    },
+    {
+      "column": "DMSO_L_2",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "low",
+      "rep": "B"
+    },
+    {
+      "column": "DMSO_L_3",
+      "gsm": "GSM4407718",
+      "treatment": "DMSO",
+      "sort": "low",
+      "rep": "C"
+    }
+  ],
+  "factor_levels": {
+    "sort": [
+      "low",
+      "high"
+    ],
+    "rep": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "Tm_GFPhigh_vs_low",
+      "columns": [
+        "Tm_H_1",
+        "Tm_H_2",
+        "Tm_H_3",
+        "Tm_L_1",
+        "Tm_L_2",
+        "Tm_L_3"
+      ],
+      "formula": "~ rep + sort",
+      "term": "sorthigh"
+    }
+  ],
+  "rationale": "Genome-wide knockout library (about 4 guides per gene, 1,000 non-targeting) in HT29 cells carrying an endogenous XBP1s-GFP reporter, treated with tunicamycin (Tm) or DMSO and FACS-sorted into GFP-high and GFP-low bins in three replicates (You et al. 2021). GEO deposits everything under one GSM; column names give treatment, bin and replicate, and the sample index file lists replicates A-C. Replicate libraries correlate most strongly with the same replicate in the other bin and treatment (Spearman 0.57-0.64 vs about 0.45), so high and low bins of a replicate come from the same edited pool and replicate is paired in the model (~ rep + sort). The main contrast is GFP-high vs GFP-low under tunicamycin, the authors' Tm_H-Tm_L MAGeCK-MLE comparison deposited alongside the counts.",
+  "counts_md5": "b1aafc286785799e9c7bb6c596d223e2"
+}
