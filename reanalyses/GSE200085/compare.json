@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/hPi_vs_control_grafts/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["CXCL10", "B2M", "HLA-A", "TAP1", "TAP2", "STAT1", "JAK1", "JAK2"],
+  "published": {
+    "file": "paper/invivo_screen.tsv",
+    "gene_column": "gene", "score_column": "signed_score", "score_better": "higher",
+    "effect_column": "fold_change"
+  },
+  "top_n": [25, 50, 100, 150]
+}

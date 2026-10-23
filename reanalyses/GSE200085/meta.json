@@ -1,0 +1,18 @@
+{
+  "gse": "GSE200085",
+  "pmid": "36055241",
+  "doi": "10.1016/j.stemcr.2022.08.002",
+  "pmcid": "PMC9481918",
+  "title": "Whole-genome CRISPR screening identifies genetic manipulations to reduce immune rejection of stem cell-derived islets",
+  "journal": "Stem Cell Reports",
+  "published": "2022",
+  "model": "hESC-derived SC-islet grafts in NSG-MHC-null mice, Brunello genome-wide knockout library",
+  "contrast": "hPi (PBMC-injected) vs control grafts, week 10 (5 vs 6 mice), control-normalized",
+  "paper_method": "Per-gene negative-binomial mixed model (glmer.nb), KO x PBMC interaction LRT against non-targeting guides",
+  "paper_calls": "150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)",
+  "barcs_calls": "1 gene at FDR 0.10 (PPP6C, depleted); 0 against the control null",
+  "named_hits": "0/8 at FDR 0.10 (CXCL10 rank 1181, STAT1 51; B2M/HLA/TAP/JAK unranked)",
+  "verdict": "Gene scores track the paper (Spearman 0.89) but BARCS calls almost nothing: the immune-evasion hits like CXCL10 depend on a mixed model pooling mouse/guide variance plus an expression filter, and the large between-animal spread leaves them short of FDR in BARCS's per-guide test.",
+  "agreement": "differ",
+  "analyzed": "2026-10-23"
+}

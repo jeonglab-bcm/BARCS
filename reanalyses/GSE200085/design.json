@@ -1,0 +1,106 @@
+{
+  "gse": "GSE200085",
+  "pmid": "36055241",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Ms64_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms64"
+    },
+    {
+      "column": "Ms69_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms69"
+    },
+    {
+      "column": "Ms70_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms70"
+    },
+    {
+      "column": "Ms73_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms73"
+    },
+    {
+      "column": "Ms74_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms74"
+    },
+    {
+      "column": "Ms78_Ctrl",
+      "gsm": "GSM6008413",
+      "condition": "control",
+      "replicate": "Ms78"
+    },
+    {
+      "column": "Ms65",
+      "gsm": "GSM6008413",
+      "condition": "hPi",
+      "replicate": "Ms65"
+    },
+    {
+      "column": "Ms67",
+      "gsm": "GSM6008413",
+      "condition": "hPi",
+      "replicate": "Ms67"
+    },
+    {
+      "column": "Ms68",
+      "gsm": "GSM6008413",
+      "condition": "hPi",
+      "replicate": "Ms68"
+    },
+    {
+      "column": "Ms72",
+      "gsm": "GSM6008413",
+      "condition": "hPi",
+      "replicate": "Ms72"
+    },
+    {
+      "column": "Ms76",
+      "gsm": "GSM6008413",
+      "condition": "hPi",
+      "replicate": "Ms76"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "control",
+      "hPi"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "hPi_vs_control_grafts",
+      "columns": [
+        "Ms64_Ctrl",
+        "Ms69_Ctrl",
+        "Ms70_Ctrl",
+        "Ms73_Ctrl",
+        "Ms74_Ctrl",
+        "Ms78_Ctrl",
+        "Ms65",
+        "Ms67",
+        "Ms68",
+        "Ms72",
+        "Ms76"
+      ],
+      "formula": "~ condition",
+      "term": "conditionhPi",
+      "totals": "control"
+    }
+  ],
+  "counts_md5": "05defb548ce4d0cd00df9920a98e041f",
+  "rationale": "In vivo genome-wide Brunello knockout screen in human SC-islets (from hESC) transplanted under the kidney capsule of NSG-MHC-null mice; half the mice received allogeneic human PBMCs (hPi grafts) and grafts were recovered 10 weeks later. One GEO sample (GSM6008413) holds a PoolQ count table with one column per mouse graft (sample_info: Ms #64/69/70/73/74/78 Ctrl = control grafts; Ms #65/67/68/72/76/79 = hPi grafts) plus pre-transplant, NTC and plasmid libraries, which are not used. Knockouts that let SC-islet cells escape allo-rejection are enriched in hPi grafts relative to control grafts. Ms #79 (hPi) is left out: it has 42,430 reads over 77,441 guides (78% zeros) and correlates at most 0.22 with any other library, a failed library. The paper modelled guide counts relative to non-targeting guides (KO x PBMC interaction against the NT guides), and immune rejection removes cells from hPi grafts, so totals are taken from the non-targeting controls ('totals': 'control'). Each mouse is its own library; mice are not paired across arms."
+}
