@@ -1,0 +1,55 @@
+{
+  "gse": "GSE145615",
+  "pmid": "33442060",
+  "counts_file": "suppl/GSE145615_CRISPR_count.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Ctrl$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "ScreenII_late_-blast_rep1",
+      "gsm": "GSM4322257",
+      "selection": "unselected",
+      "replicate": "rep1"
+    },
+    {
+      "column": "ScreenII_late_-blast_rep2",
+      "gsm": "GSM4322258",
+      "selection": "unselected",
+      "replicate": "rep2"
+    },
+    {
+      "column": "ScreenII_late_+blast_rep1",
+      "gsm": "GSM4322261",
+      "selection": "blast",
+      "replicate": "rep1"
+    },
+    {
+      "column": "ScreenII_late_+blast_rep2",
+      "gsm": "GSM4322262",
+      "selection": "blast",
+      "replicate": "rep2"
+    }
+  ],
+  "factor_levels": {
+    "selection": [
+      "unselected",
+      "blast"
+    ],
+    "replicate": [
+      "rep1",
+      "rep2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "blast_vs_unselected",
+      "formula": "~ replicate + selection",
+      "term": "selectionblast",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Genome-wide KO screen in mESCs carrying an IAPEz (ERV) reporter that confers blasticidin resistance when the ERV is de-repressed; knockouts of ERV-restriction factors (m6A writers Mettl3/Mettl14/Wtap/Zc3h13) survive blasticidin and are enriched in +blast cells. Screen II late selection has two replicates per arm (+blast vs -blast), paired by replicate (1 residual df). Positive selection collapses the +blast libraries (40-50% zero guides), so library totals would call everything depleted: totals = median_ratio and enrichment is read. Only 10 scrambled controls, so control calibration is weak.",
+  "counts_md5": "9ba6df179df8a1bbd44b2d99fa85c0b1"
+}
