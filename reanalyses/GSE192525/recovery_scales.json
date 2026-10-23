@@ -1,0 +1,38 @@
+[
+  {
+    "column": "2W-1",
+    "offset": 0.001,
+    "v_min": 0.965616,
+    "k": 2,
+    "scale": 0.48330777734,
+    "integrality": 0.99756295695,
+    "recovered_total": 89998002
+  },
+  {
+    "column": "2W-2",
+    "offset": 0.001,
+    "v_min": 0.489223,
+    "k": 1,
+    "scale": 0.49022214175,
+    "integrality": 0.99755025413,
+    "recovered_total": 88866963
+  },
+  {
+    "column": "CTL-1",
+    "offset": 0.001,
+    "v_min": 0.267473,
+    "k": 1,
+    "scale": 0.26847313322,
+    "integrality": 0.99517824194,
+    "recovered_total": 162050720
+  },
+  {
+    "column": "CTL-2",
+    "offset": 0.001,
+    "v_min": 0.483008,
+    "k": 1,
+    "scale": 0.48400754027,
+    "integrality": 0.99836758923,
+    "recovered_total": 89981442
+  }
+]

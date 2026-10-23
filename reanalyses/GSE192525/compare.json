@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/Palbo_vs_DMSO/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["F9", "PROZ"],
+  "top_n": [18, 50, 100]
+}

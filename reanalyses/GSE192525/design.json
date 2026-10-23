@@ -1,0 +1,55 @@
+{
+  "gse": "GSE192525",
+  "pmid": "35184131",
+  "counts_file": "counts.tsv",
+  "guide_column": "guide",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "CTL-1",
+      "gsm": "GSM5750609",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "CTL-2",
+      "gsm": "GSM5750611",
+      "condition": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "2W-1",
+      "gsm": "GSM5750613",
+      "condition": "Palbo_2w",
+      "replicate": "1"
+    },
+    {
+      "column": "2W-2",
+      "gsm": "GSM5750615",
+      "condition": "Palbo_2w",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "Palbo_2w"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "Palbo_vs_DMSO",
+      "columns": [
+        "CTL-1",
+        "CTL-2",
+        "2W-1",
+        "2W-2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionPalbo_2w"
+    }
+  ],
+  "rationale": "Genome-wide GeCKO knockout screen in MCF7 breast cancer cells treated with the CDK4/6 inhibitor Palbociclib for two weeks or DMSO, two replicates each (Llanos et al. 2022). GEO deposits only an unrounded transformed-RPKM table; prepare.R recovers the integer reads (each column is raw reads times one constant plus a 0.001 pseudocount; >=99.5% of values become integers) and sets the gene to the symbol before the first '|'. The library has no non-targeting controls. The paper's question: which knockouts let cells escape Palbociclib-induced senescent arrest and keep proliferating? Those guides are enriched after two weeks of Palbo. The authors took genes with >2 fold change and >=3 enriched guides (18 genes) and validated the coagulation-pathway genes F9 and PROZ. The two CTL and two 2W libraries are paired replicate experiments but not paired across conditions, so no pairing term (2 residual df).",
+  "counts_md5": "4f165b0ecebe6987482ef6cc13fc6fe3"
+}
