@@ -14,5 +14,7 @@
   "named_hits": "4/4 top-ranked: FUT8 #1, TMEM41B #2, MLST8 #3, DYRK1A #4",
   "verdict": "BARCS reproduces the paper's candidate order exactly (FUT8, TMEM41B, MLST8, DYRK1A) and calls the first three at FDR 0.10 from recovered counts, confirming TMEM41B as a strong TGEV host factor.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-12",
+  "published_issue": "2021 Dec"
 }

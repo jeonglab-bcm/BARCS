@@ -14,5 +14,7 @@
   "named_hits": "ACE2 #2 (combined), #1 (Alpha); GATA6 #9; KREMEN2 #156, SETDB1 #454",
   "verdict": "BARCS ranks the paper's two headline genes ACE2 (#2) and GATA6 (#9) at the top of the enrichment list, but shallow sequencing and pooling three viruses leave nothing at FDR 0.10 and the rest of the list uncorrelated (rho 0.34).",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-04-25",
+  "published_issue": "2022 Apr 25"
 }

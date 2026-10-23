@@ -13,5 +13,7 @@
   "named_hits": "10/10 positive hits recovered",
   "verdict": "BARCS recovers 10/10 of the paper's positive neurogenic TFs for this screen as enriched at FDR 0.10, with the same proneural TFs (NEUROD/NEUROG, SOX, KLF families) at the top.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2020-12-01",
+  "published_issue": "2020 Dec 1"
 }

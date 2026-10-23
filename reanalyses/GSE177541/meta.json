@@ -14,5 +14,7 @@
   "named_hits": "SARS-CoV-2 CDKN1A #1, TP53 #2, ACE2 #7, rank corr 0.77; OC43 IFITM1/3 #1, TMEM41B #3, SLC35B2 #12",
   "verdict": "BARCS reproduces the authors' top SARS-CoV-2 hits (CDKN1A, TP53, ACE2) and OC43 hits (IFITM, TMEM41B) with rank correlation 0.77; the post-selection bottleneck means only enrichment is interpretable and OC43 depletion is not.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-01-27",
+  "published_issue": "2022 Jan 27"
 }

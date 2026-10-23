@@ -14,5 +14,7 @@
   "named_hits": "3/6 at FDR 0.10 (DDRGK1 #6, SAYSD1 #23, CDK5RAP3 #26); UFM1/UBA5/UFSP2 enriched but miss",
   "verdict": "BARCS recovers SAYSD1 (the paper's validated lead) and the translocon/splicing/translation signal, and 2 of the 5 UFMylation genes; UFM1, UBA5 and UFSP2 are enriched but miss FDR because only part of their guide set responds.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2023-01-23",
+  "published_issue": "2023 Jan 31"
 }

@@ -14,5 +14,7 @@
   "named_hits": "3/5 at FDR 0.10 (Dpm2 #1, Dpm3 #2, Dpm1 #6); Calr #19 and Mpdu1 #20 at FDR 0.13-0.14",
   "verdict": "BARCS reproduces the N-glycosylation dependency (Dpm1/2/3, Mpi, Pmm2, Dpy19l1, Uggt1, Srd5a3) and 15 of its 16 depleted calls are MAGeCK FDR 0.10 genes; Calr and Mpdu1 just miss because one of four guides is flat with only two lines per arm.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-09-15",
+  "published_issue": "2022 Sep 15"
 }

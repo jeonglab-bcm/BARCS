@@ -14,5 +14,7 @@
   "named_hits": "SIRT6 #3, HDAC8 #25, HEXA #53, IMPA2 #89 of 20,687 by depletion (none reach FDR 0.10)",
   "verdict": "BARCS ranks the paper's validated sensitizers SIRT6 (#3) and HDAC8 (#25) near the top of the depletion list, close to their MAGeCK ranks, but one library per arm leaves nothing at FDR 0.10.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-02-04",
+  "published_issue": "2021 Apr 15"
 }

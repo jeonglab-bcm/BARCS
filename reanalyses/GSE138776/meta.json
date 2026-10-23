@@ -13,5 +13,7 @@
   "named_hits": "METTL3 #16771, WTAP #4602, MAPK1 #3708, USP5 #20137 of 20,677 (all FDR 1)",
   "verdict": "With one library per bin the screen is uninformative at the gene level: BARCS calls no hits and the named genes rank randomly, consistent with the paper drawing its conclusions from pathway GSEA and biochemistry rather than gene-level screen significance.",
   "agreement": "differ",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2020-11-19",
+  "published_issue": "2020 Nov 19"
 }

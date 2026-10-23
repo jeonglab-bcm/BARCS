@@ -14,5 +14,7 @@
   "named_hits": "8/8 recovered (Dpm3 #1, Dpm2 #3, Dpm1 #7, MPL #8, CALR #9, Mpdu1 #10, Stat5b #17, Jak2 #28)",
   "verdict": "Close agreement (Spearman 0.89, 62 of the top 64 shared, all named hits and all 8 EV-side genes called); the paper-only genes are pan-essential genes with jackpot-like guide counts across lines that BARCS does not call.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-09-15",
+  "published_issue": "2022 Sep 15"
 }

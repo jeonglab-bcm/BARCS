@@ -14,5 +14,7 @@
   "named_hits": "3/3 recovered (DENND4B #1, TYROBP #2, COL7A1 #3)",
   "verdict": "BARCS calls exactly the paper's two validated activators and the COL7A1 positive control and nothing else; the paper's other top guide-level Z-scores rest on single guides and are not gene-level hits.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-03-09",
+  "published_issue": "2022 Jul"
 }

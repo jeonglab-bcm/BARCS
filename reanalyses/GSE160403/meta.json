@@ -14,5 +14,7 @@
   "named_hits": "0/1: Polr2m rank 1,163, p = 0.18; Men1, Rbbp4, Eed (d14 vs 24 h) ranks 695-1,833, not called",
   "verdict": "BARCS does not call Polr2m or the paper's other guide-count picks: the day-14 libraries are bottlenecked, and BARCS's own WT-vs-KO calls are single-clone jackpots. Only the enrichment of pro-apoptotic knockouts (Pmaip1, Bcl2l11, Bax, Bag6) over time is clean.",
   "agreement": "differ",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-11-05",
+  "published_issue": "2022 Mar"
 }

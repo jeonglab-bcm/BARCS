@@ -14,5 +14,7 @@
   "named_hits": "0/2: F9 #2,243 (p 0.17), PROZ #6,782",
   "verdict": "BARCS does not support F9 or PROZ: each has a few guides rising under palbociclib while its most abundant guides fall, which a fold-change rule over 3 guides picks up but a model of all guides and replicates does not.",
   "agreement": "differ",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-02-19",
+  "published_issue": "2022 Feb 19"
 }

@@ -14,5 +14,7 @@
   "named_hits": "0/10 at FDR 0.10: NFS1 #753 (p 0.046); ISCA2 #120, GLRX5 #202; others flat",
   "verdict": "BARCS does not call NFS1 or the iron-sulfur/redox set: NFS1 is lost in both genotypes and its extra loss in CA9-KO does not separate from replicate noise; BARCS's CA9-specific calls are mitochondrial metabolism genes instead.",
   "agreement": "differ",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-08",
+  "published_issue": "2021 Aug"
 }

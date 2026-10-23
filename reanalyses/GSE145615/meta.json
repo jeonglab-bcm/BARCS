@@ -13,5 +13,7 @@
   "named_hits": "Mettl3 and Mettl14 recovered (top 21); Wtap, Zc3h13 not near top",
   "verdict": "BARCS recovers the m6A writers Mettl3 and Mettl14 and the blasticidin selection gene classes at the top, but the extreme clonal bottleneck in the +blast arm caps the median-ratio totals and inflates the hit count, so only the top enriched ranks are interpretable and overall agreement with the paper's MAGeCK is weak.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-01-13",
+  "published_issue": "2021 Mar"
 }

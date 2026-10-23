@@ -14,5 +14,7 @@
   "named_hits": "2/3: ERN1 #15 and XBP1 #17 (FDR 0.009); QRICH1 #126, FDR 0.17",
   "verdict": "BARCS calls the reporter pathway (ERN1, XBP1) and shares MFSD2A as top gene and 56 of the top 100 with the authors' MLE, but like their own table it does not call QRICH1 from this screen; ITPK1, CLEC12A and EXO1 are single-guide jackpots.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-01-01",
+  "published_issue": "2021 Jan 1"
 }

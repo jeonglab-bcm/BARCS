@@ -14,5 +14,7 @@
   "named_hits": "BCL2 called (FDR 0.009); FOS #5 and SPI1 #75 enriched but not called; JUNB, AHR, ARNT, CDK6 not supported",
   "verdict": "BARCS supports BCL2 as a vulnerability of JQ1-resistant cells and ranks FOS and SPI1 high for resistance, but JUNB, AHR, ARNT and CDK6 are not supported, and without controls the resistant-line call list is inflated.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-07-01",
+  "published_issue": "2021 Sep"
 }

@@ -14,5 +14,7 @@
   "named_hits": "2/2 top-ranked: TMEM41B #3, ANPEP #3 (round 1); neither reaches FDR 0.10",
   "verdict": "BARCS puts the paper's two headline genes, TMEM41B and ANPEP, at the top of the enrichment list, but one library per round and no controls leave them short of FDR 0.10; the focused library GSE169108 confirms them.",
   "agreement": "partial",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-12",
+  "published_issue": "2021 Dec"
 }

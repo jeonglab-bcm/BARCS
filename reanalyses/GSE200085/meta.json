@@ -14,5 +14,7 @@
   "named_hits": "0/8 at FDR 0.10 (CXCL10 rank 1181, STAT1 51; B2M/HLA/TAP/JAK unranked)",
   "verdict": "Gene scores track the paper (Spearman 0.89) but BARCS calls almost nothing: the immune-evasion hits like CXCL10 depend on a mixed model pooling mouse/guide variance plus an expression filter, and the large between-animal spread leaves them short of FDR in BARCS's per-guide test.",
   "agreement": "differ",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-09-01",
+  "published_issue": "2022 Sep 13"
 }

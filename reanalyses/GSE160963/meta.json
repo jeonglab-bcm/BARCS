@@ -13,5 +13,7 @@
   "named_hits": "ZBTB11 rank 26, ZFP131 rank 71 (both FDR < 0.003)",
   "verdict": "BARCS depletes both validated pluripotency TFs (ZBTB11, ZFP131) and correlates with the paper's MAGeCK ranks (Spearman 0.70, top-300 Jaccard 0.99).",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-03-15",
+  "published_issue": "2022 Mar 15"
 }

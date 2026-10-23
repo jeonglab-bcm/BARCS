@@ -14,5 +14,7 @@
   "named_hits": "2/5 at FDR 0.10 (MGAT1 #2, STT3B #9); ALG10, STT3A and RPN2 not enriched in raw counts",
   "verdict": "BARCS recovers the paper's core resistance genes (MGAT1, STT3B, WDR81, TAF4, SPPL3, SLC46A3) and 8 of its 10 MAGeCK FDR 0.10 genes, but not the other N-glycan genes the paper cites, whose raw counts do not rise under α-amanitin.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2023-05-16",
+  "published_issue": "2023 May 16"
 }

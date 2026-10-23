@@ -13,5 +13,7 @@
   "named_hits": "OFD1 #3, SOX1 #7, IFT140 #12 of ~20,700",
   "verdict": "BARCS ranks SOX1 and the ciliary genes IFT140/OFD1 in the top 12 and its top enriched genes (SUFU, OFD1, SOX1, IFT140, GLI3) match the ciliogenesis/Shh-repressor classes the paper highlights.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-02-15",
+  "published_issue": "2022 Feb 15"
 }

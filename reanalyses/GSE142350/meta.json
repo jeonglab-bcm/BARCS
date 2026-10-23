@@ -11,7 +11,9 @@
   "paper_calls": "Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators",
   "barcs_calls": "SRE-Elk 110, Nanog 77, Esrrb 42, pMek 80 genes at FDR 0.10",
   "named_hits": "Dusp9 and Klhl13 top-ranked across screens (Dusp9 #1 SRE-Elk/pMek, Klhl13 #1 Nanog)",
-  "verdict": "BARCS ranks Dusp9 and Klhl13 \u2014 the paper's two validated central players \u2014 at or near the top of all four screens and correlates with the paper's MAGeCK ranks (Spearman 0.53-0.78).",
+  "verdict": "BARCS ranks Dusp9 and Klhl13 — the paper's two validated central players — at or near the top of all four screens and correlates with the paper's MAGeCK ranks (Spearman 0.53-0.78).",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2021-04-16",
+  "published_issue": "2021 Apr 16"
 }

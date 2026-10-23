@@ -14,5 +14,7 @@
   "named_hits": "7/7 at FDR 0.10: TMEM251 #1, CTSL #2, CCZ1B #3, CCZ1 #4, CDH2 #8, ACE2 #17, C18orf8 #25",
   "verdict": "BARCS recovers all seven named endolysosomal entry factors at FDR 0.10, with TMEM251, CTSL and the CCZ1 complex at the very top (rank correlation 0.62, 16 of 20 shared).",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-01-27",
+  "published_issue": "2022 Jan 27"
 }
