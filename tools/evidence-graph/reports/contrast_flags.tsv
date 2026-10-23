@@ -1,0 +1,256 @@
+contrast_id	taxon	modality	selection	residual_df	control_guides	hits_fdr10	proteins_mapped	elements_tested	flags
+GSE171674:CD25_high_vs_low	9606	KO	sort	2	593	126	1346	1350	
+GSE179799:KU1919_GC_vs_Saline_d15	9606	KO	treatment	4	0	61	18824	19095	no_control_guides
+GSE179799:5637_GC_vs_Saline_d15	9606	KO	treatment	4	0	314	18824	19095	no_control_guides
+GSE179799:both_GC_vs_Saline_d15	9606	KO	treatment	9	0	201	18824	19095	no_control_guides
+GSE183348:dld1_tumor_vs_day0	9606	KO	in_vivo	10	100	26	144	177	calls_over_10pct
+GSE183348:hct116_tumor_vs_day0	9606	KO	in_vivo	10	100	29	144	177	calls_over_10pct
+GSE183348:sw948_tumor_vs_day0	9606	KO	in_vivo	9	100	28	144	177	calls_over_10pct
+GSE183348:dld1_2d_vs_day0	9606	KO	fitness_time	2	100	44	144	177	calls_over_10pct
+GSE183348:hct116_2d_vs_day0	9606	KO	fitness_time	2	100	37	144	177	calls_over_10pct
+GSE183348:sw948_2d_vs_day0	9606	KO	fitness_time	2	100	16	144	177	
+GSE192827:low_vs_high	9606	KO	sort	2	0	3244	17841	17991	no_control_guides,calls_over_10pct
+GSE192828:killing_vs_prekill	9606	KO	immune_coculture	2	0	2455	17849	17999	no_control_guides,calls_over_10pct
+GSE199603:tumor_vs_bone_marrow	10090	KO	in_vivo	0	0	1	355	355	no_residual_df,no_control_guides
+GSE203240:Cas9_vs_noCas9_T1	9606	KO	in_vivo	12	1	38	105	105	calls_over_10pct
+GSE206832:CD86_GW_low_vs_high	10090	KO	sort	2	986	6	19580	19674	
+GSE206832:CD86_secondary_low_vs_high	10090	KO	sort	0	197	120	2270	2280	no_residual_df
+GSE206832:PDL1_GW_low_vs_high	10090	KO	sort	0	985	0	19580	19674	no_residual_df,no_hits_fdr10
+GSE206832:PDL1_secondary_low_vs_high	10090	KO	sort	2	199	81	2247	2258	
+GSE206996:spike_low_vs_high	9606	KO	sort	0	1000	30	18843	19111	no_residual_df
+GSE206996:vsvg_low_vs_high	9606	KO	sort	0	1000	13	18842	19110	no_residual_df
+GSE206996:vsvgcre_low_vs_high	9606	KO	sort	0	1000	28	18844	19112	no_residual_df
+GSE209750:infected_vs_mock	9606	KO	infection	4	133	260	18317	18856	
+GSE210422:A375_day21_vs_day0	9606	CRISPRi	fitness_time	2	1000	226	0	805	calls_over_10pct,no_protein_mapping
+GSE211073:DFP_high_vs_low	9606	KO	sort	4	144	23	14	120	calls_over_10pct
+GSE211073:OA_high_vs_low	9606	KO	sort	4	144	38	14	120	calls_over_10pct
+GSE211312:gm0847_htert_dropout_interaction	9606	KO	genetic_interaction	4	1000	0	18363	18685	no_hits_fdr10
+GSE211312:gm0847_htert_vs_parental	9606	KO	genetic_interaction	2	1000	0	18363	18685	no_hits_fdr10
+GSE212152:establishment_GFP_vs_unsorted	10090	KO	sort	1	150	94	1156	1160	one_residual_df
+GSE212152:maintenance_GFP_vs_unsorted	10090	KO	sort	1	150	179	1156	1160	one_residual_df,calls_over_10pct
+GSE213184:top10_vs_next25	9606	KO	sort	0	1000	0	18848	19114	no_residual_df,no_hits_fdr10
+GSE213184:top10_vs_static_and_next25	9606	KO	sort	1	1000	91	18836	19102	one_residual_df
+GSE215926:SEM_Cas9_day14_vs_day0	9606	KO	fitness_time	4	20	100	0	248	controls_inflated,calls_over_10pct,no_protein_mapping
+GSE215926:SEM_dCas9KRAB_day14_vs_day0	9606	CRISPRi	fitness_time	4	20	48	0	248	controls_inflated,calls_over_10pct,no_protein_mapping
+GSE216353:CD80_high_vs_low	9606	KO	sort	0	499	0	2943	2966	no_residual_df,no_hits_fdr10
+GSE217131:graft_vs_invitro	9606	KO	in_vivo	0	100	1	146	146	no_residual_df
+GSE217789:GFPlow_vs_high	9606	KO	sort	5	399	57	18350	18466	
+GSE219136:nf2ko_vs_wt_dropout_interaction	9606	KO	genetic_interaction	2	142	314	17049	17230	
+GSE219136:nf2ko_vs_wt_t7	9606	KO	genetic_interaction	2	142	655	17045	17226	
+GSE220831:KPK_specific_dropout	10090	KO	genetic_interaction	10	36	84	611	611	calls_over_10pct
+GSE221576:GSI_vs_DMSO	9606	KO	treatment	4	1000	313	18542	20708	
+GSE221576:CB103_vs_DMSO	9606	KO	treatment	4	1000	88	18542	20708	
+GSE222531:LGR100X_Tf_vs_T0	9606	CRISPRi	fitness_time	4	1895	2338	18523	18788	calls_over_10pct
+GSE222531:LGR_dasatinib_vs_DMSO	9606	CRISPRi	treatment	2	1895	345	18496	18759	
+GSE223086:K562_day24_vs_day0	9606	KO	fitness_time	2	1000	968	18848	19114	
+GSE223690:d14_low_vs_high	9606	KO	sort	1	2000	35	18635	20915	one_residual_df
+GSE223690:d7_low_vs_high	9606	KO	sort	1	2000	43	18635	20915	one_residual_df
+GSE223716:htelo_plus_vs_minus_cas9	9606	KO	genetic_interaction	2	0	8	91	91	no_control_guides,composition_skew
+GSE223716:htelo_plus_vs_minus_wt	9606	KO	genetic_interaction	2	0	0	92	92	no_control_guides,composition_skew,no_hits_fdr10
+GSE223716:htelo_interaction	9606	KO	genetic_interaction	4	0	0	92	92	no_control_guides,composition_skew,no_hits_fdr10
+GSE223716:htelo_plus_cas9_vs_wt	9606	KO	in_vivo	2	0	0	88	88	no_control_guides,composition_skew,no_hits_fdr10
+GSE223716:22rv1_cas9_vs_wt	9606	KO	in_vivo	2	0	0	87	87	no_control_guides,no_hits_fdr10
+GSE223716:es2_cas9_vs_wt	9606	KO	in_vivo	2	0	0	91	91	no_control_guides,composition_skew,no_hits_fdr10
+GSE223716:hct15_cas9_vs_wt	9606	KO	in_vivo	2	0	4	91	91	no_control_guides
+GSE223716:mdamb231_cas9_vs_wt	9606	KO	in_vivo	2	0	0	83	83	no_control_guides,composition_skew,no_hits_fdr10
+GSE223716:miapaca_cas9_vs_wt	9606	KO	in_vivo	2	0	0	92	92	no_control_guides,no_hits_fdr10
+GSE225235:CD58low_vs_mid	9606	KO	sort	2	0	69	18847	19113	no_control_guides
+GSE225235:CD58low_vs_mid_techsorts	9606	KO	sort	5	0	128	18847	19113	no_control_guides
+GSE225878:D4_CD200high_vs_low	10090	KO	sort	2	1000	359	19606	19674	
+GSE226977:ezvsdmso_final_median_ratio	9606	KO	treatment	4	142	88	17796	18031	composition_skew
+GSE226977:ezvsdmso_final_library	9606	KO	treatment	4	142	370	17796	18031	composition_skew
+GSE229545:WT_vs_KO	5811	KO	in_vivo	25	0	71	0	368	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE229545:P4_vs_WT	5811	KO	in_vivo	21	0	140	0	376	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE229547:WT_vs_KO	5811	KO	in_vivo	25	0	160	0	391	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE229547:P4_vs_WT	5811	KO	in_vivo	18	0	229	0	395	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE229548:WT_vs_KO	5811	KO	in_vivo	13	0	14	0	356	no_control_guides,composition_skew,no_protein_mapping
+GSE229548:P4_vs_WT	5811	KO	in_vivo	7	0	193	0	360	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE229584:iRFP_vs_negative	9606	KO	sort	1	96	58	1799	1800	one_residual_df,composition_skew
+GSE229584:iRFP_vs_negative_median_ratio	9606	KO	sort	1	96	68	1799	1800	one_residual_df,composition_skew
+GSE230735:top_vs_bottom	9606	CRISPRi	sort	0	0	3	1235	1241	no_residual_df,no_control_guides
+GSE232340:GW_parenchyma_vs_blood	10116	KO	in_vivo	2	800	0	19126	21773	no_hits_fdr10
+GSE232340:GW_meninges_vs_blood	10116	KO	in_vivo	2	800	0	19122	21766	no_hits_fdr10
+GSE232340:VAL_parenchyma_vs_blood	10116	KO	in_vivo	2	241	22	1916	1961	
+GSE232543:CebpbKO_secondary_CD86low_vs_high	10090	KO	sort	0	0	39	659	661	no_residual_df,no_control_guides
+GSE232543:CebpbKO_GW_CD86low_vs_high	10090	KO	sort	0	0	1	19580	19675	no_residual_df,no_control_guides
+GSE232543:WT_secondary_CD86low_vs_high	10090	KO	sort	0	0	43	659	661	no_residual_df,no_control_guides
+GSE232856:d21_vs_d0	9606	CRISPRi	fitness_time	1	1285	143	0	6634	one_residual_df,composition_skew,no_protein_mapping
+GSE233401:sgNeg_T1_vs_T0	9606	KO	fitness_time	2	26	66	92	92	controls_inflated,calls_over_10pct
+GSE233401:sgUHRF1_T1_vs_T0	9606	KO	fitness_time	2	26	5	92	92	controls_inflated
+GSE235620:bile_vs_tyg	226186	CRISPRi	treatment	4	20	3	0	166	controls_inflated,no_protein_mapping
+GSE236244:early_vs_nonplur	10090	KO	sort	0	0	73	18260	18358	no_residual_df,no_control_guides
+GSE236244:late_vs_early	10090	KO	sort	0	0	22	18262	18360	no_residual_df,no_control_guides
+GSE236244:late_vs_npc	10090	KO	sort	0	0	8	18298	18396	no_residual_df,no_control_guides
+GSE236257:GFPhigh_vs_mChhigh	9606	KO	sort	2	30	9	82	94	
+GSE236257:DN_vs_DP	9606	KO	sort	2	30	92	82	94	controls_inflated,calls_over_10pct
+GSE236257:KRT20_GFP_hi_vs_lo	9606	KO	sort	2	30	89	82	94	controls_inflated,calls_over_10pct
+GSE236257:SOX9_mKate2_hi_vs_lo	9606	KO	sort	2	30	82	82	94	controls_inflated,calls_over_10pct
+GSE237122:SARS2_vs_uninfected	9606	KO	infection	0	1000	1	18782	19049	no_residual_df
+GSE237122:OC43_vs_uninfected	9606	KO	infection	0	1000	0	18773	19040	no_residual_df,composition_skew,no_hits_fdr10
+GSE237953:FKBP5low_vs_high	9606	KO	sort	2	998	1861	18762	19029	composition_skew
+GSE238225:day14_vs_pool	9606	KO+CRISPRi	fitness_time	4	10	728	1131	1136	calls_over_10pct
+GSE240110:MRTX_vs_DMSO	9606	KO	treatment	11	142	25	17812	18049	
+GSE240110:COMBO_vs_DMSO	9606	KO	treatment	8	142	1882	17810	18047	calls_over_10pct
+GSE240870:ISX9_vs_DMSO	9606	CRISPRa	treatment	2	3790	88	18273	18534	
+GSE240894:jlat106_combo	9606	KO	infection	2	210	92	522	526	calls_over_10pct
+GSE240894:jlat5a8_combo	9606	KO	infection	2	210	49	522	526	
+GSE241070:MPA_vs_DMSO	9606	KO	treatment	0	1000	114	18480	18833	no_residual_df
+GSE241682:PIn_high_vs_input	9606	KO	sort	0	1000	0	18843	19111	no_residual_df,no_hits_fdr10
+GSE241682:EIn_high_vs_input	9606	KO	sort	0	1000	25	18844	19112	no_residual_df
+GSE241933:CRISPRa_CCR7_high_vs_low	9606	CRISPRa	sort	2	120	2	120	120	
+GSE241933:KO_noBATF3_IL7R_high_vs_low	9606	KO	sort	1	550	80	1611	1613	one_residual_df
+GSE241933:KO_withBATF3_IL7R_high_vs_low	9606	KO	sort	1	550	38	1611	1613	one_residual_df
+GSE242880:LowCov_HighMOI_Q4_vs_Q1	9606	KO	sort	2	593	82	1346	1350	
+GSE242880:HighCov_LowMOI_Q4_vs_Q1	9606	KO	sort	2	593	107	1346	1350	
+GSE243760:migrated_vs_nonmigrated	9606	CRISPRi	sort	1	1001	7	83	1053	one_residual_df
+GSE243761:myh9_low_vs_high	9606	CRISPRi	sort	1	500	99	0	114	one_residual_df,calls_over_10pct,no_protein_mapping
+GSE243882:MCF7_3D_vs_2D	9606	KO	culture_condition	0	1000	14	18540	20703	no_residual_df
+GSE243882:MCF7_2D_vs_T0	9606	KO	fitness_time	0	1000	7	18541	20706	no_residual_df
+GSE244434:samuraciclib_vs_controls	9606	KO	treatment	0	2041	47	18609	19897	no_residual_df
+GSE245526:d15_untreated_vs_input	9606	KO	infection	2	11	269	507	510	calls_over_10pct
+GSE245845:proinsulin_hi_vs_lo	10090	KO	sort	0	1983	356	20304	21713	no_residual_df
+GSE246804:combo_vs_DMSO	9606	KO	treatment	0	10	8606	18631	18907	no_residual_df,calls_over_10pct
+GSE246837:Mettl3i_vs_DMSO_coculture	10090	KO	immune_coculture	3	1000	4	19599	19671	
+GSE246837:Tcells_1to5_vs_none	10090	KO	immune_coculture	5	1000	9	19599	19671	
+GSE251758:intense_vs_pre	10090	KO	treatment	0	1000	1187	19605	19674	no_residual_df
+GSE251758:acute_vs_pre	10090	KO	treatment	0	1000	1643	19605	19674	no_residual_df
+GSE251758:chronic_vs_resting	10090	KO	treatment	0	1000	45	19598	19667	no_residual_df
+GSE252651:activator_GFPlow_vs_unsorted	9606	KO	sort	0	10	2	93	93	no_residual_df
+GSE252651:suppressor_GFPhigh_vs_unsorted	9606	KO	sort	0	10	2	93	93	no_residual_df
+GSE253290:genomewide_palbo_vs_untreated	9606	CRISPRa	treatment	2	500	13	1167	5976	
+GSE253290:focused_palbo_vs_untreated	9606	CRISPRa	treatment	3	40	128	33	160	controls_inflated,calls_over_10pct
+GSE253884:in_vivo_vs_in_vitro	5811	KO	in_vivo	9	0	198	0	295	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE253884:in_vivo_vs_in_vitro_library_totals	5811	KO	in_vivo	9	0	284	0	295	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE253884:in_vitro_P4_vs_plasmid	5811	KO	fitness_time	0	0	3	0	295	no_residual_df,no_control_guides,no_protein_mapping
+GSE253885:in_vivo_vs_in_vitro	5811	KO	in_vivo	8	0	157	0	295	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE253885:in_vivo_vs_in_vitro_library_totals	5811	KO	in_vivo	8	0	283	0	295	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE253885:in_vitro_P4_vs_plasmid	5811	KO	fitness_time	0	0	2	0	295	no_residual_df,no_control_guides,no_protein_mapping
+GSE255515:lung_tumor_vs_cellpool	10090	CRISPRa	in_vivo	14	0	3	36	36	no_control_guides
+GSE255579:FANCG_vs_NT	9606	KO	genetic_interaction	2	1000	27	18844	19112	
+GSE255579:ZRSR2_vs_NT	9606	KO	genetic_interaction	2	1000	18	18844	19112	
+GSE255664:EXO1KO_vs_WT_D16	9606	KO	genetic_interaction	4	1000	10	18848	19114	
+GSE260469:csf1r_vs_IgG	10090	KO	treatment	0	200	0	1205	1212	no_residual_df,no_hits_fdr10
+GSE260469:IgG_vs_cell	10090	KO	in_vivo	0	200	0	1210	1217	no_residual_df,no_hits_fdr10
+GSE261338:AZA_vs_DMSO	9606	KO	treatment	2	982	516	18745	19010	
+GSE262028:IL13_TomPos_vs_Neg	10090	KO	sort	1	200	0	1125	1131	one_residual_df,no_hits_fdr10
+GSE262028:GATA3_vs_TBET	10090	KO	sort	1	200	36	1123	1129	one_residual_df
+GSE263580:met_vs_primary	10090	KO	in_vivo	30	750	6	1515	1519	composition_skew
+GSE263580:met_vs_primary_median_ratio	10090	KO	in_vivo	30	750	1	1508	1512	composition_skew
+GSE263581:met_vs_primary	10090	KO	in_vivo	28	465	0	31	31	composition_skew,no_hits_fdr10
+GSE263582:met_vs_primary	10090	KO	in_vivo	13	30	0	14	14	composition_skew,no_hits_fdr10
+GSE264535:utp_gfphigh_vs_unsorted	9606	KO	sort	2	1000	2	18839	19101	
+GSE264535:utp_gfplow_vs_unsorted	9606	KO	sort	2	1000	24	18834	19096	
+GSE264535:n1m_gfphigh_vs_unsorted	9606	KO	sort	2	1000	0	18838	19100	no_hits_fdr10
+GSE264535:n1m_gfplow_vs_unsorted	9606	KO	sort	2	1000	35	18839	19101	
+GSE266057:high_vs_low	9606	CRISPRi	sort	3	1881	1480	18615	18903	
+GSE266057:GA77_vs_WT_bin_interaction	9606	CRISPRi	genetic_interaction	2	1881	2	18615	18903	
+GSE267517:tcell_et1_vs_ctrl	10090	KO	immune_coculture	5	5	343	18322	18399	
+GSE267517:tcell_et02_vs_ctrl	10090	KO	immune_coculture	5	5	30	18321	18398	
+GSE268182:libraryA_High_vs_USC	9606	KO	sort	0	1000	12	18513	20667	no_residual_df
+GSE268182:libraryB_High_vs_USC	9606	KO	sort	0	1000	0	18477	18830	no_residual_df,no_hits_fdr10
+GSE268342:noninvading_vs_before	9606	CRISPRi	sort	2	450	5	0	2307	no_protein_mapping
+GSE268533:sgCD274_vs_sgControl	9606	KO	genetic_interaction	0	1000	0	18161	18421	no_residual_df,no_hits_fdr10
+GSE270368:GSI_vs_DMSO	9606	KO	treatment	4	1000	3	18540	20706	composition_skew
+GSE273069:re57m_gfp_low_vs_high	10090	CRISPRi	sort	2	100	95	125	142	calls_over_10pct
+GSE273070:xist_high_vs_negative	10090	CRISPRi	sort	1	300	104	594	911	one_residual_df,calls_over_10pct
+GSE273299:d22_vs_d8	9606	KO	fitness_time	2	1000	215	18520	20667	
+GSE275043:gal9_high_vs_low	9606	KO	sort	1	1000	490	18848	19114	one_residual_df
+GSE275314:AMGR_vs_parental_T1	9606	KO	genetic_interaction	2	100	4	761	763	
+GSE275314:AMGR_vs_parental_dropout	9606	KO	genetic_interaction	2	100	2	761	763	
+GSE276161:CRISPRi_doxo_vs_vehicle	9606	CRISPRi	treatment	2	3789	1	2471	2484	
+GSE276161:CRISPRa_doxo_vs_vehicle	9606	CRISPRa	treatment	2	3789	1015	6758	6807	composition_skew,calls_over_10pct
+GSE276161:CRISPRa_doxo_vs_vehicle_medianratio	9606	CRISPRa	treatment	2	3789	1207	6758	6807	composition_skew,calls_over_10pct
+GSE277690:khyg1_r1_vs_collection	9606	KO	immune_coculture	0	1000	265	18846	19112	no_residual_df
+GSE277690:khyg1_r2_vs_collection	9606	KO	immune_coculture	0	1000	178	18846	19112	no_residual_df
+GSE277690:khyg1_vs_nkp44ko_r1	9606	KO	immune_coculture	0	1000	92	18839	19105	no_residual_df
+GSE277987:high_vs_low	9606	KO	sort	3	159	2272	18526	18658	calls_over_10pct
+GSE277987:high_vs_basal	9606	KO	sort	3	159	776	18526	18658	
+GSE277987:low_vs_basal	9606	KO	sort	3	159	872	18526	18658	
+GSE278336:Lb_KRAB_day21_vs_day5	9606	CRISPRi	fitness_time	2	75	46	183	199	calls_over_10pct
+GSE278336:Lb_SID_day21_vs_day5	9606	CRISPRi	fitness_time	2	75	3	183	199	
+GSE278336:As_KRAB_day21_vs_day5	9606	CRISPRi	fitness_time	2	75	8	183	199	
+GSE278336:As_SID_day21_vs_day5	9606	CRISPRi	fitness_time	2	75	0	183	199	no_hits_fdr10
+GSE280666:day15_vs_day1	9913	KO	fitness_time	4	436	154	596	603	calls_over_10pct
+GSE280666:day15_vs_day1_median_ratio	9913	KO	fitness_time	4	436	19	596	603	
+GSE280666:day10_vs_day1	9913	KO	fitness_time	4	436	81	596	603	calls_over_10pct
+GSE280666:day30_vs_day1_median_ratio	9913	KO	fitness_time	4	436	219	596	603	composition_skew,calls_over_10pct
+GSE280676:day16_vs_day1	9913	KO	fitness_time	4	436	116	596	603	calls_over_10pct
+GSE280676:day16_vs_day1_median_ratio	9913	KO	fitness_time	4	436	24	596	603	
+GSE280676:day30_vs_day1	9913	KO	fitness_time	4	436	468	596	603	composition_skew,calls_over_10pct
+GSE282260:poolA_FdU_vs_DMSO_E	9606	KO	treatment	2	150	693	4825	4853	calls_over_10pct
+GSE282260:poolA_FdU_vs_DMSO_EU	9606	KO	treatment	5	150	586	4825	4853	calls_over_10pct
+GSE282260:poolB_FdU_vs_DMSO_E	9606	KO	treatment	2	149	437	4785	4986	
+GSE282260:poolB_FdU_vs_DMSO_EU	9606	KO	treatment	5	149	361	4785	4986	
+GSE282260:poolC_FdU_vs_DMSO_E	9606	KO	treatment	2	150	701	4769	4984	calls_over_10pct
+GSE282260:poolC_FdU_vs_DMSO_EU	9606	KO	treatment	5	150	655	4773	4988	calls_over_10pct
+GSE282260:poolD_FdU_vs_DMSO_E	9606	KO	treatment	2	150	646	4725	4952	calls_over_10pct
+GSE282260:poolD_FdU_vs_DMSO_EU	9606	KO	treatment	5	150	388	4755	4985	
+GSE284239:uwb_tng348_vs_dmso	9606	KO	treatment	0	598	3	1165	1180	no_residual_df
+GSE284239:uwb_olaparib_vs_dmso	9606	KO	treatment	0	598	3	1163	1178	no_residual_df
+GSE284239:mda_tng348_vs_dmso	9606	KO	treatment	1	598	10	1166	1181	one_residual_df
+GSE284239:gw_tng348_vs_dmso	9606	KO	treatment	1	992	102	18821	19096	one_residual_df
+GSE287048:inx315_vs_dmso	9606	KO	treatment	2	142	3	17769	18006	
+GSE287048:inx315_vs_dmso_noR1	9606	KO	treatment	1	142	347	17763	18000	one_residual_df
+GSE287048:miapaca_inx315_vs_control	9606	KO	treatment	0	142	6	17810	18047	no_residual_df
+GSE287053:wt_vs_nude	10090	KO	in_vivo	4	100	9	713	713	
+GSE288230:genome_scale_D12_vs_D0	9606	KO	fitness_time	2	1000	0	18510	20660	no_hits_fdr10
+GSE288230:secondary_D12_vs_D0	9606	KO	fitness_time	2	500	723	1130	1223	calls_over_10pct
+GSE288238:unprimed_GFPneg_vs_GFPhigh	9606	KO	sort	3	0	14	18699	18754	no_control_guides
+GSE288238:primed_GFPneg_vs_GFPhigh	9606	KO	sort	3	0	150	18699	18754	no_control_guides
+GSE288238:mtc150_unprimed_GFPneg_vs_GFPhigh	9606	KO	sort	3	0	14	18687	18742	no_control_guides
+GSE288238:mtc150_primed_GFPneg_vs_GFPhigh	9606	KO	sort	3	0	121	18680	18735	no_control_guides
+GSE289756:bxpc3_tumor_vs_culture	9606	KO	in_vivo	10	50	0	121	122	composition_skew,no_hits_fdr10
+GSE289756:cfpac1_tumor_vs_culture	9606	KO	in_vivo	10	50	4	121	122	
+GSE289756:hpafii_tumor_vs_culture	9606	KO	in_vivo	10	50	14	121	122	calls_over_10pct
+GSE289756:miapaca2_tumor_vs_culture	9606	KO	in_vivo	10	50	3	121	122	composition_skew
+GSE289756:panc1_tumor_vs_culture	9606	KO	in_vivo	10	50	0	121	122	composition_skew,no_hits_fdr10
+GSE289756:all_lines_final_vs_initial	9606	KO	fitness_time	19	50	121	121	122	calls_over_10pct
+GSE290153:IR_vs_day14	9606	KO	treatment	2	752	0	453	459	no_hits_fdr10
+GSE290358:High_vs_Low	9606	KO	sort	2	4	19	18848	19363	
+GSE291338:ven_vs_dmso	9606	KO	treatment	2	5	13265	17815	17964	composition_skew,calls_over_10pct
+GSE291338:palbo_vs_dmso	9606	KO	treatment	2	5	1464	17833	17982	
+GSE291338:combo_vs_dmso	9606	KO	treatment	2	5	3495	17819	17968	composition_skew,calls_over_10pct
+GSE291529:pfos_vs_control	9606	KO	treatment	4	205	0	18742	18815	no_hits_fdr10
+GSE293842:day14_vs_day0_poolA	9606	KO	fitness_time	0	200	47	761	763	no_residual_df
+GSE293842:day14_vs_day0_poolB	9606	KO	fitness_time	0	200	36	761	763	no_residual_df
+GSE294894:RKO_KO_oxali_vs_T20	9606	KO	treatment	0	1000	68	18782	19048	no_residual_df,composition_skew
+GSE294894:RKO_Act_oxali_vs_T20	9606	CRISPRa	treatment	0	496	13	18604	18886	no_residual_df,composition_skew
+GSE294894:SW620_Act_oxali050_vs_T20	9606	CRISPRa	treatment	0	496	54	18599	18881	no_residual_df
+GSE294894:SW620_Act_oxali038_vs_T20	9606	CRISPRa	treatment	0	496	16	18601	18883	no_residual_df
+GSE294894:SW620_KO_oxali050_vs_T20	9606	KO	treatment	0	1000	4	18848	19114	no_residual_df,composition_skew
+GSE294894:SW620_KO_oxali038_vs_T20	9606	KO	treatment	0	1000	23	18848	19114	no_residual_df
+GSE298081:ptar1_vs_wt_gi	9606	KO	genetic_interaction	18	142	700	17814	18049	
+GSE298082:ptar1_vs_wt_gi	9606	KO	genetic_interaction	17	142	1035	17815	18050	
+GSE299588:cd133_top_vs_bottom	9606	KO	sort	2	142	0	17812	18047	no_hits_fdr10
+GSE302335:cd54_low_vs_high	9606	CRISPRi	sort	1	1026	1533	18494	20528	one_residual_df
+GSE302546:RSL3_vs_DMSO	9606	KO	treatment	4	1000	261	18522	20669	
+GSE306142:ptc596_vs_dmso	9606	KO	treatment	2	142	2	17789	18024	composition_skew
+GSE307513:CD107a_hi_vs_neg	9606	KO	sort	1	1000	90	18826	19092	one_residual_df
+GSE307513:CD107a_hi_vs_neg_unpaired	9606	KO	sort	2	1000	70	18826	19092	
+GSE312143:GE_two_screens_lineage_vs_HSPC	10090	KO	in_vivo	1	9845	5	1706	1713	one_residual_df,composition_skew
+GSE312143:GW_ACOC_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	14	2923	2945	no_residual_df,composition_skew
+GSE312143:GW_DTKP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	7	1980	1982	no_residual_df,composition_skew
+GSE312143:GW_GE_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	1	1878	1886	no_residual_df,composition_skew
+GSE312143:GW_MP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	5	945	946	no_residual_df,composition_skew
+GSE312143:GW_MU1_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	22	1317	2633	no_residual_df,composition_skew
+GSE312143:GW_MU2_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	15	2698	2883	no_residual_df,composition_skew
+GSE312143:GW_SP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	17	2440	2445	no_residual_df,composition_skew
+GSE312143:GW_TMM_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	11	1831	1831	no_residual_df,composition_skew
+GSE312143:GW_U1_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	5	1802	1809	no_residual_df,composition_skew
+GSE312143:GW_U2_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	12	1998	2005	no_residual_df,composition_skew
+GSE316868:tfe3_on_vs_off	9606	KO	treatment	1	1000	1135	18778	19044	one_residual_df
+GSE316985:KO_T_vs_noT_D11	9606	KO	immune_coculture	2	999	88	1418	1948	
+GSE316985:CRISPRi_T_vs_noT_D11	9606	CRISPRi	immune_coculture	2	999	175	1417	1955	
+GSE318501:vem_vs_control_day23	9606	KO	treatment	4	0	449	0	2119	no_control_guides,composition_skew,calls_over_10pct,no_protein_mapping
+GSE318876:calA_GFPneg_vs_GFPpos	9606	CRISPRa	sort	2	496	366	18604	18886	
+GSE318876:calB_GFPneg_vs_GFPpos	9606	CRISPRa	sort	2	496	178	18557	18840	
+GSE318876:crisprn_GFPneg_vs_GFPpos	9606	KO	sort	2	1000	342	18848	19114	
+GSE325129:MHChigh_vs_MHClow	9606	CRISPRi	sort	0	1895	165	18615	18903	no_residual_df
+GSE327124:cd80_high_vs_low	9606	KO	sort	3	593	9	1346	1350	
+GSE328107:ko_d32_vs_d4	9606	KO	fitness_time	0	1000	106	18846	19112	no_residual_df
+GSE328107:intact_d22_vs_d4	9606	KO	fitness_time	0	1000	8888	18846	19112	no_residual_df,calls_over_10pct
+GSE328470:YFPlow_vs_unsorted	9606	KO	sort	2	1000	321	18847	19113	
+GSE328470:YFPhigh_vs_unsorted	9606	KO	sort	2	1000	17	18833	19099	
+GSE328830:invivo_active_vs_inactive	9606	KO	in_vivo	1	500	303	7095	7196	one_residual_df
+GSE333513:cisplatin_vs_untreated_t7	9606	KO	treatment	4	979	0	18444	18799	no_hits_fdr10
+GSE333513:t7_vs_t0	9606	KO	fitness_time	4	979	0	18454	18808	no_hits_fdr10

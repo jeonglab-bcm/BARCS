@@ -57,6 +57,7 @@ R CMD build . && LANG=C.UTF-8 LC_ALL=C.UTF-8 R CMD check --no-manual BARCS_*.tar
 | `reanalyses/<GSE>/` | Recorded reanalyses (design, comparison spec, report, run info, trimmed gene tables) |
 | `reanalyses/excluded.tsv` | Every candidate series that was checked and could not be reanalyzed, with the reason |
 | `.github/workflows/reanalysis-site.yaml` | Builds the reanalysis website and deploys it with GitHub Pages |
+| `tools/evidence-graph/` | Evidence graph over all records joined to STRING (Python + SQLite), gap reports and the explorer page; see its README |
 
 `.claude/`, `tools/`, `reanalyses/`, `work/` and `_site/` are excluded from the package build (`.Rbuildignore`). `work/` and `_site/` are git-ignored scratch space.
 
@@ -123,6 +124,7 @@ Check these four in every new report before publishing it. Agents have made mist
 - **Build.** `build_site.R` turns `reanalyses/` into `_site/`: an index, one page per screen, and the screened-out table.
 - **Deploy.** The workflow deploys on pushes to `main` that touch `reanalyses/` or the builder.
 - **Live at https://jeonglab-bcm.github.io/BARCS/** (Pages enabled 2026-10-09, source: GitHub Actions).
+- **Evidence graph** at `/BARCS/evidence-graph/`. Its build needs STRING downloads and takes minutes, so CI does not run it: rerun `tools/evidence-graph/build.sh` after `reanalyses/` changes and commit `tools/evidence-graph/viz/explorer.html`; the workflow copies it into the site. Its module names and screen labels (`tools/evidence-graph/curation/`) are drafts.
 - **Private preview.** A copy is published as a claude.ai artifact for Hyun-Hwan: https://claude.ai/artifact/S3Rr2ysKDuMfQzz2J78TgM. It is private to his account; ask him to share it if needed.
 
 ## Related repositories

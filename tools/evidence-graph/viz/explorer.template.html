@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BARCS Evidence Graph</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one working surface, three views of one graph (corpus, screen, gene); filters above, panels beside. */
+:root {
+  --page: #f6f6f3; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --muted: #7d7b75;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,.10); --wash: rgba(42,120,214,.07);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #6250d6; --s6: #e87ba4; --neutral: #aeaca4; --edge: #b4b2a9;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10); --wash: rgba(57,135,229,.12);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #9085e9; --s6: #d55181; --neutral: #64635e; --edge: #55544f; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #8f8d86;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,.10); --wash: rgba(57,135,229,.12);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #9085e9; --s6: #d55181; --neutral: #64635e; --edge: #55544f; color-scheme: dark; }
+
+body { background: var(--page); color: var(--ink); font: 14px/1.5 var(--font-ui); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 20px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+h1 { font-size: 22px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 15px; font-weight: 600; margin: 0; text-wrap: balance; }
+.prov { color: var(--muted); font: 12px var(--font-mono); }
+.lede { color: var(--ink-2); max-width: 75ch; margin: 6px 0 0; }
+nav { display: flex; gap: 4px; margin: 18px 0 16px; border-bottom: 1px solid var(--grid); overflow-x: auto; }
+nav button { font: 500 14px var(--font-ui); color: var(--ink-2); background: none; border: 0;
+  padding: 8px 12px 10px; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
+nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--s1); }
+nav button:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+
+.figures { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-bottom: 18px; }
+.fig { display: flex; flex-direction: column; }
+.fig b { font-size: 20px; font-weight: 600; }
+.fig span { color: var(--muted); font-size: 12px; }
+
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 16px; min-width: 0;
+  display: flex; flex-direction: column; gap: 8px; }
+.card.wide { grid-column: 1 / -1; }
+.card[hidden] { display: none; }
+.pm-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+.pm-card.wide { grid-column: 1 / -1; }
+.pm-card { transition: box-shadow .3s; }
+.pm-card.flash { box-shadow: 0 0 0 2px var(--s1); }
+.pm-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; }
+.pm-genes { font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
+.pm-set { font-size: 12px !important; color: var(--muted) !important; }
+.pm-body { display: flex; flex-direction: column; gap: 8px; }
+.pm-card.wide .pm-body { flex-direction: row; align-items: flex-start; }
+.pm-card.wide .pm-mini { flex: 0 0 340px; }
+.pm-card.wide .pm-gridhost { flex: 1; min-width: 0; }
+@media (max-width: 860px) { .pm-card.wide .pm-body { flex-direction: column; } .pm-card.wide .pm-mini { flex: none; width: 100%; } }
+.pm-mini svg { width: 100%; }
+table.pmgrid td.scr { white-space: nowrap; }
+table.pmgrid td.scr i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
+table.pmgrid th.g { font-family: var(--font-mono); font-size: 11px; text-align: center; padding: 4px 3px; }
+table.pmgrid td.g { text-align: center; padding: 4px 3px; font-size: 12px; }
+tr.hl { background: var(--wash); box-shadow: inset 3px 0 0 var(--s1); }
+.card p.note { color: var(--ink-2); margin: 0; font-size: 13px; max-width: 80ch; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--muted); font: 11px var(--font-ui); }
+.axis line, .axis path { stroke: var(--axis); }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.lbl { fill: var(--ink-2); font: 500 11px var(--font-mono); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.legend i.hollow { background: var(--surface) !important; box-shadow: inset 0 0 0 2px currentColor; }
+.legend i.ring { background: transparent; border: 1.5px dashed var(--muted); width: 12px; height: 12px; }
+.legend i.line { border-radius: 0; height: 0; width: 18px; border-top: 2px solid var(--edge); margin-bottom: 3px; }
+.legend i.line.dot { border-top-style: dotted; }
+
+details { font-size: 13px; }
+details summary { cursor: pointer; color: var(--ink-2); }
+.tablebox { overflow-x: auto; max-height: 320px; overflow-y: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--surface); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.mono, .mono { font-family: var(--font-mono); }
+tr.click { cursor: pointer; } tr.click:hover { background: var(--wash); }
+
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 12px; }
+.controls label { color: var(--ink-2); font-size: 13px; display: flex; gap: 6px; align-items: center; }
+select, input[type="search"] { font: 13px var(--font-ui); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--axis); border-radius: 4px; padding: 6px 8px; max-width: 100%; }
+select { min-width: 0; width: min(560px, 100%); }
+.netgrid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr); gap: 16px; }
+@media (max-width: 860px) { .netgrid { grid-template-columns: 1fr; } }
+.netsvg { background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; touch-action: none; overflow: hidden; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 11px; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--axis); color: var(--ink-2); }
+.chip.warn { border-color: var(--s2); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 13px; margin: 0; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+a { color: var(--s1); }
+.orient { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); background: var(--page); padding: 6px 8px; border-radius: 4px; overflow-wrap: anywhere; }
+
+.search { position: relative; width: min(420px, 100%); }
+.search input { width: 100%; box-sizing: border-box; }
+.sugg { position: absolute; z-index: 5; left: 0; right: 0; top: 100%; margin: 2px 0 0; padding: 4px 0; list-style: none;
+  background: var(--surface); border: 1px solid var(--axis); border-radius: 4px; max-height: 260px; overflow-y: auto; }
+.sugg li { padding: 4px 10px; cursor: pointer; font-family: var(--font-mono); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; }
+.sugg li span { color: var(--muted); font-family: var(--font-ui); font-size: 12px; }
+.sugg li[aria-selected="true"], .sugg li:hover { background: var(--wash); }
+
+.ugraph { height: min(74vh, 780px); min-height: 460px; background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; position: relative; overflow: hidden; touch-action: none; }
+.toggles { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.toggles button { font: 12px var(--font-ui); color: var(--ink-2); background: var(--surface); border: 1px solid var(--axis); border-radius: 12px; padding: 3px 10px; cursor: pointer; }
+.toggles button[aria-pressed="true"] { color: var(--ink); border-color: var(--s3); background: var(--wash); }
+.btn { font: 500 12px var(--font-ui); color: var(--s1); background: none; border: 1px solid var(--axis); border-radius: 4px; padding: 4px 10px; cursor: pointer; align-self: flex-start; }
+.count { color: var(--muted); font-size: 12px; margin: 6px 0 0; }
+.finding { background: var(--surface); border: 1px solid var(--ring); border-left: 3px solid var(--s1);
+  border-radius: 6px; padding: 14px 18px; margin: 4px 0 16px; max-width: 95ch; }
+.finding p { margin: 0 0 10px; color: var(--ink-2); }
+.finding p:last-child { margin-bottom: 0; }
+.finding b { color: var(--ink); }
+.finding .caveat { font-size: 13px; color: var(--muted); border-top: 1px solid var(--grid); padding-top: 8px; }
+h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); margin: 18px 0 8px; }
+.examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 4px; }
+.ex { background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 6px; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.ex:hover { border-color: var(--s1); }
+.ex .r { font: 600 15px var(--font-mono); color: var(--ink); }
+.ex .who { font-size: 12px; color: var(--muted); }
+.ex .genes { font: 12px var(--font-mono); color: var(--ink-2); overflow-wrap: anywhere; }
+.ex .so { font-size: 12px; color: var(--ink-2); }
+.linklist { display: flex; flex-wrap: wrap; gap: 4px 10px; font: 12px var(--font-mono); }
+.linklist button { font: inherit; color: var(--s1); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--axis); }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--ring); border-radius: 6px; padding: 8px 10px; font-size: 12px; max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+#tip b { display: block; font-size: 13px; }
+#tip .sub { color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>BARCS evidence graph</h1>
+      <p class="lede">122 published pooled CRISPR screens reanalyzed with BARCS, every tested gene kept, joined to STRING v12.5. The pathway map shows which interacting genes are hit together in screens from different papers. The other views open the evidence behind any screen or gene. Each screen's own reanalysis is on the <a href="https://jeonglab-bcm.github.io/BARCS/">BARCS reanalysis site</a>.</p>
+    </div>
+    <div class="prov" id="prov"></div>
+  </header>
+
+  <nav role="tablist" aria-label="Views">
+    <button role="tab" id="tab-pathways" aria-controls="view-pathways">Pathway map</button>
+    <button role="tab" id="tab-corpus" aria-controls="view-corpus">Corpus</button>
+    <button role="tab" id="tab-network" aria-controls="view-network">Screen network</button>
+    <button role="tab" id="tab-gene" aria-controls="view-gene">Gene across screens</button>
+  </nav>
+
+  <section id="view-pathways" role="tabpanel" aria-labelledby="tab-pathways">
+    <div class="figures" id="pm-figures"></div>
+    <p class="lede" id="pm-lede"></p>
+    <p class="lede" style="margin-top:6px">Each card is one module. The small network shows which of its genes interact and how many papers hit each pair together. The grid lists every screen that hits the module, with <span style="color:var(--s1)">▲</span> where guides were enriched and <span style="color:var(--s2)">▼</span> where they were depleted, in the contrast as oriented; what that means for the phenotype is not curated yet. Hover a screen to find it in other cards, click it to open its network.</p>
+    <div class="controls" style="margin-top:14px">
+      <div class="search">
+        <input type="search" id="pm-input" placeholder="Find a gene, pathway or screen, e.g. JAK1, COMMD, NK cells" autocomplete="off" aria-label="Find a gene, pathway or screen" aria-autocomplete="list" aria-controls="pm-sugg">
+        <ul class="sugg" id="pm-sugg" role="listbox" hidden></ul>
+      </div>
+    </div>
+    <div class="toggles" id="pm-themes" role="group" aria-label="Show module themes"></div>
+    <div class="legend" id="pm-legend"></div>
+    <div id="pm-cards"></div>
+  </section>
+
+  <section id="view-corpus" role="tabpanel" aria-labelledby="tab-corpus" hidden>
+    <div class="figures" id="figures"></div>
+    <div class="grid2">
+      <div class="card wide">
+        <h2>Where the calls are</h2>
+        <p class="note">Each dot is one contrast. Contrasts that call more than 10% of what they test hold most of the corpus's calls; the shaded region is what cross-screen analyses use. Select a dot to open its network.</p>
+        <div class="legend" id="qc-legend"></div>
+        <div id="qc"></div>
+        <details><summary>Data table</summary><div class="tablebox" id="qc-table"></div></details>
+      </div>
+      <div class="card">
+        <h2>Do the genes papers name hold up?</h2>
+        <p class="note">930 named genes scored against the BARCS contrast they were compared with, split by the residual degrees of freedom of that contrast.</p>
+        <div class="legend" id="claims-legend"></div>
+        <div id="claims"></div>
+        <details><summary>Data table</summary><div class="tablebox" id="claims-table"></div></details>
+      </div>
+      <div class="card">
+        <h2>Genes that hit everywhere</h2>
+        <p class="note">Human genes called in 3+ independent papers, against how many each paper's own hit rate predicts. Orange: more than expected (q &lt; 0.05) across 3+ assay classes. Select a dot to see the gene.</p>
+        <div class="legend" id="rec-legend"></div>
+        <div id="rec"></div>
+        <details><summary>Data table</summary><div class="tablebox" id="rec-table"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-network" role="tabpanel" aria-labelledby="tab-network" hidden>
+    <div class="controls">
+      <label for="net-select">Contrast</label>
+      <select id="net-select"></select>
+      <label><input type="checkbox" id="net-iso"> Hide genes with no link</label>
+    </div>
+    <div class="netgrid">
+      <div style="min-width:0; display:flex; flex-direction:column; gap:8px;">
+        <div class="legend" id="net-legend"></div>
+        <svg id="net" class="netsvg" viewBox="0 0 800 600" role="img" aria-label="STRING physical network of the contrast's top hits"></svg>
+        <p class="note" style="color:var(--muted);font-size:12px;margin:0">Top 60 calls plus every named gene and lead. Edges: STRING physical, score ≥ 700. Node size: −log10 FDR. Drag to rearrange, scroll or pinch to zoom, select a gene to follow it across screens.</p>
+      </div>
+      <div class="card" id="net-panel"></div>
+    </div>
+  </section>
+
+  <section id="view-gene" role="tabpanel" aria-labelledby="tab-gene" hidden>
+    <div class="controls">
+      <div class="search">
+        <input type="search" id="gene-input" placeholder="Gene symbol, e.g. JAK1" autocomplete="off" aria-label="Gene symbol" aria-autocomplete="list" aria-controls="gene-sugg">
+        <ul class="sugg" id="gene-sugg" role="listbox" hidden></ul>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="card wide" id="gene-card"></div>
+    </div>
+  </section>
+</div>
+<div id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const DATA = /*__DATA__*/null;
+const C = DATA.contrasts;
+const ORG = {9606: "human", 10090: "mouse", 10116: "rat", 9913: "cattle", 5811: "Toxoplasma", 226186: "Bacteroides"};
+const FIT = new Set(DATA.fitness), FREQ = new Set(DATA.frequent);
+const fmt = d3.format(","), pct = d3.format(".0%");
+const fdrf = v => v == null ? "–" : v < 0.001 ? d3.format(".1e")(v) : d3.format(".3f")(v);
+const el = (tag, attrs = {}, text) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (text != null) e.textContent = text; return e; };
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById("tip");
+function showTip(ev, title, lines) {
+  tip.replaceChildren(el("b", {}, title), ...lines.map(l => el("div", {class: "sub"}, l)));
+  tip.hidden = false;
+  const r = tip.getBoundingClientRect(), pad = 14;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+const hideTip = () => { tip.hidden = true; };
+
+function legend(id, items) {
+  const box = document.getElementById(id);
+  box.replaceChildren(...items.map(([cls, color, text]) => {
+    const s = el("span"); const i = el("i", {class: cls || ""});
+    if (color) { i.style.background = color; i.style.color = color; }
+    s.append(i, document.createTextNode(text)); return s;
+  }));
+}
+function table(id, head, rows, onClick) {
+  const t = el("table"), tr = el("tr");
+  head.forEach(([h, num]) => tr.append(el("th", num ? {class: "num"} : {}, h)));
+  const thead = el("thead"); thead.append(tr); t.append(thead);
+  const tb = el("tbody");
+  rows.forEach(r => {
+    const row = el("tr", onClick ? {class: "click", tabindex: "0"} : {});
+    r.cells.forEach((v, i) => row.append(el("td", {class: (head[i][1] ? "num " : "") + (head[i][2] ? "mono" : "")}, v)));
+    if (onClick) { row.addEventListener("click", () => onClick(r)); row.addEventListener("keydown", e => { if (e.key === "Enter") onClick(r); }); }
+    tb.append(row);
+  });
+  t.append(tb); document.getElementById(id).replaceChildren(t);
+}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+/* ---------- tabs ---------- */
+const TABS = ["pathways", "corpus", "network", "gene"];
+function show(tab) {
+  TABS.forEach(t => {
+    document.getElementById("tab-" + t).setAttribute("aria-selected", t === tab);
+    document.getElementById("view-" + t).hidden = t !== tab;
+  });
+  try { history.replaceState(null, "", "#" + tab); } catch (e) {}
+  if (tab === "network" && !netDrawn) drawNet();
+  if (tab === "pathways" && !pmDrawn) pmInit();
+}
+TABS.forEach(t => document.getElementById("tab-" + t).addEventListener("click", () => show(t)));
+
+/* ---------- corpus ---------- */
+function corpus() {
+  const s = DATA.meta.summary;
+  document.getElementById("prov").textContent = `BARCS ${DATA.meta.commit} · STRING v${DATA.meta.string} · FDR < 0.10`;
+  const figs = [
+    [fmt(s.inventory.result), "gene-level results"],
+    [fmt(s.inventory.hits_fdr10), "calls at FDR < 0.10"],
+    [String(s.hit_load.contrasts_calling_over_10pct), `contrasts hold ${pct(s.hit_load.their_share_of_all_hits)} of calls`],
+    [String(s.hit_load.eligible_contrasts), "eligible contrasts"],
+    [String(s.unreported.priority_leads), "leads the papers did not name"],
+  ];
+  document.getElementById("figures").replaceChildren(...figs.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  qcChart(); claimsChart(); recChart();
+}
+
+function qcCategory(c) { return c.tested < 1000 ? "small" : c.hits / c.tested > 0.10 ? "flood" : "ok"; }
+function qcChart() {
+  const W = 960, H = 340, m = {l: 52, r: 16, t: 10, b: 40};
+  const pts = C.filter(c => c.tested && c.hits != null);
+  const x = d3.scaleLog().domain([10, 30000]).range([m.l, W - m.r]);
+  const y = d3.scaleSymlog().constant(0.5).domain([0, 100]).range([H - m.b, m.t]);
+  const col = {ok: "var(--s1)", flood: "var(--s2)", small: "var(--s3)"};
+  legend("qc-legend", [[null, css("--s1"), "≥ 1,000 tested, ≤ 10% called (eligible)"], [null, css("--s2"), "calls > 10% of tested"], [null, css("--s3"), "< 1,000 elements tested"], ["hollow", css("--muted"), "sensitivity re-run"]]);
+  const svg = d3.select("#qc").append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Contrasts by elements tested and share called");
+  svg.append("rect").attr("x", x(1000)).attr("y", y(10)).attr("width", x(30000) - x(1000)).attr("height", y(0) - y(10)).attr("fill", "var(--wash)");
+  svg.append("text").attr("x", x(30000) - 6).attr("y", y(10) + 14).attr("text-anchor", "end").text("eligible for cross-screen analysis");
+  const yt = [0, 1, 5, 10, 25, 50, 100];
+  svg.append("g").selectAll("line").data(yt).join("line").attr("class", "gridline").attr("x1", m.l).attr("x2", W - m.r).attr("y1", d => y(d)).attr("y2", d => y(d));
+  svg.append("g").attr("transform", `translate(0,${H - m.b})`).attr("class", "axis").call(d3.axisBottom(x).tickValues([10, 100, 1000, 10000]).tickFormat(fmt).tickSizeOuter(0));
+  svg.append("g").attr("transform", `translate(${m.l},0)`).attr("class", "axis").call(d3.axisLeft(y).tickValues(yt).tickFormat(d => d + "%").tickSize(0)).call(g => g.select(".domain").remove());
+  svg.append("text").attr("x", (m.l + W - m.r) / 2).attr("y", H - 6).attr("text-anchor", "middle").text("elements tested (log)");
+  svg.append("text").attr("transform", `translate(12,${(H - m.b + m.t) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("share called at FDR < 0.10");
+  const g = svg.append("g");
+  const jitter = d3.randomUniform.source(d3.randomLcg(3))(-0.04, 0.04);
+  pts.forEach(c => { c._x = x(Math.max(10, c.tested)) * (1 + jitter() * 0.05); c._y = y(100 * c.hits / c.tested); });
+  const dots = g.selectAll("g").data(pts).join("g").attr("transform", c => `translate(${c._x},${c._y})`).style("cursor", "pointer")
+    .attr("tabindex", 0).attr("role", "button").attr("aria-label", c => `${c.id}: ${c.hits} of ${c.tested} called`);
+  dots.append("circle").attr("r", 12).attr("fill", "transparent");
+  dots.append("circle").attr("r", 4.5).attr("stroke", "var(--surface)").attr("stroke-width", 2)
+    .attr("fill", c => c.primary ? col[qcCategory(c)] : "var(--surface)")
+    .filter(c => !c.primary).attr("stroke", c => col[qcCategory(c)]).attr("stroke-width", 1.5);
+  const lab = pts.filter(c => c.id.startsWith("GSE291338:ven") || c.id.startsWith("GSE246804") || c.id.startsWith("GSE212152:est"));
+  g.selectAll("text").data(lab).join("text").attr("class", "lbl").attr("x", c => c._x + 8).attr("y", c => c._y + 4).text(c => c.id.split(":")[0]);
+  dots.on("pointermove", (ev, c) => showTip(ev, c.id, [c.title, `${ORG[c.taxon] || ""} · ${c.modality || "?"} · ${c.selection || "?"}`, `${fmt(c.hits)} of ${fmt(c.tested)} called (${pct(c.hits / c.tested)}) · residual df ${c.df}`, c.flags.length ? "flags: " + c.flags.join(", ") : "no QC flags"]))
+    .on("pointerleave", hideTip).on("click", (ev, c) => openNet(c.id)).on("keydown", (ev, c) => { if (ev.key === "Enter") openNet(c.id); });
+  table("qc-table", [["contrast", 0, 1], ["selection"], ["tested", 1], ["called", 1], ["share", 1], ["df", 1], ["flags"]],
+    pts.slice().sort((a, b) => b.hits / b.tested - a.hits / a.tested).map(c => ({id: c.id, cells: [c.id, c.selection || "", fmt(c.tested), fmt(c.hits), pct(c.hits / c.tested), String(c.df), c.flags.join(", ")]})), r => openNet(r.id));
+}
+
+function claimsChart() {
+  const order = ["supported", "borderline", "not_supported"], name = {supported: "supported (FDR < 0.10)", borderline: "borderline (< 0.25)", not_supported: "not supported"};
+  const col = {supported: "var(--s1)", borderline: "var(--neutral)", not_supported: "var(--s2)"};
+  legend("claims-legend", order.map(k => [null, css(col[k].slice(4, -1)), name[k]]));
+  const rows = ["0", "1", "2+"].map(k => { const d = DATA.claims_by_df[k] || {}; const tot = order.reduce((a, o) => a + (d[o] || 0), 0); return {k, d, tot}; });
+  const W = 480, H = 170, m = {l: 64, r: 12, t: 6, b: 24}, bh = 24;
+  const x = d3.scaleLinear().domain([0, 1]).range([m.l, W - m.r]);
+  const y = d3.scaleBand().domain(rows.map(r => r.k)).range([m.t, H - m.b]).padding(0.45);
+  const svg = d3.select("#claims").append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Named-gene support by residual df");
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat(pct).tickSizeOuter(0));
+  rows.forEach(r => {
+    let acc = 0;
+    svg.append("text").attr("x", m.l - 8).attr("y", y(r.k) + y.bandwidth() / 2 + 4).attr("text-anchor", "end").style("fill", "var(--ink-2)").text(`df ${r.k} · ${r.tot}`);
+    order.forEach(o => {
+      const v = (r.d[o] || 0) / r.tot, x0 = x(acc), w = x(acc + v) - x0;
+      svg.append("rect").attr("x", x0 + 1).attr("y", y(r.k) + (y.bandwidth() - bh) / 2).attr("width", Math.max(0, w - 2)).attr("height", bh).attr("rx", 2).attr("fill", col[o])
+        .on("pointermove", ev => showTip(ev, `${r.d[o] || 0} of ${r.tot} (${pct(v)})`, [name[o], `contrasts with residual df ${r.k}`])).on("pointerleave", hideTip);
+      if (w > 34) svg.append("text").attr("x", x0 + w / 2).attr("y", y(r.k) + y.bandwidth() / 2 + 4).attr("text-anchor", "middle").style("fill", o === "borderline" ? "var(--ink)" : "#fff").style("font-weight", 500).text(pct(v));
+      acc += v;
+    });
+  });
+  table("claims-table", [["residual df"], ["supported", 1], ["borderline", 1], ["not supported", 1]], rows.map(r => ({cells: [r.k, String(r.d.supported || 0), String(r.d.borderline || 0), String(r.d.not_supported || 0)]})));
+}
+
+function recChart() {
+  const rows = DATA.recurrence.filter(r => r[1] === 9606).map(r => ({g: r[0], tested: r[2], hit: r[3], exp: r[4], q: r[5], classes: r[6], fit: r[7], freq: r[5] < 0.05 && r[6].split(",").length >= 3}));
+  legend("rec-legend", [[null, css("--s2"), "frequent hitter"], [null, css("--neutral"), "other"]]);
+  const W = 480, H = 300, m = {l: 40, r: 14, t: 10, b: 38};
+  const x = d3.scaleLinear().domain([0, d3.max(rows, r => r.exp) * 1.05]).nice().range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([2.5, d3.max(rows, r => r.hit) + 0.5]).range([H - m.b, m.t]);
+  const svg = d3.select("#rec").append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", "Papers hit versus expected per gene");
+  svg.append("g").selectAll("line").data(y.ticks(5)).join("line").attr("class", "gridline").attr("x1", m.l).attr("x2", W - m.r).attr("y1", d => y(d)).attr("y2", d => y(d));
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickSizeOuter(0));
+  svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")).tickSize(0)).call(g => g.select(".domain").remove());
+  svg.append("text").attr("x", (m.l + W - m.r) / 2).attr("y", H - 4).attr("text-anchor", "middle").text("papers expected from each paper's hit rate");
+  svg.append("text").attr("transform", `translate(10,${(H - m.b) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("papers that call it");
+  const rnd = d3.randomUniform.source(d3.randomLcg(11))(-0.28, 0.28);
+  rows.forEach(r => { r._x = x(r.exp); r._y = y(r.hit + rnd()); });
+  rows.sort((a, b) => a.freq - b.freq);
+  const dots = svg.append("g").selectAll("g").data(rows).join("g").attr("transform", r => `translate(${r._x},${r._y})`).style("cursor", "pointer");
+  dots.append("circle").attr("r", 9).attr("fill", "transparent");
+  dots.append("circle").attr("r", r => r.freq ? 4 : 3).attr("fill", r => r.freq ? "var(--s2)" : "var(--neutral)").attr("stroke", "var(--surface)").attr("stroke-width", 1.5);
+  dots.on("pointermove", (ev, r) => showTip(ev, r.g, [`called in ${r.hit} of ${r.tested} papers, ${r.exp.toFixed(1)} expected`, `q = ${fdrf(r.q)}`, r.classes.replaceAll(",", ", "), r.fit ? "fitness gene" : ""].filter(Boolean)))
+    .on("pointerleave", hideTip).on("click", (ev, r) => openGene(r.g + "|9606"));
+  const top = rows.filter(r => r.freq).sort((a, b) => b.hit - a.hit || a.exp - b.exp).slice(0, 7);
+  svg.append("g").selectAll("text").data(top).join("text").attr("class", "lbl").attr("x", r => r._x + 7).attr("y", r => r._y + 4).text(r => r.g);
+  table("rec-table", [["gene", 0, 1], ["papers hit", 1], ["tested", 1], ["expected", 1], ["q", 1], ["assay classes"]],
+    rows.filter(r => r.freq).sort((a, b) => a.q - b.q).map(r => ({g: r.g, cells: [r.g, String(r.hit), String(r.tested), r.exp.toFixed(1), fdrf(r.q), r.classes.replaceAll(",", ", ")]})), r => openGene(r.g + "|9606"));
+}
+
+/* ---------- network ---------- */
+let netIdx = String(C.findIndex(c => c.id === "GSE212152:establishment_GFP_vs_unsorted")), netDrawn = false;
+const sel = document.getElementById("net-select");
+(function fillSelect() {
+  const groups = [["Eligible contrasts", c => c.eligible], ["Other contrasts", c => !c.eligible]];
+  groups.forEach(([label, f]) => {
+    const og = el("optgroup", {label});
+    C.forEach((c, i) => { if (DATA.nets[i] && f(c)) og.append(el("option", {value: String(i)}, `${c.id}  ·  ${c.selection || ""}`)); });
+    sel.append(og);
+  });
+  sel.value = netIdx;
+  sel.addEventListener("change", () => { netIdx = sel.value; drawNet(); });
+  document.getElementById("net-iso").addEventListener("change", drawNet);
+})();
+function openNet(cid) {
+  const i = C.findIndex(c => c.id === cid);
+  if (!DATA.nets[i]) { showTip({clientX: innerWidth / 2, clientY: 120}, cid, ["No network: fewer than 5 calls, or no STRING join for this organism."]); setTimeout(hideTip, 2200); return; }
+  netIdx = String(i); sel.value = netIdx; show("network"); drawNet();
+}
+const ROLE = {named: ["var(--s1)", false, "named by the paper, called"], named_nc: ["var(--s1)", true, "named by the paper, not called"], lead: ["var(--s2)", false, "lead: strong call the paper did not name"], hit: ["var(--neutral)", false, "other call"]};
+function drawNet() {
+  netDrawn = true;
+  const c = C[+netIdx], net = DATA.nets[netIdx];
+  legend("net-legend", [[null, css("--s1"), "named, called"], ["hollow", css("--s1"), "named, not called"], [null, css("--s2"), "lead the paper did not name"], [null, css("--neutral"), "other call"], ["ring", null, "fitness gene or frequent hitter"], ["line", null, "experimental or database evidence"], ["line dot", null, "other STRING evidence"]]);
+  const hideIso = document.getElementById("net-iso").checked;
+  const deg = new Array(net.n.length).fill(0); net.e.forEach(([a, b]) => { deg[a]++; deg[b]++; });
+  const nodes = net.n.map((n, i) => ({i, name: n[0], est: n[1], fdr: n[2], role: n[3], ctx: n[4], deg: deg[i]})).filter(n => !hideIso || n.deg > 0);
+  const keep = new Set(nodes.map(n => n.i));
+  const links = net.e.filter(([a, b]) => keep.has(a) && keep.has(b)).map(([a, b, s, ev]) => ({source: a, target: b, s, ev}));
+  const r = n => 4 + 1.1 * Math.min(8, -Math.log10(Math.max(n.fdr ?? 1, 1e-12)));
+  const W = 800, H = 600;
+  const byI = new Map(nodes.map(n => [n.i, n]));
+  const sim = d3.forceSimulation(nodes).force("link", d3.forceLink(links).id(n => n.i).distance(62).strength(0.5))
+    .force("charge", d3.forceManyBody().strength(-170)).force("x", d3.forceX(W / 2).strength(0.05)).force("y", d3.forceY(H / 2).strength(0.07))
+    .force("collide", d3.forceCollide(n => r(n) + 14)).stop();
+  for (let k = 0; k < 320; k++) sim.tick();
+  const svg = d3.select("#net"); svg.selectAll("*").remove();
+  const root = svg.append("g");
+  const zoom = d3.zoom().scaleExtent([0.3, 5]).on("zoom", ev => root.attr("transform", ev.transform));
+  svg.call(zoom);
+  const [x0, x1] = d3.extent(nodes, n => n.x), [y0, y1] = d3.extent(nodes, n => n.y);
+  const k = Math.min(1.6, 0.9 * Math.min(W / Math.max(1, x1 - x0 + 80), H / Math.max(1, y1 - y0 + 40)));
+  svg.call(zoom.transform, d3.zoomIdentity.translate(W / 2 - k * (x0 + x1) / 2, H / 2 - k * (y0 + y1) / 2).scale(k));
+  const link = root.append("g").selectAll("line").data(links).join("line").attr("stroke", "var(--edge)").attr("stroke-width", l => l.ev ? 1.4 : 1).attr("stroke-dasharray", l => l.ev ? null : "2 3");
+  const node = root.append("g").selectAll("g").data(nodes).join("g").style("cursor", "pointer").attr("tabindex", 0).attr("role", "button").attr("aria-label", n => `${n.name}, FDR ${fdrf(n.fdr)}`);
+  node.append("circle").attr("r", n => r(n) + 10).attr("fill", "transparent");
+  node.filter(n => n.ctx).append("circle").attr("r", n => r(n) + 4).attr("fill", "none").attr("stroke", "var(--muted)").attr("stroke-width", 1.2).attr("stroke-dasharray", "3 2");
+  node.append("circle").attr("r", r).attr("fill", n => ROLE[n.role][1] ? "var(--surface)" : ROLE[n.role][0]).attr("stroke", n => ROLE[n.role][1] ? ROLE[n.role][0] : "var(--surface)").attr("stroke-width", 2);
+  const labelled = new Set(nodes.filter(n => n.role !== "hit").map(n => n.i).concat(nodes.slice().sort((a, b) => (a.fdr ?? 1) - (b.fdr ?? 1)).slice(0, 12).map(n => n.i)));
+  node.filter(n => labelled.has(n.i)).append("text").attr("class", "lbl").attr("x", n => r(n) + 4).attr("y", 4).text(n => n.name);
+  const place = () => { link.attr("x1", l => l.source.x).attr("y1", l => l.source.y).attr("x2", l => l.target.x).attr("y2", l => l.target.y); node.attr("transform", n => `translate(${n.x},${n.y})`); };
+  place();
+  sim.on("tick", place);
+  node.call(d3.drag().on("start", (ev, n) => { if (!ev.active) sim.alphaTarget(0.2).restart(); n.fx = n.x; n.fy = n.y; })
+    .on("drag", (ev, n) => { n.fx = ev.x; n.fy = ev.y; }).on("end", (ev, n) => { if (!ev.active) sim.alphaTarget(0); n.fx = null; n.fy = null; }));
+  const ctxText = n => [n.ctx & 1 ? "fitness gene" : null, n.ctx & 2 ? "frequent hitter" : null].filter(Boolean).join(", ");
+  node.on("pointermove", (ev, n) => showTip(ev, n.name, [`estimate ${n.est} · FDR ${fdrf(n.fdr)}`, ROLE[n.role][2], `${n.deg} STRING link${n.deg === 1 ? "" : "s"} among these genes`, ctxText(n)].filter(Boolean)))
+    .on("pointerleave", hideTip).on("click", (ev, n) => { if (ev.defaultPrevented) return; openGene(`${n.name}|${c.taxon}`); })
+    .on("keydown", (ev, n) => { if (ev.key === "Enter") openGene(`${n.name}|${c.taxon}`); });
+  netPanel(c, net, nodes);
+}
+function netPanel(c, net, nodes) {
+  const p = document.getElementById("net-panel"); p.replaceChildren();
+  p.append(el("h2", {}, c.id));
+  const t = el("p", {class: "note"}); const a = el("a", {href: c.doi ? "https://doi.org/" + c.doi : "https://pubmed.ncbi.nlm.nih.gov/" + c.pmid, target: "_blank", rel: "noopener"}, c.title); t.append(a); p.append(t);
+  p.append(el("div", {class: "orient"}, c.orientation || "orientation not determined"));
+  const dl = el("dl", {class: "kv"});
+  [["organism", c.organism], ["perturbation", c.modality], ["selection", c.selection], ["called", `${fmt(c.hits)} of ${fmt(c.tested)} (${pct(c.hits / c.tested)})`], ["residual df", String(c.df)], ["control guides", String(c.controls ?? 0)]]
+    .forEach(([k, v]) => dl.append(el("dt", {}, k), el("dd", {}, v ?? "–")));
+  p.append(dl);
+  const chips = el("div", {class: "chips"});
+  (c.flags.length ? c.flags : ["no QC flags"]).forEach(f => chips.append(el("span", {class: "chip" + (c.flags.length ? " warn" : "")}, f.replaceAll("_", " "))));
+  if (!c.eligible) chips.append(el("span", {class: "chip warn"}, "not used in cross-screen counts"));
+  p.append(chips);
+  const named = nodes.filter(n => n.role === "named" || n.role === "named_nc").sort((a, b) => (a.fdr ?? 1) - (b.fdr ?? 1));
+  p.append(el("h2", {}, `Named by the paper (${named.length} tested)`));
+  if (named.length) {
+    const box = el("div", {class: "tablebox", id: "np-named"}); p.append(box);
+    table("np-named", [["gene", 0, 1], ["estimate", 1], ["FDR", 1], ["status"]], named.map(n => ({n, cells: [n.name, String(n.est), fdrf(n.fdr), n.role === "named" ? "called" : "not called"]})), r => openGene(`${r.n.name}|${c.taxon}`));
+  } else p.append(el("p", {class: "note"}, "No named gene is in this library, or the comparison used another contrast."));
+  p.append(el("h2", {}, `Leads the paper did not name (${net.leads.length})`));
+  if (net.leads.length) {
+    const box = el("div", {class: "tablebox", id: "np-leads"}); p.append(box);
+    table("np-leads", [["gene", 0, 1], ["rank", 1], ["FDR", 1], ["linked named genes (STRING)"]],
+      net.leads.sort((a, b) => a[1] - b[1]).map(l => ({g: l[0], cells: [l[0], String(l[1]), fdrf(l[2]), [l[3], l[4]].filter(Boolean).join("; ").replace(/,exp\d+,db\d+/g, "")]})), r => openGene(`${r.g}|${c.taxon}`));
+  } else p.append(el("p", {class: "note"}, c.eligible ? "None pass the lead filter (top 25, not a fitness gene or frequent hitter, linked to a named gene or in a module)." : "Leads are only drawn from eligible contrasts."));
+}
+
+/* ---------- gene ---------- */
+const GKEYS = Object.keys(DATA.genes);
+const inp = document.getElementById("gene-input"), sug = document.getElementById("gene-sugg");
+let sugIdx = -1;
+function suggest() {
+  const q = inp.value.trim().toUpperCase(); sugIdx = -1;
+  if (!q) { sug.hidden = true; return; }
+  const hits = GKEYS.filter(k => k.toUpperCase().startsWith(q)).sort((a, b) => a.length - b.length || DATA.genes[b].c.length - DATA.genes[a].c.length).slice(0, 10);
+  sug.replaceChildren(...hits.map((k, i) => { const [g, t] = k.split("|"); const li = el("li", {role: "option", id: "sg" + i}); li.append(document.createTextNode(g), el("span", {}, `${ORG[t] || t} · ${DATA.genes[k].c.length} calls`)); li.addEventListener("mousedown", e => { e.preventDefault(); openGene(k); }); li.dataset.key = k; return li; }));
+  sug.hidden = !hits.length;
+}
+inp.addEventListener("input", suggest);
+inp.addEventListener("keydown", e => {
+  const items = [...sug.children];
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); sugIdx = (sugIdx + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length; items.forEach((li, i) => li.setAttribute("aria-selected", i === sugIdx)); }
+  if (e.key === "Enter") { const li = items[Math.max(0, sugIdx)]; if (li) openGene(li.dataset.key); }
+  if (e.key === "Escape") sug.hidden = true;
+});
+inp.addEventListener("blur", () => setTimeout(() => { sug.hidden = true; }, 120));
+
+function openGene(key) {
+  if (!DATA.genes[key]) {
+    const alt = GKEYS.find(k => k.toUpperCase() === key.toUpperCase());
+    if (!alt) { showTip({clientX: innerWidth / 2, clientY: 120}, key.split("|")[0], ["Not called in any primary contrast."]); setTimeout(hideTip, 2000); return; }
+    key = alt;
+  }
+  sug.hidden = true; const [g, t] = key.split("|"); inp.value = g;
+  show("gene"); drawGene(key);
+}
+function drawGene(key) {
+  const [g, t] = key.split("|"), d = DATA.genes[key];
+  const card = document.getElementById("gene-card"); card.replaceChildren();
+  const calls = d.c.map(([ci, est, fdr]) => ({c: C[ci], est, fdr})).sort((a, b) => a.fdr - b.fdr);
+  const papers = new Set(calls.map(x => x.c.pmid)), elig = calls.filter(x => x.c.eligible);
+  card.append(el("h2", {}, `${g} · ${ORG[t] || t}`));
+  card.append(el("p", {class: "note"}, `Called in ${calls.length} of ${d.t} primary contrasts that test it, from ${papers.size} paper${papers.size === 1 ? "" : "s"}; ${elig.length} of those calls are in eligible contrasts.`));
+  const rec = DATA.recurrence.find(r => r[0] === g && String(r[1]) === t);
+  const chips = el("div", {class: "chips"});
+  if (FREQ.has(key)) chips.append(el("span", {class: "chip warn"}, rec ? `frequent hitter: ${rec[3]} papers vs ${rec[4].toFixed(1)} expected` : "frequent hitter (from human)"));
+  if (FIT.has(key)) chips.append(el("span", {class: "chip warn"}, "fitness gene: calls outside fitness screens may reflect growth"));
+  if (!chips.children.length) chips.append(el("span", {class: "chip"}, "no context flags"));
+  card.append(chips);
+  const lg = el("div", {class: "legend"}); card.append(lg);
+  lg.append(...[[null, css("--s1"), "eligible contrast"], ["hollow", css("--muted"), "other contrast"]].map(([cls, color, text]) => { const s = el("span"); const i = el("i", {class: cls || ""}); i.style.background = color; i.style.color = color; s.append(i, document.createTextNode(text)); return s; }));
+  const classes = [...new Set(C.map(c => c.selection).filter(Boolean))].filter(s => calls.some(x => x.c.selection === s));
+  const W = 960, rowH = 34, m = {l: 140, r: 20, t: 8, b: 40}, H = m.t + m.b + rowH * Math.max(1, classes.length);
+  const ext = Math.max(0.5, d3.max(calls, x => Math.abs(x.est)) * 1.08);
+  const x = d3.scaleLinear().domain([-ext, ext]).range([m.l, W - m.r]).nice();
+  const y = d3.scaleBand().domain(classes).range([m.t, H - m.b]).padding(0.2);
+  const host = el("div"); card.append(host);
+  const svg = d3.select(host).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img").attr("aria-label", `${g} effect estimates in contrasts that call it`);
+  svg.append("g").selectAll("line").data(classes).join("line").attr("class", "gridline").attr("x1", m.l).attr("x2", W - m.r).attr("y1", s => y(s) + y.bandwidth() / 2).attr("y2", s => y(s) + y.bandwidth() / 2);
+  svg.append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", m.t).attr("y2", H - m.b).attr("stroke", "var(--axis)");
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(7).tickSizeOuter(0));
+  svg.append("text").attr("x", (m.l + W - m.r) / 2).attr("y", H - 6).attr("text-anchor", "middle").text("BARCS estimate (sign follows each contrast's orientation, not biology)");
+  svg.append("g").selectAll("text").data(classes).join("text").attr("x", m.l - 10).attr("y", s => y(s) + y.bandwidth() / 2 + 4).attr("text-anchor", "end").style("fill", "var(--ink-2)").text(s => s.replaceAll("_", " "));
+  const rnd = d3.randomUniform.source(d3.randomLcg(5))(-0.3, 0.3);
+  const dots = svg.append("g").selectAll("g").data(calls.slice().reverse()).join("g")
+    .attr("transform", x0 => `translate(${x(x0.est)},${y(x0.c.selection) + y.bandwidth() * (0.5 + rnd())})`).style("cursor", "pointer");
+  dots.append("circle").attr("r", 12).attr("fill", "transparent");
+  dots.append("circle").attr("r", 5).attr("fill", x0 => x0.c.eligible ? "var(--s1)" : "var(--surface)").attr("stroke", x0 => x0.c.eligible ? "var(--surface)" : "var(--muted)").attr("stroke-width", x0 => x0.c.eligible ? 2 : 1.5);
+  dots.on("pointermove", (ev, x0) => showTip(ev, `estimate ${x0.est} · FDR ${fdrf(x0.fdr)}`, [x0.c.id, x0.c.title, x0.c.orientation || ""])).on("pointerleave", hideTip).on("click", (ev, x0) => openNet(x0.c.id));
+  const box = el("div", {class: "tablebox", id: "gene-table"}); card.append(box);
+  table("gene-table", [["contrast", 0, 1], ["selection"], ["estimate", 1], ["FDR", 1], ["eligible"], ["paper"]],
+    calls.map(x0 => ({id: x0.c.id, cells: [x0.c.id, x0.c.selection || "", String(x0.est), fdrf(x0.fdr), x0.c.eligible ? "yes" : "no", x0.c.title]})), r => openNet(r.id));
+}
+
+/* ---------- pathway map ---------- */
+const PM = /*__PATH__*/null;
+let pmDrawn = false;
+const SELCOL = {sort: "--s1", treatment: "--s2", in_vivo: "--s3", immune_coculture: "--s4", genetic_interaction: "--s5", infection: "--s6", fitness_time: "--neutral", culture_condition: "--neutral"};
+const SELNAME = {sort: "reporter / FACS sort", treatment: "drug or treatment", in_vivo: "in vivo", immune_coculture: "immune co-culture", genetic_interaction: "genetic interaction", infection: "infection", fitness_time: "fitness", culture_condition: "culture"};
+const THEMES = ["immune signalling", "signalling", "membrane & trafficking", "DNA & RNA", "transcription machinery", "mitochondria", "other"];
+// Off by default: these are what any reporter or growth readout tends to hit,
+// so they link screens without saying much about either phenotype.
+const PM_GENERIC = ["transcription machinery", "mitochondria"];
+const pmShown = new Set(THEMES.filter(t => !PM_GENERIC.includes(t)));
+const themeOf = m => m.theme || "other";
+const scrName = s => s.label || s.id;
+// STRING cluster names read "Mixed, incl. A, and B"; the first named part is the useful one.
+function modName(m) {
+  if (m.name) return m.name;
+  if (!m.set) return m.genes.slice(0, 3).join(" · ");
+  const t = m.set.replace(/^(Mixed|Mostly uncharacterized), incl\. /, "").split(", and ")[0];
+  return t.length > 34 ? t.slice(0, 32).trim() + "…" : t;
+}
+
+function pmFigures() {
+  const p = PM.params;
+  const f = [[String(PM.modules.length), "pathway modules"], [String(PM.screens.length), "screens linked"],
+    [String(new Set(PM.screens.map(s => s.pmid)).size), "papers"],
+    [`${fmt(p.pairs_replicated)} of ${fmt(p.pairs_tested)}`, "STRING gene pairs hit together beyond chance"]];
+  document.getElementById("pm-figures").replaceChildren(...f.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  document.getElementById("pm-lede").textContent =
+    `A module is a set of genes whose proteins physically interact (STRING ≥ ${p.string_physical}) and that are hit together in the same screen, in at least ${p.min_papers} papers and more often than each paper's hit rate predicts (q < ${p.q_cut}). Growth genes (${fmt(p.fitness_genes)}), the rest of each essential machine (${fmt(p.machinery_genes)}) and frequent hitters (${p.frequent_hitters}) are removed first, so a module cannot come from proliferation alone. When the screens ask different questions, a module is a shared mechanism; when they ask the same one, it is a replication.`;
+}
+
+function pmThemes() {
+  const box = document.getElementById("pm-themes");
+  const present = THEMES.filter(t => PM.modules.some(m => themeOf(m) === t));
+  box.replaceChildren(...present.map(t => {
+    const n = PM.modules.filter(m => themeOf(m) === t).length;
+    const b = el("button", {type: "button", "aria-pressed": String(pmShown.has(t))}, `${t} · ${n}`);
+    b.addEventListener("click", () => { pmShown.has(t) ? pmShown.delete(t) : pmShown.add(t); b.setAttribute("aria-pressed", String(pmShown.has(t))); pmDraw(); });
+    return b;
+  }));
+}
+
+function pmMini(m, host) {
+  const g = m.genes.map((name, i) => ({i, name, p: m.gene_papers[i]}));
+  const e = m.edges.map(([a, b, score, n, ex, q]) => ({source: g[a], target: g[b], score, n, ex, q}));
+  const sim = d3.forceSimulation(g).force("link", d3.forceLink(e).distance(g.length > 6 ? 52 : 70))
+    .force("charge", d3.forceManyBody().strength(-240)).force("x", d3.forceX(0).strength(0.06)).force("y", d3.forceY(0).strength(0.2))
+    .force("collide", d3.forceCollide(24)).stop();
+  for (let k = 0; k < 300; k++) sim.tick();
+  const svg = d3.select(host).append("svg").attr("role", "img").attr("aria-label", `Interactions among ${m.genes.join(", ")}`);
+  const gg = svg.append("g");
+  gg.selectAll("line").data(e).join("line").attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y)
+    .attr("stroke", css("--edge")).attr("stroke-width", d => 1 + 1.2 * Math.min(5, d.n - 1))
+    .on("pointermove", (ev, d) => showTip(ev, `${d.source.name} – ${d.target.name}`, [`hit together in ${d.n} papers, ${d.ex} expected by chance`, `q = ${fdrf(d.q)} · STRING physical ${d.score}`])).on("pointerleave", hideTip);
+  const gn = gg.selectAll("g").data(g).join("g").attr("transform", d => `translate(${d.x},${d.y})`).style("cursor", "pointer");
+  gn.append("circle").attr("r", d => 3.5 + 1.4 * Math.sqrt(d.p)).attr("fill", css("--ink-2")).attr("stroke", css("--surface")).attr("stroke-width", 1.5);
+  gn.append("text").attr("class", "lbl").attr("x", d => 6 + 1.4 * Math.sqrt(d.p)).attr("y", 4).text(d => d.name);
+  gn.on("click", (ev, d) => openGene(`${d.name}|9606`))
+    .on("pointermove", (ev, d) => showTip(ev, d.name, [`hit with a module partner in ${d.p} papers`, "click: this gene across all screens"])).on("pointerleave", hideTip);
+  const bb = gg.node().getBBox(), pad = 10;
+  svg.attr("viewBox", `${bb.x - pad} ${bb.y - pad} ${bb.width + 2 * pad} ${bb.height + 2 * pad}`)
+    .style("max-height", `${Math.min(220, bb.height + 2 * pad)}px`);
+}
+
+function pmGrid(m, host) {
+  const t = el("table", {class: "pmgrid"}), hr = el("tr");
+  hr.append(el("th", {}, "screen"));
+  m.genes.forEach(gn => hr.append(el("th", {class: "g"}, gn)));
+  const th = el("thead"); th.append(hr); t.append(th);
+  const tb = el("tbody");
+  m.links.forEach(l => {
+    const s = PM.screens[l.s], row = el("tr", {class: "click", tabindex: "0", "data-s": String(l.s)});
+    const name = el("td", {class: "scr"});
+    name.append(el("i", {style: `background:${css(SELCOL[s.selection] || "--neutral")}`}), document.createTextNode(scrName(s)));
+    row.append(name);
+    const by = new Map(l.genes.map(([gi, est, fdr]) => [gi, [est, fdr]]));
+    m.genes.forEach((gn, gi) => {
+      const v = by.get(gi), td = el("td", {class: "g"});
+      if (v) {
+        const up = v[0] > 0;
+        td.append(el("span", {style: `color:${css(up ? "--s1" : "--s2")}`}, up ? "▲" : "▼"));
+        td.addEventListener("pointermove", ev => showTip(ev, `${gn} · ${scrName(s)}`, [`${up ? "enriched" : "depleted"}: estimate ${v[0]}, FDR ${fdrf(v[1])}`, s.orientation || "orientation not determined"]));
+        td.addEventListener("pointerleave", hideTip);
+      }
+      row.append(td);
+    });
+    name.addEventListener("pointermove", ev => showTip(ev, scrName(s), [s.id, s.title || "", `${SELNAME[s.selection] || s.selection} · ${s.organism || ""} · ${s.modality || ""}`, "click: open this screen's network"]));
+    name.addEventListener("pointerleave", hideTip);
+    row.addEventListener("pointerenter", () => pmMark(l.s));
+    row.addEventListener("pointerleave", () => pmMark(null));
+    row.addEventListener("click", () => openNet(s.id)); row.addEventListener("keydown", ev => { if (ev.key === "Enter") openNet(s.id); });
+    tb.append(row);
+  });
+  t.append(tb);
+  const wrap = el("div", {class: "tablebox", style: "max-height:none;margin-top:0"}); wrap.append(t); host.append(wrap);
+}
+
+// Mark one screen in every card, so a screen that hits several modules is easy to follow.
+function pmMark(si) {
+  document.querySelectorAll("#pm-cards tr[data-s]").forEach(r => r.classList.toggle("hl", si != null && r.dataset.s === String(si)));
+}
+
+function pmDraw() {
+  pmDrawn = true;
+  const box = document.getElementById("pm-cards"); box.replaceChildren();
+  const shownScreens = new Set();
+  THEMES.filter(t => pmShown.has(t)).forEach(t => {
+    const mods = PM.modules.map((m, i) => [m, i]).filter(([m]) => themeOf(m) === t);
+    if (!mods.length) return;
+    box.append(el("h2", {class: "sec"}, t));
+    // in the document before drawing: the mini networks measure themselves with getBBox
+    const grid = el("div", {class: "pm-cards"});
+    box.append(grid);
+    mods.forEach(([m, i]) => {
+      m.links.forEach(l => shownScreens.add(l.s));
+      const card = el("div", {class: "card pm-card" + (m.genes.length > 6 ? " wide" : ""), id: `pm-card-${i}`});
+      const head = el("div", {class: "pm-head"});
+      head.append(el("h2", {}, modName(m)), el("span", {class: "chip"}, `${m.papers} papers · ${m.links.length} screens`));
+      card.append(head);
+      card.append(el("div", {class: "pm-genes mono"}, m.genes.join("  ")));
+      if (m.set) card.append(el("p", {class: "note pm-set"}, `closest named set: ${m.set} (${m.source}, ${m.set_overlap} of ${m.set_size} genes)`));
+      const body = el("div", {class: "pm-body"});
+      const mini = el("div", {class: "pm-mini"}), gridHost = el("div", {class: "pm-gridhost"});
+      body.append(mini, gridHost); card.append(body);
+      grid.append(card);
+      pmMini(m, mini); pmGrid(m, gridHost);
+    });
+  });
+  if (!box.children.length) box.append(el("p", {class: "count"}, "No theme selected."));
+  legend("pm-legend", [...new Set([...shownScreens].map(s => PM.screens[s].selection))].sort().map(k => [null, css(SELCOL[k] || "--neutral"), SELNAME[k] || k]));
+}
+
+function pmGo(i) {
+  const m = PM.modules[i];
+  if (!pmShown.has(themeOf(m))) { pmShown.add(themeOf(m)); pmThemes(); pmDraw(); }
+  const card = document.getElementById(`pm-card-${i}`);
+  card.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+  card.classList.add("flash"); setTimeout(() => card.classList.remove("flash"), 1600);
+}
+function pmGoScreen(si) {
+  const owners = PM.modules.map((m, i) => [m, i]).filter(([m]) => m.links.some(l => l.s === si));
+  owners.forEach(([m]) => pmShown.add(themeOf(m))); pmThemes(); pmDraw();
+  pmMark(si);
+  if (owners.length) document.getElementById(`pm-card-${owners[0][1]}`).scrollIntoView({block: "start"});
+}
+
+function pmInit() {
+  if (!PM) return;
+  pmFigures(); pmThemes();
+  const inp2 = document.getElementById("pm-input"), su = document.getElementById("pm-sugg");
+  const items = [
+    ...PM.modules.flatMap((m, i) => [[modName(m), "module", () => pmGo(i)],
+      ...m.genes.map(gn => [gn, `gene in ${modName(m)}`, () => pmGo(i)])]),
+    ...PM.screens.map((s, i) => [scrName(s), `screen · ${s.gse}`, () => pmGoScreen(i), s.id + " " + (s.title || "")])];
+  let ix = -1, cur = [];
+  inp2.addEventListener("input", () => {
+    const q = inp2.value.trim().toUpperCase(); ix = -1;
+    if (!q) { su.hidden = true; return; }
+    cur = items.filter(([a, , , extra]) => (a + " " + (extra || "")).toUpperCase().includes(q)).sort((a, b) => (b[0].toUpperCase().startsWith(q)) - (a[0].toUpperCase().startsWith(q))).slice(0, 12);
+    su.replaceChildren(...cur.map(([a, kind, go]) => { const li = el("li", {role: "option"}); li.append(document.createTextNode(a), el("span", {}, kind)); li.addEventListener("mousedown", ev => { ev.preventDefault(); su.hidden = true; go(); }); return li; }));
+    su.hidden = !cur.length;
+  });
+  inp2.addEventListener("keydown", ev => {
+    const li = [...su.children];
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") { ev.preventDefault(); if (!li.length) return; ix = (ix + (ev.key === "ArrowDown" ? 1 : -1) + li.length) % li.length; li.forEach((l, j) => l.setAttribute("aria-selected", j === ix)); }
+    if (ev.key === "Enter" && cur.length) { su.hidden = true; cur[Math.max(0, ix)][2](); }
+    if (ev.key === "Escape") su.hidden = true;
+  });
+  inp2.addEventListener("blur", () => setTimeout(() => { su.hidden = true; }, 120));
+  pmDraw();
+}
+
+/* ---------- boot ---------- */
+corpus();
+const start = (location.hash || "#pathways").slice(1);
+drawGene(DATA.genes["JAK1|9606"] ? "JAK1|9606" : GKEYS[0]); inp.value = "JAK1";
+show(TABS.includes(start) ? start : "pathways");
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { document.getElementById("qc").replaceChildren(); document.getElementById("claims").replaceChildren(); document.getElementById("rec").replaceChildren(); corpus(); if (netDrawn) drawNet(); if (pmDrawn) pmDraw(); });
+</script>
+</body>
+</html>
