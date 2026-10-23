@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/OC43_1st_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TMEM41B", "SLC35B2", "EXT1", "multiKO_ENSCSAG00000011099_ENSCSAG00000011104"],
+  "published": {"file": "paper/vero_oc43_mageck.tsv", "gene_column": "gene",
+    "score_column": "pos_score", "score_better": "lower", "effect_column": "lfc"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_oc43"
+}

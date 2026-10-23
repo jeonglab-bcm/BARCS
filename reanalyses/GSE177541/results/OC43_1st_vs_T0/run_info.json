@@ -1,0 +1,48 @@
+{
+  "analysis": "OC43_1st_vs_T0",
+  "formula": "~condition",
+  "term": "conditionOC43_1st",
+  "libraries": 7,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 74343,
+  "genes": 19415,
+  "moderated": true,
+  "prior_df": 9.4015,
+  "guide_correlation": 0.0027,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 126,
+  "top1pct_read_share": {
+    "T0puro1_S1": 0.083,
+    "T0puro2_S2": 0.111,
+    "T0puro3_S3": 0.081,
+    "OC43-st-1_S8": 0.956,
+    "OC43-st-2_S9": 0.969,
+    "OC43-st-3_S10": 0.975,
+    "OC43-st-4_S11": 0.957
+  },
+  "genes_fdr_0_10_up": 22,
+  "genes_fdr_0_10_down": 18823,
+  "genes_fdr_0_05": 18642,
+  "genes_fdr_0_10": 18845,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}
