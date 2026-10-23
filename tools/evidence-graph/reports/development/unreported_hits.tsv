@@ -1,0 +1,987 @@
+contrast_id	selection	contrast_eligible	element	gene	rank_among_strict_hits	internal_essential	frequent_hitter	priority	estimate	p_value	fdr	physical_links_to_named(score,exp,db)	functional900_links_to_named	hit_module_size	hit_module_members
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Atf7ip	Atf7ip	1	0	0	1	1.73	6.51e-09	6.48e-06	Setdb1(990,exp787,db900)	Ehmt2(912)	42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Cbx1	Cbx1	3	0	0	1	2.475	4.95e-08	1.33e-05	Ehmt2(934,exp924,db0);Suv39h1(783,exp682,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Kdm1a	Kdm1a	4	0	0	1	1.4	5.61e-08	1.33e-05	Dnmt1(757,exp564,db0);Ehmt2(810,exp624,db0);Hdac2(996,exp984,db500);Hdac1(999,exp994,db500)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Atrx	Atrx	5	0	0	1	1.273	5.72e-08	1.33e-05			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Rbm14	Rbm14	6	0	0	0	0.7799	1.3e-07	2.51e-05			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Cbx5	Cbx5	8	0	0	1	2.084	1.2e-06	0.000169	Ehmt2(817,exp800,db0);Suv39h1(948,exp886,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Daxx	Daxx	9	0	0	1	1.112	1.31e-06	0.000169	Hdac1(836,exp834,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Smarcad1	Smarcad1	10	0	0	1	0.5876	1.75e-06	0.000203			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Morc3	Morc3	11	0	0	0	0.956	4.64e-06	0.00049			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Dnmt3l	Dnmt3l	12	0	0	1	0.6287	7.69e-06	0.000743	Hdac2(916,exp140,db900);Dnmt3a(999,exp999,db900);Dnmt3b(999,exp978,db900)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Ctbp2	Ctbp2	14	0	0	1	0.654	4.04e-05	0.00325	Hdac2(956,exp620,db877);Hdac1(944,exp410,db877)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Trim28	Trim28	15	0	0	1	1.278	4.21e-05	0.00325	Dnmt1(751,exp733,db0);Setdb1(942,exp771,db0);Hdac1(767,exp641,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Sin3b	Sin3b	17	0	0	1	0.679	5.84e-05	0.00399	Hdac2(989,exp629,db957);Hdac1(999,exp990,db957)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Uhrf1	Uhrf1	18	0	0	1	1.423	6.35e-05	0.00409	Dnmt1(999,exp999,db900);Ehmt2(878,exp786,db0);Dnmt3a(737,exp696,db0);Hdac1(827,exp787,db0)	Dnmt3b(913)	42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Pphln1	Pphln1	19	0	0	1	0.5484	8.23e-05	0.00502			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Ezh2	Ezh2	20	0	0	1	0.5408	9.96e-05	0.00578	Dnmt1(989,exp949,db500);Ehmt2(829,exp457,db411);Hdac2(986,exp798,db900);Dnmt3a(939,exp661,db500);Dnmt3b(946,exp763,db500);Hdac1(980,exp949,db0);Suv39h1(987,exp0,db972)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Mphosph8	Mphosph8	21	0	0	1	1.741	0.000107	0.00584			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Gatad1	Gatad1	22	0	0	1	0.7667	0.000115	0.00584	Hdac2(732,exp732,db0);Hdac1(732,exp732,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	L3mbtl2	L3mbtl2	23	0	0	1	0.5517	0.000116	0.00584	Ehmt2(883,exp777,db500)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Tada2b	Tada2b	24	0	0	0	-0.4659	0.000139	0.00672			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Zmym2	Zmym2	25	0	0	1	1.007	0.000156	0.00725	Hdac2(777,exp771,db0);Hdac1(742,exp646,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Phf12	Phf12	26	0	0	0	0.3806	0.000227	0.0101	Hdac2(956,exp582,db900);Hdac1(987,exp875,db900)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Arid1a	Arid1a	27	0	0	0	0.7497	0.000274	0.0115			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Exosc6	Exosc6	28	0	0	0	-1.138	0.000278	0.0115			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Fam208a	Tasor	29	0	0	0	0.7676	0.000324	0.0129			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Nfrkb	Nfrkb	30	0	0	0	-0.4078	0.000351	0.0136			4	Ino80c;Ino80e;Nfrkb;Tfpt
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Uhrf2	Uhrf2	31	0	0	0	0.9315	0.000414	0.0155	Dnmt1(711,exp564,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Crb2	Crb2	32	0	0	0	-0.4447	0.000595	0.0216			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Pif1	Pif1	33	0	0	0	-0.4729	0.000694	0.0244			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Mrgbp	Mrgbp	34	0	0	0	0.7227	0.000762	0.026			3	Ing4;Meaf6;Mrgbp
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Smarcc1	Smarcc1	35	0	0	0	0.8998	0.000837	0.0277			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Rcor2	Rcor2	36	0	0	0	0.4932	0.00103	0.0331	Hdac2(885,exp496,db362);Hdac1(887,exp201,db362)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Smarcb1	Smarcb1	37	0	0	0	0.5625	0.00125	0.0391			42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Ylpm1	Ylpm1	38	0	0	0	0.5678	0.00131	0.0391			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Msh6	Msh6	39	0	0	0	-0.6375	0.00131	0.0391			0	
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Kmt2c	Kmt2c	40	0	0	0	-0.3761	0.00141	0.0408			3	Kmt2b;Kmt2c;Prdm2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Ino80e	Ino80e	41	0	0	0	-0.4066	0.00173	0.0491			4	Ino80c;Ino80e;Nfrkb;Tfpt
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Setd2	Setd2	42	0	0	0	0.4926	0.00179	0.0493	Suv39h1(738,exp0,db738)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
+GSE212152:establishment_GFP_vs_unsorted	sort	1	Dph7	Dph7	43	0	0	0	-0.3558	0.00183	0.0493			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Dnmt3l	Dnmt3l	1	0	0	0	1.656	5e-18	5.8e-15	Hdac2(916,exp140,db900);Dnmt3a(999,exp999,db900);Dnmt3b(999,exp978,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ctbp2	Ctbp2	2	0	0	0	1.205	1.38e-15	8.03e-13	Hdac2(956,exp620,db877);Hdac1(944,exp410,db877)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Uhrf1	Uhrf1	3	0	0	0	1.466	4.92e-15	1.9e-12	Dnmt1(999,exp999,db900);Ehmt2(878,exp786,db0);Dnmt3a(737,exp696,db0);Hdac1(827,exp787,db0)	Dnmt3b(913)	80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ezh2	Ezh2	6	0	0	0	0.819	8.47e-11	1.64e-08	Dnmt1(989,exp949,db500);Ehmt2(829,exp457,db411);Hdac2(986,exp798,db900);Dnmt3a(939,exp661,db500);Dnmt3b(946,exp763,db500);Hdac1(980,exp949,db0);Suv39h1(987,exp0,db972)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Hdac8	Hdac8	7	0	0	0	-0.7845	2.46e-09	4.08e-07			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kmt2b	Kmt2b	8	0	0	0	-0.9735	4.24e-08	6.14e-06			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Dot1l	Dot1l	9	0	0	0	0.7175	9.87e-08	1.27e-05		Suv39h1(900)	80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Msh6	Msh6	10	0	0	0	-0.7334	1.34e-07	1.56e-05			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Spin1	Spin1	11	0	0	0	-0.6579	2.1e-07	2.22e-05			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Pcgf2	Pcgf2	12	0	0	0	0.7583	3.1e-07	2.9e-05			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mrgbp	Mrgbp	13	0	0	0	0.8607	3.25e-07	2.9e-05			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Cecr2	Cecr2	14	0	0	0	-0.5231	4.3e-07	3.57e-05			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Atf7ip	Atf7ip	15	0	0	0	0.7077	5.85e-07	4.53e-05	Setdb1(990,exp787,db900)	Ehmt2(912)	80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kdm1a	Kdm1a	16	0	0	0	1.049	8.31e-07	5.68e-05	Dnmt1(757,exp564,db0);Ehmt2(810,exp624,db0);Hdac2(996,exp984,db500);Hdac1(999,exp994,db500)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kat7	Kat7	17	0	0	0	-0.7474	8.33e-07	5.68e-05			5	Ing4;Ing5;Jade1;Kat6b;Kat7
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kdm5b	Kdm5b	18	0	0	0	-0.6306	1.01e-06	6.49e-05	Hdac1(776,exp678,db0)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Eed	Eed	19	0	0	0	0.7519	1.2e-06	7.31e-05	Dnmt1(761,exp513,db500);Ehmt2(824,exp802,db0);Hdac2(953,exp503,db900);Dnmt3a(716,exp457,db500);Dnmt3b(760,exp511,db500);Hdac1(859,exp845,db0);Suv39h1(914,exp0,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Sfmbt2	Sfmbt2	20	0	0	0	0.5057	1.59e-06	8.91e-05			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Actr5	Actr5	21	0	0	0	-0.753	1.61e-06	8.91e-05			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Hnrnph1	Hnrnph1	22	0	0	0	-0.829	1.81e-06	9.56e-05			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ncoa6	Ncoa6	23	0	0	0	-0.787	2.21e-06	0.000111			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Pds5b	Pds5b	24	0	0	0	-0.6762	2.76e-06	0.000133			3	Pds5b;Stag1;Stag2
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kdm4c	Kdm4c	25	0	0	0	-0.4899	2.86e-06	0.000133			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Zmym2	Zmym2	26	0	0	0	0.6216	4.01e-06	0.000177	Hdac2(777,exp771,db0);Hdac1(742,exp646,db0)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kmt2d	Kmt2d	28	0	0	0	0.6328	4.26e-06	0.000177			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kmt2c	Kmt2c	29	0	0	0	-0.5078	4.53e-06	0.000181			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Taf3	Taf3	30	0	0	0	-0.6315	9.1e-06	0.000352			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Trip12	Trip12	31	0	0	0	0.5234	1.01e-05	0.000378			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Zmym3	Zmym3	32	0	0	0	-0.4681	1.48e-05	0.000535			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Anp32b	Anp32b	33	0	0	0	-0.4515	1.64e-05	0.000564			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Cul5	Cul5	34	0	0	0	0.3603	1.65e-05	0.000564			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Setd2	Setd2	35	0	0	0	0.5083	2.02e-05	0.00067	Suv39h1(738,exp0,db738)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Brd3	Brd3	36	0	0	0	-0.4155	2.17e-05	0.000699			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Brwd3	Brwd3	37	0	0	0	-0.3857	2.9e-05	0.00091			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Sfpq	Sfpq	38	0	0	0	0.6528	3.62e-05	0.00111			3	Nono;Rbm14;Sfpq
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Suz12	Suz12	39	0	0	0	0.6863	4.39e-05	0.00131	Dnmt1(758,exp456,db500);Hdac2(982,exp787,db900);Dnmt3a(734,exp456,db500);Dnmt3b(844,exp702,db500);Suv39h1(915,exp0,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rbpj	Rbpj	40	0	0	0	0.4034	5.07e-05	0.00147		Hdac2(967);Hdac1(975)	80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Jade1	Jade1	41	0	0	0	-0.4934	5.27e-05	0.00149			5	Ing4;Ing5;Jade1;Kat6b;Kat7
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Spop	Spop	42	0	0	0	0.9617	5.68e-05	0.00157			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Daxx	Daxx	43	0	0	0	0.7416	6.61e-05	0.00174	Hdac1(836,exp834,db0)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Dph7	Dph7	44	0	0	0	-0.5118	6.61e-05	0.00174			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ywhae	Ywhae	45	0	0	0	-0.4224	8.59e-05	0.00221			3	Kif20a;Ywhab;Ywhae
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Elavl1	Elavl1	46	0	0	0	-0.573	9.34e-05	0.00236	Dhx9(801,exp801,db0)		0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Nfrkb	Nfrkb	47	0	0	0	-0.417	9.82e-05	0.00242			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Bptf	Bptf	48	0	0	0	-0.4259	0.000115	0.00277			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Max	Max	49	0	0	0	0.5943	0.000151	0.00357			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Tial1	Tial1	50	0	0	0	0.3772	0.000158	0.00366			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Gadd45b	Gadd45b	51	0	0	0	-0.5494	0.000195	0.00443			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Uchl5	Uchl5	52	0	0	0	-0.4213	0.000229	0.0051			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Trim24	Trim24	53	0	0	0	-0.4709	0.00025	0.00544			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rbm14	Rbm14	54	0	0	0	0.5229	0.000253	0.00544			3	Nono;Rbm14;Sfpq
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Nono	Nono	55	0	0	0	0.4566	0.000259	0.00546			3	Nono;Rbm14;Sfpq
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Sirt1	Sirt1	56	0	0	0	-0.5353	0.000326	0.00675	Hdac2(929,exp71,db900);Hdac1(735,exp473,db0);Suv39h1(947,exp265,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ncoa3	Ncoa3	57	0	0	0	-0.6829	0.000434	0.00883			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Sirt6	Sirt6	58	0	0	0	-0.4142	0.000456	0.00902			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Zbtb4	Zbtb4	59	0	0	0	-0.282	0.000459	0.00902			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Gadd45a	Gadd45a	60	0	0	0	-0.3095	0.00064	0.0124			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Yy1	Yy1	61	0	0	0	-0.5264	0.000659	0.0125	Hdac2(859,exp541,db540);Hdac1(898,exp803,db0);Suv39h1(906,exp0,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Arid4a	Arid4a	62	0	0	0	0.3922	0.000692	0.0129	Hdac2(942,exp421,db900);Hdac1(983,exp779,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Jmjd1c	Jmjd1c	63	0	0	0	0.2807	0.000755	0.0138			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mbd1	Mbd1	64	0	0	0	0.3254	0.00076	0.0138			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ywhab	Ywhab	65	0	0	0	-0.3388	0.000784	0.014			3	Kif20a;Ywhab;Ywhae
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Setd6	Setd6	66	0	0	0	-0.2783	0.000853	0.0147			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Atad2	Atad2	67	0	0	0	-0.3441	0.000871	0.0147			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Prkcb	Prkcb	68	0	0	0	-0.2762	0.000884	0.0147			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rest	Rest	69	0	0	0	-0.5178	0.000885	0.0147	Hdac2(968,exp236,db935);Hdac1(983,exp564,db935)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mbd6	Mbd6	70	0	0	0	-0.3944	0.000899	0.0147			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kat6b	Kat6b	71	0	0	0	0.4211	0.000902	0.0147			5	Ing4;Ing5;Jade1;Kat6b;Kat7
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mgea5	Oga	72	0	0	0	0.6846	0.000949	0.0153			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Smarca5	Smarca5	73	0	0	0	-0.2395	0.000971	0.0154	Hdac2(715,exp413,db500);Suv39h1(906,exp0,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Keap1	Keap1	74	0	0	0	-0.4444	0.00102	0.0159			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Senp1	Senp1	75	0	0	0	-0.5883	0.00104	0.016			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rybp	Rybp	76	0	0	0	0.2344	0.00105	0.016			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rnf2	Rnf2	78	0	0	0	0.4894	0.00129	0.0192	Hdac2(905,exp802,db540)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mum1	Pwwp3a	79	0	0	0	-0.3833	0.00132	0.0194			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Hat1	Hat1	80	0	0	0	-0.3684	0.00134	0.0194			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Atrx	Atrx	81	0	0	0	0.3046	0.00136	0.0194			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Stag1	Stag1	82	0	0	0	-0.5361	0.0016	0.0226			3	Pds5b;Stag1;Stag2
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Trim33	Trim33	83	0	0	0	-0.4957	0.00163	0.0226			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Smarcad1	Smarcad1	84	0	0	0	-0.3639	0.00164	0.0226			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Mta1	Mta1	85	0	0	0	0.29	0.00173	0.0234	Ehmt2(716,exp457,db500);Hdac2(990,exp875,db900);Hdac1(994,exp875,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Wdr76	Wdr76	86	0	0	0	-0.2688	0.00175	0.0234			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Tfpt	Tfpt	87	0	0	0	-0.3508	0.00175	0.0234			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Hspbap1	Hspbap1	88	0	0	0	-0.2428	0.00197	0.0259			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Tnp1	Tnp1	89	0	0	0	-0.1948	0.00199	0.0259			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ing5	Ing5	90	0	0	0	0.4661	0.00215	0.0277			5	Ing4;Ing5;Jade1;Kat6b;Kat7
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Brdt	Brdt	91	0	0	0	-0.2135	0.00221	0.0282			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Morc3	Morc3	92	0	0	0	0.2682	0.00239	0.0302			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Cbx5	Cbx5	93	0	0	0	0.1834	0.00245	0.0306	Ehmt2(817,exp800,db0);Suv39h1(948,exp886,db0)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Chd1	Chd1	94	0	0	0	-0.4266	0.00252	0.0311			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ddb2	Ddb2	95	0	0	0	-0.2582	0.00263	0.0321			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rcc2	Rcc2	96	0	0	0	-0.3406	0.00274	0.0331			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Park7	Park7	97	0	0	0	-0.2855	0.00284	0.0335			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ercc8	Ercc8	98	0	0	0	-0.2022	0.00284	0.0335			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Setd1a	Setd1a	99	0	0	0	-0.3101	0.00286	0.0335			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Atn1	Atn1	100	0	0	0	-0.255	0.00308	0.0356			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Chd5	Chd5	101	0	0	0	-0.2741	0.0031	0.0356	Hdac2(979,exp673,db934);Hdac1(992,exp875,db934)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Rbbp7	Rbbp7	102	0	0	0	-0.3157	0.00319	0.0362	Dnmt1(800,exp0,db800);Hdac2(990,exp645,db900);Dnmt3b(800,exp0,db800);Hdac1(988,exp524,db900)		80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Prdm12	Prdm12	103	0	0	0	-0.2343	0.00327	0.0368			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kdm3b	Kdm3b	104	0	0	0	-0.3589	0.00337	0.0375			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Epc2	Epc2	105	0	0	0	0.2343	0.00345	0.0381			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Hmgb1	Hmgb1	106	0	0	0	-0.3746	0.00351	0.0384			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Asf1a	Asf1a	107	0	0	0	0.3064	0.00354	0.0384			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Orc1	Orc1	108	0	0	0	-0.2709	0.00369	0.0397			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Bcor	Bcor	109	0	0	0	-0.3338	0.0038	0.0404			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ino80e	Ino80e	110	0	0	0	-0.2463	0.00397	0.0418			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Eid2	Eid2	111	0	0	0	-0.3061	0.00411	0.0429			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Dppa3	Dppa3	112	0	0	0	-0.2093	0.00423	0.0438			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Kdm4a	Kdm4a	113	0	0	0	-0.2969	0.00427	0.0439			0	
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Phc1	Phc1	114	0	0	0	0.2165	0.00438	0.0446			80	Actr5;Arid4a;Asf1a;Atf7ip;Atrx;Baz1b;Baz2a;Bcor;Bcorl1;Cbx5;Cecr2;Chd5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Dot1l;Dppa3;Eed;Epc2;Ezh2;Gse1;Hat1;Hdac1;Hdac8;Ino80b;Ino80e;Kat2b;Kdm1a;Kdm3b;Kdm5b;Kmt2b;Kmt2c;Kmt2d;Max;Mrgbp;Mta1;Mybbp1a;Ncoa3;Ncoa6;Nfrkb;Pcgf2;Phc1;Phc2;Phf12;Pml;Prkab1;Rbbp7;Rbl1;Rb
+GSE212152:maintenance_GFP_vs_unsorted	sort	0	Ctr9	Ctr9	115	0	0	0	-0.4845	0.00459	0.0463			0	
+GSE229584:iRFP_vs_negative	sort	1	IRF2	IRF2	1	0	0	0	-1.971	7.18e-19	1.29e-15			0	
+GSE229584:iRFP_vs_negative	sort	1	ASCL2	ASCL2	2	0	0	0	-1.482	1.67e-11	1.5e-08			0	
+GSE229584:iRFP_vs_negative	sort	1	BCL6	BCL6	4	0	0	0	-0.698	2.68e-08	1.21e-05			0	
+GSE229584:iRFP_vs_negative	sort	1	ESRRA	ESRRA	5	0	0	0	-0.8884	4.21e-08	1.51e-05			0	
+GSE229584:iRFP_vs_negative	sort	1	COPS2	COPS2	7	0	0	0	-0.7463	2.54e-06	0.000654			0	
+GSE229584:iRFP_vs_negative	sort	1	DPF2	DPF2	8	0	0	1	-1.016	7.12e-06	0.0016			3	BCL11B;DPF2;PBRM1
+GSE229584:iRFP_vs_negative	sort	1	IRX5	IRX5	9	0	0	0	-1.071	1.2e-05	0.00239			0	
+GSE229584:iRFP_vs_negative	sort	1	TBX3	TBX3	10	0	0	0	-0.5047	1.77e-05	0.00319			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF79	ZNF79	11	0	0	0	-0.6855	1.98e-05	0.00325			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF566	ZNF566	12	0	0	0	-1.083	3.07e-05	0.00452			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF518B	ZNF518B	13	0	0	0	-1.123	3.27e-05	0.00452			0	
+GSE229584:iRFP_vs_negative	sort	1	ZC3H3	ZC3H3	14	0	0	0	-0.5168	4.32e-05	0.00555			0	
+GSE229584:iRFP_vs_negative	sort	1	PBRM1	PBRM1	15	0	0	1	-0.6582	5.38e-05	0.00645			3	BCL11B;DPF2;PBRM1
+GSE229584:iRFP_vs_negative	sort	1	PPARA	PPARA	16	0	0	0	-0.6441	6.91e-05	0.0074			0	
+GSE229584:iRFP_vs_negative	sort	1	TCF3	TCF3	17	0	0	1	-0.3281	6.99e-05	0.0074			5	GATA2;NEUROG3;RUNX1;TCF12;TCF3
+GSE229584:iRFP_vs_negative	sort	1	TAX1BP1	TAX1BP1	18	0	0	0	-1.084	7.79e-05	0.00779			0	
+GSE229584:iRFP_vs_negative	sort	1	HMGB1	HMGB1	19	0	0	0	-0.9227	9.98e-05	0.00911			0	
+GSE229584:iRFP_vs_negative	sort	1	RUNX1	RUNX1	20	0	0	1	-0.4815	0.000101	0.00911			5	GATA2;NEUROG3;RUNX1;TCF12;TCF3
+GSE229584:iRFP_vs_negative	sort	1	LARP4B	LARP4B	21	0	0	0	-0.4255	0.000109	0.00921			0	
+GSE229584:iRFP_vs_negative	sort	1	FOXS1	FOXS1	22	0	0	0	-0.9308	0.000113	0.00921			0	
+GSE229584:iRFP_vs_negative	sort	1	MLLT3	MLLT3	24	0	0	0	-0.4191	0.000189	0.014			0	
+GSE229584:iRFP_vs_negative	sort	1	HSF4	HSF4	25	0	0	0	-0.4849	0.000195	0.014			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF43	ZNF43	26	0	0	0	-0.5912	0.000207	0.0143			0	
+GSE229584:iRFP_vs_negative	sort	1	COPS4	COPS4	27	0	0	0	-0.7683	0.000287	0.0191			0	
+GSE229584:iRFP_vs_negative	sort	1	PBX3	PBX3	28	0	0	0	-0.6534	0.000321	0.0206			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF384	ZNF384	29	0	0	0	-0.4347	0.000362	0.0225			0	
+GSE229584:iRFP_vs_negative	sort	1	TFAM	TFAM	30	0	0	0	-1.02	0.000448	0.0269			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF644	ZNF644	31	0	0	0	-0.4641	0.000498	0.0289			0	
+GSE229584:iRFP_vs_negative	sort	1	MIXL1	MIXL1	32	0	0	0	-0.4021	0.000634	0.0357			0	
+GSE229584:iRFP_vs_negative	sort	1	ATOH1	ATOH1	33	0	0	0	0.719	0.000683	0.0372			0	
+GSE229584:iRFP_vs_negative	sort	1	AHR	AHR	34	0	0	0	-0.8045	0.000777	0.0412			0	
+GSE229584:iRFP_vs_negative	sort	1	ZNF219	ZNF219	35	0	0	0	-0.4033	0.000823	0.0423			0	
+GSE229584:iRFP_vs_negative	sort	1	BHLHE40	BHLHE40	36	0	0	0	-0.5482	0.000882	0.0441			0	
+GSE229584:iRFP_vs_negative	sort	1	TCF12	TCF12	37	0	0	0	-0.2425	0.00094	0.0457	NEUROG3(953,exp953,db0)		5	GATA2;NEUROG3;RUNX1;TCF12;TCF3
+GSE229584:iRFP_vs_negative	sort	1	NFIB	NFIB	38	0	0	0	-0.4435	0.000965	0.0457	NFIC(995,exp995,db0)		0	
+GSE229584:iRFP_vs_negative	sort	1	ZSCAN5A	ZSCAN5A	39	0	0	0	-0.3373	0.00104	0.0481			0	
+GSE236244:early_vs_nonplur	sort	1	Nf2	Nf2	1	0	0	0	-0.5857	7.05e-50	1.29e-45			0	
+GSE236244:early_vs_nonplur	sort	1	Actc1	Actc1	2	0	0	0	0.2631	7.81e-17	7.17e-13			0	
+GSE236244:early_vs_nonplur	sort	1	Agfg1	Agfg1	3	0	0	0	-0.5667	1.37e-13	8.38e-10			0	
+GSE236244:early_vs_nonplur	sort	1	Mcee	Mcee	4	0	0	0	-0.2959	5.63e-13	2.58e-09			0	
+GSE236244:early_vs_nonplur	sort	1	Trp53	Trp53	5	0	0	1	0.5412	4.67e-12	1.72e-08	Smarca4(906,exp875,db0);Smad2(813,exp771,db0)		0	
+GSE236244:early_vs_nonplur	sort	1	Glis1	Glis1	6	0	0	0	-0.3926	2.77e-09	8.48e-06			0	
+GSE236244:early_vs_nonplur	sort	1	Ccdc7	Ccdc7a	7	0	0	0	-1.02	6e-08	0.000157			0	
+GSE236244:early_vs_nonplur	sort	1	Gm684	Colca2	8	0	0	0	0.8897	1.18e-07	0.000272			0	
+GSE236244:early_vs_nonplur	sort	1	Carm1	Carm1	9	0	0	0	0.2443	1.65e-07	0.000336			0	
+GSE236244:early_vs_nonplur	sort	1	Pld2	Pld2	10	0	0	0	-0.6087	2.2e-07	0.000404			0	
+GSE236244:early_vs_nonplur	sort	1	Foxc2	Foxc2	11	0	0	0	0.7001	2.76e-07	0.000461			0	
+GSE236244:early_vs_nonplur	sort	1	Oxnad1	Oxnad1	12	0	0	0	1.372	5.1e-07	0.000781			0	
+GSE236244:early_vs_nonplur	sort	1	Acsl4	Acsl4	13	0	0	0	1.173	7.14e-07	0.00101			0	
+GSE236244:early_vs_nonplur	sort	1	Myog	Myog	14	0	0	0	1.111	8.07e-07	0.00103			0	
+GSE236244:early_vs_nonplur	sort	1	Pcsk7	Pcsk7	15	0	0	0	0.09927	8.41e-07	0.00103			0	
+GSE236244:early_vs_nonplur	sort	1	Smad6	Smad6	16	0	0	1	0.6355	9.47e-07	0.00109	Smad4(957,exp406,db900);Smad2(900,exp0,db900)		0	
+GSE236244:early_vs_nonplur	sort	1	Gm2a	Gm2a	17	0	0	0	-0.161	1.17e-06	0.00126			0	
+GSE236244:early_vs_nonplur	sort	1	Vmn2r13	Vmn2r13	18	0	0	0	0.8256	1.3e-06	0.00133			0	
+GSE236244:early_vs_nonplur	sort	1	Tprgl	Tprgl	19	0	0	0	-0.5801	1.84e-06	0.00178			0	
+GSE236244:early_vs_nonplur	sort	1	Trim32	Trim32	20	0	0	0	-0.003945	3.12e-06	0.00286			0	
+GSE236244:early_vs_nonplur	sort	1	Krt79	Krt79	21	0	0	0	0.02697	5.33e-06	0.00466			0	
+GSE236244:early_vs_nonplur	sort	1	Fkbp5	Fkbp5	22	0	0	0	1.595	6.13e-06	0.00512			0	
+GSE236244:early_vs_nonplur	sort	1	Rnf150	Rnf150	23	0	0	0	0.7714	6.92e-06	0.00552			0	
+GSE236244:early_vs_nonplur	sort	1	Asprv1	Asprv1	24	0	0	0	0.1962	7.91e-06	0.00605			0	
+GSE236244:early_vs_nonplur	sort	1	Pde6c	Pde6c	25	0	0	0	-0.4328	9.07e-06	0.0066			0	
+GSE236244:early_vs_nonplur	sort	1	Cldn10	Cldn10	26	0	0	0	-0.1462	9.34e-06	0.0066			0	
+GSE236244:early_vs_nonplur	sort	1	Nphs1	Nphs1	27	0	0	0	1.049	1.01e-05	0.00685			0	
+GSE236244:early_vs_nonplur	sort	1	P2ry10	P2ry10	28	0	0	0	0.8196	1.1e-05	0.00724			0	
+GSE236244:early_vs_nonplur	sort	1	Plekhg5	Plekhg5	29	0	0	0	0.5356	1.31e-05	0.00829			0	
+GSE236244:early_vs_nonplur	sort	1	Pkdcc	Pkdcc	30	0	0	0	0.8872	1.38e-05	0.00845			0	
+GSE236244:early_vs_nonplur	sort	1	Casz1	Casz1	31	0	0	0	0.2791	1.68e-05	0.00995			0	
+GSE236244:early_vs_nonplur	sort	1	Bcas1	Bcas1	32	0	0	0	-0.5944	2.11e-05	0.0118			0	
+GSE236244:early_vs_nonplur	sort	1	Zp1	Zp1	33	0	0	0	0.9719	2.12e-05	0.0118			0	
+GSE236244:early_vs_nonplur	sort	1	Cnpy3	Cnpy3	34	0	0	0	0.6558	2.46e-05	0.0133			0	
+GSE236244:early_vs_nonplur	sort	1	Eri3	Eri3	35	0	0	0	0.4629	2.58e-05	0.0135			0	
+GSE236244:early_vs_nonplur	sort	1	2610002J02Rik	Faap20	36	0	0	0	0.358	3.01e-05	0.0153			0	
+GSE236244:early_vs_nonplur	sort	1	Zc3h12d	Zc3h12d	37	0	0	0	-1.297	3.08e-05	0.0153			0	
+GSE236244:early_vs_nonplur	sort	1	Pex7	Pex7	38	0	0	0	-0.2631	3.31e-05	0.016			0	
+GSE236244:early_vs_nonplur	sort	1	Setd6	Setd6	39	0	0	0	-0.4311	3.6e-05	0.0169			0	
+GSE236244:early_vs_nonplur	sort	1	Cdh23	Cdh23	40	0	0	0	0.6552	3.79e-05	0.0174			0	
+GSE236244:early_vs_nonplur	sort	1	Nin	Nin	41	0	0	0	-1.343	4.54e-05	0.0203			0	
+GSE236244:early_vs_nonplur	sort	1	Clpsl2	Clpsl2	42	0	0	0	-0.9145	4.9e-05	0.0214			0	
+GSE236244:early_vs_nonplur	sort	1	Cd177	Cd177	43	0	0	0	0.9681	6.61e-05	0.0282			0	
+GSE236244:early_vs_nonplur	sort	1	Thoc6	Thoc6	44	0	0	0	0.2206	6.85e-05	0.0286			0	
+GSE236244:early_vs_nonplur	sort	1	Fam184b	Fam184b	45	0	0	0	-0.5757	8.63e-05	0.0352			0	
+GSE236244:early_vs_nonplur	sort	1	Gna13	Gna13	46	0	0	0	-1.228	8.91e-05	0.0356			0	
+GSE236244:early_vs_nonplur	sort	1	Gm7714	Gm7714	47	0	0	0	-0.03018	9.78e-05	0.038			0	
+GSE236244:early_vs_nonplur	sort	1	Ier2	Ier2	48	0	0	0	1.265	0.0001	0.038			0	
+GSE236244:early_vs_nonplur	sort	1	Scn2b	Scn2b	49	0	0	0	-1.383	0.000102	0.038			0	
+GSE236244:early_vs_nonplur	sort	1	Nucks1	Nucks1	50	0	0	0	0.01978	0.000105	0.0381			0	
+GSE236244:early_vs_nonplur	sort	1	Eps8l3	Eps8l3	51	0	0	0	-0.5124	0.000106	0.0381			0	
+GSE236244:early_vs_nonplur	sort	1	Ddx19b	Ddx19b	52	0	0	0	0.2204	0.000112	0.0396			0	
+GSE236244:early_vs_nonplur	sort	1	Zcchc5	Rtl3	53	0	0	0	-0.1826	0.000115	0.0397			0	
+GSE236244:early_vs_nonplur	sort	1	Egr2	Egr2	54	0	0	0	0.1139	0.000119	0.0404			0	
+GSE236244:early_vs_nonplur	sort	1	Abca1	Abca1	55	0	0	0	-0.04811	0.000141	0.0469			0	
+GSE236244:early_vs_nonplur	sort	1	Vil1	Vil1	56	0	0	0	-1.416	0.000149	0.0488			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Nfrkb_p1	Nfrkb	2	0	0	0	2.153	1.45e-61	5.14e-60			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp236_p1	Zfp236	4	0	0	0	-1.333	5.95e-25	1.41e-23			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp296_p1	Zfp296	5	0	0	0	-0.8152	1.65e-24	3.34e-23			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Rif1_p1	Rif1	6	0	0	0	1.091	4.66e-24	8.28e-23			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp207_p1	Zfp207	7	0	0	0	1.077	2.38e-15	3.76e-14			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Sp1_p1	Sp1	8	0	0	0	-0.8583	1.13e-14	1.6e-13			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp36l1_p1	Zfp36l1	9	0	0	0	-0.6253	2.61e-13	3.36e-12			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gmeb2_p1	Gmeb2	10	0	0	0	-0.5378	4e-12	4.37e-11			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Sall4_p1	Sall4	11	0	0	0	-0.7368	2.03e-11	2.06e-10			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Setdb1_p1	Setdb1	12	0	0	0	-0.6776	3.87e-10	3.65e-09			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp281_p1	Zfp281	13	0	0	0	-0.5901	4.12e-10	3.65e-09			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Nanog_p1	Nanog	14	0	0	0	0.5821	1.86e-08	1.55e-07			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Grhl2_p1	Grhl2	15	0	0	0	-0.5378	5.02e-08	3.96e-07			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Atf5_p1	Atf5	16	0	0	0	0.8531	1.2e-07	9e-07			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Trp53_p1	Trp53	17	0	0	0	-0.4602	1.91e-07	1.36e-06			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Foxm1_p1	Foxm1	18	0	0	0	-0.4776	1.22e-06	8.24e-06			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Nr4a1_p1	Nr4a1	19	0	0	0	-0.3553	5.27e-06	3.4e-05			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Klf2_p1	Klf2	20	0	0	0	0.3243	8.97e-06	5.54e-05			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Dcp1a_p1	Dcp1a	21	0	0	0	-0.4703	9.9e-06	5.86e-05			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gm20422_p1	Gm20422	22	0	0	0	-0.2877	1.59e-05	8.75e-05			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Pias2_p2	Pias2	23	0	0	0	-0.3032	1.6e-05	8.75e-05			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp280c_p1	Zfp280c	24	0	0	0	-0.4106	2.27e-05	0.000119			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Tead4_p1	Tead4	25	0	0	0	-0.3368	3.62e-05	0.000183			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Tox4_p2	Tox4	26	0	0	0	0.5463	4.47e-05	0.000219			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp654_p1	Zfp654	27	0	0	0	-0.3223	7.54e-05	0.000357			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Foxd3_p1	Foxd3	28	0	0	0	0.5042	0.000122	0.000558			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gabpb2_p1	Gabpb2	29	0	0	0	-0.3687	0.00016	0.000708			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Stag2_p3	Stag2	30	0	0	0	-0.4238	0.000346	0.00149			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Smarcal1_p1	Smarcal1	31	0	0	0	-0.3183	0.000571	0.00225			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Sox2_p1	Sox2	32	0	0	0	0.2322	0.000653	0.00238			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gtf2ird1_p2	Gtf2ird1	33	0	0	0	-0.3628	0.000716	0.00248			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gabpa_p1	Gabpa	34	0	0	0	-0.3474	0.00102	0.00345			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Pknox1_p1	Pknox1	35	0	0	0	-0.3522	0.0014	0.00453			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Tcf12_p2	Tcf12	36	0	0	0	-0.326	0.00168	0.0053			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Myc_p1	Myc	37	0	0	0	-0.2774	0.00216	0.00663			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Mxi1_p1	Mxi1	38	0	0	0	-0.1829	0.0022	0.00663			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Smad7_p1	Smad7	39	0	0	0	-0.2667	0.00256	0.00756			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Ncor1_p2	Ncor1	40	0	0	0	-0.3011	0.00261	0.00756			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Bnc2_p1	Bnc2	41	0	0	0	-0.2543	0.00314	0.0089			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp958_p1	Zfp958	42	0	0	0	-0.2334	0.00377	0.0104			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Nme2_p1	Nme2	43	0	0	0	-0.361	0.00379	0.0104			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Hnrnpk_p1	Hnrnpk	44	0	0	0	-0.376	0.00406	0.0109			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Hes1_p2	Hes1	45	0	0	0	-0.2828	0.0054	0.0142			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Id2_p2	Id2	46	0	0	0	-0.2632	0.00586	0.0149			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Ascl2_p2	Ascl2	47	0	0	0	-0.2604	0.00598	0.0149			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Lbr_p1	Lbr	48	0	0	0	-0.3154	0.00649	0.0159			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Usf1_p1	Usf1	49	0	0	0	-0.1981	0.00666	0.016			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp518b_p1	Zfp518b	50	0	0	0	0.2673	0.00692	0.0164			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Ybx3_p1	Ybx3	51	0	0	0	-0.2669	0.0072	0.0166			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	E2f3_p2	E2f3	52	0	0	0	-0.2503	0.00723	0.0166			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Nup62cl_p1	Nup62cl	53	0	0	0	-0.2556	0.00786	0.0177			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Gm38394_p1	Gm38394	54	0	0	0	-0.2407	0.00855	0.0187			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Ubp1_p2	Ubp1	55	0	0	0	-0.2134	0.0129	0.0274			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Adnp_p1	Adnp	56	0	0	0	0.32	0.0138	0.0285			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp445_p1	Zfp445	57	0	0	0	-0.1958	0.0138	0.0285			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Mbd3_p1	Mbd3	58	0	0	0	0.2985	0.0161	0.0326			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp748_p1	Zfp748	59	0	0	0	-0.2056	0.0179	0.0357			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Erf_p1	Erf	60	0	0	0	-0.2494	0.0187	0.0366			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Csde1_p1	Csde1	61	0	0	0	-0.1915	0.0191	0.0366			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Zfp42_p1	Zfp42	62	0	0	0	-0.2402	0.02	0.0379			16	Hnrnpk;Klf5;Mbd3;Myc;Nanog;Pias2;Pou5f1;Rif1;Sall4;Sox2;Sp1;Ssrp1;Trp53;Usf1;Zfp281;Zfp42
+GSE273069:re57m_gfp_low_vs_high	sort	0	Foxn3_p2	Foxn3	63	0	0	0	-0.1834	0.021	0.0388			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Ahctf1_p1	Ahctf1	64	0	0	0	-0.134	0.021	0.0388			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Cnbp_p1	Cnbp	65	0	0	0	-0.2619	0.0221	0.0402			0	
+GSE273069:re57m_gfp_low_vs_high	sort	0	Hmg20b_p1	Hmg20b	66	0	0	0	0.2247	0.0251	0.0451			0	
+GSE273070:xist_high_vs_negative	sort	0	Pou5f1_p1	Pou5f1	1	0	0	0	-1.032	3.1e-39	9.4e-37			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Nfrkb_p1	Nfrkb	4	0	0	0	-0.6743	1.76e-24	2.67e-22			0	
+GSE273070:xist_high_vs_negative	sort	0	Otx2_p2	Otx2	5	0	0	0	-0.5236	2.42e-22	3.15e-20			0	
+GSE273070:xist_high_vs_negative	sort	0	Rif1_p1	Rif1	6	0	0	0	-0.1726	2.73e-18	3.11e-16			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Grhl2_p1	Grhl2	7	0	0	0	0.465	8.33e-18	8.44e-16			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp518b_p1	Zfp518b	8	0	0	0	-0.4418	2.65e-17	2.41e-15			0	
+GSE273070:xist_high_vs_negative	sort	0	Nfe2l2_p1	Nfe2l2	9	0	0	0	-0.3304	3.12e-16	2.59e-14			0	
+GSE273070:xist_high_vs_negative	sort	0	Tox4_p2	Tox4	10	0	0	0	-0.3954	1.52e-12	1.16e-10			0	
+GSE273070:xist_high_vs_negative	sort	0	Adnp_p1	Adnp	11	0	0	0	-0.349	3.1e-12	2.17e-10			0	
+GSE273070:xist_high_vs_negative	sort	0	Rbpj_p2	Rbpj	12	0	0	0	-0.3135	5.07e-12	3.3e-10			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Zfp280c_p1	Zfp280c	13	0	0	0	0.3576	1.67e-11	1.02e-09			0	
+GSE273070:xist_high_vs_negative	sort	0	Gm38394_p1	Gm38394	14	0	0	0	0.2521	6.4e-10	3.64e-08			0	
+GSE273070:xist_high_vs_negative	sort	0	Arnt_p1	Arnt	15	0	0	0	-0.2585	9.8e-09	5.21e-07			0	
+GSE273070:xist_high_vs_negative	sort	0	Foxd3_p1	Foxd3	16	0	0	0	-0.2245	1.03e-08	5.21e-07			0	
+GSE273070:xist_high_vs_negative	sort	0	Lbr_p1	Lbr	17	0	0	0	-0.1906	9.54e-08	4.35e-06			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp42_p1	Zfp42	18	0	0	0	0.2107	1.45e-07	6.31e-06			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Cebpg_p1	Cebpg	19	0	0	0	0.1449	2.01e-07	8.32e-06			0	
+GSE273070:xist_high_vs_negative	sort	0	Gli2_p1	Gli2	20	0	0	0	0.2191	4.52e-07	1.79e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp217_p1	Zfp217	21	0	0	0	-0.163	5.6e-07	2.13e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Setdb1_p1	Setdb1	22	0	0	0	0.3023	8.43e-07	3.07e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Hes1_p2	Hes1	23	0	0	0	0.1721	9.17e-07	3.21e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp236_p1	Zfp236	24	0	0	0	0.2615	1.37e-06	4.61e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Stag2_p2	Stag2	25	0	0	0	0.1817	2.43e-06	7.89e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Csde1_p1	Csde1	26	0	0	0	0.2533	2.64e-06	8.29e-05			0	
+GSE273070:xist_high_vs_negative	sort	0	Hnrnpk_p1	Hnrnpk	27	0	0	0	0.1195	4.34e-06	0.000127			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Zfp281_p1	Zfp281	28	0	0	0	0.1864	6.94e-06	0.000198			0	
+GSE273070:xist_high_vs_negative	sort	0	Nup62cl_p1	Nup62cl	29	0	0	0	-0.2574	7.32e-06	0.000202			0	
+GSE273070:xist_high_vs_negative	sort	0	Pias1_p1	Pias1	30	0	0	0	-0.09751	1.19e-05	0.00032			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Epas1_p1	Epas1	31	0	0	0	-0.2309	1.41e-05	0.000366			0	
+GSE273070:xist_high_vs_negative	sort	0	Sp1_p1	Sp1	32	0	0	0	-0.1953	2.14e-05	0.000531			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Hmg20b_p1	Hmg20b	33	0	0	0	-0.2029	2.16e-05	0.000531			0	
+GSE273070:xist_high_vs_negative	sort	0	Klf16_p1	Klf16	34	0	0	0	0.127	2.66e-05	0.000638			0	
+GSE273070:xist_high_vs_negative	sort	0	Myrf_p1	Myrf	35	0	0	0	-0.1595	2.93e-05	0.000685			0	
+GSE273070:xist_high_vs_negative	sort	0	Myc_p1	Myc	36	0	0	0	0.168	4.54e-05	0.00101			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Zfp207_p1	Zfp207	37	0	0	0	-0.2429	4.73e-05	0.00103			0	
+GSE273070:xist_high_vs_negative	sort	0	Gabpb2_p1	Gabpb2	38	0	0	0	0.1606	5.07e-05	0.00106			0	
+GSE273070:xist_high_vs_negative	sort	0	Brd4_p1	Brd4	39	0	0	0	-0.1704	5.56e-05	0.00113			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Usf1_p1	Usf1	40	0	0	0	-0.1069	6.21e-05	0.0012			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Dcp1a_p1	Dcp1a	41	0	0	0	0.2145	7.83e-05	0.00148			0	
+GSE273070:xist_high_vs_negative	sort	0	Gabpb1_p1	Gabpb1	42	0	0	0	0.2084	7.94e-05	0.00148			0	
+GSE273070:xist_high_vs_negative	sort	0	Mbd3_p1	Mbd3	43	0	0	0	-0.1948	9.94e-05	0.00181			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Arid1a_p1	Arid1a	44	0	0	0	-0.1355	0.000112	0.002			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Pias2_p2	Pias2	45	0	0	0	0.08514	0.000135	0.00237			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Grhl3_p1	Grhl3	46	0	0	0	0.1628	0.000194	0.00334			0	
+GSE273070:xist_high_vs_negative	sort	0	Klf4_p2	Klf4	47	0	0	0	0.09161	0.000245	0.00413			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Tcf7_p2	Tcf7	48	0	0	0	0.05665	0.000407	0.00651			0	
+GSE273070:xist_high_vs_negative	sort	0	Erf_p1	Erf	49	0	0	0	0.1077	0.000482	0.00757			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp654_p1	Zfp654	50	0	0	0	0.1096	0.000503	0.00777			0	
+GSE273070:xist_high_vs_negative	sort	0	E2f8_p2	E2f8	51	0	0	0	-0.1634	0.000547	0.0083			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp36l1_p1	Zfp36l1	52	0	0	0	0.1981	0.000594	0.00887			0	
+GSE273070:xist_high_vs_negative	sort	0	Etv5_p1	Etv5	53	0	0	0	-0.03275	0.000707	0.0104			0	
+GSE273070:xist_high_vs_negative	sort	0	Gtf2ird1_p2	Gtf2ird1	54	0	0	0	0.1083	0.000952	0.0138			0	
+GSE273070:xist_high_vs_negative	sort	0	Hic2_p1	Hic2	55	0	0	0	0.1028	0.000972	0.0138			0	
+GSE273070:xist_high_vs_negative	sort	0	Ncor1_p2	Ncor1	56	0	0	0	0.08684	0.00102	0.0142			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Trp53_p1	Trp53	57	0	0	0	0.1477	0.00118	0.0163			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Elf1_p1	Elf1	58	0	0	0	0.1655	0.00148	0.0201			0	
+GSE273070:xist_high_vs_negative	sort	0	Ascl2_p2	Ascl2	59	0	0	0	0.09475	0.00152	0.0204			0	
+GSE273070:xist_high_vs_negative	sort	0	Sall4_p1	Sall4	60	0	0	0	-0.08882	0.00182	0.0236			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	E2f3_p2	E2f3	61	0	0	0	0.0815	0.00187	0.024			0	
+GSE273070:xist_high_vs_negative	sort	0	Klf5_p1	Klf5	62	0	0	0	0.09246	0.00194	0.0245			0	
+GSE273070:xist_high_vs_negative	sort	0	Zscan10_p1	Zscan10	63	0	0	0	-0.1608	0.00206	0.0258			0	
+GSE273070:xist_high_vs_negative	sort	0	Zfp292_p1	Zfp292	64	0	0	0	-0.1507	0.00231	0.0285			0	
+GSE273070:xist_high_vs_negative	sort	0	Esrrb_p3	Esrrb	65	0	0	0	-0.1794	0.00251	0.0304			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Tcf12_p2	Tcf12	66	0	0	0	0.05825	0.0027	0.0323			0	
+GSE273070:xist_high_vs_negative	sort	0	Rlf_p1	Rlf	67	0	0	0	0.1231	0.00273	0.0323			0	
+GSE273070:xist_high_vs_negative	sort	0	Tead4_p1	Tead4	68	0	0	0	0.08241	0.00283	0.033			0	
+GSE273070:xist_high_vs_negative	sort	0	Zbtb44_p1	Zbtb44	69	0	0	0	0.108	0.003	0.0341			0	
+GSE273070:xist_high_vs_negative	sort	0	Foxm1_p1	Foxm1	70	0	0	0	0.08477	0.00321	0.0361			0	
+GSE273070:xist_high_vs_negative	sort	0	Ssrp1_p1	Ssrp1	71	0	0	0	-0.1333	0.00327	0.0364			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Smarcc1_p2	Smarcc1	72	0	0	0	-0.07804	0.00342	0.0375			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Cnbp_p1	Cnbp	73	0	0	0	-0.0659	0.00353	0.0383			0	
+GSE273070:xist_high_vs_negative	sort	0	Mxi1_p1	Mxi1	74	0	0	0	0.06669	0.00368	0.0394			0	
+GSE273070:xist_high_vs_negative	sort	0	Smarce1_p2	Smarce1	75	0	0	0	-0.1385	0.00376	0.0399			24	Arid1a;Brd4;E2f4;Esrrb;Hnrnpk;Klf4;Mbd3;Myc;Ncor1;Nr3c1;Pias1;Pias2;Pou2f1;Pou5f1;Rbpj;Rif1;Sall4;Smarcc1;Smarce1;Sp1;Ssrp1;Trp53;Usf1;Zfp42
+GSE273070:xist_high_vs_negative	sort	0	Zfp866_p2	Zfp866	76	0	0	0	-0.06915	0.00384	0.0399			0	
+GSE273070:xist_high_vs_negative	sort	0	Gmeb2_p1	Gmeb2	77	0	0	0	-0.09689	0.00385	0.0399			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HBA1	HBA1	1	0	0	0	1.09	1.46e-50	1.79e-47			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COL4A3BP	CERT1	2	0	0	0	1.177	2.27e-47	1.39e-44			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BBC3	BBC3	3	0	0	0	0.8748	3.39e-34	1.38e-31			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C18orf8	RMC1	4	0	0	0	0.8725	1.47e-32	4.51e-30			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SGMS1	SGMS1	5	0	0	0	0.7723	1.52e-31	3.72e-29			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC25A1	SLC25A1	6	0	0	0	-1.564	2.57e-31	5.24e-29			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ALAD	ALAD	7	0	0	0	-1.511	1.31e-30	2.29e-28		ALAS2(987)	0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C10orf76	ARMH3	9	0	0	0	0.7462	3.5e-28	4.76e-26			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPOX	PPOX	10	0	0	0	-1.17	4.91e-27	6.01e-25			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WDR91	WDR91	11	0	0	0	0.638	1.08e-26	1.2e-24			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TPI1	TPI1	12	0	0	0	-1.237	1.17e-26	1.2e-24			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NF1	NF1	13	0	0	0	0.7194	4.53e-26	4.26e-24			4	KRAS;NF1;SLC7A1;SNAP23
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CCZ1	CCZ1	14	0	0	0	0.8111	6.09e-26	5.32e-24			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CCNT1	CCNT1	15	0	0	0	0.5838	1.18e-25	9.66e-24			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HMBS	HMBS	16	0	0	0	-1.335	9.27e-25	7.09e-23			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PI4KB	PI4KB	17	0	0	0	0.5856	2.97e-24	2.13e-22			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MAPK14	MAPK14	18	0	0	0	-1.045	8.77e-24	5.96e-22			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UROS	UROS	19	0	0	0	-1.141	1.25e-22	8.06e-21			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RAB7A	RAB7A	20	0	0	0	0.3993	1.41e-22	8.62e-21			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DENND1A	DENND1A	21	0	0	0	-1.035	2.97e-22	1.73e-20			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC4A1	SLC4A1	22	0	0	0	-1.679	4.71e-22	2.62e-20			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SUPT7L	SUPT7L	23	0	0	0	0.6086	5.61e-21	2.98e-19			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SRM	SRM	24	0	0	0	-0.8185	5.94e-20	3.03e-18			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC36A1	SLC36A1	25	0	0	0	-0.9448	8.36e-20	4.09e-18			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ABCB10	ABCB10	26	0	0	0	-0.741	5.93e-19	2.79e-17			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TPCN1	TPCN1	27	0	0	0	-1.136	1.33e-17	6.02e-16			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MAFG	MAFG	28	0	0	0	0.5134	6.39e-17	2.79e-15			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ACTB	ACTB	29	0	0	0	-0.7838	7.95e-17	3.35e-15			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZBTB7A	ZBTB7A	30	0	0	0	0.5587	2.05e-16	8.1e-15			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FBXW2	FBXW2	31	0	0	0	-0.5323	2.66e-16	1.02e-14			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ALG3	ALG3	32	0	0	0	-0.9327	3.42e-16	1.27e-14			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PDXK	PDXK	33	0	0	0	-0.8485	3.88e-16	1.4e-14			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GDI2	GDI2	34	0	0	0	-0.8601	4.05e-16	1.42e-14			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FTSJ2	MRM2	35	0	0	0	-0.7911	5.03e-16	1.71e-14			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DPM3	DPM3	36	0	0	0	-0.7154	6.26e-16	2.07e-14			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RBM38	RBM38	37	0	0	0	-0.7025	6.48e-16	2.09e-14			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C1QBP	C1QBP	38	0	0	0	-1.003	7.24e-16	2.27e-14			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MIDN	MIDN	39	0	0	0	-0.7775	1.4e-15	4.28e-14			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GLRX5	GLRX5	40	0	0	0	-0.9638	1.7e-15	5.07e-14			5	CIAO2B;FDX2;GLRX5;IBA57;ISCA2
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SUPT20H	SUPT20H	41	0	0	0	0.5808	1.93e-15	5.61e-14			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NCLN	NCLN	42	0	0	0	-0.5778	3e-15	8.53e-14			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NPM1	NPM1	43	0	0	0	-0.6493	5.38e-15	1.49e-13			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PFDN5	PFDN5	44	0	0	0	-0.5788	5.48e-15	1.49e-13			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KDM6A	KDM6A	45	0	0	0	0.5464	1.13e-14	3e-13			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PKMYT1	PKMYT1	46	0	0	0	-0.835	1.21e-14	3.16e-13			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CPOX	CPOX	47	0	0	0	-0.8319	1.6e-14	4.08e-13			3	CPOX;POLG;TWNK
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS11	VPS11	48	0	0	0	-0.9328	1.79e-14	4.48e-13			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BIRC6	BIRC6	49	0	0	0	-0.5856	7.28e-14	1.78e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TBRG4	TBRG4	50	0	0	0	-0.6643	8.79e-14	2.11e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CSF2RB	CSF2RB	51	0	0	0	-0.8436	1.23e-13	2.9e-12			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DPH3	DPH3	52	0	0	0	-1.002	1.37e-13	3.12e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VEZT	VEZT	53	0	0	0	-0.5735	1.38e-13	3.12e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UBE2G2	UBE2G2	54	0	0	0	0.4768	1.56e-13	3.45e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PFN1	PFN1	55	0	0	0	-0.4367	1.58e-13	3.45e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PUS1	PUS1	56	0	0	0	-0.8108	1.63e-13	3.5e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CNOT4	CNOT4	57	0	0	0	-0.7671	1.96e-13	4.14e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDC34	CDC34	58	0	0	0	0.4508	2.11e-13	4.38e-12			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DNTTIP1	DNTTIP1	59	0	0	0	-0.7816	2.21e-13	4.51e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATPBD4	DPH6	60	0	0	0	-0.6209	3.54e-13	7.1e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FRYL	FRYL	61	0	0	0	-0.7084	3.8e-13	7.5e-12			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDK8	CDK8	62	0	0	0	0.4895	3.88e-13	7.52e-12			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZFPM1	ZFPM1	63	0	0	0	-0.9352	7.28e-13	1.39e-11	GATA1(997,exp938,db900)		0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ERMP1	ERMP1	64	0	0	0	-0.5202	9.43e-13	1.78e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KMT2B	KMT2B	65	0	0	0	-0.5679	1.46e-12	2.7e-11			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DOLK	DOLK	66	0	0	0	-0.822	1.56e-12	2.84e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PDHB	PDHB	67	0	0	0	-0.7303	1.83e-12	3.3e-11			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC30A1	SLC30A1	68	0	0	0	0.4615	2.37e-12	4.2e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MDH2	MDH2	69	0	0	0	-0.8341	2.69e-12	4.69e-11			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	P4HB	P4HB	70	0	0	0	0.4124	2.73e-12	4.69e-11			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MOCS3	MOCS3	71	0	0	0	-0.6472	3.01e-12	5.11e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FBXO28	FBXO28	72	0	0	0	-0.7373	3.09e-12	5.18e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COMMD3	COMMD3	73	0	0	0	0.4581	3.45e-12	5.63e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RASA2	RASA2	74	0	0	0	0.3925	3.45e-12	5.63e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	JAK2	JAK2	75	0	0	0	-1.204	3.72e-12	5.99e-11			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NR3C1	NR3C1	76	0	0	0	-0.3754	3.92e-12	6.22e-11			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	YBEY	YBEY	77	0	0	0	-0.8171	4.23e-12	6.63e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MSTO1	MSTO1	78	0	0	0	-0.913	4.64e-12	7.18e-11			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZRSR2	ZRSR2	79	0	0	0	-0.5523	5.66e-12	8.65e-11			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	IPPK	IPPK	80	0	0	0	-0.6729	7.2e-12	1.09e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SUV420H1	KMT5B	81	0	0	0	0.5147	8.33e-12	1.23e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GNB2L1	RACK1	82	0	0	0	-1.021	8.34e-12	1.23e-10			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS16	VPS16	83	0	0	0	-0.5043	1.15e-11	1.68e-10			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ARF6	ARF6	84	0	0	0	-0.5288	1.25e-11	1.79e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C17orf89	NDUFAF8	85	0	0	0	-0.7043	1.48e-11	2.11e-10			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EMC6	EMC6	86	0	0	0	-0.6684	1.68e-11	2.37e-10			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM39A	TMEM39A	87	0	0	0	0.3449	1.75e-11	2.43e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPP1R21	PPP1R21	88	0	0	0	-0.5618	1.89e-11	2.59e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC7A1	SLC7A1	89	0	0	0	-0.4344	1.9e-11	2.59e-10			4	KRAS;NF1;SLC7A1;SNAP23
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TSR3	TSR3	90	0	0	0	-0.6362	3.06e-11	4.12e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CARS2	CARS2	91	0	0	0	-0.961	3.23e-11	4.27e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFS5	NDUFS5	93	0	0	0	-0.6499	3.71e-11	4.83e-10			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LIPT2	LIPT2	94	0	0	0	-1.254	3.94e-11	5.07e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KLF3	KLF3	95	0	0	0	-0.5614	5.24e-11	6.67e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP6V0A1	ATP6V0A1	96	0	0	0	-0.553	6.24e-11	7.86e-10			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MCAT	MCAT	97	0	0	0	-0.7157	6.67e-11	8.33e-10			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UGCG	UGCG	98	0	0	0	-0.6008	7.04e-11	8.7e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SEC23B	SEC23B	99	0	0	0	-0.4937	7.87e-11	9.63e-10			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFAF3	NDUFAF3	100	0	0	0	-0.4709	8.59e-11	1.03e-09			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP5I	ATP5ME	101	0	0	0	-0.6221	8.59e-11	1.03e-09			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	METTL17	METTL17	102	0	0	0	-0.5936	1.15e-10	1.36e-09			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C20orf24	RAB5IF	103	0	0	0	-0.4895	1.26e-10	1.49e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FLAD1	FLAD1	104	0	0	0	-0.5275	1.53e-10	1.79e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GCLC	GCLC	105	0	0	0	-0.7799	2.35e-10	2.71e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MED23	MED23	106	0	0	0	-0.5252	2.44e-10	2.79e-09			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RANBP1	RANBP1	107	0	0	0	-0.5662	2.47e-10	2.8e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDNL2	NSMCE3	108	0	0	0	-0.6175	2.93e-10	3.29e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC11A2	SLC11A2	109	0	0	0	-0.6209	3.21e-10	3.57e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MTFMT	MTFMT	110	0	0	0	-0.766	3.26e-10	3.59e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COQ6	COQ6	111	0	0	0	-0.5583	3.59e-10	3.92e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ELP3	ELP3	112	0	0	0	-0.5714	4.13e-10	4.45e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TADA1	TADA1	113	0	0	0	0.4073	4.15e-10	4.45e-09			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HNRNPD	HNRNPD	114	0	0	0	-0.7393	4.78e-10	5.07e-09			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GTPBP3	GTPBP3	115	0	0	0	-0.7801	4.81e-10	5.07e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LMO2	LMO2	116	0	0	0	-0.4928	4.9e-10	5.12e-09	GATA1(988,exp900,db500)		14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BAZ1B	BAZ1B	117	0	0	0	-0.4842	5.34e-10	5.53e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SDHAF1	SDHAF1	118	0	0	0	-0.5669	5.48e-10	5.63e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	F8A1	F8A1	119	0	0	0	-0.7239	7.36e-10	7.5e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MCL1	MCL1	120	0	0	0	-0.8352	8.01e-10	8.1e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MTO1	MTO1	121	0	0	0	-0.7365	9.88e-10	9.9e-09			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C1orf109	C1orf109	122	0	0	0	-0.7811	1.07e-09	1.07e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PBX2	PBX2	123	0	0	0	-0.6947	1.09e-09	1.08e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SF3B4	SF3B4	124	0	0	0	-0.8599	1.22e-09	1.2e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ELMSAN1	ELMSAN1	125	0	0	0	-0.5448	1.27e-09	1.23e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UBE2R2	UBE2R2	126	0	0	0	0.4481	1.27e-09	1.23e-08			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RNASEK	RNASEK	127	0	0	0	-0.861	1.56e-09	1.49e-08			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GTPBP8	GTPBP8	128	0	0	0	-0.4919	1.84e-09	1.75e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C16orf80	CFAP20	129	0	0	0	-0.6009	1.95e-09	1.83e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WDR83OS	WDR83OS	130	0	0	0	-0.6514	1.97e-09	1.84e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SBNO1	SBNO1	131	0	0	0	-0.8146	2.02e-09	1.86e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EARS2	EARS2	132	0	0	0	-0.6878	2.02e-09	1.86e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS45	VPS45	133	0	0	0	-0.901	2.61e-09	2.38e-08			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DNAJC8	DNAJC8	134	0	0	0	-0.5402	2.65e-09	2.4e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ERAL1	ERAL1	135	0	0	0	-0.4202	2.68e-09	2.41e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EMC10	EMC10	136	0	0	0	-0.4409	2.94e-09	2.62e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TRMT112	TRMT112	137	0	0	0	-0.8087	2.99e-09	2.63e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL36	MRPL36	138	0	0	0	-0.4579	2.99e-09	2.63e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GSS	GSS	139	0	0	0	-0.419	3.69e-09	3.23e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC25A37	SLC25A37	140	0	0	0	-0.417	3.77e-09	3.25e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	YTHDF2	YTHDF2	141	0	0	0	-0.6221	3.78e-09	3.25e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COQ2	COQ2	142	0	0	0	-0.5958	4.06e-09	3.47e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SS18	SS18	143	0	0	0	-0.6533	4.36e-09	3.71e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SHMT2	SHMT2	144	0	0	0	-0.6128	4.48e-09	3.78e-08		ALAS2(923)	0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	G2E3	G2E3	145	0	0	0	0.3568	4.62e-09	3.87e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CMTR1	CMTR1	146	0	0	0	-0.6225	4.91e-09	4.09e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	IMPDH2	IMPDH2	147	0	0	0	-0.621	5.07e-09	4.19e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PTAR1	PTAR1	148	0	0	0	-0.5737	5.29e-09	4.33e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL53	MRPL53	149	0	0	0	-0.6804	5.31e-09	4.33e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP6V1H	ATP6V1H	150	0	0	0	-0.434	5.38e-09	4.36e-08			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CBFB	CBFB	151	0	0	0	-0.6805	5.71e-09	4.59e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MSL1	MSL1	152	0	0	0	-0.4846	6.91e-09	5.53e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZFYVE20	RBSN	153	0	0	0	-0.4269	7.89e-09	6.27e-08			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFA2	NDUFA2	154	0	0	0	-0.5555	8.16e-09	6.44e-08			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL39	RPL39	155	0	0	0	-0.5448	1.02e-08	8.03e-08			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WRAP53	WRAP53	156	0	0	0	-0.4392	1.04e-08	8.09e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPP1CB	PPP1CB	157	0	0	0	-0.6793	1.1e-08	8.51e-08			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS18	VPS18	158	0	0	0	-0.4653	1.25e-08	9.65e-08			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EPOR	EPOR	159	0	0	0	-1.018	1.3e-08	9.93e-08			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	IBA57	IBA57	160	0	0	0	-0.4125	1.36e-08	1.04e-07			5	CIAO2B;FDX2;GLRX5;IBA57;ISCA2
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MED20	MED20	161	0	0	0	-0.5673	1.42e-08	1.07e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MPI	MPI	162	0	0	0	-0.6897	1.42e-08	1.07e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KTI12	KTI12	163	0	0	0	-0.4498	1.61e-08	1.2e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EHD1	EHD1	164	0	0	0	-0.5052	1.88e-08	1.39e-07			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NMT1	NMT1	165	0	0	0	-0.6396	2.18e-08	1.61e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SH3BP5L	SH3BP5L	166	0	0	0	-0.4455	2.2e-08	1.61e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	YBX1	YBX1	167	0	0	0	-0.3911	2.24e-08	1.63e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TADA2B	TADA2B	168	0	0	0	0.3583	2.25e-08	1.63e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PYURF	PYURF	169	0	0	0	-0.6203	2.33e-08	1.68e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SCO2	SCO2	170	0	0	0	-0.5214	3.12e-08	2.23e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFA4	NDUFA4	171	0	0	0	-0.3674	3.5e-08	2.49e-07			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FKBPL	FKBPL	172	0	0	0	-0.2196	3.52e-08	2.49e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SRRD	SRRD	173	0	0	0	-0.5576	3.82e-08	2.69e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MTIF3	MTIF3	174	0	0	0	-0.3587	4.72e-08	3.3e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ELOF1	ELOF1	175	0	0	0	-0.456	5.31e-08	3.69e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RMI2	RMI2	176	0	0	0	-0.4701	5.8e-08	4.01e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OXSR1	OXSR1	177	0	0	0	-0.4767	5.83e-08	4.01e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HEMGN	HEMGN	178	0	0	0	0.2997	6.57e-08	4.44e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ITGA4	ITGA4	179	0	0	0	0.3116	6.57e-08	4.44e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRP63	MRPL57	180	0	0	0	-0.6881	7.19e-08	4.83e-07			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COA3	COA3	181	0	0	0	-0.5511	7.54e-08	5.02e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GMPPB	GMPPB	182	0	0	0	-0.7605	7.56e-08	5.02e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ESPL1	ESPL1	183	0	0	0	-0.549	8.67e-08	5.73e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FAM3A	FAM3A	184	0	0	0	-0.3586	9.21e-08	6.05e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LIPT1	LIPT1	185	0	0	0	-0.4485	1.08e-07	7.04e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LSS	LSS	186	0	0	0	-0.4847	1.36e-07	8.87e-07			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP6V0E1	ATP6V0E1	187	0	0	0	-0.6459	1.4e-07	9.04e-07			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DDX28	DDX28	188	0	0	0	-0.3864	1.61e-07	1.04e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NOSIP	NOSIP	189	0	0	0	-0.2956	1.62e-07	1.04e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STEAP3	STEAP3	190	0	0	0	-0.5716	1.75e-07	1.12e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LIG3	LIG3	191	0	0	0	-0.3751	2.09e-07	1.33e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ISCA2	ISCA2	192	0	0	0	-0.5619	2.13e-07	1.34e-06			5	CIAO2B;FDX2;GLRX5;IBA57;ISCA2
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BRD1	BRD1	193	0	0	0	-0.4257	2.22e-07	1.39e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPP21	RPP21	194	0	0	0	-0.5652	2.23e-07	1.39e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TSFM	TSFM	195	0	0	0	-0.4384	2.38e-07	1.48e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MECR	MECR	196	0	0	0	-0.3413	2.53e-07	1.56e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FARS2	FARS2	197	0	0	0	-0.4134	2.67e-07	1.64e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MED16	MED16	198	0	0	0	-0.4228	2.8e-07	1.71e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MYC	MYC	199	0	0	0	-0.7514	3.02e-07	1.84e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C10orf2	TWNK	200	0	0	0	-0.7562	3.58e-07	2.17e-06			3	CPOX;POLG;TWNK
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LSM3	LSM3	201	0	0	0	-0.3873	3.97e-07	2.39e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UBE2A	UBE2A	202	0	0	0	-0.4826	4.14e-07	2.48e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TARDBP	TARDBP	203	0	0	0	-0.5463	4.35e-07	2.59e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPS26	MRPS26	204	0	0	0	-0.4796	4.68e-07	2.78e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP5A1	ATP5F1A	205	0	0	0	-0.5088	5.06e-07	2.99e-06			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SNAP23	SNAP23	206	0	0	0	-0.3596	5.79e-07	3.41e-06			4	KRAS;NF1;SLC7A1;SNAP23
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STRBP	STRBP	207	0	0	0	0.3097	5.88e-07	3.44e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPM1D	PPM1D	208	0	0	0	-0.3174	7.04e-07	4.1e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SIAH2	SIAH2	209	0	0	0	-0.4306	7.94e-07	4.6e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SELRC1	COA7	210	0	0	0	-0.622	8.05e-07	4.65e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PHF5A	PHF5A	211	0	0	0	-0.7528	8.48e-07	4.87e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP5J2-PTCD1	ATP5MF-PTCD1	212	0	0	0	-0.3681	1.01e-06	5.76e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	YAE1D1	YAE1	213	0	0	0	-0.4456	1.05e-06	5.95e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL13A	RPL13A	214	0	0	0	-0.5768	1.09e-06	6.15e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BRPF1	BRPF1	215	0	0	0	-0.5329	1.12e-06	6.34e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ANKRD11	ANKRD11	216	0	0	0	-0.4324	1.17e-06	6.56e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MYB	MYB	217	0	0	0	-0.5596	1.22e-06	6.8e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS8	VPS8	218	0	0	0	-0.6283	1.46e-06	8.12e-06			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NAA38	NAA38	219	0	0	0	-0.5893	1.55e-06	8.57e-06			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DNLZ	DNLZ	220	0	0	0	-0.4684	1.55e-06	8.57e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS33A	VPS33A	221	0	0	0	-0.3214	1.62e-06	8.86e-06			14	CCZ1;EHD1;GDI2;LMO2;RAB7A;RBSN;RMC1;VPS11;VPS16;VPS18;VPS33A;VPS45;VPS8;WDR91
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLG	POLG	222	0	0	0	-0.433	1.64e-06	8.97e-06			3	CPOX;POLG;TWNK
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VHL	VHL	223	0	0	0	-0.7483	1.65e-06	8.99e-06			7	CDC34;CSF2RB;EPOR;FBXW2;JAK2;UBE2R2;VHL
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TIMMDC1	TIMMDC1	224	0	0	0	-0.426	1.81e-06	9.81e-06			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MVK	MVK	225	0	0	0	-0.3451	1.84e-06	9.94e-06			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RB1	RB1	226	0	0	0	-0.3704	2.04e-06	1.09e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL32	RPL32	227	0	0	0	-0.4638	2.1e-06	1.12e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL17	RPL17	228	0	0	0	-0.6513	2.31e-06	1.23e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNRD1	ZNRD1	229	0	0	0	-0.3087	2.34e-06	1.24e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GTF3A	GTF3A	230	0	0	0	-0.5126	2.43e-06	1.28e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS51	VPS51	231	0	0	0	-0.4199	2.49e-06	1.31e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EEF1G	EEF1G	232	0	0	0	-0.4216	2.63e-06	1.37e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SEPHS2	SEPHS2	233	0	0	0	-0.547	2.78e-06	1.44e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMARCD1	SMARCD1	234	0	0	0	-0.3863	2.85e-06	1.48e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DPH1	DPH1	235	0	0	0	-0.4556	2.97e-06	1.53e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP6AP1	ATP6AP1	236	0	0	0	-0.5646	3.25e-06	1.67e-05			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WDR7	WDR7	237	0	0	0	-0.3836	3.27e-06	1.68e-05			6	ATP6AP1;ATP6V0A1;ATP6V0E1;ATP6V1H;RNASEK;WDR7
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSIP1	PSIP1	238	0	0	0	0.3192	3.64e-06	1.86e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFB9	NDUFB9	239	0	0	0	-0.5023	3.68e-06	1.87e-05			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MTHFD2	MTHFD2	240	0	0	0	-0.4606	3.7e-06	1.87e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TCEA1	TCEA1	241	0	0	0	-0.4025	3.89e-06	1.95e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CCNL2	CCNL2	242	0	0	0	-0.401	3.9e-06	1.95e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TIMM17A	TIMM17A	243	0	0	0	-0.2981	4.31e-06	2.15e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PACSIN2	PACSIN2	244	0	0	0	-0.3204	4.94e-06	2.46e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	USP48	USP48	245	0	0	0	-0.3595	5.56e-06	2.75e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TAF8	TAF8	246	0	0	0	-0.5189	5.81e-06	2.87e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LSM2	LSM2	247	0	0	0	-0.412	6.45e-06	3.17e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SNRNP25	SNRNP25	248	0	0	0	-0.3853	6.54e-06	3.2e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C16orf59	TEDC2	249	0	0	0	-0.2403	6.63e-06	3.23e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FAM96B	CIAO2B	250	0	0	0	-0.2979	6.65e-06	3.23e-05			5	CIAO2B;FDX2;GLRX5;IBA57;ISCA2
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFAF7	NDUFAF7	251	0	0	0	-0.5631	7.22e-06	3.49e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS54	VPS54	252	0	0	0	-0.3308	8.69e-06	4.18e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PDE12	PDE12	253	0	0	0	-0.466	9.31e-06	4.46e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CARM1	CARM1	254	0	0	0	-0.3487	9.45e-06	4.51e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DCUN1D3	DCUN1D3	255	0	0	0	0.2352	9.71e-06	4.62e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL34	RPL34	256	0	0	0	-0.4911	1.03e-05	4.87e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CAB39L	CAB39L	257	0	0	0	-0.3184	1.07e-05	5.05e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FDX1L	FDX2	258	0	0	0	-0.6441	1.19e-05	5.62e-05			5	CIAO2B;FDX2;GLRX5;IBA57;ISCA2
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL33	MRPL33	259	0	0	0	-0.6213	1.24e-05	5.81e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFB5	NDUFB5	260	0	0	0	-0.4064	1.29e-05	6e-05			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DCAF15	DCAF15	261	0	0	0	-0.3156	1.35e-05	6.29e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PDP1	PDP1	262	0	0	0	-0.3076	1.36e-05	6.3e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPLP1	RPLP1	263	0	0	0	-0.451	1.51e-05	6.93e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UQCC	UQCC1	264	0	0	0	-0.4178	1.51e-05	6.93e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CHD8	CHD8	265	0	0	0	-0.3874	1.54e-05	7.04e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KMT2D	KMT2D	266	0	0	0	-0.2583	1.61e-05	7.33e-05			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KRAS	KRAS	267	0	0	0	-0.3632	1.72e-05	7.82e-05			4	KRAS;NF1;SLC7A1;SNAP23
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF331	ZNF331	268	0	0	0	0.2248	1.74e-05	7.88e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLRMT	POLRMT	269	0	0	0	-0.3704	1.82e-05	8.23e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SAAL1	SAAL1	270	0	0	0	0.1846	1.9e-05	8.54e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FOXRED1	FOXRED1	271	0	0	0	-0.3646	1.97e-05	8.81e-05			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C14orf39	C14orf39	272	0	0	0	0.2363	2.01e-05	8.98e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FAM60A	SINHCAF	273	0	0	0	-0.4431	2.03e-05	9.03e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP5F1	ATP5PB	274	0	0	0	-0.3436	2.1e-05	9.28e-05			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SIDT2	SIDT2	275	0	0	0	0.2118	2.16e-05	9.54e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	IQCF2	IQCF2	276	0	0	0	0.2319	2.2e-05	9.69e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPCDC	PPCDC	277	0	0	0	-0.2072	2.21e-05	9.69e-05			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MAD2L1	MAD2L1	278	0	0	0	-0.3475	2.37e-05	0.000103			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HDAC3	HDAC3	279	0	0	0	-0.3072	2.61e-05	0.000114			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GTPBP5	MTG2	280	0	0	0	-0.3619	2.71e-05	0.000118			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATPAF2	ATPAF2	281	0	0	0	-0.4248	2.75e-05	0.000119			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MGAT1	MGAT1	282	0	0	0	-0.3983	2.79e-05	0.00012			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSMA6	PSMA6	283	0	0	0	-0.6757	2.91e-05	0.000125			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	THG1L	THG1L	284	0	0	0	-0.4468	3.06e-05	0.00013			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NHP2L1	SNU13	285	0	0	0	-0.4369	3.06e-05	0.00013			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STRN	STRN	286	0	0	0	0.2164	3.42e-05	0.000145			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MLL5	KMT2E	287	0	0	0	-0.3209	3.44e-05	0.000146			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	M6PR	M6PR	288	0	0	0	-0.2341	3.52e-05	0.000148			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NELFCD	NELFCD	289	0	0	0	-0.3537	3.71e-05	0.000156			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFC1	NDUFC1	290	0	0	0	-0.3117	3.92e-05	0.000164			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL43	MRPL43	291	0	0	0	-0.4842	3.95e-05	0.000165			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFAF5	NDUFAF5	292	0	0	0	-0.5415	3.96e-05	0.000165			17	ATP5F1A;ATP5ME;ATP5PB;ATPAF2;FOXRED1;MDH2;NDUFA2;NDUFA4;NDUFAF3;NDUFAF5;NDUFAF8;NDUFB5;NDUFB9;NDUFC1;NDUFS5;P4HB;TIMMDC1
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DEGS1	DEGS1	293	0	0	0	-0.2927	4.17e-05	0.000173			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL24	RPL24	294	0	0	0	-0.6524	4.18e-05	0.000173			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL7	RPL7	295	0	0	0	-0.4031	4.23e-05	0.000174			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HECTD1	HECTD1	296	0	0	0	-0.3245	4.24e-05	0.000174			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SF3A2	SF3A2	297	0	0	0	-0.3411	4.71e-05	0.000193			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HSF1	HSF1	298	0	0	0	-0.1964	5.11e-05	0.000208			86	ACTB;ANKRD11;BIRC6;C1QBP;CARM1;CCNT1;CDK8;CFAP20;CHD8;DDX28;DNAJC8;DNTTIP1;EEF1G;ELMSAN1;EMC10;EMC6;ERAL1;FARS2;HDAC3;HECTD1;HEMGN;HNRNPD;HSF1;IMPDH2;KDM6A;KMT2B;KMT2D;LSM2;LSM3;MAPK14;MCAT;MED16;MED20;MED23;METTL17;MRM2;MRPL33;MRPL36;MRPL43;MRPL53;MRPL57;MRPS26;MSL1;MTG2;MYC;NAA38;NCLN;NELFCD;NMT1;
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MBTPS2	MBTPS2	299	0	0	0	-0.4724	5.19e-05	0.000211			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COQ3	COQ3	300	0	0	0	-0.412	5.2e-05	0.000211			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSPC1	PSPC1	301	0	0	0	-0.3786	5.29e-05	0.000214			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SKP1	SKP1	302	0	0	0	-0.3952	5.51e-05	0.000222			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C14orf166	RTRAF	303	0	0	0	-0.275	5.7e-05	0.000228			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MVD	MVD	304	0	0	0	-0.4003	5.81e-05	0.000232			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PHF6	PHF6	305	0	0	0	0.2359	5.93e-05	0.000236			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TRA2B	TRA2B	306	0	0	0	-0.2797	6.09e-05	0.000242			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STRAP	STRAP	307	0	0	0	-0.3603	6.1e-05	0.000242			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TYMS	TYMS	308	0	0	0	-0.5829	6.56e-05	0.000259			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POP5	POP5	309	0	0	0	-0.3096	6.62e-05	0.00026			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL6	RPL6	310	0	0	0	-0.2936	6.69e-05	0.000262			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC3A2	SLC3A2	311	0	0	0	-0.3929	7.32e-05	0.000286			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPAP2	RPAP2	312	0	0	0	-0.4162	7.41e-05	0.000288			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AFF1	AFF1	313	0	0	0	0.2118	7.42e-05	0.000288			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CAND1	CAND1	315	0	0	0	-0.2898	7.56e-05	0.000292			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFS2	NDUFS2	316	0	0	0	-0.4555	8.13e-05	0.000313			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SFMBT1	SFMBT1	317	0	0	0	0.2121	8.16e-05	0.000313			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PITRM1	PITRM1	318	0	0	0	-0.2922	8.24e-05	0.000315			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COX5A	COX5A	319	0	0	0	-0.2471	8.58e-05	0.000327			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DHODH	DHODH	320	0	0	0	-0.3795	8.63e-05	0.000328			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ARFRP1	ARFRP1	321	0	0	0	-0.3226	8.93e-05	0.000338			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CLCN3	CLCN3	322	0	0	0	-0.3329	9.09e-05	0.000343			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GINS4	GINS4	323	0	0	0	-0.5056	9.73e-05	0.000366			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMAP1	SMAP1	324	0	0	0	0.2247	0.000103	0.000386			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL26	RPL26	325	0	0	0	-0.4111	0.000107	0.000401			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PCCB	PCCB	326	0	0	0	-0.2906	0.000116	0.000434			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PTPN23	PTPN23	327	0	0	0	-0.3103	0.000117	0.000436			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLG2	POLG2	328	0	0	0	-0.2018	0.000124	0.000458			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SRSF10	SRSF10	329	0	0	0	-0.2882	0.000127	0.000471			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GPS2	GPS2	330	0	0	0	-0.2708	0.000128	0.000472			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NADK2	NADK2	331	0	0	0	-0.2484	0.000137	0.000502			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SEC24C	SEC24C	332	0	0	0	-0.1838	0.000149	0.000544			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HIST1H2AI	H2AC13	333	0	0	0	-0.3432	0.000156	0.00057			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NASP	NASP	334	0	0	0	-0.3822	0.00016	0.000581			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL5	RPL5	335	0	0	0	-0.3733	0.000163	0.000591			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDOR1	NDOR1	336	0	0	0	-0.3995	0.000164	0.000594			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMU1	SMU1	337	0	0	0	-0.4943	0.000167	0.000601			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ABHD11	ABHD11	338	0	0	0	-0.3825	0.000176	0.000632			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HSPE1	HSPE1	339	0	0	0	-0.4384	0.000176	0.000632			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FAM104A	FAM104A	340	0	0	0	0.1904	0.000179	0.000642			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMX2	TMX2	341	0	0	0	-0.4266	0.00018	0.000642			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ITPK1	ITPK1	342	0	0	0	-0.252	0.000181	0.000645			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SKIV2L2	MTREX	343	0	0	0	-0.4516	0.000183	0.00065			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SOS1	SOS1	344	0	0	0	-0.5156	0.000186	0.000656			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BTBD7	BTBD7	345	0	0	0	0.2124	0.000187	0.000658			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	THOC3	THOC3	346	0	0	0	-0.3073	0.000193	0.000677			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CHP1	CHP1	347	0	0	0	-0.2832	0.0002	0.000701			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	COMMD2	COMMD2	348	0	0	0	0.2087	0.000207	0.000723			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C17orf70	FAAP100	349	0	0	0	-0.3681	0.000232	0.000809			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LAMTOR4	LAMTOR4	350	0	0	0	-0.2803	0.000246	0.000856			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TAF4	TAF4	351	0	0	0	-0.3219	0.000275	0.000949			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BTG4	BTG4	352	0	0	0	0.1622	0.000278	0.000958			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL23	RPL23	353	0	0	0	-0.4411	0.000294	0.00101			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL3	MRPL3	354	0	0	0	-0.2587	0.000295	0.00101			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GOLGA6L1	GOLGA6L1	355	0	0	0	-0.4454	0.0003	0.00102			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KAT6A	KAT6A	356	0	0	0	-0.2784	0.000304	0.00103			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	YME1L1	YME1L1	357	0	0	0	-0.3986	0.000329	0.00112			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CBFA2T3	CBFA2T3	358	0	0	0	-0.2393	0.000336	0.00114			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DCTD	DCTD	359	0	0	0	0.1691	0.00034	0.00115			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATAD3A	ATAD3A	360	0	0	0	-0.1999	0.000345	0.00116			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ANKRD49	ANKRD49	361	0	0	0	-0.09257	0.000361	0.00121			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STAM2	STAM2	362	0	0	0	0.1967	0.000399	0.00133			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	H2AFY	MACROH2A1	363	0	0	0	0.1834	0.000421	0.0014			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KIF23	KIF23	364	0	0	0	-0.2546	0.000432	0.00144			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CRY1	CRY1	365	0	0	0	0.1834	0.000461	0.00153			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HIST1H4J	H4C11	366	0	0	0	-0.3662	0.000471	0.00156			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLDIP3	POLDIP3	367	0	0	0	-0.1841	0.000473	0.00156			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PGAM1	PGAM1	368	0	0	0	-0.2213	0.00048	0.00158			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPS14	RPS14	369	0	0	0	-0.3532	0.000487	0.00159			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KAT7	KAT7	370	0	0	0	-0.26	0.000488	0.00159			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EGFR	EGFR	371	0	0	0	0.2382	0.000488	0.00159			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPL13	MRPL13	372	0	0	0	-0.2044	0.000511	0.00166			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLR2A	POLR2A	373	0	0	0	-0.3173	0.000514	0.00167			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BAP1	BAP1	374	0	0	0	-0.3093	0.000534	0.00173			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PCBP1	PCBP1	375	0	0	0	-0.341	0.000559	0.0018	KLF1(783,exp783,db0)		0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	LAMP2	LAMP2	376	0	0	0	0.2044	0.000578	0.00186			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TRNT1	TRNT1	377	0	0	0	-0.2069	0.000597	0.00192			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZC3H7A	ZC3H7A	378	0	0	0	-0.2424	0.000602	0.00193			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ANAPC2	ANAPC2	379	0	0	0	-0.4756	0.00062	0.00198			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CTBP1	CTBP1	380	0	0	0	-0.168	0.000648	0.00206			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RNF144A	RNF144A	381	0	0	0	0.1843	0.000656	0.00208			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UBE2D2	UBE2D2	382	0	0	0	0.2261	0.000662	0.0021			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TNPO1	TNPO1	383	0	0	0	-0.2497	0.000674	0.00213			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PTPN11	PTPN11	384	0	0	0	-0.3854	0.00068	0.00214			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFA5	NDUFA5	385	0	0	0	-0.2672	0.000691	0.00217			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF559-ZNF177	ZNF559-ZNF177	386	0	0	0	0.1401	0.000745	0.00234			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLC25A19	SLC25A19	387	0	0	0	-0.1059	0.000758	0.00237			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZHX3	ZHX3	388	0	0	0	0.1551	0.000766	0.00238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RGP1	RGP1	389	0	0	0	-0.2129	0.000766	0.00238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM189	TMEM189	390	0	0	0	0.1977	0.00077	0.00239			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NAMPT	NAMPT	391	0	0	0	-0.3232	0.000806	0.0025			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PAH	PAH	392	0	0	0	0.1904	0.000822	0.00254			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UQCRC2	UQCRC2	393	0	0	0	-0.1954	0.000859	0.00265			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DRC1	DRC1	394	0	0	0	0.1641	0.000879	0.0027			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM184A	TMEM184A	395	0	0	0	0.191	0.000916	0.00281			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GMDS	GMDS	396	0	0	0	-0.2557	0.000925	0.00283			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C7orf55-LUC7L2	FMC1-LUC7L2	397	0	0	0	-0.2963	0.000934	0.00285			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VMA21	VMA21	398	0	0	0	-0.07356	0.000951	0.00289			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL37A	RPL37A	399	0	0	0	-0.31	0.001	0.00304			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ROMO1	ROMO1	400	0	0	0	-0.3118	0.00101	0.00306			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM106B	TMEM106B	401	0	0	0	0.1654	0.00103	0.00311			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ELOVL6	ELOVL6	402	0	0	0	-0.2013	0.00105	0.00315			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KIAA0947	ICE1	403	0	0	0	-0.3051	0.00105	0.00315			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ACBD7	ACBD7	404	0	0	0	0.2069	0.00105	0.00316			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KDSR	KDSR	405	0	0	0	-0.1522	0.00109	0.00326			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL36	RPL36	406	0	0	0	-0.1945	0.0011	0.0033			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	IMMP1L	IMMP1L	407	0	0	0	0.1589	0.00119	0.00354			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KCTD5	KCTD5	408	0	0	0	-0.3244	0.00119	0.00354			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PPA2	PPA2	409	0	0	0	-0.2764	0.0012	0.00354			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TBP	TBP	410	0	0	0	-0.3231	0.00136	0.004			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL21	RPL21	411	0	0	0	-0.3445	0.00136	0.004			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KIAA1967	CCAR2	412	0	0	0	-0.173	0.00138	0.00405			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TTC7B	TTC7B	413	0	0	0	0.1348	0.00142	0.00415			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PHLPP2	PHLPP2	414	0	0	0	0.1729	0.00149	0.00436			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AURKAIP1	AURKAIP1	415	0	0	0	-0.348	0.00152	0.00443			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CNIH4	CNIH4	416	0	0	0	0.1767	0.00152	0.00443			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WASH1	WASHC1	417	0	0	0	-0.2484	0.00154	0.00446			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PDCD2L	PDCD2L	418	0	0	0	-0.2523	0.00154	0.00446			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HSP90AB1	HSP90AB1	419	0	0	0	-0.2291	0.00155	0.00449			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OTUD7A	OTUD7A	420	0	0	0	0.1619	0.00161	0.00466			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EFTUD1	EFL1	421	0	0	0	-0.2028	0.00166	0.00477			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFB10	NDUFB10	422	0	0	0	-0.322	0.0017	0.00487			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPS16	MRPS16	423	0	0	0	-0.2739	0.00173	0.00496			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STXBP3	STXBP3	424	0	0	0	0.2238	0.00175	0.005			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C3orf17	NEPRO	425	0	0	0	0.1704	0.00175	0.005			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RSL24D1	RSL24D1	426	0	0	0	-0.1132	0.00177	0.00504			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C14orf159	DGLUCY	427	0	0	0	0.141	0.00178	0.00504			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PRIM2	PRIM2	428	0	0	0	-0.3207	0.00178	0.00504			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSMB3	PSMB3	429	0	0	0	-0.216	0.00181	0.0051			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRGPRX3	MRGPRX3	430	0	0	0	0.1424	0.00185	0.00521			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SS18L2	SS18L2	431	0	0	0	-0.1437	0.00188	0.00528			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDC25C	CDC25C	432	0	0	0	0.1676	0.00196	0.00549			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EIF3H	EIF3H	433	0	0	0	-0.02915	0.00197	0.0055			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSMA4	PSMA4	434	0	0	0	-0.2675	0.002	0.0056			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C6orf211	ARMT1	435	0	0	0	0.1933	0.00208	0.0058			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CCAR1	CCAR1	436	0	0	0	-0.1944	0.00219	0.0061			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TBCK	TBCK	437	0	0	0	-0.2	0.00223	0.00618			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSMB2	PSMB2	438	0	0	0	-0.2568	0.00231	0.0064			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDK11A	CDK11A	439	0	0	0	-0.2859	0.00234	0.00646			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP5L	ATP5MG	440	0	0	0	-0.166	0.00238	0.00656			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ETV6	ETV6	441	0	0	0	0.1634	0.00255	0.007			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MAPKAP1	MAPKAP1	442	0	0	0	-0.2254	0.00266	0.0073			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ASPRV1	ASPRV1	443	0	0	0	0.1188	0.00267	0.0073			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF770	ZNF770	444	0	0	0	-0.2161	0.00268	0.0073			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF22	ZNF22	445	0	0	0	0.1525	0.00268	0.0073			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TTC32	TTC32	446	0	0	0	0.1013	0.0027	0.00732			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GEMIN4	GEMIN4	447	0	0	0	-0.2854	0.0027	0.00732			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MKI67IP	NIFK	448	0	0	0	-0.3228	0.00273	0.00738			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMG7	SMG7	449	0	0	0	-0.4059	0.00274	0.0074			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FANCF	FANCF	450	0	0	0	-0.2114	0.00294	0.00792			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SLITRK3	SLITRK3	451	0	0	0	0.163	0.00304	0.00816			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AKT2	AKT2	452	0	0	0	-0.1445	0.00305	0.00819			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HGS	HGS	453	0	0	0	-0.2198	0.00309	0.00826			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CPSF4	CPSF4	454	0	0	0	-0.2446	0.00311	0.00831			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ALOX5	ALOX5	455	0	0	0	0.145	0.00313	0.00835			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM91	TMEM91	456	0	0	0	0.1253	0.0032	0.00851			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CERS6	CERS6	457	0	0	0	0.1441	0.00324	0.0086			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMEK2	PPP4R3B	458	0	0	0	-0.2273	0.00328	0.00867			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ASUN	INTS13	459	0	0	0	-0.2348	0.00328	0.00868			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL10	RPL10	460	0	0	0	-0.2955	0.0033	0.00871			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TP53I3	TP53I3	461	0	0	0	0.1231	0.0034	0.00893			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CS	CS	462	0	0	0	0.1607	0.00343	0.00899			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMPD2	SMPD2	463	0	0	0	-0.3285	0.00344	0.00901			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TRIM28	TRIM28	464	0	0	0	-0.4789	0.00345	0.00901			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OGFOD1	OGFOD1	465	0	0	0	0.167	0.00354	0.00923			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	THAP1	THAP1	466	0	0	0	-0.2903	0.00359	0.00933			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HRC	HRC	467	0	0	0	0.1525	0.00364	0.00946			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MRPS21	MRPS21	468	0	0	0	-0.2028	0.00367	0.00952			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SH2D1A	SH2D1A	469	0	0	0	0.1442	0.00368	0.00952			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VGLL3	VGLL3	470	0	0	0	0.136	0.00373	0.0096			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NPIPA5	NPIPA5	471	0	0	0	-0.3673	0.00383	0.00985			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C19orf43	TRIR	472	0	0	0	-0.136	0.00388	0.00994			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TAMM41	TAMM41	473	0	0	0	-0.1717	0.00427	0.0109			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MLPH	MLPH	474	0	0	0	0.1656	0.00428	0.0109			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AK3	AK3	475	0	0	0	0.1058	0.00429	0.0109			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DNAJC24	DNAJC24	476	0	0	0	-0.2808	0.00439	0.0112			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FCHO2	FCHO2	477	0	0	0	0.1962	0.00443	0.0112			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NUPL1	NUP58	478	0	0	0	-0.3255	0.00445	0.0113			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KCND3	KCND3	479	0	0	0	0.1964	0.00446	0.0113			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PRAF2	PRAF2	480	0	0	0	0.1583	0.00458	0.0115			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DHH	DHH	481	0	0	0	0.1128	0.00493	0.0124			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SMOC1	SMOC1	482	0	0	0	0.1571	0.00504	0.0127			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ARHGAP5	ARHGAP5	483	0	0	0	0.1912	0.00513	0.0129			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GGNBP2	GGNBP2	484	0	0	0	-0.143	0.00523	0.0131			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TCEANC	TCEANC	485	0	0	0	0.1342	0.0056	0.014			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPS16	RPS16	486	0	0	0	-0.3128	0.00575	0.0143			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDK11B	CDK11B	487	0	0	0	-0.2521	0.00588	0.0146			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	STAB2	STAB2	488	0	0	0	0.1282	0.00596	0.0148			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TK2	TK2	489	0	0	0	0.1282	0.00605	0.015			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPS23	RPS23	490	0	0	0	-0.309	0.00612	0.0151			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MCM3AP	MCM3AP	491	0	0	0	-0.246	0.00622	0.0153			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PROS1	PROS1	492	0	0	0	0.1373	0.00631	0.0155			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NUTF2	NUTF2	493	0	0	0	-0.3004	0.00656	0.0161			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GTF2H5	GTF2H5	494	0	0	0	-0.1909	0.00658	0.0161			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ADCY9	ADCY9	495	0	0	0	0.1199	0.00681	0.0166			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SPTLC1	SPTLC1	496	0	0	0	-0.3098	0.00697	0.0169			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	EFCAB14	EFCAB14	497	0	0	0	0.1177	0.00701	0.017			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BANF1	BANF1	498	0	0	0	-0.1943	0.00712	0.0172			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OGN	OGN	499	0	0	0	0.1413	0.00713	0.0172			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFS6	NDUFS6	500	0	0	0	-0.247	0.00721	0.0174			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PAK4	PAK4	501	0	0	0	0.1412	0.00751	0.0181			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	WASF1	WASF1	502	0	0	0	0.1824	0.00752	0.0181			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OR4D10	OR4D10	503	0	0	0	0.1666	0.00758	0.0182			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TM4SF1	TM4SF1	504	0	0	0	0.1586	0.00762	0.0182			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NME1-NME2	NME1-NME2	505	0	0	0	0.1502	0.00768	0.0184			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	OR51G1	OR51G1	506	0	0	0	0.1524	0.00773	0.0184			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FEM1C	FEM1C	507	0	0	0	0.1736	0.00806	0.0192			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DET1	DET1	508	0	0	0	-0.1683	0.00834	0.0198			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PSMC2	PSMC2	509	0	0	0	-0.2787	0.00849	0.0201			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNHIT1	ZNHIT1	510	0	0	0	-0.04987	0.00859	0.0203			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM261	DMAC1	511	0	0	0	-0.0646	0.00879	0.0207			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SPTSSA	SPTSSA	512	0	0	0	-0.1754	0.00899	0.0211			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AGPAT4	AGPAT4	513	0	0	0	0.1001	0.00912	0.0214			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDRG3	NDRG3	514	0	0	0	-0.1062	0.00917	0.0215			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SREK1	SREK1	515	0	0	0	-0.2647	0.00925	0.0216			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CHRNA5	CHRNA5	516	0	0	0	0.1334	0.00933	0.0218			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	C1orf21	C1orf21	517	0	0	0	0.1593	0.00958	0.0223			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	AKAP17A	AKAP17A	518	0	0	0	0.0916	0.00958	0.0223			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NRXN3	NRXN3	519	0	0	0	0.08944	0.00967	0.0224			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RBM8A	RBM8A	520	0	0	0	-0.3089	0.00969	0.0224			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KLRF2	KLRF2	521	0	0	0	0.1187	0.00987	0.0228			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	A2M	A2M	522	0	0	0	0.1348	0.00992	0.0229			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATG4D	ATG4D	523	0	0	0	-0.1589	0.0101	0.0232			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFA8	NDUFA8	524	0	0	0	-0.1819	0.0103	0.0237			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	FDPS	FDPS	525	0	0	0	-0.2377	0.0104	0.0238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HEATR3	HEATR3	526	0	0	0	-0.07894	0.0104	0.0238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	METTL9	METTL9	527	0	0	0	0.1279	0.0104	0.0238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TPK1	TPK1	528	0	0	0	-0.1485	0.0105	0.0238			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NCS1	NCS1	529	0	0	0	0.1197	0.0105	0.0239			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NAPSA	NAPSA	530	0	0	0	0.1704	0.0108	0.0244			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MAK16	MAK16	531	0	0	0	-0.2169	0.0108	0.0244			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPS19	RPS19	532	0	0	0	-0.3388	0.0108	0.0244			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RABEPK	RABEPK	533	0	0	0	-0.2685	0.011	0.0247			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	GIPR	GIPR	534	0	0	0	0.1391	0.0111	0.0249			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DNAJC15	DNAJC15	535	0	0	0	0.1523	0.0112	0.0251			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MICA	MICA	536	0	0	0	0.08402	0.0112	0.0251			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DENND1C	DENND1C	537	0	0	0	0.1623	0.0113	0.0252			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DDX60	DDX60	538	0	0	0	0.1692	0.0114	0.0254			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CENPI	CENPI	539	0	0	0	-0.2847	0.0114	0.0255			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	USP17L13	USP17L13	540	0	0	0	0.1364	0.0115	0.0255			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PAXIP1	PAXIP1	541	0	0	0	-0.2241	0.0116	0.0257			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SC5D	SC5D	542	0	0	0	-0.1504	0.0117	0.0258			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF638	ZNF638	543	0	0	0	-0.1783	0.0117	0.0258			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	UTP3	UTP3	544	0	0	0	-0.3791	0.0117	0.0258			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CHIC2	CHIC2	545	0	0	0	0.1923	0.0117	0.0258			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ST20	ST20	546	0	0	0	0.1485	0.0118	0.026			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BEST3	BEST3	547	0	0	0	0.219	0.012	0.0263			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SPNS1	SPNS1	548	0	0	0	-0.1781	0.0126	0.0277			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KALRN	KALRN	549	0	0	0	0.1463	0.0128	0.0279			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CLEC19A	CLEC19A	550	0	0	0	0.1095	0.0128	0.0279			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MICU1	MICU1	551	0	0	0	0.1575	0.0133	0.029			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NIPAL1	NIPAL1	552	0	0	0	0.1102	0.0139	0.0303			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HIVEP1	HIVEP1	553	0	0	0	-0.1921	0.0141	0.0307			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZNF253	ZNF253	554	0	0	0	0.2067	0.0141	0.0307			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TAS2R16	TAS2R16	555	0	0	0	0.1077	0.0142	0.0308			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CHTF8	CHTF8	556	0	0	0	-0.1791	0.0143	0.0308			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TNFRSF11A	TNFRSF11A	557	0	0	0	0.07832	0.0147	0.0316			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SRP54	SRP54	558	0	0	0	-0.2018	0.0147	0.0317			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ZDHHC21	ZDHHC21	559	0	0	0	0.1352	0.0149	0.0319			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MCFD2	MCFD2	560	0	0	0	0.1129	0.0153	0.0329			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	POLR2M	POLR2M	561	0	0	0	-0.1435	0.0154	0.0329			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CAMK2B	CAMK2B	562	0	0	0	0.1371	0.0155	0.033			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CCDC105	CCDC105	563	0	0	0	0.1576	0.0157	0.0333			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RPL7A	RPL7A	564	0	0	0	-0.26	0.0157	0.0333			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MPO	MPO	565	0	0	0	0.1902	0.016	0.034			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	RBM22	RBM22	566	0	0	0	-0.2076	0.0169	0.0357			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	MPP6	MPP6	567	0	0	0	0.1502	0.0169	0.0357			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HDAC5	HDAC5	568	0	0	0	0.1046	0.0173	0.0364			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ENY2	ENY2	569	0	0	0	-0.2373	0.0178	0.0375			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TAF3	TAF3	570	0	0	0	-0.1561	0.0179	0.0378			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	KRT34	KRT34	571	0	0	0	0.1204	0.0183	0.0384			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TFB2M	TFB2M	572	0	0	0	-0.2419	0.0188	0.0395			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ATP6V1B2	ATP6V1B2	573	0	0	0	-0.3633	0.0195	0.0407			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ITGB7	ITGB7	574	0	0	0	0.1125	0.0198	0.0414			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	APOO	APOO	575	0	0	0	0.1209	0.0215	0.0447			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CDC27	CDC27	576	0	0	0	-0.1068	0.0218	0.0451			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NOP56	NOP56	577	0	0	0	-0.226	0.0219	0.0452			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	HYAL3	HYAL3	578	0	0	0	0.07965	0.0219	0.0452			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFA9	NDUFA9	579	0	0	0	-0.1008	0.0223	0.0459			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	CNIH	CNIH1	580	0	0	0	0.1353	0.0223	0.0459			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	NDUFS3	NDUFS3	581	0	0	0	-0.2134	0.0226	0.0465			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PRKRIR	THAP12	582	0	0	0	-0.2142	0.0229	0.047			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	TMEM154	TMEM154	583	0	0	0	0.16	0.0229	0.047			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	BCL2L2-PABPN1	BCL2L2-PABPN1	584	0	0	0	-0.13	0.0237	0.0484			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	ABCD2	ABCD2	585	0	0	0	0.09745	0.0237	0.0484			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	DEPDC4	DEPDC4	586	0	0	0	0.179	0.0241	0.049			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	SRPR	SRPRA	587	0	0	0	-0.1719	0.0244	0.0496			0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	VPS26A	VPS26A	588	0	0	0	0.1202	0.0245	0.0498	NHLRC2(704,exp704,db0)		0	
+GSE288230:secondary_D12_vs_D0	fitness_time	0	PLA1A	PLA1A	589	0	0	0	0.1306	0.0245	0.0498			0	
+GSE312143:GE_two_screens_lineage_vs_HSPC	in_vivo	1	Hdac11	Hdac11	1	0	0	0	3.705	5.32e-06	0.00912			0	
+GSE312143:GE_two_screens_lineage_vs_HSPC	in_vivo	1	Asap3	Asap3	2	0	0	0	6.514	1.81e-05	0.0155			0	
+GSE312143:GE_two_screens_lineage_vs_HSPC	in_vivo	1	Etohi1	Zfp971	3	0	0	0	5.973	5.2e-05	0.0275			0	
+GSE312143:GE_two_screens_lineage_vs_HSPC	in_vivo	1	Irx3	Irx3	4	0	0	0	4.742	6.43e-05	0.0275			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Tspyl2	Tspyl2	2	0	0	0	2.162	5.45e-16	8.02e-13			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Ccnt1	Ccnt1	3	0	0	1	4.744	5.14e-10	5.05e-07			6	Ccnt1;Ep300;Epas1;Runx1;Snw1;Usf2
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Nfkbib	Nfkbib	4	0	0	0	7.114	5.58e-09	4.11e-06			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Ep300	Ep300	5	0	0	1	0.9301	7.76e-07	0.000457	Runx1(780,exp521,db500);Gata3(801,exp0,db800)		6	Ccnt1;Ep300;Epas1;Runx1;Snw1;Usf2
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Gja1	Gja1	6	0	0	0	4.359	1.85e-06	0.000906			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Snw1	Snw1	7	0	0	1	-2.783	5.83e-06	0.00245			6	Ccnt1;Ep300;Epas1;Runx1;Snw1;Usf2
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Cables2	Cables2	8	0	0	0	-2.424	1.04e-05	0.00383			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Specc1	Specc1	9	0	0	0	5.56	3.31e-05	0.0108			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Tst	Tst	10	0	0	0	6.01	0.000114	0.0336			0	
+GSE312143:GW_ACOC_lineage_vs_HSPC	in_vivo	1	Usf2	Usf2	11	0	0	1	6.805	0.000152	0.0406			6	Ccnt1;Ep300;Epas1;Runx1;Snw1;Usf2
+GSE312143:GW_DTKP_lineage_vs_HSPC	in_vivo	1	Slc25a13	Slc25a13	1	0	0	0	1.513	5.24e-07	0.00104			0	
+GSE312143:GW_DTKP_lineage_vs_HSPC	in_vivo	1	Alas2	Alas2	2	0	0	0	3.088	5.98e-06	0.00563			0	
+GSE312143:GW_DTKP_lineage_vs_HSPC	in_vivo	1	Ptdss2	Ptdss2	3	0	0	0	6.352	8.52e-06	0.00563			0	
+GSE312143:GW_DTKP_lineage_vs_HSPC	in_vivo	1	Commd8	Commd8	4	0	0	0	3.145	6.54e-05	0.0324			0	
+GSE312143:GW_GE_lineage_vs_HSPC	in_vivo	1	Supt7l	Supt7l	1	0	0	1	2.012	6.41e-06	0.0121	Tada2b(979,exp787,db900);Taf5l(952,exp514,db900);Taf6l(971,exp711,db900)		0	

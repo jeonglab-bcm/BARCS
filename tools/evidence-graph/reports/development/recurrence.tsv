@@ -1,0 +1,1 @@
+taxon	gene	string_id	papers_tested	papers_hit	papers_expected	p_poisson	q	n_selection_classes	selection_classes	contrasts_up	contrasts_down	fitness_prior
