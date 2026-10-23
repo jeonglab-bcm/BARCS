@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/parental_JQ1_vs_DMSO_d14/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["SPI1", "JUNB", "FOS", "AHR", "ARNT"],
+  "top_n": [20, 50, 100]
+}

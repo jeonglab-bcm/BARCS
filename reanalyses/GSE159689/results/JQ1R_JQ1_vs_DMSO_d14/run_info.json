@@ -1,0 +1,46 @@
+{
+  "analysis": "JQ1R_JQ1_vs_DMSO_d14",
+  "formula": "~treatment",
+  "term": "treatmentJQ1",
+  "libraries": 5,
+  "residual_df": 3,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 90709,
+  "genes": 17986,
+  "moderated": true,
+  "prior_df": 38.6463,
+  "guide_correlation": 0.003,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 325,
+  "top1pct_read_share": {
+    "Res_JQ1_1": 0.071,
+    "Res_JQ1_2": 0.075,
+    "Res_DMSO_1": 0.048,
+    "Res_DMSO_2": 0.049,
+    "Res_DMSO_3": 0.046
+  },
+  "genes_fdr_0_10_up": 795,
+  "genes_fdr_0_10_down": 1955,
+  "genes_fdr_0_05": 1600,
+  "genes_fdr_0_10": 2750,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

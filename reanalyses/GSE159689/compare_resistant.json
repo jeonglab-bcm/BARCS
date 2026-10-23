@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/JQ1R_JQ1_vs_DMSO_d14/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["BCL2", "CDK6"],
+  "top_n": [20, 50, 100],
+  "out": "comparison_resistant"
+}
