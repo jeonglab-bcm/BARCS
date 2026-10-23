@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/CA9KO_synthetic_lethal/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["NFS1", "ISCU", "ISCA2", "ABCB7", "GLRX5", "TXN", "GSR", "GSTM2", "GSTM5", "MOCS3"],
+  "top_n": [20, 50, 100]
+}

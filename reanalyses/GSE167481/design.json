@@ -1,0 +1,96 @@
+{
+  "gse": "GSE167481",
+  "pmid": "34452919",
+  "counts_file": "suppl/GSE167481_Raw_read_counts_matrix.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^dummyguide$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "NTC_T0_Rep01",
+      "gsm": "GSM5105951",
+      "genotype": "NTC",
+      "time": "T0",
+      "rep": "1"
+    },
+    {
+      "column": "NTC_T0_Rep02",
+      "gsm": "GSM5105952",
+      "genotype": "NTC",
+      "time": "T0",
+      "rep": "2"
+    },
+    {
+      "column": "NTC_T11_Rep01",
+      "gsm": "GSM5105953",
+      "genotype": "NTC",
+      "time": "T11",
+      "rep": "1"
+    },
+    {
+      "column": "NTC_T11_Rep02",
+      "gsm": "GSM5105954",
+      "genotype": "NTC",
+      "time": "T11",
+      "rep": "2"
+    },
+    {
+      "column": "KO-B4_T0_Rep01",
+      "gsm": "GSM5105955",
+      "genotype": "CA9KO",
+      "time": "T0",
+      "rep": "1"
+    },
+    {
+      "column": "KO-B4_T0_Rep02",
+      "gsm": "GSM5105956",
+      "genotype": "CA9KO",
+      "time": "T0",
+      "rep": "2"
+    },
+    {
+      "column": "KO-B4_T11_Rep01",
+      "gsm": "GSM5105957",
+      "genotype": "CA9KO",
+      "time": "T11",
+      "rep": "1"
+    },
+    {
+      "column": "KO-B4_T11_Rep02",
+      "gsm": "GSM5105958",
+      "genotype": "CA9KO",
+      "time": "T11",
+      "rep": "2"
+    }
+  ],
+  "factor_levels": {
+    "genotype": [
+      "NTC",
+      "CA9KO"
+    ],
+    "time": [
+      "T0",
+      "T11"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "CA9KO_synthetic_lethal",
+      "columns": [
+        "NTC_T0_Rep01",
+        "NTC_T0_Rep02",
+        "NTC_T11_Rep01",
+        "NTC_T11_Rep02",
+        "KO-B4_T0_Rep01",
+        "KO-B4_T0_Rep02",
+        "KO-B4_T11_Rep01",
+        "KO-B4_T11_Rep02"
+      ],
+      "formula": "~ genotype + time + genotype:time",
+      "term": "genotypeCA9KO:timeT11"
+    }
+  ],
+  "rationale": "Genome-wide GeCKO knockout screen for genes synthetically lethal with carbonic anhydrase IX (CA9) loss in hypoxic SUM159PT triple-negative breast cancer cells (Chafe et al. 2021). Control (NTC, CAIX-intact) and CA9-knockout (KO-B4) cells were each sampled at T0 and endpoint T11 in duplicate (8 integer-count libraries, guide/gene columns named; 1,000 dummyguide non-targeting controls). The paper's measure is the differential cumulative change between NTC and CA9-KO (loss over time in the KO beyond the NTC). BARCS models that as the genotype x time interaction; a negative interaction term (genotypeCA9KO:timeT11) marks guides depleted in CA9-KO over time more than in NTC, i.e. synthetic-lethal with CA9 loss. The headline hit is the iron-sulfur enzyme NFS1 and the xCT/ferroptosis axis (SLC7A11). 4 residual df.",
+  "counts_md5": "92f16b4e97df8d85aa01dd9834bef060"
+}
