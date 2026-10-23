@@ -1,0 +1,10 @@
+{
+  "barcs_genes": "results/day12_vs_plasmid/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["ZBTB11", "ZFP131"],
+  "published": {
+    "file": "paper/TableS2_mageck.tsv",
+    "gene_column": "Gene", "score_column": "Mageck_pvalue", "score_better": "lower"
+  },
+  "top_n": [50, 100, 200, 300]
+}

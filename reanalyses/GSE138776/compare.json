@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/low_vs_high/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["METTL3", "METTL14", "WTAP", "USP5", "MAPK1", "MAPK3", "BRAF", "MAP2K1", "KRAS"],
+  "top_n": [50, 100, 500]
+}

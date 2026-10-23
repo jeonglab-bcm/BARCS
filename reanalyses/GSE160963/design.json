@@ -1,0 +1,41 @@
+{
+  "gse": "GSE160963",
+  "pmid": "35294876",
+  "fetch": {
+    "sample_files": true
+  },
+  "counts_file": "GSE160963_merged_counts.txt.gz",
+  "guide_column": "uid",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargeting",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Plasmid",
+      "gsm": "GSM4886994+GSM4886995",
+      "time": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "ES_day12",
+      "gsm": "GSM4886998",
+      "time": "day12",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "time": [
+      "plasmid",
+      "day12"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "day12_vs_plasmid",
+      "formula": "~ time",
+      "term": "timeday12"
+    }
+  ],
+  "rationale": "Mouse TF knockout library (10 guides per TF, 1,000 non-targeting) in ESCs; guides against TFs needed for pluripotency or growth drop out by day 12 (the paper's Fig. 1C compares day 12 with the plasmid library). The two maxiprep libraries agree near-Poisson (variance 2.2x Poisson), so they are one plasmid pool read twice and are summed (prepare.R). With one ESC culture, the analysis has one library per condition and uses the pooled-overdispersion path: calls are screening-level.",
+  "counts_md5": "dcb2dcd5c480ebef280a7617848995f6"
+}

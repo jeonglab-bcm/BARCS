@@ -1,0 +1,67 @@
+{
+  "gse": "GSE142350",
+  "pmid": "33863351",
+  "counts_file": "recovered_SRE-Elk.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargeting",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "SRE-Elk_Unsorted_R1",
+      "gsm": "GSM4226162",
+      "population": "unsorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "SRE-Elk_DoubleSorted_R1",
+      "gsm": "GSM4226165",
+      "population": "sorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "SRE-Elk_Unsorted_R2",
+      "gsm": "GSM4226163",
+      "population": "unsorted",
+      "replicate": "R2"
+    },
+    {
+      "column": "SRE-Elk_DoubleSorted_R2",
+      "gsm": "GSM4226166",
+      "population": "sorted",
+      "replicate": "R2"
+    },
+    {
+      "column": "SRE-Elk_Unsorted_R3",
+      "gsm": "GSM4226164",
+      "population": "unsorted",
+      "replicate": "R3"
+    },
+    {
+      "column": "SRE-Elk_DoubleSorted_R3",
+      "gsm": "GSM4226167",
+      "population": "sorted",
+      "replicate": "R3"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "unsorted",
+      "sorted"
+    ],
+    "replicate": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "sre_elk_sorted_vs_unsorted",
+      "formula": "~ replicate + population",
+      "term": "populationsorted"
+    }
+  ],
+  "rationale": "Primary screen: female 1.8 XX mESCs with an SRE-Elk (MAPK target) GFP reporter, GeCKOx library against all X-linked genes plus MAPK controls; GFP-high cells were sorted twice (day 7 and 9) and compared with unsorted cells (paper: MAGeCK, double-sorted vs unsorted, FDR < 0.05). Guides against MAPK inhibitors (Dusp9, Klhl13) are enriched. Counts are raw reads recovered from the deposited normalized table (prepare.R; every library passed with integrality 1.0). Sorted and unsorted libraries of one replicate come from one transduction, so replicate is a blocking term.",
+  "counts_md5": "aaca7fd80a24860ba03a5ea03e54be57"
+}

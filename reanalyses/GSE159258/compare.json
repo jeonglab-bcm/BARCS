@@ -1,0 +1,28 @@
+{
+  "barcs_genes": "results/high_vs_low/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "NEUROG3",
+    "SOX4",
+    "SOX9",
+    "KLF4",
+    "NR5A1",
+    "NEUROD1",
+    "SOX17",
+    "SMAD1",
+    "ATOH1",
+    "INSM1",
+    "NEUROG1",
+    "SOX18",
+    "RFX4",
+    "KLF7",
+    "SP8",
+    "OVOL1",
+    "NEUROG2"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

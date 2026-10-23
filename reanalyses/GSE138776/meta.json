@@ -1,0 +1,17 @@
+{
+  "gse": "GSE138776",
+  "pmid": "33217317",
+  "doi": "10.1016/j.molcel.2020.10.026",
+  "title": "Stabilization of ERK-Phosphorylated METTL3 by USP5 Increases m6A Methylation",
+  "journal": "Molecular Cell",
+  "published": "2020",
+  "model": "HeLa, genome-wide GeCKO KO, circular-RNA m6A-GFP reporter",
+  "contrast": "Low-GFP vs high-GFP (1 vs 1; no-replicate path)",
+  "paper_method": "Ranked gene lists per bin + RAS/MAPK pathway GSEA",
+  "paper_calls": "ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)",
+  "barcs_calls": "0 genes at FDR 0.10",
+  "named_hits": "METTL3 #16771, WTAP #4602, MAPK1 #3708, USP5 #20137 of 20,677 (all FDR 1)",
+  "verdict": "With one library per bin the screen is uninformative at the gene level: BARCS calls no hits and the named genes rank randomly, consistent with the paper drawing its conclusions from pathway GSEA and biochemistry rather than gene-level screen significance.",
+  "agreement": "differ",
+  "analyzed": "2026-10-23"
+}

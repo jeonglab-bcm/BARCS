@@ -1,0 +1,61 @@
+{
+  "gse": "GSE160403",
+  "pmid": "34741119",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForMouse",
+  "min_total_count": 30,
+  "fetch": {
+    "sample_files": true
+  },
+  "samples": [
+    {
+      "column": "WT14d",
+      "gsm": "GSM4873002",
+      "condition": "WT14d",
+      "replicate": "1"
+    },
+    {
+      "column": "KO14d",
+      "gsm": "GSM4873003",
+      "condition": "KO14d",
+      "replicate": "1"
+    },
+    {
+      "column": "WT24h",
+      "gsm": "GSM4873004",
+      "condition": "WT24h",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "KO14d",
+      "WT24h",
+      "WT14d"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "WT_vs_Mir139KO_d14",
+      "columns": [
+        "KO14d",
+        "WT14d"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT14d"
+    },
+    {
+      "name": "WT_d14_vs_24h",
+      "columns": [
+        "WT24h",
+        "WT14d"
+      ],
+      "formula": "~ condition",
+      "term": "conditionWT14d"
+    }
+  ],
+  "rationale": "Mouse GeCKOv2 (A+B) knockout screen in MLL-AF9 leukemia cells (Stavast et al. 2022). One library per condition: wild-type MLL-AF9 cells 24 h after selection, and wild-type and Mir139-knockout MLL-AF9 cells 14 days after selection. GSM titles name the samples (mir139WT14d, mir139KO14d, mir139WT24h); prepare.R merges the per-sample files and drops the unassigned-read line. The paper's question is which genes, when knocked out, kill wild-type but not Mir139-KO cells (silencers of MIR139, e.g. Polr2m): guides depleted in WT d14 relative to KO d14. The paper also used WT d14 vs WT 24 h to show MLL-AF9 dependencies (Men1, Eed, Rbbp4, Dot1l, Mllt3); that is the second analysis. With one library per condition run_barcs.R uses the pooled-overdispersion no-replicate path, so calls are screening-level.",
+  "counts_md5": "89509c86aea8fa8a516ef81352d5aa19"
+}

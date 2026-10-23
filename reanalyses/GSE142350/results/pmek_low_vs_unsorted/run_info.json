@@ -1,0 +1,47 @@
+{
+  "analysis": "pmek_low_vs_unsorted",
+  "formula": "~replicate + population",
+  "term": "populationsorted",
+  "libraries": 6,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 400,
+  "genes": 130,
+  "moderated": true,
+  "prior_df": 5.0365,
+  "guide_correlation": 0.0929,
+  "control_scale": null,
+  "control_guides": 10,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 0,
+  "top1pct_read_share": {
+    "pMek_Unsorted_R1": 0.028,
+    "pMek_Sorted_Bottom_R1": 0.029,
+    "pMek_Unsorted_R2": 0.027,
+    "pMek_Sorted_Bottom_R2": 0.03,
+    "pMek_Unsorted_R3": 0.027,
+    "pMek_Sorted_Bottom_R3": 0.032
+  },
+  "genes_fdr_0_10_up": 27,
+  "genes_fdr_0_10_down": 53,
+  "genes_fdr_0_05": 72,
+  "genes_fdr_0_10": 80,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

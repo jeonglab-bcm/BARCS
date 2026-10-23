@@ -1,0 +1,18 @@
+{
+  "gse": "GSE203456",
+  "pmid": "35763665",
+  "doi": "10.1182/blood.2022015629",
+  "pmcid": "PMC9479036",
+  "title": "Whole-genome CRISPR screening identifies N-glycosylation as a genetic and therapeutic vulnerability in CALR-mutant MPNs",
+  "journal": "Blood",
+  "published": "2022",
+  "model": "BA/F3-MPL cells (empty vector or CALR del52), mouse Brie genome-wide knockout library",
+  "contrast": "CALR del52 without IL3 vs empty vector with IL3, day 21 (2 vs 2 independent lines)",
+  "paper_method": "MAGeCK-RRA",
+  "paper_calls": "669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted",
+  "barcs_calls": "24 genes at FDR 0.10 (16 depleted, 8 enriched); 49 against the control null",
+  "named_hits": "3/5 at FDR 0.10 (Dpm2 #1, Dpm3 #2, Dpm1 #6); Calr #19 and Mpdu1 #20 at FDR 0.13-0.14",
+  "verdict": "BARCS reproduces the N-glycosylation dependency (Dpm1/2/3, Mpi, Pmm2, Dpy19l1, Uggt1, Srd5a3) and 15 of its 16 depleted calls are MAGeCK FDR 0.10 genes; Calr and Mpdu1 just miss because one of four guides is flat with only two lines per arm.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23"
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/WT_vs_Mir139KO_d14/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Polr2m"],
+  "published": {
+    "file": "paper/per_gene.tsv",
+    "gene_column": "gene", "score_column": "pvalue", "score_better": "lower",
+    "effect_column": "log2fc_WT_vs_KO"
+  },
+  "top_n": [16, 50, 100, 200]
+}

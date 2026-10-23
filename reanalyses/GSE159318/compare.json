@@ -1,0 +1,38 @@
+{
+  "barcs_genes": "results/high_vs_low/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "PRDM1",
+    "LHX6",
+    "NEUROG3",
+    "PAX8",
+    "SOX3",
+    "KLF4",
+    "FLI1",
+    "FOXH1",
+    "FEV",
+    "SOX17",
+    "FOS",
+    "INSM1",
+    "SOX2",
+    "WT1",
+    "SOX18",
+    "ZNF670",
+    "LHX8",
+    "OVOL1",
+    "E2F7",
+    "AFF1",
+    "HMX2",
+    "MAZ",
+    "RARA",
+    "PROP1",
+    "FOSL1",
+    "PAX5",
+    "KLF3"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

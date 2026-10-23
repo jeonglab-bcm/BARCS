@@ -1,0 +1,17 @@
+{
+  "gse": "GSE160963",
+  "pmid": "35294876",
+  "doi": "10.1016/j.celrep.2022.110524",
+  "title": "The BTB transcription factors ZBTB11 and ZFP131 maintain pluripotency by repressing pro-differentiation genes",
+  "journal": "Cell Reports",
+  "published": "2022",
+  "model": "Mouse ESCs, ~1,700-TF CRISPR knockout library",
+  "contrast": "Day 12 vs plasmid pool (1 vs 1; no-replicate path)",
+  "paper_method": "log-fold-change + mixed linear model + MAGeCK-RRA",
+  "paper_calls": "196 high-confidence depleted TFs (3 methods); ZBTB11, ZFP131 the validated hits",
+  "barcs_calls": "313 genes at FDR 0.10 after control calibration",
+  "named_hits": "ZBTB11 rank 26, ZFP131 rank 71 (both FDR < 0.003)",
+  "verdict": "BARCS depletes both validated pluripotency TFs (ZBTB11, ZFP131) and correlates with the paper's MAGeCK ranks (Spearman 0.70, top-300 Jaccard 0.99).",
+  "agreement": "agree",
+  "analyzed": "2026-10-23"
+}

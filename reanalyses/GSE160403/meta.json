@@ -1,0 +1,18 @@
+{
+  "gse": "GSE160403",
+  "pmid": "34741119",
+  "doi": "10.1038/s41375-021-01461-5",
+  "pmcid": "PMC8885418",
+  "title": "The tumor suppressor MIR139 is silenced by POLR2M to promote AML oncogenesis",
+  "journal": "Leukemia",
+  "published": "2022",
+  "model": "Mouse MLL-AF9 leukemia cells (wild-type and Mir139-knockout), mouse GeCKOv2 A+B knockout library",
+  "contrast": "Wild-type vs Mir139-KO MLL-AF9 cells, day 14 (1 vs 1, no replicates); also WT day 14 vs 24 h",
+  "paper_method": "Guides lost >=10-fold per gene (Supplementary Table 6) plus a permutation gene table",
+  "paper_calls": "16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)",
+  "barcs_calls": "8 genes at FDR 0.10 WT vs KO, mostly single-guide jackpots in the KO library, screening-level; 10 enriched genes (Bag6, Pmaip1, Bcl2l11, Bax) WT d14 vs 24 h",
+  "named_hits": "0/1: Polr2m rank 1,163, p = 0.18; Men1, Rbbp4, Eed (d14 vs 24 h) ranks 695-1,833, not called",
+  "verdict": "BARCS does not call Polr2m or the paper's other guide-count picks: the day-14 libraries are bottlenecked, and BARCS's own WT-vs-KO calls are single-clone jackpots. Only the enrichment of pro-apoptotic knockouts (Pmaip1, Bcl2l11, Bax, Bag6) over time is clean.",
+  "agreement": "differ",
+  "analyzed": "2026-10-23"
+}

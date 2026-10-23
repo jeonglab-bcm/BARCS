@@ -1,0 +1,49 @@
+{
+  "gse": "GSE162473",
+  "pmid": "33542077",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Day.0",
+      "gsm": "GSM4952586",
+      "condition": "Day0",
+      "replicate": "1"
+    },
+    {
+      "column": "DMSO.R1",
+      "gsm": "GSM4952587",
+      "condition": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "KPT9274.R1",
+      "gsm": "GSM4952588",
+      "condition": "KPT9274",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "DMSO",
+      "Day0",
+      "KPT9274"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "KPT9274_vs_DMSO",
+      "columns": [
+        "DMSO.R1",
+        "KPT9274.R1"
+      ],
+      "formula": "~ condition",
+      "term": "conditionKPT9274"
+    }
+  ],
+  "rationale": "Genome-wide GeCKOv2 knockout screen in MOLM-13 AML cells treated for 3 days with a sublethal dose of the NAMPT inhibitor KPT-9274 or DMSO, 7 days after library infection (Zhang et al. 2021). GEO deposits only a MAGeCK count_normalized table; prepare.R recovers the integer reads (100% of each column integer-valued) and keeps the 1,000 non-targeting controls. One library per condition (DMSO.R1, KPT9274.R1), so run_barcs.R uses the no-replicate path and the calls are screening-level. The paper's question: which knockouts sensitize cells to KPT-9274 (synthetic lethal), i.e. guides depleted in KPT-9274 relative to DMSO. The authors ran MAGeCK VISPR (negatively selected genes, Table 1) and prioritized HDAC8 and SIRT6 for validation. Day 0 is the pre-treatment reference and is not part of the drug contrast.",
+  "counts_md5": "c4c6b1744634fb8d73ccdf2fea99650f"
+}

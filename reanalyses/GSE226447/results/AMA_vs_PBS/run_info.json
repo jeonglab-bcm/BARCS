@@ -1,0 +1,45 @@
+{
+  "analysis": "AMA_vs_PBS",
+  "formula": "~condition",
+  "term": "conditionAMA",
+  "libraries": 4,
+  "residual_df": 2,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19028,
+  "moderated": true,
+  "prior_df": 10.4092,
+  "guide_correlation": 0.004,
+  "control_scale": 4.196,
+  "control_guides": 1000,
+  "control_p05_raw": 0.9869,
+  "control_p05": 0.0494,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 5172,
+  "top1pct_read_share": {
+    "PBS1": 0.053,
+    "PBS2": 0.053,
+    "AMA1": 0.86,
+    "AMA2": 0.807
+  },
+  "genes_fdr_0_10_up": 8,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 7,
+  "genes_fdr_0_10": 8,
+  "genes_empirical_fdr_0_10": 92,
+  "empirical_centre": "targets",
+  "control_shift": 0.524,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/DELnoIL3_vs_EVIL3/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["MPL", "CALR", "Jak2", "Stat5b", "Dpm1", "Dpm2", "Dpm3", "Mpdu1"],
+  "published": {
+    "file": "paper/pooled_DELminus_vs_EVplus.tsv",
+    "gene_column": "id", "score_column": "neg.score", "score_better": "lower",
+    "effect_column": "neg.lfc"
+  },
+  "top_n": [10, 25, 50, 64]
+}
