@@ -1,4 +1,12 @@
 contrast_id	selection	contrast_eligible	element	gene	rank_among_strict_hits	internal_essential	frequent_hitter	priority	estimate	p_value	fdr	physical_links_to_named(score,exp,db)	functional900_links_to_named	hit_module_size	hit_module_members
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Csk	Csk	2	0	0	1	0.9432	4.92e-57	2.82e-54			8	Csk;Epha2;Frs2;Grb2;Ptpn11;Ptpn2;Src;Syk
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Mapk1	Mapk1	4	0	0	1	-1.072	1.1e-24	3.15e-22		Dusp9(971)	3	Elk1;Map2k1;Mapk1
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Grb2	Grb2	8	0	0	1	-1.348	8.1e-17	1.16e-14			8	Csk;Epha2;Frs2;Grb2;Ptpn11;Ptpn2;Src;Syk
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Frs2	Frs2	10	0	0	1	-0.8796	5.71e-15	6.56e-13			8	Csk;Epha2;Frs2;Grb2;Ptpn11;Ptpn2;Src;Syk
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Ptpn11	Ptpn11	12	0	0	1	-0.4143	2.51e-13	2.4e-11			8	Csk;Epha2;Frs2;Grb2;Ptpn11;Ptpn2;Src;Syk
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	A830080D01Rik	Bclaf3	18	0	0	1	0.3969	4.47e-10	2.85e-08			3	Bclaf3;Med12;Uxt
+GSE142350:sre_elk_sorted_vs_unsorted	sort	1	Ptpn2	Ptpn2	19	0	0	1	-0.4055	1.08e-09	6.53e-08			8	Csk;Epha2;Frs2;Grb2;Ptpn11;Ptpn2;Src;Syk
+GSE159318:high_vs_low	sort	1	HES1	HES1	2	0	0	1	-1.263	6.05e-21	4.53e-18		NEUROG3(947)	0	
 GSE212152:establishment_GFP_vs_unsorted	sort	1	Atf7ip	Atf7ip	1	0	0	1	1.73	6.51e-09	6.48e-06	Setdb1(990,exp787,db900)	Ehmt2(912)	42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
 GSE212152:establishment_GFP_vs_unsorted	sort	1	Cbx1	Cbx1	3	0	0	1	2.475	4.95e-08	1.33e-05	Ehmt2(934,exp924,db0);Suv39h1(783,exp682,db0)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2
 GSE212152:establishment_GFP_vs_unsorted	sort	1	Kdm1a	Kdm1a	4	0	0	1	1.4	5.61e-08	1.33e-05	Dnmt1(757,exp564,db0);Ehmt2(810,exp624,db0);Hdac2(996,exp984,db500);Hdac1(999,exp994,db500)		42	Arid1a;Atf7ip;Atrx;Cbx1;Cbx3;Cbx5;Ctbp2;Daxx;Dnmt1;Dnmt3a;Dnmt3b;Dnmt3l;Eed;Ehmt2;Emsy;Ezh2;Gatad1;Hdac1;Hmg20b;Kdm1a;Kdm5b;L3mbtl2;Mphosph8;Phc1;Phf12;Pphln1;Rcor2;Satb2;Setd2;Setdb1;Sin3b;Smarca4;Smarcad1;Smarcb1;Smarcc1;Sumo1;Tasor;Tle4;Trim28;Uhrf1;Uhrf2;Zmym2

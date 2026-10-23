@@ -1,4 +1,14 @@
 contrast_id	taxon	modality	selection	residual_df	control_guides	hits_fdr10	proteins_mapped	elements_tested	flags
+GSE142350:sre_elk_sorted_vs_unsorted	10090	KO	sort	2	100	110	1039	1148	
+GSE142350:esrrb_low_vs_unsorted	10090	KO	sort	2	10	42	129	130	calls_over_10pct
+GSE142350:nanog_low_vs_unsorted	10090	KO	sort	1	10	77	129	130	one_residual_df,calls_over_10pct
+GSE142350:pmek_low_vs_unsorted	10090	KO	sort	2	10	80	129	130	calls_over_10pct
+GSE159258:high_vs_low	9606	CRISPRa	sort	2	100	200	1495	1496	calls_over_10pct
+GSE159270:high_vs_low	9606	CRISPRa	sort	2	300	32	109	109	calls_over_10pct
+GSE159278:high_vs_low	9606	CRISPRa	sort	2	99	324	1495	1496	calls_over_10pct
+GSE159318:high_vs_low	9606	CRISPRa	sort	2	100	109	1495	1496	
+GSE160963:day12_vs_plasmid	9606	KO	fitness_time	0	1000	313	1553	1682	no_residual_df,calls_over_10pct
+GSE168585:sox1neg_vs_unsorted	9606	KO	sort	1	1000	4417	18540	20692	one_residual_df,calls_over_10pct
 GSE212152:establishment_GFP_vs_unsorted	10090	KO	sort	1	150	94	1156	1160	one_residual_df
 GSE212152:maintenance_GFP_vs_unsorted	10090	KO	sort	1	150	179	1156	1160	one_residual_df,calls_over_10pct
 GSE229584:iRFP_vs_negative	9606	KO	sort	1	96	58	1799	1800	one_residual_df,composition_skew
