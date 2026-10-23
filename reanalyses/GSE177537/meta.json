@@ -1,0 +1,18 @@
+{
+  "gse": "GSE177537",
+  "pmid": "35086559",
+  "doi": "10.1186/s13073-022-01013-1",
+  "pmcid": "PMC8792531",
+  "title": "Genome-wide knockout screen of OC43/SARS-CoV2-infected HEK293-hACE2 cells I",
+  "journal": "Genome Medicine",
+  "published": "2022",
+  "model": "HEK293T-hACE2 cells, Brunello genome-wide knockout library, SARS-CoV-2 / OC43 survival selection",
+  "contrast": "Initial infection vs Day 0: SARS-CoV-2 (4 vs 4), OC43 (5 vs 4)",
+  "paper_method": "MAGeCK RRA, positively selected genes (Additional files 6 and 8)",
+  "paper_calls": "EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43",
+  "barcs_calls": "SARS-CoV-2: 33 enriched at FDR 0.10 after control calibration; OC43: 7 enriched (median-ratio totals)",
+  "named_hits": "SARS-CoV-2 7/7 at FDR 0.10 (EDC4 #1); OC43 3/5 (VMP1 #1, SLC35B2 #4, CCZ1B #5; TMEM41B #10 at FDR 0.11)",
+  "verdict": "BARCS puts EDC4 first and calls all named SARS-CoV-2 host factors; for OC43 it shares 18 of the top 20 genes and calls VMP1, SLC35B2 and CCZ1B, with TMEM41B just above FDR 0.10.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23"
+}
