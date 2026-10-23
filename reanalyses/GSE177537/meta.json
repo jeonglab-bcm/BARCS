@@ -14,5 +14,7 @@
   "named_hits": "SARS-CoV-2 7/7 at FDR 0.10 (EDC4 #1); OC43 3/5 (VMP1 #1, SLC35B2 #4, CCZ1B #5; TMEM41B #10 at FDR 0.11)",
   "verdict": "BARCS puts EDC4 first and calls all named SARS-CoV-2 host factors; for OC43 it shares 18 of the top 20 genes and calls VMP1, SLC35B2 and CCZ1B, with TMEM41B just above FDR 0.10.",
   "agreement": "agree",
-  "analyzed": "2026-10-23"
+  "analyzed": "2026-10-23",
+  "published_date": "2022-01-27",
+  "published_issue": "2022 Jan 27"
 }
