@@ -1,0 +1,48 @@
+{
+  "analysis": "all_infected_vs_uninfected",
+  "formula": "~infection",
+  "term": "infectioninfected",
+  "libraries": 7,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19023,
+  "moderated": true,
+  "prior_df": 33.515,
+  "guide_correlation": 0.0026,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0343,
+  "control_p05": 0.0343,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 879,
+  "top1pct_read_share": {
+    "Uninfected_1": 0.049,
+    "Uninfected_2": 0.052,
+    "WT": 0.072,
+    "Alpha_1": 0.044,
+    "Alpha_2": 0.045,
+    "Beta_1": 0.07,
+    "Beta_2": 0.069
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 0,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 0,
+  "genes_empirical_fdr_0_10": 0,
+  "empirical_centre": "controls",
+  "control_shift": -0.022,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

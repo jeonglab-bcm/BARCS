@@ -1,0 +1,116 @@
+{
+  "gse": "GSE197962",
+  "pmid": "35469023",
+  "counts_file": "suppl/GSE197962_sgRNA_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetControl$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Uninfected_1",
+      "gsm": "GSM5934783",
+      "infection": "uninfected",
+      "virus": "none",
+      "replicate": "1"
+    },
+    {
+      "column": "Uninfected_2",
+      "gsm": "GSM5934784",
+      "infection": "uninfected",
+      "virus": "none",
+      "replicate": "2"
+    },
+    {
+      "column": "Input_1",
+      "gsm": "GSM5934785",
+      "infection": "input",
+      "virus": "none",
+      "replicate": "1"
+    },
+    {
+      "column": "Input_2",
+      "gsm": "GSM5934786",
+      "infection": "input",
+      "virus": "none",
+      "replicate": "2"
+    },
+    {
+      "column": "WT",
+      "gsm": "GSM5934778",
+      "infection": "infected",
+      "virus": "WT",
+      "replicate": "1"
+    },
+    {
+      "column": "Alpha_1",
+      "gsm": "GSM5934779",
+      "infection": "infected",
+      "virus": "Alpha",
+      "replicate": "1"
+    },
+    {
+      "column": "Alpha_2",
+      "gsm": "GSM5934780",
+      "infection": "infected",
+      "virus": "Alpha",
+      "replicate": "2"
+    },
+    {
+      "column": "Beta_1",
+      "gsm": "GSM5934781",
+      "infection": "infected",
+      "virus": "Beta",
+      "replicate": "1"
+    },
+    {
+      "column": "Beta_2",
+      "gsm": "GSM5934782",
+      "infection": "infected",
+      "virus": "Beta",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "infection": [
+      "uninfected",
+      "input",
+      "infected"
+    ],
+    "virus": [
+      "none",
+      "WT",
+      "Alpha",
+      "Beta"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "all_infected_vs_uninfected",
+      "columns": [
+        "Uninfected_1",
+        "Uninfected_2",
+        "WT",
+        "Alpha_1",
+        "Alpha_2",
+        "Beta_1",
+        "Beta_2"
+      ],
+      "formula": "~ infection",
+      "term": "infectioninfected"
+    },
+    {
+      "name": "Alpha_vs_uninfected",
+      "columns": [
+        "Uninfected_1",
+        "Uninfected_2",
+        "Alpha_1",
+        "Alpha_2"
+      ],
+      "formula": "~ virus",
+      "term": "virusAlpha"
+    }
+  ],
+  "rationale": "Brunello knockout library (76,441 guides, 1,000 non-targeting; GEO overall design says GeCKO, the paper says Brunello and the guide names match Brunello) in Calu-3 cells infected with wild-type SARS-CoV-2 (one library), Alpha (two) or Beta (two), with two uninfected and two input libraries (Israeli et al. 2022). Columns are self-named and match GSM titles. The authors ran MAGeCK RRA with total-read normalization, both per variant and with all infected screens pooled ('all'), and read the enriched side; their log fold changes for ACE2 and GATA6 match the uninfected libraries as reference (WT ACE2 3.19 vs 3.24 here), so the uninfected cells are the reference. The main analysis pools all five infected libraries against the two uninfected ones as in the paper's combined screen; the second is Alpha vs uninfected (the paper's Alpha-specific KREMEN2 and SETDB1). Libraries are separate cultures; no pairing term. Sequencing depth is low (0.4-6.5 M reads for 77k guides) and the WT and Beta libraries have 37% of guides at zero.",
+  "counts_md5": "f0bf08d4c830054d85d9991f8228bcd5"
+}
