@@ -69,6 +69,7 @@ table.pmgrid th.g { font-family: var(--font-mono); font-size: 11px; text-align: 
 table.pmgrid td.g { text-align: center; padding: 4px 3px; font-size: 12px; }
 table.pmgrid td.dir { padding: 4px 8px 4px 3px; font-size: 11px; color: var(--ink-2); white-space: nowrap; }
 table.pmgrid td.dir span { color: var(--muted); }
+table.pmgrid th.dir { white-space: nowrap; }
 tr.hl { background: var(--wash); box-shadow: inset 3px 0 0 var(--s1); }
 .card p.note { color: var(--ink-2); margin: 0; font-size: 13px; max-width: 80ch; }
 svg { display: block; width: 100%; height: auto; overflow: visible; }
@@ -674,7 +675,7 @@ function pmMini(m, host) {
 
 function pmGrid(m, host) {
   const t = el("table", {class: "pmgrid"}), hr = el("tr");
-  hr.append(el("th", {}, "screen"), el("th", {title: "▲ (estimate > 0): guides more abundant in the first condition than in the baseline (reference) condition"}, "▲ = more in … vs baseline"));
+  hr.append(el("th", {}, "screen"), el("th", {class: "dir", title: "▲ (estimate > 0): guides more abundant in the first condition than in the baseline (reference) condition"}, "▲ more in · vs baseline"));
   m.genes.forEach(gn => hr.append(el("th", {class: "g"}, gn)));
   const th = el("thead"); th.append(hr); t.append(th);
   const tb = el("tbody");
