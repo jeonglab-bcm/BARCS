@@ -284,7 +284,8 @@ def recurrence(g, ess, out):
                 tested[sid].add(c["pmid"])
             for sid, v in h.items():
                 hit[sid].add(c["pmid"])
-                classes[sid].add(c["selection"])
+                if c["selection"] is not None:
+                    classes[sid].add(c["selection"])
                 signs[sid].append(1 if v[0] > 0 else -1)
         rate = {p: len(paper_hits[p]) / len(paper_uni[p]) for p in paper_uni}
         start = len(rows)
