@@ -61,6 +61,12 @@ def run(db, reports, outdir):
         v = np.asarray(v); med = float(np.median(v)); mad = 1.4826 * float(np.median(np.abs(v - med)))
         baseline[cid] = (round(med, 2), int(abs(med) > mad))
 
+    # What a positive estimate compares: guides more abundant in level `pos` than in the
+    # reference (baseline) level `ref`. An interaction term has no single reference.
+    levels = {}
+    for cid, t, r, term in con.execute("SELECT contrast_id, treatment_level, reference_level, term FROM contrast"):
+        levels[cid] = (t, r) if r is not None else (term.replace(":", " × "), "interaction")
+
     order = sorted(g.contrast)
     index = {cid: i for i, cid in enumerate(order)}
     contrasts = []
@@ -76,6 +82,8 @@ def run(db, reports, outdir):
             "named": len(claims[cid])}
         if cid.split(":")[0] in areas:
             entry["area"] = areas[cid.split(":")[0]]
+        if cid in levels:
+            entry["pos"], entry["ref"] = levels[cid]
         if cid in baseline:
             entry["base"], entry["base_off"] = baseline[cid]
         contrasts.append(entry)
