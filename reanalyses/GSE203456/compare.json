@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/DELnoIL3_vs_EVIL3/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["Dpm2", "Calr", "Dpm1", "Dpm3", "Mpdu1"],
+  "published": {
+    "file": "paper/bloodBLD2022015629-suppl3.xlsx", "sheet": "DEL-_vs_EV+.gene_summary",
+    "gene_column": "id", "score_column": "neg.score", "score_better": "lower",
+    "effect_column": "neg.lfc"
+  },
+  "top_n": [10, 25, 50, 100, 200]
+}

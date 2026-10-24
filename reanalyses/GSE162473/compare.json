@@ -1,0 +1,6 @@
+{
+  "barcs_genes": "results/KPT9274_vs_DMSO/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["HDAC8", "SIRT6", "HEXA", "IMPA2", "DCPS", "PTGS1"],
+  "top_n": [20, 50, 100]
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE163024",
+  "pmid": "35243691",
+  "doi": "10.1111/exd.14555",
+  "pmcid": "PMC9318024",
+  "title": "Genes and compounds that increase type VII collagen expression as potential treatments for dystrophic epidermolysis bullosa",
+  "journal": "Experimental Dermatology",
+  "published": "2022",
+  "model": "N/TERT keratinocytes with a COL7A1-tdTomato reporter, genome-wide CRISPRa (Calabrese set A, 56,762 guides)",
+  "contrast": "Top-10% tdTomato sort vs plasmid library (1 vs 1; screening-level)",
+  "paper_method": "Guide fold change over plasmid converted to Z-scores; genes with several enriched guides",
+  "paper_calls": "1,544 enriched guides; DENND4B and TYROBP as top genes (COL7A1 positive control), both validated",
+  "barcs_calls": "3 genes at FDR 0.10 (DENND4B, TYROBP, COL7A1); no replicates, overdispersion pooled from 477 non-targeting guides",
+  "named_hits": "3/3 recovered (DENND4B #1, TYROBP #2, COL7A1 #3)",
+  "verdict": "BARCS calls exactly the paper's two validated activators and the COL7A1 positive control and nothing else; the paper's other top guide-level Z-scores rest on single guides and are not gene-level hits.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2022-03-09",
+  "published_issue": "2022 Jul"
+}

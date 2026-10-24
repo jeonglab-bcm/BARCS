@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/TGEV_round5_vs_control/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["FUT8", "TMEM41B", "DYRK1A", "MLST8", "LPP", "TAX1BP1", "BARHL2"],
+  "top_n": [5, 10, 20],
+  "out": "comparison_round5"
+}

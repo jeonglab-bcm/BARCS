@@ -1,0 +1,20 @@
+{
+  "gse": "GSE177541",
+  "pmid": "35086559",
+  "doi": "10.1186/s13073-022-01013-1",
+  "pmcid": "PMC8792531",
+  "title": "Genome-wide knockout screen of OC43/SARS-CoV2-infected Vero E6 cells",
+  "journal": "Genome Medicine",
+  "published": "2022",
+  "model": "Vero E6 cells, custom Vervet genome-wide knockout library, SARS-CoV-2 / OC43 survival selection",
+  "contrast": "Infected vs uninfected Day-0 library (SARS-CoV-2 4 vs 3; OC43 single 4 vs 3)",
+  "paper_method": "MAGeCK a-RRA, positively selected genes (Additional files 4 and 5)",
+  "paper_calls": "TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)",
+  "barcs_calls": "SARS-CoV-2: 1,614 genes at FDR 0.10 (median-ratio totals); OC43: 22 enriched (depletion uninterpretable, totals capped)",
+  "named_hits": "SARS-CoV-2 CDKN1A #1, TP53 #2, ACE2 #7, rank corr 0.77; OC43 IFITM1/3 #1, TMEM41B #3, SLC35B2 #12",
+  "verdict": "BARCS reproduces the authors' top SARS-CoV-2 hits (CDKN1A, TP53, ACE2) and OC43 hits (IFITM, TMEM41B) with rank correlation 0.77; the post-selection bottleneck means only enrichment is interpretable and OC43 depletion is not.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2022-01-27",
+  "published_issue": "2022 Jan 27"
+}

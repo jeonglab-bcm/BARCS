@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/tdTomatoHigh_vs_plasmid/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["DENND4B", "TYROBP", "COL7A1"],
+  "published": {
+    "file": "suppl/GSE163024_COL7A1_CRISPRaScreen_Data.xlsx", "sheet": 1,
+    "gene_column": "Gene", "score_column": "Z-score", "score_better": "higher",
+    "effect_column": "logFC"
+  },
+  "top_n": [10, 25, 50, 100]
+}

@@ -1,0 +1,45 @@
+{
+  "analysis": "sox1neg_vs_unsorted",
+  "formula": "~replicate + population",
+  "term": "populationsox1_neg",
+  "libraries": 4,
+  "residual_df": 1,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 119461,
+  "genes": 20692,
+  "moderated": true,
+  "prior_df": 0.5123,
+  "guide_correlation": 0.0025,
+  "control_scale": 1.2375,
+  "control_guides": 1000,
+  "control_p05_raw": 0.076,
+  "control_p05": 0.05,
+  "totals_method": "library",
+  "test": "auto",
+  "guides_lr": 14617,
+  "top1pct_read_share": {
+    "WT NPC unsorted rep 1": 0.053,
+    "WT NPC Sox1 negative rep 1": 0.066,
+    "WT NPC unsorted WT NPC Sox1 negative rep 2": 0.053,
+    "wt2_b1": 0.076
+  },
+  "genes_fdr_0_10_up": 170,
+  "genes_fdr_0_10_down": 4247,
+  "genes_fdr_0_05": 3277,
+  "genes_fdr_0_10": 4417,
+  "genes_empirical_fdr_0_10": 4772,
+  "empirical_centre": "controls",
+  "control_shift": -0.177,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

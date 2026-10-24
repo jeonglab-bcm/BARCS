@@ -1,0 +1,68 @@
+{
+  "gse": "GSE226447",
+  "pmid": "37193694",
+  "counts_file": "suppl/GSE226447_AMA.count.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "PBS1",
+      "gsm": "GSM7075617",
+      "condition": "PBS",
+      "replicate": "1"
+    },
+    {
+      "column": "PBS2",
+      "gsm": "GSM7075618",
+      "condition": "PBS",
+      "replicate": "2"
+    },
+    {
+      "column": "AMA1",
+      "gsm": "GSM7075619",
+      "condition": "AMA",
+      "replicate": "1"
+    },
+    {
+      "column": "AMA2",
+      "gsm": "GSM7075620",
+      "condition": "AMA",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "PBS",
+      "AMA"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "AMA_vs_PBS",
+      "columns": [
+        "PBS1",
+        "PBS2",
+        "AMA1",
+        "AMA2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionAMA"
+    },
+    {
+      "name": "AMA_vs_PBS_median_ratio",
+      "columns": [
+        "PBS1",
+        "PBS2",
+        "AMA1",
+        "AMA2"
+      ],
+      "formula": "~ condition",
+      "term": "conditionAMA",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Genome-wide Brunello knockout screen in HAP1 cells: mutant pools treated with alpha-amanitin (AMA) for 7 days versus PBS, two replicates each (GSM titles match the column names PBS1/2 and AMA1/2, and the replicate pairs correlate most strongly). Knockouts that protect against AMA are enriched in the survivors, so the paper's question is enrichment of AMA over PBS. Replicates are not described as paired across arms, so no replicate term. Controls are the 1000 Brunello Non-Targeting-Control guides.",
+  "counts_md5": "2e9092ff95570d04aafb6707b15be8c7"
+}

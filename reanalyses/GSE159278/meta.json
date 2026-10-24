@@ -1,0 +1,19 @@
+{
+  "gse": "GSE159278",
+  "pmid": "33264623",
+  "doi": "10.1016/j.celrep.2020.108460",
+  "title": "Master Regulators and Cofactors of Human Neuronal Cell Fate Specification Identified by CRISPR Gene Activation Screens",
+  "journal": "Cell Reports",
+  "published": "2020",
+  "model": "TUBB3-mCherry dCas9-VP64 iPSCs, CRISPRa paired with sgASCL1",
+  "contrast": "mCherry-high vs mCherry-low (3 vs 3)",
+  "paper_method": "per-guide DESeq2; TF hit = 2+ guides enriched in two contrasts (FDR<0.01)",
+  "paper_calls": "Positive neurogenic TFs listed in Table S1",
+  "barcs_calls": "324 genes at FDR 0.10 after control calibration",
+  "named_hits": "68/75 positive hits recovered",
+  "verdict": "BARCS recovers 68/75 of the paper's positive neurogenic TFs for this screen as enriched at FDR 0.10, with the same proneural TFs (NEUROD/NEUROG, SOX, KLF families) at the top.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2020-12-01",
+  "published_issue": "2020 Dec 1"
+}

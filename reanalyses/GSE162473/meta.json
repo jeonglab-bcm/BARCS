@@ -1,0 +1,20 @@
+{
+  "gse": "GSE162473",
+  "pmid": "33542077",
+  "doi": "10.1158/1078-0432.CCR-20-3724",
+  "pmcid": "PMC8054771",
+  "title": "Targeting DNA damage repair functions of two histone deacetylases, HDAC8 and SIRT6, sensitizes acute myeloid leukemia to NAMPT inhibition",
+  "journal": "Clinical Cancer Research",
+  "published": "2021",
+  "model": "MOLM-13 AML cells, genome-wide GeCKOv2 knockout library, KPT-9274 (NAMPT inhibitor) treatment",
+  "contrast": "KPT-9274 vs DMSO, day 3 (1 vs 1, no replicates)",
+  "paper_method": "MAGeCK VISPR, negatively selected genes (Table 1)",
+  "paper_calls": "Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated",
+  "barcs_calls": "0 genes at FDR 0.10 (no-replicate, screening-level); SIRT6 #3 and HDAC8 #25 by depletion; counts recovered from the normalized table",
+  "named_hits": "SIRT6 #3, HDAC8 #25, HEXA #53, IMPA2 #89 of 20,687 by depletion (none reach FDR 0.10)",
+  "verdict": "BARCS ranks the paper's validated sensitizers SIRT6 (#3) and HDAC8 (#25) near the top of the depletion list, close to their MAGeCK ranks, but one library per arm leaves nothing at FDR 0.10.",
+  "agreement": "partial",
+  "analyzed": "2026-10-23",
+  "published_date": "2021-02-04",
+  "published_issue": "2021 Apr 15"
+}

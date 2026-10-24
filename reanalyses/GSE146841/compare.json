@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/Tm_GFPhigh_vs_low/genes.csv",
+  "direction": "depleted",
+  "named_hits": ["QRICH1", "XBP1", "ERN1"],
+  "published": {"file": "paper/tm_mle.tsv", "gene_column": "gene",
+    "score_column": "wald_p", "score_better": "lower", "effect_column": "beta_high_vs_low"},
+  "top_n": [20, 50, 100]
+}

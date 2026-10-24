@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/SARS2_1st_vs_D10_uninfected/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ACE2", "CTSL", "CCZ1", "CCZ1B", "TMEM251", "C18orf8", "CDH2"],
+  "published": {"file": "paper/hek2_sars_mageck.tsv", "gene_column": "gene",
+    "score_column": "pos_score", "score_better": "lower", "effect_column": "lfc"},
+  "top_n": [20, 50, 100]
+}

@@ -1,0 +1,22 @@
+{
+  "gse": "GSE222104",
+  "pmid": "36848233",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControlGuideForHuman",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "initial_rep1", "gsm": "GSM6914871", "condition": "GFPlow", "replicate": "1"},
+    {"column": "initial_rep2", "gsm": "GSM6914872", "condition": "GFPlow", "replicate": "2"},
+    {"column": "final_rep1", "gsm": "GSM6914873", "condition": "GFPhigh", "replicate": "1"},
+    {"column": "final_rep2", "gsm": "GSM6914874", "condition": "GFPhigh", "replicate": "2"}
+  ],
+  "factor_levels": {"condition": ["GFPlow", "GFPhigh"]},
+  "analyses": [
+    {"name": "GFPhigh_vs_GFPlow", "columns": ["initial_rep1", "initial_rep2", "final_rep1", "final_rep2"],
+     "formula": "~ condition", "term": "conditionGFPhigh"}
+  ],
+  "counts_md5": "90fb05731a5b5db4384fcdfa12b73a2a",
+  "rationale": "Genome-wide GeCKO v2 (A+B) knockout FACS screen in 293T cells carrying the translocation-stalled reporter ER-GFP-K20: knockouts that impair translocation-associated quality control stabilise the reporter and are enriched in the GFP-high sort. GEO characteristics map initial_rep1/2 to the GFP-low and final_rep1/2 to the GFP-high populations, two independent repeats. The paper ran MAGeCK test in paired mode (high and low sorted from the same culture); a replicate term would leave one residual degree of freedom, and the counts show no pairing (each GFP-high library correlates equally with both GFP-low libraries, Spearman 0.65-0.66), so the replicate term is left out (2 residual df). Raw counts come from the Raw_counts sheet of the deposited workbook (prepare.R). Controls are the 1000 GeCKO v2 non-targeting guides."
+}

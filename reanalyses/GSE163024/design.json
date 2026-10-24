@@ -1,0 +1,42 @@
+{
+  "gse": "GSE163024",
+  "pmid": "35243691",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^CONTROL$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "plasmid",
+      "gsm": "GSM4970382",
+      "condition": "plasmid",
+      "replicate": "1"
+    },
+    {
+      "column": "tdTomato_high",
+      "gsm": "GSM4970381",
+      "condition": "tdTomato_high",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "plasmid",
+      "tdTomato_high"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "tdTomatoHigh_vs_plasmid",
+      "columns": [
+        "plasmid",
+        "tdTomato_high"
+      ],
+      "formula": "~ condition",
+      "term": "conditiontdTomato_high"
+    }
+  ],
+  "counts_md5": "eb2afed82bdc65a4d0c8e37c6af0cfc6",
+  "rationale": "Genome-wide CRISPRa screen (Calabrese set A, 3 guides per gene, dCas9-VP64) in N/TERT keratinocytes carrying a tdTomato tag in the last exon of COL7A1. The top 10% tdTomato cells were sorted and their guides compared with the plasmid library (GSM4970381 = sorted screen, GSM4970382 = sgRNA/plasmid), as in the paper, which converted guide fold changes over the plasmid into Z-scores. Activators of type VII collagen are enriched in the sort. One library per condition, so run_barcs.R uses the no-replicate path and calls are screening-level. The sorted-sample reads are the deposited Count column; plasmid reads were recovered exactly from refCPM (reads + 1 pseudocount times one constant; prepare.R, recovery_scales.json). Guides with no read in the sort are absent from the deposit, and 74 guides with an empty gene cell are dropped. Controls are the 477 guides labelled CONTROL (non-targeting)."
+}

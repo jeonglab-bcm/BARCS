@@ -1,0 +1,62 @@
+{
+  "gse": "GSE169108",
+  "pmid": "34871328",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "control_gene_pattern": "^ntc_",
+  "min_total_count": 30,
+  "totals": "median_ratio",
+  "fetch": {
+    "sample_files": true
+  },
+  "samples": [
+    {
+      "column": "Control",
+      "gsm": "GSM5176446",
+      "condition": "control",
+      "replicate": "1"
+    },
+    {
+      "column": "TGEV3",
+      "gsm": "GSM5176447",
+      "condition": "TGEV_round3",
+      "replicate": "1"
+    },
+    {
+      "column": "TGEV5",
+      "gsm": "GSM5176448",
+      "condition": "TGEV_round5",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "control",
+      "TGEV_round3",
+      "TGEV_round5"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "TGEV_round5_vs_control",
+      "columns": [
+        "Control",
+        "TGEV5"
+      ],
+      "formula": "~ condition",
+      "term": "conditionTGEV_round5"
+    },
+    {
+      "name": "TGEV_round3_vs_control",
+      "columns": [
+        "Control",
+        "TGEV3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionTGEV_round3"
+    }
+  ],
+  "rationale": "Focused validation library of 79 candidate genes from the genome-wide PigGeCKO screen (about 1,400 guides, 15 ntc non-targeting controls) in PK-15-Cas9 cells challenged with TGEV at high MOI for up to five rounds (Sun et al. 2021). GEO deposits only read1/read2 normalized values (two decimals); prepare.R recovers the integer reads (each column is raw reads times one constant; 100% of values become integers), copied into recovery_scales.json, then sums the two reads of each library. Gene symbols are mapped from the companion PigGeCKO file by Ensembl id. Rounds 3 and 5 are sequential selections of one population, each compared with the control library (1 vs 1, no-replicate path, screening-level). Enrichment is read first (resistance genes expand); totals are median-ratio size factors because a few guides dominate the selected libraries.",
+  "counts_md5": "47b763f02d7e437fde0e1ac9b3461be8"
+}

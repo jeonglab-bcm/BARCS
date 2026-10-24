@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/all_infected_vs_uninfected/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ACE2", "GATA6", "CHMP2B", "CUL5", "IRF6", "EP300"],
+  "published": {"file": "paper/gene_results.tsv", "gene_column": "gene",
+    "score_column": "pos_score_all", "score_better": "lower", "effect_column": "neg_lfc_all"},
+  "top_n": [20, 50, 100]
+}

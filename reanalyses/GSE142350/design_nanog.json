@@ -1,0 +1,54 @@
+{
+  "gse": "GSE142350",
+  "pmid": "33863351",
+  "counts_file": "recovered_Nanog.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargeting",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Nanog_Unsorted_R1",
+      "gsm": "GSM4226169",
+      "population": "unsorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "Nanog_DoubleSorted_Bottom_R1",
+      "gsm": "GSM4310158",
+      "population": "sorted",
+      "replicate": "R1"
+    },
+    {
+      "column": "Nanog_Unsorted_R2",
+      "gsm": "GSM4226170",
+      "population": "unsorted",
+      "replicate": "R2"
+    },
+    {
+      "column": "Nanog_DoubleSorted_Bottom_R2",
+      "gsm": "GSM4310159",
+      "population": "sorted",
+      "replicate": "R2"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "unsorted",
+      "sorted"
+    ],
+    "replicate": [
+      "R1",
+      "R2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "nanog_low_vs_unsorted",
+      "formula": "~ replicate + population",
+      "term": "populationsorted"
+    }
+  ],
+  "rationale": "Secondary Nanog-reporter screen (GeCKOxs, 100 genes): the 25% cells with the lowest Nanog-mCherry were sorted twice; DoubleSorted_Bottom vs Unsorted, two replicates (1 residual df). The DoubleSorted_Top libraries are not used, as the paper compared the low sort with unsorted cells. Counts are raw reads recovered from the deposited normalized table (prepare.R; every library passed with integrality 1.0). Sorted and unsorted libraries of one replicate come from one transduction, so replicate is a blocking term.",
+  "counts_md5": "dcc9fa028163e12636e87792b14bcc69"
+}

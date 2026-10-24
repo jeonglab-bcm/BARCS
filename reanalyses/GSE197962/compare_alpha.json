@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/Alpha_vs_uninfected/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ACE2", "GATA6", "KREMEN2", "SETDB1"],
+  "published": {"file": "paper/gene_results.tsv", "gene_column": "gene",
+    "score_column": "pos_score_alpha", "score_better": "lower", "effect_column": "neg_lfc_alpha"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_alpha"
+}

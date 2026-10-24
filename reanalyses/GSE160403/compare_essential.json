@@ -1,0 +1,20 @@
+{
+  "barcs_genes": "results/WT_d14_vs_24h/genes.csv",
+  "direction": "depleted",
+  "named_hits": [
+    "Men1",
+    "Eed",
+    "Rbbp4",
+    "Dot1l",
+    "Mllt3",
+    "Ptprt",
+    "Hpgd",
+    "Eif4g2"
+  ],
+  "top_n": [
+    50,
+    100,
+    200
+  ],
+  "out": "comparison_essential"
+}

@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/AMA_vs_PBS_median_ratio/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["STT3B", "MGAT1", "ALG10", "STT3A", "RPN2"],
+  "published": {
+    "file": "paper/41467_2023_37714_MOESM3_ESM.xlsx", "sheet": "AMA_gene_summary",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [10, 25, 50, 100, 200]
+}

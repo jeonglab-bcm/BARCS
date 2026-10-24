@@ -1,70 +1,70 @@
 {
   "inventory": {
-    "publication": 109,
-    "series": 122,
-    "contrast": 256,
-    "result": 2423615,
-    "claim": 930,
+    "publication": 129,
+    "series": 149,
+    "contrast": 294,
+    "result": 2930081,
+    "claim": 1228,
     "string_physical": 955531,
     "string_functional": 1007149,
     "string_regulatory": 207892,
-    "hits_fdr10": 86609
+    "hits_fdr10": 136645
   },
   "hit_load": {
-    "contrasts_calling_over_10pct": 59,
-    "their_share_of_all_hits": 0.679,
-    "eligible_contrasts": 144
+    "contrasts_calling_over_10pct": 72,
+    "their_share_of_all_hits": 0.774,
+    "eligible_contrasts": 166
   },
   "claims": {
-    "claims": 930,
+    "claims": 1228,
     "status": {
-      "supported": 585,
-      "not_supported": 271,
-      "borderline": 64,
+      "not_supported": 354,
+      "supported": 788,
+      "borderline": 76,
       "not_tested": 10
     },
-    "supported_in_contrasts_calling_over_10pct": 217,
+    "supported_in_contrasts_calling_over_10pct": 351,
     "status_by_residual_df": {
-      "df2+": {
-        "supported": 431,
-        "not_supported": 161,
-        "borderline": 38
-      },
       "df0": {
-        "supported": 80,
-        "not_supported": 90,
-        "borderline": 8
+        "not_supported": 126,
+        "supported": 89,
+        "borderline": 10
+      },
+      "df2+": {
+        "supported": 615,
+        "borderline": 47,
+        "not_supported": 207
       },
       "df1": {
-        "supported": 74,
-        "borderline": 18,
-        "not_supported": 20
+        "supported": 84,
+        "not_supported": 21,
+        "borderline": 19
       }
     },
-    "not_supported_in_contrasts_with_zero_hits": 84,
-    "claims_without_direction": 930
+    "not_supported_in_contrasts_with_zero_hits": 113,
+    "claims_without_direction": 1228
   },
   "essential_reference": {
     "9606": {
-      "proteins": 1216,
-      "fitness_papers": 13
+      "proteins": 1274,
+      "fitness_papers": 14
     },
     "9913": {
       "proteins": 0,
       "fitness_papers": 1
     },
     "10090": {
-      "proteins": 1160,
+      "proteins": 1217,
       "fitness_papers": null
     },
     "sources": {
-      "internal_9606": 889,
+      "internal_9606": 969,
       "cegv2_mapped": 681
     }
   },
   "fitness_confound": {
-    "contrasts_tested": 137,
-    "flagged_q05_and_25pct_hits_essential": 45,
+    "contrasts_tested": 162,
+    "flagged_q05_and_25pct_hits_essential": 48,
     "flagged_examples": [
       "GSE192828:killing_vs_prekill",
       "GSE240110:COMBO_vs_DMSO",
@@ -72,6 +72,7 @@
       "GSE251758:intense_vs_pre",
       "GSE277987:high_vs_low",
       "GSE277987:high_vs_basal",
+      "GSE177537:SARS2_1st_vs_T0",
       "GSE266057:high_vs_low",
       "GSE277987:low_vs_basal",
       "GSE275043:gal9_high_vs_low",
@@ -79,15 +80,14 @@
       "GSE277690:khyg1_r1_vs_collection",
       "GSE316868:tfe3_on_vs_off",
       "GSE328830:invivo_active_vs_inactive",
-      "GSE288238:primed_GFPneg_vs_GFPhigh",
       "GSE298081:ptar1_vs_wt_gi"
     ]
   },
   "fitness_correlation": {
-    "contrasts": 99,
-    "abs_rho_over_0.1": 26,
-    "abs_rho_over_0.2": 5,
-    "median_abs_rho": 0.037,
+    "contrasts": 117,
+    "abs_rho_over_0.1": 30,
+    "abs_rho_over_0.2": 6,
+    "median_abs_rho": 0.036,
     "top": [
       [
         "GSE240110:MRTX_vs_DMSO",
@@ -102,6 +102,12 @@
         0.302
       ],
       [
+        "GSE177537:SARS2_1st_vs_T0",
+        "infection",
+        18847,
+        0.279
+      ],
+      [
         "GSE277690:khyg1_r1_vs_collection",
         "immune_coculture",
         18846,
@@ -112,80 +118,74 @@
         "in_vivo",
         7094,
         0.256
-      ],
-      [
-        "GSE255579:FANCG_vs_NT",
-        "genetic_interaction",
-        18844,
-        -0.251
       ]
     ]
   },
   "recurrence": {
     "9606": {
-      "papers": 60,
-      "proteins_hit_in_3plus_papers": 2184,
-      "beyond_paper_hit_rates_q05": 321
+      "papers": 74,
+      "proteins_hit_in_3plus_papers": 2499,
+      "beyond_paper_hit_rates_q05": 353
     },
     "10090": {
-      "papers": 12,
-      "proteins_hit_in_3plus_papers": 61,
+      "papers": 15,
+      "proteins_hit_in_3plus_papers": 78,
       "beyond_paper_hit_rates_q05": 0
     }
   },
   "frequent_hitters": {
-    "9606": 266,
-    "10090": 256
+    "9606": 322,
+    "10090": 310
   },
   "convergence": {
-    "pairs_tested": 989,
-    "pairs_q05": 434,
-    "cross_selection_class_pairs_q05": 288
+    "pairs_tested": 1177,
+    "pairs_q05": 467,
+    "cross_selection_class_pairs_q05": 340
   },
   "coherence": {
-    "contrasts_tested": 156,
-    "q05": 103,
-    "eligible_nonfitness_z_without_essentials_above_3": 49,
-    "eligible_nonfitness_tested": 100,
-    "modules_3plus": 499
+    "contrasts_tested": 182,
+    "q05": 115,
+    "eligible_nonfitness_z_without_essentials_above_3": 52,
+    "eligible_nonfitness_tested": 113,
+    "modules_3plus": 581
   },
   "unreported": {
-    "contrasts_with_named_genes": 176,
-    "unreported_strict_hits": 35997,
-    "unreported_strict_hits_in_eligible_contrasts": 14512,
-    "unreported_top10_in_eligible_contrasts": 562,
-    "priority_leads": 316,
-    "priority_contrasts": 63
+    "contrasts_with_named_genes": 213,
+    "unreported_strict_hits": 75395,
+    "unreported_strict_hits_in_eligible_contrasts": 16059,
+    "unreported_top10_in_eligible_contrasts": 655,
+    "priority_leads": 335,
+    "priority_contrasts": 73
   },
   "data_gaps": {
-    "contrasts": 255,
+    "contrasts": 293,
     "flags": {
-      "no_control_guides": 42,
-      "calls_over_10pct": 59,
-      "no_residual_df": 65,
-      "no_hits_fdr10": 33,
+      "no_residual_df": 75,
+      "no_hits_fdr10": 39,
+      "calls_over_10pct": 72,
+      "one_residual_df": 27,
+      "composition_skew": 62,
+      "no_control_guides": 49,
       "no_protein_mapping": 20,
-      "one_residual_df": 24,
-      "controls_inflated": 9,
-      "composition_skew": 53
+      "controls_inflated": 9
     },
     "element_types": {
       "bacterial_sRNA": 166,
       "ensembl_gene": 23774,
-      "excel_mangled": 32,
-      "excel_recovered": 377,
-      "gene": 1292915,
+      "excel_mangled": 36,
+      "excel_recovered": 423,
+      "gene": 1658079,
       "gene_pair": 118,
-      "lncRNA": 9117,
-      "miRNA": 17292,
+      "lncRNA": 9136,
+      "miRNA": 27436,
       "multi_gene_target": 1059,
       "parasite_gene": 1721,
       "peak_near_gene": 228,
       "promoter": 21688,
       "region": 1889
     },
-    "unmapped_symbols_excluding_ensembl_lncRNA": 8123,
-    "comparisons_with_paper_full_table_not_in_graph": 116,
+    "unmapped_symbols_excluding_ensembl_lncRNA": 13723,
+    "comparisons_with_paper_full_table_not_in_graph": 137,
     "organisms_without_string_join": [
       "Bacteroides thetaiotaomicron",
       "Toxoplasma gondii"

@@ -1,0 +1,89 @@
+{
+  "gse": "GSE177543",
+  "pmid": "35086559",
+  "counts_file": "suppl/GSE177543_hek_ko_2_reads.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "BrT0puro1",
+      "gsm": "GSM5375296",
+      "condition": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "BrT0puro2",
+      "gsm": "GSM5375297",
+      "condition": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "BrT0puro3",
+      "gsm": "GSM5375298",
+      "condition": "T0",
+      "replicate": "3"
+    },
+    {
+      "column": "D10-Cont1",
+      "gsm": "GSM5375299",
+      "condition": "D10_uninfected",
+      "replicate": "1"
+    },
+    {
+      "column": "D10-Cont2",
+      "gsm": "GSM5375300",
+      "condition": "D10_uninfected",
+      "replicate": "2"
+    },
+    {
+      "column": "D10-Cont3",
+      "gsm": "GSM5375301",
+      "condition": "D10_uninfected",
+      "replicate": "3"
+    },
+    {
+      "column": "BrCov-ST1",
+      "gsm": "GSM5375293",
+      "condition": "SARS2_1st",
+      "replicate": "1"
+    },
+    {
+      "column": "BrCov-ST2",
+      "gsm": "GSM5375294",
+      "condition": "SARS2_1st",
+      "replicate": "2"
+    },
+    {
+      "column": "BrCov-ST3",
+      "gsm": "GSM5375295",
+      "condition": "SARS2_1st",
+      "replicate": "3"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "D10_uninfected",
+      "T0",
+      "SARS2_1st"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SARS2_1st_vs_D10_uninfected",
+      "columns": [
+        "D10-Cont1",
+        "D10-Cont2",
+        "D10-Cont3",
+        "BrCov-ST1",
+        "BrCov-ST2",
+        "BrCov-ST3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionSARS2_1st"
+    }
+  ],
+  "rationale": "Brunello knockout library in HEK293T-hACE2 cells, screen 2 (SARS-CoV-2 MOI 0.3, day 10; Grodzki et al. 2022). Column names follow the GSM titles (BrT0puro = Day 0, D10-Cont = uninfected cells continued to day 10, BrCov-ST = SARS-CoV-2 single infection). The authors compared infected replicates with 'uninfected control library replicates' in MAGeCK without naming them; median-normalized log fold changes of their top genes (ACE2, CTSL, CCZ1B, TMEM251) match the day-10 uninfected controls better than Day 0, and the day-10 controls are time-matched, so they are the reference. Replicates are separate cultures, so no replicate term. The BrBact columns are not described in GEO and are not used.",
+  "counts_md5": "9a433c833cd2fe16277dfe6c7c5a081c"
+}

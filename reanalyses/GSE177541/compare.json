@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/SARS2_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TP53", "CDKN1A", "ACE2", "RAD54L2", "HRK", "DYRK1A", "DPF2"],
+  "published": {"file": "paper/vero_sars_mageck.tsv", "gene_column": "gene",
+    "score_column": "pos_score", "score_better": "lower", "effect_column": "lfc"},
+  "top_n": [20, 50, 100]
+}

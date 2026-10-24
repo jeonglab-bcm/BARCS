@@ -1,0 +1,20 @@
+{
+  "gse": "GSE222104",
+  "pmid": "36848233",
+  "doi": "10.1016/j.celrep.2023.112028",
+  "pmcid": "PMC10010011",
+  "title": "SAYSD1 senses UFMylated ribosome to safeguard co-translational protein translocation at the endoplasmic reticulum",
+  "journal": "Cell Reports",
+  "published": "2023",
+  "model": "293T ER-GFP-K20 reporter cells, GeCKO v2 (A+B) genome-wide knockout library",
+  "contrast": "GFP-high vs GFP-low FACS sort (2 vs 2 repeats)",
+  "paper_method": "MAGeCK (paired mode); 234 genes at p < 0.01, 88 high-confidence by STRING network",
+  "paper_calls": "88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1",
+  "barcs_calls": "299 genes at FDR 0.10 (30 enriched in GFP-high); 21 against the control null",
+  "named_hits": "3/6 at FDR 0.10 (DDRGK1 #6, SAYSD1 #23, CDK5RAP3 #26); UFM1/UBA5/UFSP2 enriched but miss",
+  "verdict": "BARCS recovers SAYSD1 (the paper's validated lead) and the translocon/splicing/translation signal, and 2 of the 5 UFMylation genes; UFM1, UBA5 and UFSP2 are enriched but miss FDR because only part of their guide set responds.",
+  "agreement": "partial",
+  "analyzed": "2026-10-23",
+  "published_date": "2023-01-23",
+  "published_issue": "2023 Jan 31"
+}

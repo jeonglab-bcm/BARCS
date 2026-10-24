@@ -1,0 +1,26 @@
+[
+  {
+    "column": "Day.0",
+    "v_min": 0.64511649619,
+    "k": 1,
+    "scale": 0.64511649619,
+    "integrality": 1,
+    "recovered_total": 30408888
+  },
+  {
+    "column": "DMSO.R1",
+    "v_min": 0.69861320491,
+    "k": 1,
+    "scale": 0.69861320491,
+    "integrality": 1,
+    "recovered_total": 27235679
+  },
+  {
+    "column": "KPT9274.R1",
+    "v_min": 0.61434810057,
+    "k": 1,
+    "scale": 0.61434810057,
+    "integrality": 1,
+    "recovered_total": 31370936
+  }
+]

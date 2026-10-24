@@ -1,0 +1,20 @@
+{
+  "gse": "GSE192525",
+  "pmid": "35184131",
+  "doi": "10.1038/s41419-022-04569-3",
+  "pmcid": "PMC8858321",
+  "title": "Genome wide CRISPR/Cas9 screen identifies the coagulation factor IX (F9) as a regulator of senescence",
+  "journal": "Cell Death & Disease",
+  "published": "2022",
+  "model": "MCF7 breast cancer cells, genome-wide GeCKO knockout library, palbociclib (CDK4/6 inhibitor)",
+  "contrast": "Palbociclib 2 weeks vs DMSO (2 vs 2)",
+  "paper_method": "Fold change of transformed RPKM (>2-fold in >=3 guides)",
+  "paper_calls": "18 genes enriched; F9 and PROZ validated",
+  "barcs_calls": "100 genes at FDR 0.10 (42 enriched); counts recovered from a transformed RPKM table",
+  "named_hits": "0/2: F9 #2,243 (p 0.17), PROZ #6,782",
+  "verdict": "BARCS does not support F9 or PROZ: each has a few guides rising under palbociclib while its most abundant guides fall, which a fold-change rule over 3 guides picks up but a model of all guides and replicates does not.",
+  "agreement": "differ",
+  "analyzed": "2026-10-23",
+  "published_date": "2022-02-19",
+  "published_issue": "2022 Feb 19"
+}

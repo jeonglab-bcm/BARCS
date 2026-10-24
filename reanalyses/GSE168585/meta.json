@@ -1,0 +1,19 @@
+{
+  "gse": "GSE168585",
+  "pmid": "35172133",
+  "doi": "10.1016/j.celrep.2022.110395",
+  "title": "TP53 promotes lineage commitment of human embryonic stem cells through ciliogenesis and sonic hedgehog signaling",
+  "journal": "Cell Reports",
+  "published": "2022",
+  "model": "Human ESC->NPC differentiation, GeCKO v2 library",
+  "contrast": "SOX1-negative vs unsorted NPCs (2 vs 2)",
+  "paper_method": "MAGeCK (ranked by Z score)",
+  "paper_calls": "SOX1, ciliary genes (IFT140, OFD1), Shh negative regulators",
+  "barcs_calls": "4,417 genes at FDR 0.10; top class = ciliogenesis/Shh repressors",
+  "named_hits": "OFD1 #3, SOX1 #7, IFT140 #12 of ~20,700",
+  "verdict": "BARCS ranks SOX1 and the ciliary genes IFT140/OFD1 in the top 12 and its top enriched genes (SUFU, OFD1, SOX1, IFT140, GLI3) match the ciliogenesis/Shh-repressor classes the paper highlights.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2022-02-15",
+  "published_issue": "2022 Feb 15"
+}

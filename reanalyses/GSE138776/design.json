@@ -1,0 +1,38 @@
+{
+  "gse": "GSE138776",
+  "pmid": "33217317",
+  "counts_file": "GSE138776_crispr_counts.tsv",
+  "guide_column": "UID",
+  "gene_column": "gene_id",
+  "control_gene_pattern": "^dummyguide$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "LowGFP",
+      "gsm": "GSM4119131",
+      "bin": "low",
+      "replicate": "1"
+    },
+    {
+      "column": "HighGFP",
+      "gsm": "GSM4119132",
+      "bin": "high",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "bin": [
+      "high",
+      "low"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "low_vs_high",
+      "formula": "~ bin",
+      "term": "binlow"
+    }
+  ],
+  "rationale": "Genome-wide GeCKO KO screen in HeLa with a circular-RNA m6A-GFP reporter: m6A on the reporter drives GFP translation, so knockouts of positive m6A regulators give low GFP (the paper: KO of METTL3 gave low GFP, and MAPK/RAS pathway genes were enriched in low-GFP cells). One High-GFP and one Low-GFP library were sequenced (one library per condition), so the no-replicate path is used and calls are screening-level. The contrast is low-GFP vs high-GFP; hits (m6A writers and the ERK/MAPK pathway, incl. USP5) are enriched in low-GFP (positive estimate). 994 dummyguide non-targeting controls. The series' m6A-seq/RNA-seq are a companion assay and not used.",
+  "counts_md5": "3f399d9b4993ae9294929046c5f0b6d9"
+}

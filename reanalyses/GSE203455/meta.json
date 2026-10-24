@@ -1,0 +1,20 @@
+{
+  "gse": "GSE203455",
+  "pmid": "35763665",
+  "doi": "10.1182/blood.2022015629",
+  "pmcid": "PMC9479036",
+  "title": "Whole-genome CRISPR screening identifies N-glycosylation as a genetic and therapeutic vulnerability in CALR-mutant MPNs",
+  "journal": "Blood",
+  "published": "2022",
+  "model": "BA/F3-MPL cells (empty vector or CALR del52), focused knockout library CP1547 (~245 genes x 8 guides)",
+  "contrast": "CALR del52 without IL3 vs empty vector with IL3, day 21 (4 vs 4 independent lines)",
+  "paper_method": "MAGeCK-RRA",
+  "paper_calls": "64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)",
+  "barcs_calls": "81 genes at FDR 0.10 (54 depleted, 27 enriched); 84 against the control null",
+  "named_hits": "8/8 recovered (Dpm3 #1, Dpm2 #3, Dpm1 #7, MPL #8, CALR #9, Mpdu1 #10, Stat5b #17, Jak2 #28)",
+  "verdict": "Close agreement (Spearman 0.89, 62 of the top 64 shared, all named hits and all 8 EV-side genes called); the paper-only genes are pan-essential genes with jackpot-like guide counts across lines that BARCS does not call.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2022-09-15",
+  "published_issue": "2022 Sep 15"
+}

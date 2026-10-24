@@ -1,0 +1,35 @@
+contrast_id	taxon	modality	selection	residual_df	control_guides	hits_fdr10	proteins_mapped	elements_tested	flags
+GSE142350:sre_elk_sorted_vs_unsorted	10090	KO	sort	2	100	110	1039	1148	
+GSE142350:esrrb_low_vs_unsorted	10090	KO	sort	2	10	42	129	130	calls_over_10pct
+GSE142350:nanog_low_vs_unsorted	10090	KO	sort	1	10	77	129	130	one_residual_df,calls_over_10pct
+GSE142350:pmek_low_vs_unsorted	10090	KO	sort	2	10	80	129	130	calls_over_10pct
+GSE159258:high_vs_low	9606	CRISPRa	sort	2	100	200	1495	1496	calls_over_10pct
+GSE159270:high_vs_low	9606	CRISPRa	sort	2	300	32	109	109	calls_over_10pct
+GSE159278:high_vs_low	9606	CRISPRa	sort	2	99	324	1495	1496	calls_over_10pct
+GSE159318:high_vs_low	9606	CRISPRa	sort	2	100	109	1495	1496	
+GSE160963:day12_vs_plasmid	9606	KO	fitness_time	0	1000	313	1553	1682	no_residual_df,calls_over_10pct
+GSE168585:sox1neg_vs_unsorted	9606	KO	sort	1	1000	4417	18540	20692	one_residual_df,calls_over_10pct
+GSE212152:establishment_GFP_vs_unsorted	10090	KO	sort	1	150	94	1156	1160	one_residual_df
+GSE212152:maintenance_GFP_vs_unsorted	10090	KO	sort	1	150	179	1156	1160	one_residual_df,calls_over_10pct
+GSE229584:iRFP_vs_negative	9606	KO	sort	1	96	58	1799	1800	one_residual_df,composition_skew
+GSE229584:iRFP_vs_negative_median_ratio	9606	KO	sort	1	96	68	1799	1800	one_residual_df,composition_skew
+GSE236244:early_vs_nonplur	10090	KO	sort	0	0	73	18260	18358	no_residual_df,no_control_guides
+GSE236244:late_vs_early	10090	KO	sort	0	0	22	18262	18360	no_residual_df,no_control_guides
+GSE236244:late_vs_npc	10090	KO	sort	0	0	8	18298	18396	no_residual_df,no_control_guides
+GSE262028:IL13_TomPos_vs_Neg	10090	KO	sort	1	200	0	1125	1131	one_residual_df,no_hits_fdr10
+GSE262028:GATA3_vs_TBET	10090	KO	sort	1	200	36	1123	1129	one_residual_df
+GSE273069:re57m_gfp_low_vs_high	10090	CRISPRi	sort	2	100	95	125	142	calls_over_10pct
+GSE273070:xist_high_vs_negative	10090	CRISPRi	sort	1	300	104	594	911	one_residual_df,calls_over_10pct
+GSE288230:genome_scale_D12_vs_D0	9606	KO	fitness_time	2	1000	0	18510	20660	no_hits_fdr10
+GSE288230:secondary_D12_vs_D0	9606	KO	fitness_time	2	500	723	1130	1223	calls_over_10pct
+GSE312143:GE_two_screens_lineage_vs_HSPC	10090	KO	in_vivo	1	9845	5	1706	1713	one_residual_df,composition_skew
+GSE312143:GW_ACOC_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	14	2923	2945	no_residual_df,composition_skew
+GSE312143:GW_DTKP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	7	1980	1982	no_residual_df,composition_skew
+GSE312143:GW_GE_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	1	1878	1886	no_residual_df,composition_skew
+GSE312143:GW_MP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	5	945	946	no_residual_df,composition_skew
+GSE312143:GW_MU1_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	22	1317	2633	no_residual_df,composition_skew
+GSE312143:GW_MU2_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	15	2698	2883	no_residual_df,composition_skew
+GSE312143:GW_SP_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	17	2440	2445	no_residual_df,composition_skew
+GSE312143:GW_TMM_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	11	1831	1831	no_residual_df,composition_skew
+GSE312143:GW_U1_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	5	1802	1809	no_residual_df,composition_skew
+GSE312143:GW_U2_lineage_vs_HSPC	10090	KO	in_vivo	0	9845	12	1998	2005	no_residual_df,composition_skew

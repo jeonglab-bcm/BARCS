@@ -1,0 +1,68 @@
+{
+  "gse": "GSE169111",
+  "pmid": "34871328",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "totals": "median_ratio",
+  "fetch": {
+    "sample_files": true
+  },
+  "samples": [
+    {
+      "column": "Control",
+      "gsm": "GSM5176502",
+      "condition": "control",
+      "replicate": "1"
+    },
+    {
+      "column": "TGEV1",
+      "gsm": "GSM5176503",
+      "condition": "TGEV_round1",
+      "replicate": "1"
+    },
+    {
+      "column": "TGEV2",
+      "gsm": "GSM5176504",
+      "condition": "TGEV_round2",
+      "replicate": "1"
+    },
+    {
+      "column": "TGEV3",
+      "gsm": "GSM5176505",
+      "condition": "TGEV_round3",
+      "replicate": "1"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "control",
+      "TGEV_round1",
+      "TGEV_round2",
+      "TGEV_round3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "TGEV_round3_vs_control",
+      "columns": [
+        "Control",
+        "TGEV3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionTGEV_round3"
+    },
+    {
+      "name": "TGEV_round1_vs_control",
+      "columns": [
+        "Control",
+        "TGEV1"
+      ],
+      "formula": "~ condition",
+      "term": "conditionTGEV_round1"
+    }
+  ],
+  "rationale": "Porcine genome-scale knockout library (PigGeCKO, about 53,000 guides, no non-targeting controls) in PK-15-Cas9 cells challenged with TGEV for three successive rounds; surviving cells were re-challenged (Sun et al. 2021). GEO holds one library per sample (control and rounds 1-3); prepare.R sums each library's two read columns. Rounds are sequential selections of one population, not replicates, so each round is compared with the control library on its own (1 vs 1, no-replicate path, screening-level). Selection is extreme (80-88% of guides at zero after challenge; a single ANPEP guide holds about a quarter of the reads), so totals are median-ratio size factors and only enrichment is interpreted. Round 3 is the final selection; round 1 shows whether the same genes are already enriched after one challenge.",
+  "counts_md5": "4d066fd04bff087f4618c353f1d33d94"
+}

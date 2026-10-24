@@ -1,0 +1,22 @@
+{
+  "gse": "GSE203456",
+  "pmid": "35763665",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting-Control$",
+  "min_total_count": 30,
+  "samples": [
+    {"column": "EVA+_day21_withIL3", "gsm": "GSM6172301", "condition": "EV_IL3", "replicate": "A"},
+    {"column": "EVB+_day21_withIL3", "gsm": "GSM6172301", "condition": "EV_IL3", "replicate": "B"},
+    {"column": "DELA-_day21_withoutIL3", "gsm": "GSM6172301", "condition": "DEL_noIL3", "replicate": "A"},
+    {"column": "DELB-_day21_withoutIL3", "gsm": "GSM6172301", "condition": "DEL_noIL3", "replicate": "B"}
+  ],
+  "factor_levels": {"condition": ["EV_IL3", "DEL_noIL3"]},
+  "analyses": [
+    {"name": "DELnoIL3_vs_EVIL3", "columns": ["EVA+_day21_withIL3", "EVB+_day21_withIL3", "DELA-_day21_withoutIL3", "DELB-_day21_withoutIL3"],
+     "formula": "~ condition", "term": "conditionDEL_noIL3"}
+  ],
+  "counts_md5": "5e30be54be091c27e818027f11bffa7d",
+  "rationale": "Whole-genome Brie knockout depletion screen in BA/F3-MPL cells (one GEO sample, GSM6172301, holding a PoolQ count table with 8 conditions). The paper's main comparison (Figure 1C-D, supplemental Table 1 sheet DEL-_vs_EV+) is CALR del52 cells grown without IL3 (MPL-dependent, CALR-driven growth) against empty-vector cells grown with IL3, both at day 21, two independent biological replicate lines (A, B) each. Genes needed specifically for CALR-mutant transformation are depleted in DEL-IL3. A and B are independent cell lines per genotype, so they are not paired across arms and no replicate term is used. The deposit has no plasmid or early time point; DELA+ was harvested at day 11 instead of 21, so the DEL- vs DEL+ comparison is not reproduced here. Gene labels come from the deposited Brie annotation (prepare.R); controls are the 1000 Brie non-targeting guides."
+}

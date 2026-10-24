@@ -1,0 +1,48 @@
+{
+  "analysis": "SARS2_vs_T0",
+  "formula": "~condition",
+  "term": "conditionSARS2",
+  "libraries": 7,
+  "residual_df": 5,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 74343,
+  "genes": 19415,
+  "moderated": true,
+  "prior_df": 11.372,
+  "guide_correlation": 0.0011,
+  "control_scale": null,
+  "control_guides": 0,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 60,
+  "top1pct_read_share": {
+    "T0puro1_S1": 0.083,
+    "T0puro2_S2": 0.111,
+    "T0puro3_S3": 0.081,
+    "Cov-1_S4": 0.177,
+    "Cov-2_S5": 0.214,
+    "Cov-3_S6": 0.188,
+    "Cov-4_S7": 0.201
+  },
+  "genes_fdr_0_10_up": 1157,
+  "genes_fdr_0_10_down": 457,
+  "genes_fdr_0_05": 855,
+  "genes_fdr_0_10": 1614,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

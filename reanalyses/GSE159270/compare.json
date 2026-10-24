@@ -1,0 +1,21 @@
+{
+  "barcs_genes": "results/high_vs_low/genes.csv",
+  "direction": "enriched",
+  "named_hits": [
+    "ERF",
+    "PRDM1",
+    "OLIG3",
+    "HIC1",
+    "SOX3",
+    "FOXJ1",
+    "SOX10",
+    "KLF6",
+    "ASCL1",
+    "PLAGL2"
+  ],
+  "top_n": [
+    25,
+    50,
+    100
+  ]
+}

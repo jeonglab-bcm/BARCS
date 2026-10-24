@@ -1,0 +1,7 @@
+{
+  "barcs_genes": "results/TGEV_round1_vs_control/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["ANPEP", "TMEM41B"],
+  "top_n": [10, 20, 50],
+  "out": "comparison_round1"
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE169108",
+  "pmid": "34871328",
+  "doi": "10.1371/journal.ppat.1010113",
+  "pmcid": "PMC8675922",
+  "title": "Genome-scale CRISPR screen identifies TMEM41B as a critical host factor required for coronavirus replication [Focused cell]",
+  "journal": "PLoS Pathogens",
+  "published": "2021",
+  "model": "PK-15-Cas9 porcine cells, focused 79-gene validation knockout library, TGEV survival selection",
+  "contrast": "TGEV challenge round 3 (and round 5) vs unselected control library (1 vs 1, no replicates)",
+  "paper_method": "MAGeCK; top candidates FUT8, TMEM41B, DYRK1A, MLST8",
+  "paper_calls": "FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated",
+  "barcs_calls": "3 genes at FDR 0.10 (FUT8, TMEM41B, MLST8), screening-level; counts recovered from normalized values",
+  "named_hits": "4/4 top-ranked: FUT8 #1, TMEM41B #2, MLST8 #3, DYRK1A #4",
+  "verdict": "BARCS reproduces the paper's candidate order exactly (FUT8, TMEM41B, MLST8, DYRK1A) and calls the first three at FDR 0.10 from recovered counts, confirming TMEM41B as a strong TGEV host factor.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2021-12",
+  "published_issue": "2021 Dec"
+}

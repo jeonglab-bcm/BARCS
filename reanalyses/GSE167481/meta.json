@@ -1,0 +1,20 @@
+{
+  "gse": "GSE167481",
+  "pmid": "34452919",
+  "doi": "10.1126/sciadv.abj0364",
+  "pmcid": "PMC8397268",
+  "title": "Genome-wide synthetic lethal screen unveils novel CAIX-NFS1/xCT axis as a targetable vulnerability in hypoxic solid tumors",
+  "journal": "Science Advances",
+  "published": "2021",
+  "model": "SUM159PT triple-negative breast cancer cells (control vs CA9 knockout), GeCKO library A, hypoxia",
+  "contrast": "CA9-KO vs control change from T0 to T11 (genotype x time interaction, 2 replicates per cell)",
+  "paper_method": "Loess-normalized differential cumulative change (DCC) fitness score",
+  "paper_calls": "NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes",
+  "barcs_calls": "10 genes at FDR 0.10 after control calibration (15 against the control null); top depleted PFN1, NDUFA6, NDUFS7, CS",
+  "named_hits": "0/10 at FDR 0.10: NFS1 #753 (p 0.046); ISCA2 #120, GLRX5 #202; others flat",
+  "verdict": "BARCS does not call NFS1 or the iron-sulfur/redox set: NFS1 is lost in both genotypes and its extra loss in CA9-KO does not separate from replicate noise; BARCS's CA9-specific calls are mitochondrial metabolism genes instead.",
+  "agreement": "differ",
+  "analyzed": "2026-10-23",
+  "published_date": "2021-08",
+  "published_issue": "2021 Aug"
+}

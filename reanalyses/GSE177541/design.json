@@ -1,0 +1,141 @@
+{
+  "gse": "GSE177541",
+  "pmid": "35086559",
+  "counts_file": "suppl/GSE177541_vero_e6_ko_reads.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0puro1_S1",
+      "gsm": "GSM5375273",
+      "condition": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "T0puro2_S2",
+      "gsm": "GSM5375274",
+      "condition": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "T0puro3_S3",
+      "gsm": "GSM5375275",
+      "condition": "T0",
+      "replicate": "3"
+    },
+    {
+      "column": "Cov-1_S4",
+      "gsm": "GSM5375284",
+      "condition": "SARS2",
+      "replicate": "1"
+    },
+    {
+      "column": "Cov-2_S5",
+      "gsm": "GSM5375285",
+      "condition": "SARS2",
+      "replicate": "2"
+    },
+    {
+      "column": "Cov-3_S6",
+      "gsm": "GSM5375286",
+      "condition": "SARS2",
+      "replicate": "3"
+    },
+    {
+      "column": "Cov-4_S7",
+      "gsm": "GSM5375287",
+      "condition": "SARS2",
+      "replicate": "4"
+    },
+    {
+      "column": "OC43-st-1_S8",
+      "gsm": "GSM5375276",
+      "condition": "OC43_1st",
+      "replicate": "1"
+    },
+    {
+      "column": "OC43-st-2_S9",
+      "gsm": "GSM5375277",
+      "condition": "OC43_1st",
+      "replicate": "2"
+    },
+    {
+      "column": "OC43-st-3_S10",
+      "gsm": "GSM5375278",
+      "condition": "OC43_1st",
+      "replicate": "3"
+    },
+    {
+      "column": "OC43-st-4_S11",
+      "gsm": "GSM5375279",
+      "condition": "OC43_1st",
+      "replicate": "4"
+    },
+    {
+      "column": "OC43-nd-1_S12",
+      "gsm": "GSM5375280",
+      "condition": "OC43_2nd",
+      "replicate": "1"
+    },
+    {
+      "column": "OC43-nd-2_S13",
+      "gsm": "GSM5375281",
+      "condition": "OC43_2nd",
+      "replicate": "2"
+    },
+    {
+      "column": "OC43-nd-3_S14",
+      "gsm": "GSM5375282",
+      "condition": "OC43_2nd",
+      "replicate": "3"
+    },
+    {
+      "column": "OC43-nd-4_S15",
+      "gsm": "GSM5375283",
+      "condition": "OC43_2nd",
+      "replicate": "4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "T0",
+      "SARS2",
+      "OC43_1st",
+      "OC43_2nd"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SARS2_vs_T0",
+      "columns": [
+        "T0puro1_S1",
+        "T0puro2_S2",
+        "T0puro3_S3",
+        "Cov-1_S4",
+        "Cov-2_S5",
+        "Cov-3_S6",
+        "Cov-4_S7"
+      ],
+      "formula": "~ condition",
+      "term": "conditionSARS2"
+    },
+    {
+      "name": "OC43_1st_vs_T0",
+      "columns": [
+        "T0puro1_S1",
+        "T0puro2_S2",
+        "T0puro3_S3",
+        "OC43-st-1_S8",
+        "OC43-st-2_S9",
+        "OC43-st-3_S10",
+        "OC43-st-4_S11"
+      ],
+      "formula": "~ condition",
+      "term": "conditionOC43_1st"
+    }
+  ],
+  "rationale": "Vervet (Chlorocebus sabaeus) genome-wide knockout library in Vero E6 cells (Grodzki et al. 2022). Column names match the GSM titles (T0puro = Day 0, Cov = SARS-CoV-2 infected, OC43-st = OC43 single-infected, OC43-nd = OC43 double-infected). Surviving cells were sequenced after infection; the authors ran MAGeCK on infected replicates vs the uninfected Day 0 library and read the positive (enriched) side. Infected and Day 0 replicates are separate cultures, so no replicate term. The library has no non-targeting guides, so calibration and the control null cannot be checked. Second analysis: OC43 initial infection vs Day 0 (Additional file 5). Selection is extreme (in one infected library the top 1% of guides hold 97% of reads), so library totals would call nearly every gene depleted; totals are median-ratio size factors and enrichment is read first.",
+  "totals": "median_ratio",
+  "counts_md5": "8013be1d735e002486560edae367563a"
+}

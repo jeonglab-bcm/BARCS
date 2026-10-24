@@ -1,4 +1,227 @@
 compare_id	gene	paper_calls_text	barcs_estimate	claimed_direction	source
+GSE138776/compare	BRAF	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	0.05309		
+GSE138776/compare	KRAS	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	0.06329		
+GSE138776/compare	MAP2K1	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	0.2639		
+GSE138776/compare	MAPK1	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	-0.5432		
+GSE138776/compare	MAPK3	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	0.1074		
+GSE138776/compare	METTL14	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	-0.1099		
+GSE138776/compare	METTL3	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	0.596		
+GSE138776/compare	USP5	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	1.964		
+GSE138776/compare	WTAP	ERK/MAPK pathway and USP5 (validated biochemically; no gene-level FDR hits)	-0.3217		
+GSE142350/compare	Dusp9	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.9689		
+GSE142350/compare	Fthl17	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.2486		
+GSE142350/compare	Klhl13	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.576		
+GSE142350/compare	Stag2	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.232		
+GSE142350/compare	Zic3	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.6014		
+GSE142350/compare_esrrb	Dusp9	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.3951		
+GSE142350/compare_esrrb	Fthl17	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.4868		
+GSE142350/compare_esrrb	Klhl13	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.6439		
+GSE142350/compare_esrrb	Stag2	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.2165		
+GSE142350/compare_esrrb	Zic3	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.5388		
+GSE142350/compare_nanog	Dusp9	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	1.139		
+GSE142350/compare_nanog	Fthl17	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.5256		
+GSE142350/compare_nanog	Klhl13	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	1.465		
+GSE142350/compare_nanog	Stag2	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.5408		
+GSE142350/compare_nanog	Zic3	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.8973		
+GSE142350/compare_pmek	Dusp9	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.8334		
+GSE142350/compare_pmek	Fthl17	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.5574		
+GSE142350/compare_pmek	Klhl13	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.2195		
+GSE142350/compare_pmek	Stag2	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.3269		
+GSE142350/compare_pmek	Zic3	Dusp9 and Klhl13 as central drivers; Zic3, Stag2, Fthl17 as mediators	0.1178		
+GSE145615/compare	Mettl14	m6A writers Mettl3/Mettl14/Wtap/Zc3h13 restrict IAP ERVs (top also apoptosis/heme genes)	1.136		
+GSE145615/compare	Mettl3	m6A writers Mettl3/Mettl14/Wtap/Zc3h13 restrict IAP ERVs (top also apoptosis/heme genes)	3.331		
+GSE145615/compare	Wtap	m6A writers Mettl3/Mettl14/Wtap/Zc3h13 restrict IAP ERVs (top also apoptosis/heme genes)	-0.3623		
+GSE145615/compare	Zc3h13	m6A writers Mettl3/Mettl14/Wtap/Zc3h13 restrict IAP ERVs (top also apoptosis/heme genes)	-0.6344		
+GSE146841/compare	ERN1	51 genes at Wald FDR 0.10 in the deposited table; QRICH1 named as key effector (FDR 0.38 in that table)	-1.657		
+GSE146841/compare	QRICH1	51 genes at Wald FDR 0.10 in the deposited table; QRICH1 named as key effector (FDR 0.38 in that table)	-0.8909		
+GSE146841/compare	XBP1	51 genes at Wald FDR 0.10 in the deposited table; QRICH1 named as key effector (FDR 0.38 in that table)	-2.08		
+GSE159258/compare	ATOH1	Positive neurogenic TFs listed in Table S1	1.302		
+GSE159258/compare	INSM1	Positive neurogenic TFs listed in Table S1	1.463		
+GSE159258/compare	KLF4	Positive neurogenic TFs listed in Table S1	0.1014		
+GSE159258/compare	KLF7	Positive neurogenic TFs listed in Table S1	1.393		
+GSE159258/compare	NEUROD1	Positive neurogenic TFs listed in Table S1	2.156		
+GSE159258/compare	NEUROG1	Positive neurogenic TFs listed in Table S1	1.369		
+GSE159258/compare	NEUROG2	Positive neurogenic TFs listed in Table S1	1.538		
+GSE159258/compare	NEUROG3	Positive neurogenic TFs listed in Table S1	1.326		
+GSE159258/compare	NR5A1	Positive neurogenic TFs listed in Table S1	1.491		
+GSE159258/compare	OVOL1	Positive neurogenic TFs listed in Table S1	1.712		
+GSE159258/compare	RFX4	Positive neurogenic TFs listed in Table S1	0.221		
+GSE159258/compare	SMAD1	Positive neurogenic TFs listed in Table S1	0.7317		
+GSE159258/compare	SOX17	Positive neurogenic TFs listed in Table S1	1.681		
+GSE159258/compare	SOX18	Positive neurogenic TFs listed in Table S1	1.546		
+GSE159258/compare	SOX4	Positive neurogenic TFs listed in Table S1	0.09988		
+GSE159258/compare	SOX9	Positive neurogenic TFs listed in Table S1	1.016		
+GSE159258/compare	SP8	Positive neurogenic TFs listed in Table S1	0.8798		
+GSE159270/compare	ASCL1	Positive neurogenic TFs listed in Table S1	0.1889		
+GSE159270/compare	ERF	Positive neurogenic TFs listed in Table S1	0.3011		
+GSE159270/compare	FOXJ1	Positive neurogenic TFs listed in Table S1	0.2606		
+GSE159270/compare	HIC1	Positive neurogenic TFs listed in Table S1	0.2596		
+GSE159270/compare	KLF6	Positive neurogenic TFs listed in Table S1	0.3526		
+GSE159270/compare	OLIG3	Positive neurogenic TFs listed in Table S1	0.3969		
+GSE159270/compare	PLAGL2	Positive neurogenic TFs listed in Table S1	0.223		
+GSE159270/compare	PRDM1	Positive neurogenic TFs listed in Table S1	0.2891		
+GSE159270/compare	SOX10	Positive neurogenic TFs listed in Table S1	0.4026		
+GSE159270/compare	SOX3	Positive neurogenic TFs listed in Table S1	0.8834		
+GSE159278/compare	AFF1	Positive neurogenic TFs listed in Table S1	0.7437		
+GSE159278/compare	ASCL1	Positive neurogenic TFs listed in Table S1	0.0626		
+GSE159278/compare	ATOH1	Positive neurogenic TFs listed in Table S1	0.3894		
+GSE159278/compare	BHLHE40	Positive neurogenic TFs listed in Table S1	0.253		
+GSE159278/compare	CDX2	Positive neurogenic TFs listed in Table S1	0.06201		
+GSE159278/compare	CDX4	Positive neurogenic TFs listed in Table S1	0.7841		
+GSE159278/compare	E2F7	Positive neurogenic TFs listed in Table S1	1.207		
+GSE159278/compare	ERF	Positive neurogenic TFs listed in Table S1	1.982		
+GSE159278/compare	ETV3	Positive neurogenic TFs listed in Table S1	0.5884		
+GSE159278/compare	FERD3L	Positive neurogenic TFs listed in Table S1	0.6117		
+GSE159278/compare	FOSL1	Positive neurogenic TFs listed in Table S1	0.8826		
+GSE159278/compare	FOXE3	Positive neurogenic TFs listed in Table S1	0.4641		
+GSE159278/compare	FOXH1	Positive neurogenic TFs listed in Table S1	0.9905		
+GSE159278/compare	FOXJ1	Positive neurogenic TFs listed in Table S1	0.7188		
+GSE159278/compare	GATA1	Positive neurogenic TFs listed in Table S1	-0.0461		
+GSE159278/compare	GATA5	Positive neurogenic TFs listed in Table S1	0.6745		
+GSE159278/compare	GATA6	Positive neurogenic TFs listed in Table S1	2.065		
+GSE159278/compare	GFI1	Positive neurogenic TFs listed in Table S1	0.4667		
+GSE159278/compare	HMX2	Positive neurogenic TFs listed in Table S1	1.139		
+GSE159278/compare	HMX3	Positive neurogenic TFs listed in Table S1	0.8858		
+GSE159278/compare	INSM1	Positive neurogenic TFs listed in Table S1	1.48		
+GSE159278/compare	IRF4	Positive neurogenic TFs listed in Table S1	0.4145		
+GSE159278/compare	IRF5	Positive neurogenic TFs listed in Table S1	0.2542		
+GSE159278/compare	JUN	Positive neurogenic TFs listed in Table S1	0.9341		
+GSE159278/compare	KLF1	Positive neurogenic TFs listed in Table S1	0.808		
+GSE159278/compare	KLF17	Positive neurogenic TFs listed in Table S1	0.2051		
+GSE159278/compare	KLF4	Positive neurogenic TFs listed in Table S1	0.05932		
+GSE159278/compare	KLF5	Positive neurogenic TFs listed in Table S1	0.5129		
+GSE159278/compare	KLF6	Positive neurogenic TFs listed in Table S1	1.189		
+GSE159278/compare	KLF7	Positive neurogenic TFs listed in Table S1	0.9106		
+GSE159278/compare	LHX6	Positive neurogenic TFs listed in Table S1	1.06		
+GSE159278/compare	LHX8	Positive neurogenic TFs listed in Table S1	1.186		
+GSE159278/compare	NANOG	Positive neurogenic TFs listed in Table S1	0.2272		
+GSE159278/compare	NEUROD1	Positive neurogenic TFs listed in Table S1	1.559		
+GSE159278/compare	NEUROG1	Positive neurogenic TFs listed in Table S1	0.8494		
+GSE159278/compare	NEUROG3	Positive neurogenic TFs listed in Table S1	1.276		
+GSE159278/compare	NKX2-2	Positive neurogenic TFs listed in Table S1	0.6312		
+GSE159278/compare	NR5A1	Positive neurogenic TFs listed in Table S1	1.138		
+GSE159278/compare	NR5A2	Positive neurogenic TFs listed in Table S1	0.2048		
+GSE159278/compare	OLIG3	Positive neurogenic TFs listed in Table S1	0.5661		
+GSE159278/compare	ONECUT3	Positive neurogenic TFs listed in Table S1	0.311		
+GSE159278/compare	OVOL1	Positive neurogenic TFs listed in Table S1	1.914		
+GSE159278/compare	OVOL2	Positive neurogenic TFs listed in Table S1	0.4746		
+GSE159278/compare	OVOL3	Positive neurogenic TFs listed in Table S1	0.7292		
+GSE159278/compare	PAX2	Positive neurogenic TFs listed in Table S1	0.5618		
+GSE159278/compare	PAX5	Positive neurogenic TFs listed in Table S1	0.5888		
+GSE159278/compare	PAX8	Positive neurogenic TFs listed in Table S1	0.6457		
+GSE159278/compare	PHOX2B	Positive neurogenic TFs listed in Table S1	0.9328		
+GSE159278/compare	POU5F1	Positive neurogenic TFs listed in Table S1	-0.02344		
+GSE159278/compare	PRDM1	Positive neurogenic TFs listed in Table S1	0.5704		
+GSE159278/compare	PRDM14	Positive neurogenic TFs listed in Table S1	0.7175		
+GSE159278/compare	PROP1	Positive neurogenic TFs listed in Table S1	0.7931		
+GSE159278/compare	RARA	Positive neurogenic TFs listed in Table S1	0.4078		
+GSE159278/compare	RARG	Positive neurogenic TFs listed in Table S1	0.04829		
+GSE159278/compare	RFX3	Positive neurogenic TFs listed in Table S1	0.6948		
+GSE159278/compare	RFX4	Positive neurogenic TFs listed in Table S1	1.025		
+GSE159278/compare	RUNX3	Positive neurogenic TFs listed in Table S1	0.7992		
+GSE159278/compare	SOX1	Positive neurogenic TFs listed in Table S1	0.3039		
+GSE159278/compare	SOX10	Positive neurogenic TFs listed in Table S1	0.3557		
+GSE159278/compare	SOX11	Positive neurogenic TFs listed in Table S1	0.5797		
+GSE159278/compare	SOX17	Positive neurogenic TFs listed in Table S1	2.359		
+GSE159278/compare	SOX18	Positive neurogenic TFs listed in Table S1	1.743		
+GSE159278/compare	SOX3	Positive neurogenic TFs listed in Table S1	2.421		
+GSE159278/compare	SOX4	Positive neurogenic TFs listed in Table S1	0.3032		
+GSE159278/compare	SOX9	Positive neurogenic TFs listed in Table S1	1.525		
+GSE159278/compare	SPIB	Positive neurogenic TFs listed in Table S1	0.08387		
+GSE159278/compare	TBX3	Positive neurogenic TFs listed in Table S1	0.9353		
+GSE159278/compare	THRB	Positive neurogenic TFs listed in Table S1	0.4624		
+GSE159278/compare	VENTX	Positive neurogenic TFs listed in Table S1	0.1692		
+GSE159278/compare	WT1	Positive neurogenic TFs listed in Table S1	1.363		
+GSE159278/compare	ZEB2	Positive neurogenic TFs listed in Table S1	0.279		
+GSE159278/compare	ZNF362	Positive neurogenic TFs listed in Table S1	0.3019		
+GSE159278/compare	ZNF385A	Positive neurogenic TFs listed in Table S1	0.3737		
+GSE159278/compare	ZNF521	Positive neurogenic TFs listed in Table S1	0.5918		
+GSE159278/compare	ZNF786	Positive neurogenic TFs listed in Table S1	0.09352		
+GSE159318/compare	AFF1	Positive neurogenic TFs listed in Table S1	0.5476		
+GSE159318/compare	E2F7	Positive neurogenic TFs listed in Table S1	1.589		
+GSE159318/compare	FEV	Positive neurogenic TFs listed in Table S1	0.4532		
+GSE159318/compare	FLI1	Positive neurogenic TFs listed in Table S1	0.8042		
+GSE159318/compare	FOS	Positive neurogenic TFs listed in Table S1	0.2217		
+GSE159318/compare	FOSL1	Positive neurogenic TFs listed in Table S1	0.8756		
+GSE159318/compare	FOXH1	Positive neurogenic TFs listed in Table S1	0.5432		
+GSE159318/compare	HMX2	Positive neurogenic TFs listed in Table S1	1.126		
+GSE159318/compare	INSM1	Positive neurogenic TFs listed in Table S1	0.6071		
+GSE159318/compare	KLF3	Positive neurogenic TFs listed in Table S1	0.184		
+GSE159318/compare	KLF4	Positive neurogenic TFs listed in Table S1	0.2148		
+GSE159318/compare	LHX6	Positive neurogenic TFs listed in Table S1	0.1749		
+GSE159318/compare	LHX8	Positive neurogenic TFs listed in Table S1	0.4368		
+GSE159318/compare	MAZ	Positive neurogenic TFs listed in Table S1	0.3127		
+GSE159318/compare	NEUROG3	Positive neurogenic TFs listed in Table S1	0.8469		
+GSE159318/compare	OVOL1	Positive neurogenic TFs listed in Table S1	0.6387		
+GSE159318/compare	PAX5	Positive neurogenic TFs listed in Table S1	0.5137		
+GSE159318/compare	PAX8	Positive neurogenic TFs listed in Table S1	0.4304		
+GSE159318/compare	PRDM1	Positive neurogenic TFs listed in Table S1	1.045		
+GSE159318/compare	PROP1	Positive neurogenic TFs listed in Table S1	0.8241		
+GSE159318/compare	RARA	Positive neurogenic TFs listed in Table S1	0.3414		
+GSE159318/compare	SOX17	Positive neurogenic TFs listed in Table S1	0.8523		
+GSE159318/compare	SOX18	Positive neurogenic TFs listed in Table S1	0.8891		
+GSE159318/compare	SOX2	Positive neurogenic TFs listed in Table S1	0.8093		
+GSE159318/compare	SOX3	Positive neurogenic TFs listed in Table S1	1.265		
+GSE159318/compare	WT1	Positive neurogenic TFs listed in Table S1	0.706		
+GSE159318/compare	ZNF670	Positive neurogenic TFs listed in Table S1	0.1347		
+GSE159689/compare	AHR	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	-0.1127		
+GSE159689/compare	ARNT	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	0.4675		
+GSE159689/compare	FOS	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	1.259		
+GSE159689/compare	JUNB	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	0.2998		
+GSE159689/compare	SPI1	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	1.389		
+GSE159689/compare_resistant	BCL2	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	-1.207		
+GSE159689/compare_resistant	CDK6	SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells	-0.3014		
+GSE160403/compare	Polr2m	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-3.522		
+GSE160403/compare_essential	Dot1l	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-3.361		
+GSE160403/compare_essential	Eed	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-1.913		
+GSE160403/compare_essential	Eif4g2	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-2.409		
+GSE160403/compare_essential	Hpgd	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-2.649		
+GSE160403/compare_essential	Men1	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-5.061		
+GSE160403/compare_essential	Mllt3	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-3.452		
+GSE160403/compare_essential	Ptprt	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-0.9119		
+GSE160403/compare_essential	Rbbp4	16 genes with 5-6 guides lost >=10-fold; Polr2m validated (neg-FDR 0.46 in their own table)	-4.745		
+GSE160963/compare	ZBTB11	196 high-confidence depleted TFs (3 methods); ZBTB11, ZFP131 the validated hits	-2.652		
+GSE160963/compare	ZFP131	196 high-confidence depleted TFs (3 methods); ZBTB11, ZFP131 the validated hits	-1.619		
+GSE162473/compare	DCPS	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-1.299		
+GSE162473/compare	HDAC8	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-0.8136		
+GSE162473/compare	HEXA	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-0.6729		
+GSE162473/compare	IMPA2	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-0.7001		
+GSE162473/compare	PTGS1	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-0.89		
+GSE162473/compare	SIRT6	Ranked sensitizer list; HDAC8 and SIRT6 prioritized and validated	-0.5061		
+GSE163024/compare	COL7A1	1,544 enriched guides; DENND4B and TYROBP as top genes (COL7A1 positive control), both validated	0.2769		
+GSE163024/compare	DENND4B	1,544 enriched guides; DENND4B and TYROBP as top genes (COL7A1 positive control), both validated	1.195		
+GSE163024/compare	TYROBP	1,544 enriched guides; DENND4B and TYROBP as top genes (COL7A1 positive control), both validated	1.809		
+GSE167481/compare	ABCB7	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.5012		
+GSE167481/compare	GLRX5	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.598		
+GSE167481/compare	GSR	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.123		
+GSE167481/compare	GSTM2	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.7036		
+GSE167481/compare	GSTM5	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.9765		
+GSE167481/compare	ISCA2	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.7045		
+GSE167481/compare	ISCU	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.01087		
+GSE167481/compare	MOCS3	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	0.1275		
+GSE167481/compare	NFS1	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-1.027		
+GSE167481/compare	TXN	NFS1 a top synthetic-lethal gene; iron-sulfur (ISCU, ISCA2, ABCB7, GLRX5) and redox (TXN, GSTM2/5, GSR, MOCS3) genes	-0.7754		
+GSE168585/compare	IFT140	SOX1, ciliary genes (IFT140, OFD1), Shh negative regulators	0.6204		
+GSE168585/compare	OFD1	SOX1, ciliary genes (IFT140, OFD1), Shh negative regulators	1.249		
+GSE168585/compare	SOX1	SOX1, ciliary genes (IFT140, OFD1), Shh negative regulators	1.769		
+GSE169108/compare	BARHL2	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	-0.89		
+GSE169108/compare	DYRK1A	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	1.96		
+GSE169108/compare	FUT8	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	3.835		
+GSE169108/compare	LPP	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	0.3765		
+GSE169108/compare	MLST8	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	2.25		
+GSE169108/compare	TAX1BP1	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	-0.1093		
+GSE169108/compare	TMEM41B	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	2.8		
+GSE169108/compare_round5	BARHL2	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	-0.8864		
+GSE169108/compare_round5	DYRK1A	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	2.123		
+GSE169108/compare_round5	FUT8	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	4.51		
+GSE169108/compare_round5	LPP	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	0.1836		
+GSE169108/compare_round5	MLST8	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	2.256		
+GSE169108/compare_round5	TAX1BP1	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	-0.2692		
+GSE169108/compare_round5	TMEM41B	FUT8, TMEM41B, DYRK1A, MLST8 as top enriched candidates; TMEM41B and 4 others validated	3.182		
+GSE169111/compare	ANPEP	ANPEP (TGEV receptor) and TMEM41B as headline enriched genes	7.243		
+GSE169111/compare	TMEM41B	ANPEP (TGEV receptor) and TMEM41B as headline enriched genes	6.105		
+GSE169111/compare_round1	ANPEP	ANPEP (TGEV receptor) and TMEM41B as headline enriched genes	8.941		
+GSE169111/compare_round1	TMEM41B	ANPEP (TGEV receptor) and TMEM41B as headline enriched genes	6.242		
 GSE171674/compare	ATXN7L3	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.227		
 GSE171674/compare	CBFB	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	2.006		
 GSE171674/compare	FOXK1	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.9391		
@@ -12,6 +235,37 @@ GSE171674/compare	STAT5A	58 genes at FDR 0.10 in the IL2RA screen (51 'significa
 GSE171674/compare	STAT5B	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	-1.69		
 GSE171674/compare	TNFAIP3	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.7325		
 GSE171674/compare	ZNF217	58 genes at FDR 0.10 in the IL2RA screen (51 'significant hits' in the text); MED12, CBFB, KLF2, TNFAIP3, ZNF217, FOXK1 negative and STAT5A/B, JAK3, IRF4 positive regulators	0.9493		
+GSE177537/compare	CCZ1	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.3758		
+GSE177537/compare	CDH2	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.7919		
+GSE177537/compare	DNM2	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.5033		
+GSE177537/compare	EDC4	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.6521		
+GSE177537/compare	TMEM251	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.5384		
+GSE177537/compare	WASL	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.5301		
+GSE177537/compare	XRN1	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	0.5132		
+GSE177537/compare_oc43	CCZ1	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	6.704		
+GSE177537/compare_oc43	CCZ1B	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	6.861		
+GSE177537/compare_oc43	SLC35B2	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	5.903		
+GSE177537/compare_oc43	TMEM41B	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	7.274		
+GSE177537/compare_oc43	VMP1	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	7.175		
+GSE177537/compare_oc43	WDR81	EDC4 top SARS-CoV-2 gene with XRN1, CCZ1, DNM2, WASL; TMEM41B, VMP1, CCZ1B, SLC35B2, WDR81 for OC43	5.345		
+GSE177541/compare	ACE2	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	3.55		
+GSE177541/compare	CDKN1A	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	2.618		
+GSE177541/compare	DPF2	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	1.871		
+GSE177541/compare	DYRK1A	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	2.274		
+GSE177541/compare	HRK	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	1.542		
+GSE177541/compare	RAD54L2	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	1.998		
+GSE177541/compare	TP53	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	2.914		
+GSE177541/compare_oc43	EXT1	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	5.463		
+GSE177541/compare_oc43	SLC35B2	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	5.81		
+GSE177541/compare_oc43	TMEM41B	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	4.489		
+GSE177541/compare_oc43	multiKO_ENSCSAG00000011099_ENSCSAG00000011104	TP53, CDKN1A, ACE2, RAD54L2 (SARS-CoV-2); TMEM41B, SLC35B2, EXT1, IFITM (OC43)	7.899		
+GSE177543/compare	ACE2	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	2.182		
+GSE177543/compare	C18orf8	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	0.8826		
+GSE177543/compare	CCZ1	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	1.576		
+GSE177543/compare	CCZ1B	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	1.863		
+GSE177543/compare	CDH2	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	1.241		
+GSE177543/compare	CTSL	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	1.91		
+GSE177543/compare	TMEM251	CTSL, CCZ1B, TMEM251, ACE2, C18orf8, CCZ1, CDH2 (endolysosomal entry factors)	1.749		
 GSE179799/compare	FANCA	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-0.9604		
 GSE179799/compare	MUS81	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.096		
 GSE179799/compare	NPEPPS	46 genes sensitising resistant lines to GC; NPEPPS the novel hit, mostly DNA-damage/repair genes	-1.542		
@@ -43,6 +297,8 @@ GSE183348/compare_sw948_tumor	CDC42	46 genes depleted at FDR 0.1 in DLD1 tumours
 GSE183348/compare_sw948_tumor	CIRH1A	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.7192		
 GSE183348/compare_sw948_tumor	CNOT9	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.3631		
 GSE183348/compare_sw948_tumor	PCBP1	46 genes depleted at FDR 0.1 in DLD1 tumours (80 HCT116, 67 SW948)	-0.9787		
+GSE192525/compare	F9	18 genes enriched; F9 and PROZ validated	0.8853		
+GSE192525/compare	PROZ	18 genes enriched; F9 and PROZ validated	0.7768		
 GSE192827/compare	BTN3A1	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.159		
 GSE192827/compare	BTN3A2	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	2.623		
 GSE192827/compare	ECSIT	497 genes enriched in BTN3A-low (pos) and 754 in BTN3A-high (neg) at FDR 0.10; BTN3A1/ECSIT/FBXW7/SPIB/IRF1/NLRC5 top positive, CTBP1/ZNF217/RUNX1 top negative	1.216		
@@ -64,7 +320,25 @@ GSE192828/compare	HMGCR	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7
 GSE192828/compare	IRF1	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	1.085		
 GSE192828/compare	NLRC5	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	0.617		
 GSE192828/compare	SPIB	71 enriched genes at FDR 0.10 (BTN3A1, SPIB, IRF1, FBXW7, BTN2A1, NLRC5 at the top); 1,912 depleted, mostly fitness genes	0.9571		
+GSE197962/compare	ACE2	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	1.557		
+GSE197962/compare	CHMP2B	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	-0.2515		
+GSE197962/compare	CUL5	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.07932		
+GSE197962/compare	EP300	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.5744		
+GSE197962/compare	GATA6	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.7618		
+GSE197962/compare	IRF6	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.373		
+GSE197962/compare_alpha	ACE2	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	1.288		
+GSE197962/compare_alpha	GATA6	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.5621		
+GSE197962/compare_alpha	KREMEN2	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.6563		
+GSE197962/compare_alpha	SETDB1	ACE2 and GATA6 as top proviral factors; KREMEN2/SETDB1 Alpha-specific	0.7147		
 GSE199603/compare	Cd300ld	No gene at FDR 0.10; Cd300ld ranked first (FDR 0.069) and followed up	-0.5703		
+GSE200085/compare	B2M	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	-0.4982		
+GSE200085/compare	CXCL10	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.4254		
+GSE200085/compare	HLA-A	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.05628		
+GSE200085/compare	JAK1	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	-0.1119		
+GSE200085/compare	JAK2	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.02193		
+GSE200085/compare	STAT1	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.2774		
+GSE200085/compare	TAP1	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.0299		
+GSE200085/compare	TAP2	150 enriched and 253 depleted genes at FDR 0.10; CXCL10 top enriched (validated)	0.3969		
 GSE203240/compare	ACVR1B	15 genes at p < 0.05; IGF2BP2 #6	-0.6766		
 GSE203240/compare	ATP4A	15 genes at p < 0.05; IGF2BP2 #6	-2.955		
 GSE203240/compare	C19orf35	15 genes at p < 0.05; IGF2BP2 #6	-3.057		
@@ -80,6 +354,19 @@ GSE203240/compare	SASS6	15 genes at p < 0.05; IGF2BP2 #6	-1.027
 GSE203240/compare	TAF5L	15 genes at p < 0.05; IGF2BP2 #6	-0.8003		
 GSE203240/compare	TLE2	15 genes at p < 0.05; IGF2BP2 #6	-0.8614		
 GSE203240/compare	TNFAIP8L1	15 genes at p < 0.05; IGF2BP2 #6	-0.1427		
+GSE203455/compare	CALR	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-2.005		
+GSE203455/compare	Dpm1	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-2.341		
+GSE203455/compare	Dpm2	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-2.139		
+GSE203455/compare	Dpm3	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-1.818		
+GSE203455/compare	Jak2	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-2.215		
+GSE203455/compare	MPL	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-3.265		
+GSE203455/compare	Mpdu1	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-1.782		
+GSE203455/compare	Stat5b	64 genes more depleted in CALR del52 and 8 more depleted in EV (corrected p < 0.05)	-1.472		
+GSE203456/compare	Calr	669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted	-3.046		
+GSE203456/compare	Dpm1	669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted	-3.292		
+GSE203456/compare	Dpm2	669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted	-4.995		
+GSE203456/compare	Dpm3	669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted	-2.003		
+GSE203456/compare	Mpdu1	669 genes with log2FC < -1 (23 at MAGeCK FDR 0.05); 7 of the top 10 in protein glycosylation, Dpm2 most depleted	-3.714		
 GSE206832/compare	Cd86	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	1.349		
 GSE206832/compare	Cebpb	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-0.5175		
 GSE206832/compare	March1.	6 genes at FDR 0.10 in the CD86 genome-wide screen (March1, Cd86, Hspa5, Ubl3, Chd4, 1810013L24Rik); 1 (Cd274) in the PD-L1 genome-wide screen; 95 and 44 in the CD86 and PD-L1 secondary screens, with Cebpb in both	-2.252		
@@ -211,6 +498,12 @@ GSE221576/compare_cb103	IL7R	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched i
 GSE221576/compare_cb103	JAK1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-2.326		
 GSE221576/compare_cb103	NOTCH1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	-0.7886		
 GSE221576/compare_cb103	PIK3R1	48 genes at FDR 0.10 for GSI vs DMSO (17 enriched incl. PIK3R1, 31 depleted incl. CDK6, NOTCH1); 16 (all depleted) for CB-103 vs DMSO	0.6453		
+GSE222104/compare	CDK5RAP3	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	1.39		
+GSE222104/compare	DDRGK1	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	1.098		
+GSE222104/compare	SAYSD1	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	0.6342		
+GSE222104/compare	UBA5	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	0.8162		
+GSE222104/compare	UFM1	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	0.8089		
+GSE222104/compare	UFSP2	88 high-confidence hits; UFMylation cluster (UFM1, UBA5, DDRGK1, CDK5RAP3, UFSP2) and SAYSD1	0.2443		
 GSE222531/compare	BCR	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-2.255		
 GSE222531/compare	GATA1	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-2.292		
 GSE222531/compare	LMO2	1,489 essential genes at 100X (PR-AUC 0.949); dasatinib 734 genes at FDR 0.25, 105 at FDR 0.001	-0.5571		
@@ -265,6 +558,11 @@ GSE225878/compare	Runx2	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC 
 GSE225878/compare	Sox9	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	-0.554		
 GSE225878/compare	Strap	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	0.9818		
 GSE225878/compare	Sufu	110 genes at day 4 and 43 at day 15 (p < 0.001 with LFC > 0.57 or < -0.63); 145 genes overall	2.573		
+GSE226447/compare	ALG10	559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10	0.7206		
+GSE226447/compare	MGAT1	559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10	5.997		
+GSE226447/compare	RPN2	559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10	1.519		
+GSE226447/compare	STT3A	559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10	0.645		
+GSE226447/compare	STT3B	559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10	3.769		
 GSE226977/compare	HOXA9	HOXA9 validated as an enzalutamide-sensitizer (loss sensitizes)	-1.027		
 GSE229545/compare	TGGT1_205250	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-3.603		
 GSE229545/compare	TGGT1_288650	Fig 3/Table S1E: IFN-gamma-dependent virulence factors ROP5, ROP18, GRA12, GRA45	-2.681		

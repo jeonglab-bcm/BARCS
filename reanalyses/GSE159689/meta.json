@@ -1,0 +1,20 @@
+{
+  "gse": "GSE159689",
+  "pmid": "34568834",
+  "doi": "10.1158/2643-3230.BCD-21-0012",
+  "pmcid": "PMC8462123",
+  "title": "Monocytic differentiation and AHR signaling as primary nodes of BET inhibitor response in acute myeloid leukemia",
+  "journal": "Blood Cancer Discovery",
+  "published": "2021",
+  "model": "OCI-AML2 parental and JQ1-resistant cells, Yusa genome-wide knockout library, JQ1",
+  "contrast": "JQ1 vs DMSO day 14: parental (2 vs 2) and JQ1-resistant (2 vs 3)",
+  "paper_method": "Not accessible (abstract only)",
+  "paper_calls": "SPI1, JUNB, FOS, AHR/ARNT as response determinants; BCL2 and CDK6 as vulnerabilities in resistant cells",
+  "barcs_calls": "Parental: 1 gene at FDR 0.10; resistant: 2,750 genes (no controls to calibrate, likely inflated)",
+  "named_hits": "BCL2 called (FDR 0.009); FOS #5 and SPI1 #75 enriched but not called; JUNB, AHR, ARNT, CDK6 not supported",
+  "verdict": "BARCS supports BCL2 as a vulnerability of JQ1-resistant cells and ranks FOS and SPI1 high for resistance, but JUNB, AHR, ARNT and CDK6 are not supported, and without controls the resistant-line call list is inflated.",
+  "agreement": "partial",
+  "analyzed": "2026-10-23",
+  "published_date": "2021-07-01",
+  "published_issue": "2021 Sep"
+}

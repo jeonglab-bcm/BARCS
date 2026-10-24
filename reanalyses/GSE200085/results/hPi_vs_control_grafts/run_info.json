@@ -1,0 +1,52 @@
+{
+  "analysis": "hPi_vs_control_grafts",
+  "formula": "~condition",
+  "term": "conditionhPi",
+  "libraries": 11,
+  "residual_df": 9,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 77441,
+  "genes": 19112,
+  "moderated": true,
+  "prior_df": 12.9147,
+  "guide_correlation": 0,
+  "control_scale": null,
+  "control_guides": 1000,
+  "control_p05_raw": 0.0583,
+  "control_p05": 0.0583,
+  "totals_method": "control",
+  "test": "auto",
+  "guides_lr": 288,
+  "top1pct_read_share": {
+    "Ms64_Ctrl": 0.036,
+    "Ms69_Ctrl": 0.129,
+    "Ms70_Ctrl": 0.063,
+    "Ms73_Ctrl": 0.078,
+    "Ms74_Ctrl": 0.065,
+    "Ms78_Ctrl": 0.046,
+    "Ms65": 0.088,
+    "Ms67": 0.061,
+    "Ms68": 0.072,
+    "Ms72": 0.096,
+    "Ms76": 0.072
+  },
+  "genes_fdr_0_10_up": 0,
+  "genes_fdr_0_10_down": 1,
+  "genes_fdr_0_05": 0,
+  "genes_fdr_0_10": 1,
+  "genes_empirical_fdr_0_10": 0,
+  "empirical_centre": "controls",
+  "control_shift": -0.046,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

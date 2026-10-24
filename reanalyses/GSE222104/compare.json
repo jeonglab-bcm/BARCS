@@ -1,0 +1,11 @@
+{
+  "barcs_genes": "results/GFPhigh_vs_GFPlow/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["SAYSD1", "UFM1", "UBA5", "DDRGK1", "CDK5RAP3", "UFSP2"],
+  "published": {
+    "file": "suppl/GSE222104_ER_K20_GFP_high.gene_summary.xlsx", "sheet": "ER_K20exp1.gene_summary",
+    "gene_column": "id", "score_column": "pos|score", "score_better": "lower",
+    "effect_column": "pos|lfc"
+  },
+  "top_n": [10, 25, 50, 100]
+}

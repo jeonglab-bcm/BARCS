@@ -1,0 +1,17 @@
+[
+  {
+    "column": "refCPM",
+    "recovered_as": "plasmid",
+    "pseudocount": 1,
+    "scale": 0.0301055687896,
+    "max_dev": 1.46e-11,
+    "recovered_total": 32328284,
+    "n": 53928
+  },
+  {
+    "column": "CPM",
+    "check_against": "Count",
+    "pseudocount": 1,
+    "scale": 0.0620747838509
+  }
+]

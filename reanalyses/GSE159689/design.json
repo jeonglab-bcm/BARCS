@@ -1,0 +1,135 @@
+{
+  "gse": "GSE159689",
+  "pmid": "34568834",
+  "counts_file": "counts.tsv",
+  "guide_column": "sgRNA",
+  "gene_column": "gene",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "Par_DMSO_1",
+      "gsm": "GSM4837670,GSM4837671",
+      "line": "parental",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "Par_DMSO_2",
+      "gsm": "GSM4837672,GSM4837673",
+      "line": "parental",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "Par_JQ1_1",
+      "gsm": "GSM4837674,GSM4837675",
+      "line": "parental",
+      "treatment": "JQ1",
+      "replicate": "1"
+    },
+    {
+      "column": "Par_JQ1_2",
+      "gsm": "GSM4837676,GSM4837677",
+      "line": "parental",
+      "treatment": "JQ1",
+      "replicate": "2"
+    },
+    {
+      "column": "Res_JQ1_1",
+      "gsm": "GSM4837682,GSM4837683",
+      "line": "JQ1R",
+      "treatment": "JQ1",
+      "replicate": "1"
+    },
+    {
+      "column": "Res_JQ1_2",
+      "gsm": "GSM4837684,GSM4837685",
+      "line": "JQ1R",
+      "treatment": "JQ1",
+      "replicate": "2"
+    },
+    {
+      "column": "Res_DMSO_1",
+      "gsm": "GSM4837686,GSM4837687",
+      "line": "JQ1R",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "Res_DMSO_2",
+      "gsm": "GSM4837688,GSM4837689",
+      "line": "JQ1R",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "Res_DMSO_3",
+      "gsm": "GSM4837690,GSM4837691",
+      "line": "JQ1R",
+      "treatment": "DMSO",
+      "replicate": "3"
+    },
+    {
+      "column": "Par_d21_DMSO_1",
+      "gsm": "GSM4837678",
+      "line": "parental_d21",
+      "treatment": "DMSO",
+      "replicate": "1"
+    },
+    {
+      "column": "Par_d21_DMSO_2",
+      "gsm": "GSM4837679",
+      "line": "parental_d21",
+      "treatment": "DMSO",
+      "replicate": "2"
+    },
+    {
+      "column": "Par_d21_CPI_1",
+      "gsm": "GSM4837680",
+      "line": "parental_d21",
+      "treatment": "CPI0610",
+      "replicate": "1"
+    },
+    {
+      "column": "Par_d21_CPI_2",
+      "gsm": "GSM4837681",
+      "line": "parental_d21",
+      "treatment": "CPI0610",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "treatment": [
+      "DMSO",
+      "JQ1",
+      "CPI0610"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "parental_JQ1_vs_DMSO_d14",
+      "columns": [
+        "Par_DMSO_1",
+        "Par_DMSO_2",
+        "Par_JQ1_1",
+        "Par_JQ1_2"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentJQ1"
+    },
+    {
+      "name": "JQ1R_JQ1_vs_DMSO_d14",
+      "columns": [
+        "Res_DMSO_1",
+        "Res_DMSO_2",
+        "Res_DMSO_3",
+        "Res_JQ1_1",
+        "Res_JQ1_2"
+      ],
+      "formula": "~ treatment",
+      "term": "treatmentJQ1"
+    }
+  ],
+  "rationale": "Yusa human knockout library (about 90,700 guides, 5 per gene, no non-targeting controls) in BETi-sensitive parental OCI-AML2 cells and in JQ1-resistant OCI-AML2 cells (Romine et al. 2021). GEO's overall design: compare sgRNA counts between DMSO and BETi at matching time points. Each day-14 library was sequenced twice (_addtl); the re-reads agree near-Poisson and are summed by prepare.R. Analysis 1, parental cells JQ1 vs DMSO at day 14: knockouts that confer resistance are enriched (the abstract names SPI1, JUNB, FOS, AHR and ARNT as determinants of response). Analysis 2, JQ1-resistant cells JQ1 vs DMSO at day 14: knockouts that restore sensitivity are depleted (BCL2, CDK6). JQ1 and DMSO arms are separate cultures, so no pairing term. The day-21 CPI-0610 arm is kept in counts.tsv but not analyzed.",
+  "counts_md5": "f106aa8be3413475831134ec1e669893"
+}

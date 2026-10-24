@@ -1,0 +1,45 @@
+{
+  "analysis": "blast_vs_unselected",
+  "formula": "~replicate + selection",
+  "term": "selectionblast",
+  "libraries": 4,
+  "residual_df": 1,
+  "replicates": "yes",
+  "no_replicates": null,
+  "guides": 185836,
+  "genes": 18797,
+  "moderated": true,
+  "prior_df": 0.4307,
+  "guide_correlation": 0.0003,
+  "control_scale": null,
+  "control_guides": 10,
+  "control_p05_raw": "NA",
+  "control_p05": "NA",
+  "totals_method": "median_ratio",
+  "test": "auto",
+  "guides_lr": 9875,
+  "top1pct_read_share": {
+    "ScreenII_late_-blast_rep1": 0.087,
+    "ScreenII_late_-blast_rep2": 0.087,
+    "ScreenII_late_+blast_rep1": 0.956,
+    "ScreenII_late_+blast_rep2": 0.869
+  },
+  "genes_fdr_0_10_up": 47,
+  "genes_fdr_0_10_down": 17379,
+  "genes_fdr_0_05": 16834,
+  "genes_fdr_0_10": 17426,
+  "genes_empirical_fdr_0_10": null,
+  "empirical_centre": null,
+  "control_shift": null,
+  "barcs_version": "0.2.3",
+  "environment": {
+    "r_version": "4.3.3",
+    "platform": "x86_64-pc-linux-gnu",
+    "packages": {
+      "BARCS": "0.2.3",
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
+    }
+  }
+}

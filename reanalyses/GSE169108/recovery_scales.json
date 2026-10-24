@@ -1,0 +1,56 @@
+[
+  {
+    "column": "Focused-CRISPR_Read1_norm",
+    "sample": "Control",
+    "k": 474,
+    "scale": 1.0640518472,
+    "integrality": 1,
+    "maxdev": 0.004775685773,
+    "total": 4940529
+  },
+  {
+    "column": "Focused-CRISPR_Read2_norm",
+    "sample": "Control",
+    "k": 489,
+    "scale": 0.94005374749,
+    "integrality": 1,
+    "maxdev": 0.0056742463385,
+    "total": 5597602
+  },
+  {
+    "column": "TGEV_3rd_Read1_norm",
+    "sample": "TGEV3",
+    "k": 10,
+    "scale": 1.0475480469,
+    "integrality": 1,
+    "maxdev": 0.004805218874,
+    "total": 5841785
+  },
+  {
+    "column": "TGEV_3rd_Read2_norm",
+    "sample": "TGEV3",
+    "k": 1,
+    "scale": 0.95593989091,
+    "integrality": 1,
+    "maxdev": 0.0052306481871,
+    "total": 6396591
+  },
+  {
+    "column": "TGEV_5th_Read1_norm",
+    "sample": "TGEV5",
+    "k": 1,
+    "scale": 1.1075210853,
+    "integrality": 1,
+    "maxdev": 0.0045204764465,
+    "total": 5652515
+  },
+  {
+    "column": "TGEV_5th_Read2_norm",
+    "sample": "TGEV5",
+    "k": 1,
+    "scale": 0.90615686622,
+    "integrality": 1,
+    "maxdev": 0.0055096446695,
+    "total": 6894230
+  }
+]

@@ -31,6 +31,7 @@ Pipeline, in order:
 import csv
 import gzip
 import json
+import os
 import sqlite3
 import sys
 from collections import defaultdict
@@ -42,6 +43,10 @@ from scipy.stats import hypergeom, poisson
 from barcs_kg.analyses import HIT_FDR, PHYS_HIGH, Graph, essential_reference
 
 MIN_PAPERS = 2
+# PATHWAYS_PAIR_TEST=off keeps pairs co-hit in MIN_PAPERS papers without the
+# per-pair Poisson test and reports a shuffled-hit control instead.
+PAIR_TEST = os.environ.get("PATHWAYS_PAIR_TEST", "on") != "off"
+SHUFFLES = 50
 Q_CUT = 0.05             # BH over every tested STRING pair
 SCORES = (PHYS_HIGH, 800, 900, 950, 990)  # STRING physical score steps for splitting
 MODULE_MAX = 15          # genes in a module before it is split at a stricter score
@@ -150,6 +155,27 @@ def run(db, reports, string_dir, out):
     q = np.ones(len(pa))
     q[testable] = bh(p[testable])
     keep = testable & (q < Q_CUT) & (n_obs >= MIN_PAPERS)
+    shuffled = None
+    if not PAIR_TEST:
+        # Small corpora (the developmental page): no single pair can pass the
+        # per-pair test, so keep every pair co-hit in MIN_PAPERS papers and
+        # report the same count on shuffled hits (each screen keeps its number
+        # of hits among the genes it tested) as a corpus-level check.
+        keep = n_obs >= MIN_PAPERS
+        rng = np.random.default_rng(20261024)
+        counts = []
+        for _ in range(SHUFFLES):
+            Hs = np.zeros_like(H)
+            for j in range(len(cids)):
+                idx = np.flatnonzero(T[:, j])
+                Hs[rng.choice(idx, int(H[:, j].sum()), replace=False), j] = True
+            co = Hs[pa] & Hs[pb]
+            ob = np.zeros((len(pa), len(pmids)), bool)
+            for j in range(len(cids)):
+                ob[:, paper_of[j]] |= co[:, j]
+            counts.append(int((ob.sum(1) >= MIN_PAPERS).sum()))
+        shuffled = {"mean": round(float(np.mean(counts)), 1), "min": int(min(counts)),
+                    "max": int(max(counts)), "runs": SHUFFLES}
     pair_stat = {}
     adj = defaultdict(set)
     for k in np.flatnonzero(keep):
@@ -244,7 +270,8 @@ def run(db, reports, string_dir, out):
                        "string_physical": PHYS_HIGH, "fitness_genes": len(fitness),
                        "frequent_hitters": len(frequent), "machinery_genes": len(machinery - fitness),
                        "screens_tested": len(cids), "papers": len(pmids),
-                       "pairs_tested": int(testable.sum()), "pairs_replicated": int(keep.sum())}}
+                       "pairs_tested": int(testable.sum()), "pairs_replicated": int(keep.sum()),
+                       "pair_test": "on" if PAIR_TEST else "off", "shuffled": shuffled}}
     with open(out, "w") as fh:
         json.dump(data, fh, separators=(",", ":"))
     return data

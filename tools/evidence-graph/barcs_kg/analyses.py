@@ -12,13 +12,16 @@ Writes one TSV per analysis plus summary.json. Definitions used throughout:
   aliases and title-case human symbols collapse to one node. Elements that are
   near a gene, pair members or shared-paralog guides are not identity-mapped.
 - independence: the publication (PMID). Several contrasts from one paper count once.
-- eligible contrast: primary, >= 1,000 elements tested, and <= 10% of them called.
+- eligible contrast: primary, >= ELIGIBLE_MIN_TESTED elements tested (default 1000,
+  override with EVIDENCE_MIN_TESTED env var), and <= ELIGIBLE_MAX_HIT_FRACTION of
+  them called (default 0.10, override with EVIDENCE_MAX_HIT_FRACTION env var).
   Contrasts that call more (composition shifts, uncalibrated drug arms, candidate
   validation pools) would otherwise dominate every cross-screen count.
 """
 
 import csv
 import json
+import os
 import random
 import re
 import sqlite3
@@ -38,8 +41,8 @@ FUNC_TOP = 900
 SENSITIVITY = re.compile(r"median_?ratio|library_totals|_library$|unpaired|techsorts|noR1|mtc150", re.I)
 ESSENTIAL_MIN_PAPERS = 3
 PERMUTATIONS = 200
-ELIGIBLE_MIN_TESTED = 1000
-ELIGIBLE_MAX_HIT_FRACTION = 0.10
+ELIGIBLE_MIN_TESTED = int(os.environ.get("EVIDENCE_MIN_TESTED", "1000"))
+ELIGIBLE_MAX_HIT_FRACTION = float(os.environ.get("EVIDENCE_MAX_HIT_FRACTION", "0.10"))
 
 
 def bh(pvals):
@@ -281,7 +284,8 @@ def recurrence(g, ess, out):
                 tested[sid].add(c["pmid"])
             for sid, v in h.items():
                 hit[sid].add(c["pmid"])
-                classes[sid].add(c["selection"])
+                if c["selection"] is not None:
+                    classes[sid].add(c["selection"])
                 signs[sid].append(1 if v[0] > 0 else -1)
         rate = {p: len(paper_hits[p]) / len(paper_uni[p]) for p in paper_uni}
         start = len(rows)

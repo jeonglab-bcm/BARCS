@@ -1,0 +1,9 @@
+{
+  "barcs_genes": "results/OC43_1st_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["TMEM41B", "VMP1", "CCZ1B", "CCZ1", "SLC35B2", "WDR81"],
+  "published": {"file": "paper/hek1_oc43_mageck.tsv", "gene_column": "gene",
+    "score_column": "pos_score", "score_better": "lower", "effect_column": "lfc"},
+  "top_n": [20, 50, 100],
+  "out": "comparison_oc43"
+}

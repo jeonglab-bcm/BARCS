@@ -1,0 +1,23 @@
+{
+  "barcs_genes": "results/nanog_low_vs_unsorted/genes.csv",
+  "direction": "both",
+  "named_hits": [
+    "Dusp9",
+    "Klhl13",
+    "Zic3",
+    "Stag2",
+    "Fthl17"
+  ],
+  "published": {
+    "file": "paper/screen_results.tsv",
+    "gene_column": "Gene",
+    "score_column": "FDR_Nanog_Screen",
+    "score_better": "lower"
+  },
+  "top_n": [
+    10,
+    20,
+    40
+  ],
+  "out": "comparison_nanog"
+}

@@ -1,0 +1,20 @@
+{
+  "gse": "GSE226447",
+  "pmid": "37193694",
+  "doi": "10.1038/s41467-023-37714-3",
+  "pmcid": "PMC10188588",
+  "title": "Identification of indocyanine green as a STT3B inhibitor against mushroom α-amanitin cytotoxicity",
+  "journal": "Nature Communications",
+  "published": "2023",
+  "model": "HAP1 cells, Brunello genome-wide knockout library",
+  "contrast": "α-amanitin vs PBS, 7 days (2 vs 2), median-ratio totals",
+  "paper_method": "MAGeCK-RRA",
+  "paper_calls": "559 genes at p < 0.05 and |LFC| > 1 (10 at MAGeCK FDR 0.10); STT3B and MGAT1 in the top 10",
+  "barcs_calls": "17 genes at FDR 0.10, all enriched (8 against the control null); 8 with library totals",
+  "named_hits": "2/5 at FDR 0.10 (MGAT1 #2, STT3B #9); ALG10, STT3A and RPN2 not enriched in raw counts",
+  "verdict": "BARCS recovers the paper's core resistance genes (MGAT1, STT3B, WDR81, TAF4, SPPL3, SLC46A3) and 8 of its 10 MAGeCK FDR 0.10 genes, but not the other N-glycan genes the paper cites, whose raw counts do not rise under α-amanitin.",
+  "agreement": "agree",
+  "analyzed": "2026-10-23",
+  "published_date": "2023-05-16",
+  "published_issue": "2023 May 16"
+}

@@ -1,0 +1,132 @@
+{
+  "gse": "GSE177537",
+  "pmid": "35086559",
+  "counts_file": "suppl/GSE177537_hek_ko_1_reads.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^Non-Targeting Control$",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "T0puro1",
+      "gsm": "GSM5375263",
+      "condition": "T0",
+      "replicate": "1"
+    },
+    {
+      "column": "T0puro2",
+      "gsm": "GSM5375264",
+      "condition": "T0",
+      "replicate": "2"
+    },
+    {
+      "column": "T0puro3",
+      "gsm": "GSM5375265",
+      "condition": "T0",
+      "replicate": "3"
+    },
+    {
+      "column": "T0puro4",
+      "gsm": "GSM5375266",
+      "condition": "T0",
+      "replicate": "4"
+    },
+    {
+      "column": "Cov-st-1",
+      "gsm": "GSM5375248",
+      "condition": "SARS2_1st",
+      "replicate": "1"
+    },
+    {
+      "column": "Cov-st-2",
+      "gsm": "GSM5375249",
+      "condition": "SARS2_1st",
+      "replicate": "2"
+    },
+    {
+      "column": "Cov-st-3",
+      "gsm": "GSM5375250",
+      "condition": "SARS2_1st",
+      "replicate": "3"
+    },
+    {
+      "column": "Cov-st-4",
+      "gsm": "GSM5375251",
+      "condition": "SARS2_1st",
+      "replicate": "4"
+    },
+    {
+      "column": "OC43-st-1",
+      "gsm": "GSM5375258",
+      "condition": "OC43_1st",
+      "replicate": "1"
+    },
+    {
+      "column": "OC43-st-2",
+      "gsm": "GSM5375259",
+      "condition": "OC43_1st",
+      "replicate": "2"
+    },
+    {
+      "column": "OC43-st-3",
+      "gsm": "GSM5375260",
+      "condition": "OC43_1st",
+      "replicate": "3"
+    },
+    {
+      "column": "OC43-st-4",
+      "gsm": "GSM5375261",
+      "condition": "OC43_1st",
+      "replicate": "4"
+    },
+    {
+      "column": "OC43-st-5",
+      "gsm": "GSM5375262",
+      "condition": "OC43_1st",
+      "replicate": "5"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "T0",
+      "SARS2_1st",
+      "OC43_1st"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "SARS2_1st_vs_T0",
+      "columns": [
+        "T0puro1",
+        "T0puro2",
+        "T0puro3",
+        "T0puro4",
+        "Cov-st-1",
+        "Cov-st-2",
+        "Cov-st-3",
+        "Cov-st-4"
+      ],
+      "formula": "~ condition",
+      "term": "conditionSARS2_1st"
+    },
+    {
+      "name": "OC43_1st_vs_T0",
+      "columns": [
+        "T0puro1",
+        "T0puro2",
+        "T0puro3",
+        "T0puro4",
+        "OC43-st-1",
+        "OC43-st-2",
+        "OC43-st-3",
+        "OC43-st-4",
+        "OC43-st-5"
+      ],
+      "formula": "~ condition",
+      "term": "conditionOC43_1st",
+      "totals": "median_ratio"
+    }
+  ],
+  "rationale": "Brunello knockout library in HEK293T-hACE2 cells, screen 1 (Grodzki et al. 2022). Column names follow the GSM titles (T0puro = Day 0; Cov-st = SARS-CoV-2 single infection at MOI 0.01; OC43-st = OC43 single infection). The authors ran MAGeCK on each infection vs the uninfected Day 0 replicates and read the enriched side (Additional files 6 and 8). Reinfection samples are not analyzed. Replicates are separate cultures, so no replicate term. OC43-st-1 to -3 are strongly bottlenecked (48-71% of guides at zero). The OC43 single-infected libraries collapse to few clones, so that analysis uses median-ratio totals and only its enrichment is read.",
+  "counts_md5": "ba028f8a4db6ccd7be15cd9cd2d0da11"
+}

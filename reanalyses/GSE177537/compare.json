@@ -1,0 +1,8 @@
+{
+  "barcs_genes": "results/SARS2_1st_vs_T0/genes.csv",
+  "direction": "enriched",
+  "named_hits": ["EDC4", "XRN1", "TMEM251", "CDH2", "CCZ1", "DNM2", "WASL"],
+  "published": {"file": "paper/hek1_sars_mageck.tsv", "gene_column": "gene",
+    "score_column": "pos_score", "score_better": "lower", "effect_column": "lfc"},
+  "top_n": [20, 50, 100]
+}

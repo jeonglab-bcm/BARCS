@@ -1,0 +1,84 @@
+{
+  "gse": "GSE203455",
+  "pmid": "35763665",
+  "counts_file": "counts.tsv.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^(NO_SITE|ONE_INTERGENIC_SITE)",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "EV#1 +_Day 21_with IL3",
+      "gsm": "GSM6172300",
+      "condition": "EV_IL3",
+      "replicate": "1"
+    },
+    {
+      "column": "EV#2 +_Day 21_with IL3",
+      "gsm": "GSM6172300",
+      "condition": "EV_IL3",
+      "replicate": "2"
+    },
+    {
+      "column": "EV#3 +_Day 21_with IL3",
+      "gsm": "GSM6172300",
+      "condition": "EV_IL3",
+      "replicate": "3"
+    },
+    {
+      "column": "EV#4 +_Day 21_with IL3",
+      "gsm": "GSM6172300",
+      "condition": "EV_IL3",
+      "replicate": "4"
+    },
+    {
+      "column": "Del#1 -_Day 21_without IL3",
+      "gsm": "GSM6172300",
+      "condition": "DEL_noIL3",
+      "replicate": "1"
+    },
+    {
+      "column": "Del#2 -_Day 21_without IL3",
+      "gsm": "GSM6172300",
+      "condition": "DEL_noIL3",
+      "replicate": "2"
+    },
+    {
+      "column": "Del#3 -_Day 21_without IL3",
+      "gsm": "GSM6172300",
+      "condition": "DEL_noIL3",
+      "replicate": "3"
+    },
+    {
+      "column": "Del#4 -_Day 21_without IL3",
+      "gsm": "GSM6172300",
+      "condition": "DEL_noIL3",
+      "replicate": "4"
+    }
+  ],
+  "factor_levels": {
+    "condition": [
+      "EV_IL3",
+      "DEL_noIL3"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "DELnoIL3_vs_EVIL3",
+      "columns": [
+        "EV#1 +_Day 21_with IL3",
+        "EV#2 +_Day 21_with IL3",
+        "EV#3 +_Day 21_with IL3",
+        "EV#4 +_Day 21_with IL3",
+        "Del#1 -_Day 21_without IL3",
+        "Del#2 -_Day 21_without IL3",
+        "Del#3 -_Day 21_without IL3",
+        "Del#4 -_Day 21_without IL3"
+      ],
+      "formula": "~ condition",
+      "term": "conditionDEL_noIL3"
+    }
+  ],
+  "counts_md5": "c293cbda2d06dd980740a1d5298eb94c",
+  "rationale": "Secondary pooled knockout screen (library CP1547: about 250 murine genes chosen from the whole-genome screen x 8 guides, guides against human CALR and MPL, and non-targeting NO_SITE and intergenic ONE_INTERGENIC_SITE controls) in BA/F3-MPL cells; one GEO sample (GSM6172300) holds a PoolQ count table. The paper's main comparison (Figure 2D-E, supplemental Table 3 sheet DEL-_vs_EV+) is CALR del52 cells without IL3 against empty-vector cells with IL3 at day 21, four independent biological replicate lines each. Replicate lines are independent per genotype, so they are not paired across arms. The single EV#2 without-IL3 library is a viability control (cells die) and is left out. Both control classes are used as controls; the intergenic guides cut, which suits a knockout screen. Because the library is focused on expected hits, a large share of genes may be depleted, so library totals are checked against the controls (see report). Gene labels come from the deposited chip file (prepare.R)."
+}

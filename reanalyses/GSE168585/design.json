@@ -1,0 +1,54 @@
+{
+  "gse": "GSE168585",
+  "pmid": "35172133",
+  "counts_file": "suppl/GSE168585_counts.txt.gz",
+  "guide_column": "sgRNA",
+  "gene_column": "Gene",
+  "control_gene_pattern": "^NonTargetingControl",
+  "min_total_count": 30,
+  "samples": [
+    {
+      "column": "WT NPC unsorted rep 1",
+      "gsm": "GSM5149486",
+      "population": "unsorted",
+      "replicate": "1"
+    },
+    {
+      "column": "WT NPC Sox1 negative rep 1",
+      "gsm": "GSM5149487",
+      "population": "sox1_neg",
+      "replicate": "1"
+    },
+    {
+      "column": "WT NPC unsorted WT NPC Sox1 negative rep 2",
+      "gsm": "GSM5149488",
+      "population": "unsorted",
+      "replicate": "2"
+    },
+    {
+      "column": "wt2_b1",
+      "gsm": "GSM5149489",
+      "population": "sox1_neg",
+      "replicate": "2"
+    }
+  ],
+  "factor_levels": {
+    "population": [
+      "unsorted",
+      "sox1_neg"
+    ],
+    "replicate": [
+      "1",
+      "2"
+    ]
+  },
+  "analyses": [
+    {
+      "name": "sox1neg_vs_unsorted",
+      "formula": "~ replicate + population",
+      "term": "populationsox1_neg"
+    }
+  ],
+  "rationale": "GeCKO v2 hESC screen: day-7 NPCs sorted for the 1% lowest SOX1; guides enriched in SOX1-negative cells mark genes required for NPC differentiation. Each replicate's sorted and unsorted libraries come from one infection, so replicate is a blocking term (1 residual df). The third column header ('WT NPC unsorted WT NPC Sox1 negative rep 2') is garbled; it correlates 0.92 with unsorted rep 1 and has 0.5% zeros like it, so it is unsorted rep 2 (GSM5149488), and 'wt2_b1' (40% zeros, like the rep-1 sort) is SOX1-negative rep 2 (GSM5149489). The mapping rests on these correlations, not on labels.",
+  "counts_md5": "5bac44555e309bf07d436cf1a2ff5ffd"
+}
