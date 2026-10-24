@@ -9,6 +9,7 @@ Live page: https://jeonglab-bcm.github.io/BARCS/evidence-graph/
 
 ```sh
 tools/evidence-graph/build.sh      # download STRING v12.5 + CEGv2 once (~600 MB), build, analyse, write viz/explorer.html (~8 min)
+tools/evidence-graph/build_areas.sh  # then: one pathway map per biology area, re-export the page (~7 min)
 cd tools/evidence-graph
 uv run python -m barcs_kg.tools get_gene_evidence gene=IL2RA
 sqlite3 build/barcs_kg.sqlite
@@ -35,6 +36,15 @@ frequent hitters are removed before counting.
 Module names and themes come from `curation/module_names.tsv`, screen labels
 from `curation/screen_labels.tsv`. Both are drafts written while building the
 page; edit them and rebuild.
+
+The buttons under the tabs filter every view to one biology area
+(`curation/screen_areas.tsv`: one area per GEO series, by the question the screen
+asks). The pathway map is not the full map with other screens hidden:
+`build_areas.sh` rebuilds it on each area's screens alone, with that area's own
+growth genes and frequent hitters, into `viz/pathways_<area>.json`. Areas with
+10+ eligible papers use the main settings and the per-pair test; smaller ones
+fall back to a shuffled-hit control, admitting focused libraries and, only if
+nothing passes otherwise, screens that call over 10% of genes (the page says so).
 
 What the map can and cannot say: requiring a known physical interaction and
 replication across papers selects robust, mostly known biology (IFN-γ

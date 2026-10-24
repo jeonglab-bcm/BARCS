@@ -41,15 +41,12 @@ def run(db, reports, outdir):
     for r in tsv(reports / "claim_audit.tsv"):
         claims[r["contrast_id"]].add(r["gene"].upper())
 
-    dev_tsv = Path(__file__).resolve().parent.parent / "curation" / "developmental_screens.tsv"
-    dev_gses = set()
-    if dev_tsv.exists():
-        with open(dev_tsv) as fh:
-            next(fh)
-            for line in fh:
-                gse = line.split("\t")[0].strip()
-                if gse:
-                    dev_gses.add(gse)
+    area_tsv = Path(__file__).resolve().parent.parent / "curation" / "screen_areas.tsv"
+    areas = {}
+    if area_tsv.exists():
+        rows = [l.rstrip("\n").split("\t") for l in area_tsv.read_text().splitlines()
+                if l and not l.startswith("#")]
+        areas = {r[0]: r[1] for r in rows[1:]}
 
     order = sorted(g.contrast)
     index = {cid: i for i, cid in enumerate(order)}
@@ -64,8 +61,8 @@ def run(db, reports, outdir):
             "tested": c["genes"], "hits": c["n_hits"], "eligible": c["eligible"],
             "primary": c["primary"], "flags": [f for f in flags.get(cid, "").split(",") if f],
             "named": len(claims[cid])}
-        if cid.split(":")[0] in dev_gses:
-            entry["dev"] = 1
+        if cid.split(":")[0] in areas:
+            entry["area"] = areas[cid.split(":")[0]]
         contrasts.append(entry)
 
     claim_df = defaultdict(Counter)
@@ -157,13 +154,15 @@ def run(db, reports, outdir):
     blob = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     path_path = outdir / "pathways.json"
     pathways = path_path.read_text().replace("</", "<\\/") if path_path.exists() else "null"
-    # Pathway map rebuilt on the developmental screens alone (build_dev.sh), shown by the filter.
-    dev_path = outdir / "pathways_dev.json"
-    pathways_dev = dev_path.read_text().replace("</", "<\\/") if dev_path.exists() else "null"
+    # One pathway map per area, rebuilt on that area's screens alone (build_areas.sh),
+    # shown when the page is filtered to the area.
+    by_area = {f.stem.removeprefix("pathways_"): json.loads(f.read_text())
+               for f in sorted(outdir.glob("pathways_*.json"))}
+    pathways_area = json.dumps(by_area, separators=(",", ":")).replace("</", "<\\/")
     template = (outdir / "explorer.template.html").read_text()
     (outdir / "explorer.html").write_text(
         template.replace("/*__DATA__*/null", blob).replace("/*__PATH__*/null", pathways)
-        .replace("/*__PATH_DEV__*/null", pathways_dev))
+        .replace("/*__PATH_AREA__*/null", pathways_area))
     return {"bytes": len(blob) + len(pathways), "contrasts": len(contrasts), "nets": len(nets),
             "genes": len(genes), "pathways": pathways != "null"}
 

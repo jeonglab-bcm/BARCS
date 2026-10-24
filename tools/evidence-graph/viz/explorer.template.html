@@ -163,9 +163,7 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
     <button role="tab" id="tab-network" aria-controls="view-network">Screen network</button>
     <button role="tab" id="tab-gene" aria-controls="view-gene">Gene across screens</button>
   </nav>
-  <div class="controls" id="global-filters" style="margin-top:-8px; margin-bottom:4px;">
-    <label style="font-size:12px; gap:4px;"><input type="checkbox" id="dev-filter"> Show only developmental biology screens <span style="color:var(--muted)">(15 screens from 9 papers)</span></label>
-  </div>
+  <div class="toggles" id="area-filter" role="group" aria-label="Biology area" style="margin-top:-8px; margin-bottom:14px;"></div>
 
   <section id="view-pathways" role="tabpanel" aria-labelledby="tab-pathways">
     <div class="figures" id="pm-figures"></div>
@@ -243,9 +241,11 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
 <script>
 const DATA = /*__DATA__*/null;
 const C = DATA.contrasts;
-const DEV_IDS = new Set(C.filter(c => c.dev).map(c => c.id));
-let devFilter = false;
-const devPass = c => !devFilter || c.dev;
+// Top-level biology area of each screen (curation/screen_areas.tsv); null shows every screen.
+const AREAS = {cancer: "Cancer", immunology: "Immunology", infection: "Infection & microbes", development: "Development & stem cells",
+  cell_biology: "Cell biology & gene regulation", physiology: "Tissue physiology & disease", methods: "Methods & benchmarks"};
+let area = null;
+const areaPass = c => !area || c.area === area;
 const ORG = {9606: "human", 10090: "mouse", 10116: "rat", 9913: "cattle", 5811: "Toxoplasma", 226186: "Bacteroides"};
 const FIT = new Set(DATA.fitness), FREQ = new Set(DATA.frequent);
 const fmt = d3.format(","), pct = d3.format(".0%");
@@ -301,20 +301,30 @@ function show(tab) {
 }
 TABS.forEach(t => document.getElementById("tab-" + t).addEventListener("click", () => show(t)));
 
-/* ---------- developmental biology filter ---------- */
-document.getElementById("dev-filter").addEventListener("change", function() {
-  devFilter = this.checked;
+/* ---------- biology area filter ---------- */
+function areaButtons() {
+  const series = k => new Set(C.filter(c => !k || c.area === k).map(c => c.id.split(":")[0])).size;
+  const box = document.getElementById("area-filter");
+  box.replaceChildren(...[null, ...Object.keys(AREAS)].filter(k => !k || series(k)).map(k => {
+    const b = el("button", {type: "button", "aria-pressed": String(k === area)}, `${k ? AREAS[k] : "All screens"} · ${series(k)}`);
+    b.addEventListener("click", () => { if (k !== area) setArea(k); });
+    return b;
+  }));
+}
+function setArea(k) {
+  area = k; areaButtons();
   document.getElementById("qc").replaceChildren(); document.getElementById("claims").replaceChildren(); document.getElementById("rec").replaceChildren();
   corpus(); fillNetSelect(); if (netDrawn) drawNet(); pmSwitch();
-});
+  drawGene(curGene);
+}
 
 /* ---------- corpus ---------- */
 function corpus() {
   const s = DATA.meta.summary;
   document.getElementById("prov").textContent = `BARCS ${DATA.meta.commit} · STRING v${DATA.meta.string} · FDR < 0.10`;
-  if (devFilter) {
-    const fc = C.filter(devPass), ne = fc.filter(c => c.eligible).length;
-    const figs = [[String(fc.length), "contrasts (developmental)"], [String(ne), "eligible contrasts"], [String(new Set(fc.map(c => c.pmid)).size), "papers"]];
+  if (area) {
+    const fc = C.filter(areaPass), ne = fc.filter(c => c.eligible).length;
+    const figs = [[String(fc.length), `contrasts (${AREAS[area].toLowerCase()})`], [String(ne), "eligible contrasts"], [String(new Set(fc.map(c => c.pmid)).size), "papers"]];
     document.getElementById("figures").replaceChildren(...figs.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
   } else {
     const figs = [
@@ -332,7 +342,7 @@ function corpus() {
 function qcCategory(c) { return c.tested < 1000 ? "small" : c.hits / c.tested > 0.10 ? "flood" : "ok"; }
 function qcChart() {
   const W = 960, H = 340, m = {l: 52, r: 16, t: 10, b: 40};
-  const pts = C.filter(c => c.tested && c.hits != null && devPass(c));
+  const pts = C.filter(c => c.tested && c.hits != null && areaPass(c));
   const x = d3.scaleLog().domain([10, 30000]).range([m.l, W - m.r]);
   const y = d3.scaleSymlog().constant(0.5).domain([0, 100]).range([H - m.b, m.t]);
   const col = {ok: "var(--s1)", flood: "var(--s2)", small: "var(--s3)"};
@@ -422,7 +432,7 @@ function fillNetSelect() {
   const groups = [["Eligible contrasts", c => c.eligible], ["Other contrasts", c => !c.eligible]];
   groups.forEach(([label, f]) => {
     const og = el("optgroup", {label});
-    C.forEach((c, i) => { if (DATA.nets[i] && f(c) && devPass(c)) og.append(el("option", {value: String(i)}, `${c.id}  ·  ${c.selection || ""}`)); });
+    C.forEach((c, i) => { if (DATA.nets[i] && f(c) && areaPass(c)) og.append(el("option", {value: String(i)}, `${c.id}  ·  ${c.selection || ""}`)); });
     if (og.children.length) sel.append(og);
   });
   if (sel.querySelector(`option[value="${prev}"]`)) sel.value = prev;
@@ -534,11 +544,13 @@ function openGene(key) {
   sug.hidden = true; const [g, t] = key.split("|"); inp.value = g;
   show("gene"); drawGene(key);
 }
+let curGene;
 function drawGene(key) {
+  curGene = key;
   const [g, t] = key.split("|"), d = DATA.genes[key];
   const card = document.getElementById("gene-card"); card.replaceChildren();
-  const calls = d.c.map(([ci, est, fdr]) => ({c: C[ci], est, fdr})).filter(x => devPass(x.c)).sort((a, b) => a.fdr - b.fdr);
-  if (!calls.length) { card.append(el("h2", {}, `${g} · ${ORG[t] || t}`)); card.append(el("p", {class: "note"}, "Not called in any developmental biology screen.")); return; }
+  const calls = d.c.map(([ci, est, fdr]) => ({c: C[ci], est, fdr})).filter(x => areaPass(x.c)).sort((a, b) => a.fdr - b.fdr);
+  if (!calls.length) { card.append(el("h2", {}, `${g} · ${ORG[t] || t}`)); card.append(el("p", {class: "note"}, `Not called in any ${AREAS[area].toLowerCase()} screen.`)); return; }
   const papers = new Set(calls.map(x => x.c.pmid)), elig = calls.filter(x => x.c.eligible);
   card.append(el("h2", {}, `${g} · ${ORG[t] || t}`));
   card.append(el("p", {class: "note"}, `Called in ${calls.length} of ${d.t} primary contrasts that test it, from ${papers.size} paper${papers.size === 1 ? "" : "s"}; ${elig.length} of those calls are in eligible contrasts.`));
@@ -574,16 +586,19 @@ function drawGene(key) {
 }
 
 /* ---------- pathway map ---------- */
-// The developmental map is rebuilt on those screens alone (own fitness genes,
-// own pair counts), not the full map with other screens hidden.
-const PM_ALL = /*__PATH__*/null, PM_DEV = /*__PATH_DEV__*/null;
+// Each area's map is rebuilt on its screens alone (own fitness genes, own pair
+// counts; build_areas.sh), not the full map with other screens hidden.
+const PM_ALL = /*__PATH__*/null, PM_AREA = /*__PATH_AREA__*/null || {};
 let PM = PM_ALL;
 let pmDrawn = false;
 function pmSwitch() {
-  PM = devFilter && PM_DEV ? PM_DEV : PM_ALL;
-  if (!pmDrawn || !PM) return;
+  PM = area ? PM_AREA[area] || null : PM_ALL;
+  if (!pmDrawn) return;
   document.getElementById("pm-input").value = ""; document.getElementById("pm-sugg").hidden = true;
-  pmFigures(); pmThemes(); pmDraw();
+  if (PM) { pmFigures(); pmThemes(); pmDraw(); return; }
+  ["pm-figures", "pm-themes", "pm-legend"].forEach(id => document.getElementById(id).replaceChildren());
+  document.getElementById("pm-lede").textContent = "";
+  document.getElementById("pm-cards").replaceChildren(el("p", {class: "count"}, "No pathway map has been built for this area."));
 }
 const SELCOL = {sort: "--s1", treatment: "--s2", in_vivo: "--s3", immune_coculture: "--s4", genetic_interaction: "--s5", infection: "--s6", fitness_time: "--neutral", culture_condition: "--neutral"};
 const SELNAME = {sort: "reporter / FACS sort", treatment: "drug or treatment", in_vivo: "in vivo", immune_coculture: "immune co-culture", genetic_interaction: "genetic interaction", infection: "infection", fitness_time: "fitness", culture_condition: "culture"};
@@ -614,7 +629,7 @@ function pmFigures() {
   if (p.pair_test === "off") {
     const sh = p.shuffled || {};
     document.getElementById("pm-lede").textContent =
-      `A module is a set of genes whose proteins physically interact (STRING ≥ ${p.string_physical}) and that are hit together in the same screen, in at least ${p.min_papers} papers. With this few papers no single pair can pass a test of its own, so pairs are not tested one by one. As a check on the whole set, the same count on shuffled hits (each screen keeps its number of hits, genes shuffled; ${sh.runs} runs) gives about ${sh.mean} pairs (range ${sh.min}–${sh.max}), against ${fmt(p.pairs_replicated)} here: most pairs reflect shared biology, but no single pair is established on its own. ${removed} Genes hit in 3 or more papers are on the Corpus tab.`;
+      `A module is a set of genes whose proteins physically interact (STRING ≥ ${p.string_physical}) and that are hit together in the same screen, in at least ${p.min_papers} papers. With this few papers no single pair can pass a test of its own, so pairs are not tested one by one. As a check on the whole set, the same count on shuffled hits (each screen keeps its number of hits, genes shuffled; ${sh.runs} runs) gives about ${sh.mean} pairs (range ${sh.min}–${sh.max}), against ${fmt(p.pairs_replicated)} here: most pairs reflect shared biology, but no single pair is established on its own.${p.max_hit_fraction >= 1 ? " Too few screens pass the usual 10% cap on the share of genes called, so this map also uses screens that call more, which are noisier." : ""} ${removed} Genes hit in 3 or more papers are on the Corpus tab.`;
     return;
   }
   document.getElementById("pm-lede").textContent =
@@ -718,7 +733,7 @@ function pmDraw() {
       pmMini(m, mini); pmGrid(m, gridHost);
     });
   });
-  if (!box.children.length) box.append(el("p", {class: "count"}, "No theme selected."));
+  if (!box.children.length) box.append(el("p", {class: "count"}, PM.modules.length ? "Every module here is in a theme that is switched off; select a theme above." : "No module passes in this area's screens."));
   legend("pm-legend", [...new Set([...shownScreens].map(s => PM.screens[s].selection))].sort().map(k => [null, css(SELCOL[k] || "--neutral"), SELNAME[k] || k]));
 }
 
@@ -740,8 +755,8 @@ function pmInit() {
   if (!PM) return;
   pmFigures(); pmThemes();
   const inp2 = document.getElementById("pm-input"), su = document.getElementById("pm-sugg");
-  // rebuilt per keystroke: PM changes with the developmental filter
-  const pmItems = () => [
+  // rebuilt per keystroke: PM changes with the area filter
+  const pmItems = () => !PM ? [] : [
     ...PM.modules.flatMap((m, i) => [[modName(m), "module", () => pmGo(i)],
       ...m.genes.map(gn => [gn, `gene in ${modName(m)}`, () => pmGo(i)])]),
     ...PM.screens.map((s, i) => [scrName(s), `screen · ${s.gse}`, () => pmGoScreen(i), s.id + " " + (s.title || "")])];
@@ -764,7 +779,7 @@ function pmInit() {
 }
 
 /* ---------- boot ---------- */
-corpus();
+areaButtons(); corpus();
 const start = (location.hash || "#pathways").slice(1);
 drawGene(DATA.genes["JAK1|9606"] ? "JAK1|9606" : GKEYS[0]); inp.value = "JAK1";
 show(TABS.includes(start) ? start : "pathways");

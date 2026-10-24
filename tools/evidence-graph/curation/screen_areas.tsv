@@ -1,0 +1,153 @@
+# One top-level biology area per GEO series, by the question the screen asks.
+# Tumour cells screened for immune killing go to immunology; drug resistance,
+# synthetic lethality and tumour growth to cancer; library or method benchmarks to methods.
+gse	area	system
+GSE142350	development	mouse ESC X dosage and exit from pluripotency
+GSE159258	development	human neuronal cell fate, CRISPRa single factors
+GSE159270	development	human neuronal cell fate, CRISPRa sub-library
+GSE159278	development	human neuronal cell fate, CRISPRa with ASCL1
+GSE159318	development	human neuronal cell fate, CRISPRa with NGN3
+GSE160963	development	mouse ESC pluripotency (ZBTB11, ZFP131)
+GSE168585	development	human ESC to neural progenitor lineage commitment
+GSE212152	development	mouse ESC, heterochromatin establishment
+GSE229584	development	human intestinal organoids, enteroendocrine fate
+GSE236244	development	mouse iPSC reprogramming, pluripotency and X reactivation
+GSE262028	development	mouse innate lymphoid cell differentiation
+GSE273069	development	mouse ESC, X inactivation (Xist)
+GSE273070	development	mouse ESC exit from pluripotency, X inactivation (Xist)
+GSE288230	development	human erythroid differentiation
+GSE312143	development	mouse haematopoiesis in vivo
+GSE171674	immunology	Primary human CD4+ T cells (3 donors)
+GSE192827	immunology	Daudi-Cas9 Burkitt lymphoma cells
+GSE192828	immunology	Daudi-Cas9 Burkitt lymphoma cells
+GSE199603	immunology	Cas9 mouse haematopoietic progenitors transplanted in vivo
+GSE200085	immunology	hESC-derived SC-islet grafts in NSG-MHC-null mice
+GSE206832	immunology	Cas9 mouse bone-marrow-derived dendritic cells
+GSE213184	immunology	IL8-GFP THP-1 monocytic cells
+GSE216353	immunology	Cas9 THP-1-derived macrophages
+GSE225235	immunology	A375 melanoma cells
+GSE232340	immunology	Encephalitogenic Lewis rat CD4+ T-MBP cells
+GSE232543	immunology	Mouse bone-marrow dendritic cells (Cas9; Cd11c-Cre Cebpb fl/
+GSE241933	immunology	Primary human CD8+ T cells; dSaCas9-VP64 CRISPRa promoter-ti
+GSE242880	immunology	Primary human CD4+ T cells (3 donors)
+GSE246837	immunology	B16-Ova-Cas9 mouse melanoma co-cultured with OT-I T cells
+GSE251758	immunology	Primary OT-I/Cas9 mouse CD8 T cells
+GSE255515	immunology	E0771 cells
+GSE264535	immunology	HCT116
+GSE267517	immunology	ID8/GC mouse ovarian cancer cells
+GSE273299	immunology	Healthy-donor CART19-28z cells (3 donors)
+GSE275043	immunology	Jurkat T-ALL cells
+GSE277690	immunology	HCT-116-Cas9
+GSE287053	immunology	CT26 mouse colon cancer
+GSE288238	immunology	THP-1 IFNB1-GFP reporter clones
+GSE307513	immunology	NK-92 Cas9 cells
+GSE316985	immunology	MCF7 breast cancer cells
+GSE325129	immunology	PaTu8902 PDAC
+GSE327124	immunology	Primary human macrophages
+GSE169108	infection	PK-15-Cas9 porcine cells
+GSE169111	infection	PK-15-Cas9 porcine cells
+GSE177537	infection	HEK293T-hACE2 cells
+GSE177541	infection	Vero E6 cells
+GSE177543	infection	HEK293T-hACE2 cells
+GSE197962	infection	Calu-3 cells
+GSE206996	infection	ACE2-HEK293T cells
+GSE209750	infection	A549-ACE2 cells
+GSE223690	infection	HEK293T with a SARS-CoV-2 -1 PRF dual-fluorescence reporter
+GSE229545	infection	Toxoplasma RH tachyzoites
+GSE229547	infection	Toxoplasma RH tachyzoites
+GSE229548	infection	Toxoplasma RH tachyzoites
+GSE235620	infection	Bacteroides thetaiotaomicron VPI-5482
+GSE237122	infection	IGROV-1 ovarian carcinoma cells
+GSE240894	infection	Latently infected Jurkat T cells (J-Lat 10.6 and 5A8)
+GSE245526	infection	CEM-M7 CD4+ T cell line
+GSE253884	infection	Toxoplasma gondii RH
+GSE253885	infection	Toxoplasma gondii RH
+GSE268182	infection	SK-N-SH Cas9+ neuroblastoma
+GSE318876	infection	Primary human CD4+ T cells
+GSE159689	cancer	OCI-AML2 parental and JQ1-resistant cells
+GSE160403	cancer	Mouse MLL-AF9 leukemia cells (wild-type and Mir139-knockout)
+GSE162473	cancer	MOLM-13 AML cells
+GSE167481	cancer	SUM159PT triple-negative breast cancer cells (control vs CA9
+GSE179799	cancer	Bladder cancer cell lines (KU1919
+GSE183348	cancer	DLD1
+GSE192525	cancer	MCF7 breast cancer cells
+GSE203240	cancer	In vivo secondary knockout pool (211 guides
+GSE203455	cancer	BA/F3-MPL cells (empty vector or CALR del52)
+GSE203456	cancer	BA/F3-MPL cells (empty vector or CALR del52)
+GSE210422	cancer	A375 melanoma cells
+GSE211312	cancer	GM0847 cells with or without hTERT overexpression
+GSE215926	cancer	SEM (MLL-r B-ALL) cells
+GSE219136	cancer	Human Schwann cells (ipn02.3 2λ) NF2-WT and NF2-KO
+GSE220831	cancer	Two KP and two KPK (Keap1-null
+GSE221576	cancer	DND-41 T-ALL cells
+GSE223716	cancer	HT1080 HTelo-/HTelo+ (GFP-hTERT) and five other xenograft mo
+GSE226977	cancer	LNCaP prostate cancer
+GSE233401	cancer	KRAS-mutant A549-Cas9 lung cancer cells
+GSE236257	cancer	HT29 SOX9-mKate2 / KRT20-GFP dual reporter CRC cells; focuse
+GSE240110	cancer	Four KRAS-G12C NSCLC lines (H2030
+GSE240870	cancer	143B osteosarcoma cells
+GSE241070	cancer	Ishikawa endometrial cancer cells
+GSE243882	cancer	MCF-7 and HCC1395 breast cancer cells
+GSE244434	cancer	NALM-6 cells
+GSE246804	cancer	KRAS-G12C-mutant NSCLC lines (NCI-H23 analyzed)
+GSE253290	cancer	MCF-7
+GSE255579	cancer	eHAP iCas9 EXO1-knockout cells
+GSE255664	cancer	eHAP iCas9 wild-type and EXO1-knockout cells
+GSE260469	cancer	B16F10 melanoma
+GSE261338	cancer	MDS-L cells (Cas9)
+GSE263580	cancer	Engineered APC/TRP53-KO KRAS-mutant colorectal organoids
+GSE263581	cancer	Engineered APC/TRP53-KO KRAS-mutant colorectal organoids
+GSE263582	cancer	Engineered APC/TRP53-KO KRAS-mutant colorectal organoids
+GSE268342	cancer	U87 dCas9-KRAB glioblastoma cells
+GSE268533	cancer	CAL27 HNSCC
+GSE270368	cancer	GSI-resistant MB157R TNBC cells
+GSE275314	cancer	NCI-H358 parental (DMSO) and sotorasib-resistant H358-AMGR c
+GSE284239	cancer	BRCA1-mutant UWB1.289 and MDA-MB-436 (DDR library); COV362 a
+GSE287048	cancer	HCC1806 and MIA PaCa-2
+GSE289756	cancer	Five pancreatic cancer lines (BXPC-3
+GSE290358	cancer	RLT-PSC pancreatic stellate (CAF-like) cells
+GSE291338	cancer	OCI-AML2 AML cells
+GSE293842	cancer	BON-1 pancreatic NET
+GSE294894	cancer	RKO and SW620 colorectal cancer
+GSE299588	cancer	BT935 patient-derived glioblastoma cells
+GSE302546	cancer	LIU-LSC-1 HNSCC cells
+GSE306142	cancer	Group 3 medulloblastoma cells
+GSE316868	cancer	HK-2 renal epithelial cells with inducible PRCC-TFE3
+GSE318501	cancer	A375 melanoma
+GSE328107	cancer	PaTu-8988T PDAC
+GSE333513	cancer	OSC20 oral squamous cell carcinoma
+GSE163024	physiology	N/TERT keratinocytes with a COL7A1-tdTomato reporter
+GSE217131	physiology	H9 hPSC-derived dopamine neurons
+GSE217789	physiology	GFP-RBM3 reporter human iPSC-derived i-neurons (2 Cas9 clone
+GSE225878	physiology	Mouse growth-plate-like chondrocytes (GPLC)
+GSE245845	physiology	MIN6 mouse beta cells
+GSE276161	physiology	iPSC-derived cardiomyocytes
+GSE280666	physiology	Adipose-derived bovine MSCs (Cas9)
+GSE280676	physiology	Adipose-derived bovine mesenchymal stem cells (Cas9)
+GSE138776	cell_biology	HeLa
+GSE145615	cell_biology	Mouse ESCs with IAPEz-ERV blasticidin reporter
+GSE146841	cell_biology	HT29 cells with endogenous XBP1s-GFP reporter
+GSE211073	cell_biology	MV4-11/MOLM AML
+GSE222104	cell_biology	293T ER-GFP-K20 reporter cells
+GSE226447	cell_biology	HAP1 cells
+GSE230735	cell_biology	293T cells with cBioITA itaconate biosensor
+GSE232856	cell_biology	BJ-HRAS(G12V)-dCas9-KRAB fibroblasts
+GSE237953	cell_biology	A549 lung cancer cells treated with hydrocortisone
+GSE241682	cell_biology	HEK293 EIciGFP reporter lines (P-In/EIciPAIP2
+GSE243760	cell_biology	CRISPRi of promoters and putative mechanoenhancers
+GSE243761	cell_biology	CRISPRi tiling of DNase-hypersensitive sites around MYH9
+GSE252651	cell_biology	HeLa HIF-ODD-GFP (HRE) reporter cells
+GSE266057	cell_biology	Jurkat CRISPRi (hCRISPRi-v2) with RORC 3' UTR switch GFP rep
+GSE277987	cell_biology	RKO cells with the Kinprola PKA activity recorder
+GSE282260	cell_biology	HT-29 Cas9 cells
+GSE290153	cell_biology	eHAP-iCas9 cells
+GSE291529	cell_biology	HepG2/C3A liver cells
+GSE298081	cell_biology	HAP1
+GSE298082	cell_biology	HAP1
+GSE328470	cell_biology	MelJuSo YFP-CL1 degradation reporter cells
+GSE222531	methods	K562 dCas9-KRAB
+GSE223086	methods	K562 cells
+GSE238225	methods	TF-1 erythroleukemia (ZIM3-Cas9)
+GSE278336	methods	A549
+GSE302335	methods	Genome-wide CRISPRi
+GSE328830	methods	A549 lung xenografts
