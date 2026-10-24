@@ -22,11 +22,12 @@ n=$(ls "$root/reanalyses" | wc -l | tr -d ' ')
 papers=$(cat "$root"/reanalyses/*/meta.json | grep -o '"pmid": *"[0-9]*"' | sort -u | wc -l | tr -d ' ')
 
 mkdir -p build/dev reports/development viz/development
+ln -sfn "$(pwd)/build/reference" build/dev/reference
 uv run python -m barcs_kg.ingest "$root" build/dev/barcs_kg.sqlite
 uv run python -m barcs_kg.annotate build/dev/barcs_kg.sqlite
 uv run python -m barcs_kg.string_db build/dev/barcs_kg.sqlite build/string_v12.5
-uv run python -m barcs_kg.analyses build/dev/barcs_kg.sqlite reports/development > /dev/null
-PATHWAYS_PAIR_TEST=off uv run python -m barcs_kg.pathways build/dev/barcs_kg.sqlite reports/development build/string_v12.5 viz/development/pathways.json > /dev/null
+EVIDENCE_MIN_TESTED=0 EVIDENCE_MAX_HIT_FRACTION=1 uv run python -m barcs_kg.analyses build/dev/barcs_kg.sqlite reports/development > /dev/null
+EVIDENCE_MIN_TESTED=0 EVIDENCE_MAX_HIT_FRACTION=1 PATHWAYS_PAIR_TEST=off uv run python -m barcs_kg.pathways build/dev/barcs_kg.sqlite reports/development build/string_v12.5 viz/development/pathways.json > /dev/null
 
 # Same page as the main explorer, with its own introduction.
 sed -e "s#<h1>BARCS evidence graph</h1>#<h1>BARCS evidence graph: developmental biology</h1>#" \

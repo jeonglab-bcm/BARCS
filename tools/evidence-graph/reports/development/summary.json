@@ -13,7 +13,7 @@
   "hit_load": {
     "contrasts_calling_over_10pct": 12,
     "their_share_of_all_hits": 0.905,
-    "eligible_contrasts": 20
+    "eligible_contrasts": 33
   },
   "claims": {
     "claims": 237,
@@ -45,20 +45,20 @@
   },
   "essential_reference": {
     "9606": {
-      "proteins": 0,
+      "proteins": 681,
       "fitness_papers": 2
     },
     "10090": {
-      "proteins": 0,
+      "proteins": 647,
       "fitness_papers": null
     },
     "sources": {
       "internal_9606": 0,
-      "cegv2_mapped": 0
+      "cegv2_mapped": 681
     }
   },
   "fitness_confound": {
-    "contrasts_tested": 0,
+    "contrasts_tested": 27,
     "flagged_q05_and_25pct_hits_essential": 0,
     "flagged_examples": []
   },
@@ -71,13 +71,13 @@
   },
   "recurrence": {
     "9606": {
-      "papers": 2,
-      "proteins_hit_in_3plus_papers": 0,
+      "papers": 3,
+      "proteins_hit_in_3plus_papers": 1,
       "beyond_paper_hit_rates_q05": 0
     },
     "10090": {
-      "papers": 5,
-      "proteins_hit_in_3plus_papers": 0,
+      "papers": 6,
+      "proteins_hit_in_3plus_papers": 1,
       "beyond_paper_hit_rates_q05": 0
     }
   },
@@ -86,24 +86,24 @@
     "10090": 0
   },
   "convergence": {
-    "pairs_tested": 1,
+    "pairs_tested": 8,
     "pairs_q05": 0,
     "cross_selection_class_pairs_q05": 0
   },
   "coherence": {
     "contrasts_tested": 30,
-    "q05": 6,
-    "eligible_nonfitness_z_without_essentials_above_3": 3,
-    "eligible_nonfitness_tested": 17,
+    "q05": 9,
+    "eligible_nonfitness_z_without_essentials_above_3": 6,
+    "eligible_nonfitness_tested": 28,
     "modules_3plus": 60
   },
   "unreported": {
     "contrasts_with_named_genes": 23,
     "unreported_strict_hits": 4802,
-    "unreported_strict_hits_in_eligible_contrasts": 296,
-    "unreported_top10_in_eligible_contrasts": 58,
-    "priority_leads": 37,
-    "priority_contrasts": 7
+    "unreported_strict_hits_in_eligible_contrasts": 4802,
+    "unreported_top10_in_eligible_contrasts": 140,
+    "priority_leads": 127,
+    "priority_contrasts": 18
   },
   "data_gaps": {
     "contrasts": 34,
