@@ -67,6 +67,8 @@ table.pmgrid td.scr { white-space: nowrap; }
 table.pmgrid td.scr i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
 table.pmgrid th.g { font-family: var(--font-mono); font-size: 11px; text-align: center; padding: 4px 3px; }
 table.pmgrid td.g { text-align: center; padding: 4px 3px; font-size: 12px; }
+table.pmgrid td.base { text-align: right; padding: 4px 8px 4px 3px; font: 11px var(--font-mono); color: var(--muted); white-space: nowrap; }
+table.pmgrid td.base.off { font-weight: 600; }
 tr.hl { background: var(--wash); box-shadow: inset 3px 0 0 var(--s1); }
 .card p.note { color: var(--ink-2); margin: 0; font-size: 13px; max-width: 80ch; }
 svg { display: block; width: 100%; height: auto; overflow: visible; }
@@ -168,7 +170,7 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
   <section id="view-pathways" role="tabpanel" aria-labelledby="tab-pathways">
     <div class="figures" id="pm-figures"></div>
     <p class="lede" id="pm-lede"></p>
-    <p class="lede" style="margin-top:6px">Each card is one module. The small network shows which of its genes interact and how many papers hit each pair together. The grid lists every screen that hits the module, with <span style="color:var(--s1)">▲</span> where guides were enriched and <span style="color:var(--s2)">▼</span> where they were depleted, in the contrast as oriented; what that means for the phenotype is not curated yet. Hover a screen to find it in other cards, click it to open its network.</p>
+    <p class="lede" style="margin-top:6px">Each card is one module. The small network shows which of its genes interact and how many papers hit each pair together. The grid lists every screen that hits the module, with <span style="color:var(--s1)">▲</span> where guides were enriched and <span style="color:var(--s2)">▼</span> where they were depleted, in the contrast as oriented; what that means for the phenotype is not curated yet. The baseline column is the screen's median gene estimate: ≈ 0 when the screen is centred, or a signed value when its genes are shifted as a whole (more than one median absolute deviation from 0). For a shifted screen, read each arrow against that value: with a baseline of +6.7, a ▲ at +0.9 is below most genes. Hover a screen to find it in other cards, click it to open its network.</p>
     <div class="controls" style="margin-top:14px">
       <div class="search">
         <input type="search" id="pm-input" placeholder="Find a gene, pathway or screen, e.g. JAK1, COMMD, NK cells" autocomplete="off" aria-label="Find a gene, pathway or screen" aria-autocomplete="list" aria-controls="pm-sugg">
@@ -246,6 +248,7 @@ const AREAS = {cancer: "Cancer", immunology: "Immunology", infection: "Infection
   cell_biology: "Cell biology & gene regulation", physiology: "Tissue physiology & disease", methods: "Methods & benchmarks"};
 let area = null;
 const areaPass = c => !area || c.area === area;
+const CBY = new Map(C.map(c => [c.id, c]));
 const ORG = {9606: "human", 10090: "mouse", 10116: "rat", 9913: "cattle", 5811: "Toxoplasma", 226186: "Bacteroides"};
 const FIT = new Set(DATA.fitness), FREQ = new Set(DATA.frequent);
 const fmt = d3.format(","), pct = d3.format(".0%");
@@ -671,7 +674,7 @@ function pmMini(m, host) {
 
 function pmGrid(m, host) {
   const t = el("table", {class: "pmgrid"}), hr = el("tr");
-  hr.append(el("th", {}, "screen"));
+  hr.append(el("th", {}, "screen"), el("th", {class: "g", title: "the screen's median gene estimate"}, "baseline"));
   m.genes.forEach(gn => hr.append(el("th", {class: "g"}, gn)));
   const th = el("thead"); th.append(hr); t.append(th);
   const tb = el("tbody");
@@ -679,14 +682,22 @@ function pmGrid(m, host) {
     const s = PM.screens[l.s], row = el("tr", {class: "click", tabindex: "0", "data-s": String(l.s)});
     const name = el("td", {class: "scr"});
     name.append(el("i", {style: `background:${css(SELCOL[s.selection] || "--neutral")}`}), document.createTextNode(scrName(s)));
-    row.append(name);
+    const c = CBY.get(s.id) || {}, off = c.base_off && c.base != null;
+    const base = el("td", {class: "base" + (off ? " off" : "")}, off ? (c.base > 0 ? "+" : "") + c.base : "≈ 0");
+    if (off) base.style.color = css(c.base > 0 ? "--s1" : "--s2");
+    base.addEventListener("pointermove", ev => showTip(ev, `baseline ${c.base == null ? "unknown" : (c.base > 0 ? "+" : "") + c.base}`, off
+      ? [`Most genes in this screen are ${c.base > 0 ? "above" : "below"} 0 (median estimate ${c.base}), so ▲/▼ against 0 overstate ${c.base > 0 ? "enrichment" : "depletion"}.`, `Read each estimate against ${c.base}.`]
+      : ["The screen's median gene estimate is close to 0, so ▲/▼ read as enriched/depleted relative to most genes."]));
+    base.addEventListener("pointerleave", hideTip);
+    row.append(name, base);
     const by = new Map(l.genes.map(([gi, est, fdr]) => [gi, [est, fdr]]));
     m.genes.forEach((gn, gi) => {
       const v = by.get(gi), td = el("td", {class: "g"});
       if (v) {
         const up = v[0] > 0;
         td.append(el("span", {style: `color:${css(up ? "--s1" : "--s2")}`}, up ? "▲" : "▼"));
-        td.addEventListener("pointermove", ev => showTip(ev, `${gn} · ${scrName(s)}`, [`${up ? "enriched" : "depleted"}: estimate ${v[0]}, FDR ${fdrf(v[1])}`, s.orientation || "orientation not determined"]));
+        td.addEventListener("pointermove", ev => showTip(ev, `${gn} · ${scrName(s)}`, [`${up ? "enriched" : "depleted"}: estimate ${v[0]}, FDR ${fdrf(v[1])}`,
+          ...(off ? [`screen baseline ${c.base}: ${v[0] > c.base ? "above" : "below"} most genes in this screen`] : []), s.orientation || "orientation not determined"]));
         td.addEventListener("pointerleave", hideTip);
       }
       row.append(td);
