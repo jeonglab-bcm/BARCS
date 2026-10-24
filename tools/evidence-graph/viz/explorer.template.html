@@ -305,7 +305,7 @@ TABS.forEach(t => document.getElementById("tab-" + t).addEventListener("click", 
 document.getElementById("dev-filter").addEventListener("change", function() {
   devFilter = this.checked;
   document.getElementById("qc").replaceChildren(); document.getElementById("claims").replaceChildren(); document.getElementById("rec").replaceChildren();
-  corpus(); fillNetSelect(); if (netDrawn) drawNet();
+  corpus(); fillNetSelect(); if (netDrawn) drawNet(); pmSwitch();
 });
 
 /* ---------- corpus ---------- */
@@ -574,8 +574,17 @@ function drawGene(key) {
 }
 
 /* ---------- pathway map ---------- */
-const PM = /*__PATH__*/null;
+// The developmental map is rebuilt on those screens alone (own fitness genes,
+// own pair counts), not the full map with other screens hidden.
+const PM_ALL = /*__PATH__*/null, PM_DEV = /*__PATH_DEV__*/null;
+let PM = PM_ALL;
 let pmDrawn = false;
+function pmSwitch() {
+  PM = devFilter && PM_DEV ? PM_DEV : PM_ALL;
+  if (!pmDrawn || !PM) return;
+  document.getElementById("pm-input").value = ""; document.getElementById("pm-sugg").hidden = true;
+  pmFigures(); pmThemes(); pmDraw();
+}
 const SELCOL = {sort: "--s1", treatment: "--s2", in_vivo: "--s3", immune_coculture: "--s4", genetic_interaction: "--s5", infection: "--s6", fitness_time: "--neutral", culture_condition: "--neutral"};
 const SELNAME = {sort: "reporter / FACS sort", treatment: "drug or treatment", in_vivo: "in vivo", immune_coculture: "immune co-culture", genetic_interaction: "genetic interaction", infection: "infection", fitness_time: "fitness", culture_condition: "culture"};
 const THEMES = ["immune signalling", "signalling", "membrane & trafficking", "DNA & RNA", "transcription machinery", "mitochondria", "other"];
@@ -731,7 +740,8 @@ function pmInit() {
   if (!PM) return;
   pmFigures(); pmThemes();
   const inp2 = document.getElementById("pm-input"), su = document.getElementById("pm-sugg");
-  const items = [
+  // rebuilt per keystroke: PM changes with the developmental filter
+  const pmItems = () => [
     ...PM.modules.flatMap((m, i) => [[modName(m), "module", () => pmGo(i)],
       ...m.genes.map(gn => [gn, `gene in ${modName(m)}`, () => pmGo(i)])]),
     ...PM.screens.map((s, i) => [scrName(s), `screen · ${s.gse}`, () => pmGoScreen(i), s.id + " " + (s.title || "")])];
@@ -739,7 +749,7 @@ function pmInit() {
   inp2.addEventListener("input", () => {
     const q = inp2.value.trim().toUpperCase(); ix = -1;
     if (!q) { su.hidden = true; return; }
-    cur = items.filter(([a, , , extra]) => (a + " " + (extra || "")).toUpperCase().includes(q)).sort((a, b) => (b[0].toUpperCase().startsWith(q)) - (a[0].toUpperCase().startsWith(q))).slice(0, 12);
+    cur = pmItems().filter(([a, , , extra]) => (a + " " + (extra || "")).toUpperCase().includes(q)).sort((a, b) => (b[0].toUpperCase().startsWith(q)) - (a[0].toUpperCase().startsWith(q))).slice(0, 12);
     su.replaceChildren(...cur.map(([a, kind, go]) => { const li = el("li", {role: "option"}); li.append(document.createTextNode(a), el("span", {}, kind)); li.addEventListener("mousedown", ev => { ev.preventDefault(); su.hidden = true; go(); }); return li; }));
     su.hidden = !cur.length;
   });

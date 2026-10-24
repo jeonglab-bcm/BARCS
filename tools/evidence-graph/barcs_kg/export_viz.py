@@ -157,9 +157,13 @@ def run(db, reports, outdir):
     blob = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     path_path = outdir / "pathways.json"
     pathways = path_path.read_text().replace("</", "<\\/") if path_path.exists() else "null"
+    # Pathway map rebuilt on the developmental screens alone (build_dev.sh), shown by the filter.
+    dev_path = outdir / "pathways_dev.json"
+    pathways_dev = dev_path.read_text().replace("</", "<\\/") if dev_path.exists() else "null"
     template = (outdir / "explorer.template.html").read_text()
     (outdir / "explorer.html").write_text(
-        template.replace("/*__DATA__*/null", blob).replace("/*__PATH__*/null", pathways))
+        template.replace("/*__DATA__*/null", blob).replace("/*__PATH__*/null", pathways)
+        .replace("/*__PATH_DEV__*/null", pathways_dev))
     return {"bytes": len(blob) + len(pathways), "contrasts": len(contrasts), "nets": len(nets),
             "genes": len(genes), "pathways": pathways != "null"}
 
