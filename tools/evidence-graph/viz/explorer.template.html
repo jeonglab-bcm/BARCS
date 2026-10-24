@@ -163,6 +163,9 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
     <button role="tab" id="tab-network" aria-controls="view-network">Screen network</button>
     <button role="tab" id="tab-gene" aria-controls="view-gene">Gene across screens</button>
   </nav>
+  <div class="controls" id="global-filters" style="margin-top:-8px; margin-bottom:4px;">
+    <label style="font-size:12px; gap:4px;"><input type="checkbox" id="dev-filter"> Show only developmental biology screens <span style="color:var(--muted)">(15 screens from 9 papers)</span></label>
+  </div>
 
   <section id="view-pathways" role="tabpanel" aria-labelledby="tab-pathways">
     <div class="figures" id="pm-figures"></div>
@@ -240,6 +243,9 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
 <script>
 const DATA = /*__DATA__*/null;
 const C = DATA.contrasts;
+const DEV_IDS = new Set(C.filter(c => c.dev).map(c => c.id));
+let devFilter = false;
+const devPass = c => !devFilter || c.dev;
 const ORG = {9606: "human", 10090: "mouse", 10116: "rat", 9913: "cattle", 5811: "Toxoplasma", 226186: "Bacteroides"};
 const FIT = new Set(DATA.fitness), FREQ = new Set(DATA.frequent);
 const fmt = d3.format(","), pct = d3.format(".0%");
@@ -295,25 +301,38 @@ function show(tab) {
 }
 TABS.forEach(t => document.getElementById("tab-" + t).addEventListener("click", () => show(t)));
 
+/* ---------- developmental biology filter ---------- */
+document.getElementById("dev-filter").addEventListener("change", function() {
+  devFilter = this.checked;
+  document.getElementById("qc").replaceChildren(); document.getElementById("claims").replaceChildren(); document.getElementById("rec").replaceChildren();
+  corpus(); fillNetSelect(); if (netDrawn) drawNet();
+});
+
 /* ---------- corpus ---------- */
 function corpus() {
   const s = DATA.meta.summary;
   document.getElementById("prov").textContent = `BARCS ${DATA.meta.commit} · STRING v${DATA.meta.string} · FDR < 0.10`;
-  const figs = [
-    [fmt(s.inventory.result), "gene-level results"],
-    [fmt(s.inventory.hits_fdr10), "calls at FDR < 0.10"],
-    [String(s.hit_load.contrasts_calling_over_10pct), `contrasts hold ${pct(s.hit_load.their_share_of_all_hits)} of calls`],
-    [String(s.hit_load.eligible_contrasts), "eligible contrasts"],
-    [String(s.unreported.priority_leads), "leads the papers did not name"],
-  ];
-  document.getElementById("figures").replaceChildren(...figs.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  if (devFilter) {
+    const fc = C.filter(devPass), ne = fc.filter(c => c.eligible).length;
+    const figs = [[String(fc.length), "contrasts (developmental)"], [String(ne), "eligible contrasts"], [String(new Set(fc.map(c => c.pmid)).size), "papers"]];
+    document.getElementById("figures").replaceChildren(...figs.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  } else {
+    const figs = [
+      [fmt(s.inventory.result), "gene-level results"],
+      [fmt(s.inventory.hits_fdr10), "calls at FDR < 0.10"],
+      [String(s.hit_load.contrasts_calling_over_10pct), `contrasts hold ${pct(s.hit_load.their_share_of_all_hits)} of calls`],
+      [String(s.hit_load.eligible_contrasts), "eligible contrasts"],
+      [String(s.unreported.priority_leads), "leads the papers did not name"],
+    ];
+    document.getElementById("figures").replaceChildren(...figs.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  }
   qcChart(); claimsChart(); recChart();
 }
 
 function qcCategory(c) { return c.tested < 1000 ? "small" : c.hits / c.tested > 0.10 ? "flood" : "ok"; }
 function qcChart() {
   const W = 960, H = 340, m = {l: 52, r: 16, t: 10, b: 40};
-  const pts = C.filter(c => c.tested && c.hits != null);
+  const pts = C.filter(c => c.tested && c.hits != null && devPass(c));
   const x = d3.scaleLog().domain([10, 30000]).range([m.l, W - m.r]);
   const y = d3.scaleSymlog().constant(0.5).domain([0, 100]).range([H - m.b, m.t]);
   const col = {ok: "var(--s1)", flood: "var(--s2)", small: "var(--s3)"};
@@ -397,17 +416,21 @@ function recChart() {
 /* ---------- network ---------- */
 let netIdx = String(C.findIndex(c => c.id === "GSE212152:establishment_GFP_vs_unsorted")), netDrawn = false;
 const sel = document.getElementById("net-select");
-(function fillSelect() {
+function fillNetSelect() {
+  const prev = sel.value;
+  sel.replaceChildren();
   const groups = [["Eligible contrasts", c => c.eligible], ["Other contrasts", c => !c.eligible]];
   groups.forEach(([label, f]) => {
     const og = el("optgroup", {label});
-    C.forEach((c, i) => { if (DATA.nets[i] && f(c)) og.append(el("option", {value: String(i)}, `${c.id}  ·  ${c.selection || ""}`)); });
-    sel.append(og);
+    C.forEach((c, i) => { if (DATA.nets[i] && f(c) && devPass(c)) og.append(el("option", {value: String(i)}, `${c.id}  ·  ${c.selection || ""}`)); });
+    if (og.children.length) sel.append(og);
   });
-  sel.value = netIdx;
-  sel.addEventListener("change", () => { netIdx = sel.value; drawNet(); });
-  document.getElementById("net-iso").addEventListener("change", drawNet);
-})();
+  if (sel.querySelector(`option[value="${prev}"]`)) sel.value = prev;
+  else if (sel.options.length) { sel.selectedIndex = 0; netIdx = sel.value; }
+}
+fillNetSelect();
+sel.addEventListener("change", () => { netIdx = sel.value; drawNet(); });
+document.getElementById("net-iso").addEventListener("change", drawNet);
 function openNet(cid) {
   const i = C.findIndex(c => c.id === cid);
   if (!DATA.nets[i]) { showTip({clientX: innerWidth / 2, clientY: 120}, cid, ["No network: fewer than 5 calls, or no STRING join for this organism."]); setTimeout(hideTip, 2200); return; }
@@ -514,7 +537,8 @@ function openGene(key) {
 function drawGene(key) {
   const [g, t] = key.split("|"), d = DATA.genes[key];
   const card = document.getElementById("gene-card"); card.replaceChildren();
-  const calls = d.c.map(([ci, est, fdr]) => ({c: C[ci], est, fdr})).sort((a, b) => a.fdr - b.fdr);
+  const calls = d.c.map(([ci, est, fdr]) => ({c: C[ci], est, fdr})).filter(x => devPass(x.c)).sort((a, b) => a.fdr - b.fdr);
+  if (!calls.length) { card.append(el("h2", {}, `${g} · ${ORG[t] || t}`)); card.append(el("p", {class: "note"}, "Not called in any developmental biology screen.")); return; }
   const papers = new Set(calls.map(x => x.c.pmid)), elig = calls.filter(x => x.c.eligible);
   card.append(el("h2", {}, `${g} · ${ORG[t] || t}`));
   card.append(el("p", {class: "note"}, `Called in ${calls.length} of ${d.t} primary contrasts that test it, from ${papers.size} paper${papers.size === 1 ? "" : "s"}; ${elig.length} of those calls are in eligible contrasts.`));

@@ -40,9 +40,8 @@ jobs:
       # so the page is built locally (tools/evidence-graph/build.sh) and committed.
       - name: Add the evidence graph
         run: |
-          mkdir -p _site/evidence-graph/development
+          mkdir -p _site/evidence-graph
           cp tools/evidence-graph/viz/explorer.html _site/evidence-graph/index.html
-          cp tools/evidence-graph/viz/development/explorer.html _site/evidence-graph/development/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
