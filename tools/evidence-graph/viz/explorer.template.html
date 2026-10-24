@@ -573,8 +573,17 @@ function pmFigures() {
   const p = PM.params;
   const f = [[String(PM.modules.length), "pathway modules"], [String(PM.screens.length), "screens linked"],
     [String(new Set(PM.screens.map(s => s.pmid)).size), "papers"],
-    [`${fmt(p.pairs_replicated)} of ${fmt(p.pairs_tested)}`, "STRING gene pairs hit together beyond chance"]];
+    p.pair_test === "off"
+      ? [fmt(p.pairs_replicated), `STRING gene pairs hit together in ${p.min_papers}+ papers`]
+      : [`${fmt(p.pairs_replicated)} of ${fmt(p.pairs_tested)}`, "STRING gene pairs hit together beyond chance"]];
   document.getElementById("pm-figures").replaceChildren(...f.map(([v, l]) => { const d = el("div", {class: "fig"}); d.append(el("b", {}, v), el("span", {}, l)); return d; }));
+  const removed = `Growth genes (${fmt(p.fitness_genes)}), the rest of each essential machine (${fmt(p.machinery_genes)}) and frequent hitters (${p.frequent_hitters}) are removed first, so a module cannot come from proliferation alone.`;
+  if (p.pair_test === "off") {
+    const sh = p.shuffled || {};
+    document.getElementById("pm-lede").textContent =
+      `A module is a set of genes whose proteins physically interact (STRING ≥ ${p.string_physical}) and that are hit together in the same screen, in at least ${p.min_papers} papers. With this few papers no single pair can pass a test of its own, so pairs are not tested one by one. As a check on the whole set, the same count on shuffled hits (each screen keeps its number of hits, genes shuffled; ${sh.runs} runs) gives about ${sh.mean} pairs (range ${sh.min}–${sh.max}), against ${fmt(p.pairs_replicated)} here: most pairs reflect shared biology, but no single pair is established on its own. ${removed} Genes hit in 3 or more papers are on the Corpus tab.`;
+    return;
+  }
   document.getElementById("pm-lede").textContent =
     `A module is a set of genes whose proteins physically interact (STRING ≥ ${p.string_physical}) and that are hit together in the same screen, in at least ${p.min_papers} papers and more often than each paper's hit rate predicts (q < ${p.q_cut}). Growth genes (${fmt(p.fitness_genes)}), the rest of each essential machine (${fmt(p.machinery_genes)}) and frequent hitters (${p.frequent_hitters}) are removed first, so a module cannot come from proliferation alone. When the screens ask different questions, a module is a shared mechanism; when they ask the same one, it is a replication.`;
 }

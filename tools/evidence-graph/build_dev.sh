@@ -2,6 +2,8 @@
 # Build the developmental-biology evidence graph: the same pipeline as
 # build.sh, restricted to the screens listed in curation/developmental_screens.tsv.
 #   tools/evidence-graph/build_dev.sh   (run build.sh once first for the STRING files)
+# The pathway map keeps pairs co-hit in 2+ papers without the per-pair test
+# (too few papers for it) and reports a shuffled-hit control instead.
 # Writes reports/development/ and viz/development/explorer.html; the site
 # workflow publishes the page at evidence-graph/development/.
 set -e
@@ -24,7 +26,7 @@ uv run python -m barcs_kg.ingest "$root" build/dev/barcs_kg.sqlite
 uv run python -m barcs_kg.annotate build/dev/barcs_kg.sqlite
 uv run python -m barcs_kg.string_db build/dev/barcs_kg.sqlite build/string_v12.5
 uv run python -m barcs_kg.analyses build/dev/barcs_kg.sqlite reports/development > /dev/null
-uv run python -m barcs_kg.pathways build/dev/barcs_kg.sqlite reports/development build/string_v12.5 viz/development/pathways.json > /dev/null
+PATHWAYS_PAIR_TEST=off uv run python -m barcs_kg.pathways build/dev/barcs_kg.sqlite reports/development build/string_v12.5 viz/development/pathways.json > /dev/null
 
 # Same page as the main explorer, with its own introduction.
 sed -e "s#<h1>BARCS evidence graph</h1>#<h1>BARCS evidence graph: developmental biology</h1>#" \
