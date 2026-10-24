@@ -40,7 +40,8 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import hypergeom, poisson
 
-from barcs_kg.analyses import HIT_FDR, PHYS_HIGH, Graph, essential_reference
+from barcs_kg.analyses import (ELIGIBLE_MAX_HIT_FRACTION, ELIGIBLE_MIN_TESTED, HIT_FDR, PHYS_HIGH,
+                               Graph, essential_reference)
 
 MIN_PAPERS = 2
 # PATHWAYS_PAIR_TEST=off keeps pairs co-hit in MIN_PAPERS papers without the
@@ -271,7 +272,8 @@ def run(db, reports, string_dir, out):
                        "frequent_hitters": len(frequent), "machinery_genes": len(machinery - fitness),
                        "screens_tested": len(cids), "papers": len(pmids),
                        "pairs_tested": int(testable.sum()), "pairs_replicated": int(keep.sum()),
-                       "pair_test": "on" if PAIR_TEST else "off", "shuffled": shuffled}}
+                       "pair_test": "on" if PAIR_TEST else "off", "shuffled": shuffled,
+                       "min_tested": ELIGIBLE_MIN_TESTED, "max_hit_fraction": ELIGIBLE_MAX_HIT_FRACTION}}
     with open(out, "w") as fh:
         json.dump(data, fh, separators=(",", ":"))
     return data
