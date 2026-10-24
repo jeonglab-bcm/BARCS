@@ -41,19 +41,32 @@ def run(db, reports, outdir):
     for r in tsv(reports / "claim_audit.tsv"):
         claims[r["contrast_id"]].add(r["gene"].upper())
 
+    dev_tsv = Path(__file__).resolve().parent.parent / "curation" / "developmental_screens.tsv"
+    dev_gses = set()
+    if dev_tsv.exists():
+        with open(dev_tsv) as fh:
+            next(fh)
+            for line in fh:
+                gse = line.split("\t")[0].strip()
+                if gse:
+                    dev_gses.add(gse)
+
     order = sorted(g.contrast)
     index = {cid: i for i, cid in enumerate(order)}
     contrasts = []
     for cid in order:
         c = g.contrast[cid]
         title, pmid, doi, orient, organism = meta[cid]
-        contrasts.append({
+        entry = {
             "id": cid, "title": title, "pmid": pmid, "doi": doi, "orientation": orient,
             "organism": organism, "taxon": c["taxon"], "modality": c["modality"],
             "selection": c["selection"], "df": c["df"], "controls": c["controls"],
             "tested": c["genes"], "hits": c["n_hits"], "eligible": c["eligible"],
             "primary": c["primary"], "flags": [f for f in flags.get(cid, "").split(",") if f],
-            "named": len(claims[cid])})
+            "named": len(claims[cid])}
+        if cid.split(":")[0] in dev_gses:
+            entry["dev"] = 1
+        contrasts.append(entry)
 
     claim_df = defaultdict(Counter)
     for r in tsv(reports / "claim_audit.tsv"):
