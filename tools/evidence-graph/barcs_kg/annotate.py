@@ -177,8 +177,9 @@ def run(db):
             selection, sbasis = fix["selection_class"], "manual override"
         scope = ("genome_wide" if (genes or 0) >= 15000
                  else "focused" if genes else None)
-        con.execute("INSERT INTO contrast_annotation VALUES (?,?,?,?,?,?,?,?,?)",
-                    (cid, modality, mbasis, selection, sbasis, scope, None, None, None))
+        con.execute("""INSERT INTO contrast_annotation (contrast_id, modality, modality_basis,
+                       selection_class, selection_basis, library_scope) VALUES (?,?,?,?,?,?)""",
+                    (cid, modality, mbasis, selection, sbasis, scope))
 
     elements = con.execute(
         "SELECT gse, gene FROM series_element UNION SELECT gse, gene FROM claim").fetchall()
