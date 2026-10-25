@@ -10,6 +10,8 @@ import csv
 import json
 import sqlite3
 import sys
+
+import numpy as np
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -48,6 +50,27 @@ def run(db, reports, outdir):
                 if l and not l.startswith("#")]
         areas = {r[0]: r[1] for r in rows[1:]}
 
+    # Baseline: the median gene estimate of each contrast. Arrows on the page are the
+    # sign of the estimate against 0, so a contrast whose genes are shifted as a whole
+    # (median more than one MAD from 0) is flagged and its baseline shown.
+    est = defaultdict(list)
+    for cid, e in con.execute("SELECT contrast_id, estimate FROM result WHERE estimate IS NOT NULL"):
+        est[cid].append(e)
+    baseline = {}
+    for cid, v in est.items():
+        v = np.asarray(v); med = float(np.median(v)); mad = 1.4826 * float(np.median(np.abs(v - med)))
+        baseline[cid] = (round(med, 2), int(abs(med) > mad))
+
+    # What a positive estimate compares: guides more abundant in level `pos` than in the
+    # reference (baseline) level `ref`. An interaction term has no single reference.
+    levels = {}
+    for cid, t, r, term in con.execute("SELECT contrast_id, treatment_level, reference_level, term FROM contrast"):
+        levels[cid] = (t, r) if r is not None else (term.replace(":", " × "), "interaction")
+
+    # Curated meaning of each sign for the perturbed gene (curation/contrast_readout.tsv).
+    meaning = {r[0]: r[1:] for r in con.execute("""SELECT contrast_id, readout, positive_estimate_means,
+        negative_estimate_means, interest FROM contrast_annotation WHERE positive_estimate_means IS NOT NULL""")}
+
     order = sorted(g.contrast)
     index = {cid: i for i, cid in enumerate(order)}
     contrasts = []
@@ -63,6 +86,12 @@ def run(db, reports, outdir):
             "named": len(claims[cid])}
         if cid.split(":")[0] in areas:
             entry["area"] = areas[cid.split(":")[0]]
+        if cid in levels:
+            entry["pos"], entry["ref"] = levels[cid]
+        if cid in meaning:
+            entry["readout"], entry["up_means"], entry["down_means"], entry["interest"] = meaning[cid]
+        if cid in baseline:
+            entry["base"], entry["base_off"] = baseline[cid]
         contrasts.append(entry)
 
     claim_df = defaultdict(Counter)

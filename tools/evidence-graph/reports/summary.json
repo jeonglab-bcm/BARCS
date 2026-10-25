@@ -46,7 +46,7 @@
   },
   "essential_reference": {
     "9606": {
-      "proteins": 1274,
+      "proteins": 1275,
       "fitness_papers": 14
     },
     "9913": {
@@ -58,7 +58,7 @@
       "fitness_papers": null
     },
     "sources": {
-      "internal_9606": 969,
+      "internal_9606": 970,
       "cegv2_mapped": 681
     }
   },
@@ -85,39 +85,39 @@
   },
   "fitness_correlation": {
     "contrasts": 117,
-    "abs_rho_over_0.1": 30,
-    "abs_rho_over_0.2": 6,
-    "median_abs_rho": 0.036,
+    "abs_rho_over_0.1": 31,
+    "abs_rho_over_0.2": 8,
+    "median_abs_rho": 0.041,
     "top": [
       [
         "GSE240110:MRTX_vs_DMSO",
         "treatment",
         17770,
-        0.323
+        0.351
       ],
       [
         "GSE277690:khyg1_r2_vs_collection",
         "immune_coculture",
         18846,
-        0.302
-      ],
-      [
-        "GSE177537:SARS2_1st_vs_T0",
-        "infection",
-        18847,
-        0.279
+        0.332
       ],
       [
         "GSE277690:khyg1_r1_vs_collection",
         "immune_coculture",
         18846,
-        0.278
+        0.307
       ],
       [
-        "GSE328830:invivo_active_vs_inactive",
-        "in_vivo",
-        7094,
-        0.256
+        "GSE177537:SARS2_1st_vs_T0",
+        "infection",
+        18847,
+        0.305
+      ],
+      [
+        "GSE255579:FANCG_vs_NT",
+        "genetic_interaction",
+        18844,
+        -0.282
       ]
     ]
   },

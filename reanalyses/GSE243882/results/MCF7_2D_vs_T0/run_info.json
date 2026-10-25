@@ -1,7 +1,7 @@
 {
   "analysis": "MCF7_2D_vs_T0",
   "formula": "~culture",
-  "term": "cultureT0",
+  "term": "culture2D",
   "libraries": 2,
   "residual_df": 0,
   "replicates": "none: one library per condition",
@@ -28,22 +28,22 @@
     "MCFT0": 0.092,
     "MCFT3_2D": 0.084
   },
-  "genes_fdr_0_10_up": 5,
-  "genes_fdr_0_10_down": 2,
+  "genes_fdr_0_10_up": 2,
+  "genes_fdr_0_10_down": 5,
   "genes_fdr_0_05": 5,
   "genes_fdr_0_10": 7,
   "genes_empirical_fdr_0_10": 0,
   "empirical_centre": "controls",
-  "control_shift": 0.155,
+  "control_shift": -0.155,
   "barcs_version": "0.2.3",
   "environment": {
-    "r_version": "4.6.1",
+    "r_version": "4.3.3",
     "platform": "x86_64-pc-linux-gnu",
     "packages": {
       "BARCS": "0.2.3",
-      "Rcpp": "1.1.2",
-      "RcppArmadillo": "15.6.0.1",
-      "jsonlite": "2.0.0"
+      "Rcpp": "1.0.12",
+      "RcppArmadillo": "0.12.8.1.0",
+      "jsonlite": "1.8.8"
     }
   }
 }

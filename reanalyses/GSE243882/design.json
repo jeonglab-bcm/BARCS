@@ -28,9 +28,9 @@
   ],
   "factor_levels": {
     "culture": [
+      "T0",
       "2D",
-      "3D",
-      "T0"
+      "3D"
     ]
   },
   "analyses": [
@@ -50,7 +50,7 @@
         "MCFT3_2D"
       ],
       "formula": "~ culture",
-      "term": "cultureT0"
+      "term": "culture2D"
     }
   ],
   "rationale": "Genome-wide GeCKO v2 knockout screens (Cimmino/Pérez-Riba lab, Commun Biol 2024) in MCF-7: after selection, cells were split into 2D culture and 3D tumourspheres for 3-4 weeks; one library each for T0, 2D and 3D, column names match the GSM titles. The paper's selection is the MAGeCK-MLE 3D-2D beta difference (both arms vs T0); BARCS tests 3D vs 2D directly, the same log-ratio contrast. Depletion in 3D marks genes and miRNAs needed for tumoursphere growth (hsa-mir-4787); enrichment marks suppressors (ARHGAP17, FOXO3, PDCD4). One library per arm, so run_barcs.R uses the no-replicate path and the calls are screening-level. A second analysis, 2D vs T0, checks that the screen selected (core-essential dropout).",
