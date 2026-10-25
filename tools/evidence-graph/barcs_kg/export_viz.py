@@ -67,6 +67,10 @@ def run(db, reports, outdir):
     for cid, t, r, term in con.execute("SELECT contrast_id, treatment_level, reference_level, term FROM contrast"):
         levels[cid] = (t, r) if r is not None else (term.replace(":", " × "), "interaction")
 
+    # Curated meaning of each sign for the perturbed gene (curation/contrast_readout.tsv).
+    meaning = {r[0]: r[1:] for r in con.execute("""SELECT contrast_id, readout, positive_estimate_means,
+        negative_estimate_means, interest FROM contrast_annotation WHERE positive_estimate_means IS NOT NULL""")}
+
     order = sorted(g.contrast)
     index = {cid: i for i, cid in enumerate(order)}
     contrasts = []
@@ -84,6 +88,8 @@ def run(db, reports, outdir):
             entry["area"] = areas[cid.split(":")[0]]
         if cid in levels:
             entry["pos"], entry["ref"] = levels[cid]
+        if cid in meaning:
+            entry["readout"], entry["up_means"], entry["down_means"], entry["interest"] = meaning[cid]
         if cid in baseline:
             entry["base"], entry["base_off"] = baseline[cid]
         contrasts.append(entry)

@@ -68,6 +68,7 @@ table.pmgrid td.scr i { display: inline-block; width: 8px; height: 8px; border-r
 table.pmgrid th.g { font-family: var(--font-mono); font-size: 11px; text-align: center; padding: 4px 3px; }
 table.pmgrid td.g { text-align: center; padding: 4px 3px; font-size: 12px; }
 table.pmgrid td.dir { padding: 4px 8px 4px 3px; font-size: 11px; color: var(--ink-2); white-space: nowrap; }
+table.pmgrid td.dir.cur { white-space: normal; min-width: 150px; max-width: 220px; line-height: 1.3; }
 table.pmgrid td.dir span { color: var(--muted); }
 table.pmgrid th.dir { white-space: nowrap; }
 tr.hl { background: var(--wash); box-shadow: inset 3px 0 0 var(--s1); }
@@ -171,7 +172,7 @@ h2.sec { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transfor
   <section id="view-pathways" role="tabpanel" aria-labelledby="tab-pathways">
     <div class="figures" id="pm-figures"></div>
     <p class="lede" id="pm-lede"></p>
-    <p class="lede" style="margin-top:6px">Each card is one module. The small network shows which of its genes interact and how many papers hit each pair together. The grid lists every screen that hits the module, with <span style="color:var(--s1)">▲</span> where guides were enriched and <span style="color:var(--s2)">▼</span> where they were depleted, in the contrast as oriented; what that means for the phenotype is not curated yet. The column after each screen names its two conditions: ▲ means guides were more abundant in the first than in the baseline (reference) condition, ▼ less, and no arrow means no call. Screens are not all oriented the same way (some sorts compare high to low, others low to high), so compare arrows across screens only after reading this column. Hover a screen to find it in other cards, click it to open its network.</p>
+    <p class="lede" style="margin-top:6px">Each card is one module. The small network shows which of its genes interact and how many papers hit each pair together. The grid lists every screen that hits the module, with <span style="color:var(--s1)">▲</span> where guides were enriched and <span style="color:var(--s2)">▼</span> where they were depleted, in the contrast as oriented; what that means for the phenotype is not curated yet. The "▲ means" column says what an enriched call means for the gene in that screen, curated from each record (for example "KO → JQ1 resistance"); ▼ is the opposite, and tapping an arrow names the gene's own consequence. A screen not yet curated shows its two conditions instead ("high vs low": ▲ = more guides in the first). Arrows point opposite ways for the same biology in screens oriented differently, so read this column before comparing them. Hover a screen to find it in other cards, click it to open its network.</p>
     <div class="controls" style="margin-top:14px">
       <div class="search">
         <input type="search" id="pm-input" placeholder="Find a gene, pathway or screen, e.g. JAK1, COMMD, NK cells" autocomplete="off" aria-label="Find a gene, pathway or screen" aria-autocomplete="list" aria-controls="pm-sugg">
@@ -675,7 +676,7 @@ function pmMini(m, host) {
 
 function pmGrid(m, host) {
   const t = el("table", {class: "pmgrid"}), hr = el("tr");
-  hr.append(el("th", {}, "screen"), el("th", {class: "dir", title: "▲ (estimate > 0): guides more abundant in the first condition than in the baseline (reference) condition"}, "▲ more in · vs baseline"));
+  hr.append(el("th", {}, "screen"), el("th", {class: "dir", title: "What ▲ (estimate > 0) means for a gene in this screen: the curated consequence of perturbing it, or else the two conditions compared"}, "▲ means"));
   m.genes.forEach(gn => hr.append(el("th", {class: "g"}, gn)));
   const th = el("thead"); th.append(hr); t.append(th);
   const tb = el("tbody");
@@ -684,11 +685,15 @@ function pmGrid(m, host) {
     const name = el("td", {class: "scr"});
     name.append(el("i", {style: `background:${css(SELCOL[s.selection] || "--neutral")}`}), document.createTextNode(scrName(s)));
     const c = CBY.get(s.id) || {}, off = c.base_off && c.base != null;
-    const dir = el("td", {class: "dir"});
-    if (c.pos != null) dir.append(document.createTextNode(c.pos), el("span", {}, ` vs ${c.ref}`)); else dir.textContent = "–";
-    dir.addEventListener("pointermove", ev => showTip(ev, s.orientation || "orientation not determined", [
-      c.ref === "interaction" ? "▲/▼: the interaction coefficient is positive/negative; there is no single baseline condition."
-        : `▲: guides more abundant in ${c.pos} than in the baseline ${c.ref}; ▼: less abundant. 0 means no change between the two.`,
+    const dir = el("td", {class: "dir" + (c.up_means ? " cur" : "")});
+    if (c.up_means) dir.textContent = c.up_means;
+    else if (c.pos != null) dir.append(document.createTextNode(c.pos), el("span", {}, ` vs ${c.ref}`));
+    else dir.textContent = "–";
+    const interest = {"+": "▲", "-": "▼", both: "▲ and ▼"}[c.interest];
+    dir.addEventListener("pointermove", ev => showTip(ev, c.readout ? `readout: ${c.readout}` : (s.orientation || "orientation not determined"), [
+      ...(c.up_means ? [`▲ ${c.up_means}`, `▼ ${c.down_means || "the opposite"}`, ...(interest ? [`the paper was looking for ${interest}`] : []), s.orientation || ""]
+        : c.ref === "interaction" ? ["▲/▼: the interaction coefficient is positive/negative; there is no single baseline condition.", "What it means for the gene is not curated yet."]
+        : [`▲: guides more abundant in ${c.pos} than in the baseline ${c.ref}; ▼: less abundant.`, "What it means for the gene is not curated yet."]),
       ...(off ? [`Most genes in this screen sit at ${c.base > 0 ? "+" : ""}${c.base}, not 0: the whole library shifted between the two conditions.`] : [])]));
     dir.addEventListener("pointerleave", hideTip);
     row.append(name, dir);
@@ -698,7 +703,8 @@ function pmGrid(m, host) {
       if (v) {
         const up = v[0] > 0;
         td.append(el("span", {style: `color:${css(up ? "--s1" : "--s2")}`}, up ? "▲" : "▼"));
-        td.addEventListener("pointermove", ev => showTip(ev, `${gn} · ${scrName(s)}`, [`${up ? "enriched" : "depleted"}: estimate ${v[0]}, FDR ${fdrf(v[1])}`,
+        td.addEventListener("pointermove", ev => showTip(ev, `${gn} · ${scrName(s)}`, [...((up ? c.up_means : c.down_means) ? [(up ? c.up_means : c.down_means).replace(/^(KO|CRISPRi|CRISPRa)/, `${gn} $1`)] : []),
+          `${up ? "enriched" : "depleted"}: estimate ${v[0]}, FDR ${fdrf(v[1])}`,
           ...(off ? [`most genes in this screen sit at ${c.base}; this one is ${v[0] > c.base ? "above" : "below"} them`] : []), s.orientation || "orientation not determined"]));
         td.addEventListener("pointerleave", hideTip);
       }

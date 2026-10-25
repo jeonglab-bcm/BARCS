@@ -124,7 +124,8 @@ def run(db):
     CREATE TABLE contrast_annotation (
       contrast_id TEXT PRIMARY KEY, modality TEXT, modality_basis TEXT,
       selection_class TEXT, selection_basis TEXT, library_scope TEXT,
-      readout TEXT, positive_estimate_means TEXT, curated_by TEXT);
+      readout TEXT, positive_estimate_means TEXT, negative_estimate_means TEXT,
+      interest TEXT, curated_by TEXT);
     CREATE TABLE element (
       gse TEXT, element_id TEXT, element_type TEXT, PRIMARY KEY (gse, element_id));
     CREATE TABLE element_gene (
@@ -197,7 +198,8 @@ def run(db):
 def apply_curation(con, folder):
     """Merge hand-curated readout semantics and claim directions, when present.
 
-    curation/contrast_readout.tsv: contrast_id, readout, positive_estimate_means, curated_by
+    curation/contrast_readout.tsv: contrast_id, readout, positive_estimate_means,
+      negative_estimate_means, interest (+, -, both: the side holding the paper's phenotype), curated_by
     curation/claim_direction.tsv:  compare_id, gene, claimed_direction, source
     Blank cells are ignored, so a partly filled template is safe to load.
     """
@@ -206,9 +208,11 @@ def apply_curation(con, folder):
         with open(readout, newline="") as fh:
             for r in csv.DictReader(fh, delimiter="\t"):
                 if r.get("readout") and r.get("positive_estimate_means"):
-                    con.execute("""UPDATE contrast_annotation SET readout = ?,
-                                   positive_estimate_means = ?, curated_by = ? WHERE contrast_id = ?""",
+                    con.execute("""UPDATE contrast_annotation SET readout = ?, positive_estimate_means = ?,
+                                   negative_estimate_means = ?, interest = ?, curated_by = ?
+                                   WHERE contrast_id = ?""",
                                 (r["readout"], r["positive_estimate_means"],
+                                 r.get("negative_estimate_means") or None, r.get("interest") or None,
                                  r.get("curated_by") or "unknown", r["contrast_id"]))
     claims = folder / "claim_direction.tsv"
     if claims.exists():
@@ -225,10 +229,11 @@ def write_templates(con, folder):
     with open(folder / "contrast_readout.template.tsv", "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["contrast_id", "paper_title", "model", "contrast_text", "orientation", "modality",
-                    "selection_class", "readout", "positive_estimate_means", "curated_by"])
+                    "selection_class", "readout", "positive_estimate_means", "negative_estimate_means",
+                    "interest", "curated_by"])
         w.writerows(con.execute("""
             SELECT c.contrast_id, p.title, s.model_text, s.contrast_text, c.orientation, a.modality,
-                   a.selection_class, '', '', ''
+                   a.selection_class, '', '', '', '', ''
             FROM contrast c JOIN contrast_annotation a USING (contrast_id) JOIN series s USING (gse)
             JOIN publication p ON p.pmid = s.pmid ORDER BY c.contrast_id"""))
     with open(folder / "claim_direction.template.tsv", "w", newline="") as fh:
