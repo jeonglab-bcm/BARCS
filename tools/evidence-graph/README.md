@@ -80,6 +80,53 @@ estimate means for guide abundance), and `string_regulatory.positive/negative`
 `contrast_annotation.readout` / `positive_estimate_means`, is **not filled
 in**; `interpret_perturbation_effect` abstains until it is.
 
+## Biolink knowledge graph
+
+`export_biolink.py` writes the findings as a knowledge graph in the schema of
+an existing knowledge base: the [Biolink Model](https://biolink.github.io/biolink-model/)
+4.4.6, the data model of the NCATS Translator and Monarch graphs, in KGX TSV
+(`build/biolink/nodes.tsv`, `edges.tsv`, `prefixes.json`, `stats.json`). Every
+category, predicate, qualifier value and required edge slot is checked against
+the pinned `biolink-model.yaml` before anything is written.
+
+```sh
+uv run python -m barcs_kg.export_biolink build/barcs_kg.sqlite build/string_v12.5 \
+  build/reference/biolink-model-4.4.6.yaml build/biolink
+```
+
+| Node category | Identifier | What |
+|---|---|---|
+| `biolink:Gene` | `NCBIGene` (human), `ENSEMBL` (mouse, rat, cow) via STRING aliases; `BARCS.GENE:<taxon>-<symbol>` when unmapped | tested genes |
+| `biolink:PhenotypicFeature` | `BARCS.SCREEN_PHENOTYPE:<GSE>.<contrast>` | relative guide abundance between a contrast's two conditions |
+| `biolink:PhenotypicFeature` | `BARCS.PHENOTYPE:<readout>` | curated readout of 80 screens (`curation/contrast_readout.tsv`) |
+| `biolink:Study` | `BARCS.SCREEN:<GSE>.<contrast>`, xref `GEO:` | one screen contrast |
+| `biolink:Publication`, `biolink:OrganismTaxon` | `PMID`, `NCBITaxon` | |
+
+| Layer | Edge | Category | Qualifiers and provenance |
+|---|---|---|---|
+| screen | gene `contributes_to` screen phenotype | `GeneToPhenotypicFeatureAssociation` | every call at FDR < 0.10; `subject_form_or_variant_qualifier` loss/gain-of-function form (KO, CRISPRi / CRISPRa); `object_direction_qualifier` increased when guides are more abundant in the first condition; `effect_size`, `p_value`, `adjusted_p_value`; statistical_association, data_analysis_pipeline |
+| readout | gene `contributes_to` readout | same | the same calls on 75 curated screens, direction mapped through `curation/readout_direction.tsv` |
+| claim | gene `associated_with` readout or screen phenotype | same | genes the paper names; knowledge_assertion, manual_agent, no direction |
+| string | gene `physically_interacts_with` gene | `PairwiseGeneToGeneInteraction` | STRING physical ≥ 700, `has_confidence_score`, `infores:string` |
+| string | gene `regulates` gene | `GeneRegulatesGeneAssociation` | STRING regulatory ≥ 700 with one sign channel ≥ 700 and the other < 400; `qualified_predicate` causes, aspect activity_or_abundance, direction from the sign |
+
+Every BARCS edge carries `publications` (the paper whose data were reanalysed)
+and `has_supporting_studies` (the screen). Only primary contrasts are exported,
+and each gene keeps its best-p element per contrast. Reading an edge:
+`NCBIGene:3559 (IL2RA) contributes_to "CD25 (IL2RA) surface level"`, loss-of-function
+form, decreased: knocking out IL2RA lowers CD25.
+
+Limits: the `BARCS.*` prefixes are local namespaces (no public identifiers exist
+for these screens and readouts), so `kgx validate` reports them as unknown
+prefixes; `infores:barcs` is not in the Translator registry. Readout labels are
+free text, so near-duplicates (`CD25 (IL2RA) surface level`, `Surface CD25 (IL2RA)
+level`) are separate nodes until the curation names them alike or maps them to an
+ontology term. Five readouts abstain on direction (differential dropout, two-sided
+or mixed readouts). `readout_direction.tsv`, like the other curation files, is
+unreviewed.
+
+`export_kg.py` remains the plain typed graph with a time split for link prediction.
+
 ## Curation
 
 `curation/*.template.tsv` are written on every build with what the graph
@@ -96,6 +143,8 @@ fill the blank columns, and rebuild; `annotate.py` merges whatever is filled.
 | `barcs_kg/analyses.py` | gap analyses → `reports/*.tsv`, `reports/summary.json` |
 | `barcs_kg/pathways.py` | pathway map: STRING pairs hit together across papers, grouped into modules |
 | `barcs_kg/unified.py`, `viz/layout.mjs` | the whole graph as JSON and GraphML, with a ForceAtlas2 layout |
+| `barcs_kg/export_biolink.py` | Biolink Model knowledge graph, KGX TSV, validated against the model |
+| `barcs_kg/export_kg.py` | plain typed graph with a time-based split for link prediction |
 | `barcs_kg/export_viz.py` | inlines the page's data into `viz/explorer.template.html` → `viz/explorer.html` |
 | `barcs_kg/similarity.py` | screen-to-screen profile correlation (not in the build; confounded by fitness, see above) |
 | `barcs_kg/tools.py` | agent tools (JSON in, JSON out) |
