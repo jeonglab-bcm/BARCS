@@ -28,14 +28,10 @@ Edges (all biolink:GeneToPhenotypicFeatureAssociation unless noted)
            direction mapped through curation/readout_direction.tsv
   claim    gene associated_with <phenotype>       genes the paper names; knowledge
            assertion from the publication, no direction
-  string   gene physically_interacts_with gene    STRING physical >= PHYS_HIGH
-           (biolink:PairwiseGeneToGeneInteraction)
-  string   gene regulates gene                    STRING regulatory >= PHYS_HIGH with
-           one sign channel >= PHYS_HIGH and the other < 400
-           (biolink:GeneRegulatesGeneAssociation, qualified_predicate causes)
 
 Only primary contrasts are exported (sensitivity reruns of a contrast are left out),
-and within a contrast each gene keeps its best-p element.
+and within a contrast each gene keeps its best-p element. STRING is used only to
+map gene symbols to identifiers; its interaction networks are not exported.
 """
 import csv
 import hashlib
@@ -47,12 +43,11 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
 
-from barcs_kg.analyses import HIT_FDR, PHYS_HIGH, SENSITIVITY
+from barcs_kg.analyses import HIT_FDR, SENSITIVITY
 from barcs_kg.string_db import VERSION, opener
 
 BIOLINK_VERSION = "4.4.6"
 INFORES_BARCS = "infores:barcs"      # local; not in the Translator infores registry
-INFORES_STRING = "infores:string"
 # CURIE prefixes the Biolink context lacks; the BARCS ones are namespaces, not pages
 PREFIXES = {
     "BARCS.GENE": "https://jeonglab-bcm.github.io/BARCS/kg/gene/",
@@ -63,22 +58,19 @@ PREFIXES = {
     "STRING": "https://string-db.org/network/",
     "GEO": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=",
 }
-SIGN_MAX_OTHER = 400                 # STRING regulatory: the opposite channel must stay below this
 FORM = {"KO": "loss_of_function_variant_form", "CRISPRi": "loss_of_function_variant_form",
         "KO+CRISPRi": "loss_of_function_variant_form", "CRISPRa": "gain_of_function_variant_form"}
 FLIP = {"increased": "decreased", "decreased": "increased"}
 
 NODE_COLS = ["id", "category", "name", "description", "symbol", "in_taxon", "xref",
              "synonym", "creation_date", "publication_type", "provided_by"]
-EDGE_COLS = ["id", "subject", "predicate", "object", "category", "qualified_predicate",
-             "subject_form_or_variant_qualifier", "object_aspect_qualifier",
-             "object_direction_qualifier", "knowledge_level", "agent_type",
+EDGE_COLS = ["id", "subject", "predicate", "object", "category",
+             "subject_form_or_variant_qualifier", "object_direction_qualifier", "knowledge_level", "agent_type",
              "primary_knowledge_source", "publications", "has_supporting_studies",
              "original_subject", "effect_size", "p_value", "adjusted_p_value",
-             "has_confidence_score", "barcs_layer"]
+             "barcs_layer"]
 # enum-valued edge slots checked against the model
 ENUM_SLOTS = {"subject_form_or_variant_qualifier": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
-              "object_aspect_qualifier": "GeneOrGeneProductOrChemicalEntityAspectEnum",
               "object_direction_qualifier": "DirectionQualifierEnum",
               "knowledge_level": "KnowledgeLevelEnum", "agent_type": "AgentTypeEnum"}
 
@@ -289,53 +281,6 @@ def build(con, string_dir, directions):
         pheno_edge("claim", gid, "biolink:associated_with", obj, c,
                    kl="knowledge_assertion", at="manual_agent")
 
-    # --- STRING among genes in the graph ---
-    by_protein = defaultdict(set)
-    for (taxon, sym), gid in genes.used.items():
-        sid = genes.protein.get((taxon, sym))
-        if sid:
-            by_protein[sid].add(gid)
-    seen = set()
-    for a, b, score in con.execute(
-            "SELECT protein_a, protein_b, combined_score FROM string_physical "
-            "WHERE combined_score >= ?", (PHYS_HIGH,)):
-        for ga in by_protein.get(a, ()):
-            for gb in by_protein.get(b, ()):
-                key = tuple(sorted((ga, gb)))
-                if ga == gb or key in seen:
-                    continue
-                seen.add(key)
-                edges.append({
-                    "id": edge_id("physical", *key), "subject": key[0],
-                    "predicate": "biolink:physically_interacts_with", "object": key[1],
-                    "category": "biolink:PairwiseGeneToGeneInteraction",
-                    "knowledge_level": "knowledge_assertion", "agent_type": "not_provided",
-                    "primary_knowledge_source": INFORES_STRING,
-                    "has_confidence_score": score / 1000, "barcs_layer": "string"})
-    for a, b, score, pos, neg in con.execute(
-            "SELECT protein_a, protein_b, combined_score, positive, negative "
-            "FROM string_regulatory WHERE combined_score >= ?", (PHYS_HIGH,)):
-        if pos >= PHYS_HIGH and neg < SIGN_MAX_OTHER:
-            d = "increased"
-        elif neg >= PHYS_HIGH and pos < SIGN_MAX_OTHER:
-            d = "decreased"
-        else:
-            continue
-        for ga in by_protein.get(a, ()):
-            for gb in by_protein.get(b, ()):
-                if ga == gb:
-                    continue
-                edges.append({
-                    "id": edge_id("regulates", ga, gb, d), "subject": ga,
-                    "predicate": "biolink:regulates", "object": gb,
-                    "category": "biolink:GeneRegulatesGeneAssociation",
-                    "qualified_predicate": "biolink:causes",
-                    "object_aspect_qualifier": "activity_or_abundance",
-                    "object_direction_qualifier": d,
-                    "knowledge_level": "knowledge_assertion", "agent_type": "not_provided",
-                    "primary_knowledge_source": INFORES_STRING,
-                    "has_confidence_score": score / 1000, "barcs_layer": "string"})
-
     nodes.update(genes.nodes)
     for taxon in {n["in_taxon"] for n in genes.nodes.values()}:
         node(taxon, "biolink:OrganismTaxon", taxon)
@@ -456,7 +401,7 @@ def run(db, string_dir, model_path, outdir):
         "edge_layers": count("barcs_layer", edges),
         "gene_id_prefixes": count("prefix", [{"prefix": n["id"].split(":")[0]}
                                              for n in nodes.values() if n["category"] == "biolink:Gene"]),
-        "hit_fdr": HIT_FDR, "string_min_score": PHYS_HIGH,
+        "hit_fdr": HIT_FDR,
         "readout_screens_with_direction": len({e["has_supporting_studies"][0] for e in edges
                                                if e.get("barcs_layer") == "readout"}),
         "validation": report,

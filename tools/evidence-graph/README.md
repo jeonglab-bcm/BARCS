@@ -107,12 +107,11 @@ uv run python -m barcs_kg.export_biolink build/barcs_kg.sqlite build/string_v12.
 | screen | gene `contributes_to` screen phenotype | `GeneToPhenotypicFeatureAssociation` | every call at FDR < 0.10; `subject_form_or_variant_qualifier` loss/gain-of-function form (KO, CRISPRi / CRISPRa); `object_direction_qualifier` increased when guides are more abundant in the first condition; `effect_size`, `p_value`, `adjusted_p_value`; statistical_association, data_analysis_pipeline |
 | readout | gene `contributes_to` readout | same | the same calls on 75 curated screens, direction mapped through `curation/readout_direction.tsv` |
 | claim | gene `associated_with` readout or screen phenotype | same | genes the paper names; knowledge_assertion, manual_agent, no direction |
-| string | gene `physically_interacts_with` gene | `PairwiseGeneToGeneInteraction` | STRING physical ≥ 700, `has_confidence_score`, `infores:string` |
-| string | gene `regulates` gene | `GeneRegulatesGeneAssociation` | STRING regulatory ≥ 700 with one sign channel ≥ 700 and the other < 400; `qualified_predicate` causes, aspect activity_or_abundance, direction from the sign |
 
 Every BARCS edge carries `publications` (the paper whose data were reanalysed)
 and `has_supporting_studies` (the screen). Only primary contrasts are exported,
-and each gene keeps its best-p element per contrast. Reading an edge:
+and each gene keeps its best-p element per contrast. STRING only maps symbols to
+gene identifiers; its interaction networks are not in this graph. Reading an edge:
 `NCBIGene:3559 (IL2RA) contributes_to "CD25 (IL2RA) surface level"`, loss-of-function
 form, decreased: knocking out IL2RA lowers CD25.
 
