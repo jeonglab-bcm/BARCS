@@ -19,15 +19,14 @@ Nodes
   biolink:Publication         PMID
   biolink:OrganismTaxon       NCBITaxon
 
-Edges (all biolink:GeneToPhenotypicFeatureAssociation unless noted)
+Edges (biolink:GeneToPhenotypicFeatureAssociation; significant calls only, so genes
+a paper names but BARCS does not call are left out)
   screen   gene contributes_to SCREEN_PHENOTYPE   every FDR < HIT_FDR call;
            subject_form_or_variant_qualifier = loss/gain_of_function_variant_form
            (KO, CRISPRi / CRISPRa), object_direction_qualifier = increased if the
            estimate is positive (guides more abundant in the first condition)
   readout  gene contributes_to PHENOTYPE          the same calls on curated screens,
            direction mapped through curation/readout_direction.tsv
-  claim    gene associated_with <phenotype>       genes the paper names; knowledge
-           assertion from the publication, no direction
 
 Nodes without an edge are dropped: Study, Publication and OrganismTaxon remain as
 CURIEs in edge and gene properties. Only primary contrasts are exported (sensitivity reruns of a contrast are left out),
@@ -229,19 +228,21 @@ def build(con, string_dir, directions):
                                        f"PMC:{pmc.removeprefix('PMC')}" if pmc else "") if x])
         return sid
 
-    def pheno_edge(layer, gid, pred, obj, c, direction=None, kl="statistical_association",
-                   at="data_analysis_pipeline", **stats):
+    def pheno_edge(layer, gid, pred, obj, c, direction, **stats):
         e = {"subject": gid, "predicate": pred, "object": obj,
              "category": "biolink:GeneToPhenotypicFeatureAssociation",
              "subject_form_or_variant_qualifier": FORM.get(c["modality"], ""),
-             "object_direction_qualifier": direction or "",
-             "knowledge_level": kl, "agent_type": at,
+             "object_direction_qualifier": direction,
+             "knowledge_level": "statistical_association",
+             "agent_type": "data_analysis_pipeline",
              "primary_knowledge_source": INFORES_BARCS,
              "publications": [f"PMID:{c['pmid']}"] if c["pmid"] else [],
              "has_supporting_studies": [f"BARCS.SCREEN:{local(c['cid'])}"],
              "barcs_layer": layer, **stats}
-        e["id"] = edge_id(layer, gid, pred, obj, c["cid"], direction)
-        edges.append(e)
+        e["id"] = edge_id(layer, gid, pred, obj, c["cid"])  # one call per gene per screen
+        if e["id"] not in seen:  # two symbols of one gene: calls come best-p first
+            seen.add(e["id"])
+            edges.append(e)
 
     # --- screen calls: best-p element per gene per contrast, FDR < HIT_FDR ---
     best = {}
@@ -254,11 +255,10 @@ def build(con, string_dir, directions):
             ORDER BY r.contrast_id, r.p_value""", (HIT_FDR,)):
         if cid in contrasts and (cid, sym) not in best:
             best[(cid, sym)] = (elem, est, p, fdr)
-    hit_genes = set()
+    seen = set()
     for (cid, sym), (elem, est, p, fdr) in best.items():
         c = contrasts[cid]
         gid = genes.id(c["taxon"], sym)
-        hit_genes.add(gid)
         screen(c)
         stats = {"original_subject": elem, "effect_size": round(est, 4),
                  "p_value": f"{p:.3g}", "adjusted_p_value": f"{fdr:.3g}"}
@@ -270,26 +270,12 @@ def build(con, string_dir, directions):
             pheno_edge("readout", gid, "biolink:contributes_to",
                        f"BARCS.PHENOTYPE:{slug(c['readout'])}", c, d, **stats)
 
-    # --- paper claims: genes the paper names for the contrast ---
-    for cid, sym in con.execute("SELECT DISTINCT contrast_id, gene FROM claim"):
-        c = contrasts.get(cid)
-        if not c or not sym:
-            continue
-        gid = genes.id(c["taxon"], sym)
-        screen(c)
-        obj = f"BARCS.PHENOTYPE:{slug(c['readout'])}" if c["readout"] \
-            else f"BARCS.SCREEN_PHENOTYPE:{local(cid)}"
-        pheno_edge("claim", gid, "biolink:associated_with", obj, c,
-                   kl="knowledge_assertion", at="manual_agent")
-
     nodes.update(genes.nodes)
     for taxon in {n["in_taxon"] for n in genes.nodes.values()}:
         node(taxon, "biolink:OrganismTaxon", taxon)
     for t, org in con.execute("SELECT DISTINCT taxon, organism FROM series_annotation"):
         if f"NCBITaxon:{t}" in nodes:
             nodes[f"NCBITaxon:{t}"]["name"] = org
-    # drop duplicate edge ids (a gene named twice in one contrast's claims)
-    edges = list({e["id"]: e for e in edges}.values())
     # keep only nodes on an edge; studies, papers and taxa stay as CURIEs in edge
     # and gene properties (has_supporting_studies, publications, in_taxon)
     linked = {e["subject"] for e in edges} | {e["object"] for e in edges}

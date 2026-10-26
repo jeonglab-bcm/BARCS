@@ -104,9 +104,9 @@ uv run python -m barcs_kg.export_biolink build/barcs_kg.sqlite build/string_v12.
 |---|---|---|---|
 | screen | gene `contributes_to` screen phenotype | `GeneToPhenotypicFeatureAssociation` | every call at FDR < 0.10; `subject_form_or_variant_qualifier` loss/gain-of-function form (KO, CRISPRi / CRISPRa); `object_direction_qualifier` increased when guides are more abundant in the first condition; `effect_size`, `p_value`, `adjusted_p_value`; statistical_association, data_analysis_pipeline |
 | readout | gene `contributes_to` readout | same | the same calls on 75 curated screens, direction mapped through `curation/readout_direction.tsv` |
-| claim | gene `associated_with` readout or screen phenotype | same | genes the paper names; knowledge_assertion, manual_agent, no direction |
 
-Nodes without an edge are dropped, so the screen (`BARCS.SCREEN:<GSE>.<contrast>`),
+Only significant calls are edges: genes a paper names but BARCS does not call at
+FDR < 0.10 are left out. Nodes without an edge are dropped, so the screen (`BARCS.SCREEN:<GSE>.<contrast>`),
 the paper (`PMID`) and the taxon (`NCBITaxon`) are not nodes: every edge carries
 `publications` (the paper whose data were reanalysed) and `has_supporting_studies`
 (the screen), and every gene `in_taxon`. Only primary contrasts are exported,
