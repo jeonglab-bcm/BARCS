@@ -99,8 +99,6 @@ uv run python -m barcs_kg.export_biolink build/barcs_kg.sqlite build/string_v12.
 | `biolink:Gene` | `NCBIGene` (human), `ENSEMBL` (mouse, rat, cow) via STRING aliases; `BARCS.GENE:<taxon>-<symbol>` when unmapped | tested genes |
 | `biolink:PhenotypicFeature` | `BARCS.SCREEN_PHENOTYPE:<GSE>.<contrast>` | relative guide abundance between a contrast's two conditions |
 | `biolink:PhenotypicFeature` | `BARCS.PHENOTYPE:<readout>` | curated readout of 80 screens (`curation/contrast_readout.tsv`) |
-| `biolink:Study` | `BARCS.SCREEN:<GSE>.<contrast>`, xref `GEO:` | one screen contrast |
-| `biolink:Publication`, `biolink:OrganismTaxon` | `PMID`, `NCBITaxon` | |
 
 | Layer | Edge | Category | Qualifiers and provenance |
 |---|---|---|---|
@@ -108,8 +106,10 @@ uv run python -m barcs_kg.export_biolink build/barcs_kg.sqlite build/string_v12.
 | readout | gene `contributes_to` readout | same | the same calls on 75 curated screens, direction mapped through `curation/readout_direction.tsv` |
 | claim | gene `associated_with` readout or screen phenotype | same | genes the paper names; knowledge_assertion, manual_agent, no direction |
 
-Every BARCS edge carries `publications` (the paper whose data were reanalysed)
-and `has_supporting_studies` (the screen). Only primary contrasts are exported,
+Nodes without an edge are dropped, so the screen (`BARCS.SCREEN:<GSE>.<contrast>`),
+the paper (`PMID`) and the taxon (`NCBITaxon`) are not nodes: every edge carries
+`publications` (the paper whose data were reanalysed) and `has_supporting_studies`
+(the screen), and every gene `in_taxon`. Only primary contrasts are exported,
 and each gene keeps its best-p element per contrast. STRING only maps symbols to
 gene identifiers; its interaction networks are not in this graph. Reading an edge:
 `NCBIGene:3559 (IL2RA) contributes_to "CD25 (IL2RA) surface level"`, loss-of-function

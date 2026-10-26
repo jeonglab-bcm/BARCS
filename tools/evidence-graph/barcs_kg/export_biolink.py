@@ -29,7 +29,8 @@ Edges (all biolink:GeneToPhenotypicFeatureAssociation unless noted)
   claim    gene associated_with <phenotype>       genes the paper names; knowledge
            assertion from the publication, no direction
 
-Only primary contrasts are exported (sensitivity reruns of a contrast are left out),
+Nodes without an edge are dropped: Study, Publication and OrganismTaxon remain as
+CURIEs in edge and gene properties. Only primary contrasts are exported (sensitivity reruns of a contrast are left out),
 and within a contrast each gene keeps its best-p element. STRING is used only to
 map gene symbols to identifiers; its interaction networks are not exported.
 """
@@ -289,7 +290,10 @@ def build(con, string_dir, directions):
             nodes[f"NCBITaxon:{t}"]["name"] = org
     # drop duplicate edge ids (a gene named twice in one contrast's claims)
     edges = list({e["id"]: e for e in edges}.values())
-    return nodes, edges
+    # keep only nodes on an edge; studies, papers and taxa stay as CURIEs in edge
+    # and gene properties (has_supporting_studies, publications, in_taxon)
+    linked = {e["subject"] for e in edges} | {e["object"] for e in edges}
+    return {k: v for k, v in nodes.items() if k in linked}, edges
 
 
 def validate(nodes, edges, model_path):
