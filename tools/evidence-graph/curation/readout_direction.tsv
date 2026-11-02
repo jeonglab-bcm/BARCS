@@ -1,0 +1,84 @@
+# Direction of the readout (contrast_readout.tsv) when a contrast's estimate is positive.
+# increased / decreased: the readout quantity goes up / down; blank: abstain (no readout edge).
+# Read from positive_estimate_means by Claude, 2026-10-26, unreviewed.
+contrast_id	readout	positive_estimate_means	positive_estimate_direction	note
+GSE142350:nanog_low_vs_unsorted	Nanog-mCherry reporter level	KO → lower Nanog reporter (gene maintains Nanog)	decreased	
+GSE142350:pmek_low_vs_unsorted	phospho-Mek level (MAPK activity)	KO → lower phospho-Mek (gene supports MAPK)	decreased	
+GSE146841:Tm_GFPhigh_vs_low	XBP1s-GFP ER-stress reporter	KO → higher XBP1s-GFP reporter under tunicamycin	increased	
+GSE159258:high_vs_low	TUBB3 neuronal reporter level	CRISPRa → more TUBB3+ neurons (gene drives neurogenesis)	increased	
+GSE159278:high_vs_low	TUBB3 neuronal reporter level	CRISPRa → more TUBB3+ neurons (neurogenic TF)	increased	
+GSE159318:high_vs_low	TUBB3 neuronal reporter (mCherry)	CRISPRa → more TUBB3+ neurons (neurogenic TF)	increased	
+GSE168585:sox1neg_vs_unsorted	SOX1+ NPC differentiation	KO → loss of SOX1/NPC fate (gene needed for differentiation)	decreased	
+GSE171674:CD25_high_vs_low	CD25 (IL2RA) surface level	KO → higher CD25 (gene represses IL2RA)	increased	
+GSE177537:SARS2_1st_vs_T0	survival of SARS-CoV-2 infection	KO → survival of SARS-CoV-2 infection (host factor)	increased	
+GSE177541:SARS2_vs_T0	Survival of SARS-CoV-2 infection	KO → survival/resistance to SARS-CoV-2 death (host factor)	increased	
+GSE177543:SARS2_1st_vs_D10_uninfected	survival of SARS-CoV-2 infection	KO → survival under SARS-CoV-2 (host factor for infection)	increased	
+GSE179799:5637_GC_vs_Saline_d15	survival under gemcitabine+cisplatin	KO → resistance to gemcitabine+cisplatin	increased	
+GSE179799:KU1919_GC_vs_Saline_d15	survival under gemcitabine+cisplatin	KO → resistance to gemcitabine+cisplatin	increased	
+GSE179799:both_GC_vs_Saline_d15	survival under gemcitabine+cisplatin (two lines pooled)	KO → resistance to gemcitabine+cisplatin	increased	
+GSE206832:CD86_secondary_low_vs_high	Surface CD86 level	KO → lower CD86 (gene needed for CD86)	decreased	
+GSE206832:PDL1_secondary_low_vs_high	Surface PD-L1 level	KO → lower PD-L1 (gene needed for PD-L1)	decreased	
+GSE206996:vsvgcre_low_vs_high	VSV-G-Cre pseudovirus entry (reporter)	KO → less VSV-G entry (host entry factor)	decreased	
+GSE209750:infected_vs_mock	survival of SARS-CoV-2 infection	KO → survival of SARS-CoV-2 (pro-viral host factor)	increased	
+GSE212152:establishment_GFP_vs_unsorted	Reporter silencing establishment (GFP)	KO → silencing lost / GFP+ (gene needed to establish silencing)	decreased	
+GSE212152:maintenance_GFP_vs_unsorted	Reporter silencing maintenance (GFP)	KO → silencing lost / GFP+ (gene needed to maintain silencing)	decreased	
+GSE219136:nf2ko_vs_wt_dropout_interaction	differential dropout, NF2-KO vs WT	KO → growth advantage in NF2-KO vs WT cells		readout is differential dropout; 'increased' is ambiguous between growth and dropout
+GSE219136:nf2ko_vs_wt_t7	guide abundance NF2-KO vs WT (passage 7)	KO → better growth in NF2-KO than WT cells	increased	
+GSE221576:CB103_vs_DMSO	survival under CB-103 (Notch inhibitor)	KO → resistance to CB-103	increased	
+GSE221576:GSI_vs_DMSO	survival under gamma-secretase inhibitor (DAPT)	KO → resistance to GSI (e.g. PIK3R1)	increased	
+GSE222104:GFPhigh_vs_GFPlow	Stalled ER reporter level (GFP)	KO → higher reporter (gene needed for translocation QC/degradation)	increased	
+GSE222531:LGR_dasatinib_vs_DMSO	survival under dasatinib	CRISPRi → dasatinib resistance	increased	
+GSE225878:D4_CD200high_vs_low	CD200 chondrocyte maturation marker	KO → drives chondrocyte maturation (e.g. Sufu, Ptch1)	increased	
+GSE229584:iRFP_vs_negative	Enteroendocrine (CHGA) reporter	KO → more enteroendocrine cells (gene represses EEC fate; ZNF800)	increased	
+GSE237953:FKBP5low_vs_high	glucocorticoid-induced FKBP5 level	KO → lower FKBP5 (gene needed for GR signaling)	decreased	
+GSE240110:MRTX_vs_DMSO	survival under MRTX849 (KRAS-G12C inhibitor)	KO → resistance to MRTX849 (Hippo pathway, e.g. NF2)	increased	
+GSE240894:jlat5a8_combo	HIV reactivation from latency	KO → more HIV reactivation (enriched in viral RNA)	increased	
+GSE241070:MPA_vs_DMSO	growth/survival under MPA (progestin)	KO → MPA resistance	increased	
+GSE241933:KO_noBATF3_IL7R_high_vs_low	IL7R surface level (memory marker)	KO → higher IL7R	increased	
+GSE242880:HighCov_LowMOI_Q4_vs_Q1	Surface CD25 (IL2RA) level	KO → higher CD25 (gene represses IL2RA; MYB)	increased	
+GSE242880:LowCov_HighMOI_Q4_vs_Q1	Surface CD25 (IL2RA) level	KO → higher CD25 (gene represses IL2RA; MYB)	increased	
+GSE244434:samuraciclib_vs_controls	survival under samuraciclib (CDK7i)	KO → samuraciclib resistance	increased	
+GSE245845:proinsulin_hi_vs_lo	intracellular proinsulin level	KO → higher proinsulin (e.g. Pcsk1, Cpe)	increased	
+GSE246837:Mettl3i_vs_DMSO_coculture	Survival of T-cell killing under METTL3i	KO → resistance to T-cell killing under METTL3i (IFN pathway)	increased	
+GSE246837:Tcells_1to5_vs_none	Survival of T-cell co-culture	KO → resistance to T-cell killing (gene needed for killing; Jak1/Stat1/B2m)	increased	
+GSE251758:acute_vs_pre	T-cell fitness after acute stimulation	KO → better T-cell fitness under stimulation (gene limits fitness)	increased	
+GSE251758:intense_vs_pre	survival of activation-induced cell death	KO → resistance to activation-induced death (gene limits fitness)	increased	
+GSE261338:AZA_vs_DMSO	survival under azacitidine	KO → resistance to azacitidine (e.g. UCK2)	increased	
+GSE262028:GATA3_vs_TBET	GATA3+ vs T-bet+ ILC fate	KO → shifted to GATA3+ (ILC2) fate (gene represses GATA3)	increased	
+GSE264535:n1m_gfplow_vs_unsorted	N1m-mRNA delivered GFP level	KO → lower delivered-mRNA GFP (uptake/escape factor)	decreased	
+GSE264535:utp_gfplow_vs_unsorted	unmodified-mRNA delivered GFP level	KO → lower delivered-mRNA GFP (uptake/escape factor)	decreased	
+GSE266057:high_vs_low	RORC 3'UTR switch GFP reporter	CRISPRi → higher reporter (NMD factor, e.g. UPF1)	increased	
+GSE267517:tcell_et02_vs_ctrl	Survival of pmel T-cell co-culture	KO → resistance to T-cell killing	increased	
+GSE267517:tcell_et1_vs_ctrl	Survival of pmel T-cell co-culture	KO → resistance to T-cell killing	increased	
+GSE273069:re57m_gfp_low_vs_high	Xist RE57M-driven GFP reporter	CRISPRi → lower RE57M-GFP (gene activates RE57M)	decreased	
+GSE273070:xist_high_vs_negative	Xist RNA level (FlowFISH)	CRISPRi → higher Xist (repressor, e.g. Tsix)	increased	
+GSE275043:gal9_high_vs_low	Surface Galectin-9 level	KO → higher Galectin-9 (gene represses LGALS9)	increased	
+GSE276161:CRISPRa_doxo_vs_vehicle	cardiomyocyte survival under doxorubicin	CRISPRa → doxorubicin resistance (protective gene)	increased	
+GSE277690:khyg1_r1_vs_collection	survival of KHYG-1 NK-cell co-culture	KO → resistance to NK-cell killing	increased	
+GSE277690:khyg1_r2_vs_collection	survival of KHYG-1 NK-cell co-culture (round 2)	KO → resistance to NK-cell killing (cumulative)	increased	
+GSE277690:khyg1_vs_nkp44ko_r1	NKp44-dependent NK-cell killing resistance	KO → escapes NKp44-dependent NK killing (e.g. ICAM1)	increased	
+GSE277987:high_vs_basal	PKA activity (Kinprola recorder)	KO → higher PKA activity (gene represses PKA; TRIM33, FZR1)	increased	
+GSE277987:low_vs_basal	PKA activity (Kinprola recorder)	KO → lower PKA activity (gene needed for PKA; PRKACA, GNAS)	decreased	
+GSE282260:poolB_FdU_vs_DMSO_E	growth/survival under floxuridine	KO → floxuridine resistance	increased	
+GSE282260:poolB_FdU_vs_DMSO_EU	growth/survival under floxuridine	KO → floxuridine resistance	increased	
+GSE282260:poolD_FdU_vs_DMSO_EU	growth/survival under floxuridine	KO → floxuridine resistance	increased	
+GSE284239:gw_tng348_vs_dmso	survival under TNG348 (USP1 inhibitor)	KO → resistance to TNG348 (e.g. RAD18)	increased	
+GSE287048:inx315_vs_dmso	Survival under CDK2 inhibitor INX-315	KO → resistance to CDK2 inhibitor INX-315	increased	
+GSE288238:primed_GFPneg_vs_GFPhigh	cGAS-STING-induced IFNB1 reporter (primed)	KO → lower IFNB1 induction (positive regulator)	decreased	
+GSE291338:palbo_vs_dmso	survival under palbociclib (CDK4/6 inhibitor)	KO → resistance to palbociclib (e.g. RB1)	increased	
+GSE294894:RKO_KO_oxali_vs_T20	Survival under oxaliplatin	KO → resistance to oxaliplatin (SLC43A1)	increased	
+GSE294894:SW620_KO_oxali038_vs_T20	Survival under oxaliplatin	KO → resistance to oxaliplatin (SLC43A1)	increased	
+GSE298081:ptar1_vs_wt_gi	differential dropout, PTAR1-mutant vs WT	KO → better growth in PTAR1-mutant than WT (positive GI)		readout is differential dropout; 'increased' is ambiguous between growth and dropout
+GSE298082:ptar1_vs_wt_gi	PTAR1 genetic interaction (differential dropout vs WT)	KO grows better in PTAR1-null than WT → suppressor (positive) interaction		readout is a genetic-interaction score over dropout; sign ambiguous as a quantity
+GSE302335:cd54_low_vs_high	Surface ICAM-1 (CD54) level	CRISPRi → lower CD54 (gene activates ICAM1)	decreased	
+GSE302546:RSL3_vs_DMSO	survival under RSL3 (ferroptosis)	KO → RSL3/ferroptosis resistance	increased	
+GSE307513:CD107a_hi_vs_neg	NK-cell degranulation (CD107a)	KO → more degranulation (CD107a-high)	increased	
+GSE312143:GW_ACOC_lineage_vs_HSPC	HSPC vs mature-lineage representation in vivo	KO → relatively more in mature lineages than HSPCs		two-sided readout (HSPC vs lineage); no single quantity to increase
+GSE316868:tfe3_on_vs_off	PRCC-TFE3-induced senescence (growth)	KO → escape of PRCC-TFE3 senescence (more growth)		readout names senescence and growth, which move in opposite directions
+GSE316985:CRISPRi_T_vs_noT_D11	survival under cytotoxic T-cell attack	CRISPRi → resistance to T-cell killing	increased	
+GSE316985:KO_T_vs_noT_D11	survival under cytotoxic T-cell attack	KO → resistance to T-cell killing (e.g. IRF1)	increased	
+GSE318876:calA_GFPneg_vs_GFPpos	HIV-GFP reporter (infection) level	CRISPRa → lower HIV reporter (overexpression is antiviral)	decreased	
+GSE318876:crisprn_GFPneg_vs_GFPpos	HIV-GFP reporter (infection) level	KO → lower HIV reporter (proviral dependency; CXCR4, CD4)	decreased	
+GSE325129:MHChigh_vs_MHClow	surface MHC-I level	CRISPRi → higher surface MHC-I (gene degrades MHC-I)	increased	
+GSE328470:YFPlow_vs_unsorted	YFP-CL1 degradation reporter level	KO → faster reporter degradation (gene slows it; e.g. EIF5A)	decreased	
+GSE328830:invivo_active_vs_inactive	In vivo tumor fitness (KO vs control allele)	KO → faster growth / clonal expansion (tumor suppressor)	increased	
