@@ -51,6 +51,14 @@ run <- function(script, ...) {
   list(ok = identical(as.integer(code), 0L), log = status)
 }
 
+# The error a failed script reported. Rscript's last line is "Execution
+# halted", so look for the error itself.
+last_error <- function(log) {
+  errors <- grep("^Error", log, value = TRUE)
+  line <- utils::tail(if (length(errors)) errors else log[nzchar(log)], 1)
+  sub("^Error[^:]*: *", "", line %||% "no output")
+}
+
 
 # Archived gene tables are trimmed and rounded by archive_run.R; apply the same
 # to the new run before comparing.
@@ -115,13 +123,13 @@ reproduce_one <- function(gse) {
   if (isTRUE(fetch$sample_files)) fetch_args <- c(fetch_args, "--sample-files")
   if (!is.null(fetch$max_mb)) fetch_args <- c(fetch_args, "--max-mb", fetch$max_mb)
   step <- run(file.path(tools_dir, "fetch_geo.R"), fetch_args)
-  if (!step$ok) return(c(gse, "FAIL", "fetch_geo.R failed"))
+  if (!step$ok) return(c(gse, "FAIL", paste("fetch_geo.R failed:", last_error(step$log))))
 
   prepare <- file.path(record, "prepare.R")
   if (file.exists(prepare)) {
     step <- run(prepare, out)
     if (!step$ok) {
-      return(c(gse, "FAIL", paste("prepare.R failed:", utils::tail(step$log, 1))))
+      return(c(gse, "FAIL", paste("prepare.R failed:", last_error(step$log))))
     }
   }
 

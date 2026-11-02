@@ -36,9 +36,30 @@ base <- sprintf("https://ftp.ncbi.nlm.nih.gov/geo/series/%s/%s", stub, gse)
 out <- file.path(work, gse)
 dir.create(file.path(out, "suppl"), recursive = TRUE, showWarnings = FALSE)
 
-# Directory listings are plain HTML; pull out file links and sizes.
+http_status <- function(url) {
+  tryCatch(as.integer(attr(curlGetHeaders(url), "status")),
+           error = function(e) NA_integer_)
+}
+
+# Directory listings are plain HTML; pull out file links and sizes. A missing
+# directory (404) is empty. Any other failure stops, so a GEO outage is not
+# mistaken for a series without files.
 list_directory <- function(url) {
-  page <- tryCatch(readLines(url, warn = FALSE), error = function(e) character())
+  page <- NULL
+  for (attempt in 1:3) {
+    status <- http_status(url)
+    if (identical(status, 404L)) return(character())
+    if (identical(status, 200L)) {
+      page <- tryCatch(readLines(url, warn = FALSE), error = function(e) NULL)
+      if (!is.null(page)) break
+    }
+    Sys.sleep(2 * attempt)
+  }
+  if (is.null(page)) {
+    stop("GEO did not list ", url, " (",
+         if (is.na(status)) "no response" else paste("HTTP", status),
+         "); GEO may be unavailable, try again later", call. = FALSE)
+  }
   hits <- regmatches(page, regexpr('href="[^"?/][^"]*"', page))
   files <- sub('^href="', "", sub('"$', "", hits))
   # Keep plain file names in this directory; drop page-chrome links.
@@ -119,6 +140,7 @@ message(gse, ": ", nrow(samples), " samples; metadata written.")
 
 # ---- series-level supplementary files ---------------------------------------
 fetched <- character()
+failed <- character()
 for (file in list_directory(paste0(base, "/suppl/"))) {
   url <- paste0(base, "/suppl/", file)
   size <- remote_mb(url)
@@ -133,6 +155,9 @@ for (file in list_directory(paste0(base, "/suppl/"))) {
   if (download(url, file.path(out, "suppl", file))) {
     fetched <- c(fetched, file)
     message("  got  ", file)
+  } else {
+    failed <- c(failed, file)
+    message("  FAIL ", file)
   }
 }
 
@@ -144,10 +169,17 @@ if (sample_files) {
   for (url in urls) {
     if (download(url, file.path(out, "sample_suppl", basename(url)))) {
       message("  got  ", basename(url))
+    } else {
+      failed <- c(failed, basename(url))
+      message("  FAIL ", basename(url))
     }
   }
 }
 
+if (length(failed)) {
+  stop("GEO did not serve ", length(failed), " file(s): ", paste(failed, collapse = ", "),
+       "; GEO may be unavailable, try again later", call. = FALSE)
+}
 if (!length(fetched) && !sample_files) {
   message("No series-level supplementary files were fetched. ",
           "Check samples.tsv and rerun with --sample-files if counts are per sample.")
