@@ -204,6 +204,32 @@ def get_string_neighbors(gene, organism="human", network="physical", min_score=7
                             "regulatory edges are directed source -> target"]}
 
 
+def get_gene_terms(gene, organism="human", source=None, max_size=500, limit=100):
+    """GO / Reactome / WikiPathways / Hallmark terms annotated to a gene, most specific first."""
+    con = _con()
+    taxon = _taxon(organism)
+    sids = _proteins(con, taxon, gene)
+    if not sids:
+        return {"gene": gene, "error": "no unambiguous STRING mapping", "terms": []}
+    sid = sids[0]
+    q = """SELECT t.term_id, t.source, t.name, t.n_proteins, t.n_tested
+           FROM gene_term gt JOIN term t ON t.term_id = gt.term_id AND t.taxon = ?
+           WHERE gt.string_id = ? AND t.n_proteins <= ?"""
+    args = [taxon, sid, int(max_size)]
+    if source:
+        q += " AND t.source = ?"
+        args.append(source)
+    q += " ORDER BY t.n_proteins, t.term_id LIMIT ?"
+    args.append(int(limit))
+    terms = [dict(r) for r in con.execute(q, args)]
+    total = con.execute("SELECT count(*) FROM gene_term WHERE string_id = ?", (sid,)).fetchone()[0]
+    return {"gene": gene, "string_id": sid, "n_terms_all_sizes": total, "max_size": int(max_size),
+            "terms": terms,
+            "limitations": ["annotations from STRING v12.5's enrichment file, without GO evidence codes",
+                            "terms with more than max_size proteins are left out as unspecific",
+                            "absence of a term is not evidence of absent function: study bias"]}
+
+
 def compare_contrasts(contrast_a, contrast_b):
     """Hit overlap over the shared tested universe (STRING protein identity)."""
     con = _con()
@@ -290,7 +316,7 @@ def interpret_perturbation_effect(contrast_id, gene):
 
 
 TOOLS = {f.__name__: f for f in (search_contrasts, get_contrast_result, get_gene_evidence,
-                                 get_string_neighbors, compare_contrasts, trace_evidence_path,
+                                 get_string_neighbors, get_gene_terms, compare_contrasts, trace_evidence_path,
                                  interpret_perturbation_effect)}
 
 if __name__ == "__main__":
