@@ -14,13 +14,17 @@ if [ ! -f build/string_v12.5/9606.protein.info.v12.5.txt.gz ]; then
     done
   done | (cd build/string_v12.5 && xargs -P 6 -n 1 curl -s -f -O --retry 3)
 fi
-[ -f build/string_v12.5/9606.protein.enrichment.terms.v12.5.txt.gz ] || curl -s -f -o build/string_v12.5/9606.protein.enrichment.terms.v12.5.txt.gz \
-  https://stringdb-downloads.org/download/protein.enrichment.terms.v12.5/9606.protein.enrichment.terms.v12.5.txt.gz
+# Per-protein GO / Reactome / KEGG annotations (ontology layer; pathways.py uses the human file)
+for t in 9606 10090 10116 9913; do
+  [ -f build/string_v12.5/$t.protein.enrichment.terms.v12.5.txt.gz ] || curl -s -f --retry 3 -o build/string_v12.5/$t.protein.enrichment.terms.v12.5.txt.gz \
+    https://stringdb-downloads.org/download/protein.enrichment.terms.v12.5/$t.protein.enrichment.terms.v12.5.txt.gz
+done
 mkdir -p build/reference
 [ -f build/reference/CEGv2.txt ] || curl -s -f -o build/reference/CEGv2.txt https://raw.githubusercontent.com/hart-lab/bagel/master/CEGv2.txt
 uv run python -m barcs_kg.ingest "$BARCS" build/barcs_kg.sqlite
 uv run python -m barcs_kg.annotate build/barcs_kg.sqlite
 uv run python -m barcs_kg.string_db build/barcs_kg.sqlite build/string_v12.5
+uv run python -m barcs_kg.ontology build/barcs_kg.sqlite build/string_v12.5
 uv run python -m barcs_kg.analyses build/barcs_kg.sqlite reports > /dev/null
 
 uv run python -m barcs_kg.unified build build/barcs_kg.sqlite reports build/unified_graph.json

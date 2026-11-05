@@ -12,6 +12,7 @@ tools/evidence-graph/build.sh      # download STRING v12.5 + CEGv2 once (~600 MB
 tools/evidence-graph/build_areas.sh  # then: one pathway map per biology area, re-export the page (~7 min)
 cd tools/evidence-graph
 uv run python -m barcs_kg.tools get_gene_evidence gene=IL2RA
+uv run python -m barcs_kg.tools get_gene_terms gene=IL2RA max_size=200
 sqlite3 build/barcs_kg.sqlite
 ```
 
@@ -72,6 +73,7 @@ this, so that view was replaced by the gene-level one.
 | Element type and gene identity | `element`, `element_gene` | `annotate.py` (promoters, peaks, pairs, miRNA, lncRNA, Excel-mangled names) |
 | Gene → STRING protein | `gene_protein` | STRING aliases; ambiguous and unmapped symbols kept with their match type |
 | STRING physical (≥400), functional (≥700), regulatory (≥400, directed, signed channels) | `string_*` | STRING v12.5 bulk files |
+| Ontology and pathway terms (GO BP/MF/CC, Reactome, WikiPathways, MSigDB Hallmark), per organism, with term size | `term`, `gene_term` | STRING v12.5 `protein.enrichment.terms` via `ontology.py`; no GO evidence codes, no term hierarchy yet |
 
 The three sign conventions stay separate: `contrast_annotation.modality`
 (what the perturbation does), `contrast.orientation` (what a positive
