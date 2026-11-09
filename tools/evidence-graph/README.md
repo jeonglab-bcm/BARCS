@@ -102,6 +102,7 @@ map's eligible human and mouse screens, mouse folded onto human by name).
 | STRING physical (≥400), functional (≥700), regulatory (≥400, directed, signed channels) | `string_*` | STRING v12.5 bulk files |
 | Ontology and pathway terms (GO BP/MF/CC, Reactome, WikiPathways, MSigDB Hallmark), per organism, with term size | `term`, `gene_term` | STRING v12.5 `protein.enrichment.terms` via `ontology.py` |
 | Term hierarchy: parent links and ancestor closure (GO is_a/part_of, Reactome part_of) | `term_parent`, `term_ancestor` | GO release 2026-08-05 `go-basic.obo`, Reactome 98 |
+| Why BARCS and the paper part ways (partial / differ records; draft, needs manual check) | `series_disagreement` | `curation/disagreement_reasons.tsv` |
 | GO evidence for each STRING (protein, GO term): best class, codes, BARCS-corpus PMIDs cited, `independent` of screens | `gene_term_evidence` | GO release 2026-08-05 `<ORG>-uniprot.gaf.gz`, propagated over is_a/part_of |
 
 `independent` = at least one annotation that is not high-throughput (HTP, HDA,
@@ -124,6 +125,15 @@ in**; `interpret_perturbation_effect` abstains until it is.
 `curation/*.template.tsv` are written on every build with what the graph
 already knows. Copy one to `contrast_readout.tsv` or `claim_direction.tsv`,
 fill the blank columns, and rebuild; `annotate.py` merges whatever is filled.
+
+`curation/disagreement_reasons.tsv` says why BARCS and the paper part ways for
+each reanalysis labelled `partial` or `differ`: a `reason`, an optional second
+one (`also`) and a `family` (`less_certain`, `evidence_against`,
+`not_comparable`; the vocabulary is in the file header). `annotate.py` loads it
+into `series_disagreement` and skips rows whose agreement no longer matches
+`meta.json`. **It is a draft** written from the agent-written verdicts, not from
+the counts: fill `checked_by` row by row after checking, and quote no count
+from it in the paper until every row used is checked.
 
 ## Modules
 

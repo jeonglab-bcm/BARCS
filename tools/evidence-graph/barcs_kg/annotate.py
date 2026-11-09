@@ -222,6 +222,35 @@ def apply_curation(con, folder):
                 if r.get("claimed_direction"):
                     con.execute("UPDATE claim SET claimed_direction = ? WHERE compare_id = ? AND gene = ?",
                                 (r["claimed_direction"], r["compare_id"], r["gene"]))
+    apply_disagreement_reasons(con, folder / "disagreement_reasons.tsv")
+
+
+def apply_disagreement_reasons(con, path):
+    """Load curation/disagreement_reasons.tsv (why BARCS and a paper part ways) into
+    series_disagreement. It is a draft: rows with an empty checked_by are unchecked, so
+    filter on checked_by before quoting counts. Rows whose agreement no longer matches the
+    record's meta.json are skipped with a warning."""
+    con.execute("DROP TABLE IF EXISTS series_disagreement")
+    con.execute("""CREATE TABLE series_disagreement (
+        gse TEXT PRIMARY KEY REFERENCES series, agreement TEXT, reason TEXT, also TEXT,
+        family TEXT, summary TEXT, checked_by TEXT)""")
+    if not path.exists():
+        return
+    current = dict(con.execute("SELECT gse, agreement FROM series"))
+    with open(path, newline="") as fh:
+        for r in csv.DictReader((line for line in fh if not line.startswith("#")), delimiter="\t"):
+            if current.get(r["gse"]) != r["agreement"]:
+                print(f"disagreement_reasons.tsv: {r['gse']} is {r['agreement']} here but "
+                      f"{current.get(r['gse'])} in reanalyses/; skipped", file=sys.stderr)
+                continue
+            con.execute("INSERT INTO series_disagreement VALUES (?,?,?,?,?,?,?)",
+                        (r["gse"], r["agreement"], r["reason"], r.get("also") or None, r["family"],
+                         r.get("summary") or None, r.get("checked_by") or None))
+    missing = con.execute("""SELECT count(*) FROM series WHERE agreement IN ('partial', 'differ')
+                             AND gse NOT IN (SELECT gse FROM series_disagreement)""").fetchone()[0]
+    if missing:
+        print(f"disagreement_reasons.tsv: {missing} partial/differ records have no reason yet",
+              file=sys.stderr)
 
 
 def write_templates(con, folder):
