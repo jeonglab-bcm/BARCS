@@ -13,6 +13,8 @@ tools/evidence-graph/build_areas.sh  # then: one pathway map per biology area, r
 cd tools/evidence-graph
 uv run python -m barcs_kg.tools get_gene_evidence gene=IL2RA
 uv run python -m barcs_kg.tools get_gene_terms gene=IL2RA max_size=200 most_specific=true independent_only=true
+uv run python -m barcs_kg.tools find_bridges gene_a=IFNGR1 gene_c=JAK1   # a-b-c: what links a and c
+uv run python -m barcs_kg.tools find_c gene_a=IFNGR1                    # a-b-c: which c travel with a
 sqlite3 build/barcs_kg.sqlite
 ```
 
@@ -59,6 +61,31 @@ carried: across 8,546 cross-paper pairs, r correlated 0.72 with the product of
 the two screens' fitness loads, and 98.5% of reported edges had the sign that
 product predicts. Regressing on more fitness profiles lowered but did not remove
 this, so that view was replaced by the gene-level one.
+
+## a-b-c queries
+
+`bridges.py` asks Swanson's a-b-c question of the screens: two genes a and c
+are hit together, so what is the b that links them? `find_bridges(a, c)`
+answers it for one pair and `find_c(a)` scans for the c's that screens hit
+with a more often than their hit rates predict. Each link is classified, in
+this order:
+
+| Link | Meaning |
+|---|---|
+| direct | STRING physical, functional or regulatory link (score >= 700) with some channel other than text mining >= 400 |
+| term | a shared term of <= 50 proteins; GO terms only if independent of screens (`gene_term_evidence`) |
+| gene | a gene b linked to both a and c by such STRING links |
+| text mining only | the only links are literature co-mentions |
+| unexplained | none of the above: a candidate for a new hypothesis |
+
+Both report the co-hits behind the pair: papers co-hit against expected, the
+screens and whether a and c moved the same way in each. `find_c` returns
+candidates by p (default p <= 0.001) with a genome-wide BH q alongside; genes
+hit in few papers rarely pass q < 0.10 (IFNGR1, hit in 6 papers: STAT1, JAK1
+and JAK2 rank first with q 0.66), so treat them as leads. Fitness genes and
+frequent hitters are flagged and, in `find_c`, left out by default. The screen
+layer is stored once per build in `screen` and `screen_call` (the pathway
+map's eligible human and mouse screens, mouse folded onto human by name).
 
 ## What is in the graph
 
