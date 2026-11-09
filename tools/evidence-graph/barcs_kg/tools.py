@@ -17,8 +17,6 @@ from pathlib import Path
 
 from scipy.stats import hypergeom
 
-from barcs_kg import bridges
-
 DB = Path(__file__).resolve().parent.parent / "build" / "barcs_kg.sqlite"
 REPORTS = Path(__file__).resolve().parent.parent / "reports"
 HIT_FDR = 0.10
@@ -206,94 +204,6 @@ def get_string_neighbors(gene, organism="human", network="physical", min_score=7
                             "regulatory edges are directed source -> target"]}
 
 
-def _flag(value):
-    return str(value).lower() in ("1", "true", "yes")
-
-
-def get_gene_terms(gene, organism="human", source=None, max_size=500, independent_only=False,
-                   most_specific=False, limit=100):
-    """GO / Reactome / WikiPathways / Hallmark terms annotated to a gene, most specific first.
-
-    GO terms carry the GO release's evidence: best class, codes, and whether some
-    annotation is independent of screens (not high-throughput, not electronic, not
-    citing a BARCS corpus paper). independent_only keeps only those GO terms (other
-    sources are kept). most_specific drops terms that are ancestors of another
-    returned term."""
-    con = _con()
-    taxon = _taxon(organism)
-    sids = _proteins(con, taxon, gene)
-    if not sids:
-        return {"gene": gene, "error": "no unambiguous STRING mapping", "terms": []}
-    sid = sids[0]
-    q = """SELECT t.term_id, t.source, t.name, t.n_proteins, t.n_tested,
-                  e.best_class AS evidence, e.codes AS evidence_codes,
-                  e.corpus_pmids, e.independent
-           FROM gene_term gt JOIN term t ON t.term_id = gt.term_id AND t.taxon = ?
-           LEFT JOIN gene_term_evidence e ON e.string_id = gt.string_id AND e.term_id = gt.term_id
-           WHERE gt.string_id = ? AND t.n_proteins <= ?"""
-    args = [taxon, sid, int(max_size)]
-    if source:
-        q += " AND t.source = ?"
-        args.append(source)
-    if _flag(independent_only):
-        q += " AND (t.source NOT LIKE 'GO:%' OR e.independent = 1)"
-    q += " ORDER BY t.n_proteins, t.term_id"
-    terms = []
-    for r in con.execute(q, args):
-        d = dict(r)
-        if d["source"].startswith("GO:") and d["evidence"] is None:
-            d["evidence"] = "not in GO release"
-        terms.append(d)
-    dropped = 0
-    if _flag(most_specific) and terms:
-        ids = [t["term_id"] for t in terms]
-        marks = ",".join("?" * len(ids))
-        ancestors = {a for (a,) in con.execute(
-            f"SELECT DISTINCT ancestor_id FROM term_ancestor WHERE term_id IN ({marks})", ids)}
-        dropped = sum(t["term_id"] in ancestors for t in terms)
-        terms = [t for t in terms if t["term_id"] not in ancestors]
-    total = con.execute("SELECT count(*) FROM gene_term WHERE string_id = ?", (sid,)).fetchone()[0]
-    release = dict(con.execute("SELECT key, value FROM source WHERE key IN ('go_release', 'reactome_release')"))
-    return {"gene": gene, "string_id": sid, "n_terms_all_sizes": total, "max_size": int(max_size),
-            "ancestors_dropped": dropped, "releases": release, "terms": terms[:int(limit)],
-            "limitations": ["terms from STRING v12.5's annotation file; GO evidence from the GO release named",
-                            "'not in GO release': STRING has the term but this GO release does not support it",
-                            "the corpus check misses screens outside the BARCS corpus curated as IMP",
-                            "terms with more than max_size proteins are left out as unspecific",
-                            "absence of a term is not evidence of absent function: study bias"]}
-
-
-def find_bridges(gene_a, gene_c, max_term_size=200, limit=10):
-    """a-b-c, closed discovery: how two human genes are linked (direct STRING link,
-    shared specific term, bridging gene b, text mining only, or unexplained), with
-    their co-hits across screens. See bridges.py."""
-    out = bridges.find_bridges(_con(), gene_a, gene_c, max_term_size, limit)
-    out["limitations"] = BRIDGE_LIMITS
-    return out
-
-
-def find_c(gene_a, min_papers=2, p_max=0.001, q_max=1.0, include_flagged=False, unexplained_only=False,
-           limit=30):
-    """a-b-c, open discovery: genes hit together with a in more papers than the screens'
-    hit rates predict, each classified by how it is linked to a. See bridges.py."""
-    out = bridges.find_c(_con(), gene_a, min_papers, p_max, q_max, include_flagged,
-                         unexplained_only=unexplained_only, limit=limit)
-    out["limitations"] = BRIDGE_LIMITS + [
-        "BH over every gene tested in the screens that hit a; genes hit in few papers rarely "
-        "pass it, so candidates are ranked by p and carry q: treat q >= 0.10 as a lead only",
-        "fitness genes and frequent hitters are left out unless include_flagged=true"]
-    return out
-
-
-BRIDGE_LIMITS = [
-    "'unexplained' means no STRING link >= 700 beyond text mining, no shared term of <= 50 "
-    "proteins independent of screens and no bridging gene: absence of a known link, not proof of a new one",
-    "co-hits count papers, not screens; one paper's screens share cells",
-    "mouse calls join human by identical gene name",
-    "screen hit rates include fitness genes and frequent hitters",
-]
-
-
 def compare_contrasts(contrast_a, contrast_b):
     """Hit overlap over the shared tested universe (STRING protein identity)."""
     con = _con()
@@ -380,8 +290,7 @@ def interpret_perturbation_effect(contrast_id, gene):
 
 
 TOOLS = {f.__name__: f for f in (search_contrasts, get_contrast_result, get_gene_evidence,
-                                 get_string_neighbors, get_gene_terms, find_bridges, find_c,
-                                 compare_contrasts, trace_evidence_path,
+                                 get_string_neighbors, compare_contrasts, trace_evidence_path,
                                  interpret_perturbation_effect)}
 
 if __name__ == "__main__":

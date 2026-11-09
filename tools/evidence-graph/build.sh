@@ -14,27 +14,13 @@ if [ ! -f build/string_v12.5/9606.protein.info.v12.5.txt.gz ]; then
     done
   done | (cd build/string_v12.5 && xargs -P 6 -n 1 curl -s -f -O --retry 3)
 fi
-# Per-protein GO / Reactome / KEGG annotations (ontology layer; pathways.py uses the human file)
-for t in 9606 10090 10116 9913; do
-  [ -f build/string_v12.5/$t.protein.enrichment.terms.v12.5.txt.gz ] || curl -s -f --retry 3 -o build/string_v12.5/$t.protein.enrichment.terms.v12.5.txt.gz \
-    https://stringdb-downloads.org/download/protein.enrichment.terms.v12.5/$t.protein.enrichment.terms.v12.5.txt.gz
-done
-# GO hierarchy and annotations (evidence codes), pinned to one GO release; Reactome hierarchy, release 98
-GO_RELEASE=https://release.geneontology.org/2026-08-05
-mkdir -p build/go build/reactome
-[ -f build/go/go-basic.obo ] || curl -s -f --retry 3 -o build/go/go-basic.obo $GO_RELEASE/ontology/go-basic.obo
-for o in HUMAN MOUSE RAT BOVIN; do
-  [ -f build/go/$o-uniprot.gaf.gz ] || curl -s -f --retry 3 -o build/go/$o-uniprot.gaf.gz $GO_RELEASE/annotations/gaf/$o-uniprot.gaf.gz
-done
-[ -f build/reactome/ReactomePathwaysRelation.txt ] || curl -s -f --retry 3 -o build/reactome/ReactomePathwaysRelation.txt \
-  https://reactome.org/download/98/ReactomePathwaysRelation.txt
+[ -f build/string_v12.5/9606.protein.enrichment.terms.v12.5.txt.gz ] || curl -s -f -o build/string_v12.5/9606.protein.enrichment.terms.v12.5.txt.gz \
+  https://stringdb-downloads.org/download/protein.enrichment.terms.v12.5/9606.protein.enrichment.terms.v12.5.txt.gz
 mkdir -p build/reference
 [ -f build/reference/CEGv2.txt ] || curl -s -f -o build/reference/CEGv2.txt https://raw.githubusercontent.com/hart-lab/bagel/master/CEGv2.txt
 uv run python -m barcs_kg.ingest "$BARCS" build/barcs_kg.sqlite
 uv run python -m barcs_kg.annotate build/barcs_kg.sqlite
 uv run python -m barcs_kg.string_db build/barcs_kg.sqlite build/string_v12.5
-uv run python -m barcs_kg.ontology build/barcs_kg.sqlite build/string_v12.5 build/go build/reactome
-uv run python -m barcs_kg.bridges build/barcs_kg.sqlite
 uv run python -m barcs_kg.analyses build/barcs_kg.sqlite reports > /dev/null
 
 uv run python -m barcs_kg.unified build build/barcs_kg.sqlite reports build/unified_graph.json

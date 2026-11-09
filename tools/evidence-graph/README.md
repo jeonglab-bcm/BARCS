@@ -12,9 +12,6 @@ tools/evidence-graph/build.sh      # download STRING v12.5 + CEGv2 once (~600 MB
 tools/evidence-graph/build_areas.sh  # then: one pathway map per biology area, re-export the page (~7 min)
 cd tools/evidence-graph
 uv run python -m barcs_kg.tools get_gene_evidence gene=IL2RA
-uv run python -m barcs_kg.tools get_gene_terms gene=IL2RA max_size=200 most_specific=true independent_only=true
-uv run python -m barcs_kg.tools find_bridges gene_a=IFNGR1 gene_c=JAK1   # a-b-c: what links a and c
-uv run python -m barcs_kg.tools find_c gene_a=IFNGR1                    # a-b-c: which c travel with a
 sqlite3 build/barcs_kg.sqlite
 ```
 
@@ -62,31 +59,6 @@ the two screens' fitness loads, and 98.5% of reported edges had the sign that
 product predicts. Regressing on more fitness profiles lowered but did not remove
 this, so that view was replaced by the gene-level one.
 
-## a-b-c queries
-
-`bridges.py` asks Swanson's a-b-c question of the screens: two genes a and c
-are hit together, so what is the b that links them? `find_bridges(a, c)`
-answers it for one pair and `find_c(a)` scans for the c's that screens hit
-with a more often than their hit rates predict. Each link is classified, in
-this order:
-
-| Link | Meaning |
-|---|---|
-| direct | STRING physical, functional or regulatory link (score >= 700) with some channel other than text mining >= 400 |
-| term | a shared term of <= 50 proteins; GO terms only if independent of screens (`gene_term_evidence`) |
-| gene | a gene b linked to both a and c by such STRING links |
-| text mining only | the only links are literature co-mentions |
-| unexplained | none of the above: a candidate for a new hypothesis |
-
-Both report the co-hits behind the pair: papers co-hit against expected, the
-screens and whether a and c moved the same way in each. `find_c` returns
-candidates by p (default p <= 0.001) with a genome-wide BH q alongside; genes
-hit in few papers rarely pass q < 0.10 (IFNGR1, hit in 6 papers: STAT1, JAK1
-and JAK2 rank first with q 0.66), so treat them as leads. Fitness genes and
-frequent hitters are flagged and, in `find_c`, left out by default. The screen
-layer is stored once per build in `screen` and `screen_call` (the pathway
-map's eligible human and mouse screens, mouse folded onto human by name).
-
 ## What is in the graph
 
 | Layer | Table | Source |
@@ -100,18 +72,6 @@ map's eligible human and mouse screens, mouse folded onto human by name).
 | Element type and gene identity | `element`, `element_gene` | `annotate.py` (promoters, peaks, pairs, miRNA, lncRNA, Excel-mangled names) |
 | Gene → STRING protein | `gene_protein` | STRING aliases; ambiguous and unmapped symbols kept with their match type |
 | STRING physical (≥400), functional (≥700), regulatory (≥400, directed, signed channels) | `string_*` | STRING v12.5 bulk files |
-| Ontology and pathway terms (GO BP/MF/CC, Reactome, WikiPathways, MSigDB Hallmark), per organism, with term size | `term`, `gene_term` | STRING v12.5 `protein.enrichment.terms` via `ontology.py` |
-| Term hierarchy: parent links and ancestor closure (GO is_a/part_of, Reactome part_of) | `term_parent`, `term_ancestor` | GO release 2026-08-05 `go-basic.obo`, Reactome 98 |
-| Why BARCS and the paper part ways (partial / differ records; draft, needs manual check) | `series_disagreement` | `curation/disagreement_reasons.tsv` |
-| GO evidence for each STRING (protein, GO term): best class, codes, BARCS-corpus PMIDs cited, `independent` of screens | `gene_term_evidence` | GO release 2026-08-05 `<ORG>-uniprot.gaf.gz`, propagated over is_a/part_of |
-
-`independent` = at least one annotation that is not high-throughput (HTP, HDA,
-HMP, HGI, HEP), not electronic (IEA) and does not cite a paper in the BARCS
-corpus. Use it before calling a link "unexplained" or "known": a GO term a
-screen put there cannot explain that screen's hit (for example QRICH1's
-unfolded-protein-response terms cite a corpus paper and only it). About 15% of
-STRING's human GO pairs have no support in this GO release (release drift);
-queries report them as `not in GO release`.
 
 The three sign conventions stay separate: `contrast_annotation.modality`
 (what the perturbation does), `contrast.orientation` (what a positive
@@ -125,15 +85,6 @@ in**; `interpret_perturbation_effect` abstains until it is.
 `curation/*.template.tsv` are written on every build with what the graph
 already knows. Copy one to `contrast_readout.tsv` or `claim_direction.tsv`,
 fill the blank columns, and rebuild; `annotate.py` merges whatever is filled.
-
-`curation/disagreement_reasons.tsv` says why BARCS and the paper part ways for
-each reanalysis labelled `partial` or `differ`: a `reason`, an optional second
-one (`also`) and a `family` (`less_certain`, `evidence_against`,
-`not_comparable`; the vocabulary is in the file header). `annotate.py` loads it
-into `series_disagreement` and skips rows whose agreement no longer matches
-`meta.json`. **It is a draft** written from the agent-written verdicts, not from
-the counts: fill `checked_by` row by row after checking, and quote no count
-from it in the paper until every row used is checked.
 
 ## Modules
 
