@@ -34,6 +34,7 @@ uv run python -m barcs_kg.ingest "$BARCS" build/barcs_kg.sqlite
 uv run python -m barcs_kg.annotate build/barcs_kg.sqlite
 uv run python -m barcs_kg.string_db build/barcs_kg.sqlite build/string_v12.5
 uv run python -m barcs_kg.ontology build/barcs_kg.sqlite build/string_v12.5 build/go build/reactome
+uv run python -m barcs_kg.bridges build/barcs_kg.sqlite
 uv run python -m barcs_kg.analyses build/barcs_kg.sqlite reports > /dev/null
 
 uv run python -m barcs_kg.unified build build/barcs_kg.sqlite reports build/unified_graph.json

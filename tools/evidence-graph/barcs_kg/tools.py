@@ -17,6 +17,8 @@ from pathlib import Path
 
 from scipy.stats import hypergeom
 
+from barcs_kg import bridges
+
 DB = Path(__file__).resolve().parent.parent / "build" / "barcs_kg.sqlite"
 REPORTS = Path(__file__).resolve().parent.parent / "reports"
 HIT_FDR = 0.10
@@ -261,6 +263,37 @@ def get_gene_terms(gene, organism="human", source=None, max_size=500, independen
                             "absence of a term is not evidence of absent function: study bias"]}
 
 
+def find_bridges(gene_a, gene_c, max_term_size=200, limit=10):
+    """a-b-c, closed discovery: how two human genes are linked (direct STRING link,
+    shared specific term, bridging gene b, text mining only, or unexplained), with
+    their co-hits across screens. See bridges.py."""
+    out = bridges.find_bridges(_con(), gene_a, gene_c, max_term_size, limit)
+    out["limitations"] = BRIDGE_LIMITS
+    return out
+
+
+def find_c(gene_a, min_papers=2, p_max=0.001, q_max=1.0, include_flagged=False, unexplained_only=False,
+           limit=30):
+    """a-b-c, open discovery: genes hit together with a in more papers than the screens'
+    hit rates predict, each classified by how it is linked to a. See bridges.py."""
+    out = bridges.find_c(_con(), gene_a, min_papers, p_max, q_max, include_flagged,
+                         unexplained_only=unexplained_only, limit=limit)
+    out["limitations"] = BRIDGE_LIMITS + [
+        "BH over every gene tested in the screens that hit a; genes hit in few papers rarely "
+        "pass it, so candidates are ranked by p and carry q: treat q >= 0.10 as a lead only",
+        "fitness genes and frequent hitters are left out unless include_flagged=true"]
+    return out
+
+
+BRIDGE_LIMITS = [
+    "'unexplained' means no STRING link >= 700 beyond text mining, no shared term of <= 50 "
+    "proteins independent of screens and no bridging gene: absence of a known link, not proof of a new one",
+    "co-hits count papers, not screens; one paper's screens share cells",
+    "mouse calls join human by identical gene name",
+    "screen hit rates include fitness genes and frequent hitters",
+]
+
+
 def compare_contrasts(contrast_a, contrast_b):
     """Hit overlap over the shared tested universe (STRING protein identity)."""
     con = _con()
@@ -347,7 +380,8 @@ def interpret_perturbation_effect(contrast_id, gene):
 
 
 TOOLS = {f.__name__: f for f in (search_contrasts, get_contrast_result, get_gene_evidence,
-                                 get_string_neighbors, get_gene_terms, compare_contrasts, trace_evidence_path,
+                                 get_string_neighbors, get_gene_terms, find_bridges, find_c,
+                                 compare_contrasts, trace_evidence_path,
                                  interpret_perturbation_effect)}
 
 if __name__ == "__main__":
