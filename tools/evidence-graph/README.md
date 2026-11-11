@@ -68,6 +68,7 @@ this, so that view was replaced by the gene-level one.
 | Contrast (with orientation of a positive estimate) | `contrast` | `design*.json` analyses + `run_info.json` |
 | Gene-level result, **every tested element** | `result` | `results/<analysis>/genes.csv.gz` |
 | Paper claim (named gene) | `claim`, `comparison` | `compare*.json` |
+| Why BARCS and the paper part ways (partial / differ records; draft, needs manual check) | `series_disagreement` | `curation/disagreement_reasons.tsv` |
 | Organism, modality, selection class | `series_annotation`, `contrast_annotation` | rules in `annotate.py`, each with a `*_basis` |
 | Element type and gene identity | `element`, `element_gene` | `annotate.py` (promoters, peaks, pairs, miRNA, lncRNA, Excel-mangled names) |
 | Gene → STRING protein | `gene_protein` | STRING aliases; ambiguous and unmapped symbols kept with their match type |
@@ -85,6 +86,15 @@ in**; `interpret_perturbation_effect` abstains until it is.
 `curation/*.template.tsv` are written on every build with what the graph
 already knows. Copy one to `contrast_readout.tsv` or `claim_direction.tsv`,
 fill the blank columns, and rebuild; `annotate.py` merges whatever is filled.
+
+`curation/disagreement_reasons.tsv` says why BARCS and the paper part ways for
+each reanalysis labelled `partial` or `differ`: a `reason`, an optional second
+one (`also`) and a `family` (`less_certain`, `evidence_against`,
+`not_comparable`; the vocabulary is in the file header). `annotate.py` loads it
+into `series_disagreement` and skips rows whose agreement no longer matches
+`meta.json`. **It is a draft** written from the agent-written verdicts, not from
+the counts: fill `checked_by` row by row after checking, and quote no count
+from it in the paper until every row used is checked.
 
 ## Modules
 
