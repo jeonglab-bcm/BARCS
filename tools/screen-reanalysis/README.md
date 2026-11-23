@@ -76,3 +76,33 @@ What a record holds so that this works:
 requests that touch the package or the records and weekly; dispatch it with
 `all` to check every record.
 
+## Validating a record
+
+Validation is a person's audit of a record's inputs (see `GLOSSARY.md`). It
+checks that the record is set up right; it does not overrule the agreement
+rule. Record each record as one row of `reanalyses/validation.tsv`.
+
+1. **Main comparison** (`comparison_ok`). Read the paper's methods and
+   figures. Does `design.json` use the samples, contrast and selection
+   direction the headline conclusion rests on? Check the column-to-sample
+   mapping against the GSM titles.
+2. **Named hits** (`named_hits_ok`). Are the genes in `compare.json`
+   `named_hits` the ones the paper puts forward from this screen, in the
+   title, abstract or validation experiments? No missing headline genes, no
+   genes the paper only mentions in passing.
+3. **Published table** (`table_ok`). If the paper or GEO has a gene-level
+   results table, does `compare.json` use it, with the right sheet, gene,
+   score and direction columns? Use `none` when no table exists.
+4. **Agreement** (`agreement_ok`). In `results/<analysis>/genes.csv`, do the
+   named hits pass FDR 0.10? `agree` if all do, `partial` if some do,
+   `differ` if none do or BARCS contradicts them. Does `meta.json` match?
+
+If any check fails, fix the input (`design.json`, `compare.json`,
+`prepare.R`), rerun `run_barcs.R` and `compare_results.R`, update
+`REPORT.md` and `meta.json`, archive the record again, confirm
+`reproduce.R` prints OK, and set `outcome` to `fixed`. For `partial` and
+`differ` records, also confirm or correct the row in
+`tools/evidence-graph/curation/disagreement_reasons.tsv` and fill its
+`checked_by`; add, change or remove that row if the agreement changed. Use
+`unverifiable` only when the paper and GEO cannot settle a check, and say
+why in `notes`.

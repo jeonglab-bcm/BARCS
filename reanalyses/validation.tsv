@@ -1,0 +1,16 @@
+# Validation of reanalysis records: a person's audit of each record's inputs, one row per record.
+# Validation corrects inputs and reruns; it never relabels a record by judgment (see GLOSSARY.md).
+# Checklist: tools/screen-reanalysis/README.md, "Validating a record".
+# Columns:
+#   gse            the record, reanalyses/<GSE>/
+#   comparison_ok  yes/no: design.json reproduces the paper's main comparison (samples, contrast, direction)
+#   named_hits_ok  yes/no: compare.json named_hits are the genes the paper puts forward (title, abstract, validation)
+#   table_ok       yes/no/none: compare.json uses the paper's own results table, right sheet and columns
+#                  (none = the paper has no gene-level table and none was used)
+#   agreement_ok   yes/no: meta.json agreement follows the rule (agree: named hits pass FDR 0.10; partial: some; differ: none)
+#   outcome        pass (all checks yes) | fixed (inputs corrected and the record rerun in the same PR) |
+#                  unverifiable (a check cannot be settled from the paper or GEO; say why in notes)
+#   notes          what was wrong and what changed, or why a check could not be settled
+#   checked_by     GitHub login of the person who validated the record
+#   checked_on     date of the check, YYYY-MM-DD
+gse	comparison_ok	named_hits_ok	table_ok	agreement_ok	outcome	notes	checked_by	checked_on
