@@ -1,0 +1,52 @@
+name: evidence-atlas
+
+# Tests for tools/evidence-atlas (stdlib Python, synthetic fixtures only).
+# The isolation test fails if a change outside tools/evidence-atlas/ rides along;
+# drop ATLAS_CHECK_ISOLATION once the atlas is validated and may share PRs with other work.
+
+on:
+  pull_request:
+    paths:
+      - 'tools/evidence-atlas/**'
+      - '.github/workflows/evidence-atlas.yaml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/evidence-atlas/**'
+      - '.github/workflows/evidence-atlas.yaml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evidence-atlas-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit and integration tests
+        working-directory: tools/evidence-atlas
+        env:
+          ATLAS_CHECK_ISOLATION: '1'
+        run: python -m unittest discover -s tests -v
+      - name: Review logs only grow (no lines removed, changed or reordered vs. the base)
+        working-directory: tools/evidence-atlas
+        run: python -m atlas check-append-only --base "${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}"
+      - name: Build synthetic export twice and compare
+        working-directory: tools/evidence-atlas
+        run: |
+          python -m atlas build fixtures/synthetic --out /tmp/a
+          python -m atlas build fixtures/synthetic --out /tmp/b
+          cmp /tmp/a/public/atlas.json /tmp/b/public/atlas.json
+          cmp /tmp/a/public/index.html /tmp/b/public/index.html

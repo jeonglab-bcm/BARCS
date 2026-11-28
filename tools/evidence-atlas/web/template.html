@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BARCS Evidence Atlas</title>
+<style>
+:root {
+  --bg: #fbfbf9; --fg: #1d1d1b; --muted: #5d5d58; --line: #d9d8d2; --card: #ffffff;
+  --obs: #1f6f5c; --claim: #8a4b08; --annot: #3c4f9a; --warn-bg: #fff4d6; --warn-fg: #6b4a00;
+  --code: #f0efe9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161615; --fg: #ecebe6; --muted: #a3a29b; --line: #3a3a36; --card: #1f1f1d;
+    --obs: #5fc4a8; --claim: #e6a35a; --annot: #9aaaf0; --warn-bg: #3a3014; --warn-fg: #f3d58a;
+    --code: #2a2a27;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 1.5rem; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 32px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+p.lede, .muted { color: var(--muted); }
+.banner { background: var(--warn-bg); color: var(--warn-fg); padding: 8px 12px; border-radius: 6px; margin: 12px 0; }
+.search { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; }
+.search input { flex: 1 1 240px; font: inherit; padding: 8px 10px; border: 1px solid var(--line);
+  border-radius: 6px; background: var(--card); color: var(--fg); }
+.genes { display: flex; flex-wrap: wrap; gap: 6px; }
+.genes a { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--fg); }
+.card { background: var(--card); border: 1px solid var(--line); border-left-width: 4px; border-radius: 6px;
+  padding: 12px 14px; margin: 10px 0; overflow-wrap: anywhere; }
+.card.observation { border-left-color: var(--obs); }
+.card.claim { border-left-color: var(--claim); }
+.card.annotation { border-left-color: var(--annot); }
+.card.assessment { border-left-color: var(--muted); }
+.assessment .tag { color: var(--muted); }
+.tag { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+  text-transform: uppercase; margin-bottom: 4px; }
+.tag code { text-transform: none; }
+.observation .tag { color: var(--obs); } .claim .tag { color: var(--claim); } .annotation .tag { color: var(--annot); }
+.note { font-size: 0.875rem; color: var(--muted); margin: 6px 0 0; }
+.unknown { font-style: italic; color: var(--muted); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 4px 8px 4px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.scroll { overflow-x: auto; }
+code { background: var(--code); padding: 0 4px; border-radius: 3px; font-size: 0.85em; }
+blockquote { margin: 4px 0; padding-left: 10px; border-left: 2px solid var(--line); }
+ol.chain { margin: 4px 0; padding-left: 20px; }
+a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>BARCS Evidence Atlas</h1>
+  <p class="lede">Read-only gene lookup over an explicitly approved collection. Observations, author claims,
+  statistics and external annotations are shown separately, each with its source and review history.</p>
+  <div id="banner"></div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Gene symbol" aria-label="Gene symbol" list="gene-list" autocomplete="off">
+    <datalist id="gene-list"></datalist>
+  </div>
+  <div id="view"></div>
+</main>
+<script id="atlas-data" type="application/json">/*__ATLAS_DATA__*/null</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("atlas-data").textContent);
+const N = D.notices;
+
+// Application-boundary guard: render only records whose latest review is an approval.
+function approved(id) {
+  const h = D.reviews[id];
+  return Array.isArray(h) && h.length > 0 && h[h.length - 1].decision === "approve";
+}
+
+function el(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") e.className = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids) if (k !== null && k !== undefined) e.append(k instanceof Node ? k : String(k));
+  return e;
+}
+function val(v) { return v === null || v === undefined ? el("span", {class: "unknown"}, "unknown") : String(v); }
+function link(url, text) {
+  return /^https:\/\//.test(url || "") ? el("a", {href: url, rel: "noopener noreferrer"}, text) : el("code", {}, url);
+}
+function note(text) { return el("p", {class: "note"}, text); }
+
+function sourceLine(src) {
+  return el("div", {class: "note"}, "Publication: ", link(src.url, src.citation),
+    " (", src.identifier_scheme, ": ", src.identifier, "; accessed ", src.accessed, ")");
+}
+function obsChain(ob) {
+  const an = D.analyses[ob.analysis_id], st = D.studies[an.study_id];
+  const ds = D.datasets[st.dataset_id], src = D.sources[ds.described_by];
+  return {an, st, ds, src};
+}
+
+function observationCard(ob) {
+  const {an, st, src} = obsChain(ob);
+  const c = el("div", {class: "card observation", id: ob.id});
+  c.append(el("div", {class: "tag"}, "Reviewed observation"));
+  c.append(el("div", {}, ob.display_wording));
+  if (ob.wording_corrected) c.append(el("div", {class: "note"}, "Original wording: ", el("q", {}, ob.source_wording)));
+  c.append(el("div", {class: "note"}, "Direction (as archived): ", val(ob.direction),
+    ". Positive estimate means: ", val(ob.estimate_meaning), "."));
+  c.append(el("div", {class: "note"}, "Limitations: ", val(ob.limitations)));
+  c.append(el("div", {class: "note"}, "Study: ", st.title, " · source record ", link(st.archive_ref, st.archive_ref),
+    " · validation: ", st.validation_status.replace(/_/g, " ")));
+  c.append(sourceLine(src));
+  return c;
+}
+
+function claimCard(cl) {
+  const src = D.sources[cl.source_id], st = D.studies[cl.study_id];
+  const c = el("div", {class: "card claim", id: cl.id});
+  c.append(el("div", {class: "tag"}, "Published claim · author interpretation"));
+  c.append(el("blockquote", {}, cl.display_wording));
+  if (cl.wording_corrected) c.append(el("div", {class: "note"}, "Original wording: ", el("q", {}, cl.source_wording)));
+  c.append(el("div", {class: "note"}, "Location: ", cl.source_location, " · study: ", st.title));
+  c.append(sourceLine(src));
+  c.append(note(N.claim));
+  return c;
+}
+
+function statsTable(obs) {
+  const t = el("table", {});
+  t.append(el("tr", {}, ...["Observation", "Analysis", "Method (version)", "Estimate", "p", "FDR",
+    "FDR threshold", "Elements"].map(h => el("th", {}, h))));
+  for (const ob of obs) {
+    const an = D.analyses[ob.analysis_id];
+    t.append(el("tr", {}, el("td", {}, el("a", {href: "#" + ob.id}, ob.id)), el("td", {}, an.label),
+      el("td", {}, an.method + " (" + an.method_version + ")"), el("td", {}, val(ob.estimate)),
+      el("td", {}, val(ob.p_value)), el("td", {}, val(ob.fdr)), el("td", {}, val(an.fdr_threshold)),
+      el("td", {}, val(ob.n_elements))));
+  }
+  return el("div", {class: "scroll"}, t);
+}
+
+function annotationCard(at) {
+  const c = el("div", {class: "card annotation", id: at.id});
+  c.append(el("div", {class: "tag"}, "External annotation · " + at.origin.replace(/_/g, " ")));
+  c.append(el("div", {}, at.term_label, " ", el("code", {}, at.term_id)));
+  c.append(el("div", {class: "note"}, at.vocabulary, " ", at.vocabulary_version, " · ", at.attribution));
+  return c;
+}
+
+function assessmentCard(as) {
+  const st = D.studies[as.study_id];
+  const c = el("div", {class: "card assessment", id: as.id});
+  c.append(el("div", {class: "tag"}, "BARCS reanalysis assessment · project, not authors"));
+  c.append(el("div", {}, "Agreement with the paper: ", val(as.agreement)));
+  c.append(el("div", {}, as.display_wording));
+  if (as.wording_corrected) c.append(el("div", {class: "note"}, "Original wording: ", el("q", {}, as.verdict_wording)));
+  c.append(el("div", {class: "note"}, "Study: ", st.title, " · assessed by ", as.assessed_by, " · source record ",
+    link(as.archive_ref, as.archive_ref)));
+  return c;
+}
+
+function reviewList(id) {
+  const ol = el("ol", {class: "chain"});
+  for (const r of D.reviews[id] || []) {
+    const checks = Object.entries(r.checks).map(([k, v]) => k.replace(/_/g, " ") + ": " + v).join("; ");
+    ol.append(el("li", {}, "Revision " + r.revision + " · " + r.decision.replace(/_/g, " ") + " · " +
+      r.reviewer + " · " + r.timestamp, el("div", {class: "note"}, r.rationale),
+      el("div", {class: "note"}, checks),
+      r.approved_wording ? el("div", {class: "note"}, "Approved wording: ", el("q", {}, r.approved_wording)) : null));
+  }
+  return ol;
+}
+
+function provenance(obs, claims, annots, assess) {
+  const box = el("div", {});
+  for (const ob of obs) {
+    const {an, st, ds, src} = obsChain(ob);
+    box.append(el("div", {class: "card"}, el("div", {class: "tag"}, "Observation ", el("code", {}, ob.id)),
+      el("ol", {class: "chain"},
+        el("li", {}, "documented by analysis ", el("code", {}, an.id), " · ", an.label, " · artifact ",
+          link(an.artifact_ref, an.artifact_ref), " · sha256 ", el("code", {}, an.artifact_sha256.slice(0, 16) + "…")),
+        el("li", {}, "derived from study ", el("code", {}, st.id), " · ", st.title),
+        el("li", {}, "references dataset ", el("code", {}, ds.id), " · ", ds.accession, " version ", val(ds.version)),
+        el("li", {}, "described by source ", el("code", {}, src.id), " · ", link(src.url, src.citation))),
+      el("div", {class: "note"}, "Review history of the observation:"), reviewList(ob.id),
+      el("div", {class: "note"}, "Review history of the study:"), reviewList(st.id)));
+  }
+  for (const cl of claims) {
+    box.append(el("div", {class: "card"}, el("div", {class: "tag"}, "Claim ", el("code", {}, cl.id)),
+      el("ol", {class: "chain"}, el("li", {}, "attributed to source ", el("code", {}, cl.source_id), " · ",
+        link(D.sources[cl.source_id].url, D.sources[cl.source_id].citation))),
+      reviewList(cl.id)));
+  }
+  for (const as of assess) {
+    box.append(el("div", {class: "card"}, el("div", {class: "tag"}, "Assessment ", el("code", {}, as.id)),
+      el("ol", {class: "chain"}, el("li", {}, "reports on study ", el("code", {}, as.study_id), " · ",
+        D.studies[as.study_id].title)), reviewList(as.id)));
+  }
+  box.append(note(N.reviewers));
+  for (const at of annots) {
+    box.append(el("div", {class: "card"}, el("div", {class: "tag"}, "Annotation ", el("code", {}, at.id)),
+      el("ol", {class: "chain"}, el("li", {}, "sourced from vocabulary ", at.vocabulary, " ", at.vocabulary_version)),
+      reviewList(at.id)));
+  }
+  return box;
+}
+
+function section(title, kids, empty) {
+  const s = el("section", {}, el("h2", {}, title));
+  if (!kids.length) s.append(el("p", {class: "muted"}, empty)); else s.append(...kids);
+  return s;
+}
+
+function geneLabel(key) {
+  const g = D.genes[key];
+  return g.symbols.join(" / ") + (g.gene_id ? " (" + g.gene_id + ")" : " (no stable id)");
+}
+
+function findGenes(q) {
+  const u = q.trim().toUpperCase();
+  return Object.keys(D.genes).filter(k => k.toUpperCase() === u ||
+    D.genes[k].symbols.some(s => s.toUpperCase() === u));
+}
+
+function renderGene(key) {
+  const g = D.genes[key];
+  const view = document.getElementById("view");
+  view.replaceChildren();
+  if (!g) {
+    const hits = findGenes(key.replace(/^symbol:/, ""));
+    if (hits.length === 1) { renderGene(hits[0]); return; }
+    if (hits.length) {
+      view.append(el("p", {class: "muted"}, "Several gene entries match “" + key + "”:"),
+        el("div", {class: "genes"}, ...hits.map(k => el("a", {href: "#gene=" + encodeURIComponent(k)}, geneLabel(k)))));
+      return;
+    }
+    view.append(el("p", {class: "muted"}, "No approved records for “" + key + "” in this collection. " +
+      "This says nothing about the gene; it may be untested, unreviewed or outside the approved scope."));
+    return;
+  }
+  const obs = g.observations.filter(approved).map(i => D.observations[i]);
+  const claims = g.claims.filter(approved).map(i => D.claims[i]);
+  const annots = g.annotations.filter(approved).map(i => D.annotations[i]);
+  const assess = g.assessments.filter(approved).map(i => D.assessments[i]);
+  view.append(el("h2", {}, geneLabel(key)));
+  if (g.gene_id_statuses.some(s => s !== "mapped"))
+    view.append(el("div", {class: "banner"}, "Gene identity: " + g.gene_id_statuses.join(", ") + ". " + N.gene_identity));
+  if (g.direction_conflict) view.append(el("div", {class: "banner"}, N.direction_conflict));
+  view.append(section("1. Reviewed experimental observations", obs.map(observationCard),
+    "No reviewed observations. Unknown, not absent."));
+  if (obs.length) view.lastChild.append(note(N.observation));
+  view.append(section("2. Published claims", claims.map(claimCard), "No reviewed claims. Unknown, not absent."));
+  const stats = [];
+  if (obs.length) {
+    stats.push(statsTable(obs), note(N.statistics), note("Blank or unknown values: " + N.unknown));
+    if (obs.some(o => o.fdr_below_threshold !== true)) stats.push(note(N.not_below_threshold));
+  }
+  view.append(section("3. Statistical assessment and uncertainty", stats, "No archived statistics for this gene."));
+  view.append(section("4. BARCS reanalysis assessment", assess.map(assessmentCard),
+    "No reviewed BARCS assessment for the studies shown."));
+  if (assess.length) view.lastChild.append(note(N.assessment));
+  view.append(section("5. External annotations", annots.map(annotationCard), "No reviewed annotations."));
+  if (annots.length) view.lastChild.append(note(N.annotation));
+  view.append(section("6. Provenance and review history", [provenance(obs, claims, annots, assess)], ""));
+}
+
+function renderIndex() {
+  const view = document.getElementById("view");
+  view.replaceChildren(el("p", {class: "muted"}, Object.keys(D.genes).length + " genes with approved records:"),
+    el("div", {class: "genes"}, ...Object.keys(D.genes).map(k => el("a", {href: "#gene=" + encodeURIComponent(k)}, geneLabel(k)))));
+}
+
+// Gene key that displays a record id (observation, claim, annotation or assessment), or null.
+function geneOfRecord(id) {
+  for (const [k, g] of Object.entries(D.genes))
+    if ([g.observations, g.claims, g.annotations, g.assessments].some(l => l.includes(id))) return k;
+  return null;
+}
+
+function route() {
+  const m = /^#gene=(.+)$/.exec(location.hash);
+  const r = /^#((ob|cl|at|as)_[0-9a-f]{12})$/.exec(location.hash);
+  if (m) {
+    const k = decodeURIComponent(m[1]);
+    document.getElementById("q").value = k in D.genes ? D.genes[k].symbols[0] : k;
+    renderGene(k);
+  } else if (r) {
+    // A record anchor: render its gene page if not already shown, then scroll to the card.
+    if (!document.getElementById(r[1])) {
+      const k = geneOfRecord(r[1]);
+      if (k) { document.getElementById("q").value = D.genes[k].symbols[0]; renderGene(k); }
+      else renderIndex();
+    }
+    const card = document.getElementById(r[1]);
+    if (card) card.scrollIntoView();
+  } else renderIndex();
+}
+
+if (D.collection.synthetic) document.getElementById("banner").append(el("div", {class: "banner"},
+  "Synthetic demonstration data. Genes, studies and publications are fictional."));
+const dl = document.getElementById("gene-list");
+const opts = new Set();
+for (const [k, g] of Object.entries(D.genes)) { g.symbols.forEach(s => opts.add(s)); if (g.gene_id) opts.add(g.gene_id); }
+for (const s of [...opts].sort()) dl.append(el("option", {value: s}));
+document.getElementById("q").addEventListener("change", e => {
+  const s = e.target.value.trim();
+  const hits = s ? findGenes(s) : [];
+  location.hash = !s ? "" : "gene=" + encodeURIComponent(hits.length === 1 ? hits[0] : s);
+});
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
