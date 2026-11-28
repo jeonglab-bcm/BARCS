@@ -1,0 +1,506 @@
+{
+  "schema_version": 2,
+  "collection": {
+    "id": "synthetic-demo",
+    "title": "Synthetic demonstration collection",
+    "synthetic": true
+  },
+  "sources": [
+    {
+      "id": "src_fd0bfa10f852",
+      "kind": "publication",
+      "identifier_scheme": "fixture",
+      "identifier": "fixture:pub-a",
+      "citation": "Example Author et al. Fictional Journal of Cell Biology (2026) 1",
+      "url": "https://example.org/fixture/pub-a",
+      "accessed": "2026-11-20"
+    },
+    {
+      "id": "src_a190eaa6bf85",
+      "kind": "publication",
+      "identifier_scheme": "fixture",
+      "identifier": "fixture:pub-b",
+      "citation": "Example Author et al. Fictional Journal of Cell Biology (2026) 2",
+      "url": "https://example.org/fixture/pub-b",
+      "accessed": "2026-11-20"
+    },
+    {
+      "id": "src_20ec142165e8",
+      "kind": "publication",
+      "identifier_scheme": "fixture",
+      "identifier": "fixture:pub-c",
+      "citation": "Example Author et al. Fictional Journal of Cell Biology (2026) 3",
+      "url": "https://example.org/fixture/pub-c",
+      "accessed": "2026-11-20"
+    },
+    {
+      "id": "src_79ad6619c752",
+      "kind": "publication",
+      "identifier_scheme": "fixture",
+      "identifier": "fixture:pub-d",
+      "citation": "Example Author et al. Fictional Journal of Cell Biology (2026) 4",
+      "url": "https://example.org/fixture/pub-d",
+      "accessed": "2026-11-20"
+    },
+    {
+      "id": "src_43a9a1099ee0",
+      "kind": "publication",
+      "identifier_scheme": "fixture",
+      "identifier": "fixture:pub-e",
+      "citation": "Example Author et al. Fictional Journal of Cell Biology (2026) 5",
+      "url": "https://example.org/fixture/pub-e",
+      "accessed": "2026-11-20"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "ds_3d764176b85f",
+      "accession": "FIXTURE-DS-A",
+      "version": "1",
+      "described_by": "src_fd0bfa10f852"
+    },
+    {
+      "id": "ds_055011ac6093",
+      "accession": "FIXTURE-DS-B",
+      "version": null,
+      "described_by": "src_a190eaa6bf85"
+    },
+    {
+      "id": "ds_4fac1752667c",
+      "accession": "FIXTURE-DS-C",
+      "version": "1",
+      "described_by": "src_20ec142165e8"
+    },
+    {
+      "id": "ds_1aada5579004",
+      "accession": "FIXTURE-DS-D",
+      "version": "1",
+      "described_by": "src_79ad6619c752"
+    },
+    {
+      "id": "ds_3d3f3288aa85",
+      "accession": "FIXTURE-DS-E",
+      "version": "1",
+      "described_by": "src_43a9a1099ee0"
+    }
+  ],
+  "studies": [
+    {
+      "id": "st_25ae83325dde",
+      "dataset_id": "ds_3d764176b85f",
+      "title": "Synthetic study A: fictional reporter screen of cilium length in a model cell line",
+      "scope_category": "cell_biology",
+      "archive_ref": "fixture:archive/study-a",
+      "archive_sha256": "8f8cac92726d3995070e1b30735305e64cfa914631534d3f9c902efbc88252d7",
+      "validation_status": "not_validated",
+      "organism": "Fictional model organism"
+    },
+    {
+      "id": "st_5f691f3f817f",
+      "dataset_id": "ds_055011ac6093",
+      "title": "Synthetic study B: fictional screen of somite segmentation timing in a model embryo",
+      "scope_category": "developmental_biology",
+      "archive_ref": "fixture:archive/study-b",
+      "archive_sha256": "d0cc99daa50e475e94d10d23669481467a40642292445ab51c94cfc920105f22",
+      "validation_status": "not_validated",
+      "organism": "Fictional model organism"
+    },
+    {
+      "id": "st_fc6e7205129c",
+      "dataset_id": "ds_4fac1752667c",
+      "title": "Synthetic study C: placeholder classified out of scope WITHHELD-SENTINEL",
+      "scope_category": "security_sensitive",
+      "archive_ref": "fixture:archive/study-c",
+      "archive_sha256": "e9104b4d83b85115e13edae81908944138b5de075cecade9c276a7221417afbc",
+      "validation_status": "not_validated",
+      "organism": "Fictional model organism"
+    },
+    {
+      "id": "st_cdce7dd3009a",
+      "dataset_id": "ds_1aada5579004",
+      "title": "Synthetic study D: unreviewed placeholder WITHHELD-SENTINEL",
+      "scope_category": "cell_biology",
+      "archive_ref": "fixture:archive/study-d",
+      "archive_sha256": "1d832b1ed0fc59e7db9ed290df5a2a54127b881870b68c710b46750fffdbb4fd",
+      "validation_status": "not_validated",
+      "organism": "Fictional model organism"
+    },
+    {
+      "id": "st_f9661e9ac2c4",
+      "dataset_id": "ds_3d3f3288aa85",
+      "title": "Synthetic study E: scope uncertain placeholder WITHHELD-SENTINEL",
+      "scope_category": "uncertain",
+      "archive_ref": "fixture:archive/study-e",
+      "archive_sha256": "0622a087dd84cd9224daa8b2ccd604c5b7c1084e0237a485887631e5c8c17e00",
+      "validation_status": "not_validated",
+      "organism": "Fictional model organism"
+    }
+  ],
+  "analyses": [
+    {
+      "id": "an_4e81d775d57a",
+      "study_id": "st_25ae83325dde",
+      "label": "fictional_contrast_a",
+      "method": "BARCS bb_screen + bb_gene_stouffer",
+      "method_version": "0.2.3",
+      "fdr_threshold": 0.1,
+      "artifact_ref": "fixture:archive/study-a/genes.csv.gz",
+      "artifact_sha256": "13051e349c6f87a0f83427b2d742806fc8e01699c7429ce5b94acd0cece66dbc"
+    },
+    {
+      "id": "an_472eab510b70",
+      "study_id": "st_5f691f3f817f",
+      "label": "fictional_contrast_b",
+      "method": "BARCS bb_screen + bb_gene_stouffer",
+      "method_version": "0.2.3",
+      "fdr_threshold": null,
+      "artifact_ref": "fixture:archive/study-b/genes.csv.gz",
+      "artifact_sha256": "6462d191923d0d849234de241cf341d949f88488593f29e3601b94bd645b7dee"
+    },
+    {
+      "id": "an_3a0ea332e1b5",
+      "study_id": "st_fc6e7205129c",
+      "label": "fictional_contrast_c",
+      "method": "BARCS bb_screen + bb_gene_stouffer",
+      "method_version": "0.2.3",
+      "fdr_threshold": 0.1,
+      "artifact_ref": "fixture:archive/study-c/genes.csv.gz",
+      "artifact_sha256": "8eb3c87b8ceab32689c57604485bea20a86b62b8692517cb3dd7ed8b2d2ccb32"
+    },
+    {
+      "id": "an_d51816c9da17",
+      "study_id": "st_cdce7dd3009a",
+      "label": "fictional_contrast_d",
+      "method": "BARCS bb_screen + bb_gene_stouffer",
+      "method_version": "0.2.3",
+      "fdr_threshold": 0.1,
+      "artifact_ref": "fixture:archive/study-d/genes.csv.gz",
+      "artifact_sha256": "99baad1c7809cb35025df602b53bc2837192d2c2bd54a55051bfc2c43f450d94"
+    },
+    {
+      "id": "an_70a3814f4fb1",
+      "study_id": "st_f9661e9ac2c4",
+      "label": "fictional_contrast_e",
+      "method": "BARCS bb_screen + bb_gene_stouffer",
+      "method_version": "0.2.3",
+      "fdr_threshold": 0.1,
+      "artifact_ref": "fixture:archive/study-e/genes.csv.gz",
+      "artifact_sha256": "ea74e2472b021399733cb768b5e179634db11c0bd3f25cd43e0ae0f6c02be170"
+    }
+  ],
+  "observations": [
+    {
+      "id": "ob_2352da7280f1",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "source_wording": "DEMO1 guides enriched in the reporter-low bin.",
+      "estimate": 1.42,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.0002,
+      "fdr": 0.012,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_9250b9912ee9",
+      "analysis_id": "an_472eab510b70",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "source_wording": "DEMO1 guides depleted at the late time point.",
+      "estimate": -0.88,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.003,
+      "fdr": 0.041,
+      "n_elements": 4,
+      "direction": "depleted",
+      "limitations": "Fictional embryo model; FDR threshold not recorded in the archive."
+    },
+    {
+      "id": "ob_de2d91dc0a25",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO2",
+      "gene_id": null,
+      "gene_id_status": "unmapped",
+      "source_wording": "DEMO2 tested; summary statistics not archived.",
+      "estimate": null,
+      "estimate_meaning": null,
+      "p_value": null,
+      "fdr": null,
+      "n_elements": null,
+      "direction": null,
+      "limitations": null
+    },
+    {
+      "id": "ob_1b2501a20fe1",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO3",
+      "gene_id": "HGNC:990003",
+      "gene_id_status": "mapped",
+      "source_wording": "DEMO3 guides show no change beyond the archived threshold.",
+      "estimate": 0.11,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.41,
+      "fdr": 0.62,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_e6670506c75c",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO4",
+      "gene_id": "HGNC:990004",
+      "gene_id_status": "mapped",
+      "source_wording": "DEMO4 knockout abolishes cilia.",
+      "estimate": -1.05,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.0009,
+      "fdr": 0.033,
+      "n_elements": 4,
+      "direction": "depleted",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_c2d6ae581bd7",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO5",
+      "gene_id": "HGNC:990005",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL unreviewed observation.",
+      "estimate": 0.5,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.01,
+      "fdr": 0.08,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_a2e311a40a48",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO5",
+      "gene_id": "HGNC:990005",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL statistics check uncertain.",
+      "estimate": 0.6,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.01,
+      "fdr": 0.07,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_ba7e7eb1ae6a",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO5",
+      "gene_id": "HGNC:990005",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL reviewers disagree.",
+      "estimate": 0.7,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.01,
+      "fdr": 0.06,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_0ed29ae2b9f4",
+      "analysis_id": "an_3a0ea332e1b5",
+      "gene_symbol": "DEMO6",
+      "gene_id": "HGNC:990006",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL observation in out-of-scope study.",
+      "estimate": 2.0,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 1e-06,
+      "fdr": 0.0001,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_1ad9a47e16d7",
+      "analysis_id": "an_d51816c9da17",
+      "gene_symbol": "DEMO7",
+      "gene_id": "HGNC:990007",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL observation in unreviewed study.",
+      "estimate": 2.0,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 1e-06,
+      "fdr": 0.0001,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_911198e0a850",
+      "analysis_id": "an_70a3814f4fb1",
+      "gene_symbol": "DEMO8",
+      "gene_id": "HGNC:990008",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL observation in scope-uncertain study.",
+      "estimate": 2.0,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 1e-06,
+      "fdr": 0.0001,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_f2a9d4ff734c",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO10",
+      "gene_id": "HGNC:990010",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL rejected observation.",
+      "estimate": 0.9,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.02,
+      "fdr": 0.09,
+      "n_elements": 4,
+      "direction": "enriched",
+      "limitations": "Single fictional cell line; one time point."
+    },
+    {
+      "id": "ob_01e009ee66e5",
+      "analysis_id": "an_4e81d775d57a",
+      "gene_symbol": "DEMO3B",
+      "gene_id": "HGNC:990003",
+      "gene_id_status": "synonym",
+      "source_wording": "DEMO3B (previous symbol) guides unchanged in a second guide set.",
+      "estimate": 0.05,
+      "estimate_meaning": "higher guide abundance in the reporter-low bin",
+      "p_value": 0.7,
+      "fdr": 0.81,
+      "n_elements": 3,
+      "direction": "depleted",
+      "limitations": "Single fictional cell line; one time point."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cl_d0f631ca1ddb",
+      "source_id": "src_fd0bfa10f852",
+      "study_id": "st_25ae83325dde",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "source_wording": "We propose that DEMO1 restrains cilium elongation.",
+      "source_location": "Abstract"
+    },
+    {
+      "id": "cl_9c0abe51c6e6",
+      "source_id": "src_a190eaa6bf85",
+      "study_id": "st_5f691f3f817f",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "source_wording": "DEMO1 appears dispensable for segmentation timing.",
+      "source_location": "Results, Figure 3"
+    },
+    {
+      "id": "cl_7c1c97df17c0",
+      "source_id": "src_fd0bfa10f852",
+      "study_id": "st_25ae83325dde",
+      "gene_symbol": "DEMO3",
+      "gene_id": "HGNC:990003",
+      "gene_id_status": "mapped",
+      "source_wording": "WITHHELD-SENTINEL unreviewed claim about DEMO3.",
+      "source_location": "Discussion"
+    },
+    {
+      "id": "cl_0012a3fa000c",
+      "source_id": "src_a190eaa6bf85",
+      "study_id": "st_5f691f3f817f",
+      "gene_symbol": "DEMO9",
+      "gene_id": null,
+      "gene_id_status": "ambiguous",
+      "source_wording": "DEMO9 is a candidate regulator of somite boundaries.",
+      "source_location": "Abstract"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "at_f55ff16f66f4",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "vocabulary": "Fixture Ontology",
+      "vocabulary_version": "2026-01",
+      "term_id": "FX:0000101",
+      "term_label": "cilium organization (fictional term)",
+      "attribution": "Fictional vocabulary for tests",
+      "origin": "curated"
+    },
+    {
+      "id": "at_2c3a4249d770",
+      "gene_symbol": "DEMO1",
+      "gene_id": "HGNC:990001",
+      "gene_id_status": "mapped",
+      "vocabulary": "Fixture Ontology",
+      "vocabulary_version": "2026-01",
+      "term_id": "FX:0000999",
+      "term_label": "WITHHELD-SENTINEL model-generated term",
+      "attribution": "Fictional vocabulary for tests",
+      "origin": "model_generated"
+    },
+    {
+      "id": "at_f46dd28a5499",
+      "gene_symbol": "DEMO6",
+      "gene_id": "HGNC:990006",
+      "gene_id_status": "mapped",
+      "vocabulary": "Fixture Ontology",
+      "vocabulary_version": "2026-01",
+      "term_id": "FX:0000202",
+      "term_label": "WITHHELD-SENTINEL term for a gene outside the collection",
+      "attribution": "Fictional vocabulary for tests",
+      "origin": "curated"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "as_e8bc163c82ee",
+      "study_id": "st_25ae83325dde",
+      "agreement": "partial",
+      "verdict_wording": "Two of three fictional named hits pass FDR 0.10 in the reanalysis.",
+      "assessed_by": "BARCS reanalysis (fictional)",
+      "archive_ref": "fixture:archive/study-a/meta.json",
+      "archive_sha256": "269bf718c4f81a5c6ab461dd937bdf6d071150394fd8c956c5dddfa390169e90"
+    },
+    {
+      "id": "as_ad328846aa18",
+      "study_id": "st_5f691f3f817f",
+      "agreement": null,
+      "verdict_wording": "Agreement not recorded for this fictional study.",
+      "assessed_by": "BARCS reanalysis (fictional)",
+      "archive_ref": "fixture:archive/study-b/meta.json",
+      "archive_sha256": "e06609d85ff36c01511fae3772f0cae7da1acaaa7daec83cf85936b4e0c1f0c1"
+    },
+    {
+      "id": "as_41242b9fae56",
+      "study_id": "st_fc6e7205129c",
+      "agreement": "agree",
+      "verdict_wording": "WITHHELD-SENTINEL assessment of out-of-scope study.",
+      "assessed_by": "BARCS reanalysis (fictional)",
+      "archive_ref": "fixture:archive/study-c/meta.json",
+      "archive_sha256": "e857bd1ce99c6c97986b8bcf518ec84acefd89bb0dda45004a0995375ac62b21"
+    },
+    {
+      "id": "as_5b840157e7e8",
+      "study_id": "st_25ae83325dde",
+      "agreement": "differ",
+      "verdict_wording": "WITHHELD-SENTINEL unreviewed second assessment.",
+      "assessed_by": "BARCS reanalysis (fictional)",
+      "archive_ref": "fixture:archive/study-a/meta.json",
+      "archive_sha256": "269bf718c4f81a5c6ab461dd937bdf6d071150394fd8c956c5dddfa390169e90"
+    }
+  ]
+}
