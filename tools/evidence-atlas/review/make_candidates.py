@@ -34,9 +34,12 @@ def main():
         rows.append({"gse": m.get("gse", meta.parent.name), "pmid": m.get("pmid", ""),
                      "title": m.get("title", ""), "model": m.get("model", ""),
                      "flag_terms": ",".join(terms)})
+    if not rows:
+        sys.exit(f"no reanalyses/*/meta.json found under {REPO}")
     out = ROOT / "review" / "candidates.tsv"
     with out.open("w", encoding="utf-8", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
+        w = csv.DictWriter(fh, fieldnames=["gse", "pmid", "title", "model", "flag_terms"],
+                           delimiter="\t", lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     flagged = sum(1 for r in rows if r["flag_terms"])

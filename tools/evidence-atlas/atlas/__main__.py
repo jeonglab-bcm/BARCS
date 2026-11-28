@@ -81,11 +81,18 @@ def main(argv=None):
         return 0
     if a.cmd == "lookup":
         exp = json.loads((Path(a.out) / "public" / "atlas.json").read_text(encoding="utf-8"))
-        g = exp["genes"].get(a.gene)
+        key = a.gene if a.gene in exp["genes"] else None
+        if key is None:
+            hits = sorted(k for k, v in exp["genes"].items() if a.gene in v["symbols"])
+            if len(hits) > 1:
+                print(f"{a.gene}: matches several gene entries: {', '.join(hits)}")
+                return 0
+            key = hits[0] if hits else None
+        g = exp["genes"].get(key) if key else None
         if not g:
             print(f"{a.gene}: no approved records in this collection (unknown, not absent)")
             return 0
-        print(json.dumps({k: [exp[k][i] for i in g[k]] for k in ("observations", "claims", "annotations")},
+        print(json.dumps({k: [exp[k][i] for i in g[k]] for k in ("observations", "claims", "annotations", "assessments")},
                          indent=2, sort_keys=True))
         return 0
     return 2

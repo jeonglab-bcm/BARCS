@@ -230,6 +230,7 @@ function renderGene(key) {
   view.replaceChildren();
   if (!g) {
     const hits = findGenes(key.replace(/^symbol:/, ""));
+    if (hits.length === 1) { renderGene(hits[0]); return; }
     if (hits.length) {
       view.append(el("p", {class: "muted"}, "Several gene entries match “" + key + "”:"),
         el("div", {class: "genes"}, ...hits.map(k => el("a", {href: "#gene=" + encodeURIComponent(k)}, geneLabel(k)))));
@@ -271,10 +272,30 @@ function renderIndex() {
     el("div", {class: "genes"}, ...Object.keys(D.genes).map(k => el("a", {href: "#gene=" + encodeURIComponent(k)}, geneLabel(k)))));
 }
 
+// Gene key that displays a record id (observation, claim, annotation or assessment), or null.
+function geneOfRecord(id) {
+  for (const [k, g] of Object.entries(D.genes))
+    if ([g.observations, g.claims, g.annotations, g.assessments].some(l => l.includes(id))) return k;
+  return null;
+}
+
 function route() {
   const m = /^#gene=(.+)$/.exec(location.hash);
-  if (m) { const k = decodeURIComponent(m[1]); document.getElementById("q").value = k in D.genes ? D.genes[k].symbols[0] : k; renderGene(k); }
-  else if (!/^#(ob|cl|at)_/.test(location.hash)) renderIndex();
+  const r = /^#((ob|cl|at|as)_[0-9a-f]{12})$/.exec(location.hash);
+  if (m) {
+    const k = decodeURIComponent(m[1]);
+    document.getElementById("q").value = k in D.genes ? D.genes[k].symbols[0] : k;
+    renderGene(k);
+  } else if (r) {
+    // A record anchor: render its gene page if not already shown, then scroll to the card.
+    if (!document.getElementById(r[1])) {
+      const k = geneOfRecord(r[1]);
+      if (k) { document.getElementById("q").value = D.genes[k].symbols[0]; renderGene(k); }
+      else renderIndex();
+    }
+    const card = document.getElementById(r[1]);
+    if (card) card.scrollIntoView();
+  } else renderIndex();
 }
 
 if (D.collection.synthetic) document.getElementById("banner").append(el("div", {class: "banner"},

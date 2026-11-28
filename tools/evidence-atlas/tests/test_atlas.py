@@ -52,12 +52,11 @@ class TestFixtures(unittest.TestCase):
     def test_fixtures_are_current(self):
         """Committed fixtures equal what make_synthetic.py generates."""
         with tempfile.TemporaryDirectory() as d:
-            before = {p.name: p.read_bytes() for p in FIXTURES.iterdir()}
-            subprocess.run([sys.executable, str(ROOT / "fixtures" / "make_synthetic.py")], check=True,
+            subprocess.run([sys.executable, str(ROOT / "fixtures" / "make_synthetic.py"), d], check=True,
                            capture_output=True)
-            after = {p.name: p.read_bytes() for p in FIXTURES.iterdir()}
-            self.assertEqual(before, after)
-            del d
+            committed = {p.name: p.read_bytes() for p in FIXTURES.iterdir()}
+            generated = {p.name: p.read_bytes() for p in Path(d).iterdir()}
+            self.assertEqual(committed, generated)
 
     def test_fixtures_validate_cleanly(self):
         self.assertEqual(errors(validate(M.load(FIXTURES))), [])
@@ -231,6 +230,17 @@ class TestReviewWorkflow(Tmp):
         self.assertIn("DEMO4 guides depleted", ob["display_wording"])
         hist = exp["reviews"][ob["id"]]
         self.assertEqual([h["decision"] for h in hist], ["needs_changes", "approve"])
+
+    def test_correction_survives_later_confirming_review(self):
+        target = I("ob", "o5")
+        R.append(self.coll_dir, target_id=target, reviewer="reviewer-b", decision="approve",
+                 rationale="Agree with the corrected wording.",
+                 checks=dict({c: "confirmed" for c in M.CHECKS}, scope="not_applicable"),
+                 timestamp="2026-11-25T10:00:00Z")
+        exp, _, _ = self.build()
+        ob = exp["observations"][target]
+        self.assertTrue(ob["wording_corrected"])
+        self.assertIn("DEMO4 guides depleted", ob["display_wording"])
 
     def test_append_review_and_queue(self):
         target = I("ob", "o6")
@@ -414,6 +424,23 @@ class TestGeneIdentity(Tmp):
         self.assertIn("symbol:DEMO2", exp["genes"])
         self.assertIsNone(exp["genes"]["symbol:DEMO2"]["gene_id"])
         self.assertEqual(exp["genes"]["symbol:DEMO9"]["gene_id_statuses"], ["ambiguous"])
+
+    def test_schema_rejects_malformed_ids(self):
+        con = B.create_db(self.tmp / "t.sqlite")
+        self.addCleanup(con.close)
+        B.load_db(con, M.load(self.coll_dir))
+        an = I("an", "an-a")
+        for oid, gid in (("ob_zzzzzzzzzzzz", None), ("ob_000000000099", "HGNC:1abc")):
+            with self.assertRaises(sqlite3.IntegrityError, msg=(oid, gid)):
+                con.execute("INSERT INTO observation (id, analysis_id, gene_symbol, gene_id, gene_id_status,"
+                            " source_wording) VALUES (?,?,?,?,?,?)",
+                            (oid, an, "X", gid, "mapped" if gid else "unmapped", "w"))
+
+    def test_cli_lookup_by_symbol(self):
+        B.build(self.coll_dir, self.out)
+        r = subprocess.run([sys.executable, "-m", "atlas", "lookup", "DEMO3B", "--out", str(self.out)],
+                           cwd=ROOT, capture_output=True, text=True, check=True)
+        self.assertIn("DEMO3 guides show no change", r.stdout)
 
     def test_gene_id_validation(self):
         d = self.data()

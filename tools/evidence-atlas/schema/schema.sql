@@ -28,7 +28,7 @@ INSERT INTO scope_category (name, permitted) VALUES
   ('uncertain', 0);
 
 CREATE TABLE source (
-  id                TEXT PRIMARY KEY CHECK (id GLOB 'src_[0-9a-f]*' AND length(id) = 16),
+  id                TEXT PRIMARY KEY CHECK (id GLOB 'src_*' AND substr(id, 5) NOT GLOB '*[^0-9a-f]*' AND length(id) = 16),
   kind              TEXT NOT NULL CHECK (kind IN ('publication', 'archive')),
   identifier_scheme TEXT NOT NULL CHECK (identifier_scheme IN ('doi', 'pmid', 'url', 'fixture')),
   identifier        TEXT NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE source (
 );
 
 CREATE TABLE dataset (
-  id           TEXT PRIMARY KEY CHECK (id GLOB 'ds_[0-9a-f]*' AND length(id) = 15),
+  id           TEXT PRIMARY KEY CHECK (id GLOB 'ds_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   accession    TEXT NOT NULL,
   version      TEXT,                       -- NULL = unknown
   described_by TEXT NOT NULL REFERENCES source (id),
@@ -47,7 +47,7 @@ CREATE TABLE dataset (
 );
 
 CREATE TABLE study (
-  id                TEXT PRIMARY KEY CHECK (id GLOB 'st_[0-9a-f]*' AND length(id) = 15),
+  id                TEXT PRIMARY KEY CHECK (id GLOB 'st_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   dataset_id        TEXT NOT NULL REFERENCES dataset (id),
   title             TEXT NOT NULL,
   scope_category    TEXT NOT NULL REFERENCES scope_category (name),
@@ -58,7 +58,7 @@ CREATE TABLE study (
 );
 
 CREATE TABLE analysis (
-  id              TEXT PRIMARY KEY CHECK (id GLOB 'an_[0-9a-f]*' AND length(id) = 15),
+  id              TEXT PRIMARY KEY CHECK (id GLOB 'an_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   study_id        TEXT NOT NULL REFERENCES study (id),
   label           TEXT NOT NULL,
   method          TEXT NOT NULL,
@@ -70,10 +70,10 @@ CREATE TABLE analysis (
 
 -- A reviewed result from one analysis. Never merged across studies, even for the same gene.
 CREATE TABLE observation (
-  id               TEXT PRIMARY KEY CHECK (id GLOB 'ob_[0-9a-f]*' AND length(id) = 15),
+  id               TEXT PRIMARY KEY CHECK (id GLOB 'ob_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   analysis_id      TEXT NOT NULL REFERENCES analysis (id),
   gene_symbol      TEXT NOT NULL,
-  gene_id          TEXT CHECK (gene_id IS NULL OR gene_id GLOB 'HGNC:[0-9]*' OR gene_id GLOB 'MGI:[0-9]*'),
+  gene_id          TEXT CHECK (gene_id IS NULL OR (gene_id GLOB 'HGNC:[0-9]*' AND substr(gene_id, 6) NOT GLOB '*[^0-9]*') OR (gene_id GLOB 'MGI:[0-9]*' AND substr(gene_id, 5) NOT GLOB '*[^0-9]*')),
   gene_id_status   TEXT NOT NULL CHECK (gene_id_status IN ('mapped', 'synonym', 'ambiguous', 'unmapped')),
   gene_key         TEXT GENERATED ALWAYS AS (CASE WHEN gene_id IS NOT NULL AND gene_id_status IN ('mapped', 'synonym')
                                                 THEN gene_id ELSE 'symbol:' || gene_symbol END) VIRTUAL,
@@ -89,11 +89,11 @@ CREATE TABLE observation (
 
 -- An author statement. Independent of any statistical assessment.
 CREATE TABLE claim (
-  id              TEXT PRIMARY KEY CHECK (id GLOB 'cl_[0-9a-f]*' AND length(id) = 15),
+  id              TEXT PRIMARY KEY CHECK (id GLOB 'cl_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   source_id       TEXT NOT NULL REFERENCES source (id),
   study_id        TEXT NOT NULL REFERENCES study (id),
   gene_symbol      TEXT NOT NULL,
-  gene_id          TEXT CHECK (gene_id IS NULL OR gene_id GLOB 'HGNC:[0-9]*' OR gene_id GLOB 'MGI:[0-9]*'),
+  gene_id          TEXT CHECK (gene_id IS NULL OR (gene_id GLOB 'HGNC:[0-9]*' AND substr(gene_id, 6) NOT GLOB '*[^0-9]*') OR (gene_id GLOB 'MGI:[0-9]*' AND substr(gene_id, 5) NOT GLOB '*[^0-9]*')),
   gene_id_status   TEXT NOT NULL CHECK (gene_id_status IN ('mapped', 'synonym', 'ambiguous', 'unmapped')),
   gene_key         TEXT GENERATED ALWAYS AS (CASE WHEN gene_id IS NOT NULL AND gene_id_status IN ('mapped', 'synonym')
                                                 THEN gene_id ELSE 'symbol:' || gene_symbol END) VIRTUAL,
@@ -102,9 +102,9 @@ CREATE TABLE claim (
 );
 
 CREATE TABLE annotation (
-  id                 TEXT PRIMARY KEY CHECK (id GLOB 'at_[0-9a-f]*' AND length(id) = 15),
+  id                 TEXT PRIMARY KEY CHECK (id GLOB 'at_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   gene_symbol      TEXT NOT NULL,
-  gene_id          TEXT CHECK (gene_id IS NULL OR gene_id GLOB 'HGNC:[0-9]*' OR gene_id GLOB 'MGI:[0-9]*'),
+  gene_id          TEXT CHECK (gene_id IS NULL OR (gene_id GLOB 'HGNC:[0-9]*' AND substr(gene_id, 6) NOT GLOB '*[^0-9]*') OR (gene_id GLOB 'MGI:[0-9]*' AND substr(gene_id, 5) NOT GLOB '*[^0-9]*')),
   gene_id_status   TEXT NOT NULL CHECK (gene_id_status IN ('mapped', 'synonym', 'ambiguous', 'unmapped')),
   gene_key         TEXT GENERATED ALWAYS AS (CASE WHEN gene_id IS NOT NULL AND gene_id_status IN ('mapped', 'synonym')
                                                 THEN gene_id ELSE 'symbol:' || gene_symbol END) VIRTUAL,
@@ -119,7 +119,7 @@ CREATE TABLE annotation (
 
 -- The BARCS project's comparison of its reanalysis with the paper (meta.json). Not an author claim.
 CREATE TABLE assessment (
-  id              TEXT PRIMARY KEY CHECK (id GLOB 'as_[0-9a-f]*' AND length(id) = 15),
+  id              TEXT PRIMARY KEY CHECK (id GLOB 'as_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   study_id        TEXT NOT NULL REFERENCES study (id),
   agreement       TEXT CHECK (agreement IS NULL OR agreement IN ('agree', 'partial', 'differ')),
   verdict_wording TEXT NOT NULL,
@@ -139,7 +139,7 @@ CREATE VIEW record_index AS
   UNION ALL SELECT 'assessment', id FROM assessment;
 
 CREATE TABLE review (
-  id                               TEXT PRIMARY KEY CHECK (id GLOB 'rv_[0-9a-f]*' AND length(id) = 15),
+  id                               TEXT PRIMARY KEY CHECK (id GLOB 'rv_*' AND substr(id, 4) NOT GLOB '*[^0-9a-f]*' AND length(id) = 15),
   seq                              INTEGER NOT NULL UNIQUE,  -- line number in reviews.jsonl
   target_type                      TEXT NOT NULL CHECK (target_type IN ('study', 'observation', 'claim', 'annotation', 'assessment')),
   target_id                        TEXT NOT NULL,

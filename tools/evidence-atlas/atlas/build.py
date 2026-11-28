@@ -108,7 +108,8 @@ def export(con, coll):
                         ("assessments", "verdict_wording")):
         for rec in out[kind].values():
             hist = reviews[rec["id"]]
-            approved = hist[-1]["approved_wording"]
+            # The latest correction in the history stands until a later review replaces it.
+            approved = next((h["approved_wording"] for h in reversed(hist) if h["approved_wording"]), None)
             rec["display_wording"] = approved if approved else rec[field]
             rec["wording_corrected"] = bool(approved)
     for ob in out["observations"].values():

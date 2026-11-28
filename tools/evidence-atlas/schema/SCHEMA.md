@@ -98,7 +98,7 @@ A record is exported if:
 Reviewers appear in the export as `Reviewer n`, numbered by their first review in the
 collection. Real names stay in `reviews.jsonl` and the internal database.
 
-The display wording (for observations, claims and assessments) is the latest review's `approved_wording` when there is one. Otherwise it is
+The display wording (for observations, claims and assessments) is the most recent `approved_wording` when there is one. Otherwise it is
 `source_wording`. Both are exported.
 
 `fdr_below_threshold` is `true` or `false` only when both the FDR and the analysis threshold were

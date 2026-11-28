@@ -1,6 +1,6 @@
 """Regenerate fixtures/synthetic/ deterministically. Every gene, study and publication is fictional.
 
-    python3 fixtures/make_synthetic.py      (from tools/evidence-atlas)
+    python3 fixtures/make_synthetic.py [OUT_DIR]      (from tools/evidence-atlas; default fixtures/synthetic)
 
 Each scenario the tests rely on is named in SCENARIOS below. Records that must never
 be exported carry the token WITHHELD-SENTINEL in their text so tests can scan outputs.
@@ -31,7 +31,8 @@ def src(seed, n):
             "url": f"https://example.org/fixture/{seed}", "accessed": "2026-11-20"}
 
 
-def main():
+def main(out=OUT):
+    out = Path(out)
     sources = [src("pub-a", 1), src("pub-b", 2), src("pub-c", 3), src("pub-d", 4), src("pub-e", 5)]
     datasets = [{"id": I("ds", f"ds-{k}"), "accession": f"FIXTURE-DS-{k.upper()}", "version": "1" if k != "b" else None,
                  "described_by": I("src", f"pub-{k}")} for k in "abcde"]
@@ -176,11 +177,11 @@ def main():
     rv(I("at", "a1"), "reviewer-a", "approve", "Term and version verified.", OBS_OK, T(4, 0))
     rv(I("at", "a3"), "reviewer-a", "approve", "Term verified.", OBS_OK, T(4, 0))
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "collection.json").write_text(json.dumps(collection, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (OUT / "reviews.jsonl").write_text("".join(M.canonical_json(r) + "\n" for r in reviews), encoding="utf-8")
-    print(f"wrote {OUT}")
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "collection.json").write_text(json.dumps(collection, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (out / "reviews.jsonl").write_text("".join(M.canonical_json(r) + "\n" for r in reviews), encoding="utf-8")
+    print(f"wrote {out}")
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else OUT)
