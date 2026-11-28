@@ -40,6 +40,9 @@ jobs:
         env:
           ATLAS_CHECK_ISOLATION: '1'
         run: python -m unittest discover -s tests -v
+      - name: Review logs only grow (no lines removed, changed or reordered vs. the base)
+        working-directory: tools/evidence-atlas
+        run: python -m atlas check-append-only --base "${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}"
       - name: Build synthetic export twice and compare
         working-directory: tools/evidence-atlas
         run: |

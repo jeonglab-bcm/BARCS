@@ -16,6 +16,7 @@ python3 -m atlas validate fixtures/synthetic
 python3 -m atlas build fixtures/synthetic           # -> build/public/{atlas.json,index.html,MANIFEST.json}
 python3 -m atlas queue fixtures/synthetic           # withheld records and why
 python3 -m atlas lookup DEMO1                       # reads the public export only
+python3 -m atlas check-append-only --base origin/main   # review logs only grew (CI runs this)
 python3 -m atlas review fixtures/synthetic --target ob_... --reviewer NAME --decision approve \
     --rationale "..." --check source_identity=confirmed --check wording=corrected ... \
     --approved-wording "..."                        # appends; never rewrites
@@ -47,6 +48,21 @@ and 3.13.
 
 The guide suggested a `validators/` directory. The validators live in `atlas/validate.py`
 instead, so they can be imported as one package.
+
+## Review log integrity
+
+What is detected, and by what:
+
+| Change to `reviews.jsonl` | Caught by |
+|---|---|
+| An entry edited | `entry_hash` (validator) |
+| Entries removed from the middle or reordered | `prev_hash` chain (validator) |
+| Entries removed from the end | `reviews.head.json` count and last hash (validator) |
+| An entry appended by hand | `reviews.head.json`, unless the head is also edited by hand |
+| The whole log and head rewritten consistently | Only the CI check `check-append-only` against the base branch, plus git history |
+
+So the files alone show internal consistency. Being append-only over time is enforced by CI on
+every PR and push, and by code review of the diff.
 
 ## Output boundaries
 

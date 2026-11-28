@@ -43,5 +43,6 @@ append a review with `python3 -m atlas review ...` and confirm each check:
 - **scope:** for studies, it falls within the permitted scope.
 
 If any check is `uncertain` or `missing`, the record is withheld. Never edit `reviews.jsonl` by
-hand: the hash chain detects edits, deletions and reordering. A model-generated annotation or
+hand. The hash chain detects edits, deletions and reordering, `reviews.head.json` detects lines
+removed from the end, and CI rejects any PR in which the log does more than grow. A model-generated annotation or
 wording is never approved by the tool itself. A person must approve it.

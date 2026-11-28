@@ -37,6 +37,10 @@ def main(argv=None):
     r.add_argument("--scope-decision", choices=M.SCOPE_DECISIONS)
     r.add_argument("--timestamp", help="YYYY-MM-DDTHH:MM:SSZ (default: now, UTC)")
 
+    ao = sub.add_parser("check-append-only",
+                        help="fail if any reviews.jsonl lost or changed lines relative to a git ref")
+    ao.add_argument("--base", required=True, help="git ref to compare with, e.g. origin/main")
+
     lk = sub.add_parser("lookup", help="look up a gene in a built public export")
     lk.add_argument("gene")
     lk.add_argument("--out", default=str(DEFAULT_OUT))
@@ -79,6 +83,24 @@ def main(argv=None):
             return 1
         print(f"appended {e['id']} (revision {e['revision']} of {a.target})")
         return 0
+    if a.cmd == "check-append-only":
+        import subprocess
+        files = subprocess.run(["git", "ls-files", "--", "*reviews.jsonl"], cwd=M.ROOT,
+                               capture_output=True, text=True, check=True).stdout.split()
+        bad = 0
+        for f in files:
+            rel = subprocess.run(["git", "ls-files", "--full-name", f], cwd=M.ROOT,
+                                 capture_output=True, text=True, check=True).stdout.strip()
+            old = subprocess.run(["git", "show", f"{a.base}:{rel}"], cwd=M.ROOT, capture_output=True, text=True)
+            if old.returncode != 0:
+                print(f"{rel}: new at {a.base}, nothing to compare")
+                continue
+            probs = R.append_only_problems(old.stdout, (M.ROOT / f).read_text(encoding="utf-8"))
+            for p in probs:
+                print(f"{rel}: {p} relative to {a.base}", file=sys.stderr)
+            bad += bool(probs)
+        print(f"checked {len(files)} review log(s) against {a.base}")
+        return 1 if bad else 0
     if a.cmd == "lookup":
         exp = json.loads((Path(a.out) / "public" / "atlas.json").read_text(encoding="utf-8"))
         key = a.gene if a.gene in exp["genes"] else None

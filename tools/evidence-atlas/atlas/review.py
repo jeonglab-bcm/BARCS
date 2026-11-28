@@ -34,13 +34,26 @@ def append(collection_dir, **kw):
     revision = 1 + sum(1 for r in coll.reviews if r["target_id"] == target_id)
     entry = make_entry(prev, revision, target_type, **kw)
     coll.reviews.append(entry)
+    coll.head = M.review_head(coll.reviews)   # the head this append will write
     probs = errors(validate(coll))
     if probs:
         raise ValueError("review rejected:\n  " + "\n  ".join(map(str, probs)))
     path = coll.directory / "reviews.jsonl"
     with path.open("a", encoding="utf-8") as fh:
         fh.write(M.canonical_json(entry) + "\n")
+    M.write_head(coll.directory, coll.reviews)
     return entry
+
+
+def append_only_problems(old_text, new_text):
+    """Problems if new_text is not old_text with lines added at the end (empty list = fine)."""
+    old, new = old_text.splitlines(), new_text.splitlines()
+    if len(new) < len(old):
+        return [f"{len(old) - len(new)} review line(s) removed"]
+    for n, (a, b) in enumerate(zip(old, new), 1):
+        if a != b:
+            return [f"line {n} changed"]
+    return []
 
 
 def queue(coll):

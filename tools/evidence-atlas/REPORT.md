@@ -24,13 +24,13 @@ Every exported card resolves to a source with an https link. Rebuilding gives by
 outputs:
 
 - `atlas.json`: sha256 `caa0f4…5060`
-- `index.html`: sha256 `ee3a20…cf82`
-- internal DB content: sha256 `b3c30e…db08`
+- `index.html`: sha256 `ee34b3…186b`
+- internal DB content: sha256 `ac0829…f0cf`
 
 Python 3.13 / SQLite 3.53. Other versions may change the DB content hash but not the JSON or the
 HTML.
 
-Tests: 44 pass (`python3 -m unittest discover -s tests`). They cover every item of the guide's
+Tests: 49 pass (`python3 -m unittest discover -s tests`). They cover every item of the guide's
 testing checklist, plus assessments, pseudonyms, gene-id grouping and the reference mapper. The
 isolation check runs when `ATLAS_CHECK_ISOLATION=1`, which CI sets.
 
@@ -53,6 +53,8 @@ These need a reviewed real collection:
   other than human and mouse stay unmapped.
 - The candidate flag terms and the scope tripwire are aids for the reviewer. Scope is decided by a
   person.
+- The review files show internal consistency only. A log and head rewritten together are caught by
+  the CI append-only check against the base branch and by git history, not by the files.
 - The leak scan checks ids everywhere, and withheld gene symbols, gene ids and reviewer names in
   structured fields. A withheld gene or a reviewer's name in the free text of an approved record
   would not be caught.

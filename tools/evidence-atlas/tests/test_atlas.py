@@ -176,6 +176,22 @@ class TestValidation(Tmp):
         p.write_text("\n".join(lines) + "\n")
         self.assertIn("bad_entry_hash", self.codes())
 
+    def test_truncated_review_log_detected(self):
+        """Removing the newest (dissenting) review leaves a valid chain; the head catches it."""
+        p = self.coll_dir / "reviews.jsonl"
+        lines = p.read_text().splitlines()
+        p.write_text("\n".join(lines[:-1]) + "\n")
+        self.assertEqual(self.codes(), {"head_mismatch"})
+        (self.coll_dir / M.HEAD_FILE).unlink()
+        self.assertIn("missing_head", self.codes())
+
+    def test_append_only_check(self):
+        old = "a\nb\n"
+        self.assertEqual(R.append_only_problems(old, "a\nb\nc\n"), [])
+        self.assertTrue(R.append_only_problems(old, "a\n"))          # truncated
+        self.assertTrue(R.append_only_problems(old, "a\nX\nc\n"))  # rewritten
+        self.assertTrue(R.append_only_problems(old, "b\na\n"))      # reordered
+
     def test_reordered_or_deleted_review_detected(self):
         p = self.coll_dir / "reviews.jsonl"
         lines = p.read_text().splitlines()
@@ -399,6 +415,7 @@ class TestAssessments(Tmp):
             prev = e["entry_hash"]
             kept.append(M.canonical_json(e))
         p.write_text("\n".join(kept) + "\n")
+        M.write_head(self.coll_dir, [json.loads(x) for x in kept])
         exp, _, _ = self.build()
         self.assertNotIn(I("as", "s2"), exp["assessments"])
         self.assertIn(("assessment", I("as", "s2")), {k for k, v in E.record_reasons(M.load(self.coll_dir)).items()

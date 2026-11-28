@@ -180,6 +180,7 @@ def main(out=OUT):
     out.mkdir(parents=True, exist_ok=True)
     (out / "collection.json").write_text(json.dumps(collection, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (out / "reviews.jsonl").write_text("".join(M.canonical_json(r) + "\n" for r in reviews), encoding="utf-8")
+    M.write_head(out, reviews)
     print(f"wrote {out}")
 
 

@@ -176,7 +176,21 @@ def validate(coll):
     _unique(good, "annotation", ("gene_symbol", "vocabulary", "vocabulary_version", "term_id"), out)
 
     _validate_reviews(coll, good, seen, out)
+    _validate_head(coll, out)
     return out
+
+
+def _validate_head(coll, out):
+    """The chain alone cannot see lines removed from the end; the recorded head can."""
+    if coll.head is None:
+        if coll.reviews:
+            out.append(Problem("error", "missing_head", M.HEAD_FILE,
+                               "review log has entries but no recorded head"))
+        return
+    if coll.head != M.review_head(coll.reviews):
+        out.append(Problem("error", "head_mismatch", M.HEAD_FILE,
+                           f"reviews.jsonl does not end at the recorded head {coll.head} "
+                           "(entries removed from the end, added by hand, or the log rewritten)"))
 
 
 def _unique(good, rtype, fields, out):

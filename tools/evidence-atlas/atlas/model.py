@@ -3,6 +3,8 @@
 A collection directory holds two files:
   collection.json  schema_version, collection metadata and the source records
   reviews.jsonl    the append-only, hash-chained review history (one review per line)
+  reviews.head.json  entry count and last entry_hash of reviews.jsonl, rewritten on every append,
+                   so truncating the log is detected (CI also checks the log only grows vs. the base)
 """
 
 import hashlib
@@ -42,6 +44,7 @@ INCOMPLETE_CHECK_VALUES = ("uncertain", "missing")
 DECISIONS = ("approve", "needs_changes", "reject", "uncertain")
 SCOPE_DECISIONS = ("in_scope", "out_of_scope", "uncertain")
 GENESIS_HASH = "0" * 64
+HEAD_FILE = "reviews.head.json"
 AGREEMENTS = ("agree", "partial", "differ")
 # mapped: exact current symbol; synonym: unique match through a previous symbol or alias;
 # ambiguous: several candidates; unmapped: no candidate. Only "mapped" carries no flag.
@@ -136,12 +139,22 @@ def opaque_id(prefix, seed):
     return f"{prefix}_{sha256_bytes(seed.encode('utf-8'))[:12]}"
 
 
+def review_head(reviews):
+    """What reviews.head.json must contain for this history."""
+    return {"count": len(reviews), "head_hash": reviews[-1]["entry_hash"] if reviews else GENESIS_HASH}
+
+
+def write_head(directory, reviews):
+    (Path(directory) / HEAD_FILE).write_text(json.dumps(review_head(reviews), indent=2) + "\n", encoding="utf-8")
+
+
 class Collection:
-    def __init__(self, directory, data, reviews, raw_review_lines):
+    def __init__(self, directory, data, reviews, raw_review_lines, head=None):
         self.directory = Path(directory)
         self.data = data
         self.reviews = reviews
         self.raw_review_lines = raw_review_lines
+        self.head = head
 
     def records(self, rtype):
         return self.data.get(TYPES[rtype][0], [])
@@ -156,7 +169,7 @@ class Collection:
         return out
 
     def input_files(self):
-        return [self.directory / "collection.json", self.directory / "reviews.jsonl"]
+        return [self.directory / "collection.json", self.directory / "reviews.jsonl", self.directory / HEAD_FILE]
 
 
 class LoadError(Exception):
@@ -184,4 +197,11 @@ def load(directory):
                 reviews.append(json.loads(line))
             except json.JSONDecodeError as e:
                 raise LoadError(f"{rpath}:{n}: invalid JSON ({e})") from e
-    return Collection(directory, data, reviews, raw)
+    head = None
+    hpath = directory / HEAD_FILE
+    if hpath.is_file():
+        try:
+            head = json.loads(hpath.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            raise LoadError(f"{hpath}: invalid JSON ({e})") from e
+    return Collection(directory, data, reviews, raw, head)

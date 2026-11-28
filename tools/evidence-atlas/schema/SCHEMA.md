@@ -10,6 +10,9 @@ A collection directory contains:
   per record type (`sources`, `datasets`, `studies`, `analyses`, `observations`, `claims`,
   `annotations`).
 - `reviews.jsonl`: one review per line. The history is append-only and hash-chained.
+- `reviews.head.json`: `count` and `head_hash` (the last `entry_hash`) of the log. `atlas review`
+  rewrites it on every append. A mismatch, for example from lines removed at the end, is a
+  validation error. See README, "Review log integrity", for what each check covers.
 
 Every field must be present. `null` means unknown, and it is displayed as unknown. Unknown fields
 are an error.
