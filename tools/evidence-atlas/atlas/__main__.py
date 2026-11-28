@@ -84,23 +84,12 @@ def main(argv=None):
         print(f"appended {e['id']} (revision {e['revision']} of {a.target})")
         return 0
     if a.cmd == "check-append-only":
-        import subprocess
-        files = subprocess.run(["git", "ls-files", "--", "*reviews.jsonl"], cwd=M.ROOT,
-                               capture_output=True, text=True, check=True).stdout.split()
-        bad = 0
-        for f in files:
-            rel = subprocess.run(["git", "ls-files", "--full-name", f], cwd=M.ROOT,
-                                 capture_output=True, text=True, check=True).stdout.strip()
-            old = subprocess.run(["git", "show", f"{a.base}:{rel}"], cwd=M.ROOT, capture_output=True, text=True)
-            if old.returncode != 0:
-                print(f"{rel}: new at {a.base}, nothing to compare")
-                continue
-            probs = R.append_only_problems(old.stdout, (M.ROOT / f).read_text(encoding="utf-8"))
-            for p in probs:
-                print(f"{rel}: {p} relative to {a.base}", file=sys.stderr)
-            bad += bool(probs)
-        print(f"checked {len(files)} review log(s) against {a.base}")
-        return 1 if bad else 0
+        problems, notes = R.check_append_only(a.base, M.ROOT)
+        for n in notes:
+            print(n)
+        for p in problems:
+            print(f"error: {p}", file=sys.stderr)
+        return 1 if problems else 0
     if a.cmd == "lookup":
         exp = json.loads((Path(a.out) / "public" / "atlas.json").read_text(encoding="utf-8"))
         key = a.gene if a.gene in exp["genes"] else None

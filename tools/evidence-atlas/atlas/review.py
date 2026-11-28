@@ -1,6 +1,7 @@
 """Append-only review history and the review queue."""
 
 from datetime import datetime, timezone
+from pathlib import Path
 
 from . import eligibility, model as M
 from .validate import errors, validate
@@ -43,6 +44,37 @@ def append(collection_dir, **kw):
         fh.write(M.canonical_json(entry) + "\n")
     M.write_head(coll.directory, coll.reviews)
     return entry
+
+
+def check_append_only(base, repo):
+    """Compare every reviews.jsonl in the working tree of `repo` with git ref `base`.
+
+    Fails closed: an unresolvable base, or a log present at base but missing now
+    (deleted or moved), is a problem. Returns (problems, notes).
+    """
+    import subprocess
+
+    def git(*args, check=True):
+        return subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True, check=check)
+
+    if git("rev-parse", "--verify", "--quiet", f"{base}^{{commit}}", check=False).returncode != 0:
+        return [f"base ref {base!r} does not resolve to a commit (fetch it, e.g. fetch-depth: 0)"], []
+    top = git("rev-parse", "--show-toplevel").stdout.strip()
+    is_log = lambda p: p == "reviews.jsonl" or p.endswith("/reviews.jsonl")  # noqa: E731
+    at_base = {p for p in git("ls-tree", "-r", "--full-tree", "--name-only", base).stdout.splitlines() if is_log(p)}
+    now = {p for p in git("ls-files", "--full-name", "--cached", "--others", "--exclude-standard",
+                          ":(top)").stdout.splitlines() if is_log(p) and (Path(top) / p).is_file()}
+    problems, notes = [], []
+    for p in sorted(at_base - now):
+        problems.append(f"{p}: present at {base} but missing now (deleted or moved)")
+    for p in sorted(at_base & now):
+        old = git("show", f"{base}:{p}").stdout
+        new = (Path(top) / p).read_text(encoding="utf-8")
+        problems += [f"{p}: {msg} relative to {base}" for msg in append_only_problems(old, new)]
+    for p in sorted(now - at_base):
+        notes.append(f"{p}: new since {base}, nothing to compare")
+    notes.append(f"checked {len(at_base & now)} review log(s) against {base}")
+    return problems, notes
 
 
 def append_only_problems(old_text, new_text):

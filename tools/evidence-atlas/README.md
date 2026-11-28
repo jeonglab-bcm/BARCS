@@ -64,6 +64,10 @@ What is detected, and by what:
 So the files alone show internal consistency. Being append-only over time is enforced by CI on
 every PR and push, and by code review of the diff.
 
+`check-append-only` fails closed. If the base ref doesn't resolve, the check fails. If a log that
+exists at the base is missing now (deleted or moved), the check fails. Logs are listed from both
+the base commit and the current tree, so a log can't escape the check by changing its path.
+
 ## Output boundaries
 
 1. **Build:** validation errors stop the build.

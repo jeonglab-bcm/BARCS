@@ -30,7 +30,7 @@ outputs:
 Python 3.13 / SQLite 3.53. Other versions may change the DB content hash but not the JSON or the
 HTML.
 
-Tests: 49 pass (`python3 -m unittest discover -s tests`). They cover every item of the guide's
+Tests: 50 pass (`python3 -m unittest discover -s tests`). They cover every item of the guide's
 testing checklist, plus assessments, pseudonyms, gene-id grouping and the reference mapper. The
 isolation check runs when `ATLAS_CHECK_ISOLATION=1`, which CI sets.
 

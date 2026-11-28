@@ -192,6 +192,30 @@ class TestValidation(Tmp):
         self.assertTrue(R.append_only_problems(old, "a\nX\nc\n"))  # rewritten
         self.assertTrue(R.append_only_problems(old, "b\na\n"))      # reordered
 
+    def test_check_append_only_against_git(self):
+        repo = self.tmp / "repo"
+        log = repo / "a" / "reviews.jsonl"
+        log.parent.mkdir(parents=True)
+        git = lambda *a: subprocess.run(["git", "-C", str(repo), *a], check=True, capture_output=True)  # noqa: E731
+        git("init", "-q")
+        git("config", "user.email", "t@example.org")
+        git("config", "user.name", "t")
+        log.write_text("x\ny\n")
+        git("add", ".")
+        git("commit", "-qm", "base")
+        self.assertEqual(R.check_append_only("HEAD", repo)[0], [])
+        log.write_text("x\ny\nz\n")                                  # appended: fine
+        self.assertEqual(R.check_append_only("HEAD", repo)[0], [])
+        log.write_text("x\n")                                          # truncated
+        self.assertIn("removed", R.check_append_only("HEAD", repo)[0][0])
+        self.assertIn("does not resolve", R.check_append_only("no-such-ref", repo)[0][0])
+        moved = repo / "b" / "reviews.jsonl"                           # moved and rewritten
+        moved.parent.mkdir()
+        moved.write_text("q\n")
+        log.unlink()
+        probs = R.check_append_only("HEAD", repo)[0]
+        self.assertTrue(any("missing now" in p for p in probs), probs)
+
     def test_reordered_or_deleted_review_detected(self):
         p = self.coll_dir / "reviews.jsonl"
         lines = p.read_text().splitlines()
